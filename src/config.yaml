@@ -1,6 +1,6 @@
 site:
-  name: Youth and Partners
-  site: 'https://vinhphuclawyers.vn'
+  name: Công ty Luật TNHH Youth and Partners
+  site: 'https://yplawfirm.vn'
   base: '/'
   trailingSlash: false
 
@@ -16,7 +16,7 @@ metadata:
     index: true
     follow: true
   openGraph:
-    site_name: Youth and Partners
+    site_name: Công ty Luật TNHH Youth and Partners
     images:
       - url: '~/assets/images/default.png'
         width: 1200

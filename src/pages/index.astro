@@ -12,6 +12,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 
 const metadata = {
   title: 'Công ty Luật TNHH Youth and Partners - Văn phòng luật sư hàng đầu Vĩnh Phúc',
@@ -45,7 +46,7 @@ const metadata = {
         Công ty luật hàng đầu trong các lĩnh vực: Đầu tư nước ngoài, giấy chứng nhận đầu tư, giấy chứng nhận đăng ký
         doanh nghiệp, Foreign investment, IRC, ERC, giấy phép lao động, Work permits.
       </span>
-      <span class="font-semibold"></span>
+
       <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
     </Fragment>
   </Hero>
@@ -53,64 +54,6 @@ const metadata = {
   <!-- Note Widget ******************* -->
 
   <Note />
-
-  <!-- Features Widget *************** -->
-
-  <Features3
-    id="features"
-    title="Các dịch vụ nổi bật"
-    subtitle="Công ty Luật chúng tôi luôn mong muốn mang đến cho quý khách hàng những dịch vụ chất lượng, nhanh chóng, chính xác và trọn vẹn."
-    tagline="Chúng tôi cung cấp"
-    columns={2}
-    items={[
-      {
-        title: 'Dịch vụ hỗ trợ doanh nghiệp',
-        description:
-          'Cung cấp các dịch vụ pháp lý liên quan mật thiết tới Doanh nghiệp, từ các dịch vụ giản đơn như thành lập, thay đổi đăng ký doanh nghiệp, giải thể, phá sản.. cho tới các vấn đề khó hơn như tư vấn quy chế nội bộ, sắp xếp lại, quản trị doanh nghiệp, tư vấn thường xuyên, thuế, tài chính và các vấn đề pháp lý khác liên quan tới DN.',
-        icon: 'tabler:square-number-1',
-      },
-      {
-        title: 'Tư vấn dự án, đầu tư trong nước và nước ngoài',
-        description:
-          'Tìm hiểu, đánh giá thị trường, nắm bắt thông tin các đối tác, địa bàn, lĩnh vực khuyến khích đầu tư, hỗ trợ khách hàng thiết lập và xây dựng các loại hình, tổ chức kinh tế để thực hiện hoạt động đầu tư hiệu quả tại Việt Nam như thành lập dự án mới, góp vốn mua cổ phần... Tận dụng tối đa các chính sách hỗ trợ đầu tư của các tỉnh thành tại Việt Nam...',
-        icon: 'tabler:square-number-2',
-      },
-      {
-        title: 'Hôn nhân và gia đình',
-        description:
-          'Cung cấp đa dạng các loại hình dịch vụ pháp lý liên quan tới hôn nhân gia đình tại Việt Nam, từ dịch vụ tư vấn đơn phương/thuận tình ly hôn, giải quyết tranh chấp, phân chia tài sản, quyền nuôi con, quyền cấp dưỡng, giải quyết việc vi phạm chế độ hôn nhân, tư vấn hòa giải tới các dịch vụ ly hôn trong nước và ly hôn có yếu tố nước ngoài.',
-        icon: 'tabler:square-number-3',
-      },
-      {
-        title: 'Tranh tụng và đại diện ngoài tố tụng',
-        description:
-          'Là Người đại diện hoặc Người bào chữa/Người bảo vệ quyền và lợi ích hợp pháp cho các Khách hàng/thân chủ tại các cơ quan tiến hành tố tụng, như Cơ quan Điều tra, Viện Kiểm sát, Tòa án, Cơ quan Thi hành án cũng như các cơ quan khác trong tất cả các lĩnh vực pháp lý… trên nguyên tắc bảo đảm tối đa lợi ích của các Thân chủ/Khách hàng.',
-        icon: 'tabler:square-number-4',
-      },
-      {
-        title: 'Dịch vụ đất đai',
-        description:
-          'Thực hiện các dịch vụ pháp lý đa dạng liên quan tới đất đai, như tư vấn chuyển nhượng, mua bán, tặng cho, đặt cọc, thế chấp, góp vốn Quyền sử dụng đất, Quyền sở hữu nhà ở, căn hộ. Tư vấn cấp giấy chứng nhận quyền sử dụng đất lần đầu, xác minh thông tin dữ liệu đất đai làm cơ sở cho các giao dịch mua bán, chuyển nhượng đất đai...',
-        icon: 'tabler:square-number-5',
-      },
-      {
-        title: 'Pháp luật dân sự và thừa kế',
-        description:
-          'Tư vấn mọi lĩnh vực pháp luật dân sự trong đời sống xã hội từ trong nước tới nước ngoài, các quyền dân sự của cá nhân, pháp nhân, từ khai sinh, khai tử, giấy phép hoạt động cho các cơ sở, tới tài sản và quyền sở hữu hợp pháp của công dân, các hợp đồng, giao dịch, vấn đề liên quan tới pháp luật thừa kế, lập chi chúc, phân chia di sản, và các vấn đề pháp lý dân sự khác...',
-        icon: 'tabler:square-number-6',
-      },
-      {
-        title: 'Lao động',
-        description:
-          'Quan hệ giữa người lao động và Người sử dụng lao động luôn tồn tại những lợi ích đối nghịch, rất nhiều các xung đột pháp lý liên quan tới đơn phương chấm dứt hợp đồng trái pháp luật, sa thải trái pháp luật, hợp đồng lao động, thỏa thuận không tiết lộ thông tin, hạn chế cạnh tranh sau khi nghỉ việc, đình công.. tất cả đều có thể được hỗ trợ tốt bởi Youth & Partners Law Firm.',
-        icon: 'tabler:square-number-7',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/youth and partners/dich vu noi bat.jpg',
-      alt: 'Colorful Image',
-    }}
-  />
 
   <Features
     id="features"
@@ -167,295 +110,125 @@ const metadata = {
 
   <Content
     isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
+    tagline="Y&P Law Firm"
+    title="Tôn chỉ hoạt động của chúng tôi"
     items={[
       {
-        title: 'Built on top of Astro 4.0',
+        title: 'Thời gian',
         description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+          'Chúng tôi biết rằng mọi vụ việc pháp lý đều có những thời hạn và yêu cầu khắt khe. Chính vì thế, đội ngũ luật sư của chúng tôi luôn nỗ lực hết mình để đảm bảo tiến trình công việc diễn ra nhanh chóng và hiệu quả, giúp khách hàng đạt được kết quả mong muốn trong thời gian sớm nhất.',
+        icon: 'tabler:clock-24',
       },
       {
-        title: 'Styled using Tailwind CSS',
+        title: 'Tận tâm',
         description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+          'Mỗi luật sư tại Y&P đều đặt trọn tâm huyết vào từng hồ sơ, lắng nghe và thấu hiểu nhu cầu của khách hàng để đưa ra những giải pháp tối ưu và phù hợp nhất. Chúng tôi tin rằng sự tận tâm chính là chìa khóa để xây dựng lòng tin và mối quan hệ bền vững với khách hàng.',
+        icon: 'tabler:heart',
       },
       {
-        title: 'Cross-browser compatibility',
+        title: 'Tận lực',
         description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
-      },
-      {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
-      },
-      {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
+          'Không chỉ dừng lại ở việc cung cấp dịch vụ pháp lý, chúng tôi luôn đi thêm một bước nữa để bảo vệ quyền lợi và lợi ích hợp pháp của khách hàng. Đội ngũ luật sư tài năng và giàu kinh nghiệm của chúng tôi luôn sẵn sàng đối mặt với mọi thách thức để mang lại sự công bằng và thành công cho khách hàng.',
+        icon: 'tabler:award',
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
+      alt: 'Colorful Image',
     }}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Features2>
+  </Content>
 
-  <!-- HighlightedPosts Widget ******* -->
+  <!-- Content Widget **************** -->
 
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  />
-
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
+  <Steps
+    title="Hãy để chúng tôi trở thành người bạn đồng hành của bạn"
     items={[
       {
-        title: 'Why AstroWind?',
+        title: '<span class="font-medium">Liên hệ</span>',
         description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+          'Mô tả vấn đề của bạn và thu thập tài liệu liên quan. Liên hệ với chúng tôi qua Hotline, Zalo, WhatsApp, Facebook hoặc Email',
+        icon: 'tabler:report-search',
       },
       {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+        title: '<span class="font-medium">Gửi yêu cầu</span>',
+        description: 'Mô tả chi tiết vấn đề qua email hoặc điện thoại và đính kèm tài liệu liên quan',
+        icon: 'tabler:phone',
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
+        title: '<span class="font-medium">Theo dõi phản hồi</span>',
         description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+          'Theo dõi email hoặc điện thoại của bạn để nhận phản hồi từ đội ngũ hỗ trợ khách hàng của chúng tôi. Nếu không nhận được phản hồi trong thời gian dự kiến, hãy liên hệ lại để đảm bảo vấn đề của bạn không bị bỏ sót.',
+        icon: 'tabler:calendar-month',
       },
       {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+        title: 'Chúng tôi sẽ hoàn thành!',
+        icon: 'tabler:check',
       },
     ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1514621166532-aa7eb1a3a2f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Steps image',
+    }}
   />
 
   <!-- Stats Widget ****************** -->
 
   <Stats
     stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
+      { title: 'Chuyên viên pháp lý', amount: '30+' },
+      { title: 'Khách hàng hài lòng', amount: '1176' },
+      { title: 'Vụ thắng kiện', amount: '723' },
     ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Stats>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="Kênh tin tức Y&P"
+    information={`Trang tin tức của chúng tôi cung cấp những thông tin cập nhật và mới nhất về các vấn đề pháp lý, 
+    với bài viết từ các chuyên gia pháp lý hàng đầu, đảm bảo bạn luôn nắm bắt được những thay đổi quan trọng trong các lĩnh vực quan tâm.
+                `}
   />
 
   <!-- CallToAction Widget *********** -->
 
-  <CallToAction
-    actions={[
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Liên hệ để được tư vấn ngay"
+    subtitle="Chúng tôi luôn sẵn lòng lắng nghe và hỗ trợ bạn một cách tận tâm và chuyên nghiệp. Hãy để chúng tôi giúp bạn giải quyết mọi vấn đề pháp lý một cách nhanh chóng và hiệu quả!"
+    callToAction={{
+      text: 'Contact us',
+      href: '/',
+    }}
+    items={[
       {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        title: 'Email',
+        description: 'thanhnv@yplawfirm.vn',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Hotline',
+        description: '088 995 6888',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Theo dõi chúng tôi',
+        description: '@vinhphuclawyers',
+        icon: 'tabler:brand-facebook',
       },
     ]}
   >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
-  </CallToAction>
+  </Steps2>
 </Layout>
