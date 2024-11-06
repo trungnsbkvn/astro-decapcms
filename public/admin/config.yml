@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: trungnsbkvn/astro-decapcms #replace with your githu repo
   branch: main
+  squash_merges: true
+  open_authoring: true
 
 media_folder: 'src/assets/images'
 public_folder: '/_astro'
