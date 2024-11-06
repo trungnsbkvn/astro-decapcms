@@ -13,7 +13,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'Công ty Luật TNHH Youth and Partners - Văn phòng luật sư hàng đầu Vĩnh Phúc',
   ignoreTitleTemplate: true,
 };
 ---
@@ -25,28 +25,27 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
+        text: 'Liên hệ để được tư vấn',
+        href: 'tel:0889956888',
         target: '_blank',
-        icon: 'tabler:download',
+        icon: 'tabler:phone-call',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Tìm hiểu thêm', href: '/gioi-thieu.html' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+    image={{ src: '~/assets/images/youth and partners/luat su tu van.jpg', alt: 'Luật sư tư vấn' }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 4.0</span> + Tailwind CSS
+      Công ty Luật TNHH
+      <span class="text-accent dark:text-white highlight"> Youth & Partners</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 4.0
-        + Tailwind CSS.</span
-      >
+        Công ty luật hàng đầu trong các lĩnh vực: Đầu tư nước ngoài, giấy chứng nhận đầu tư, giấy chứng nhận đăng ký
+        doanh nghiệp, Foreign investment, IRC, ERC, giấy phép lao động, Work permits.
+      </span>
+      <span class="font-semibold"></span>
       <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
     </Fragment>
   </Hero>
 
