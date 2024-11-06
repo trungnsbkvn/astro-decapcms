@@ -2,8 +2,6 @@ backend:
   name: github
   repo: trungnsbkvn/astro-decapcms #replace with your githu repo
   branch: main
-  squash_merges: true
-  open_authoring: true
 
 publish_mode: editorial_workflow
 media_folder: public/images
