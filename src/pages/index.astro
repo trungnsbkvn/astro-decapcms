@@ -5,6 +5,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
@@ -55,47 +56,109 @@ const metadata = {
 
   <!-- Features Widget *************** -->
 
-  <Features
+  <Features3
     id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022."
+    title="Các dịch vụ nổi bật"
+    subtitle="Công ty Luật chúng tôi luôn mong muốn mang đến cho quý khách hàng những dịch vụ chất lượng, nhanh chóng, chính xác và trọn vẹn."
+    tagline="Chúng tôi cung cấp"
+    columns={2}
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: 'Dịch vụ hỗ trợ doanh nghiệp',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
+          'Cung cấp các dịch vụ pháp lý liên quan mật thiết tới Doanh nghiệp, từ các dịch vụ giản đơn như thành lập, thay đổi đăng ký doanh nghiệp, giải thể, phá sản.. cho tới các vấn đề khó hơn như tư vấn quy chế nội bộ, sắp xếp lại, quản trị doanh nghiệp, tư vấn thường xuyên, thuế, tài chính và các vấn đề pháp lý khác liên quan tới DN.',
+        icon: 'tabler:square-number-1',
       },
       {
-        title: 'Ready-to-use Components',
+        title: 'Tư vấn dự án, đầu tư trong nước và nước ngoài',
         description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
+          'Tìm hiểu, đánh giá thị trường, nắm bắt thông tin các đối tác, địa bàn, lĩnh vực khuyến khích đầu tư, hỗ trợ khách hàng thiết lập và xây dựng các loại hình, tổ chức kinh tế để thực hiện hoạt động đầu tư hiệu quả tại Việt Nam như thành lập dự án mới, góp vốn mua cổ phần... Tận dụng tối đa các chính sách hỗ trợ đầu tư của các tỉnh thành tại Việt Nam...',
+        icon: 'tabler:square-number-2',
       },
       {
-        title: 'Best Practices',
+        title: 'Hôn nhân và gia đình',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
+          'Cung cấp đa dạng các loại hình dịch vụ pháp lý liên quan tới hôn nhân gia đình tại Việt Nam, từ dịch vụ tư vấn đơn phương/thuận tình ly hôn, giải quyết tranh chấp, phân chia tài sản, quyền nuôi con, quyền cấp dưỡng, giải quyết việc vi phạm chế độ hôn nhân, tư vấn hòa giải tới các dịch vụ ly hôn trong nước và ly hôn có yếu tố nước ngoài.',
+        icon: 'tabler:square-number-3',
       },
       {
-        title: 'Excellent Page Speed',
+        title: 'Tranh tụng và đại diện ngoài tố tụng',
         description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
+          'Là Người đại diện hoặc Người bào chữa/Người bảo vệ quyền và lợi ích hợp pháp cho các Khách hàng/thân chủ tại các cơ quan tiến hành tố tụng, như Cơ quan Điều tra, Viện Kiểm sát, Tòa án, Cơ quan Thi hành án cũng như các cơ quan khác trong tất cả các lĩnh vực pháp lý… trên nguyên tắc bảo đảm tối đa lợi ích của các Thân chủ/Khách hàng.',
+        icon: 'tabler:square-number-4',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
+        title: 'Dịch vụ đất đai',
         description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
+          'Thực hiện các dịch vụ pháp lý đa dạng liên quan tới đất đai, như tư vấn chuyển nhượng, mua bán, tặng cho, đặt cọc, thế chấp, góp vốn Quyền sử dụng đất, Quyền sở hữu nhà ở, căn hộ. Tư vấn cấp giấy chứng nhận quyền sử dụng đất lần đầu, xác minh thông tin dữ liệu đất đai làm cơ sở cho các giao dịch mua bán, chuyển nhượng đất đai...',
+        icon: 'tabler:square-number-5',
       },
       {
-        title: 'Open to new ideas and contributions',
+        title: 'Pháp luật dân sự và thừa kế',
         description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
+          'Tư vấn mọi lĩnh vực pháp luật dân sự trong đời sống xã hội từ trong nước tới nước ngoài, các quyền dân sự của cá nhân, pháp nhân, từ khai sinh, khai tử, giấy phép hoạt động cho các cơ sở, tới tài sản và quyền sở hữu hợp pháp của công dân, các hợp đồng, giao dịch, vấn đề liên quan tới pháp luật thừa kế, lập chi chúc, phân chia di sản, và các vấn đề pháp lý dân sự khác...',
+        icon: 'tabler:square-number-6',
+      },
+      {
+        title: 'Lao động',
+        description:
+          'Quan hệ giữa người lao động và Người sử dụng lao động luôn tồn tại những lợi ích đối nghịch, rất nhiều các xung đột pháp lý liên quan tới đơn phương chấm dứt hợp đồng trái pháp luật, sa thải trái pháp luật, hợp đồng lao động, thỏa thuận không tiết lộ thông tin, hạn chế cạnh tranh sau khi nghỉ việc, đình công.. tất cả đều có thể được hỗ trợ tốt bởi Youth & Partners Law Firm.',
+        icon: 'tabler:square-number-7',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/youth and partners/dich vu noi bat.jpg',
+      alt: 'Colorful Image',
+    }}
+  />
+
+  <Features
+    id="features"
+    tagline="Chúng tôi cung cấp"
+    title="Các dịch vụ nổi bật"
+    subtitle="Công ty Luật chúng tôi luôn mong muốn mang đến cho quý khách hàng những dịch vụ chất lượng, nhanh chóng, chính xác và trọn vẹn."
+    items={[
+      {
+        title: 'Dịch vụ hỗ trợ doanh nghiệp',
+        description:
+          'Cung cấp các dịch vụ pháp lý liên quan mật thiết tới Doanh nghiệp, từ các dịch vụ giản đơn như thành lập, thay đổi đăng ký doanh nghiệp, giải thể, phá sản.. cho tới các vấn đề khó hơn như tư vấn quy chế nội bộ, sắp xếp lại, quản trị doanh nghiệp, tư vấn thường xuyên, thuế, tài chính và các vấn đề pháp lý khác liên quan tới DN.',
+        icon: 'tabler:square-number-1',
+      },
+      {
+        title: 'Tư vấn dự án, đầu tư trong nước và nước ngoài',
+        description:
+          'Tìm hiểu, đánh giá thị trường, nắm bắt thông tin các đối tác, địa bàn, lĩnh vực khuyến khích đầu tư, hỗ trợ khách hàng thiết lập và xây dựng các loại hình, tổ chức kinh tế để thực hiện hoạt động đầu tư hiệu quả tại Việt Nam như thành lập dự án mới, góp vốn mua cổ phần... Tận dụng tối đa các chính sách hỗ trợ đầu tư của các tỉnh thành tại Việt Nam...',
+        icon: 'tabler:square-number-2',
+      },
+      {
+        title: 'Hôn nhân và gia đình',
+        description:
+          'Cung cấp đa dạng các loại hình dịch vụ pháp lý liên quan tới hôn nhân gia đình tại Việt Nam, từ dịch vụ tư vấn đơn phương/thuận tình ly hôn, giải quyết tranh chấp, phân chia tài sản, quyền nuôi con, quyền cấp dưỡng, giải quyết việc vi phạm chế độ hôn nhân, tư vấn hòa giải tới các dịch vụ ly hôn trong nước và ly hôn có yếu tố nước ngoài.',
+        icon: 'tabler:square-number-3',
+      },
+      {
+        title: 'Tranh tụng và đại diện ngoài tố tụng',
+        description:
+          'Là Người đại diện hoặc Người bào chữa/Người bảo vệ quyền và lợi ích hợp pháp cho các Khách hàng/thân chủ tại các cơ quan tiến hành tố tụng, như Cơ quan Điều tra, Viện Kiểm sát, Tòa án, Cơ quan Thi hành án cũng như các cơ quan khác trong tất cả các lĩnh vực pháp lý… trên nguyên tắc bảo đảm tối đa lợi ích của các Thân chủ/Khách hàng.',
+        icon: 'tabler:square-number-4',
+      },
+      {
+        title: 'Dịch vụ đất đai',
+        description:
+          'Thực hiện các dịch vụ pháp lý đa dạng liên quan tới đất đai, như tư vấn chuyển nhượng, mua bán, tặng cho, đặt cọc, thế chấp, góp vốn Quyền sử dụng đất, Quyền sở hữu nhà ở, căn hộ. Tư vấn cấp giấy chứng nhận quyền sử dụng đất lần đầu, xác minh thông tin dữ liệu đất đai làm cơ sở cho các giao dịch mua bán, chuyển nhượng đất đai...',
+        icon: 'tabler:square-number-5',
+      },
+      {
+        title: 'Pháp luật dân sự và thừa kế',
+        description:
+          'Tư vấn mọi lĩnh vực pháp luật dân sự trong đời sống xã hội từ trong nước tới nước ngoài, các quyền dân sự của cá nhân, pháp nhân, từ khai sinh, khai tử, giấy phép hoạt động cho các cơ sở, tới tài sản và quyền sở hữu hợp pháp của công dân, các hợp đồng, giao dịch, vấn đề liên quan tới pháp luật thừa kế, lập chi chúc, phân chia di sản, và các vấn đề pháp lý dân sự khác...',
+        icon: 'tabler:square-number-6',
+      },
+      {
+        title: 'Lao động',
+        description:
+          'Quan hệ giữa người lao động và Người sử dụng lao động luôn tồn tại những lợi ích đối nghịch, rất nhiều các xung đột pháp lý liên quan tới đơn phương chấm dứt hợp đồng trái pháp luật, sa thải trái pháp luật, hợp đồng lao động, thỏa thuận không tiết lộ thông tin, hạn chế cạnh tranh sau khi nghỉ việc, đình công.. tất cả đều có thể được hỗ trợ tốt bởi Youth & Partners Law Firm.',
+        icon: 'tabler:square-number-7',
       },
     ]}
   />
