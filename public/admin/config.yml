@@ -5,8 +5,10 @@ backend:
   squash_merges: true
   open_authoring: true
 
-media_folder: 'src/assets/images'
-public_folder: '/_astro'
+publish_mode: editorial_workflow
+media_folder: public/images
+public_folder: /images
+site_url: "https://classy-salmiakki-d31c44.netlify.app/" # your site name
 
 collections:
   - name: 'post'
