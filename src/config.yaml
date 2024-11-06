@@ -10,7 +10,7 @@ site:
 metadata:
   title:
     default: Công ty Luật TNHH Youth and Partners - Văn phòng luật sư hàng đầu Vĩnh Phúc
-    template: '%s — AstroWind'
+    template: '%s — Youth and Partners'
   description: "Công ty Luật TNHH Youth and Partners là một trong những công ty luật hàng đầu trong các lĩnh vực: Đầu tư nước ngoài, giấy chứng nhận đầu tư, giấy chứng nhận đăng ký doanh nghiệp, Foreign investment, IRC, ERC, giấy phép lao động, Work permits."
   robots:
     index: true
@@ -66,7 +66,7 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: "G-HB9LNKY6F2" # or "G-XXXXXXXXXX"
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
