@@ -3,116 +3,115 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Homes',
-      links: [
-        {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
-        },
-        {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
-        },
-        {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
-        },
-      ],
+      text: 'Trang chủ',
+      href: '/',
     },
     {
-      text: 'Pages',
+      text: 'Giới thiệu',
       links: [
         {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
-        },
-        {
-          text: 'Services',
-          href: getPermalink('/services'),
-        },
-        {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'About us',
+          text: 'Về chúng tôi',
           href: getPermalink('/about'),
         },
         {
-          text: 'Contact',
-          href: getPermalink('/contact'),
+          text: 'Dịch vụ của chúng tôi',
+          href: getPermalink('/#features'),
         },
         {
-          text: 'Terms',
+          text: 'Trách nhiệm xã hội',
+          href: getPermalink('/services'),
+        },
+        {
+          text: 'Đội ngũ',
+          href: getPermalink('/pricing'),
+        },
+        {
+          text: 'Điều khoản sử dụng',
           href: getPermalink('/terms'),
         },
         {
-          text: 'Privacy policy',
+          text: 'Chính sách bảo mật',
           href: getPermalink('/privacy'),
         },
       ],
     },
     {
-      text: 'Landing',
+      text: 'Dịch vụ pháp lý',
       links: [
         {
-          text: 'Lead Generation',
+          text: 'Hỗ trợ doanh nghiệp',
           href: getPermalink('/landing/lead-generation'),
         },
         {
-          text: 'Long-form Sales',
+          text: 'Tư vấn đầu tư trong nước và nước ngoài',
           href: getPermalink('/landing/sales'),
         },
         {
-          text: 'Click-Through',
+          text: 'Hôn nhân và gia đình',
           href: getPermalink('/landing/click-through'),
         },
         {
-          text: 'Product Details (or Services)',
+          text: 'Tranh tụng và đại diện ngoài tố tụng',
           href: getPermalink('/landing/product'),
         },
         {
-          text: 'Coming Soon or Pre-Launch',
+          text: 'Dịch vụ đất đai',
           href: getPermalink('/landing/pre-launch'),
         },
         {
-          text: 'Subscription',
+          text: 'Pháp luật dân sự và thừa kế',
+          href: getPermalink('/landing/subscription'),
+        },
+        {
+          text: 'Lao động',
+          href: getPermalink('/landing/subscription'),
+        },
+        {
+          text: 'Giấy phép',
           href: getPermalink('/landing/subscription'),
         },
       ],
     },
     {
-      text: 'Blog',
+      text: 'Kiến thức pháp lý',
       links: [
         {
-          text: 'Blog List',
+          text: 'Dân sự',
           href: getBlogPermalink(),
         },
         {
-          text: 'Article',
+          text: 'Hình sự',
           href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
         },
         {
-          text: 'Article (with MDX)',
+          text: 'Đất đai',
           href: getPermalink('markdown-elements-demo-post', 'post'),
         },
         {
-          text: 'Category Page',
+          text: 'Doanh nghiệp và Đầu tư nước ngoài',
           href: getPermalink('tutorials', 'category'),
         },
         {
-          text: 'Tag Page',
+          text: 'Hôn nhân và gia đình',
           href: getPermalink('astro', 'tag'),
+        },
+        {
+          text: 'Lao động',
+          href: getPermalink('tutorials', 'category'),
+        },
+        {
+          text: 'Sở hữu trí tuệ',
+          href: getPermalink('tutorials', 'category'),
+        },
+        {
+          text: 'Hỏi đáp luật sư',
+          href: getPermalink('tutorials', 'category'),
         },
       ],
     },
     {
-      text: 'Widgets',
-      href: '#',
+      text: 'Liên hệ',
+      href: getPermalink('/contact'),
     },
   ],
   actions: [{ text: 'Liên hệ ngay', href: 'tel:0889956888', target: '_blank' }],
