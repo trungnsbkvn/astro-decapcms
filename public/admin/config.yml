@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: trungnsbkvn/astro-decapcms #replace with your githu repo
   branch: main
 
