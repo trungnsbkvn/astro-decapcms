@@ -1,7 +1,5 @@
 ---
-title: Nghị định số 12/2022/NĐ-CP Quy định xử phạt vi phạm hành chính trong lĩnh
-  vực Lao động, Bảo hiểm xã hội, Người lao động Việt Nam đi làm việc ở nước
-  ngoài theo Hợp đồng
+title: Quy định xử phạt vi phạm hành chính trong lĩnh vực Lao động
 excerpt: Nghị định số 12/2022/NĐ-CP Quy định xử phạt vi phạm hành chính trong
   lĩnh vực Lao động, Bảo hiểm xã hội, Người lao động Việt Nam đi làm việc ở nước
   ngoài theo Hợp đồng
