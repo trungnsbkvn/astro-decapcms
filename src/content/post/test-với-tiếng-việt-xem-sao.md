@@ -1,0 +1,64 @@
+---
+title: test với tiếng Việt xem sao
+excerpt: test với tiếng Việt xem sao
+category: Test
+image: https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1651&q=80
+author: Trung
+---
+import {defineCollection, z} from 'astro:content';
+
+
+
+const blog = defineCollection({
+
+  type: 'content',
+
+  schema: z.object({
+
+\    title: z.string(),
+
+\    description: z.string().optional().nullable(),
+
+\    date: z.date(),
+
+\    tags: z.array(z.string()).or(z.string()).optional().nullable(),
+
+\    category: z.array(z.string()).or(z.string()).default('uncategorized').nullable(),
+
+\    sticky: z.number().default(0).nullable(),
+
+\    mathjax: z.boolean().default(false).nullable(),
+
+\    mermaid: z.boolean().default(false).nullable(),
+
+\    draft: z.boolean().default(false).nullable(),
+
+\    toc: z.boolean().default(true).nullable(),
+
+\    donate: z.boolean().default(true).nullable(),
+
+\    comment: z.boolean().default(true).nullable(),
+
+  }),
+
+});
+
+
+
+const feed = defineCollection({
+
+  schema: z.object({
+
+\    date: z.date().or(z.string()).optional().nullable(),
+
+\    donate: z.boolean().default(true),
+
+\    comment: z.boolean().default(true),
+
+  })
+
+})
+
+
+
+export const collections = {blog, feed};
