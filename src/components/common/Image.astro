@@ -29,6 +29,11 @@ if (typeof props.height === 'string') {
   props.height = parseInt(props.height);
 }
 
+// Infer image dimensions if not provided
+if (!props.width) {
+  props.width = 1920;
+}
+
 if (!props.loading) {
   props.loading = 'lazy';
 }
