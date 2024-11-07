@@ -9,6 +9,8 @@ import {defineCollection, z} from 'astro:content';
 
 
 
+![xxx](/images/457577946_10161931282689727_2029435220945721919_n.jpg "xxx")
+
 const blog = defineCollection({
 
   type: 'content',
@@ -43,8 +45,6 @@ const blog = defineCollection({
 
 });
 
-
-
 const feed = defineCollection({
 
   schema: z.object({
@@ -58,7 +58,5 @@ const feed = defineCollection({
   })
 
 })
-
-
 
 export const collections = {blog, feed};
