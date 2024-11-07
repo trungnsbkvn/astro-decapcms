@@ -39,11 +39,11 @@ if (!props.decoding) {
   props.decoding = 'async';
 }
 
-if (!props.width || !props.height) {
-  const dimensions = inferImageDimensions(props.src);
-  if (!props.width) props.width = dimensions.width;
-  if (!props.height) props.height = dimensions.height;
-}
+// if (!props.width || !props.height) {
+//   const dimensions = inferImageDimensions(props.src);
+//   if (!props.width) props.width = dimensions.width;
+//   if (!props.height) props.height = dimensions.height;
+// }
 
 const _image = await findImage(props.src);
 
