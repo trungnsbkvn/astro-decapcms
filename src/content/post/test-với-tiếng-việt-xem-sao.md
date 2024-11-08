@@ -2,7 +2,7 @@
 title: test với tiếng Việt xem sao
 excerpt: test với tiếng Việt xem sao
 category: Test
-image: https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1651&q=80
+image: src/assets/images/hero-image.png
 author: Trung
 ---
 import {defineCollection, z} from 'astro:content';
