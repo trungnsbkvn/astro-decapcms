@@ -31,10 +31,10 @@ Như vậy, di chúc được hiểu là sự thể hiện ý chí của cá nh�
 
 Căn cứ theo Điều 629 Bộ luật dân sự năm 2015
 
-“Điều 629. Di chúc miệng
-
-1. Trường hợp tính mạng một người bị cái chết đe dọa và không thể lập di chúc bằng văn bản thì có thể lập di chúc miệng.
-2. Sau 03 tháng, kể từ thời điểm di chúc miệng mà người lập di chúc còn sống, minh mẫn, sáng suốt thì di chúc miệng mặc nhiên bị hủy bỏ.”
+> “Điều 629. Di chúc miệng
+>
+> 1. Trường hợp tính mạng một người bị cái chết đe dọa và không thể lập di chúc bằng văn bản thì có thể lập di chúc miệng.
+> 2. Sau 03 tháng, kể từ thời điểm di chúc miệng mà người lập di chúc còn sống, minh mẫn, sáng suốt thì di chúc miệng mặc nhiên bị hủy bỏ.”
 
 Theo đó, trong trường hợp tính mạng một người bị cái chết đe dọa và không thể lập di chúc bằng văn bản thì có thể lập di chúc miệng.
 
@@ -44,7 +44,7 @@ Lưu ý: Sau 03 tháng, kể từ thời điểm di chúc miệng mà người l
 
 Căn cứ theo khoản 5 Điều 630 Bộ luật dân sự 2015
 
-“5. Di chúc miệng được coi là hợp pháp nếu người di chúc miệng thể hiện ý chí cuối cùng của mình trước mặt ít nhất hai người làm chứng và ngay sau khi người di chúc miệng thể hiện ý chí cuối cùng, người làm chứng ghi chép lại, cùng ký tên hoặc điểm chỉ. Trong thời hạn 05 ngày làm việc, kể từ ngày người di chúc miệng thể hiện ý chí cuối cùng thì di chúc phải được công chứng viên hoặc cơ quan có thẩm quyền chứng thực xác nhận chữ ký hoặc điểm chỉ của người làm chứng.”
+> “5. Di chúc miệng được coi là hợp pháp nếu người di chúc miệng thể hiện ý chí cuối cùng của mình trước mặt ít nhất hai người làm chứng và ngay sau khi người di chúc miệng thể hiện ý chí cuối cùng, người làm chứng ghi chép lại, cùng ký tên hoặc điểm chỉ. Trong thời hạn 05 ngày làm việc, kể từ ngày người di chúc miệng thể hiện ý chí cuối cùng thì di chúc phải được công chứng viên hoặc cơ quan có thẩm quyền chứng thực xác nhận chữ ký hoặc điểm chỉ của người làm chứng.”
 
 Như vậy, di chúc miệng được coi là hợp pháp khi đáp ứng đủ 03 điều kiện sau:
 
@@ -72,13 +72,13 @@ Trong hoàn cảnh nguy kịch, tai nạn hoặc bị cái chết đe dọa ,...
 
 Người làm chứng đối với lập di chúc miệng phải đáp ứng điều kiện theo Điều 632 Bộ luật Dân sự 2015:
 
-“Điều 632. Người làm chứng cho việc lập di chúc
-
-Mọi người đều có thể làm chứng cho việc lập di chúc, trừ những người sau đây:
-
-1. Người thừa kế theo di chúc hoặc theo pháp luật của người lập di chúc.
-2. Người có quyền, nghĩa vụ tài sản liên quan tới nội dung di chúc.
-3. Người chưa thành niên, người mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi.”
+> “Điều 632. Người làm chứng cho việc lập di chúc
+>
+> Mọi người đều có thể làm chứng cho việc lập di chúc, trừ những người sau đây:
+>
+> 1. Người thừa kế theo di chúc hoặc theo pháp luật của người lập di chúc.
+> 2. Người có quyền, nghĩa vụ tài sản liên quan tới nội dung di chúc.
+> 3. Người chưa thành niên, người mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi.”
 
 Tóm lại, điều kiện đối với người làm chứng cho việc lập di chúc miệng:
 
