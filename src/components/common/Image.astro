@@ -23,6 +23,15 @@ if (props.alt === undefined || props.alt === null) {
   throw new Error();
 }
 
+if (!props.width || !props.height) {
+  let src = props.src;
+  if (typeof src === 'string') {
+    const dimensions = inferImageDimensions(src);
+    if (!props.width) props.width = dimensions.width;
+    if (!props.height) props.height = dimensions.height;
+  }
+}
+
 if (typeof props.width === 'string') {
   props.width = parseInt(props.width);
 }
@@ -38,12 +47,6 @@ if (!props.loading) {
 if (!props.decoding) {
   props.decoding = 'async';
 }
-
-// if (!props.width || !props.height) {
-//   const dimensions = inferImageDimensions(props.src);
-//   if (!props.width) props.width = dimensions.width;
-//   if (!props.height) props.height = dimensions.height;
-// }
 
 const _image = await findImage(props.src);
 
