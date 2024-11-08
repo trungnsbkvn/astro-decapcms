@@ -2,10 +2,7 @@
 title: Di chúc miệng có được pháp luật Việt Nam công nhận không?
 excerpt: Hiện nay, pháp luật đặt ra những yêu cầu khắt khe để đảm bảo tính minh
   bạch và hợp pháp của di chúc. Một dạng di chúc ít phổ biến nhưng vẫn được công
-  nhận trong các trường hợp đặc biệt là di chúc miệng. Tuy nhiên, để di chúc
-  miệng được coi là hợp pháp thì cần phải đáp ứng một số điều kiện theo quy định
-  pháp luật. Bài viết này, sẽ phân tích chi tiết các quy định cũng như điều kiện
-  cần thiết để di chúc miệng được coi là hợp pháp.
+  nhận trong các trường hợp đặc biệt là di chúc miệng
 category: Dân sự
 tags:
   - Di chúc
@@ -14,7 +11,7 @@ publishDate: 2024-11-08T15:20:00.000Z
 author: Mai Ánh
 rating: 5
 ---
-Hiện nay, pháp luật đặt ra những yêu cầu khắt khe để đảm bảo tính minh bạch và hợp pháp của di chúc. Một dạng di chúc ít phổ biến nhưng vẫn được công nhận trong các trường hợp đặc biệt là di chúc miệng. Tuy nhiên, để di chúc miệng được coi là hợp pháp thì cần phải đáp ứng một số điều kiện theo quy định pháp luật. Bài viết này, sẽ phân tích chi tiết các quy định cũng như điều kiện cần thiết để di chúc miệng được coi là hợp pháp.
+Để di chúc miệng được coi là hợp pháp thì cần phải đáp ứng một số điều kiện theo quy định pháp luật. Bài viết này, sẽ phân tích chi tiết các quy định cũng như điều kiện cần thiết để di chúc miệng được coi là hợp pháp.
 
 ## Căn cứ pháp lý:
 
@@ -24,9 +21,9 @@ Hiện nay, pháp luật đặt ra những yêu cầu khắt khe để đảm b�
 
 Căn cứ theo [Điều 624 Bộ luật dân sự năm 2015](https://yplawfirm.vn/tin-tuc-phap-luat/van-ban-phap-luat/bo-luat-dan-su-so-91-2015-qh13-35910.htm)
 
-`“Điều 624. Di chúc`
-
-`Di chúc là sự thể hiện ý chí của cá nhân nhằm chuyển tài sản của mình cho người khác sau khi chết.”`
+> Điều 624. Di chúc
+>
+> Di chúc là sự thể hiện ý chí của cá nhân nhằm chuyển tài sản của mình cho người khác sau khi chết.
 
 Như vậy, di chúc được hiểu là sự thể hiện ý chí của cá nhân nhầm chuyển tài sản của mình cho người khác sau khi chết. Điều này, cũng khẳng định di chúc miệng cũng được pháp luật Việt Nam công nhận và quy định tại Điều 624 Bộ luật dân sự năm 2015.
 
@@ -37,7 +34,6 @@ Căn cứ theo Điều 629 Bộ luật dân sự năm 2015
 “Điều 629. Di chúc miệng
 
 1. Trường hợp tính mạng một người bị cái chết đe dọa và không thể lập di chúc bằng văn bản thì có thể lập di chúc miệng.
-
 2. Sau 03 tháng, kể từ thời điểm di chúc miệng mà người lập di chúc còn sống, minh mẫn, sáng suốt thì di chúc miệng mặc nhiên bị hủy bỏ.”
 
 Theo đó, trong trường hợp tính mạng một người bị cái chết đe dọa và không thể lập di chúc bằng văn bản thì có thể lập di chúc miệng.
@@ -81,9 +77,7 @@ Người làm chứng đối với lập di chúc miệng phải đáp ứng đi
 Mọi người đều có thể làm chứng cho việc lập di chúc, trừ những người sau đây:
 
 1. Người thừa kế theo di chúc hoặc theo pháp luật của người lập di chúc.
-
 2. Người có quyền, nghĩa vụ tài sản liên quan tới nội dung di chúc.
-
 3. Người chưa thành niên, người mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi.”
 
 Tóm lại, điều kiện đối với người làm chứng cho việc lập di chúc miệng:
@@ -94,11 +88,9 @@ Mọi người đều có thể làm chứng cho việc lập di chúc, trừ nh
 
 Những người thừa kế theo pháp luật của người lập di chúc theo quy định tại Điều 651 Bộ luật Dân sự 2015 gồm:
 
-+ Hàng thừa kế thứ nhất gồm: vợ, chồng, cha đẻ, mẹ đẻ, cha nuôi, mẹ nuôi, con đẻ, con nuôi của người chết;
-
-+ Hàng thừa kế thứ hai gồm: ông nội, bà nội, ông ngoại, bà ngoại, anh ruột, chị ruột, em ruột của người chết; cháu ruột của người chết mà người chết là ông nội, bà nội, ông ngoại, bà ngoại;
-
-+ Hàng thừa kế thứ ba gồm: cụ nội, cụ ngoại của người chết; bác ruột, chú ruột, cậu ruột, cô ruột, dì ruột của người chết; cháu ruột của người chết mà người chết là bác ruột, chú ruột, cậu ruột, cô ruột, dì ruột; chắt ruột của người chết mà người chết là cụ nội, cụ ngoại.
+* Hàng thừa kế thứ nhất gồm: vợ, chồng, cha đẻ, mẹ đẻ, cha nuôi, mẹ nuôi, con đẻ, con nuôi của người chết;
+* Hàng thừa kế thứ hai gồm: ông nội, bà nội, ông ngoại, bà ngoại, anh ruột, chị ruột, em ruột của người chết; cháu ruột của người chết mà người chết là ông nội, bà nội, ông ngoại, bà ngoại;
+* Hàng thừa kế thứ ba gồm: cụ nội, cụ ngoại của người chết; bác ruột, chú ruột, cậu ruột, cô ruột, dì ruột của người chết; cháu ruột của người chết mà người chết là bác ruột, chú ruột, cậu ruột, cô ruột, dì ruột; chắt ruột của người chết mà người chết là cụ nội, cụ ngoại.
 
 \- Người có quyền, nghĩa vụ tài sản liên quan tới nội dung di chúc.
 
