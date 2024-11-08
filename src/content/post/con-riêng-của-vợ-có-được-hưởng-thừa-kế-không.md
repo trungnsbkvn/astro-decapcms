@@ -1,5 +1,4 @@
 ---
-layout: blog
 title: Con riêng của vợ có được hưởng thừa kế không?
 excerpt: Con riêng của vợ có được hưởng thừa kế không là một trong những vấn đề
   pháp lý được rất nhiều người quan tâm.
