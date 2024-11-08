@@ -8,8 +8,9 @@ category: Tutorials
 tags:
   - Công ty cổ phần
   - YP
-image: https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1651&q=80
+image: public/images/hero-image.png
 publishDate: 2023-08-12T00:00:00.000Z
+rating: 5
 ---
 Thủ tục thành lập công ty cổ phần gồm những gì? Yêu cầu và quy định khi thành lập công ty cổ phần là gì? Rất nhiều thắc mắc xoay quanh vấn đề thành lập công ty loại hình công ty cổ phần. Sau đây, Công ty Luật TNHH Youth&Partners xin được cung cấp thêm một số thông tin về thủ tục thành lập công ty cổ phần theo quy định mới nhất tại Luật Doanh nghiệp 2020
 
