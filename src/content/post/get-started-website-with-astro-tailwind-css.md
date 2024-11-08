@@ -8,7 +8,7 @@ category: Tutorials
 tags:
   - Công ty cổ phần
   - YP
-image: public/images/20201025_160947.jpg
+image: images/20201025_160947.jpg
 publishDate: 2023-08-12T00:00:00.000Z
 rating: 5
 ---
