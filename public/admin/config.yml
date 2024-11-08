@@ -6,7 +6,7 @@ backend:
 publish_mode: editorial_workflow
 media_folder: 'src/assets/images'
 public_folder: '~/assets/images'
-site_url: "https://classy-salmiakki-d31c44.netlify.app/" # your site name
+site_url: "https://beta.yplawfirm.vn/" # your site name
 
 collections:
   - name: 'post'
@@ -14,7 +14,6 @@ collections:
     folder: 'src/content/post'
     create: true
     fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
       - { label: 'Category', name: 'category', widget: 'string' }
