@@ -10,6 +10,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
+import featuresImg from '~/assets/images/youth and partners/luat su tu van.jpg';
 
 const metadata = {
   title: 'Công ty Luật TNHH Youth and Partners - Văn phòng luật sư hàng đầu Vĩnh Phúc',
@@ -31,7 +32,10 @@ const metadata = {
       },
       { text: 'Tìm hiểu thêm', href: '/gioi-thieu.html' },
     ]}
-    image={{ src: '~/assets/images/youth and partners/luat su tu van.jpg', alt: 'Luật sư tư vấn' }}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Luật sư tư vấn',
+    }}
   >
     <Fragment slot="title">
       Công ty Luật TNHH
