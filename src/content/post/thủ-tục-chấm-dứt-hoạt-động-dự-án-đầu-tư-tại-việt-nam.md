@@ -1,15 +1,15 @@
 ---
 title: Thủ tục chấm dứt hoạt động dự án đầu tư tại Việt Nam
 excerpt: Thủ tục chấm dứt hoạt động dự án đầu tư tại Việt Nam đòi hỏi sự hiểu
-  biết sâu sắc về pháp luật và quy trình thực hiện. Nhà đầu tư cần tuân thủ các
-  bước theo quy định, chuẩn bị đầy đủ hồ sơ, và hoàn tất nghĩa vụ tài chính,
-  pháp lý để đảm bảo việc chấm dứt được thực hiện hợp pháp
+  biết sâu sắc về pháp luật và quy trình thực hiện.
 category: Doanh nghiệp và Đầu tư nước ngoài
 image: ~/assets/images/img_cham-dut-du-an-dau-tu.jpg
 publishDate: 2024-11-08T15:47:00.000Z
 author: Youth & Partners
 rating: 5
 ---
+Nhà đầu tư cần tuân thủ các bước theo quy định, chuẩn bị đầy đủ hồ sơ, và hoàn tất nghĩa vụ tài chính, pháp lý để đảm bảo việc chấm dứt được thực hiện hợp pháp
+
 Bài viết dưới đây của Luật Y&P sẽ giải thích chi tiết các thủ tục và điều kiện liên quan đến chấm dứt dự án đầu tư, giúp nhà đầu tư hiểu rõ hơn về quy trình này.
 
 ## Căn cứ pháp lý:
