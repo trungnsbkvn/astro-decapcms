@@ -74,38 +74,39 @@ export const headerData = {
     },
     {
       text: 'Kiến thức pháp lý',
+      href: getBlogPermalink(),
       links: [
         {
           text: 'Dân sự',
-          href: getBlogPermalink(),
+          href: getPermalink('dan-su', 'category'),
         },
         {
           text: 'Hình sự',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+          href: getPermalink('hinh-su', 'category'),
         },
         {
           text: 'Đất đai',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
+          href: getPermalink('dat-dai', 'category'),
         },
         {
           text: 'Doanh nghiệp và Đầu tư nước ngoài',
-          href: getPermalink('tutorials', 'category'),
+          href: getPermalink('doanh-nghiep-va-dau-tu-nuoc-ngoai', 'category'),
         },
         {
           text: 'Hôn nhân và gia đình',
-          href: getPermalink('astro', 'tag'),
+          href: getPermalink('hon-nhan-va-gia-dinh', 'category'),
         },
         {
           text: 'Lao động',
-          href: getPermalink('tutorials', 'category'),
+          href: getPermalink('lao-dong', 'category'),
         },
         {
           text: 'Sở hữu trí tuệ',
-          href: getPermalink('tutorials', 'category'),
+          href: getPermalink('so-huu-tri-tue', 'category'),
         },
         {
           text: 'Hỏi đáp luật sư',
-          href: getPermalink('tutorials', 'category'),
+          href: getPermalink('hoi-dap-luat-su', 'category'),
         },
       ],
     },

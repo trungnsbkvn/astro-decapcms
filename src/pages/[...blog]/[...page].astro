@@ -24,7 +24,7 @@ const currentPage = page.currentPage ?? 1;
 // const allTags = await findTags();
 
 const metadata = {
-  title: `Blog${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  title: `Tin tức${currentPage > 1 ? ` — Trang ${currentPage}` : ''}`,
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,
@@ -38,9 +38,9 @@ const metadata = {
 <Layout metadata={metadata}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <Headline
-      subtitle="A statically generated blog example with news, tutorials, resources and other interesting content related to AstroWind"
+      subtitle="Trang tin tức pháp luật của chúng tôi cung cấp những thông tin cập nhật và mới nhất về các vấn đề pháp lý, giúp bạn luôn nắm bắt được những thay đổi quan trọng trong luật pháp."
     >
-      The Blog
+      Tin tức Pháp luật
     </Headline>
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
