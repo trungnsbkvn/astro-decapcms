@@ -2,8 +2,9 @@
 title: test với tiếng Việt xem sao
 excerpt: test với tiếng Việt xem sao
 category: Test
-image: https://images.unsplash.com/photo-1637144113536-9c6e917be447?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80
+image: /images/462122267_9225820910767228_7374801471846914281_n.jpg
 author: Trung
+rating: 5
 ---
 import {defineCollection, z} from 'astro:content';
 
