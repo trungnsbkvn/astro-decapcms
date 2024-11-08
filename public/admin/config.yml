@@ -4,8 +4,8 @@ backend:
   branch: main
 
 publish_mode: editorial_workflow
-media_folder: public/images
-public_folder: /images
+media_folder: "src/assets/images" # Location where files will be stored in the repo
+public_folder: "src/assets/images" # The src attribute for uploaded media
 site_url: "https://classy-salmiakki-d31c44.netlify.app/" # your site name
 
 collections:
