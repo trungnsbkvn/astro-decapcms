@@ -1,7 +1,7 @@
 ---
 title: Cá nhân có kinh doanh cho thuê nhà cần nộp những loại thuế nào?
-excerpt: "Theo từng mức doanh thu khác nhau, cá nhân cho thuê nhà sẽ phải xem
-  xét các loại thuế sau:"
+excerpt: Theo từng mức doanh thu khác nhau, cá nhân cho thuê nhà sẽ phải xem xét
+  một số loại thuế đáng chú ý.
 category: Dân sự
 tags:
   - Cá nhân kinh doanh
