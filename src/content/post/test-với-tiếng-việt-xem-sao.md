@@ -2,7 +2,7 @@
 title: test với tiếng Việt xem sao
 excerpt: test với tiếng Việt xem sao
 category: Test
-image: ~/assets/images/hero-image.png
+image: /_astro/20201025_160947.jpg
 author: Trung
 rating: 5
 ---
