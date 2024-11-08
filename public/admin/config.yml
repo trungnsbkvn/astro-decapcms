@@ -14,6 +14,7 @@ collections:
     folder: 'src/content/post'
     create: true
     fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
       - { label: 'Category', name: 'category', widget: 'string' }
