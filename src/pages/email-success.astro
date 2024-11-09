@@ -2,20 +2,20 @@
 import Layout from '~/layouts/Layout.astro';
 import { getHomePermalink } from '~/utils/permalinks';
 
-const title = `Lỗi 404 (Không tìm thấy trang yêu cầu)`;
+const title = `Gửi Email thành công`;
 ---
 
 <Layout metadata={{ title }}>
   <section class="flex items-center h-full p-16">
     <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
       <div class="max-w-md text-center">
-        <h2 class="mb-8 font-bold text-9xl">
-          <span class="sr-only">Không tìm thấy trang bạn yêu cầu</span>
-          <span class="text-primary">404</span>
+        <h2 class="mb-8 font-bold text-5xl">
+          <span class="sr-only">Email</span>
+          <span class="text-primary">Thành công</span>
         </h2>
-        <p class="text-3xl font-semibold md:text-3xl">Xin lỗi, chúng tôi không thể tìm thấy trang này.</p>
+        <p class="text-3xl font-semibold md:text-3xl">Thông tin của bạn đã được gửi tới Youth and Partners.</p>
         <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
-          Nhưng đừng lo, bạn có thể tìm thấy nhiều thông tin khác trên trang chủ của chúng tôi.
+          Chúng tôi sẽ phản hồi bạn trong thời gian sớm nhất.
         </p>
         <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Trở về trang chủ</a>
       </div>

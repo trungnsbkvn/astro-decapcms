@@ -111,12 +111,7 @@ const metadata = {
         }
       );
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      console.log('Form submitted successfully');
-      // Handle success (e.g., show a success message)
+      window.location.href = '/email-success';
     } catch (error) {
       console.error('Form submission error:', error);
       // Handle error (e.g., show an error message)
