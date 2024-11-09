@@ -5,75 +5,128 @@ import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: 'Liên hệ',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <HeroText tagline="Youth & Partners Lawfirm" title="Liên hệ với chúng tôi!" />
 
   <ContactUs
     id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    title="Hãy để lại thông tin bên dưới"
+    subtitle="Đội ngũ hỗ trợ của chúng tôi luôn sẵn lòng giúp đỡ bạn."
+    button="Gửi thông tin"
     inputs={[
       {
         type: 'text',
         name: 'name',
-        label: 'Name',
+        label: 'Họ tên',
       },
       {
         type: 'email',
         name: 'email',
         label: 'Email',
       },
+      {
+        type: 'phone',
+        name: 'phone',
+        label: 'Số điện thoại',
+      },
     ]}
     textarea={{
-      label: 'Message',
+      label: 'Nội dung',
     }}
     disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+      label: 'Bằng việc gửi biểu mẫu liên hệ này, bạn xác nhận và đồng ý với việc thu thập thông tin cá nhân của bạn.',
     }}
-    description="Our support team typically responds within 24 business hours."
+    description="Đội ngũ hỗ trợ của chúng tôi thường phản hồi trong vòng 24 giờ làm việc."
   />
-
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="We are here to help!"
+    title="Chúng tôi luôn sẵn sàng hỗ trợ bạn!"
     items={[
       {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
+        title: 'Hỗ trợ chung',
+        description: `Liên hệ với chúng tôi để được hỗ trợ về các vấn đề pháp lý chung, điều hướng trang web, thanh toán, truy cập các tài liệu pháp lý đã mua hoặc các câu hỏi về dịch vụ của chúng tôi.`,
       },
       {
-        title: 'Contact sales',
+        title: 'Liên hệ bộ phận tư vấn',
         description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
+          'Trò chuyện với chúng tôi để giải đáp các câu hỏi về dịch vụ tư vấn pháp lý, tùy chọn tư vấn cá nhân hóa, hoặc các yêu cầu liên quan đến các vụ việc cụ thể.',
       },
       {
-        title: 'Technical support',
+        title: 'Hỗ trợ kỹ thuật',
         description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
+          'Liên hệ với chúng tôi khi bạn gặp vấn đề khó khăn trong việc truy cập tài liệu, vấn đề khi trao đổi qua email hoặc các thách thức kỹ thuật khác liên quan đến việc sử dụng dịch vụ của chúng tôi.',
       },
       {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
+        title: 'Điện thoại',
+        description: '088 995 6888',
         icon: 'tabler:headset',
       },
       {
         title: 'Email',
-        description: 'contact@support.com',
+        description: 'ceo@yplawfirm.vn',
         icon: 'tabler:mail',
       },
       {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
+        title: 'Trụ sở',
+        description: '170 Nguyễn Văn Linh, Liên Bảo, Vĩnh Yên, Vĩnh Phúc',
         icon: 'tabler:map-pin',
       },
     ]}
   />
 </Layout>
+
+<script>
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    const name = formData.get('name') || '';
+    const email = formData.get('email') || '';
+    const phone = formData.get('phone') || '';
+    const message = formData.get('message') || '';
+    alert(name + ' ' + email + ' ' + phone + ' ' + message);
+
+    try {
+      const response = await fetch(
+        'https://docs.google.com/forms/d/e/1FAIpQLSdnvwiGfENx6XJhTzSJCApF33EC4wHh_NlbS5HfpnZp4UI8Ag/formResponse',
+        {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: new URLSearchParams({
+            'entry.2005620554': String(name),
+            'entry.1045781291': String(email),
+            'entry.1166974658': String(phone),
+            'entry.1065046570': String(message), // Replace with the correct entry ID for the message field
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      console.log('Form submitted successfully');
+      // Handle success (e.g., show a success message)
+    } catch (error) {
+      console.error('Form submission error:', error);
+      // Handle error (e.g., show an error message)
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', handleSubmit);
+    }
+  });
+</script>
