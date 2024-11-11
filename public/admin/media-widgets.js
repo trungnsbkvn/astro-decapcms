@@ -3,9 +3,10 @@ import CMS from 'decap-cms-app';
 const insertEmbedCode = (embedCode, content, importName) => {
   const importStatement = `import { ${importName} } from 'astro-embed';`;
   if (!content.includes(importStatement)) {
-    return `${importStatement}\n\n${embedCode}`;
+    const frontmatterEndIndex = content.indexOf('---', 3) + 3;
+    return `${content.slice(0, frontmatterEndIndex)}\n\n${importStatement}\n\n${content.slice(frontmatterEndIndex)}\n\n${embedCode}`;
   }
-  return `${embedCode}`;
+  return `${content}\n\n${embedCode}`;
 };
 
 CMS.registerEditorComponent({
@@ -16,7 +17,7 @@ CMS.registerEditorComponent({
   fromBlock: (match) => ({
     id: match[1],
   }),
-  toBlock: (obj) => `<YouTube id="${obj.id}" />`,
+  toBlock: (obj, content) => insertEmbedCode(`<YouTube id="${obj.id}" />`, content, 'YouTube'),
   toPreview: (obj) => `<YouTube id="${obj.id}" />`,
 });
 
@@ -28,7 +29,7 @@ CMS.registerEditorComponent({
   fromBlock: (match) => ({
     id: match[1],
   }),
-  toBlock: (obj) => `<Tweet id="${obj.id}" />`,
+  toBlock: (obj, content) => insertEmbedCode(`<Tweet id="${obj.id}" />`, content, 'Tweet'),
   toPreview: (obj) => `<Tweet id="${obj.id}" />`,
 });
 
@@ -40,6 +41,6 @@ CMS.registerEditorComponent({
   fromBlock: (match) => ({
     id: match[1],
   }),
-  toBlock: (obj) => `<Vimeo id="${obj.id}" />`,
+  toBlock: (obj, content) => insertEmbedCode(`<Vimeo id="${obj.id}" />`, content, 'Vimeo'),
   toPreview: (obj) => `<Vimeo id="${obj.id}" />`,
 });
