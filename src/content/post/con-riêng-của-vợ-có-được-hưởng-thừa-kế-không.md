@@ -10,7 +10,6 @@ image: ~/assets/images/img_con-rieng-cua-vo-co-duoc-huong-di-san-thua-ke-khong.j
 author: NTTL
 rating: 4
 ---
-import { YouTube, Tweet, Vimeo } from 'astro-embed';
 
 ## 1. Con riêng của vợ là gì?
 
