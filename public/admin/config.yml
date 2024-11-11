@@ -33,5 +33,5 @@ collections:
       - { label: 'Content', name: 'body', widget: 'markdown', buttons: ['image', 'code-block', 'youtube', 'tweet', 'vimeo'], editor_components: ['image', 'code-block', 'youtube', 'vimeo', 'tweet'] }
 
 # Include the custom widgets script
-extra_js:
-  - /admin/media-widgets.js
+# extra_js:
+#   - /admin/media-widgets.js
