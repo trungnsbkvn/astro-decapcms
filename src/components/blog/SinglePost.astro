@@ -9,6 +9,7 @@ import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
 
 import type { Post } from '~/types';
+import { YouTube, Tweet, Vimeo } from 'astro-embed';
 
 export interface Props {
   post: Post;
@@ -69,7 +70,6 @@ const { post, url } = Astro.props;
       >
         {post.excerpt}
       </p>
-
       {
         post.image ? (
           <Image
@@ -89,6 +89,7 @@ const { post, url } = Astro.props;
           </div>
         )
       }
+      <Youtube id="2dvJ7IdrQlg" />
     </header>
     <div
       class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
