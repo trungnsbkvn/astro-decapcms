@@ -9,6 +9,14 @@ publishDate: 2024-11-11T12:23:00.000Z
 author: Trung
 rating: 2
 ---
+import { YouTube, Tweet, Vimeo } from 'astro-embed';
+
 Media test
 
+
+
+<YouTube id="U2aVT7PEl7g" />
+
 Youtube
+
+xem ăn không
