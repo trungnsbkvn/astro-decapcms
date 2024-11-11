@@ -13,4 +13,10 @@ import { YouTube, Tweet, Vimeo } from 'astro-embed';
 
 Media test
 
+
+
+<YouTube id="U2aVT7PEl7g" />
+
 Youtube
+
+xem ăn không
