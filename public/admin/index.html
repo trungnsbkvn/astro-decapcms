@@ -19,14 +19,14 @@
           return str;
         }
 
-          const insertEmbedCode = (embedCode, content, importName) => {
-            const importStatement = `import { ${importName} } from 'astro-embed';`;
-            if (!content.includes(importStatement)) {
-              const frontmatterEndIndex = content.indexOf('---', 3) + 3;
-              return `${content.slice(0, frontmatterEndIndex)}\n\n${importStatement}\n\n${content.slice(frontmatterEndIndex)}\n\n${embedCode}`;
-            }
-            return `${content}\n\n${embedCode}`;
-          };
+          function insertEmbedCode(embedCode, content, importName) {
+            var importStatement = 'import { ' + importName + ' } from \'astro-embed\';';
+            if (content.indexOf(importStatement) === -1) {
+              var frontmatterEndIndex = content.indexOf('---', 3) + 3;
+              return content.slice(0, frontmatterEndIndex) + '\n\n' + importStatement + '\n\n' + content.slice(frontmatterEndIndex) + '\n\n' + embedCode;
+            } 
+          return content + '\n\n' + embedCode;
+        }
 
         CMS.registerEditorComponent({
           id: 'youtube',
