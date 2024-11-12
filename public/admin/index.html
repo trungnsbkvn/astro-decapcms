@@ -22,14 +22,11 @@
         const importStatement = `import { YouTube, Tweet, Vimeo } from 'astro-embed';`;
 
         const insertImportStatement = (content) => {
-          if (!content.includes(importStatement)) {
+          const hasEmbedTags = content.includes('<YouTube') || content.includes('<Tweet') || content.includes('<Vimeo');
+          if (hasEmbedTags && !content.includes(importStatement)) {
             return `${importStatement}\n\n${content}`;
           }
           return content;
-        };
-
-        const removeImportStatement = (content) => {
-          return content.replace(importStatement, '').trim();
         };
       
         CMS.registerEditorComponent({
@@ -82,19 +79,6 @@
             const updatedBody = insertImportStatement(body);
             entry.get('data').set('body', updatedBody);
           }
-          return entry;
-        }
-      });
-
-  CMS.registerEventListener({
-    name: 'entryLoaded',
-    handler: ({ entry }) => {
-      const body = entry.get('data').get('body');
-      if (body) {
-        const updatedBody = removeImportStatement(body);
-        entry.get('data').set('body', updatedBody);
-      }
-
           return entry;
         }
       });
