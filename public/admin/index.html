@@ -20,10 +20,10 @@
           };
 
         const insertImportStatement = (content) => {
+          const importStatement = `import { YouTube, Tweet, Vimeo } from 'astro-embed';`;
           const hasEmbedTags = content.includes('<YouTube') || content.includes('<Tweet') || content.includes('<Vimeo');
           if (hasEmbedTags) {
-            if (!content.includes(importStatement)) {
-              const importStatement = `import { YouTube, Tweet, Vimeo } from 'astro-embed';`;
+            if (!content.includes(importStatement)) {              
               return `${importStatement}\n\n${content}`;
             }
           }
