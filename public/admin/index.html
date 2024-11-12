@@ -87,7 +87,7 @@
       });
 
   CMS.registerEventListener({
-    name: 'preLoadEntry',
+    name: 'entryLoaded',
     handler: ({ entry }) => {
       const body = entry.get('data').get('body');
       if (body) {
