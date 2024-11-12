@@ -12,12 +12,12 @@
     <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
-        function removeVietnamesePunctuation(str) {
+            const removeVietnamesePunctuation = (str) => {
           str = str.replace(/[\u0300-\u036f]/g, ""); // Remove diacritics
           str = str.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Normalize and remove diacritics
           str = str.replace(/đ/g, "d").replace(/Đ/g, "D"); // Replace Vietnamese 'đ'
           return str;
-        }
+          };
 
         const insertImportStatement = (content) => {
           const hasEmbedTags = content.includes('<YouTube') || content.includes('<Tweet') || content.includes('<Vimeo');
@@ -26,14 +26,18 @@
               const importStatement = `import { YouTube, Tweet, Vimeo } from 'astro-embed';`;
               return `${importStatement}\n\n${content}`;
             }
-              else {
-                return removeImportStatement(content);
-              }
-            return content;
+          }
+          else {
+            return removeImportStatement(content);
+          }
+
+          return content;
           };
+
           const removeImportStatement = (content) => {
             return content.replace(importStatement, '').trim();
           };
+
         CMS.registerEditorComponent({
           id: 'youtube',
           label: 'YouTube',
