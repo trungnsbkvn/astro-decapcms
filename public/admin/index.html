@@ -77,7 +77,7 @@
           const body = entry.get('data').get('body');
           if (body) {
             const updatedBody = insertImportStatement(body);
-            entry.get('data').set('body', updatedBody);
+            entry = entry.setIn(['data', 'body'], updatedBody);
           }
           return entry;
         }
