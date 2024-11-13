@@ -254,7 +254,7 @@ export const headerData = {
       ],
     },
     {
-      text: 'Tin tức - Hội thảo pháp lý',
+      text: 'Tin tức - Hội thảo',
       links: [
         {
           text: 'Tin tức pháp lý',
