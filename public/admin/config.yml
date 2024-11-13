@@ -126,7 +126,7 @@ collections:
           editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
         }
   - name: 'foreigner'
-    label: 'Đầu tư & người nước ngoài'
+    label: 'Đầu tư & Người nước ngoài'
     folder: 'src/content/foreigner'
     create: true
     extension: 'mdx'
@@ -155,7 +155,7 @@ collections:
           editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
         }         
   - name: 'evaluation'
-    label: 'Dịch vụ đánh giá doanh nghiệp'
+    label: 'Đánh giá doanh nghiệp'
     folder: 'src/content/evaluation'
     create: true
     extension: 'mdx'
