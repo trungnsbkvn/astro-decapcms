@@ -10,7 +10,7 @@ site_url: 'https://beta.yplawfirm.vn/' # your site name
 
 collections:
   - name: 'post'
-    label: 'Post'
+    label: 'Tin tức'
     folder: 'src/content/post'
     create: true
     extension: 'mdx'
@@ -36,10 +36,39 @@ collections:
           label: 'Content',
           name: 'body',
           widget: 'markdown',
-          editor_components: ['image', 'code-block', 'youtube', 'vimeo', 'tweet'],
+          editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
+        }
+  - name: 'legal'
+    label: 'Pháp lý'
+    folder: 'src/content/legal'
+    create: true
+    extension: 'mdx'
+    format: 'frontmatter'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'string' }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'list',
+          allow_add: true,
+          allow_delete: true,
+          collapsed: false,
+          field: { label: 'Tag', name: 'tag', widget: 'string' },
+        }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
+      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number' }
+      - {
+          label: 'Content',
+          name: 'body',
+          widget: 'markdown',
+          editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
         }
   - name: 'consultation'
-    label: 'Consultation'
+    label: 'Tư vấn thường xuyên'
     folder: 'src/content/consultation'
     create: true
     extension: 'mdx'
@@ -65,5 +94,92 @@ collections:
           label: 'Content',
           name: 'body',
           widget: 'markdown',
-          editor_components: ['image', 'code-block', 'youtube', 'vimeo', 'tweet'],
+          editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
+        }        
+  - name: 'labor'
+    label: 'Lao động'
+    folder: 'src/content/labor'
+    create: true
+    extension: 'mdx'
+    format: 'frontmatter'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'string' }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'list',
+          allow_add: true,
+          allow_delete: true,
+          collapsed: false,
+          field: { label: 'Tag', name: 'tag', widget: 'string' },
         }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
+      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number' }
+      - {
+          label: 'Content',
+          name: 'body',
+          widget: 'markdown',
+          editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
+        }
+  - name: 'foreigner'
+    label: 'Đầu tư & người nước ngoài'
+    folder: 'src/content/foreigner'
+    create: true
+    extension: 'mdx'
+    format: 'frontmatter'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'string' }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'list',
+          allow_add: true,
+          allow_delete: true,
+          collapsed: false,
+          field: { label: 'Tag', name: 'tag', widget: 'string' },
+        }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
+      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number' }
+      - {
+          label: 'Content',
+          name: 'body',
+          widget: 'markdown',
+          editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
+        }         
+  - name: 'evaluation'
+    label: 'Dịch vụ đánh giá doanh nghiệp'
+    folder: 'src/content/evaluation'
+    create: true
+    extension: 'mdx'
+    format: 'frontmatter'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'string' }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'list',
+          allow_add: true,
+          allow_delete: true,
+          collapsed: false,
+          field: { label: 'Tag', name: 'tag', widget: 'string' },
+        }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
+      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number' }
+      - {
+          label: 'Content',
+          name: 'body',
+          widget: 'markdown',
+          editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
+        }                     
