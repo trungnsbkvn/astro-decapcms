@@ -273,10 +273,6 @@ export const headerData = {
           href: getPermalink('/landing/subscription'),
         },
         {
-          text: 'Pháp chế doanh nghiệp',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
           text: 'Liên hệ tư vấn',
           href: getPermalink('/contact'),
         },
