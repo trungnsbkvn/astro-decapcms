@@ -94,7 +94,7 @@ const metadata = {
     const message = formData.get('message') || '';
 
     try {
-      const response = await fetch(
+      await fetch(
         'https://docs.google.com/forms/d/e/1FAIpQLSdnvwiGfENx6XJhTzSJCApF33EC4wHh_NlbS5HfpnZp4UI8Ag/formResponse',
         {
           method: 'POST',

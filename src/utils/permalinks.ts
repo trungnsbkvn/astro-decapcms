@@ -61,6 +61,10 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       permalink = getBlogPermalink();
       break;
 
+    case 'consultation':
+        permalink = getBlogPermalink();
+      break;
+    
     case 'asset':
       permalink = getAsset(slug);
       break;

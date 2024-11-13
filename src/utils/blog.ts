@@ -90,7 +90,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     tags: tags,
     author: author,
     rating: rating,
-    
+
     draft: draft,
 
     metadata,

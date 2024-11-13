@@ -137,7 +137,7 @@ const getAppBlog = (config: Config) => {
     relatedPostsCount: 4,
     post: {
       isEnabled: true,
-      permalink: '/blog/%slug%',
+      permalink: '/articles/%slug%',
       robots: {
         index: true,
         follow: true,
@@ -145,7 +145,7 @@ const getAppBlog = (config: Config) => {
     },
     list: {
       isEnabled: true,
-      pathname: 'blog',
+      pathname: 'articles',
       robots: {
         index: true,
         follow: true,

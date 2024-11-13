@@ -38,7 +38,7 @@ const {
   actions = [],
   isSticky = false,
   isDark = false,
-  isFullWidth = false,
+  isFullWidth = true,
   showToggleTheme = false,
   showRssFeed = false,
   position = 'center',
@@ -58,7 +58,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   <div class="absolute inset-0"></div>
   <div
     class:list={[
-      'relative text-default py-3 px-3 md:px-6 mx-auto w-full',
+      'relative text-default py-3 px-2 md:px-6 mx-auto w-full',
       {
         'md:flex md:justify-between': position !== 'center',
       },
