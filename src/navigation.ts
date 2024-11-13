@@ -105,7 +105,7 @@ export const headerData = {
           href: getPermalink('/landing/click-through'),
         },
         {
-          text: 'Vì sao DN cần tư vấn thường xuyên',
+          text: 'Vì sao doanh nghiệp cần tư vấn thường xuyên',
           href: getPermalink('/landing/product'),
         },
         {
@@ -121,7 +121,7 @@ export const headerData = {
           href: getPermalink('/landing/subscription'),
         },
         {
-          text: 'Điểm mạnh của Y&P',
+          text: 'Điểm mạnh của Youth & Partners',
           href: getPermalink('/landing/subscription'),
         },
         {
@@ -232,7 +232,7 @@ export const headerData = {
           href: getPermalink('/landing/product'),
         },
         {
-          text: 'Dịch vụ DD cho Doanh nghiệp',
+          text: 'Dịch vụ Đánh giá cho Doanh nghiệp',
           href: getPermalink('/landing/pre-launch'),
         },
         {
@@ -248,7 +248,7 @@ export const headerData = {
           href: getPermalink('/landing/subscription'),
         },
         {
-          text: 'Các lỗi thường gặp của DN',
+          text: 'Các lỗi thường gặp của doanh nghiệp',
           href: getPermalink('/landing/subscription'),
         },
       ],
