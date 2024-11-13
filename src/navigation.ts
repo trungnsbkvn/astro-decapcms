@@ -191,15 +191,15 @@ export const headerData = {
           href: getPermalink('/landing/product'),
         },
         {
-          text: 'Luật sư tư vấn tiếng anh',
+          text: 'Luật sư tư vấn tiếng Anh',
           href: getPermalink('/landing/pre-launch'),
         },
         {
-          text: 'Luật sư tư vấn tiếng nhật',
+          text: 'Luật sư tư vấn tiếng Nhật',
           href: getPermalink('/landing/subscription'),
         },
         {
-          text: 'Luật sư tư vấn tiếng trung',
+          text: 'Luật sư tư vấn tiếng Trung Quốc',
           href: getPermalink('/landing/subscription'),
         },
         {
