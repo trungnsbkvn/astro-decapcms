@@ -3,10 +3,6 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Trang chủ',
-      href: '/',
-    },
-    {
       text: 'Giới thiệu',
       links: [
         {
@@ -172,7 +168,7 @@ export const headerData = {
       ],
     },
     {
-      text: 'Đầu tư & Người nước ngoài',
+      text: 'Đầu tư & Nước ngoài',
       links: [
         {
           text: 'Thành lập mới dự án',
@@ -213,7 +209,7 @@ export const headerData = {
       ],
     },
     {
-      text: 'Đánh giá doanh nghiệp',
+      text: 'Dịch vụ đánh giá',
       links: [
         {
           text: 'Khái niệm đánh giá',
@@ -254,7 +250,7 @@ export const headerData = {
       ],
     },
     {
-      text: 'Tin tức',
+      text: 'Tin tức - Liên hệ',
       links: [
         {
           text: 'Tin tức pháp lý',
@@ -273,19 +269,13 @@ export const headerData = {
           href: getPermalink('/landing/product'),
         },
         {
-          text: 'Pháp chế doanh nghiệp',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
           text: 'Văn bản pháp lý',
           href: getPermalink('/landing/subscription'),
         },
-      ],
-    },    
-    {
-      text: 'Liên hệ',
-      href: getPermalink('/contact'),
-      links: [
+        {
+          text: 'Pháp chế doanh nghiệp',
+          href: getPermalink('/landing/pre-launch'),
+        },
         {
           text: 'Liên hệ tư vấn',
           href: getPermalink('/contact'),
@@ -294,12 +284,8 @@ export const headerData = {
           text: 'Thông tin tuyển dụng',
           href: "#",
         },
-        {
-          text: 'Kênh truyền thông khác',
-          href: "#",
-        },
       ],
-    },
+    },    
   ],
 };
 
