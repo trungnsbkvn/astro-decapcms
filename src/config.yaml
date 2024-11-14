@@ -35,22 +35,23 @@ apps:
   blog:
     isEnabled: true
     postsPerPage: 6
+    rootPath: 'articles'
 
     post:
       isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: '%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
       robots:
         index: true
 
     list:
       isEnabled: true
-      pathname: 'articles' # Blog main path, you can change this to "articles" (/articles)
+      pathname: '' # Blog main path, you can change this to "articles" (/articles)
       robots:
         index: true
 
     category:
       isEnabled: true
-      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      pathname: '' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
       robots:
         index: true
 
@@ -63,9 +64,10 @@ apps:
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
 
-  consultation:
+  legal:
     isEnabled: true
     postsPerPage: 6
+    rootPath: 'legal'
 
     post:
       isEnabled: true
@@ -75,13 +77,13 @@ apps:
 
     list:
       isEnabled: true
-      pathname: 'consultation' # Blog main path, you can change this to "articles" (/articles)
+      pathname: '' # Blog main path, you can change this to "articles" (/articles)
       robots:
         index: true
 
     category:
       isEnabled: true
-      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      pathname: '' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
       robots:
         index: true
 

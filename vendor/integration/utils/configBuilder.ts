@@ -8,6 +8,7 @@ export type Config = {
   i18n?: I18NConfig;
   apps?: {
     blog?: AppBlogConfig;
+    legal?: AppBlogConfig;
   };
   ui?: unknown;
   analytics?: unknown;
@@ -36,6 +37,7 @@ export interface AppBlogConfig {
   postsPerPage: number;
   isRelatedPostsEnabled: boolean;
   relatedPostsCount: number;
+  rootPath: string;
   post: {
     isEnabled: boolean;
     permalink: string;
@@ -135,6 +137,7 @@ const getAppBlog = (config: Config) => {
     postsPerPage: 6,
     isRelatedPostsEnabled: false,
     relatedPostsCount: 4,
+    rootPath: '/articles',
     post: {
       isEnabled: true,
       permalink: '/articles/%slug%',
@@ -172,6 +175,50 @@ const getAppBlog = (config: Config) => {
   return merge({}, _default, config?.apps?.blog ?? {}) as AppBlogConfig;
 };
 
+const getAppLegal = (config: Config) => {
+  const _default = {
+    isEnabled: false,
+    postsPerPage: 6,
+    isRelatedPostsEnabled: false,
+    relatedPostsCount: 4,
+    rootPath: '/legal',
+    post: {
+      isEnabled: true,
+      permalink: '/legal/%slug%',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    list: {
+      isEnabled: true,
+      pathname: 'legal',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    category: {
+      isEnabled: true,
+      pathname: 'category',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    tag: {
+      isEnabled: true,
+      pathname: 'tag',
+      robots: {
+        index: false,
+        follow: true,
+      },
+    },
+  };
+
+  return merge({}, _default, config?.apps?.legal ?? {}) as AppBlogConfig;
+};
+
 const getUI = (config: Config) => {
   const _default = {
     theme: 'system',
@@ -198,6 +245,7 @@ export default (config: Config) => ({
   I18N: getI18N(config),
   METADATA: getMetadata(config),
   APP_BLOG: getAppBlog(config),
+  APP_LEGAL: getAppLegal(config),
   UI: getUI(config),
   ANALYTICS: getAnalytics(config),
 });
