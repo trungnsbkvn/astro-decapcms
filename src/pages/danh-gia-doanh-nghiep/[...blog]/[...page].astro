@@ -1,0 +1,44 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+
+import Layout from '~/layouts/PageLayout.astro';
+import BlogList from '~/components/evaluation/List.astro';
+import Headline from '~/components/evaluation/Headline.astro';
+import Pagination from '~/components/evaluation/Pagination.astro';
+
+import { blogListRobots, getStaticPathsBlogList } from '~/utils/evaluation';
+
+export const prerender = true;
+
+export const getStaticPaths = (async ({ paginate }) => {
+  return await getStaticPathsBlogList({ paginate });
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { page } = Astro.props as Props;
+const currentPage = page.currentPage ?? 1;
+
+const metadata = {
+  title: `Đánh giá doanh nghiệp${currentPage > 1 ? ` — Trang ${currentPage}` : ''}`,
+  robots: {
+    index: blogListRobots?.index && currentPage === 1,
+    follow: blogListRobots?.follow,
+  },
+  openGraph: {
+    type: 'article',
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <Headline
+      subtitle="Trang tin tức của chúng tôi cung cấp những thông tin cập nhật và mới nhất về các vấn đề pháp lý, giúp bạn luôn nắm bắt được những thay đổi quan trọng trong luật pháp."
+    >
+      Đánh giá doanh nghiệp
+    </Headline>
+    <BlogList posts={page.data} />
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+  </section>
+</Layout>

@@ -9,6 +9,10 @@ export type Config = {
   apps?: {
     blog?: AppBlogConfig;
     legal?: AppBlogConfig;
+    consultation?: AppBlogConfig;
+    labor?: AppBlogConfig;
+    foreigner?: AppBlogConfig;
+    evaluation?: AppBlogConfig;
   };
   ui?: unknown;
   analytics?: unknown;
@@ -219,6 +223,182 @@ const getAppLegal = (config: Config) => {
   return merge({}, _default, config?.apps?.legal ?? {}) as AppBlogConfig;
 };
 
+const getAppConsultation = (config: Config) => {
+  const _default = {
+    isEnabled: false,
+    postsPerPage: 6,
+    isRelatedPostsEnabled: false,
+    relatedPostsCount: 4,
+    rootPath: '/consultation',
+    post: {
+      isEnabled: true,
+      permalink: '/consultation/%slug%',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    list: {
+      isEnabled: true,
+      pathname: 'consultation',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    category: {
+      isEnabled: true,
+      pathname: 'category',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    tag: {
+      isEnabled: true,
+      pathname: 'tag',
+      robots: {
+        index: false,
+        follow: true,
+      },
+    },
+  };
+
+  return merge({}, _default, config?.apps?.consultation ?? {}) as AppBlogConfig;
+};
+
+const getAppLabor = (config: Config) => {
+  const _default = {
+    isEnabled: false,
+    postsPerPage: 6,
+    isRelatedPostsEnabled: false,
+    relatedPostsCount: 4,
+    rootPath: '/labor',
+    post: {
+      isEnabled: true,
+      permalink: '/labor/%slug%',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    list: {
+      isEnabled: true,
+      pathname: 'labor',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    category: {
+      isEnabled: true,
+      pathname: 'category',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    tag: {
+      isEnabled: true,
+      pathname: 'tag',
+      robots: {
+        index: false,
+        follow: true,
+      },
+    },
+  };
+
+  return merge({}, _default, config?.apps?.labor ?? {}) as AppBlogConfig;
+};
+
+const getAppForeigner = (config: Config) => {
+  const _default = {
+    isEnabled: false,
+    postsPerPage: 6,
+    isRelatedPostsEnabled: false,
+    relatedPostsCount: 4,
+    rootPath: '/foreigner',
+    post: {
+      isEnabled: true,
+      permalink: '/foreigner/%slug%',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    list: {
+      isEnabled: true,
+      pathname: 'foreigner',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    category: {
+      isEnabled: true,
+      pathname: 'category',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    tag: {
+      isEnabled: true,
+      pathname: 'tag',
+      robots: {
+        index: false,
+        follow: true,
+      },
+    },
+  };
+
+  return merge({}, _default, config?.apps?.foreigner ?? {}) as AppBlogConfig;
+};
+
+const getAppEvaluation = (config: Config) => {
+  const _default = {
+    isEnabled: false,
+    postsPerPage: 6,
+    isRelatedPostsEnabled: false,
+    relatedPostsCount: 4,
+    rootPath: '/evaluation',
+    post: {
+      isEnabled: true,
+      permalink: '/evaluation/%slug%',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    list: {
+      isEnabled: true,
+      pathname: 'evaluation',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    category: {
+      isEnabled: true,
+      pathname: 'category',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    tag: {
+      isEnabled: true,
+      pathname: 'tag',
+      robots: {
+        index: false,
+        follow: true,
+      },
+    },
+  };
+
+  return merge({}, _default, config?.apps?.evaluation ?? {}) as AppBlogConfig;
+};
+
 const getUI = (config: Config) => {
   const _default = {
     theme: 'system',
@@ -246,6 +426,10 @@ export default (config: Config) => ({
   METADATA: getMetadata(config),
   APP_BLOG: getAppBlog(config),
   APP_LEGAL: getAppLegal(config),
+  APP_CONSULTATION: getAppConsultation(config),
+  APP_LABOR: getAppLabor(config),
+  APP_FOREIGNER: getAppForeigner(config),
+  APP_EVALUATION: getAppEvaluation(config),
   UI: getUI(config),
   ANALYTICS: getAnalytics(config),
 });

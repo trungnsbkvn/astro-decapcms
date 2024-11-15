@@ -71,30 +71,159 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: '%slug%'
       robots:
         index: true
 
     list:
       isEnabled: true
-      pathname: '' # Blog main path, you can change this to "articles" (/articles)
+      pathname: ''
       robots:
         index: true
 
     category:
       isEnabled: true
-      pathname: '' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      pathname: ''
       robots:
         index: true
 
     tag:
       isEnabled: true
-      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
+      pathname: 'tag'
       robots:
         index: false
 
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
+
+consultation:
+    isEnabled: true
+    postsPerPage: 6
+    rootPath: 'tu-van-thuong-xuyen'
+
+    post:
+      isEnabled: true
+      permalink: '%slug%'
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+labor:
+    isEnabled: true
+    postsPerPage: 6
+    rootPath: 'lao-dong'
+
+    post:
+      isEnabled: true
+      permalink: '%slug%'
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+foreigner:
+    isEnabled: true
+    postsPerPage: 6
+    rootPath: 'dau-tu-nuoc-ngoai'
+
+    post:
+      isEnabled: true
+      permalink: '%slug%'
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+evaluation:
+    isEnabled: true
+    postsPerPage: 6
+    rootPath: 'danh-gia-doanh-nghiep'
+
+    post:
+      isEnabled: true
+      permalink: '%slug%'
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
 analytics:
   vendors:
     googleAnalytics:

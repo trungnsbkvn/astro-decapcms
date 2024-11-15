@@ -1,6 +1,6 @@
 import slugify from 'limax';
 
-import { SITE, APP_BLOG } from 'astrowind:config';
+import { SITE, APP_FOREIGNER } from 'astrowind:config';
 
 import { trim } from '~/utils/utils';
 
@@ -21,12 +21,12 @@ export const cleanSlug = (text = '') =>
     .map((slug) => slugify(slug))
     .join('/');
 
-export const BLOG_ROOTPATH = cleanSlug(APP_BLOG?.rootPath);
-export const BLOG_BASE = cleanSlug(APP_BLOG?.list?.pathname);
-export const CATEGORY_BASE = cleanSlug(APP_BLOG?.category?.pathname);
-export const TAG_BASE = cleanSlug(APP_BLOG?.tag?.pathname) || 'tag';
+export const BLOG_ROOTPATH = cleanSlug(APP_FOREIGNER?.rootPath);
+export const BLOG_BASE = cleanSlug(APP_FOREIGNER?.list?.pathname);
+export const CATEGORY_BASE = cleanSlug(APP_FOREIGNER?.category?.pathname);
+export const TAG_BASE = cleanSlug(APP_FOREIGNER?.tag?.pathname) || 'tag';
 
-export const POST_PERMALINK_PATTERN = trimSlash(APP_BLOG?.post?.permalink || `${BLOG_BASE}/%slug%`);
+export const POST_PERMALINK_PATTERN = trimSlash(APP_FOREIGNER?.post?.permalink || `${BLOG_BASE}/%slug%`);
 
 /** */
 export const getCanonical = (path = ''): string | URL => {
@@ -61,17 +61,13 @@ export const getPermalink = (slug = '', type = 'page'): string => {
     case 'blog':
       permalink = getBlogPermalink();
       break;
-
-    case 'legal':
-        permalink = getBlogPermalink();
-      break;
     
     case 'asset':
       permalink = getAsset(slug);
       break;
 
     case 'category':
-      permalink = createPath(BLOG_ROOTPATH + '/' +CATEGORY_BASE, trimSlash(slug));
+      permalink = createPath(BLOG_ROOTPATH + '/' + CATEGORY_BASE, trimSlash(slug));
       break;
 
     case 'tag':
