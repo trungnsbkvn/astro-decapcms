@@ -7,7 +7,7 @@ export const headerData = {
       links: [
         {
           text: 'Lịch sử thành lập',
-          href: getPermalink('/about'),
+          href: getPermalink('/gioi-thieu'),
         },
         {
           text: 'Luật sư & Cộng sự',
@@ -49,39 +49,39 @@ export const headerData = {
       links: [
         {
           text: 'Doanh nghiệp',
-          href: getPermalink('doanh-nghiep', 'category'),
+          href: '/phap-ly/doanh-nghiep',
         },
         {
           text: 'Kinh doanh thương mại',
-          href: getPermalink('kinh-doanh-thuong-mai', 'category'),
+          href: '/phap-ly/kinh-doanh-thuong-mai',
         },
         {
           text: 'Sở hữu trí tuệ',
-          href: getPermalink('so-huu-tri-tue', 'category'),
+          href: '/phap-ly/so-huu-tri-tue',
         },
         {
           text: 'Đất đai',
-          href: getPermalink('dat-dai', 'category'),
+          href: '/phap-ly/dat-dai',
         },
         {
           text: 'Hôn nhân và gia đình',
-          href: getPermalink('hon-nhan-va-gia-dinh', 'category'),
+          href: '/phap-ly/hon-nhan-va-gia-dinh',
         },
         {
           text: 'Giấy phép con',
-          href: getPermalink('giay-phep-con', 'category'),
+          href: '/phap-ly/giay-phep-con',
         },
         {
           text: 'Dân sự',
-          href: getPermalink('dan-su', 'category'),
+          href: '/phap-ly/dan-su',
         },
         {
           text: 'Hình sự',
-          href: getPermalink('hinh-su', 'category'),
+          href: '/phap-ly/hinh-su',
         },
         {
           text: 'Pháp lý khác',
-          href: getPermalink('doanh-nghiep-va-dau-tu-nuoc-ngoai', 'category'),
+          href: '/phap-ly/phap-ly-khac',
         },
       ],
     },
@@ -90,39 +90,39 @@ export const headerData = {
       links: [
         {
           text: 'Doanh nghiệp',
-          href: getPermalink('doanh-nghiep', 'consultation'),
+          href: '/tu-van-thuong-xuyen/doanh-nghiep',
         },
         {
           text: 'Cá nhân',
-          href: getPermalink('ca-nhan', 'consultation'),
+          href: '/tu-van-thuong-xuyen/ca-nhan',
         },
         {
           text: 'Khái niệm Tư vấn thường xuyên',
-          href: getPermalink('/landing/click-through'),
+          href: '/tu-van-thuong-xuyen/khai-niem-tu-van-thuong-xuyen',
         },
         {
           text: 'Vì sao doanh nghiệp cần tư vấn thường xuyên',
-          href: getPermalink('/landing/product'),
+          href: '/tu-van-thuong-xuyen/vi-sao-doanh-nghiep-can-tu-van-thuong-xuyen',
         },
         {
           text: 'Mẫu hợp đồng dịch vụ',
-          href: getPermalink('/landing/pre-launch'),
+          href: '/tu-van-thuong-xuyen/mau-hop-dong-dich-vu',
         },
         {
           text: 'Phí dịch vụ tư vấn',
-          href: getPermalink('/landing/subscription'),
+          href: '/tu-van-thuong-xuyen/phi-dich-vu-tu-van',
         },
         {
           text: 'Quy trình tư vấn',
-          href: getPermalink('/landing/subscription'),
+          href: '/tu-van-thuong-xuyen/quy-trinh-tu-van',
         },
         {
           text: 'Điểm mạnh của Youth & Partners',
-          href: getPermalink('/landing/subscription'),
+          href: '/tu-van-thuong-xuyen/diem-manh-cua-youth-partners',
         },
         {
           text: 'Danh sách khách hàng',
-          href: getPermalink('/landing/subscription'),
+          href: '/tu-van-thuong-xuyen/danh-sach-khach-hang',
         },
       ],
     },
@@ -131,39 +131,39 @@ export const headerData = {
       links: [
         {
           text: 'Nội quy - Thỏa ước',
-          href: getPermalink('doanh-nghiep', 'consultation'),
+          href: '/lao-dong/noi-quy-thoa-uoc',
         },
         {
           text: 'Thời giờ làm việc',
-          href: getPermalink('ca-nhan', 'consultation'),
+          href: '/lao-dong/thoi-gio-lam-viec',
         },
         {
           text: 'Lương & Phúc lợi',
-          href: getPermalink('/landing/click-through'),
+          href: '/lao-dong/luong-phuc-loi',
         },
         {
           text: 'Hợp đồng lao động, đào tạo',
-          href: getPermalink('/landing/product'),
+          href: '/lao-dong/hop-dong-lao-dong-dao-tao',
         },
         {
           text: 'Chấm dứt hợp đồng',
-          href: getPermalink('/landing/pre-launch'),
+          href: '/lao-dong/cham-dut-hop-dong',
         },
         {
           text: 'Xử lý kỷ luật',
-          href: getPermalink('/landing/subscription'),
+          href: '/lao-dong/xu-ly-ky-luat',
         },
         {
           text: 'Quấy rối tình dục',
-          href: getPermalink('/landing/subscription'),
+          href: '/lao-dong/quay-roi-tinh-duc',
         },
         {
           text: 'NDA & NCA',
-          href: getPermalink('/landing/subscription'),
+          href: '/lao-dong/nda-nca',
         },
         {
           text: 'Tranh chấp lao động',
-          href: getPermalink('/landing/subscription'),
+          href: '/lao-dong/tranh-chap-lao-dong',
         },
       ],
     },
@@ -172,39 +172,39 @@ export const headerData = {
       links: [
         {
           text: 'Thành lập mới dự án',
-          href: getPermalink('doanh-nghiep', 'consultation'),
+          href: '/dau-tu-nuoc-ngoai/thanh-lap-moi-du-an',
         },
         {
           text: 'Điều chỉnh dự án đầu tư',
-          href: getPermalink('ca-nhan', 'consultation'),
+          href: '/dau-tu-nuoc-ngoai/dieu-chinh-du-an-dau-tu',
         },
         {
           text: 'Chuyển nhượng dự án',
-          href: getPermalink('/landing/click-through'),
+          href: '/dau-tu-nuoc-ngoai/chuyen-nhuong-du-an',
         },
         {
           text: 'Hiện diện thương mại',
-          href: getPermalink('/landing/product'),
+          href: '/dau-tu-nuoc-ngoai/hien-dien-thuong-mai',
         },
         {
           text: 'Luật sư tư vấn tiếng Anh',
-          href: getPermalink('/landing/pre-launch'),
+          href: '/dau-tu-nuoc-ngoai/luat-su-tu-van-tieng-anh',
         },
         {
           text: 'Luật sư tư vấn tiếng Nhật',
-          href: getPermalink('/landing/subscription'),
+          href: '/dau-tu-nuoc-ngoai/luat-su-tu-van-tieng-nhat',
         },
         {
           text: 'Luật sư tư vấn tiếng Trung Quốc',
-          href: getPermalink('/landing/subscription'),
+          href: '/dau-tu-nuoc-ngoai/luat-su-tu-van-tieng-trung-quoc',
         },
         {
           text: 'Giấy phép lao động',
-          href: getPermalink('/landing/subscription'),
+          href: '/dau-tu-nuoc-ngoai/giay-phep-lao-dong',
         },
         {
           text: 'Pháp lý người nước ngoài',
-          href: getPermalink('/landing/subscription'),
+          href: '/dau-tu-nuoc-ngoai/phap-ly-nguoi-nuoc-ngoai',
         },
       ],
     },
@@ -213,39 +213,39 @@ export const headerData = {
       links: [
         {
           text: 'Khái niệm đánh giá',
-          href: getPermalink('doanh-nghiep', 'consultation'),
+          href: '/dich-vu-danh-gia/khai-niem-danh-gia',
         },
         {
           text: 'Lợi ích của việc đánh giá',
-          href: getPermalink('ca-nhan', 'consultation'),
+          href: '/dich-vu-danh-gia/loi-ich-cua-viec-danh-gia',
         },
         {
           text: 'Phí dịch vụ đánh giá',
-          href: getPermalink('/landing/click-through'),
+          href: '/dich-vu-danh-gia/phi-dich-vu-danh-gia',
         },
         {
           text: 'Quy trình đánh giá',
-          href: getPermalink('/landing/product'),
+          href: '/dich-vu-danh-gia/quy-trinh-danh-gia',
         },
         {
           text: 'Dịch vụ Đánh giá cho Doanh nghiệp',
-          href: getPermalink('/landing/pre-launch'),
+          href: '/dich-vu-danh-gia/dich-vu-danh-gia-cho-doanh-nghiep',
         },
         {
           text: 'Dịch vụ đánh giá tiền trạm',
-          href: getPermalink('/landing/subscription'),
+          href: '/dich-vu-danh-gia/dich-vu-danh-gia-tien-tram',
         },
         {
           text: 'Các bộ tiêu chuẩn TNXH',
-          href: getPermalink('/landing/subscription'),
+          href: '/dich-vu-danh-gia/cac-bo-tieu-chuan-tnxh',
         },
         {
           text: 'Tiêu chuẩn RBA',
-          href: getPermalink('/landing/subscription'),
+          href: '/dich-vu-danh-gia/tieu-chuan-rba',
         },
         {
           text: 'Các lỗi thường gặp của doanh nghiệp',
-          href: getPermalink('/landing/subscription'),
+          href: '/dich-vu-danh-gia/cac-loi-thuong-gap-cua-doanh-nghiep',
         },
       ],
     },
@@ -254,31 +254,31 @@ export const headerData = {
       links: [
         {
           text: 'Tin tức pháp lý',
-          href: getPermalink('doanh-nghiep', 'consultation'),
+          href: getBlogPermalink(),
         },
         {
           text: 'Bình luận pháp lý',
-          href: getPermalink('ca-nhan', 'consultation'),
+          href: getPermalink('binh-luan-phap-ly', 'category'),
         },
         {
           text: 'Các vụ việc nổi bật',
-          href: getPermalink('/landing/click-through'),
+          href: getPermalink('cac-vu-viec-noi-bat', 'category'),
         },
         {
           text: 'Hội thảo pháp lý',
-          href: getPermalink('/landing/product'),
+          href: getPermalink('hoi-thao-phap-ly', 'category'),
         },
         {
           text: 'Văn bản pháp lý',
-          href: getPermalink('/landing/subscription'),
+          href: getPermalink('van-ban-phap-ly', 'category'),
         },
         {
           text: 'Liên hệ tư vấn',
-          href: getPermalink('/contact'),
+          href: getPermalink('/lien-he'),
         },
         {
           text: 'Thông tin tuyển dụng',
-          href: "#",
+          href: getPermalink('thong-tin-tuyen-dung', 'category'),
         },
       ],
     },    

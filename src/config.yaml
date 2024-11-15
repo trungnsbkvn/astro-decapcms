@@ -96,7 +96,7 @@ apps:
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
 
-consultation:
+  consultation:
     isEnabled: true
     postsPerPage: 6
     rootPath: 'tu-van-thuong-xuyen'
@@ -128,7 +128,7 @@ consultation:
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
 
-labor:
+  labor:
     isEnabled: true
     postsPerPage: 6
     rootPath: 'lao-dong'
@@ -160,7 +160,7 @@ labor:
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
 
-foreigner:
+  foreigner:
     isEnabled: true
     postsPerPage: 6
     rootPath: 'dau-tu-nuoc-ngoai'
@@ -192,7 +192,7 @@ foreigner:
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
 
-evaluation:
+  evaluation:
     isEnabled: true
     postsPerPage: 6
     rootPath: 'danh-gia-doanh-nghiep'
