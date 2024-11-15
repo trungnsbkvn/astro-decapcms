@@ -31,7 +31,7 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number' }
+      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number', default: 5 }
       - {
           label: 'Content',
           name: 'body',
@@ -47,7 +47,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
-      - { label: 'Category', name: 'category', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Doanh nghiệp', 'Kinh doanh thương mại', 'Sở hữu trí tuệ', 'Đất đai', 'Hôn nhân và gia đình', 'Giấy phép con', 'Dân sự', 'Hình sự', 'Pháp lý khác'] }
       - {
           label: 'Tags',
           name: 'tags',
@@ -60,7 +60,7 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number' }
+      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
           name: 'body',
@@ -76,7 +76,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
-      - { label: 'Category', name: 'category', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Doanh nghiệp', 'Cá nhân', 'Khái niệm Tư vấn thường xuyên', 'Vì sao doanh nghiệp cần tư vấn thường xuyên', 'Mẫu hợp đồng dịch vụ', 'Phí dịch vụ tư vấn', 'Quy trình tư vấn', 'Điểm mạnh của Youth & Partners', 'Danh sách khách hàng'] }
       - {
           label: 'Tags',
           name: 'tags',
@@ -89,7 +89,7 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number' }
+      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
           name: 'body',
@@ -105,7 +105,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
-      - { label: 'Category', name: 'category', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Nội quy - Thỏa ước', 'Thời giờ làm việc', 'Lương & Phúc lợi', 'Hợp đồng lao động, đào tạo', 'Chấm dứt hợp đồng', 'Xử lý kỷ luật', 'Quấy rối tình dục', 'NDA & NCA', 'Tranh chấp lao động'] }
       - {
           label: 'Tags',
           name: 'tags',
@@ -118,7 +118,7 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number' }
+      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
           name: 'body',
@@ -134,7 +134,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
-      - { label: 'Category', name: 'category', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Thành lập mới dự án', 'Điều chỉnh dự án đầu tư', 'Chuyển nhượng dự án', 'Hiện diện thương mại', 'Luật sư tư vấn tiếng Anh', 'Luật sư tư vấn tiếng Nhật', 'Luật sư tư vấn tiếng Trung Quốc', 'Giấy phép lao động', 'Pháp lý người nước ngoài'] }
       - {
           label: 'Tags',
           name: 'tags',
@@ -147,7 +147,7 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number' }
+      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
           name: 'body',
@@ -163,7 +163,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
-      - { label: 'Category', name: 'category', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Khái niệm đánh giá', 'Lợi ích của việc đánh giá', 'Phí dịch vụ đánh giá', 'Quy trình đánh giá', 'Dịch vụ Đánh giá cho Doanh nghiệp', 'Dịch vụ đánh giá tiền trạm', 'Các bộ tiêu chuẩn TNXH', 'Tiêu chuẩn RBA', 'Các lỗi thường gặp của doanh nghiệp'] }
       - {
           label: 'Tags',
           name: 'tags',
@@ -176,7 +176,7 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number' }
+      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
           name: 'body',
