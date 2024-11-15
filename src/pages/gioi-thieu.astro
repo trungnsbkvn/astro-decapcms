@@ -5,6 +5,12 @@ import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import Brands from '~/components/widgets/Brands.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+
+import { YouTube } from 'astro-embed';
 
 const metadata = {
   title: 'Về chúng tôi',
@@ -14,61 +20,68 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
-  >
+  <Hero tagline="Về chúng tôi">
     <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white highlight"> Beautiful Website Templates</span>
+      Công ty Luật TNHH <br />
+      <span class="text-accent dark:text-white highlight"> Youth and Partners</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+      Công ty Luật TNHH Youth & Partners - Youth & Partners Co., Ltd (Y&P Law Firm) là một trong những Tổ chức hành nghề
+      Luật sư/Công ty Luật hàng đầu trong các lĩnh vực: Đầu tư trong nước và ngước ngoài, lao động, Doanh nghiệp, Kinh
+      doanh-Thương mại, Đất đai, Giấy phép tại tỉnh Vĩnh Phúc và các tỉnh phía bắc…
+    </Fragment>
+
+    <Fragment slot="image">
+      <YouTube
+        id="WJUMziCmOP8"
+        title="Y&P Lawfirm - Gương mặt tiêu biểu kỷ niệm 77 năm ngày Truyền thống Luật sư Việt Nam"
+      />
+      <style is:inline>
+        lite-youtube {
+          margin: 0 auto;
+          max-width: 100%;
+        }
+      </style>
     </Fragment>
   </Hero>
 
   <!-- Stats Widget ****************** -->
 
   <Stats
-    title="Statistics about us"
+    title="Các con số biết nói"
     stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
+      { title: 'Văn phòng', amount: '5' },
+      { title: 'Chuyên viên pháp lý', amount: '30+' },
+      { title: 'Khách hàng hài lòng', amount: '1176' },
+      { title: 'Vụ thắng kiện', amount: '723' },
     ]}
   />
 
   <!-- Features3 Widget ************** -->
 
   <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
+    title="Dịch vụ của Chúng tôi"
+    subtitle="Chúng tôi cung cấp một loạt các dịch vụ pháp lý và tư vấn chuyên nghiệp, bao gồm:"
     columns={3}
     isBeforeContent={true}
     items={[
       {
-        title: 'Educational',
+        title: 'Dịch vụ Pháp lý',
         description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
+          'Đội ngũ luật sư giàu kinh nghiệm của chúng tôi luôn sẵn sàng giải quyết mọi vấn đề pháp lý phức tạp. Chúng tôi cung cấp các dịch vụ pháp lý toàn diện từ tranh chấp thương mại, quyền sở hữu trí tuệ đến các vấn đề dân sự và hình sự.',
         icon: 'tabler:template',
       },
       {
-        title: 'Interior Design',
+        title: 'Tư vấn Thường xuyên cho Doanh nghiệp',
         description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
+          'Chúng tôi cung cấp dịch vụ tư vấn thường xuyên cho các doanh nghiệp, hỗ trợ bạn trong việc quản lý rủi ro pháp lý, tuân thủ quy định pháp luật và tối ưu hóa quy trình hoạt động.',
         icon: 'tabler:template',
       },
       {
-        title: 'Photography',
+        title: 'Tư vấn Lao động',
         description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
+          'Chúng tôi tư vấn về các vấn đề lao động nhằm đảm bảo quyền lợi cho cả người sử dụng lao động và nhân viên. Dịch vụ của chúng tôi bao gồm tư vấn hợp đồng lao động, quyền lợi nhân viên, giải quyết tranh chấp và tối ưu hóa quy trình lao động.',
         icon: 'tabler:template',
       },
     ]}
@@ -77,43 +90,19 @@ const metadata = {
   <!-- Features3 Widget ************** -->
 
   <Features3
-    columns={3}
+    columns={2}
     isAfterContent={true}
     items={[
       {
-        title: 'E-commerce',
+        title: 'Đầu tư và Người Nước Ngoài',
         description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
+          'Chúng tôi cung cấp các giải pháp pháp lý cho nhà đầu tư và người nước ngoài muốn kinh doanh hoặc sinh sống tại Việt Nam. Chúng tôi hỗ trợ từ việc thành lập doanh nghiệp, xin giấy phép lao động đến giải quyết các vấn đề pháp lý liên quan khác.',
         icon: 'tabler:template',
       },
       {
-        title: 'Blog',
+        title: 'Dịch vụ Đánh giá Doanh nghiệp',
         description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Business',
-        description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
+          'Chúng tôi cung cấp các giải pháp đánh giá doanh nghiệp toàn diện, giúp bạn hiểu rõ hơn về hiệu suất, tình hình tài chính và các yếu tố rủi ro của doanh nghiệp. Chúng tôi cam kết mang đến cho bạn những đánh giá chính xác và toàn diện nhất.',
         icon: 'tabler:template',
       },
     ]}
@@ -126,53 +115,96 @@ const metadata = {
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
+    id="tam-nhin-su-menh"
+    title="Tầm nhìn và sứ mệnh"
+    subtitle="<b>Tầm nhìn</b> Chúng tôi phấn đấu trở thành công ty luật hàng đầu, được khách hàng tín nhiệm và chọn lựa vì sự nhanh chóng, tận tâm và tận lực trong việc cung cấp các dịch vụ pháp lý chất lượng cao. <br /><br /> <b>Sứ mệnh</b> Chúng tôi cam kết mang đến cho khách hàng những giải pháp pháp lý hiệu quả và kịp thời. Với phương châm “Thời gian, Tận tâm, Tận lực”, chúng tôi luôn đặt lợi ích của khách hàng lên hàng đầu, làm việc hết mình để đáp ứng nhu cầu pháp lý đa dạng và phức tạp của họ."
     items={[
       {
-        title: 'Customer-centric approach',
+        title: 'Chính trực',
         description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
+          'Chúng tôi luôn hành động với sự trung thực và đạo đức nghề nghiệp, đặt lợi ích của khách hàng lên hàng đầu.',
       },
       {
-        title: 'Constant Improvement',
+        title: 'Sáng tạo',
         description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
+          'Chúng tôi luôn tìm kiếm những giải pháp pháp lý sáng tạo và hiệu quả để đáp ứng nhu cầu đa dạng của khách hàng.',
       },
       {
-        title: 'Ethical Practices',
+        title: 'Hợp tác',
         description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+          'Chúng tôi tin rằng sự hợp tác chặt chẽ giữa đội ngũ nhân viên và khách hàng là chìa khóa để đạt được thành công.',
+      },
+      {
+        title: 'Chất lượng',
+        description: 'Chúng tôi không ngừng nâng cao chất lượng dịch vụ để đáp ứng và vượt qua kỳ vọng của khách hàng.',
       },
     ]}
   />
 
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="ton-chi-hoat-dong"
+    isReversed
+    tagline="Y&P Law Firm"
+    title="Tôn chỉ hoạt động của chúng tôi"
+    items={[
+      {
+        title: 'Thời gian',
+        description:
+          'Chúng tôi biết rằng mọi vụ việc pháp lý đều có những thời hạn và yêu cầu khắt khe. Chính vì thế, đội ngũ luật sư của chúng tôi luôn nỗ lực hết mình để đảm bảo tiến trình công việc diễn ra nhanh chóng và hiệu quả, giúp khách hàng đạt được kết quả mong muốn trong thời gian sớm nhất.',
+        icon: 'tabler:clock-24',
+      },
+      {
+        title: 'Tận tâm',
+        description:
+          'Mỗi luật sư tại Y&P đều đặt trọn tâm huyết vào từng hồ sơ, lắng nghe và thấu hiểu nhu cầu của khách hàng để đưa ra những giải pháp tối ưu và phù hợp nhất. Chúng tôi tin rằng sự tận tâm chính là chìa khóa để xây dựng lòng tin và mối quan hệ bền vững với khách hàng.',
+        icon: 'tabler:heart',
+      },
+      {
+        title: 'Tận lực',
+        description:
+          'Không chỉ dừng lại ở việc cung cấp dịch vụ pháp lý, chúng tôi luôn đi thêm một bước nữa để bảo vệ quyền lợi và lợi ích hợp pháp của khách hàng. Đội ngũ luật sư tài năng và giàu kinh nghiệm của chúng tôi luôn sẵn sàng đối mặt với mọi thách thức để mang lại sự công bằng và thành công cho khách hàng.',
+        icon: 'tabler:award',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
+    id="giai-thuong-phap-ly"
+    title="Giải thưởng pháp lý"
+    subtitle="Chúng tôi tự hào về những thành tựu và giải thưởng pháp lý đã đạt được, minh chứng cho sự cam kết và uy tín trong ngành pháp luật"
     isReversed={true}
     callToAction={{
-      text: 'See more',
-      href: '/',
+      text: 'Xem thêm',
+      href: '/gioi-thieu#ho-so-nang-luc',
     }}
     items={[
       {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
+        title: 'Giải thưởng Luật sư Xuất sắc',
+        description:
+          'Được trao tặng cho các luật sư của chúng tôi vì những đóng góp xuất sắc trong các vụ việc phức tạp.',
         icon: 'tabler:globe',
       },
       {
-        title: 'Positive customer feedback and reviews',
+        title: 'Giải thưởng Đổi mới Pháp lý',
         description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
+          'Tôn vinh những nỗ lực sáng tạo trong việc áp dụng công nghệ và các giải pháp pháp lý mới để nâng cao hiệu quả công việc.',
         icon: 'tabler:message-star',
       },
       {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
+        title: 'Giải thưởng Đóng góp cho Cộng đồng',
+        description: 'Ghi nhận những hoạt động từ thiện và đóng góp tích cực cho cộng đồng và xã hội.',
         icon: 'tabler:award',
       },
     ]}
@@ -181,48 +213,212 @@ const metadata = {
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Our locations"
-    tagline="Find us"
+    title="Địa chỉ văn phòng"
+    tagline="Hãy đến thăm chúng tôi"
     columns={4}
     items={[
       {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
+        title: 'Hà Nội',
+        description: 'P316, Tháp Tây, Chung cư Học viện Quốc Phòng, Xuân La, Tây Hồ, Hà Nội',
       },
       {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
+        title: 'Vĩnh Phúc',
+        description: 'Số nhà 170, đường Nguyễn Văn Linh, phường Liên Bảo, thành phố Vĩnh Yên, tỉnh Vĩnh Phúc',
       },
       {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
+        title: 'Bắc Ninh',
+        description: 'Số nhà 222, đường Trần Hưng Đạo, phường Tiền An, thành phố Bắc Ninh, tỉnh Bắc Ninh',
       },
       {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
+        title: 'VPDD Vĩnh Tường',
+        description: 'Khu 2, xã Vân Xuân, huyện Vĩnh Tường, tỉnh Vĩnh Phúc',
       },
     ]}
   />
 
-  <!-- Features2 Widget ************** -->
+  <!-- Brands Widget ****************** -->
 
-  <Features2
-    title="Technical Support"
-    tagline="Contact us"
-    columns={2}
+  <Brands
+    title="Đối tác và khách hàng của chúng tôi"
+    subtitle="Chúng tôi tự hào về mạng lưới đối tác và khách hàng rộng khắp, bao gồm các doanh nghiệp, tổ chức và cá nhân uy tín trong nhiều lĩnh vực khác nhau. Những đối tác hợp tác của chúng tôi gồm có các công ty luật hàng đầu, các tổ chức tư vấn chiến lược, và các công ty tài chính quốc tế. Chúng tôi làm việc chặt chẽ với họ để mang lại các giải pháp pháp lý tối ưu và chuyên nghiệp nhất."
+    icons={[]}
+    images={[
+      {
+        src: '~/assets/images/partners/viettel.png',
+        alt: 'Viettel',
+      },
+      {
+        src: '~/assets/images/partners/wesmart.jpg',
+        alt: 'WeSMART',
+      },
+      {
+        src: '~/assets/images/partners/topcv.png',
+        alt: 'TopCV',
+      },
+      {
+        src: '~/assets/images/partners/samsung.png',
+        alt: 'Samsung',
+      },
+      {
+        src: '~/assets/images/partners/fpt.png',
+        alt: 'FPT',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_1280.png',
+        alt: 'Node JS',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/10/31/12/54/google-1015751_1280.png',
+        alt: 'Google',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/45/meta-6850393_1280.png',
+        alt: 'Meta',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/01/29/22/53/yahoo-76684_1280.png',
+        alt: 'Yahoo',
+      },
+    ]}
+  />
+
+  <Testimonials
+    id="cam-nhan-khach-hang"
+    title="Cảm nhận của khách hàng"
+    subtitle="Khách hàng hài lòng với dịch vụ pháp lý tại Youth and Partners, đánh giá cao sự tận tâm và chuyên nghiệp của đội ngũ luật sư trong việc giải quyết các vấn đề pháp lý phức tạp. Họ tin tưởng và sẵn lòng tiếp tục sử dụng dịch vụ của chúng tôi trong tương lai."
+    testimonials={[
+      {
+        testimonial: `Amazing services and good spirit
+                                        We have been working with Youth & Partners for a long time. We had perfect experiences from enthusiastic and great staff. They are friendly and dedicated to work. Everything is well organized.
+                                        Keep up your great work!`,
+        name: 'Daniel Nguyen',
+        job: 'Founder & CEO WeSMART',
+        image: {
+          src: '~/assets/images/customers/trung.png',
+          alt: 'Daniel Nguyen',
+        },
+      },
+      {
+        testimonial: `Một địa chỉ tư vấn và hỗ trợ pháp luật tuyệt vời. Mình rất hài lòng về cách làm việc và hỗ trợ của các anh chị tại đây. Cảm ơn và chúc công ty ngày một phát triển, và hỗ trợ được nhiều khách hàng hơn nữa.`,
+        name: 'Ha Trung',
+        job: 'Khách hàng',
+        image: {
+          src: '~/assets/images/customers/hatrung.png',
+          alt: 'Ha Trung',
+        },
+      },
+      {
+        testimonial: `Đội ngũ Luật sư chuyên môn dày dặn, xử lý công việc chuyên nghiệp, tư duy đột phá trong các phương án tư vấn cho khách hàng, đem đến sự hài lòng toàn diện cho khách hàng trên cơ sở thượng tôn pháp luật.`,
+        name: 'Hoa Trương',
+        job: 'Khách hàng',
+        image: {
+          src: '~/assets/images/customers/hoatruong.png',
+          alt: 'Hoa Trương Image',
+        },
+      },
+      {
+        testimonial: `Mình rất hài lòng khi sử dụng dịch vụ pháp lý của Y&P Lawfirm. Các luật sự làm việc rất chuyên nghiệp,  Chúc cho các luật sư thật nhiều sức khỏe!`,
+        name: 'Van Quang Tran',
+        job: 'Khách hàng',
+        image: {
+          src: '~/assets/images/customers/vanquangtran.png',
+          alt: 'Van Quang Tran Image',
+        },
+      },
+      {
+        testimonial: `Dịch vụ nhanh chóng và rất đáng tin cậy. Các Luật sư nói được và làm được. Là 1 địa chỉ Luật sư tốt cho công dân và Doanh nghiệp Vĩnh Phúc.`,
+        name: 'Duc Le Anh',
+        job: 'Khách hàng',
+        image: {
+          src: '~/assets/images/customers/ducleanh.png',
+          alt: 'Duc Le Anh Image',
+        },
+      },
+      {
+        testimonial: `Hãng luật uy tín và chuyên nghiệp! Các luật sư và chuyên viên luôn tận tình và giàu tình cảm! Tôi sẽ còn gắn bó lâu dài. Thanks!`,
+        name: 'Ngọc Nguyen',
+        job: 'Khách hàng',
+        image: {
+          src: '~/assets/images/customers/ngoc.png',
+          alt: 'Ngọc Nguyen Image',
+        },
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Testimonials>
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Liên hệ để được tư vấn ngay"
+    subtitle="Tất cả các vấn đề bạn đang thắc mắc"
+    columns={4}
     items={[
       {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
+        title: 'Hotline',
+        icon: 'tabler:phone',
+        callToAction: {
+          target: '_blank',
+          text: '0889956888',
+          href: 'tel:0889956888',
+          variant: 'link',
+        },
       },
       {
-        title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
+        title: 'Email',
+        icon: 'tabler:mail',
+        callToAction: {
+          target: '_blank',
+          text: 'ceo@yplawfirm.vn',
+          href: 'mailto:ceo@yplawfirm.vn',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Chat với chuyên viên',
+        icon: 'tabler:message-circle',
+        callToAction: {
+          target: '_blank',
+          text: 'Bắt đầu chat',
+          href: '/',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Liên hệ',
+        icon: 'tabler:message-circle',
+        callToAction: {
+          target: '_blank',
+          text: 'Hãy để lại lời nhắn',
+          href: '/lien-he',
+          variant: 'link',
+        },
       },
     ]}
   />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    id="ho-so-nang-luc"
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Tải về',
+        href: '#',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">Hồ sơ năng lực của Youth & Partners</Fragment>
+
+    <Fragment slot="subtitle">
+      Tại đây, bạn sẽ tìm thấy những thông tin chi tiết về năng lực chuyên môn, các dịch vụ pháp lý mà chúng tôi cung
+      cấp, và các thành tựu nổi bật của đội ngũ luật sư tại công ty
+    </Fragment>
+  </CallToAction>
 </Layout>
