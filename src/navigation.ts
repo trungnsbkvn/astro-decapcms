@@ -5,47 +5,19 @@ export const headerData = {
     {
       text: 'Giới thiệu',
       links: [
-        {
-          text: 'Lịch sử thành lập',
-          href: getPermalink('/gioi-thieu'),
-        },
-        {
-          text: 'Luật sư & Cộng sự',
-          href: getPermalink('/#features'),
-        },
-        {
-          text: 'Giải thưởng pháp lý',
-          href: getPermalink('/services'),
-        },
-        {
-          text: 'Cảm nhận khách hàng',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'Tôn chỉ hoạt động',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Hồ sơ năng lực',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Tầm nhìn - sứ mệnh',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Sự kiện nội bộ',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Bảo vệ dữ liệu cá nhân',
-          href: getPermalink('/privacy'),
-        },
+        { text: 'Lịch sử thành lập', href: getPermalink('/gioi-thieu/#lich-su-thanh-lap') },
+        { text: 'Luật sư và cộng sự', href: '/luat-su-va-cong-su' },
+        { text: 'Giải thưởng pháp lý', href: '/gioi-thieu/#giai-thuong-phap-ly' },
+        { text: 'Cảm nhận khách hàng', href: '/gioi-thieu/#cam-nhan-khach-hang' },
+        { text: 'Tôn chỉ hoạt động', href: '/gioi-thieu/#ton-chi-hoat-dong' },
+        { text: 'Hồ sơ năng lực', href: '/gioi-thieu/#ho-so-nang-luc' },
+        { text: 'Tầm nhìn - sứ mệnh', href: '/gioi-thieu/#tam-nhin-su-menh' },
+        { text: 'Sự kiện nội bộ', href: '/tin-tuc/su-kien-noi-bo' },
+        { text: 'Bảo vệ dữ liệu cá nhân', href: '#' },
       ],
     },
     {
       text: 'Pháp lý',
-      href: getBlogPermalink(),
       links: [
         {
           text: 'Doanh nghiệp',
@@ -288,42 +260,62 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Dịch vụ pháp lý',
+      title: 'Về chúng tôi',
       links: [
-        { text: 'Hỗ trợ doanh nghiệp', href: '#' },
-        { text: 'Tư vấn đầu tư trong nước và nước ngoài', href: '#' },
-        { text: 'Hôn nhân và gia đình', href: '#' },
-        { text: 'Tranh tụng và đại diện ngoài tố tụng', href: '#' },
-        { text: 'Dịch vụ đất đai', href: '#' },
-        { text: 'Pháp luật dân sự và thừa kế', href: '#' },
-        { text: 'Lao động', href: '#' },
-        { text: 'Giấy phép', href: '#' },
+        { text: 'Lịch sử thành lập', href: '/gioi-thieu/#lich-su-thanh-lap' },
+        { text: 'Luật sư và cộng sự', href: '/luat-su-va-cong-su' },
+        { text: 'Giải thưởng pháp lý', href: '/gioi-thieu/#giai-thuong-phap-ly' },
+        { text: 'Cảm nhận khách hàng', href: '/gioi-thieu/#cam-nhan-khach-hang' },
+        { text: 'Tôn chỉ hoạt động', href: '/gioi-thieu/#ton-chi-hoat-dong' },
+        { text: 'Hồ sơ năng lực', href: '/gioi-thieu/#ho-so-nang-luc' },
+        { text: 'Tầm nhìn - sứ mệnh', href: '/gioi-thieu/#tam-nhin-su-menh' },
+        { text: 'Sự kiện nội bộ', href: '/tin-tuc/su-kien-noi-bo' },
+        { text: 'Bảo vệ dữ liệu cá nhân', href: '#' },
       ],
     },
     {
-      title: 'Kiến thức pháp lý',
+      title: 'Dịch vụ',
       links: [
-        { text: 'Dân sự', href: '#' },
-        { text: 'Hình sự', href: '#' },
-        { text: 'Đất đai', href: '#' },
-        { text: 'Doanh nghiệp và Đầu tư nước ngoài', href: '#' },
-        { text: 'Hôn nhân và gia đình', href: '#' },
-        { text: 'Lao động', href: '#' },
-        { text: 'Sở hữu trí tuệ', href: '#' },
-        { text: 'Hỏi đáp luật sư', href: '#' },
+        { text: 'Pháp lý', href: '/phap-ly' },
+        { text: 'Tư vấn thường xuyên', href: '/tu-van-thuong-xuyen' },
+        { text: 'Lao động', href: '/lao-dong' },
+        { text: 'Đầu tư và Người nước ngoài', href: '/dau-tu-nuoc-ngoai' },
+        { text: 'Dịch vụ đánh giá', href: '/dich-vu-danh-gia' },
       ],
     },
     {
-      title: 'Công ty',
+      title: 'Tin tức - Liên hệ',
       links: [
-        { text: 'Về chúng tôi', href: '#' },
-        { text: 'Trách nhiệm xã hội', href: '#' },
-        { text: 'Đội ngũ', href: '#' },
-        { text: 'Liên hệ', href: '#' },
-        { text: 'Điều khoản sử dụng', href: '#' },
-        { text: 'Chính sách bảo mật', href: '#' },
+        {
+          text: 'Tin tức pháp lý',
+          href: getBlogPermalink(),
+        },
+        {
+          text: 'Bình luận pháp lý',
+          href: getPermalink('binh-luan-phap-ly', 'category'),
+        },
+        {
+          text: 'Các vụ việc nổi bật',
+          href: getPermalink('cac-vu-viec-noi-bat', 'category'),
+        },
+        {
+          text: 'Hội thảo pháp lý',
+          href: getPermalink('hoi-thao-phap-ly', 'category'),
+        },
+        {
+          text: 'Văn bản pháp lý',
+          href: getPermalink('van-ban-phap-ly', 'category'),
+        },
+        {
+          text: 'Liên hệ tư vấn',
+          href: getPermalink('/lien-he'),
+        },
+        {
+          text: 'Thông tin tuyển dụng',
+          href: getPermalink('thong-tin-tuyen-dung', 'category'),
+        },
       ],
-    },
+    },    
     {
       title: 'Thông tin chi nhánh',
       links: [
@@ -337,8 +329,8 @@ export const footerData = {
     },
   ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Điều khoản chung', href: getPermalink('/terms') },
+    { text: 'Chính sách quyền riêng tư', href: getPermalink('/privacy') },
   ],
   socialLinks: [
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/vinhphuclawyers' },

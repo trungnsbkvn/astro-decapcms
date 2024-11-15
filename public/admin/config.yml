@@ -18,7 +18,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
-      - { label: 'Category', name: 'category', widget: 'select', options: ['Tin tức pháp lý', 'Bình luận pháp lý', 'Các vụ việc nổi bật', 'Hội thảo pháp lý', 'Văn bản pháp lý', 'Thông tin tuyển dụng'] }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Tin tức pháp lý', 'Bình luận pháp lý', 'Các vụ việc nổi bật', 'Hội thảo pháp lý', 'Văn bản pháp lý', 'Thông tin tuyển dụng', 'Sự kiện nội bộ'] }
       - {
           label: 'Tags',
           name: 'tags',
@@ -31,7 +31,7 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number', default: 5 }
+      - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5 }
       - {
           label: 'Content',
           name: 'body',
@@ -60,7 +60,7 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number', default: 5  }
+      - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
           name: 'body',
@@ -89,7 +89,7 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number', default: 5  }
+      - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
           name: 'body',
@@ -118,7 +118,7 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number', default: 5  }
+      - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
           name: 'body',
@@ -147,7 +147,7 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number', default: 5  }
+      - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
           name: 'body',
@@ -176,7 +176,7 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number', default: 5  }
+      - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
           name: 'body',
