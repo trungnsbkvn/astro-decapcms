@@ -195,7 +195,7 @@ apps:
   evaluation:
     isEnabled: true
     postsPerPage: 6
-    rootPath: 'danh-gia-doanh-nghiep'
+    rootPath: 'dich-vu-danh-gia'
 
     post:
       isEnabled: true
