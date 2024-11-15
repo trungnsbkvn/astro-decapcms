@@ -35,7 +35,7 @@ apps:
   blog:
     isEnabled: true
     postsPerPage: 6
-    rootPath: 'articles'
+    rootPath: 'tin-tuc'
 
     post:
       isEnabled: true
@@ -67,7 +67,7 @@ apps:
   legal:
     isEnabled: true
     postsPerPage: 6
-    rootPath: 'legal'
+    rootPath: 'phap-ly'
 
     post:
       isEnabled: true
