@@ -44,6 +44,8 @@ export interface Post {
 
   /**  */
   readingTime?: number;
+
+  headings?: MarkdownHeading[];
 }
 
 export interface Taxonomy {

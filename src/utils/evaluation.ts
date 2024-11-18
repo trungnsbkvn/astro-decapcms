@@ -99,6 +99,7 @@ const getNormalizedPost = async (post: CollectionEntry<'evaluation'>): Promise<P
     // or 'content' in case you consume from API
 
     readingTime: remarkPluginFrontmatter?.readingTime,
+    headings: remarkPluginFrontmatter?.headings,
   };
 };
 
