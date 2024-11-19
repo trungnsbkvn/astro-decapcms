@@ -1,0 +1,363 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import BlogLatestPosts from '~/components/legal/BlogLatestPosts.astro';
+import { getPermalink } from '~/utils/legal-permalinks';
+
+const metadata = {
+  title: 'Dịch vụ pháp lý chuyên môn',
+  description:
+    'Các dịch vụ pháp lý của Y&P không chỉ dừng lại ở việc cung cấp các giải pháp pháp lý trên nền tảng học thuật mà Y&P còn cung cấp các giải pháp có vận dụng thực tiễn thiết thực nhằm hỗ trợ giải quyết mọi vướng mắc về pháp lý mà khách hàng gặp phải với hiệu quả cao nhất.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    id="hero"
+    title="Dịch vụ pháp lý chuyên môn"
+    tagline="Youth & Partners"
+    actions={[{ variant: 'primary', text: 'Liên hệ với chúng tôi', href: getPermalink('/lien-he#form') }]}
+  >
+    <Fragment slot="subtitle">
+      Với đội ngũ Luật sư giàu kinh nghiệm thực chiến, kết hợp với sự am hiểu sâu sắc pháp luật và kiến thức xã hội Việt
+      Nam, đến với chúng tôi khách hàng sẽ được tư vấn cách tiến hành kinh doanh và hoạt động tốt nhất, bao gồm đàm phán
+      với các đối tác, thực hiện các chương trình tuân thủ và giải quyết những vấn đề pháp lý phức tạp của doanh nghiệp.
+      <br />
+      <br />
+      Tận dụng sự hiểu biết của mình về môi trường pháp lý và xã hội ngày càng phức tạp tại Việt Nam, chúng tôi đã tư vấn
+      cho hàng trăm khách hàng doanh nghiệp vượt qua tình trạng khó khăn, giảm thiểu rủi ro pháp lý và làm việc hiệu quả
+      với các cơ quan nhà nước.
+      <br />
+      <br />
+      Y&P làm việc cùng với khách hàng để hiểu rõ hoạt động kinh doanh và các giải pháp thủ công nhằm giúp quý khách hàng
+      đáp ứng các nhu cầu và thách thức kinh doanh tại Việt Nam và hơn thế nữa.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:phone-call',
+        callToAction: {
+          target: '_blank',
+          text: 'Hotline',
+          href: 'tel:0889956888',
+        },
+      },
+      {
+        icon: 'tabler:mailbox',
+        callToAction: {
+          target: '_blank',
+          text: 'Email',
+          href: 'mailto:ceo@yplawfirm.vn',
+        },
+      },
+      {
+        icon: 'tabler:brand-meta',
+        callToAction: {
+          target: '_blank',
+          text: 'Facebook',
+          href: 'https://www.facebook.com/vinhphuclawyers',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/youth and partners/luat su Nguyen Van Thanh.png',
+      alt: 'Colorful Image',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Giới thiệu dịch vụ</h2>
+      <p>
+        Với phương châm hoạt động: "Thời Gian – Tận Tâm – Tận Lực", Y&P Lawfirm luôn mong muốn mang đến cho quý khách
+        hàng những dịch vụ chất lượng, nhanh chóng, chính xác và trọn vẹn.
+      </p>
+      <br />
+      <p>
+        Chúng tôi luôn xác định, giá trị của một doanh nghiệp, một đơn vị tư vấn pháp lý phải bắt đầu từ những giá trị
+        cốt lõi, các dịch vụ cần được thực hiện bởi cái tâm và cái tầm của các Luật sư.
+      </p>
+      <br />
+      <p>Các giá trị ấy chỉ có thể được đo bằng sự hài lòng, tin tưởng của tất cả các khách hàng/thân chủ.</p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features3
+    title="Dịch vụ pháp lý"
+    subtitle="Chúng tôi có các luật sư và chuyên gia tư vấn pháp lý phụ trách các lĩnh vực sau:"
+    columns={2}
+    defaultIcon="tabler:point-filled"
+    items={[
+      {
+        title: 'Doanh nghiệp',
+        description:
+          'Cung cấp các giải pháp pháp lý toàn diện để hỗ trợ doanh nghiệp trong quá trình thành lập, hoạt động và phát triển.',
+      },
+      {
+        title: 'Tư vấn thường xuyên',
+        description:
+          'Cung cấp dịch vụ tư vấn pháp lý liên tục để đảm bảo doanh nghiệp hoạt động hiệu quả và tuân thủ các quy định pháp luật hiện hành.',
+      },
+      {
+        title: 'Sở hữu trí tuệ',
+        description:
+          'Tư vấn và hỗ trợ bảo vệ quyền sở hữu trí tuệ, từ đăng ký bản quyền, bằng sáng chế đến giải quyết tranh chấp về sở hữu trí tuệ.',
+      },
+      {
+        title: 'Quản trị doanh nghiệp và tuân thủ',
+        description:
+          'Giúp doanh nghiệp xây dựng hệ thống quản trị hiệu quả và tuân thủ các quy định pháp luật, giảm thiểu rủi ro pháp lý.',
+      },
+      {
+        title: 'Dự án đầu tư',
+        description:
+          'Hỗ trợ các nhà đầu tư trong việc thực hiện các dự án đầu tư tại Việt Nam, từ việc xin giấy phép đến việc giải quyết các vấn đề pháp lý liên quan.',
+      },
+      {
+        title: 'Dịch vụ hỗ trợ doanh nghiệp',
+        description:
+          'Cung cấp các dịch vụ hỗ trợ doanh nghiệp, bao gồm tư vấn pháp lý, hỗ trợ quản lý, và giải quyết các vấn đề phát sinh trong quá trình kinh doanh.',
+      },
+      {
+        title: 'Mua bán và Sáp nhập (M&A)',
+        description:
+          'Tư vấn và hỗ trợ các giao dịch mua bán và sáp nhập doanh nghiệp, đảm bảo các giao dịch được thực hiện một cách hiệu quả và tuân thủ pháp luật.',
+      },
+      {
+        title: 'Tranh tụng và giải quyết tranh chấp',
+        description:
+          'Chúng tôi đại diện và hỗ trợ khách hàng trong các vụ kiện tụng và giải quyết tranh chấp, bảo vệ quyền lợi hợp pháp của khách hàng.',
+      },
+      {
+        title: 'Lao động việc làm',
+        description:
+          'Tư vấn và hỗ trợ doanh nghiệp và người lao động về các vấn đề liên quan đến hợp đồng lao động, quyền lợi nhân viên, và giải quyết tranh chấp lao động.',
+      },
+      {
+        title: 'Dịch vụ pháp lý về đất đai',
+        description:
+          'Cung cấp các dịch vụ pháp lý liên quan đến đất đai, từ việc xin giấy chứng nhận quyền sử dụng đất đến giải quyết các tranh chấp liên quan đến đất đai.',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="projects-use-case"
+    title="Một số dự án tiêu biểu"
+    subtitle="Chúng tôi tự hào đã thực hiện thành công nhiều dự án tư vấn cho các doanh nghiệp và tổ chức lớn nhỏ, mang lại những giá trị thiết thực và giải pháp pháp lý hiệu quả."
+    isReversed
+    items={[
+      {
+        title: 'Description:',
+        description:
+          'Developed a comprehensive brand identity for a tech startup, Tech Innovators, specializing in disruptive innovations. The goal was to convey a modern yet approachable image that resonated with both corporate clients and tech enthusiasts.',
+      },
+      {
+        title: 'Role:',
+        description:
+          'Led the entire branding process from concept to execution. Created a dynamic logo that symbolized innovation, selected a vibrant color palette, and I designed corporate stationery, website graphics, and social media assets.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/projects/avenue garden.png',
+      alt: 'Tech Design Image',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Go to the project',
+      icon: 'tabler:chevron-right',
+      href: '#',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Project 1: <br /><span class="text-2xl">Brand identity for tech innovators</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Description:',
+        description:
+          'Designed a captivating event poster for an art and music festival, "ArtWave Fusion," aiming to showcase the synergy between visual art and music genres.',
+      },
+      {
+        title: 'Role:',
+        description: `Translated the festival's creative theme into a visually striking poster. Used bold typography, vibrant colors, and abstract elements to depict the fusion of art and music. Ensured the design captured the festival's vibrant atmosphere.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Art and Music Poster Image',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Go to the project',
+      icon: 'tabler:chevron-right',
+      href: '#',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Project 2: <br /><span class="text-2xl">Event poster for art & music festival</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Description:',
+        description: `Redesigned the e-commerce website for an eco-conscious fashion brand, GreenVogue. The objective was to align the brand's online presence with its sustainable ethos and improve user experience.`,
+      },
+      {
+        title: 'Role:',
+        description: `Conducted a thorough analysis of the brand's values and customer base to inform the design direction. Created a visually appealing interface with intuitive navigation, highlighting sustainable materials, and integrating a user-friendly shopping experience.`,
+      },
+    ]}
+    image={{
+      src: 'https://plus.unsplash.com/premium_photo-1683288295841-782fa47e4770?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+      alt: 'Fashion e-commerce Image',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Go to the project',
+      icon: 'tabler:chevron-right',
+      href: '#',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Project 3: <br /><span class="text-2xl">E-commerce website redesign for fashion brand</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="Client testimonials"
+    subtitle="Discover what clients have to say about their experiences working with me."
+    testimonials={[
+      {
+        testimonial: `She took our vague concept and turned it into a visual masterpiece that perfectly aligned with our goals. Her attention to detail and ability to translate ideas into compelling visuals exceeded our expectations.`,
+        name: 'Mark Thompson',
+        job: 'Creative director',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Mark Thompson Image',
+        },
+      },
+      {
+        testimonial: `She transformed our brand identity with her creative finesse, capturing our essence in every element. Her dedication and talent truly shine through her work.`,
+        name: 'Emily Martinez',
+        job: 'CEO',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
+          alt: 'Emily Martinez Image',
+        },
+      },
+      {
+        testimonial: `She has an uncanny ability to communicate emotions and stories. She crafted a logo for our NGO that not only represents our cause but also evokes empathy. Her professionalism and commitment make her a designer of exceptional caliber.`,
+        name: 'Laura Simmons',
+        job: 'Founder of an NGO',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554727242-741c14fa561c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Laura Simmons Image',
+        },
+      },
+      {
+        testimonial: `We entrusted Sarah with revamping our website's user interface, and the results were astounding. Her intuitive design sense enhanced user experience, leading to a significant increase in engagement. She's a designer who truly understands the synergy of aesthetics and functionality.`,
+        name: 'Alex Foster',
+        job: 'Director of web services',
+        image: {
+          src: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Alex Foster Image',
+        },
+      },
+      {
+        testimonial: `She took our vision and elevated it beyond imagination. Her ability to capture brand essence and translate it into design is nothing short of remarkable. Working with her has been an inspiring journey.`,
+        name: 'Jessica Collins',
+        job: 'Product Manager',
+        image: {
+          src: 'https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=778&q=80',
+          alt: 'Jessica Collins Image',
+        },
+      },
+      {
+        testimonial: `Her ability to transform concepts into captivating visuals is nothing short of extraordinary. She took our event poster idea and turned it into a visual masterpiece that perfectly captured the essence of our festival. Sarah's dedication, creativity, and knack for delivering beyond expectations make her an invaluable asset to any project.`,
+        name: 'Michael Carter',
+        job: 'Event Coordinator',
+        image: {
+          src: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Michael Carter Image',
+        },
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Let's create together"
+    subtitle="Ready to transform your vision into captivating designs?"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Hire me',
+        href: '/',
+      },
+    ]}
+  />
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Explore my insightful articles on my blog"
+    information={`Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+</Layout>

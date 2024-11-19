@@ -9,6 +9,7 @@ import Brands from '~/components/widgets/Brands.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
+import Steps from '~/components/widgets/Steps.astro';
 
 import { YouTube } from 'astro-embed';
 
@@ -55,6 +56,50 @@ const metadata = {
       </style>
     </Fragment>
   </Hero>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="lich-su-thanh-lap"
+    title="Lịch sử thành lập"
+    items={[
+      {
+        title:
+          'Kiện toàn bộ máy <br /> <span class="font-normal">Bổ sung nhân lực và phát triển mở rộng quy mô dịch vụ</span> <br /> <span class="text-sm font-normal">2024 - đến nay</span>',
+        description: `Cung cấp giải pháp, dịch vụ tư vấn luật toàn diện với các lĩnh vực: Doanh nghiệp, Tư vấn thường xuyên, Sở hữu trí tuệ, Quản trị doanh nghiệp và tuân thủ, Dự án đầu tư, Dịch vụ hỗ trợ doanh nghiệp, M&A, Tranh tụng và giải quyết tranh chấp, Lao động và việc làm, Dịch vụ pháp lý về đất đai.`,
+        icon: 'tabler:award',
+      },
+      {
+        title:
+          'Mở rộng <br /> <span class="font-normal">Thêm 01 chi nhánh tại Hà Nội</span> <br /> <span class="text-sm font-normal">2021 - 2023</span>',
+        description: `Phát triển thêm chi nhánh tại địa chỉ: P316, Tháp Tây, Chung cư Học viện Quốc Phòng, Xuân La, Tây Hồ, Hà Nội.`,
+        icon: 'tabler:chart-arrows',
+      },
+      {
+        title:
+          'Mở rộng <br /> <span class="font-normal">Thêm 01 chi nhánh tại Bắc Ninh</span> <br /> <span class="text-sm font-normal">2020 - 2021</span>',
+        description: `Phát triển thêm chi nhánh tại địa chỉ: Số nhà 222, đường Trần Hưng Đạo, phường Tiền An, thành phố Bắc Ninh, tỉnh Bắc Ninh.`,
+        icon: 'tabler:chart-arrows',
+      },
+      {
+        title:
+          'Mở rộng <br /> <span class="font-normal">Thêm 01 VPDD tại Vĩnh Phúc</span> <br /> <span class="text-sm font-normal">2019 - 2020</span>',
+        description: `Đầu tư phát triển Văn phòng đại diện tại Khu 2, xã Vân Xuân, huyện Vĩnh Tường, tỉnh Vĩnh Phúc.`,
+        icon: 'tabler:chart-arrows',
+      },
+      {
+        title:
+          'Thành lập Youth & Partners <br /> <span class="font-normal">Số nhà 170, đường Nguyễn Văn Linh, phường Liên Bảo, thành phố Vĩnh Yên, tỉnh Vĩnh Phúc</span> <br /> <span class="text-sm font-normal">09/10/2019</span>',
+        description: `Phát triển 04 phòng chuyên môn với đội ngũ Luật sư, cố vấn, chuyên viên, nhân viên đông đảo.`,
+        icon: 'tabler:step-out',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps>
 
   <!-- Stats Widget ****************** -->
 
