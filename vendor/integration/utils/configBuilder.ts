@@ -75,45 +75,6 @@ export interface AppBlogConfig {
     };
   };
 }
-export interface AppLegalConfig {
-  isEnabled: boolean;
-  postsPerPage: number;
-  isRelatedPostsEnabled: boolean;
-  relatedPostsCount: number;
-  rootPath: string;
-  post: {
-    isEnabled: boolean;
-    permalink: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-  list: {
-    isEnabled: boolean;
-    pathname: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-  category: {
-    isEnabled: boolean;
-    pathname: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-  tag: {
-    isEnabled: boolean;
-    pathname: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-}
 export interface AnalyticsConfig {
   vendors: {
     googleAnalytics: {
@@ -259,7 +220,7 @@ const getAppLegal = (config: Config) => {
     },
   };
 
-  return merge({}, _default, config?.apps?.legal ?? {}) as AppLegalConfig;
+  return merge({}, _default, config?.apps?.legal ?? {}) as AppBlogConfig;
 };
 
 const getAppConsultation = (config: Config) => {

@@ -14,6 +14,8 @@ import { YouTube } from 'astro-embed';
 
 const metadata = {
   title: 'Về chúng tôi',
+  description:
+    'Công ty luật hàng đầu trong các lĩnh vực: Đầu tư nước ngoài, giấy chứng nhận đầu tư, giấy chứng nhận đăng ký doanh nghiệp, Foreign investment, IRC, ERC, giấy phép lao động, Work permits.',
 };
 ---
 
@@ -22,14 +24,22 @@ const metadata = {
 
   <Hero tagline="Về chúng tôi">
     <Fragment slot="title">
-      Công ty Luật TNHH <br />
+      Công ty Luật TNHH
       <span class="text-accent dark:text-white highlight"> Youth and Partners</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Công ty Luật TNHH Youth & Partners - Youth & Partners Co., Ltd (Y&P Law Firm) là một trong những Tổ chức hành nghề
-      Luật sư/Công ty Luật hàng đầu trong các lĩnh vực: Đầu tư trong nước và ngước ngoài, lao động, Doanh nghiệp, Kinh
-      doanh-Thương mại, Đất đai, Giấy phép tại tỉnh Vĩnh Phúc và các tỉnh phía bắc…
+      Với phương châm hoạt động: “Thời Gian – Tận Tâm – Tận Lực”. Công ty Luật chúng tôi luôn mong muốn mang đến cho quý
+      khách hàng những dịch vụ chất lượng, nhanh chóng, chính xác và trọn vẹn. Chúng tôi luôn xác định, giá trị của một
+      doanh nghiệp, một đơn vị tư vấn pháp lý phải bắt đầu từ những giá trị cốt lõi, các dịch vụ cần được thực hiện bởi
+      cái tâm và cái tầm của các Luật sư. Các giá trị ấy chỉ có thể được đo bằng sự hài lòng, tin tưởng của tất cả các
+      khách hàng thân chủ.
+      <br />
+      <br />
+      Với lợi thế đã và đang làm việc cùng và thực hiện tư vấn thường xuyên cho các Doanh nghiệp nước ngoài có Quy mô lớn
+      tại Việt Nam như Samsung. Viettel, FPT, các Vendor, nhà cung cấp của Samsung cũng như nhiều Doanh nghiệp Hàn Quốc,
+      Nhật Bản khác, Y&P Law firm tự tin có thể đáp ứng tốt các yêu cầu của Quý khách hàng, các Doanh nghiệp và các Nhà đầu
+      tư tại Việt Nam.
     </Fragment>
 
     <Fragment slot="image">
@@ -408,8 +418,15 @@ const metadata = {
       {
         variant: 'primary',
         target: '_blank',
-        text: 'Tải về',
-        href: '#',
+        text: 'Hồ sơ năng lực tiếng Việt',
+        href: '/assets/profiles/COMPANY_PROFILE_Y&P2023_Version Vietnamese.pdf',
+        icon: 'tabler:download',
+      },
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Hồ sơ năng lực tiếng Anh',
+        href: '/assets/profiles/COMPANY_PROFILE_Y&P2023_Version English.pdf',
         icon: 'tabler:download',
       },
     ]}

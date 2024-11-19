@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --aw-color-primary: #045384;
+    --aw-color-accent: #6c342c;
+    /* ... */
+  }
+}
 @layer utilities {
   .bg-page {
     background-color: var(--aw-color-bg-page);
