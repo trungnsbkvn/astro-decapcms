@@ -23,19 +23,6 @@ const appStoreDownloadLink = 'https://github.com/onwidget/astrowind';
 const googlePlayImg = '~/assets/images/google-play.png';
 const googlePlayDownloadLink = 'https://github.com/onwidget/astrowind';
 
-import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
-import { getStaticPathsBlogList } from '~/utils/consultation';
-export const prerender = true;
-
-export const getStaticPaths = (async ({ paginate }) => {
-  return await getStaticPathsBlogList({ paginate });
-}) satisfies GetStaticPaths;
-
-type Props = InferGetStaticPropsType<typeof getStaticPaths>;
-
-const { page } = Astro.props as Props;
-//const currentPage = page.currentPage ?? 1;
-
 const metadata = {
   title: 'Mobile App Homepage',
 };
@@ -292,10 +279,6 @@ const metadata = {
       },
     ]}
   />
-
-  <BlogList posts={page.data} />
-  <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-  <!-- CallToAction Widget *********** -->
 
   <CallToAction
     id="download"
