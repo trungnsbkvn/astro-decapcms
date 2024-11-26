@@ -22,16 +22,20 @@ const headings = post.headings;
 
 const structuredData = post.rating
   ? {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      name: post.title,
+      '@context': 'https://schema.org/',
+      '@type': ['Service', 'Product'],
+      brand: {
+        '@type': 'Brand',
+        name: 'Youth & Partners',
+      },
       description: post.excerpt,
+      image: post.image,
+      name: post.title,
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: post.rating,
-        bestRating: '5',
-        worstRating: '1',
-        ratingCount: '1',
+        bestRating: 5,
+        ratingCount: 100,
       },
     }
   : null;

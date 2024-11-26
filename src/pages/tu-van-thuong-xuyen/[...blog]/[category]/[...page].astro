@@ -6,6 +6,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import BlogList from '~/components/consultation/List.astro';
 import Headline from '~/components/consultation/Headline.astro';
 import Pagination from '~/components/consultation/Pagination.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 
 export const prerender = true;
 
@@ -29,6 +30,35 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <Steps2
+    title="Doanh nghiệp"
+    subtitle="Phòng Doanh nghiệp của chúng tôi là nơi tụ tập kiến thức chuyên sâu từ đa dạng các lĩnh vực hành nghề, nhằm mang đến cho khách hàng những dịch vụ toàn diện về thủ tục đăng ký kinh doanh và thành lập doanh nghiệp. Chúng tôi cam kết hỗ trợ khách hàng tại mọi giai đoạn của vòng đời kinh doanh, bao gồm từ quá trình ban đầu của việc thành lập doanh nghiệp, qua các giai đoạn phát triển, cho đến khi mở rộng hoạt động và kinh doanh. <br /> <br />Đội ngũ chuyên gia của chúng tôi sẵn sàng áp dụng kiến thức sâu rộng để đáp ứng mọi nhu cầu và yêu cầu của khách hàng. Tận dụng sự hiểu biết đa chiều về nhiều lĩnh vực, chúng tôi tạo ra một hệ sinh thái dịch vụ linh hoạt và chuyên nghiệp, giúp doanh nghiệp không chỉ tồn tại mà còn phát triển bền vững trong môi trường kinh doanh ngày càng đa dạng và thách thức."
+    callToAction={{
+      text: 'Xem thêm',
+      href: '/phap-ly/doanh-nghiep',
+    }}
+    items={[
+      {
+        title: 'Chuyên môn sâu rộng',
+        description:
+          'Đội ngũ luật sư của chúng tôi có kiến thức chuyên môn sâu rộng và kinh nghiệm phong phú trong lĩnh vực pháp lý doanh nghiệp. Chúng tôi hiểu rõ các quy định pháp luật và thực tiễn kinh doanh, giúp doanh nghiệp bạn tối ưu hóa quy trình hoạt động và tuân thủ pháp luật.',
+      },
+      {
+        title: 'Giải pháp toàn diện và hiệu quả',
+        description:
+          'Chúng tôi cung cấp các giải pháp pháp lý toàn diện, từ tư vấn thành lập doanh nghiệp, quản lý rủi ro pháp lý đến hỗ trợ các giao dịch mua bán và sáp nhập. Mục tiêu của chúng tôi là mang lại những giải pháp hiệu quả, tiết kiệm thời gian và chi phí cho khách hàng.',
+      },
+      {
+        title: 'Tận tâm và uy tín',
+        description:
+          'Chúng tôi luôn đặt lợi ích của khách hàng lên hàng đầu, làm việc với sự tận tâm và uy tín cao nhất. Sự thành công của khách hàng chính là thước đo sự thành công của chúng tôi. Chúng tôi cam kết đồng hành và hỗ trợ doanh nghiệp bạn trong mọi giai đoạn phát triển.',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps2>
   <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <Headline>{category.title}</Headline>
     <BlogList posts={page.data} />
