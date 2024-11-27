@@ -97,3 +97,55 @@
 .dd *:first-child {
   margin-top: 0;
 }
+
+.action_zalo {
+  position: fixed;
+  z-index: 9999;
+  right: 25px;
+  bottom: 157px;
+  width: 60px;
+  height: 60px;
+  line-height: 55px;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  color: #fff;
+  border-radius: 50%;
+  background: #0a7cff;
+  text-decoration: none;
+  opacity: 1;
+}
+
+  .action_zalo img {
+      width: 64px;
+  }
+
+.action_call {
+  bottom: 88px !important;
+  right: 25px;
+}
+
+.action_call {
+  position: fixed;
+  z-index: 9999;
+  top: auto !important;
+  width: 60px;
+  height: 60px;
+  line-height: 64px;
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  color: #fff !important;
+  border-radius: 50%;
+  background: #0a7cff;
+  text-decoration: none;
+  opacity: 1;
+}
+
+  .phone_backtotop .fa {
+      font-size: 22px;
+      color: #fff;
+      margin-top: 8px;
+  }
