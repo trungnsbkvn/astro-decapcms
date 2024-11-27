@@ -330,7 +330,7 @@ export const footerData = {
   ],
   secondaryLinks: [
     { text: 'Điều khoản chung', href: getPermalink('/terms') },
-    { text: 'Chính sách quyền riêng tư', href: getPermalink('/privacy') },
+    { text: 'Chính sách Bảo vệ dữ liệu', href: getPermalink('/privacy') },
   ],
   socialLinks: [
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/vinhphuclawyers' },
