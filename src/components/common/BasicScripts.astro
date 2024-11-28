@@ -152,7 +152,9 @@ import { UI } from 'astrowind:config';
 
     //Show call to actions
     document.getElementById('action_zalo')?.classList.remove('invisible');
+    document.getElementById('action_zalo')?.classList.add('animate-call');
     document.getElementById('action_call')?.classList.remove('invisible');
+    document.getElementById('action_call')?.classList.add('animate-call');
   };
 
   window.onload = onLoad;
