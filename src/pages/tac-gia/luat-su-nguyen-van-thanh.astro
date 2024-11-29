@@ -1,0 +1,120 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import BlogLatestPosts from '~/components/blog/BlogLatestPosts.astro';
+import { getPermalink } from '~/utils/blog-permalinks';
+
+const metadata = {
+  title: 'Luật sư Nguyễn Văn Thành',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    id="hero"
+    title="Nguyễn Văn Thành"
+    tagline="Luật sư"
+    actions={[{ variant: 'primary', text: 'Liên hệ', href: getPermalink('/lien-he#form') }]}
+  >
+    <Fragment slot="subtitle">
+      Ông Nguyễn Văn Thành là Luật sư Điều hành Youth & Partners Law Firm với hơn 12 năm kinh nghiệm nghiên cứu, đưa ra
+      các giải pháp thiết thực cho những vấn đề pháp lý phức tạp mà Doanh nghiệp phải đối mặt. Đồng thời, ông Thành còn
+      giữ vai trò Tổng Cố vấn Pháp lý tại Samsung SDI Việt Nam.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:phone-call',
+        callToAction: {
+          target: '_blank',
+          text: 'Hotline',
+          href: 'tel:0889956888',
+        },
+      },
+      {
+        icon: 'tabler:mailbox',
+        callToAction: {
+          target: '_blank',
+          text: 'Email',
+          href: 'mailto:ceo@yplawfirm.vn',
+        },
+      },
+      {
+        icon: 'tabler:brand-meta',
+        callToAction: {
+          target: '_blank',
+          text: 'Facebook',
+          href: 'https://www.facebook.com/vinhphuclawyers',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/youth and partners/luat su Nguyen Van Thanh.png',
+      alt: 'Luật sư Nguyễn Văn Thành',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Giới thiệu</h2>
+      <p>
+        Luật sư Thành đã hỗ trợ hiệu quả các khách hàng doanh nghiệp của mình vượt qua nhiều thách thức pháp lý khác
+        nhau, bao gồm các vấn đề về tranh chấp kinh doanh và thương mại, đất đai, lao động, đầu tư, quản trị, cơ cấu lại
+        doanh nghiệp, xin hưởng và duy trì các ưu đãi đầu tư đặc biệt cho các Doanh nghiệp lớn. Phạm vi tư vấn của ông
+        bao gồm mọi khía cạnh trong hoạt động kinh doanh của cá nhân và doanh nghiệp. Luật sư Thành đã phát triển và duy
+        trì mối quan hệ làm việc tuyệt vời với nhiều cơ quan có thẩm quyền tại trung ương và địa phương để giúp đỡ doanh
+        nghiệp giải quyết, đàm phán và theo dõi các vấn đề về pháp luật và đầu tư.
+      </p>
+      <br />
+      <p>
+        Luật sư Thành là một trong số rất ít các Luật sư tại Việt Nam có chứng chỉ Kiểm toán cao cấp về hệ thống quản
+        lý, lao động, nhân quyền, đạo đức kinh doanh của tổ chức Liên minh các Doanh nghiệp có Trách nhiệm xã hội (RBA)
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="resume"
+    title="Học vấn"
+    items={[
+      {
+        title: `Cử nhân Luật <br /> <span class="font-normal">Trường ĐH Luật Hà Nội</span> <br /> <span class="text-sm font-normal">2009 - 2012</span>`,
+        icon: 'tabler:school',
+      },
+      {
+        title: `Cử nhân ngoại ngữ <br /> <span class="font-normal">ĐH Ngoại ngữ, ĐH Quốc Gia Hà Nội</span> <br /> <span class="text-sm font-normal">2009 - 2012</span>`,
+        icon: 'tabler:school',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Bài viết của tác giả"
+    information={`Các bài viết chuyên sâu của luật sư Nguyễn Văn Thành về mọi khía cạnh pháp lý về lao động, doanh nghiệp và đầu tư nước ngoài.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+</Layout>
