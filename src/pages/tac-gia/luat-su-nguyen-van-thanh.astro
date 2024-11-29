@@ -3,9 +3,6 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/blog/BlogLatestPosts.astro';
 import { getPermalink } from '~/utils/blog-permalinks';
@@ -23,7 +20,7 @@ const metadata = {
     actions={[{ variant: 'primary', text: 'Liên hệ', href: getPermalink('/lien-he#form') }]}
   >
     <Fragment slot="subtitle">
-      Ông Nguyễn Văn Thành là Luật sư Điều hành Youth & Partners Law Firm với hơn 12 năm kinh nghiệm nghiên cứu, đưa ra
+      Ông Nguyễn Văn Thành là Luật sư Điều hành Youth & Partners Law Firm với hơn 14 năm kinh nghiệm nghiên cứu, đưa ra
       các giải pháp thiết thực cho những vấn đề pháp lý phức tạp mà Doanh nghiệp phải đối mặt. Đồng thời, ông Thành còn
       giữ vai trò Tổng Cố vấn Pháp lý tại Samsung SDI Việt Nam.
     </Fragment>
@@ -67,14 +64,18 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Giới thiệu</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
       <p>
-        Luật sư Thành đã hỗ trợ hiệu quả các khách hàng doanh nghiệp của mình vượt qua nhiều thách thức pháp lý khác
-        nhau, bao gồm các vấn đề về tranh chấp kinh doanh và thương mại, đất đai, lao động, đầu tư, quản trị, cơ cấu lại
-        doanh nghiệp, xin hưởng và duy trì các ưu đãi đầu tư đặc biệt cho các Doanh nghiệp lớn. Phạm vi tư vấn của ông
-        bao gồm mọi khía cạnh trong hoạt động kinh doanh của cá nhân và doanh nghiệp. Luật sư Thành đã phát triển và duy
-        trì mối quan hệ làm việc tuyệt vời với nhiều cơ quan có thẩm quyền tại trung ương và địa phương để giúp đỡ doanh
-        nghiệp giải quyết, đàm phán và theo dõi các vấn đề về pháp luật và đầu tư.
+        Luật sư Thành tốt nghiệp Đại học Luật Hà Nội, học viện tư pháp và được cấp Chứng chỉ Hành nghề Luật sư năm 2015.
+        Tới nay Luật sư Thành đã có 14 năm kinh nghiệm hành nghề trong lĩnh vực tư vấn Doanh nghiệp, Lao động, Kinh
+        doanh – Thương mại, Hợp đồng, Đầu tư, các vấn đề liên quan đến yếu tố nước ngoài.
+      </p>
+      <br />
+      <p>
+        Luật sư Thành hiện đang là Luật sư điều hành Youth & Partners Law Firm, có kinh nghiệm tư vấn chuyên sâu các vấn
+        đề nội bộ của Doanh nghiệp, am hiểu sâu sắc các bộ quy tắc quốc tế liên quan tới Doanh nghiệp và Người lao động,
+        có kinh nghiệm tuyệt vời trong việc giải quyết các tranh chấp nội bộ trong doanh nghiệp, các tranh chấp và các
+        vấn đề pháp lý liên quan đến các đối tác, nhà cung cấp của Doanh nghiệp.
       </p>
       <br />
       <p>
@@ -95,11 +96,19 @@ const metadata = {
     title="Học vấn"
     items={[
       {
-        title: `Cử nhân Luật <br /> <span class="font-normal">Trường ĐH Luật Hà Nội</span> <br /> <span class="text-sm font-normal">2009 - 2012</span>`,
+        title: `Cấp chứng chỉ hành nghề Luật sư<br /> <span class="font-normal">Bộ Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2015</span>`,
         icon: 'tabler:school',
       },
       {
-        title: `Cử nhân ngoại ngữ <br /> <span class="font-normal">ĐH Ngoại ngữ, ĐH Quốc Gia Hà Nội</span> <br /> <span class="text-sm font-normal">2009 - 2012</span>`,
+        title: `Tốt nghiệp <br /> <span class="font-normal">Học viện Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2012</span>`,
+        icon: 'tabler:school',
+      },
+      {
+        title: `Cử nhân ngoại ngữ <br /> <span class="font-normal">ĐH Ngoại ngữ, ĐH Quốc Gia Hà Nội</span> <br /> <span class="text-sm font-normal">Năm 2012</span>`,
+        icon: 'tabler:school',
+      },
+      {
+        title: `Cử nhân Luật <br /> <span class="font-normal">Trường ĐH Luật Hà Nội</span> <br /> <span class="text-sm font-normal">Năm 2011</span>`,
         icon: 'tabler:school',
       },
     ]}
