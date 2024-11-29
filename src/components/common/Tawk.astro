@@ -3,20 +3,21 @@ import { Icon } from 'astro-icon/components';
 import Image from '~/components/common/Image.astro';
 ---
 
-<a id="action_zalo" class="action_zalo invisible" title="Chát ngay" target="_blank" href="https://zalo.me/0975048350">
-  <Image
-    class="w-full h-full"
-    widths={[64, 64]}
-    layout="cover"
-    src="~/assets/images/icon-zalo.png"
-    alt="Chát Zalo với chúng tôi"
-  />
-</a>
-<a id="action_call" class="action_call invisible" title="Gọi ngay 088 995 6888" href="tel:0889956888"
-  ><Icon
-    name="tabler:phone"
-    class="mx-auto my-3 size-7 text-white-400 dark:text-slate-500 hover:text-white dark:hover:text-slate-300"
-  />
-</a>
-
+<div id="action_contact" class="invisible">
+  <a id="action_zalo" class="action_zalo" title="Chát ngay" target="_blank" href="https://zalo.me/0975048350">
+    <Image
+      class="w-full h-full"
+      widths={[64, 64]}
+      layout="cover"
+      src="~/assets/images/icon-zalo.png"
+      alt="Chát Zalo với chúng tôi"
+    />
+  </a>
+  <a id="action_call" class="action_call" title="Gọi ngay 088 995 6888" href="tel:0889956888"
+    ><Icon
+      name="tabler:phone"
+      class="mx-auto my-3 size-7 text-white-400 dark:text-slate-500 hover:text-white dark:hover:text-slate-300"
+    />
+  </a>
+</div>
 <script crossorigin="anonymous" src="https://embed.tawk.to/60e7f020d6e7610a49aa63d1/1fa50407q"></script>
