@@ -30,7 +30,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành'] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5 }
       - {
           label: 'Content',
@@ -59,7 +59,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành'] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
@@ -88,7 +88,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành'] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
@@ -117,7 +117,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành'] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
@@ -146,7 +146,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành'] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
@@ -175,7 +175,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành'] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
