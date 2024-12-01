@@ -4,6 +4,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
+import { YouTube } from 'astro-embed';
+
 import BlogLatestPosts from '~/components/blog/BlogLatestPosts.astro';
 import { getPermalink } from '~/utils/blog-permalinks';
 
@@ -23,6 +25,18 @@ const metadata = {
       Ông Nguyễn Văn Thành là Luật sư Điều hành Youth & Partners Law Firm với hơn 14 năm kinh nghiệm nghiên cứu, đưa ra
       các giải pháp thiết thực cho những vấn đề pháp lý phức tạp mà Doanh nghiệp phải đối mặt. Đồng thời, ông Thành còn
       giữ vai trò Tổng Cố vấn Pháp lý tại Samsung SDI Việt Nam.
+    </Fragment>
+    <Fragment slot="image">
+      <YouTube
+        id="1X5le8RcG5E"
+        title="Luật sư Nguyễn Văn Thành - Triển khai chương trình Tư vấn pháp luật cho nhân viên SDIV"
+      />
+      <style is:inline>
+        lite-youtube {
+          margin: 0 auto;
+          max-width: 100%;
+        }
+      </style>
     </Fragment>
   </Hero>
 
@@ -67,7 +81,11 @@ const metadata = {
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
       <p>
         Luật sư Thành, nguyên là Trưởng phòng pháp chế Samsung SDI Việt Nam (từ 2015) và hiện đang là Luật sư điều hành
-        Youth & Partners Law Firm (từ 2019).
+        Youth & Partners Law Firm (từ 2019). <br />
+        - Ban chủ nhiệm Câu lạc bộ pháp chế tỉnh Vĩnh Phúc: 3/2024 <br />
+        - Thẻ hành nghề luật sư số: 10652/LS do Liên đoàn luật sư Việt Nam cấp <br />
+        - Thành viên Liên đoàn luật sư Việt Nam: 2015<br />
+        - Luật sư thuộc Đoàn luật sư, Hội luật gia Việt Nam
       </p>
       <br />
       <p>
@@ -79,10 +97,10 @@ const metadata = {
       <br />
       <p>
         Luật sư Thành là một trong số rất ít các Luật sư tại Việt Nam có chứng chỉ Kiểm toán cao cấp về hệ thống quản
-        lý, lao động, nhân quyền, đạo đức kinh doanh của tổ chức Liên minh các Doanh nghiệp có Trách nhiệm xã hội
-        (RBA).Với vai trò Lead Auditor (<b>Trưởng đoàn thanh tra các nhà cung ứng của Samsung Việt Nam</b>), Luật sư
-        Thành đã có kinh nghiệm đi audit (đánh giá) hàng trăm nhà cung cấp của Samsung Việt Nam về khía cạnh tuân thủ bộ
-        tiêu chuẩn quốc tế RBA (RBA code of conduct) và quy định của pháp luật Việt Nam.
+        lý, lao động, nhân quyền, đạo đức kinh doanh của tổ chức Liên minh các Doanh nghiệp có Trách nhiệm xã hội (RBA).
+        Với vai trò Lead Auditor (Trưởng đoàn thanh tra các nhà cung ứng của Samsung Việt Nam), Luật sư Thành đã có kinh
+        nghiệm đi audit (đánh giá) hàng trăm nhà cung cấp của Samsung Việt Nam về khía cạnh tuân thủ bộ tiêu chuẩn quốc
+        tế RBA (RBA code of conduct) và quy định của pháp luật Việt Nam.
       </p>
     </Fragment>
 
