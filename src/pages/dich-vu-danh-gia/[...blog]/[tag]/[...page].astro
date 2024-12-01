@@ -20,7 +20,7 @@ const { page, tag } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
 
 const metadata = {
-  title: `Đánh giá doanh nghiệp theo thẻ '${tag.title}'${currentPage > 1 ? ` — Trang ${currentPage} ` : ''}`,
+  title: `Thẻ '${tag.title}'${currentPage > 1 ? ` — Trang ${currentPage} ` : ''}`,
   robots: {
     index: blogTagRobots?.index,
     follow: blogTagRobots?.follow,

@@ -20,7 +20,7 @@ const { page, category } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
 
 const metadata = {
-  title: `Chuyên mục Đánh giá doanh nghiệp '${category.title}' ${currentPage > 1 ? ` — Trang ${currentPage}` : ''}`,
+  title: `Chuyên mục '${category.title}' ${currentPage > 1 ? ` — Trang ${currentPage}` : ''}`,
   robots: {
     index: blogCategoryRobots?.index,
     follow: blogCategoryRobots?.follow,
