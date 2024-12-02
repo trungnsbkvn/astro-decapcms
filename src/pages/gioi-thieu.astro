@@ -57,7 +57,7 @@ const metadata = {
     </Fragment>
   </Hero>
 
-  <!-- Steps Widget ****************** -->
+  <!-- Lịch sử thành lập ****************** -->
 
   <Steps
     id="lich-su-thanh-lap"
@@ -101,6 +101,37 @@ const metadata = {
     </Fragment>
   </Steps>
 
+  <!-- Giải thưởng ****************** -->
+
+  <Steps2
+    id="giai-thuong-phap-ly"
+    title="Giải thưởng pháp lý"
+    subtitle="Chúng tôi tự hào về những thành tựu và giải thưởng pháp lý đã đạt được, minh chứng cho sự cam kết và uy tín trong ngành pháp luật"
+    isReversed={true}
+    callToAction={{
+      text: 'Xem thêm',
+      href: '/gioi-thieu#ho-so-nang-luc',
+    }}
+    items={[
+      {
+        title: 'Giải thưởng Luật sư Xuất sắc',
+        description:
+          'Được trao tặng cho các luật sư của chúng tôi vì những đóng góp xuất sắc trong các vụ việc phức tạp.',
+        icon: 'tabler:globe',
+      },
+      {
+        title: 'Giải thưởng Đổi mới Pháp lý',
+        description:
+          'Tôn vinh những nỗ lực sáng tạo trong việc áp dụng công nghệ và các giải pháp pháp lý mới để nâng cao hiệu quả công việc.',
+        icon: 'tabler:message-star',
+      },
+      {
+        title: 'Giải thưởng Đóng góp cho Cộng đồng',
+        description: 'Ghi nhận những hoạt động từ thiện và đóng góp tích cực cho cộng đồng và xã hội.',
+        icon: 'tabler:award',
+      },
+    ]}
+  />
   <!-- Stats Widget ****************** -->
 
   <Stats
@@ -111,7 +142,11 @@ const metadata = {
       { title: 'Khách hàng hài lòng', amount: '1176' },
       { title: 'Vụ thắng kiện', amount: '723' },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Stats>
 
   <!-- Features3 Widget ************** -->
 
@@ -165,176 +200,6 @@ const metadata = {
       src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
       alt: 'Colorful Image',
     }}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    id="tam-nhin-su-menh"
-    title="Tầm nhìn và sứ mệnh"
-    subtitle="<b>Tầm nhìn</b> Chúng tôi phấn đấu trở thành công ty luật hàng đầu, được khách hàng tín nhiệm và chọn lựa vì sự nhanh chóng, tận tâm và tận lực trong việc cung cấp các dịch vụ pháp lý chất lượng cao. <br /><br /> <b>Sứ mệnh</b> Chúng tôi cam kết mang đến cho khách hàng những giải pháp pháp lý hiệu quả và kịp thời. Với phương châm “Thời gian, Tận tâm, Tận lực”, chúng tôi luôn đặt lợi ích của khách hàng lên hàng đầu, làm việc hết mình để đáp ứng nhu cầu pháp lý đa dạng và phức tạp của họ."
-    items={[
-      {
-        title: 'Chính trực',
-        description:
-          'Chúng tôi luôn hành động với sự trung thực và đạo đức nghề nghiệp, đặt lợi ích của khách hàng lên hàng đầu.',
-      },
-      {
-        title: 'Sáng tạo',
-        description:
-          'Chúng tôi luôn tìm kiếm những giải pháp pháp lý sáng tạo và hiệu quả để đáp ứng nhu cầu đa dạng của khách hàng.',
-      },
-      {
-        title: 'Hợp tác',
-        description:
-          'Chúng tôi tin rằng sự hợp tác chặt chẽ giữa đội ngũ nhân viên và khách hàng là chìa khóa để đạt được thành công.',
-      },
-      {
-        title: 'Chất lượng',
-        description: 'Chúng tôi không ngừng nâng cao chất lượng dịch vụ để đáp ứng và vượt qua kỳ vọng của khách hàng.',
-      },
-    ]}
-  />
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    id="ton-chi-hoat-dong"
-    isReversed
-    tagline="Y&P Law Firm"
-    title="Tôn chỉ hoạt động của chúng tôi"
-    items={[
-      {
-        title: 'Thời gian',
-        description:
-          'Chúng tôi biết rằng mọi vụ việc pháp lý đều có những thời hạn và yêu cầu khắt khe. Chính vì thế, đội ngũ luật sư của chúng tôi luôn nỗ lực hết mình để đảm bảo tiến trình công việc diễn ra nhanh chóng và hiệu quả, giúp khách hàng đạt được kết quả mong muốn trong thời gian sớm nhất.',
-        icon: 'tabler:clock-24',
-      },
-      {
-        title: 'Tận tâm',
-        description:
-          'Mỗi luật sư tại Y&P đều đặt trọn tâm huyết vào từng hồ sơ, lắng nghe và thấu hiểu nhu cầu của khách hàng để đưa ra những giải pháp tối ưu và phù hợp nhất. Chúng tôi tin rằng sự tận tâm chính là chìa khóa để xây dựng lòng tin và mối quan hệ bền vững với khách hàng.',
-        icon: 'tabler:heart',
-      },
-      {
-        title: 'Tận lực',
-        description:
-          'Không chỉ dừng lại ở việc cung cấp dịch vụ pháp lý, chúng tôi luôn đi thêm một bước nữa để bảo vệ quyền lợi và lợi ích hợp pháp của khách hàng. Đội ngũ luật sư tài năng và giàu kinh nghiệm của chúng tôi luôn sẵn sàng đối mặt với mọi thách thức để mang lại sự công bằng và thành công cho khách hàng.',
-        icon: 'tabler:award',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    id="giai-thuong-phap-ly"
-    title="Giải thưởng pháp lý"
-    subtitle="Chúng tôi tự hào về những thành tựu và giải thưởng pháp lý đã đạt được, minh chứng cho sự cam kết và uy tín trong ngành pháp luật"
-    isReversed={true}
-    callToAction={{
-      text: 'Xem thêm',
-      href: '/gioi-thieu#ho-so-nang-luc',
-    }}
-    items={[
-      {
-        title: 'Giải thưởng Luật sư Xuất sắc',
-        description:
-          'Được trao tặng cho các luật sư của chúng tôi vì những đóng góp xuất sắc trong các vụ việc phức tạp.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Giải thưởng Đổi mới Pháp lý',
-        description:
-          'Tôn vinh những nỗ lực sáng tạo trong việc áp dụng công nghệ và các giải pháp pháp lý mới để nâng cao hiệu quả công việc.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Giải thưởng Đóng góp cho Cộng đồng',
-        description: 'Ghi nhận những hoạt động từ thiện và đóng góp tích cực cho cộng đồng và xã hội.',
-        icon: 'tabler:award',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Địa chỉ văn phòng"
-    tagline="Hãy đến thăm chúng tôi"
-    columns={4}
-    items={[
-      {
-        title: 'Hà Nội',
-        description: 'P316, Tháp Tây, Chung cư Học viện Quốc Phòng, Xuân La, Tây Hồ, Hà Nội',
-      },
-      {
-        title: 'Vĩnh Phúc',
-        description: 'Số nhà 170, đường Nguyễn Văn Linh, phường Liên Bảo, thành phố Vĩnh Yên, tỉnh Vĩnh Phúc',
-      },
-      {
-        title: 'Bắc Ninh',
-        description: 'Số nhà 222, đường Trần Hưng Đạo, phường Tiền An, thành phố Bắc Ninh, tỉnh Bắc Ninh',
-      },
-      {
-        title: 'VPDD Vĩnh Tường',
-        description: 'Khu 2, xã Vân Xuân, huyện Vĩnh Tường, tỉnh Vĩnh Phúc',
-      },
-    ]}
-  />
-
-  <!-- Brands Widget ****************** -->
-
-  <Brands
-    title="Đối tác và khách hàng của chúng tôi"
-    subtitle="Chúng tôi tự hào về mạng lưới đối tác và khách hàng rộng khắp, bao gồm các doanh nghiệp, tổ chức và cá nhân uy tín trong nhiều lĩnh vực khác nhau. Những đối tác hợp tác của chúng tôi gồm có các công ty luật hàng đầu, các tổ chức tư vấn chiến lược, và các công ty tài chính quốc tế. Chúng tôi làm việc chặt chẽ với họ để mang lại các giải pháp pháp lý tối ưu và chuyên nghiệp nhất."
-    icons={[]}
-    images={[
-      {
-        src: '~/assets/images/partners/viettel.png',
-        alt: 'Viettel',
-      },
-      {
-        src: '~/assets/images/partners/wesmart.jpg',
-        alt: 'WeSMART',
-      },
-      {
-        src: '~/assets/images/partners/topcv.png',
-        alt: 'TopCV',
-      },
-      {
-        src: '~/assets/images/partners/samsung.png',
-        alt: 'Samsung',
-      },
-      {
-        src: '~/assets/images/partners/fpt.png',
-        alt: 'FPT',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_1280.png',
-        alt: 'Node JS',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2015/10/31/12/54/google-1015751_1280.png',
-        alt: 'Google',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/45/meta-6850393_1280.png',
-        alt: 'Meta',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2013/01/29/22/53/yahoo-76684_1280.png',
-        alt: 'Yahoo',
-      },
-    ]}
   />
 
   <Testimonials
@@ -405,6 +270,176 @@ const metadata = {
     </Fragment>
   </Testimonials>
 
+  <!-- Tôn chỉ hoạt động **************** -->
+
+  <Content
+    id="ton-chi-hoat-dong"
+    isReversed
+    tagline="Y&P Law Firm"
+    title="Tôn chỉ hoạt động của chúng tôi"
+    items={[
+      {
+        title: 'Thời gian',
+        description:
+          'Chúng tôi biết rằng mọi vụ việc pháp lý đều có những thời hạn và yêu cầu khắt khe. Chính vì thế, đội ngũ luật sư của chúng tôi luôn nỗ lực hết mình để đảm bảo tiến trình công việc diễn ra nhanh chóng và hiệu quả, giúp khách hàng đạt được kết quả mong muốn trong thời gian sớm nhất.',
+        icon: 'tabler:clock-24',
+      },
+      {
+        title: 'Tận tâm',
+        description:
+          'Mỗi luật sư tại Y&P đều đặt trọn tâm huyết vào từng hồ sơ, lắng nghe và thấu hiểu nhu cầu của khách hàng để đưa ra những giải pháp tối ưu và phù hợp nhất. Chúng tôi tin rằng sự tận tâm chính là chìa khóa để xây dựng lòng tin và mối quan hệ bền vững với khách hàng.',
+        icon: 'tabler:heart',
+      },
+      {
+        title: 'Tận lực',
+        description:
+          'Không chỉ dừng lại ở việc cung cấp dịch vụ pháp lý, chúng tôi luôn đi thêm một bước nữa để bảo vệ quyền lợi và lợi ích hợp pháp của khách hàng. Đội ngũ luật sư tài năng và giàu kinh nghiệm của chúng tôi luôn sẵn sàng đối mặt với mọi thách thức để mang lại sự công bằng và thành công cho khách hàng.',
+        icon: 'tabler:award',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Colorful Image',
+    }}
+  />
+
+  <!-- Hồ sơ năng lực *********** -->
+
+  <CallToAction
+    id="ho-so-nang-luc"
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Hồ sơ năng lực tiếng Việt',
+        href: '/assets/profiles/COMPANY_PROFILE_Y&P2023_Version Vietnamese.pdf',
+        icon: 'tabler:download',
+      },
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Hồ sơ năng lực tiếng Anh',
+        href: '/assets/profiles/COMPANY_PROFILE_Y&P2023_Version English.pdf',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">Hồ sơ năng lực của Youth & Partners</Fragment>
+
+    <Fragment slot="subtitle">
+      Tại đây, bạn sẽ tìm thấy những thông tin chi tiết về năng lực chuyên môn, các dịch vụ pháp lý mà chúng tôi cung
+      cấp, và các thành tựu nổi bật của đội ngũ luật sư tại công ty
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </CallToAction>
+
+  <!-- Tầm nhìn / sứ mệnh ****************** -->
+
+  <Steps2
+    id="tam-nhin-su-menh"
+    title="Tầm nhìn và sứ mệnh"
+    subtitle="<b>Tầm nhìn</b> Chúng tôi phấn đấu trở thành công ty luật hàng đầu, được khách hàng tín nhiệm và chọn lựa vì sự nhanh chóng, tận tâm và tận lực trong việc cung cấp các dịch vụ pháp lý chất lượng cao. <br /><br /> <b>Sứ mệnh</b> Chúng tôi cam kết mang đến cho khách hàng những giải pháp pháp lý hiệu quả và kịp thời. Với phương châm “Thời gian, Tận tâm, Tận lực”, chúng tôi luôn đặt lợi ích của khách hàng lên hàng đầu, làm việc hết mình để đáp ứng nhu cầu pháp lý đa dạng và phức tạp của họ."
+    items={[
+      {
+        title: 'Chính trực',
+        description:
+          'Chúng tôi luôn hành động với sự trung thực và đạo đức nghề nghiệp, đặt lợi ích của khách hàng lên hàng đầu.',
+      },
+      {
+        title: 'Sáng tạo',
+        description:
+          'Chúng tôi luôn tìm kiếm những giải pháp pháp lý sáng tạo và hiệu quả để đáp ứng nhu cầu đa dạng của khách hàng.',
+      },
+      {
+        title: 'Hợp tác',
+        description:
+          'Chúng tôi tin rằng sự hợp tác chặt chẽ giữa đội ngũ nhân viên và khách hàng là chìa khóa để đạt được thành công.',
+      },
+      {
+        title: 'Chất lượng',
+        description: 'Chúng tôi không ngừng nâng cao chất lượng dịch vụ để đáp ứng và vượt qua kỳ vọng của khách hàng.',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Địa chỉ văn phòng"
+    tagline="Hãy đến thăm chúng tôi"
+    columns={4}
+    items={[
+      {
+        title: 'Hà Nội',
+        description: 'P316, Tháp Tây, Chung cư Học viện Quốc Phòng, Xuân La, Tây Hồ, Hà Nội',
+      },
+      {
+        title: 'Vĩnh Phúc',
+        description: 'Số nhà 170, đường Nguyễn Văn Linh, phường Liên Bảo, thành phố Vĩnh Yên, tỉnh Vĩnh Phúc',
+      },
+      {
+        title: 'Bắc Ninh',
+        description: 'Số nhà 222, đường Trần Hưng Đạo, phường Tiền An, thành phố Bắc Ninh, tỉnh Bắc Ninh',
+      },
+      {
+        title: 'VPDD Vĩnh Tường',
+        description: 'Khu 2, xã Vân Xuân, huyện Vĩnh Tường, tỉnh Vĩnh Phúc',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Brands Widget ****************** -->
+
+  <Brands
+    title="Đối tác và khách hàng của chúng tôi"
+    subtitle="Chúng tôi tự hào về mạng lưới đối tác và khách hàng rộng khắp, bao gồm các doanh nghiệp, tổ chức và cá nhân uy tín trong nhiều lĩnh vực khác nhau. Những đối tác hợp tác của chúng tôi gồm có các công ty luật hàng đầu, các tổ chức tư vấn chiến lược, và các công ty tài chính quốc tế. Chúng tôi làm việc chặt chẽ với họ để mang lại các giải pháp pháp lý tối ưu và chuyên nghiệp nhất."
+    icons={[]}
+    images={[
+      {
+        src: '~/assets/images/partners/viettel.png',
+        alt: 'Viettel',
+      },
+      {
+        src: '~/assets/images/partners/wesmart.jpg',
+        alt: 'WeSMART',
+      },
+      {
+        src: '~/assets/images/partners/topcv.png',
+        alt: 'TopCV',
+      },
+      {
+        src: '~/assets/images/partners/samsung.png',
+        alt: 'Samsung',
+      },
+      {
+        src: '~/assets/images/partners/fpt.png',
+        alt: 'FPT',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_1280.png',
+        alt: 'Node JS',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/10/31/12/54/google-1015751_1280.png',
+        alt: 'Google',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/45/meta-6850393_1280.png',
+        alt: 'Meta',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/01/29/22/53/yahoo-76684_1280.png',
+        alt: 'Yahoo',
+      },
+    ]}
+  />
+
   <!-- Features3 Widget ************** -->
 
   <Features3
@@ -453,34 +488,9 @@ const metadata = {
         },
       },
     ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    id="ho-so-nang-luc"
-    actions={[
-      {
-        variant: 'primary',
-        target: '_blank',
-        text: 'Hồ sơ năng lực tiếng Việt',
-        href: '/assets/profiles/COMPANY_PROFILE_Y&P2023_Version Vietnamese.pdf',
-        icon: 'tabler:download',
-      },
-      {
-        variant: 'primary',
-        target: '_blank',
-        text: 'Hồ sơ năng lực tiếng Anh',
-        href: '/assets/profiles/COMPANY_PROFILE_Y&P2023_Version English.pdf',
-        icon: 'tabler:download',
-      },
-    ]}
   >
-    <Fragment slot="title">Hồ sơ năng lực của Youth & Partners</Fragment>
-
-    <Fragment slot="subtitle">
-      Tại đây, bạn sẽ tìm thấy những thông tin chi tiết về năng lực chuyên môn, các dịch vụ pháp lý mà chúng tôi cung
-      cấp, và các thành tựu nổi bật của đội ngũ luật sư tại công ty
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </CallToAction>
+  </Features3>
 </Layout>
