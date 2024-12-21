@@ -284,7 +284,7 @@ export const footerData = {
       ],
     },
     {
-      title: 'Tin tức - Liên hệ',
+      title: 'Tin tức',
       links: [
         {
           text: 'Tin tức pháp lý',
@@ -306,6 +306,11 @@ export const footerData = {
           text: 'Văn bản pháp lý',
           href: getPermalink('van-ban-phap-ly', 'category'),
         },
+      ],
+    },    
+    {
+      title: 'Liên hệ',
+      links: [
         {
           text: 'Liên hệ tư vấn',
           href: getPermalink('/lien-he'),
@@ -314,17 +319,6 @@ export const footerData = {
           text: 'Thông tin tuyển dụng',
           href: getPermalink('thong-tin-tuyen-dung', 'category'),
         },
-      ],
-    },    
-    {
-      title: 'Thông tin chi nhánh',
-      links: [
-        {
-          text: 'Địa chỉ: Số nhà 222, đường Trần Hưng Đạo, phường Tiền An, thành phố Bắc Ninh, tỉnh Bắc Ninh',
-          href: '#',
-        },
-        { text: 'Địa chỉ: Khu 2, xã Vân Xuân, huyện Vĩnh Tường, tỉnh Vĩnh Phúc', href: '#' },
-        { text: 'Cầu Các, xã Quất Lưu, huyện Bình Xuyên, tỉnh Vĩnh Phúc', href: '#' },
       ],
     },
   ],

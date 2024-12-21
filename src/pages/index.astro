@@ -10,6 +10,7 @@ import BlogLatestPosts from '~/components/blog/BlogLatestPosts.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
+import Brands from '~/components/widgets/Brands.astro';
 
 const metadata = {
   title: 'Công ty Luật TNHH Youth and Partners - Văn phòng luật sư hàng đầu Vĩnh Phúc',
@@ -257,8 +258,105 @@ const metadata = {
         },
       },
     ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Testimonials>
+
+  <!-- Brands Widget ****************** -->
+
+  <Brands
+    title="Đối tác và khách hàng của chúng tôi"
+    subtitle="Chúng tôi tự hào về mạng lưới đối tác và khách hàng rộng khắp, bao gồm các doanh nghiệp, tổ chức và cá nhân uy tín trong nhiều lĩnh vực khác nhau. Những đối tác hợp tác của chúng tôi gồm có các công ty luật hàng đầu, các tổ chức tư vấn chiến lược, và các công ty tài chính quốc tế. Chúng tôi làm việc chặt chẽ với họ để mang lại các giải pháp pháp lý tối ưu và chuyên nghiệp nhất."
+    icons={[]}
+    images={[
+      {
+        src: '~/assets/images/partners/Arcadyan-Logo.png',
+        alt: 'Arcadyan',
+      },
+      {
+        src: '~/assets/images/partners/Blueway-Logo.jpg',
+        alt: 'Blueway',
+      },
+      {
+        src: '~/assets/images/partners/Boulder-Logo.png',
+        alt: 'Boulder',
+      },
+      {
+        src: '~/assets/images/partners/Boyd_Corporation_logo.png',
+        alt: 'Boyd Corporation',
+      },
+      {
+        src: '~/assets/images/partners/Cosmos-Logo.png',
+        alt: 'Cosmos',
+      },
+      {
+        src: '~/assets/images/partners/Cresyn-Logo.png',
+        alt: 'Cresyn',
+      },
+      {
+        src: '~/assets/images/partners/Desay-Logo.png',
+        alt: 'Desay SV',
+      },
+      {
+        src: '~/assets/images/partners/DigitalX-Logo.png',
+        alt: 'DigitalX',
+      },
+      {
+        src: '~/assets/images/partners/FPT-Logo.png',
+        alt: 'FPT',
+      },
+      {
+        src: '~/assets/images/partners/Hòa Bình-Logo.png',
+        alt: 'Hòa Bình Security',
+      },
+      {
+        src: '~/assets/images/partners/HR Partner-Logo.png',
+        alt: 'HR Partner',
+      },
+      {
+        src: '~/assets/images/partners/Kowa-Logo.png',
+        alt: 'Kowa',
+      },
+      {
+        src: '~/assets/images/partners/NSM-Logo.jpg',
+        alt: 'NSM HV',
+      },
+      {
+        src: '~/assets/images/partners/PowerLogics-Logo.jpg',
+        alt: 'Power Logics',
+      },
+      {
+        src: '~/assets/images/partners/LOGO-rong-viet.png',
+        alt: 'Rong Viet',
+      },
+      {
+        src: '~/assets/images/partners/Rorze-Logo.png',
+        alt: 'Rorze',
+      },
+      {
+        src: '~/assets/images/partners/Samsung-Logo.png',
+        alt: 'Samsung',
+      },
+      {
+        src: '~/assets/images/partners/Shinsung-Logo.png',
+        alt: 'Shinsung',
+      },
+      {
+        src: '~/assets/images/partners/Top Engineering-Logo.png',
+        alt: 'Top Engineering',
+      },
+      {
+        src: '~/assets/images/partners/Viettel-Logo.png',
+        alt: 'Viettel',
+      },
+      {
+        src: '~/assets/images/partners/TopCV-Logo.png',
+        alt: 'TopCV',
+      },
+    ]}
   />
-  <!-- CallToAction Widget *********** -->
 
   <!-- Steps2 Widget ****************** -->
 
