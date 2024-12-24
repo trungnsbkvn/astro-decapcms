@@ -117,6 +117,38 @@ const metadata = {
     </Fragment>
   </Steps>
 
+  <!-- Giải thưởng ****************** -->
+
+  <Steps2
+    id="giai-thuong-phap-ly"
+    title="Giải thưởng pháp lý"
+    subtitle="Chúng tôi tự hào về những thành tựu và giải thưởng pháp lý đã đạt được, minh chứng cho sự cam kết và uy tín trong ngành pháp luật"
+    isReversed={true}
+    callToAction={{
+      text: 'Xem thêm',
+      href: '/gioi-thieu#ho-so-nang-luc',
+    }}
+    items={[
+      {
+        title: 'Giải thưởng Luật sư Xuất sắc',
+        description:
+          'Được trao tặng cho các luật sư của chúng tôi vì những đóng góp xuất sắc trong các vụ việc phức tạp.',
+        icon: 'tabler:globe',
+      },
+      {
+        title: 'Giải thưởng Đổi mới Pháp lý',
+        description:
+          'Tôn vinh những nỗ lực sáng tạo trong việc áp dụng công nghệ và các giải pháp pháp lý mới để nâng cao hiệu quả công việc.',
+        icon: 'tabler:message-star',
+      },
+      {
+        title: 'Giải thưởng Đóng góp cho Cộng đồng',
+        description: 'Ghi nhận những hoạt động từ thiện và đóng góp tích cực cho cộng đồng và xã hội.',
+        icon: 'tabler:award',
+      },
+    ]}
+  />
+
   <!-- Tôn chỉ hoạt động **************** -->
 
   <Content
@@ -179,37 +211,6 @@ const metadata = {
     ]}
   />
 
-  <!-- Giải thưởng ****************** -->
-
-  <Steps2
-    id="giai-thuong-phap-ly"
-    title="Giải thưởng pháp lý"
-    subtitle="Chúng tôi tự hào về những thành tựu và giải thưởng pháp lý đã đạt được, minh chứng cho sự cam kết và uy tín trong ngành pháp luật"
-    isReversed={true}
-    callToAction={{
-      text: 'Xem thêm',
-      href: '/gioi-thieu#ho-so-nang-luc',
-    }}
-    items={[
-      {
-        title: 'Giải thưởng Luật sư Xuất sắc',
-        description:
-          'Được trao tặng cho các luật sư của chúng tôi vì những đóng góp xuất sắc trong các vụ việc phức tạp.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Giải thưởng Đổi mới Pháp lý',
-        description:
-          'Tôn vinh những nỗ lực sáng tạo trong việc áp dụng công nghệ và các giải pháp pháp lý mới để nâng cao hiệu quả công việc.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Giải thưởng Đóng góp cho Cộng đồng',
-        description: 'Ghi nhận những hoạt động từ thiện và đóng góp tích cực cho cộng đồng và xã hội.',
-        icon: 'tabler:award',
-      },
-    ]}
-  />
   <!-- Stats Widget ****************** -->
 
   <Stats
@@ -286,6 +287,29 @@ const metadata = {
     subtitle="Khách hàng hài lòng với dịch vụ pháp lý tại Youth and Partners, đánh giá cao sự tận tâm và chuyên nghiệp của đội ngũ luật sư trong việc giải quyết các vấn đề pháp lý phức tạp. Họ tin tưởng và sẵn lòng tiếp tục sử dụng dịch vụ của chúng tôi trong tương lai."
     testimonials={[
       {
+        testimonial: `Làm việc với Y&P rất yên tâm khi được tư vấn chi tiết, không chỉ đúng các nội dung được hỏi mà còn thêm cả các nội dung liên quan khác nếu có, nhằm cho doanh nghiệp có cái nhìn tổng quan hơn, từ đó đưa ra quyết định đúng và chính xác hơn. Thái độ của luật sư tư vấn hoà nhã, lắng nghe và rất "chiều ý" khách hàng. 
+Chắc chắn sẽ tiếp tục đồng hành cùng Y&P trong thời gian tới. 
+Cảm ơn đội ngũ luật sư tư vấn của Y&P, chúc Y&P ngày càng thành công!`,
+        name: 'Ms. Linh',
+        job: 'Manager | HR & Administration - TopCV',
+        image: {
+          src: '~/assets/images/customers/Ms. Linh-TopCV.jpg',
+          alt: 'Ms. Linh-TopCV',
+        },
+      },
+      {
+        testimonial: `Tính chuyên nghiệp và sự tận tâm: Dịch vụ tư vấn chuyên nghiệp, luật sư hỗ trợ tận tình, hiệu quả trong xử lý tranh chấp, tuân thủ và hồ sơ pháp lý.
+Tốc độ phản hồi: Nhanh chóng, linh hoạt. Vấn đề đơn giản được giải quyết qua tin nhắn, vấn đề phức tạp có báo cáo pháp lý chi tiết, rõ ràng.
+Kinh nghiệm chuyên môn: Phong phú, bao quát các lĩnh vực thương mại, dân sự, lao động, v.v.
+Báo cáo và cập nhật: Đầy đủ, thường xuyên, rõ ràng.`,
+        name: 'Ms. Huyền Nguyễn',
+        job: 'Head of HR | Kowa (Việt Nam)',
+        image: {
+          src: '~/assets/images/customers/Huyền Nguyễn.jpg',
+          alt: 'Ms. Huyền Nguyễn - Kowa (Việt Nam)',
+        },
+      },
+      {
         testimonial: `Amazing services and good spirit
                                         We have been working with Youth & Partners for a long time. We had perfect experiences from enthusiastic and great staff. They are friendly and dedicated to work. Everything is well organized.
                                         Keep up your great work!`,
@@ -324,12 +348,13 @@ const metadata = {
         },
       },
       {
-        testimonial: `Dịch vụ nhanh chóng và rất đáng tin cậy. Các Luật sư nói được và làm được. Là 1 địa chỉ Luật sư tốt cho công dân và Doanh nghiệp Vĩnh Phúc.`,
-        name: 'Duc Le Anh',
+        testimonial: `Công ty luật uy tín, có đội ngũ Luật sư và chuyên viên giàu kinh nghiêm trong các lĩnh vực doanh nghiệp, lao động, kinh doanh thương mại, tranh tụng.
+Một nơi xứng đáng để gửi gắm niềm tin.`,
+        name: 'Xuân Thoại Mai',
         job: 'Khách hàng',
         image: {
-          src: '~/assets/images/customers/ducleanh.png',
-          alt: 'Duc Le Anh Image',
+          src: '~/assets/images/customers/Xuân Thoại.png',
+          alt: 'Xuân Thoại Mai Image',
         },
       },
       {
@@ -339,6 +364,15 @@ const metadata = {
         image: {
           src: '~/assets/images/customers/ngoc.png',
           alt: 'Ngọc Nguyen Image',
+        },
+      },
+      {
+        testimonial: `Đội ngũ luật sư chuyên môn cao, tác phong chuyên nghiệp, hỗ trợ khách hàng tận tâm, nhiệt tình. Tôi rất hài lòng với trải nghiệm sử dụng dịch vụ của Công ty Luật này.`,
+        name: 'Thu Hà Trần',
+        job: 'Khách hàng',
+        image: {
+          src: '~/assets/images/customers/thu hà.png',
+          alt: 'Thu Hà Trần Image',
         },
       },
     ]}

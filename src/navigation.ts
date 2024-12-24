@@ -13,7 +13,7 @@ export const headerData = {
         { text: 'Hồ sơ năng lực', href: '/gioi-thieu#ho-so-nang-luc' },
         { text: 'Tầm nhìn - sứ mệnh', href: '/gioi-thieu#tam-nhin-su-menh' },
         { text: 'Sự kiện nội bộ', href: '/tin-tuc/su-kien-noi-bo' },
-        { text: 'Bảo vệ dữ liệu cá nhân', href: '#' },
+        { text: 'Bảo vệ dữ liệu cá nhân', href: '/privacy' },
       ],
     },
     {
@@ -260,8 +260,9 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Về chúng tôi',
+      title: 'Giới thiệu',
       links: [
+        { text: 'Về chúng tôi', href: getPermalink('/gioi-thieu') },
         { text: 'Lịch sử thành lập', href: getPermalink('/gioi-thieu#lich-su-thanh-lap') },
         { text: 'Luật sư và cộng sự', href: '/gioi-thieu#luat-su-va-cong-su' },
         { text: 'Giải thưởng pháp lý', href: '/gioi-thieu#giai-thuong-phap-ly' },
@@ -270,12 +271,13 @@ export const footerData = {
         { text: 'Hồ sơ năng lực', href: '/gioi-thieu#ho-so-nang-luc' },
         { text: 'Tầm nhìn - sứ mệnh', href: '/gioi-thieu#tam-nhin-su-menh' },
         { text: 'Sự kiện nội bộ', href: '/tin-tuc/su-kien-noi-bo' },
-        { text: 'Bảo vệ dữ liệu cá nhân', href: '#' },
+        { text: 'Bảo vệ dữ liệu cá nhân', href: '/privacy' },
       ],
     },
     {
       title: 'Dịch vụ',
       links: [
+        { text: 'Dịch vụ của Y&P', href: '/dich-vu' },
         { text: 'Pháp lý', href: '/phap-ly' },
         { text: 'Tư vấn thường xuyên', href: '/tu-van-thuong-xuyen' },
         { text: 'Lao động', href: '/lao-dong' },
