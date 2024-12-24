@@ -30,7 +30,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Chuyên viên Bùi Đức Mạnh", "Chuyên viên Nguyễn Thúy Hằng", "Chuyên viên Nguyễn Thị Thu Trang", "Chuyên viên Nguyễn Thị Thùy Linh", "Chuyên viên Nghiêm Minh Huyền", "Chuyên viên Nguyễn Phùng Mai Ánh", "Chuyên viên Đỗ Thị Lương", "Chuyên viên Trần Thị Bích Liên"] }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên"] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5 }
       - {
           label: 'Content',
@@ -59,7 +59,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Chuyên viên Bùi Đức Mạnh", "Chuyên viên Nguyễn Thúy Hằng", "Chuyên viên Nguyễn Thị Thu Trang", "Chuyên viên Nguyễn Thị Thùy Linh", "Chuyên viên Nghiêm Minh Huyền", "Chuyên viên Nguyễn Phùng Mai Ánh", "Chuyên viên Đỗ Thị Lương", "Chuyên viên Trần Thị Bích Liên"] }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên"] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
@@ -88,7 +88,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Chuyên viên Bùi Đức Mạnh", "Chuyên viên Nguyễn Thúy Hằng", "Chuyên viên Nguyễn Thị Thu Trang", "Chuyên viên Nguyễn Thị Thùy Linh", "Chuyên viên Nghiêm Minh Huyền", "Chuyên viên Nguyễn Phùng Mai Ánh", "Chuyên viên Đỗ Thị Lương", "Chuyên viên Trần Thị Bích Liên"] }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên"] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
@@ -117,7 +117,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Chuyên viên Bùi Đức Mạnh", "Chuyên viên Nguyễn Thúy Hằng", "Chuyên viên Nguyễn Thị Thu Trang", "Chuyên viên Nguyễn Thị Thùy Linh", "Chuyên viên Nghiêm Minh Huyền", "Chuyên viên Nguyễn Phùng Mai Ánh", "Chuyên viên Đỗ Thị Lương", "Chuyên viên Trần Thị Bích Liên"] }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên"] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
@@ -146,7 +146,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Chuyên viên Bùi Đức Mạnh", "Chuyên viên Nguyễn Thúy Hằng", "Chuyên viên Nguyễn Thị Thu Trang", "Chuyên viên Nguyễn Thị Thùy Linh", "Chuyên viên Nghiêm Minh Huyền", "Chuyên viên Nguyễn Phùng Mai Ánh", "Chuyên viên Đỗ Thị Lương", "Chuyên viên Trần Thị Bích Liên"] }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên"] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
@@ -175,7 +175,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Chuyên viên Bùi Đức Mạnh", "Chuyên viên Nguyễn Thúy Hằng", "Chuyên viên Nguyễn Thị Thu Trang", "Chuyên viên Nguyễn Thị Thùy Linh", "Chuyên viên Nghiêm Minh Huyền", "Chuyên viên Nguyễn Phùng Mai Ánh", "Chuyên viên Đỗ Thị Lương", "Chuyên viên Trần Thị Bích Liên"] }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên"] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
