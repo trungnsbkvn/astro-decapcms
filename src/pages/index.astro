@@ -100,12 +100,19 @@ const metadata = {
           'Quan hệ giữa người lao động và Người sử dụng lao động luôn tồn tại những lợi ích đối nghịch, rất nhiều các xung đột pháp lý liên quan tới đơn phương chấm dứt hợp đồng trái pháp luật, sa thải trái pháp luật, hợp đồng lao động, thỏa thuận không tiết lộ thông tin, hạn chế cạnh tranh sau khi nghỉ việc, đình công.. tất cả đều có thể được hỗ trợ tốt bởi Youth & Partners Law Firm.',
         icon: 'tabler:square-number-7',
       },
+      {
+        title: 'Dịch vụ Đánh giá Doanh nghiệp',
+        description:
+          'Chúng tôi cung cấp các giải pháp đánh giá doanh nghiệp toàn diện, giúp bạn hiểu rõ hơn về hiệu suất, tình hình tài chính và các yếu tố rủi ro của doanh nghiệp. Chúng tôi cam kết mang đến cho bạn những đánh giá chính xác và toàn diện nhất.',
+        icon: 'tabler:square-number-8',
+      },
     ]}
   />
 
   <!-- Content Widget **************** -->
 
   <Content
+    id="ton-chi-hoat-dong"
     isReversed
     tagline="Y&P Law Firm"
     title="Tôn chỉ hoạt động của chúng tôi"
@@ -113,24 +120,24 @@ const metadata = {
       {
         title: 'Thời gian',
         description:
-          'Chúng tôi biết rằng mọi vụ việc pháp lý đều có những thời hạn và yêu cầu khắt khe. Chính vì thế, đội ngũ luật sư của chúng tôi luôn nỗ lực hết mình để đảm bảo tiến trình công việc diễn ra nhanh chóng và hiệu quả, giúp khách hàng đạt được kết quả mong muốn trong thời gian sớm nhất.',
+          'Chúng tôi hiểu rằng mỗi vụ việc pháp lý đều có những yêu cầu về thời gian và các yếu tố khắt khe. Vì vậy, đội ngũ luật sư của chúng tôi luôn nỗ lực tối đa để đảm bảo tiến trình công việc diễn ra nhanh chóng, hiệu quả, và giúp khách hàng đạt được kết quả mong muốn trong thời gian sớm nhất.',
         icon: 'tabler:clock-24',
       },
       {
         title: 'Tận tâm',
         description:
-          'Mỗi luật sư tại Y&P đều đặt trọn tâm huyết vào từng hồ sơ, lắng nghe và thấu hiểu nhu cầu của khách hàng để đưa ra những giải pháp tối ưu và phù hợp nhất. Chúng tôi tin rằng sự tận tâm chính là chìa khóa để xây dựng lòng tin và mối quan hệ bền vững với khách hàng.',
+          'Mỗi luật sư tại Youth & Partners đều cam kết đặt trọn tâm huyết vào từng hồ sơ, luôn lắng nghe và thấu hiểu nhu cầu của khách hàng để đưa ra các giải pháp tối ưu và phù hợp nhất. Chúng tôi tin rằng sự tận tâm là yếu tố then chốt để xây dựng niềm tin và mối quan hệ lâu dài với khách hàng.',
         icon: 'tabler:heart',
       },
       {
         title: 'Tận lực',
         description:
-          'Không chỉ dừng lại ở việc cung cấp dịch vụ pháp lý, chúng tôi luôn đi thêm một bước nữa để bảo vệ quyền lợi và lợi ích hợp pháp của khách hàng. Đội ngũ luật sư tài năng và giàu kinh nghiệm của chúng tôi luôn sẵn sàng đối mặt với mọi thách thức để mang lại sự công bằng và thành công cho khách hàng.',
+          'Chúng tôi không chỉ cung cấp dịch vụ pháp lý đơn thuần, mà luôn nỗ lực vượt qua mọi thử thách để bảo vệ quyền lợi hợp pháp của khách hàng. Với đội ngũ luật sư giàu kinh nghiệm và luôn sẵn sàng đối mặt với mọi tình huống, Youth & Partners Law Firm cam kết mang lại công bằng và sự thành công cho khách hàng, giúp họ vững bước trên con đường phát triển.',
         icon: 'tabler:award',
       },
     ]}
     image={{
-      src: '~/assets/images/ton-chi-hoat-dong.png',
+      src: '~/assets/images/youth and partners/ton-chi-hoat-dong.jpg',
       alt: 'Tôn chỉ hoạt động',
     }}
   >
@@ -198,9 +205,33 @@ const metadata = {
   <!-- Testimonials Widget *********** -->
 
   <Testimonials
-    title="Khách hàng nói về chúng tôi"
+    id="cam-nhan-khach-hang"
+    title="Cảm nhận của khách hàng"
     subtitle="Khách hàng hài lòng với dịch vụ pháp lý tại Youth and Partners, đánh giá cao sự tận tâm và chuyên nghiệp của đội ngũ luật sư trong việc giải quyết các vấn đề pháp lý phức tạp. Họ tin tưởng và sẵn lòng tiếp tục sử dụng dịch vụ của chúng tôi trong tương lai."
     testimonials={[
+      {
+        testimonial: `Làm việc với Y&P rất yên tâm khi được tư vấn chi tiết, không chỉ đúng các nội dung được hỏi mà còn thêm cả các nội dung liên quan khác nếu có, nhằm cho doanh nghiệp có cái nhìn tổng quan hơn, từ đó đưa ra quyết định đúng và chính xác hơn. Thái độ của luật sư tư vấn hoà nhã, lắng nghe và rất "chiều ý" khách hàng. 
+Chắc chắn sẽ tiếp tục đồng hành cùng Y&P trong thời gian tới. 
+Cảm ơn đội ngũ luật sư tư vấn của Y&P, chúc Y&P ngày càng thành công!`,
+        name: 'Ms. Linh',
+        job: 'Manager | HR & Administration - TopCV',
+        image: {
+          src: '~/assets/images/customers/Ms. Linh-TopCV.jpg',
+          alt: 'Ms. Linh-TopCV',
+        },
+      },
+      {
+        testimonial: `Tính chuyên nghiệp và sự tận tâm: Dịch vụ tư vấn chuyên nghiệp, luật sư hỗ trợ tận tình, hiệu quả trong xử lý tranh chấp, tuân thủ và hồ sơ pháp lý.
+Tốc độ phản hồi: Nhanh chóng, linh hoạt. Vấn đề đơn giản được giải quyết qua tin nhắn, vấn đề phức tạp có báo cáo pháp lý chi tiết, rõ ràng.
+Kinh nghiệm chuyên môn: Phong phú, bao quát các lĩnh vực thương mại, dân sự, lao động, v.v.
+Báo cáo và cập nhật: Đầy đủ, thường xuyên, rõ ràng.`,
+        name: 'Ms. Huyền Nguyễn',
+        job: 'Head of HR | Kowa (Việt Nam)',
+        image: {
+          src: '~/assets/images/customers/Huyền Nguyễn.jpg',
+          alt: 'Ms. Huyền Nguyễn - Kowa (Việt Nam)',
+        },
+      },
       {
         testimonial: `Amazing services and good spirit
                                         We have been working with Youth & Partners for a long time. We had perfect experiences from enthusiastic and great staff. They are friendly and dedicated to work. Everything is well organized.
@@ -240,12 +271,13 @@ const metadata = {
         },
       },
       {
-        testimonial: `Dịch vụ nhanh chóng và rất đáng tin cậy. Các Luật sư nói được và làm được. Là 1 địa chỉ Luật sư tốt cho công dân và Doanh nghiệp Vĩnh Phúc.`,
-        name: 'Duc Le Anh',
+        testimonial: `Công ty luật uy tín, có đội ngũ Luật sư và chuyên viên giàu kinh nghiêm trong các lĩnh vực doanh nghiệp, lao động, kinh doanh thương mại, tranh tụng.
+Một nơi xứng đáng để gửi gắm niềm tin.`,
+        name: 'Xuân Thoại Mai',
         job: 'Khách hàng',
         image: {
-          src: '~/assets/images/customers/ducleanh.png',
-          alt: 'Duc Le Anh Image',
+          src: '~/assets/images/customers/Xuân Thoại.png',
+          alt: 'Xuân Thoại Mai Image',
         },
       },
       {
@@ -255,6 +287,15 @@ const metadata = {
         image: {
           src: '~/assets/images/customers/ngoc.png',
           alt: 'Ngọc Nguyen Image',
+        },
+      },
+      {
+        testimonial: `Đội ngũ luật sư chuyên môn cao, tác phong chuyên nghiệp, hỗ trợ khách hàng tận tâm, nhiệt tình. Tôi rất hài lòng với trải nghiệm sử dụng dịch vụ của Công ty Luật này.`,
+        name: 'Thu Hà Trần',
+        job: 'Khách hàng',
+        image: {
+          src: '~/assets/images/customers/thu hà.png',
+          alt: 'Thu Hà Trần Image',
         },
       },
     ]}
