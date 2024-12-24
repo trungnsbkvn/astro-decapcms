@@ -1,5 +1,5 @@
 ---
-title: 'BẢO VỆ DỮ LIỆU CÁ NHÂN'
+title: 'Bảo vệ dữ liệu cá nhân'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
