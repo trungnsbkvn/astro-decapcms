@@ -1,4 +1,5 @@
 import { I18N } from 'astrowind:config';
+import slugify from 'limax';
 
 export const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(I18N?.language, {
   year: 'numeric',
@@ -50,3 +51,12 @@ export const toUiAmount = (amount: number) => {
 
   return value;
 };
+
+export const getAuthorPermalink = (author: string): string => '/tac-gia/' + cleanSlug(author);
+
+const trimSlash = (s: string) => trim(trim(s, '/'));
+const cleanSlug = (text = '') =>
+  trimSlash(text)
+    .split('/')
+    .map((slug) => slugify(slug))
+    .join('/');

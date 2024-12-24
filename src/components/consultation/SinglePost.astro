@@ -7,7 +7,7 @@ import SocialShare from '~/components/common/SocialShare.astro';
 import TableOfContents from '~/components/widgets/TableOfContents.astro';
 
 import { getPermalink } from '~/utils/consultation-permalinks';
-import { getFormattedDate } from '~/utils/utils';
+import { getFormattedDate, getAuthorPermalink } from '~/utils/utils';
 
 import type { Post } from '~/types';
 
@@ -56,7 +56,7 @@ const structuredData = post.rating
               <>
                 {' '}
                 · <Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-                <a class="inline-block" href="/tac-gia/luat-su-nguyen-van-thanh">
+                <a class="inline-block" href={getAuthorPermalink(post.author)}>
                   {post.author}
                 </a>
               </>
