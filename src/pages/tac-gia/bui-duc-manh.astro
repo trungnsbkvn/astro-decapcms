@@ -1,0 +1,121 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+
+import BlogLatestPosts from '~/components/blog/BlogLatestPosts.astro';
+import { getPermalink } from '~/utils/blog-permalinks';
+
+const metadata = {
+  title: 'Chuyên viên pháp lý Bùi Đức Mạnh',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    id="hero"
+    title="Chuyên viên pháp lý Bùi Đức Mạnh"
+    tagline="Thông tin tác giả"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
+  >
+    <Fragment slot="subtitle">
+      <br />
+      <i>Lĩnh vực phụ trách:</i><br />
+      • Dân sự: Tư vấn về hợp đồng, giao dịch, thừa kế, hôn nhân gia đình, bồi thường thiệt hại... <br />
+      • Đất đai: Tư vấn về tất cả các thủ tục Đất đai bao gồm nhưng không giới hạn như mua bán, tặng cho, sang tên đổi chủ
+      bất động sản, cấp đổi, cấp lại, cấp mới, đính chính quyền sử dụng đất, chuyển đổi mục đích sử dụng đất, giải quyết
+      tranh chấp Đất đai... <br />
+      • Hành chính: Tư vấn về thủ tục Hành chính, khiếu nại tố cáo.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:phone-call',
+        callToAction: {
+          target: '_blank',
+          text: 'Hotline',
+          href: 'tel:0889956888',
+        },
+      },
+      {
+        icon: 'tabler:mailbox',
+        callToAction: {
+          target: '_blank',
+          text: 'Email',
+          href: 'mailto:contact@yplawfirm.vn',
+        },
+      },
+      {
+        icon: 'tabler:brand-meta',
+        callToAction: {
+          target: '_blank',
+          text: 'Facebook',
+          href: 'https://www.facebook.com/vinhphuclawyers',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/youth and partners/Chuyên viên Bùi Đức Mạnh.PNG',
+      alt: 'Chuyên viên pháp lý Bùi Đức Mạnh',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
+      <p>
+        - Từ 2022 - 2024: Chuyên viên Pháp lý tại Công ty Luật TNHH Youth & Partners. Trong suốt thời gian làm việc tại
+        công ty, chuyên viên Mạnh đã tích lũy được nhiều kinh nghiệm quý báu trong các lĩnh vực Dân sự, Hành chính, Đất
+        đai và xin cấp Giấy phép. Cụ thể: <br />
+        • Tham gia giải quyết thành công nhiều vụ tranh chấp Đất đai, bảo vệ quyền lợi hợp pháp của khách hàng liên quan
+        đến tài sản bất động sản.<br />
+        • Hỗ trợ và tư vấn cho khách hàng trong các thủ tục Hành chính, đặc biệt là trong việc thực hiện các thủ tục Hành
+        chính phức tạp liên quan đến Đất đai và các Giấy phép cần thiết cho cá nhân và tổ chức.<br />
+        • Tham gia trực tiếp vào việc soạn thảo và thực hiện các thủ tục liên quan đến cấp Giấy phép con, đáp ứng nhu cầu
+        của Doanh nghiệp và cá nhân trong quá trình hoạt động kinh doanh và Đầu tư.
+      </p>
+      <br />
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="resume"
+    title="Học vấn"
+    items={[
+      {
+        title: `Tốt nghiệp <br /> <span class="font-normal">Học viện Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2024</span>`,
+        icon: 'tabler:school',
+      },
+      {
+        title: `Cử nhân Luật <br /> <span class="font-normal">Khoa Luật Kinh tế, Trường Đại học Kinh tế & Quản trị Kinh doanh Thái Nguyên</span> <br /> <span class="text-sm font-normal">Năm 2022</span>`,
+        icon: 'tabler:school',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Bài viết của tác giả"
+    information={`Các bài viết chuyên sâu của Chuyên viên pháp lý Bùi Đức Mạnh về mọi khía cạnh pháp lý về lao động, doanh nghiệp và đầu tư nước ngoài.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+</Layout>

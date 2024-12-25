@@ -6,7 +6,7 @@ backend:
 publish_mode: editorial_workflow
 media_folder: 'src/assets/images'
 public_folder: '~/assets/images'
-site_url: 'https://beta.yplawfirm.vn/' # your site name
+site_url: 'https://yplawfirm.vn/' # your site name
 
 collections:
   - name: 'post'

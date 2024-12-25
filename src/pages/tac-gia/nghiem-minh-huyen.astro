@@ -1,0 +1,126 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+
+import BlogLatestPosts from '~/components/blog/BlogLatestPosts.astro';
+import { getPermalink } from '~/utils/blog-permalinks';
+
+const metadata = {
+  title: 'Chuyên viên pháp lý Nghiêm Minh Huyền',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    id="hero"
+    title="Chuyên viên pháp lý Nghiêm Minh Huyền"
+    tagline="Thông tin tác giả"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
+  >
+    <Fragment slot="subtitle">
+      <br />
+      <i>Lĩnh vực phụ trách:</i><br />
+      Huyền Nghiêm là chuyên viên, trợ lý Luật sư, biên tập viên hỗ trợ quản lý các bài viết trên website của Y&P Law Firm,
+      hỗ trợ các chuyên viên viết bài phân tích, dịch vụ, tổng hợp quy định, chính sách mới, nổi bật liên quan đến các lĩnh
+      vực: doanh nghiêp, hôn nhân và gia đình, Đất đai, Hình sự,...<br />
+      • Lĩnh vực Đất đai: Cập nhật nhanh, hỗ trợ khách hàng về thực hiện các thủ tục Hành chính liên quan đến Đất đai: đăng
+      ký cấp GCN lần đầu, đăng ký biến động, phân chia di sản thừa kế, tặng cho,...<br />
+      • Lĩnh vực Dân sự, Hình sự: Đọc và nghiên cứu hồ sơ các vụ việc trên thực tế; Hỗ trợ Luật sư sao chụp hồ sơ, tài liệu,
+      soạn thảo các loại đơn và giấy tờ.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:phone-call',
+        callToAction: {
+          target: '_blank',
+          text: 'Hotline',
+          href: 'tel:0889956888',
+        },
+      },
+      {
+        icon: 'tabler:mailbox',
+        callToAction: {
+          target: '_blank',
+          text: 'Email',
+          href: 'mailto:contact@yplawfirm.vn',
+        },
+      },
+      {
+        icon: 'tabler:brand-meta',
+        callToAction: {
+          target: '_blank',
+          text: 'Facebook',
+          href: 'https://www.facebook.com/vinhphuclawyers',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/youth and partners/Chuyên viên Nghiêm Huyền.jpg',
+      alt: 'Chuyên viên pháp lý Nghiêm Minh Huyền',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
+      <p>
+        • Năm 2019: Thực tập tại UBND quận Bắc Từ Liêm: Thực hiện các công việc tiếp nhận hồ sơ và trả kết quả, giải
+        quyết các hồ sơ đăng ký hộ kinh doanh, mã số thuế<br />
+        • Năm 2020: Thực tập tại Công ty Luật TNHH Á Châu: Soạn thảo các hồ sơ liên quan đến Doanh nghiệp như thành lập,
+        thay đổi, giải thể, đăng ký con dấu; Tìm hiểu về sở hũu trí tuệ, Giấy phép con, đăng ký website,...<br />
+        • Từ năm 2020 - năm 2021: Làm việc tại Công ty Luật TNHH Nam Dương: thực hiện các công tác liên hệ với khách hàng
+        có vi phạm hợp đồng vay theo yêu cầu của đối tác (Ngân hàng: MB bank, VP bank,...; Công ty tài chính: Mcredit, FEcredit,...)<br
+        />
+        • Năm 2021: Làm việc tại Trung tâm khoa học Hành chính và văn thư lưu trữ (SCARMA): Thực hiện các công việc sắp xếp,
+        chỉnh lý, lên file danh sách lưu trữ dữ liệu và lưu kho của MB bank<br />
+        • Từ năm 2022 đến năm 2024: Làm việc tại Công ty TNHH SGS Việt Nam: Kiểm duyệt các nội dung đăng tải lên mạng xã
+        hội<br />
+        • Từ năm 2024 - nay: Làm việc tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm).
+      </p>
+      <br />
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="resume"
+    title="Học vấn"
+    items={[
+      {
+        title: `Tốt nghiệp <br /> <span class="font-normal">Học viện Tư pháp</span> <br /> <span class="text-sm font-normal">• Tham gia và tốt nghiệp Khóa đào tạo nghề ba chức danh: Thẩm phán, Kiểm sát viên, Luật sư</span> <br /> <span class="text-sm font-normal">•	Được đào tạo chuyên sâu về kỹ năng hành nghề và kinh nghiệm thực tiễn trong các chức danh tư pháp</span> <br /><span class="text-sm font-normal">•	Thực tập tại các cơ quan Tòa án, Viện Kiểm sát và Văn phòng Luật, theo sự phân công và hướng dẫn của Học viện, nhằm rèn luyện kỹ năng và nâng cao khả năng giải quyết các tình huống pháp lý thực tế</span><br /><span class="text-sm font-normal">(Tháng 12/2020 - Tháng 8/2022)</span>`,
+        icon: 'tabler:school',
+      },
+      {
+        title: `Cử nhân Luật <br /> <span class="font-normal">Trường Đại học Luật Hà Nội</span> <br /> <span class="text-sm font-normal">• Tốt nghiệp chuyên ngành Luật, GPA: 7.31/10</span> <br /> <span class="text-sm font-normal">• Được đào tạo chuyên sâu về các kiến thức pháp lý cơ bản và bộ luật trong các lĩnh vực pháp luật Dân sự, Hình sự, Hành chính, kinh tế và quốc tế</span> <br /> <span class="text-sm font-normal">(Tháng 9/2016 - Tháng 7/2020)</span>`,
+        icon: 'tabler:school',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Bài viết của tác giả"
+    information={`Các bài viết chuyên sâu của Chuyên viên pháp lý Nghiêm Minh Huyền về mọi khía cạnh pháp lý về lao động, doanh nghiệp và đầu tư nước ngoài.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+</Layout>

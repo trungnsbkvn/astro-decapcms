@@ -1,0 +1,113 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+
+import BlogLatestPosts from '~/components/blog/BlogLatestPosts.astro';
+import { getPermalink } from '~/utils/blog-permalinks';
+
+const metadata = {
+  title: 'Chuyên viên pháp lý Nguyễn Thị Thu Trang',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    id="hero"
+    title="Chuyên viên pháp lý Nguyễn Thị Thu Trang"
+    tagline="Thông tin tác giả"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
+  >
+    <Fragment slot="subtitle">
+      <br />
+      <i>Lĩnh vực phụ trách:</i><br />
+      • Soạn thảo hợp đồng, tư vấn pháp lý về lao động, thuế, bất động sản và Đầu tư nước ngoài <br />
+      • Đảm bảo tuân thủ pháp luật trong các hoạt động Doanh nghiệp <br />
+      • Xây dựng và điều chỉnh các biểu mẫu và quy chế nội bộ Doanh nghiệp.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:phone-call',
+        callToAction: {
+          target: '_blank',
+          text: 'Hotline',
+          href: 'tel:0889956888',
+        },
+      },
+      {
+        icon: 'tabler:mailbox',
+        callToAction: {
+          target: '_blank',
+          text: 'Email',
+          href: 'mailto:contact@yplawfirm.vn',
+        },
+      },
+      {
+        icon: 'tabler:brand-meta',
+        callToAction: {
+          target: '_blank',
+          text: 'Facebook',
+          href: 'https://www.facebook.com/vinhphuclawyers',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/youth and partners/Chuyên viên Nguyễn Thị Thu Trang.jpg',
+      alt: 'Chuyên viên pháp lý Nguyễn Thị Thu Trang',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
+      <p>
+        • Soạn thảo và đánh giá các hợp đồng song ngữ (Anh - Việt) bao gồm hợp đồng nguyên tắc, hợp đồng dịch vụ, hợp
+        đồng lao động, NDA, v.v <br />
+        • Tư vấn pháp lý cho khách hàng Doanh nghiệp về các lĩnh vực lao động, thuế, bất động sản, hoạt động kinh doanh<br
+        />
+        • Tham gia xây dựng và đánh giá các biểu mẫu nội bộ như quy chế dân chủ, nội quy lao động, quy chế lương thưởng<br
+        />
+        • Soạn thảo hồ sơ điều chỉnh và cấp đổi giấy chứng nhận Đầu tư cho Doanh nghiệp có vốn Đầu tư nước ngoài.
+      </p>
+      <br />
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="resume"
+    title="Học vấn"
+    items={[
+      {
+        title: `Cử nhân Luật <br /> <span class="font-normal">Ngành Luật tại Đại học Luật Hà Nội </span> <br /> <span class="text-sm font-normal">Năm 2022</span>`,
+        icon: 'tabler:school',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Bài viết của tác giả"
+    information={`Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thị Thu Trang về mọi khía cạnh pháp lý về lao động, doanh nghiệp và đầu tư nước ngoài.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+</Layout>
