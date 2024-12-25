@@ -62,11 +62,11 @@ export const headerData = {
       links: [
         {
           text: 'Doanh nghiệp',
-          href: '/tu-van-thuong-xuyen/doanh-nghiep',
+          href: '/tu-van-thuong-xuyen/tu-van-phap-luat-thuong-xuyen-cho-doanh-nghiep',
         },
         {
           text: 'Cá nhân',
-          href: '/tu-van-thuong-xuyen/ca-nhan',
+          href: '/tu-van-thuong-xuyen/tu-van-phap-luat-thuong-xuyen-cho-ca-nhan',
         },
         {
           text: 'Khái niệm Tư vấn thường xuyên',
@@ -94,7 +94,7 @@ export const headerData = {
         },
         {
           text: 'Danh sách khách hàng',
-          href: '/tu-van-thuong-xuyen/danh-sach-khach-hang',
+          href: '/gioi-thieu#danh-sach-khach-hang',
         },
       ],
     },
