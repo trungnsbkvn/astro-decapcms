@@ -105,7 +105,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
-      - { label: 'Category', name: 'category', widget: 'select', options: ['Nội quy - Thỏa ước', 'Thời giờ làm việc', 'Lương & Phúc lợi', 'Hợp đồng lao động, đào tạo', 'Chấm dứt hợp đồng', 'Xử lý kỷ luật', 'Quấy rối tình dục', 'NDA & NCA', 'Tranh chấp lao động'] }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Nội quy - Thỏa ước', 'Thời giờ làm việc', 'Lương và Phúc lợi', 'Hợp đồng lao động, đào tạo', 'Chấm dứt hợp đồng', 'Xử lý kỷ luật', 'Quấy rối tình dục', 'NDA và NCA', 'Tranh chấp lao động'] }
       - {
           label: 'Tags',
           name: 'tags',
