@@ -13,23 +13,25 @@ publishDate: 2024-10-17T15:42:00.000Z
 author: Nghiêm Minh Huyền
 rating: 5
 ---
+import { YouTube, Tweet, Vimeo } from 'astro-embed';
+
 ## 1. Điều kiện được hưởng trợ cấp thất nghiệp
 
 Trước khi bắt đầu thủ tục đăng ký, người lao động cần xác định xem mình có đủ điều kiện để được nhận hỗ trợ hay không. Tại **Điều 49 Luật việc làm năm 2013** đã có quy định cụ thể về điều kiện hưởng trợ cấp thất nghiệp như sau:
 
 > Người lao động quy định tại khoản 1 Điều 43 của Luật này đang đóng bảo hiểm thất nghiệp được hưởng trợ cấp thất nghiệp khi có đủ các điều kiện sau đây:
 >
-> 1. Chấm dứt hợp đồng lao động hoặc hợp đồng làm việc, trừ các trường hợp sau đây:
+> 1.Chấm dứt hợp đồng lao động hoặc hợp đồng làm việc, trừ các trường hợp sau đây:
 >
 > a) Người lao động đơn phương chấm dứt hợp đồng lao động, hợp đồng làm việc trái pháp luật;
 >
 > b) Hưởng lương hưu, trợ cấp mất sức lao động hằng tháng;
 >
-> 2. Đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong thời gian 24 tháng trước khi chấm dứt hợp đồng lao động hoặc hợp đồng làm việc đối với trường hợp quy định tại điểm a và điểm b khoản 1 Điều 43 của Luật này; đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong thời gian 36 tháng trước khi chấm dứt hợp đồng lao động đối với trường hợp quy định tại điểm c khoản 1 Điều 43 của Luật này;
+> 2.Đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong thời gian 24 tháng trước khi chấm dứt hợp đồng lao động hoặc hợp đồng làm việc đối với trường hợp quy định tại điểm a và điểm b khoản 1 Điều 43 của Luật này; đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong thời gian 36 tháng trước khi chấm dứt hợp đồng lao động đối với trường hợp quy định tại điểm c khoản 1 Điều 43 của Luật này;
 >
-> 3. Đã nộp hồ sơ hưởng trợ cấp thất nghiệp tại trung tâm dịch vụ việc làm theo quy định tại khoản 1 Điều 46 của Luật này;
+> 3.Đã nộp hồ sơ hưởng trợ cấp thất nghiệp tại trung tâm dịch vụ việc làm theo quy định tại khoản 1 Điều 46 của Luật này;
 >
-> 4. Chưa tìm được việc làm sau 15 ngày, kể từ ngày nộp hồ sơ hưởng bảo hiểm thất nghiệp, trừ các trường hợp sau đây:
+> 4.Chưa tìm được việc làm sau 15 ngày, kể từ ngày nộp hồ sơ hưởng bảo hiểm thất nghiệp, trừ các trường hợp sau đây:
 >
 > a) Thực hiện nghĩa vụ quân sự, nghĩa vụ công an;
 >
@@ -59,9 +61,9 @@ Như vậy, các điều kiện cần và đủ để có thể hưởng trợ c
 
 Khi đã xác định đủ điều kiện, bạn cần phải chuẩn bị các hồ sơ liên quan để tiến hành đăng ký. Hồ sơ đăng ký hưởng trợ cấp thất nghiệp được quy định tại **Điều 16 Nghị định số 28/2015/NĐ-CP, sửa đổi bởi khoản 6 Điều 1 Nghị định 61/2020/NĐ-CP** như sau:
 
-> 1. Đề nghị hưởng trợ cấp thất nghiệp theo mẫu do Bộ trưởng Bộ Lao động - Thương binh và Xã hội quy định.
+> 1.Đề nghị hưởng trợ cấp thất nghiệp theo mẫu do Bộ trưởng Bộ Lao động - Thương binh và Xã hội quy định.
 >
-> 2. Bản chính hoặc bản sao có chứng thực hoặc bản sao kèm theo bản chính để đối chiếu của một trong các giấy tờ sau đây xác nhận về việc chấm dứt hợp đồng lao động hoặc hợp đồng làm việc:
+> 2.Bản chính hoặc bản sao có chứng thực hoặc bản sao kèm theo bản chính để đối chiếu của một trong các giấy tờ sau đây xác nhận về việc chấm dứt hợp đồng lao động hoặc hợp đồng làm việc:
 >
 > a) Hợp đồng lao động hoặc hợp đồng làm việc đã hết hạn hoặc đã hoàn thành công việc theo hợp đồng lao động;
 >
@@ -87,7 +89,7 @@ Khi đã xác định đủ điều kiện, bạn cần phải chuẩn bị các
 >
 > i) Trường hợp người lao động tham gia bảo hiểm thất nghiệp theo quy định tại điểm c khoản 1 Điều 43 Luật Việc làm thì giấy tờ xác nhận về việc chấm dứt hợp đồng lao động theo mùa vụ hoặc theo một công việc nhất định có thời hạn từ đủ 03 tháng đến dưới 12 tháng là bản chính hoặc bản sao có chứng thực hoặc bản sao kèm theo bản chính để đối chiếu của hợp đồng đó.
 >
-> 3. Sổ bảo hiểm xã hội.
+> 3.Sổ bảo hiểm xã hội.
 >
 > Tổ chức bảo hiểm xã hội thực hiện xác nhận về việc đóng bảo hiểm thất nghiệp và trả sổ bảo hiểm xã hội cho người lao động trong thời hạn 05 ngày làm việc kể từ ngày nhận được đề nghị của người sử dụng lao động.
 >
@@ -112,11 +114,13 @@ Có hai cách để người lao động nộp hồ sơ:
 * Cách 1: Nộp trực tiếp hoặc gửi theo đường bưu điện đến Trung tâm Dịch vụ việc làm thuộc Sở Lao động - Thương binh và Xã hội của tỉnh, thành phố nơi bạn đang cư trú . Tại đây, bạn sẽ được các chuyên viên hướng dẫn, kiểm tra hồ sơ để đảm bảo tính hợp lệ.
 * Cách 2: Nộp trực tuyến trên Cổng thông tin dịch vụ công quốc gia. Bạn có thể đăng nhập bằng tài khoản VNeID hoặc tài khoản dịch vụ công, nhập cụm từ khóa vào ô tìm kiếm “Giải quyết hưởng trợ cấp thất nghiệp” rồi thực hiện các bước nộp hồ sơ theo hướng dẫn tại bài viết “[04 Bước chi tiết đăng ký hưởng trợ cấp thất nghiệp trực tuyến](https://vinhphuclawyers.vn/kien-thuc-phap-ly/lao-dong/dang-ky-huong-tro-cap-that-nghiep-truc-tuyen-04-buoc-de-dang-36045.htm)”
 
+<YouTube id="pTZQoGBFSe4" />
+
 ## 4. Thời hạn giải quyết đăng ký hưởng trợ cấp thất nghiệp
 
 Theo **khoản 1 Điều 18 Nghị định số 28/2015/NĐ-CP** quy định thời hạn giải quyết như sau:
 
-> 1. Trung tâm dịch vụ việc làm có trách nhiệm xem xét, trình Giám đốc Sở Lao động - Thương binh và Xã hội quyết định về việc hưởng trợ cấp thất nghiệp của người lao động trong thời hạn 20 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, trường hợp hồ sơ đề nghị hưởng trợ cấp thất nghiệp gửi theo đường bưu điện thì ngày nhận hồ sơ được tính là ngày chuyển đến ghi trên dấu bưu điện.
+> 1.Trung tâm dịch vụ việc làm có trách nhiệm xem xét, trình Giám đốc Sở Lao động - Thương binh và Xã hội quyết định về việc hưởng trợ cấp thất nghiệp của người lao động trong thời hạn 20 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, trường hợp hồ sơ đề nghị hưởng trợ cấp thất nghiệp gửi theo đường bưu điện thì ngày nhận hồ sơ được tính là ngày chuyển đến ghi trên dấu bưu điện.
 >
 > Người lao động chưa tìm được việc làm trong thời hạn 15 ngày làm việc kể từ ngày nộp hồ sơ đề nghị hưởng trợ cấp thất nghiệp được Giám đốc Sở Lao động - Thương binh và Xã hội quyết định hưởng trợ cấp thất nghiệp thì trung tâm dịch vụ việc làm xác nhận về việc đã giải quyết hưởng trợ cấp thất nghiệp của người lao động vào sổ bảo hiểm xã hội và gửi lại người lao động cùng với quyết định hưởng trợ cấp thất nghiệp sau khi chụp sổ bảo hiểm xã hội để lưu hồ sơ.
 >
