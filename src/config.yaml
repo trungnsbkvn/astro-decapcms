@@ -9,9 +9,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Công ty Luật TNHH Youth and Partners - Văn phòng luật sư hàng đầu Vĩnh Phúc
+    default: Công ty Luật TNHH Youth & Partners - Người bạn đồng hành của Doanh nghiệp
     template: '%s — Youth and Partners'
-  description: 'Công ty Luật TNHH Youth and Partners là một trong những công ty luật hàng đầu trong các lĩnh vực: Đầu tư nước ngoài, giấy chứng nhận đầu tư, giấy chứng nhận đăng ký doanh nghiệp, Foreign investment, IRC, ERC, giấy phép lao động, Work permits.'
+  description: 'Công ty Luật TNHH Youth and Partners là một trong những công ty luật hàng đầu trong các lĩnh vực: Tư vấn pháp lý thường xuyên cho doanh nghiệp / Dịch vụ Phòng pháp chế thuê ngoài; Tư vấn và giải quyết tranh chấp lao động; Dịch vụ Luật sư riêng tiếng Nhật, Anh, Trung, Hàn; Dịch vụ Audit, đánh giá và thẩm định pháp lý cho Doanh nghiệp, dịch vụ DD (Due deligence) riêng các lĩnh vực Lao động, nhân quyền, đạo đức kinh doanh, hệ thống quản lý, an toàn, sức khỏe, môi trường cho Doanh nghiệp.'
   robots:
     index: true
     follow: true
