@@ -111,7 +111,7 @@ export const headerData = {
         },
         {
           text: 'Lương & Phúc lợi',
-          href: '/lao-dong/luong-phuc-loi',
+          href: '/lao-dong/luong-va-phuc-loi',
         },
         {
           text: 'Hợp đồng lao động, đào tạo',
@@ -131,7 +131,7 @@ export const headerData = {
         },
         {
           text: 'NDA & NCA',
-          href: '/lao-dong/nda-nca',
+          href: '/lao-dong/nda-va-nca',
         },
         {
           text: 'Tranh chấp lao động',
