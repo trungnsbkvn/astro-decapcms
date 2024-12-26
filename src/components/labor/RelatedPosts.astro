@@ -4,7 +4,7 @@ import { APP_LABOR } from 'astrowind:config';
 import { getRelatedPosts } from '~/utils/labor';
 import BlogHighlightedPosts from '~/components/labor/BlogHighlightedPosts.astro';
 import type { Post } from '~/types';
-import { getBlogPermalink } from '~/utils/labor-permalinks';
+import { getLaborPermalink } from '~/utils/labor-permalinks';
 
 export interface Props {
   post: Post;
@@ -24,7 +24,7 @@ const relatedPosts = post.tags ? await getRelatedPosts(post, 4) : [];
       }}
       title="Bài viết liên quan"
       linkText="Xem tất cả"
-      linkUrl={getBlogPermalink()}
+      linkUrl={getLaborPermalink()}
       postIds={relatedPosts.map((post) => post.id)}
     />
   ) : null

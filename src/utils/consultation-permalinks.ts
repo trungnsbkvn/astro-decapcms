@@ -59,7 +59,7 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       break;
 
     case 'blog':
-      permalink = getBlogPermalink();
+      permalink = getConsultationPermalink();
       break;
     
     case 'asset':
@@ -91,7 +91,7 @@ export const getPermalink = (slug = '', type = 'page'): string => {
 export const getHomePermalink = (): string => getPermalink('/');
 
 /** */
-export const getBlogPermalink = (): string => getPermalink(BLOG_ROOTPATH);
+export const getConsultationPermalink = (): string => getPermalink(BLOG_ROOTPATH);
 
 /** */
 export const getAsset = (path: string): string =>
@@ -118,7 +118,7 @@ export const applyGetPermalinks = (menu: object = {}) => {
           if (menu[key].type === 'home') {
             obj[key] = getHomePermalink();
           } else if (menu[key].type === 'blog') {
-            obj[key] = getBlogPermalink();
+            obj[key] = getConsultationPermalink();
           } else if (menu[key].type === 'asset') {
             obj[key] = getAsset(menu[key].url);
           } else if (menu[key].url) {

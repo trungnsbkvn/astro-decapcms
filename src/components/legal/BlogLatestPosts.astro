@@ -3,8 +3,8 @@ import { APP_LEGAL } from 'astrowind:config';
 
 import Grid from '~/components/blog/Grid.astro';
 
-import { getBlogPermalink } from '~/utils/legal-permalinks';
-import { findLatestPosts } from '~/utils/legal';
+import { getLegalPermalink } from '~/utils/legal-permalinks';
+import { findLatestLegalPosts } from '~/utils/legal';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Widget } from '~/types';
 import Button from '../ui/Button.astro';
@@ -20,7 +20,7 @@ export interface Props extends Widget {
 const {
   title = await Astro.slots.render('title'),
   linkText = 'Xem tất cả',
-  linkUrl = getBlogPermalink(),
+  linkUrl = getLegalPermalink(),
   information = await Astro.slots.render('information'),
   count = 4,
 
@@ -30,7 +30,7 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const posts = APP_LEGAL.isEnabled ? await findLatestPosts({ count }) : [];
+const posts = APP_LEGAL.isEnabled ? await findLatestLegalPosts({ count }) : [];
 ---
 
 {

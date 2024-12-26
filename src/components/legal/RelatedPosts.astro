@@ -4,7 +4,7 @@ import { APP_LEGAL } from 'astrowind:config';
 import { getRelatedPosts } from '~/utils/legal';
 import BlogHighlightedPosts from '~/components/legal/BlogHighlightedPosts.astro';
 import type { Post } from '~/types';
-import { getBlogPermalink } from '~/utils/legal-permalinks';
+import { getLegalPermalink } from '~/utils/legal-permalinks';
 
 export interface Props {
   post: Post;
@@ -24,7 +24,7 @@ const relatedPosts = post.tags ? await getRelatedPosts(post, 4) : [];
       }}
       title="Bài viết liên quan"
       linkText="Xem tất cả"
-      linkUrl={getBlogPermalink()}
+      linkUrl={getLegalPermalink()}
       postIds={relatedPosts.map((post) => post.id)}
     />
   ) : null
