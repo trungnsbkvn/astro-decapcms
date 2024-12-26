@@ -4,40 +4,33 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import { YouTube } from 'astro-embed';
 
 import BlogLatestPosts from '~/components/blog/BlogLatestPosts.astro';
 import { getPermalink } from '~/utils/blog-permalinks';
 
 const metadata = {
-  title: 'Luật sư Nguyễn Văn Thành',
+  title: 'Luật sư Nguyễn Thị Thơm',
 };
 ---
 
 <Layout metadata={metadata}>
   <Hero
     id="hero"
-    title="Luật sư Nguyễn Văn Thành"
+    title="Luật sư Nguyễn Thị Thơm"
     tagline="Thông tin tác giả"
     actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
   >
     <Fragment slot="subtitle">
-      Ông Nguyễn Văn Thành là Luật sư Điều hành Youth & Partners Law Firm với hơn 14 năm kinh nghiệm nghiên cứu, đưa ra
-      các giải pháp thiết thực cho những vấn đề pháp lý phức tạp mà Doanh nghiệp phải đối mặt. Đồng thời, ông Thành còn
-      giữ vai trò Tổng Cố vấn Pháp lý tại Samsung SDI Việt Nam.
-    </Fragment>
-    <Fragment slot="image">
-      <YouTube
-        id="1X5le8RcG5E"
-        title="Luật sư Nguyễn Văn Thành - Triển khai chương trình Tư vấn pháp luật cho nhân viên SDIV"
-        poster="/images/luat-su-nguyen-van-thanh-samsung-sdiv.png"
-      />
-      <style is:inline>
-        lite-youtube {
-          margin: 0 auto;
-          max-width: 100%;
-        }
-      </style>
+      <br />
+      <i>Lĩnh vực phụ trách:</i><br /><br />
+      • Doanh nghiệp: Tư vấn pháp lý về thành lập, hoạt động và quản lý Doanh nghiệp, các vấn đề liên quan đến hợp đồng,
+      pháp lý kinh doanh
+      <br /><br />
+      • Lao động: Tư vấn về các vấn đề liên quan đến lao động, hợp đồng lao động, tranh chấp lao động và quyền lợi của người
+      lao động
+      <br /><br />
+      • Đầu tư: Tư vấn về các vấn đề Đầu tư, bao gồm Đầu tư trong và ngoài nước, chiến lược phát triển Doanh nghiệp và các
+      vấn đề pháp lý liên quan đến Đầu tư bất động sản.
     </Fragment>
   </Hero>
 
@@ -73,35 +66,22 @@ const metadata = {
       },
     ]}
     image={{
-      src: '~/assets/images/youth and partners/luat su Nguyen Van Thanh.png',
-      alt: 'Luật sư Nguyễn Văn Thành',
+      src: '~/assets/images/youth and partners/Luật sư Nguyễn Thị Thơm.jpg',
+      alt: 'Luật sư Nguyễn Thị Thơm',
       loading: 'eager',
     }}
   >
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
       <p>
-        Luật sư Thành, nguyên là Trưởng phòng pháp chế Samsung SDI Việt Nam (từ 2015) và hiện đang là Luật sư điều hành
-        Youth & Partners Law Firm (từ 2019). <br />
-        - Ban chủ nhiệm Câu lạc bộ pháp chế tỉnh Vĩnh Phúc: 3/2024 <br />
-        - Thẻ hành nghề luật sư số: 10652/LS do Liên đoàn luật sư Việt Nam cấp <br />
-        - Thành viên Liên đoàn luật sư Việt Nam: 2015<br />
-        - Luật sư thuộc Đoàn luật sư, Hội luật gia Việt Nam
+        Với 09 năm kinh nghiệm trong lĩnh vực pháp chế Doanh nghiệp, trong đó có 05 năm làm việc tại các công ty có vốn
+        Đầu tư nước ngoài và 04 năm tại các công ty Đầu tư và phát triển dự án bất động sản, Luật sư Nguyễn Thị Thơm đã
+        tích lũy được kiến thức sâu rộng và kỹ năng xử lý công việc chuyên nghiệp.
       </p>
       <br />
       <p>
-        Luật sư Thành có kinh nghiệm tư vấn chuyên sâu các vấn đề nội bộ của Doanh nghiệp, lao động và kinh doanh -
-        thương mại, ông am hiểu sâu sắc các bộ quy tắc quốc tế liên quan tới Doanh nghiệp và Người lao động, có kinh
-        nghiệm tuyệt vời trong việc giải quyết các tranh chấp nội bộ trong doanh nghiệp, các tranh chấp, vấn đề pháp lý
-        liên quan đến các đối tác, nhà cung cấp của Doanh nghiệp.
-      </p>
-      <br />
-      <p>
-        Luật sư Thành là một trong số rất ít các Luật sư tại Việt Nam có chứng chỉ Kiểm toán cao cấp về hệ thống quản
-        lý, lao động, nhân quyền, đạo đức kinh doanh của tổ chức Liên minh các Doanh nghiệp có Trách nhiệm xã hội (RBA).
-        Với vai trò Lead Auditor (Trưởng đoàn thanh tra các nhà cung ứng của Samsung Việt Nam), Luật sư Thành đã có kinh
-        nghiệm đi audit (đánh giá) hàng trăm nhà cung cấp của Samsung Việt Nam về khía cạnh tuân thủ bộ tiêu chuẩn quốc
-        tế RBA (RBA code of conduct) và quy định của pháp luật Việt Nam.
+        Luật sư Thơm chuyên tư vấn và hỗ trợ pháp lý cho các Doanh nghiệp, giúp họ đưa ra các chiến lược phù hợp để
+        tránh tranh chấp pháp lý và giảm thiểu rủi ro trong quá trình hoạt động và kinh doanh.
       </p>
     </Fragment>
 
@@ -117,19 +97,11 @@ const metadata = {
     title="Học vấn"
     items={[
       {
-        title: `Cấp chứng chỉ hành nghề Luật sư<br /> <span class="font-normal">Bộ Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2015</span>`,
+        title: `Cấp chứng chỉ hành nghề Luật sư<br /> <span class="font-normal">Bộ Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2016</span>`,
         icon: 'tabler:school',
       },
       {
-        title: `Tốt nghiệp <br /> <span class="font-normal">Học viện Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2012</span>`,
-        icon: 'tabler:school',
-      },
-      {
-        title: `Cử nhân ngoại ngữ <br /> <span class="font-normal">ĐH Ngoại ngữ, ĐH Quốc Gia Hà Nội</span> <br /> <span class="text-sm font-normal">Năm 2012</span>`,
-        icon: 'tabler:school',
-      },
-      {
-        title: `Cử nhân Luật <br /> <span class="font-normal">Trường ĐH Luật Hà Nội</span> <br /> <span class="text-sm font-normal">Năm 2011</span>`,
+        title: `Cử nhân Luật <br /> <span class="font-normal">Trường ĐH Luật Hà Nội</span> <br /> <span class="text-sm font-normal">Năm 2012</span>`,
         icon: 'tabler:school',
       },
     ]}
@@ -141,7 +113,7 @@ const metadata = {
   <BlogLatestPosts
     id="blog"
     title="Bài viết của tác giả"
-    information={`Các bài viết chuyên sâu của Luật sư Nguyễn Văn Thành về mọi khía cạnh pháp lý về lao động, doanh nghiệp và đầu tư nước ngoài.`}
+    information={`Các bài viết chuyên sâu của Luật sư Nguyễn Thị Thơm về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Đầu tư.`}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>

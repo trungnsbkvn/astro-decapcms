@@ -4,40 +4,30 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import { YouTube } from 'astro-embed';
 
 import BlogLatestPosts from '~/components/blog/BlogLatestPosts.astro';
 import { getPermalink } from '~/utils/blog-permalinks';
 
 const metadata = {
-  title: 'Luật sư Nguyễn Văn Thành',
+  title: 'Chuyên viên pháp lý Nguyễn Thúy Hằng',
 };
 ---
 
 <Layout metadata={metadata}>
   <Hero
     id="hero"
-    title="Luật sư Nguyễn Văn Thành"
+    title="Chuyên viên pháp lý Nguyễn Thúy Hằng"
     tagline="Thông tin tác giả"
     actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
   >
     <Fragment slot="subtitle">
-      Ông Nguyễn Văn Thành là Luật sư Điều hành Youth & Partners Law Firm với hơn 14 năm kinh nghiệm nghiên cứu, đưa ra
-      các giải pháp thiết thực cho những vấn đề pháp lý phức tạp mà Doanh nghiệp phải đối mặt. Đồng thời, ông Thành còn
-      giữ vai trò Tổng Cố vấn Pháp lý tại Samsung SDI Việt Nam.
-    </Fragment>
-    <Fragment slot="image">
-      <YouTube
-        id="1X5le8RcG5E"
-        title="Luật sư Nguyễn Văn Thành - Triển khai chương trình Tư vấn pháp luật cho nhân viên SDIV"
-        poster="/images/luat-su-nguyen-van-thanh-samsung-sdiv.png"
-      />
-      <style is:inline>
-        lite-youtube {
-          margin: 0 auto;
-          max-width: 100%;
-        }
-      </style>
+      <br />
+      <i>Lĩnh vực phụ trách:</i><br /><br />
+      • Soạn thảo và đánh giá các hợp đồng bao gồm hợp đồng nguyên tắc, hợp đồng dịch vụ, hợp đồng lao động, v.v.
+      <br /><br />
+      • Tư vấn pháp lý cho khách hàng Doanh nghiệp về các lĩnh vực lao động, thuế, bất động sản, hoạt động kinh doanh
+      <br /><br />
+      • Tham gia xây dựng và đánh giá các biểu mẫu nội bộ như quy chế dân chủ, nội quy lao động, quy chế lương thưởng.
     </Fragment>
   </Hero>
 
@@ -60,7 +50,7 @@ const metadata = {
         callToAction: {
           target: '_blank',
           text: 'Email',
-          href: 'mailto:ceo@yplawfirm.vn',
+          href: 'mailto:contact@yplawfirm.vn',
         },
       },
       {
@@ -73,36 +63,20 @@ const metadata = {
       },
     ]}
     image={{
-      src: '~/assets/images/youth and partners/luat su Nguyen Van Thanh.png',
-      alt: 'Luật sư Nguyễn Văn Thành',
+      src: '~/assets/images/youth and partners/Chuyên viên Nguyễn Thúy Hằng.jpg',
+      alt: 'Chuyên viên pháp lý Nguyễn Thúy Hằng',
       loading: 'eager',
     }}
   >
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
       <p>
-        Luật sư Thành, nguyên là Trưởng phòng pháp chế Samsung SDI Việt Nam (từ 2015) và hiện đang là Luật sư điều hành
-        Youth & Partners Law Firm (từ 2019). <br />
-        - Ban chủ nhiệm Câu lạc bộ pháp chế tỉnh Vĩnh Phúc: 3/2024 <br />
-        - Thẻ hành nghề luật sư số: 10652/LS do Liên đoàn luật sư Việt Nam cấp <br />
-        - Thành viên Liên đoàn luật sư Việt Nam: 2015<br />
-        - Luật sư thuộc Đoàn luật sư, Hội luật gia Việt Nam
+        • Từng làm việc và thực tập chuyên môn tại Công ty tư vấn Đầu tư Hà Thị, Tòa án nhân dân thành phố Vĩnh Yên với
+        vai trò nhân viên pháp lý, thực tập sinh pháp lý <br />
+        • Thực hiện các công việc như rà soát hợp đồng, soạn thảo một số văn bản thông dụng, xây dựng quy định nội bộ và
+        dịch thuật pháp lý.
       </p>
       <br />
-      <p>
-        Luật sư Thành có kinh nghiệm tư vấn chuyên sâu các vấn đề nội bộ của Doanh nghiệp, lao động và kinh doanh -
-        thương mại, ông am hiểu sâu sắc các bộ quy tắc quốc tế liên quan tới Doanh nghiệp và Người lao động, có kinh
-        nghiệm tuyệt vời trong việc giải quyết các tranh chấp nội bộ trong doanh nghiệp, các tranh chấp, vấn đề pháp lý
-        liên quan đến các đối tác, nhà cung cấp của Doanh nghiệp.
-      </p>
-      <br />
-      <p>
-        Luật sư Thành là một trong số rất ít các Luật sư tại Việt Nam có chứng chỉ Kiểm toán cao cấp về hệ thống quản
-        lý, lao động, nhân quyền, đạo đức kinh doanh của tổ chức Liên minh các Doanh nghiệp có Trách nhiệm xã hội (RBA).
-        Với vai trò Lead Auditor (Trưởng đoàn thanh tra các nhà cung ứng của Samsung Việt Nam), Luật sư Thành đã có kinh
-        nghiệm đi audit (đánh giá) hàng trăm nhà cung cấp của Samsung Việt Nam về khía cạnh tuân thủ bộ tiêu chuẩn quốc
-        tế RBA (RBA code of conduct) và quy định của pháp luật Việt Nam.
-      </p>
     </Fragment>
 
     <Fragment slot="bg">
@@ -117,19 +91,7 @@ const metadata = {
     title="Học vấn"
     items={[
       {
-        title: `Cấp chứng chỉ hành nghề Luật sư<br /> <span class="font-normal">Bộ Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2015</span>`,
-        icon: 'tabler:school',
-      },
-      {
-        title: `Tốt nghiệp <br /> <span class="font-normal">Học viện Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2012</span>`,
-        icon: 'tabler:school',
-      },
-      {
-        title: `Cử nhân ngoại ngữ <br /> <span class="font-normal">ĐH Ngoại ngữ, ĐH Quốc Gia Hà Nội</span> <br /> <span class="text-sm font-normal">Năm 2012</span>`,
-        icon: 'tabler:school',
-      },
-      {
-        title: `Cử nhân Luật <br /> <span class="font-normal">Trường ĐH Luật Hà Nội</span> <br /> <span class="text-sm font-normal">Năm 2011</span>`,
+        title: `Cử nhân Luật <br /> <span class="font-normal">Luật Kinh tế tại Đại học Luật Hà Nội </span> <br /> <span class="text-sm font-normal">Năm 2024</span>`,
         icon: 'tabler:school',
       },
     ]}
@@ -141,7 +103,7 @@ const metadata = {
   <BlogLatestPosts
     id="blog"
     title="Bài viết của tác giả"
-    information={`Các bài viết chuyên sâu của Luật sư Nguyễn Văn Thành về mọi khía cạnh pháp lý về lao động, doanh nghiệp và đầu tư nước ngoài.`}
+    information={`Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thúy Hằng về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Giấy phép.`}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
