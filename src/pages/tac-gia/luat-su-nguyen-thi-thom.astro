@@ -5,12 +5,14 @@ import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
 
-import BlogLatestPosts from '~/components/blog/BlogLatestPosts.astro';
+import AuthorRelatedPosts from '~/components/blog/AuthorRelatedPosts.astro';
 import { getPermalink } from '~/utils/blog-permalinks';
 
 const metadata = {
   title: 'Luật sư Nguyễn Thị Thơm',
 };
+const author = 'Luật sư Nguyễn Thị Thơm';
+const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'legal'];
 ---
 
 <Layout metadata={metadata}>
@@ -110,13 +112,15 @@ const metadata = {
 
   <!-- BlogLatestPost Widget **************** -->
 
-  <BlogLatestPosts
+  <AuthorRelatedPosts
     id="blog"
     title="Bài viết của tác giả"
     information={`Các bài viết chuyên sâu của Luật sư Nguyễn Thị Thơm về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Đầu tư.`}
+    author={author}
+    types={types}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </BlogLatestPosts>
+  </AuthorRelatedPosts>
 </Layout>

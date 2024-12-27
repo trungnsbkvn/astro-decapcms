@@ -5,6 +5,15 @@ import type { Post } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_ROOTPATH, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './blog-permalinks';
 
+const typeToRootPath = {
+  blog: '/tin-tuc',
+  consultation: '/tu-van-thuong-xuyen',
+  evaluation: '/dich-vu-danh-gia',
+  foreigner: '/dau-tu-nuoc-ngoai',
+  labor: '/lao-dong',
+  legal: '/phap-ly',
+};
+
 const generatePermalink = async ({
   id,
   slug,
@@ -177,6 +186,30 @@ export const findLatestBlogPosts = async ({ count }: { count?: number }): Promis
   return posts ? posts.slice(0, _count) : [];
 };
 
+/** */
+export async function findPostsByAuthorAndTypes(author: string, types: string[], count: number): Promise<Post[]> {
+  const allPosts: Post[] = [];
+
+  for (const type of types) {
+    const typedPost = await getCollection(type);
+    const normalizedPosts = typedPost.map(async (post) => await getNormalizedPost(post));
+
+    const collectionPosts = (await Promise.all(normalizedPosts))
+    .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
+      .filter((post) => !post.draft);
+    
+    const resultPosts = collectionPosts.map(post => ({ ...post, type }));
+    allPosts.push(...resultPosts);
+  }
+
+  const filteredPosts = allPosts.filter(post => post.author === author);
+  return filteredPosts.slice(0, count);
+}
+
+export function getRootPathForType(type: string): string {
+  return typeToRootPath[type] || '';
+}
+/** */
 /** */
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
