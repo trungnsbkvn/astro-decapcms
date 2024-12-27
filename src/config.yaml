@@ -228,7 +228,7 @@ analytics:
   vendors:
     googleAnalytics:
       id: 'G-HB9LNKY6F2' # or "G-XXXXXXXXXX"
-      partytown: false
+      partytown: true
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
