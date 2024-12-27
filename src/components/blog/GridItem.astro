@@ -1,11 +1,9 @@
 ---
-import { APP_BLOG } from 'astrowind:config';
 import type { Post } from '~/types';
 
 import Image from '~/components/common/Image.astro';
 
 import { findImage } from '~/utils/images';
-import { getPermalink } from '~/utils/blog-permalinks';
 
 export interface Props {
   post: Post;
@@ -14,7 +12,7 @@ export interface Props {
 const { post } = Astro.props;
 const image = await findImage(post.image);
 
-const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
+const link = post.permalink;
 ---
 
 <article

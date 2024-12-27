@@ -39,7 +39,7 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
       robots:
         index: true
 
@@ -71,7 +71,7 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '%slug%'
+      permalink: '/%slug%'
       robots:
         index: true
 
@@ -103,7 +103,7 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '%slug%'
+      permalink: '/%slug%'
       robots:
         index: true
 
@@ -135,7 +135,7 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '%slug%'
+      permalink: '/%slug%'
       robots:
         index: true
 
@@ -167,7 +167,7 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '%slug%'
+      permalink: '/%slug%'
       robots:
         index: true
 
@@ -199,7 +199,7 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '%slug%'
+      permalink: '/%slug%'
       robots:
         index: true
 

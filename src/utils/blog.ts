@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { Post } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
-import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './blog-permalinks';
+import { cleanSlug, trimSlash, BLOG_ROOTPATH, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './blog-permalinks';
 
 const generatePermalink = async ({
   id,
@@ -25,6 +25,7 @@ const generatePermalink = async ({
 
   const permalink = POST_PERMALINK_PATTERN.replace('%slug%', slug)
     .replace('%id%', id)
+    //.replace('%rootPath%', BLOG_ROOTPATH || '')
     .replace('%category%', category || '')
     .replace('%year%', year)
     .replace('%month%', month)
