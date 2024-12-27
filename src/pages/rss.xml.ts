@@ -1,8 +1,7 @@
 import { getRssString } from '@astrojs/rss';
 
 import { SITE, METADATA, APP_BLOG } from 'astrowind:config';
-import { fetchPosts } from '~/utils/blog';
-import { getPermalink } from '~/utils/blog-permalinks';
+import { fetchPostsFromAllTypes, getRootPathForType } from '~/utils/blog';
 
 export const GET = async () => {
   if (!APP_BLOG.isEnabled) {
@@ -12,15 +11,21 @@ export const GET = async () => {
     });
   }
 
-  const posts = await fetchPosts();
+  const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'legal'];
+  const posts = await fetchPostsFromAllTypes(types);
+
+  const allPosts = posts.map((post) => ({
+    ...post,
+    permalink: `${getRootPathForType(post.type)}/${post.permalink}`,
+  }));
 
   const rss = await getRssString({
-    title: `${SITE.name}’s Blog`,
+    title: `${SITE.name}’s articles`,
     description: METADATA?.description || '',
     site: import.meta.env.SITE,
 
-    items: posts.map((post) => ({
-      link: getPermalink(post.permalink, 'post'),
+    items: allPosts.map((post) => ({
+      link: `${post.permalink}`,
       title: post.title,
       description: post.excerpt,
       pubDate: post.publishDate,

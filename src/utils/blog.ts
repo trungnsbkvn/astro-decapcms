@@ -3,10 +3,10 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { Post } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
-import { cleanSlug, trimSlash, BLOG_ROOTPATH, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './blog-permalinks';
+import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './blog-permalinks';
 
 const typeToRootPath = {
-  blog: '/tin-tuc',
+  post: '/tin-tuc',
   consultation: '/tu-van-thuong-xuyen',
   evaluation: '/dich-vu-danh-gia',
   foreigner: '/dau-tu-nuoc-ngoai',
@@ -204,6 +204,23 @@ export async function findPostsByAuthorAndTypes(author: string, types: string[],
 
   const filteredPosts = allPosts.filter(post => post.author === author);
   return filteredPosts.slice(0, count);
+}
+
+export async function fetchPostsFromAllTypes(types: string[]): Promise<Post[]> {
+  const allPosts: Post[] = [];
+
+  for (const type of types) {
+    const typedPost = await getCollection(type);
+    const normalizedPosts = typedPost.map(async (post) => await getNormalizedPost(post));
+    const collectionPosts = (await Promise.all(normalizedPosts))
+    .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
+      .filter((post) => !post.draft);
+    
+    const resultPosts = collectionPosts.map(post => ({ ...post, type }));
+    allPosts.push(...resultPosts);
+  }
+
+  return allPosts;
 }
 
 export function getRootPathForType(type: string): string {
