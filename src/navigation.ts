@@ -93,8 +93,8 @@ export const headerData = {
           href: '/tu-van-thuong-xuyen/diem-manh-cua-youth-partners',
         },
         {
-          text: 'Danh sách khách hàng',
-          href: '/gioi-thieu#danh-sach-khach-hang',
+          text: ' Pháp lý tư vấn thường xuyên khác',
+          href: '/tu-van-thuong-xuyen/phap-ly-tu-van-thuong-xuyen-khac',
         },
       ],
     },
@@ -128,14 +128,14 @@ export const headerData = {
         {
           text: 'Quấy rối tình dục',
           href: '/lao-dong/quay-roi-tinh-duc',
-        },
-        {
-          text: 'NDA & NCA',
-          href: '/lao-dong/nda-va-nca',
-        },
+        },       
         {
           text: 'Tranh chấp lao động',
           href: '/lao-dong/tranh-chap-lao-dong',
+        },
+        {
+          text: 'Pháp lý lao động khác',
+          href: '/lao-dong/phap-ly-lao-dong-khac',
         },
       ],
     },

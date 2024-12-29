@@ -76,7 +76,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
-      - { label: 'Category', name: 'category', widget: 'select', options: ['Tư vấn pháp luật thường xuyên cho Doanh nghiệp', 'Tư vấn pháp luật thường xuyên cho Cá nhân', 'Khái niệm Tư vấn thường xuyên', 'Vì sao doanh nghiệp cần tư vấn thường xuyên', 'Mẫu hợp đồng dịch vụ', 'Phí dịch vụ tư vấn', 'Quy trình tư vấn', 'Điểm mạnh của Youth & Partners'] }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Tư vấn pháp luật thường xuyên cho Doanh nghiệp', 'Tư vấn pháp luật thường xuyên cho Cá nhân', 'Khái niệm Tư vấn thường xuyên', 'Vì sao doanh nghiệp cần tư vấn thường xuyên', 'Mẫu hợp đồng dịch vụ', 'Phí dịch vụ tư vấn', 'Quy trình tư vấn', 'Điểm mạnh của Youth & Partners', ' Pháp lý tư vấn thường xuyên khác'] }
       - {
           label: 'Tags',
           name: 'tags',
@@ -105,7 +105,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
-      - { label: 'Category', name: 'category', widget: 'select', options: ['Nội quy - Thỏa ước', 'Thời giờ làm việc', 'Lương và Phúc lợi', 'Hợp đồng lao động, đào tạo', 'Chấm dứt hợp đồng', 'Xử lý kỷ luật', 'Quấy rối tình dục', 'NDA và NCA', 'Tranh chấp lao động'] }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Nội quy - Thỏa ước', 'Thời giờ làm việc', 'Lương và Phúc lợi', 'Hợp đồng lao động, đào tạo', 'Chấm dứt hợp đồng', 'Xử lý kỷ luật', 'Quấy rối tình dục', 'Tranh chấp lao động', 'Pháp lý lao động khác'] }
       - {
           label: 'Tags',
           name: 'tags',
