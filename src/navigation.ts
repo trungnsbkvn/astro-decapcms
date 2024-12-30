@@ -290,7 +290,7 @@ export const footerData = {
       links: [
         {
           text: 'Tin tức pháp lý',
-          href: getBlogPermalink(),
+          href: getPermalink('tin-tuc-phap-ly', 'category'),),
         },
         {
           text: 'Bình luận pháp lý',
