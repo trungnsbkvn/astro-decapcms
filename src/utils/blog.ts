@@ -247,9 +247,9 @@ export const getStaticPathsBlogList = async (type: string, { paginate }: { pagin
 };
 
 /** */
-export const getStaticPathsBlogPost = async () => {
+export const getStaticPathsBlogPost = async (type: string) => {
   if (!isBlogEnabled || !isBlogPostRouteEnabled) return [];
-  return (await fetchPostsFromAllTypes(BLOG_TYPES)).flatMap((post) => ({
+  return (await fetchPosts(type)).flatMap((post) => ({
     params: {
       blog: post.permalink,
     },
