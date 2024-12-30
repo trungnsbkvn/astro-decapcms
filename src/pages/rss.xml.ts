@@ -1,7 +1,8 @@
 import { getRssString } from '@astrojs/rss';
 
 import { SITE, METADATA, APP_BLOG } from 'astrowind:config';
-import { fetchPostsFromAllTypes, getRootPathForType } from '~/utils/blog';
+import { fetchPostsFromAllTypes } from '~/utils/blog';
+import { getRootPathForType } from '~/utils/blog-permalinks';
 
 export const GET = async () => {
   if (!APP_BLOG.isEnabled) {
