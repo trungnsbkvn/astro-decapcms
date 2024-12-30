@@ -1,8 +1,22 @@
 import slugify from 'limax';
 
-import { SITE, APP_BLOG } from 'astrowind:config';
+import { SITE, APP_BLOG, APP_CONSULTATION, APP_EVALUATION, APP_FOREIGNER, APP_LABOR, APP_LEGAL } from 'astrowind:config';
 
 import { trim } from '~/utils/utils';
+
+export const BLOG_TYPES = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'legal'];
+export const BLOG_TYPE2ROOTHPATH = {
+  post: '/tin-tuc',
+  consultation: '/tu-van-thuong-xuyen',
+  evaluation: '/dich-vu-danh-gia',
+  foreigner: '/dau-tu-nuoc-ngoai',
+  labor: '/lao-dong',
+  legal: '/phap-ly',
+};
+
+export const getRootPathForType = (type: string): string => {
+  return BLOG_TYPE2ROOTHPATH[type] || '';
+}
 
 export const trimSlash = (s: string) => trim(trim(s, '/'));
 const createPath = (...params: string[]) => {
@@ -40,8 +54,9 @@ export const getCanonical = (path = ''): string | URL => {
 };
 
 /** */
-export const getPermalink = (slug = '', type = 'page'): string => {
+export const getPermalink = (slug = '', type = 'page', content_type = 'post'): string => {
   let permalink: string;
+  const rootPath = getRootPathForType(content_type);
 
   if (
     slug.startsWith('https://') ||
@@ -59,27 +74,23 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       break;
 
     case 'blog':
-      permalink = getBlogPermalink();
+      permalink = getBlogPermalink(content_type);
       break;
 
-    case 'legal':
-        permalink = getBlogPermalink();
-      break;
-    
     case 'asset':
       permalink = getAsset(slug);
       break;
 
     case 'category':
-      permalink = createPath(BLOG_ROOTPATH + '/' + CATEGORY_BASE, trimSlash(slug));
+      permalink = createPath(rootPath + '/' + CATEGORY_BASE, trimSlash(slug));
       break;
 
     case 'tag':
-      permalink = createPath(BLOG_ROOTPATH + '/' + TAG_BASE, trimSlash(slug));
+      permalink = createPath(TAG_BASE, trimSlash(slug));
       break;
 
     case 'post':
-      permalink = createPath(BLOG_ROOTPATH, trimSlash(slug));
+      permalink = createPath(rootPath, trimSlash(slug));
       break;
 
     case 'page':
@@ -95,7 +106,10 @@ export const getPermalink = (slug = '', type = 'page'): string => {
 export const getHomePermalink = (): string => getPermalink('/');
 
 /** */
-export const getBlogPermalink = (): string => getPermalink(BLOG_ROOTPATH);
+export const getBlogPermalink = (type: string): string => { 
+  const rootPath = getRootPathForType(type);
+  return getPermalink(rootPath);
+}
 
 /** */
 export const getAsset = (path: string): string =>

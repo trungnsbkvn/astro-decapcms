@@ -2,22 +2,30 @@
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 
 import Layout from '~/layouts/PageLayout.astro';
-import BlogList from '~/components/consultation/List.astro';
-import Headline from '~/components/consultation/Headline.astro';
-import Pagination from '~/components/consultation/Pagination.astro';
+import BlogList from '~/components/blog/List.astro';
+import Headline from '~/components/blog/Headline.astro';
+import Pagination from '~/components/blog/Pagination.astro';
 
-import { blogListRobots, getStaticPathsBlogList } from '~/utils/consultation';
+import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
+import { getRootPathForType } from '~/utils/blog-permalinks';
 
 export const prerender = true;
 
 export const getStaticPaths = (async ({ paginate }) => {
-  return await getStaticPathsBlogList({ paginate });
+  return await getStaticPathsBlogList('consultation', { paginate });
 }) satisfies GetStaticPaths;
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { page } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
+
+const posts = await page.data;
+
+const typePosts = posts.map((post) => ({
+  ...post,
+  permalink: `${getRootPathForType(post.type)}/${post.permalink}`,
+}));
 
 const metadata = {
   title: `Tư vấn thường xuyên${currentPage > 1 ? ` — Trang ${currentPage}` : ''}`,
@@ -38,7 +46,7 @@ const metadata = {
     >
       Tư vấn thường xuyên
     </Headline>
-    <BlogList posts={page.data} />
+    <BlogList posts={typePosts} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>
 </Layout>

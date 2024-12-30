@@ -29,7 +29,7 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const posts = await findLatestBlogPosts({ count });
+const posts = await findLatestBlogPosts('post', { count });
 
 const blogPosts = posts.map((post) => ({
   ...post,

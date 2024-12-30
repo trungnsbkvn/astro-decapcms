@@ -9,6 +9,7 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Widget } from '~/types';
 
 export interface Props extends Widget {
+  type?: string;
   title?: string;
   linkText?: string;
   linkUrl?: string | URL;
@@ -17,9 +18,10 @@ export interface Props extends Widget {
 }
 
 const {
+  type,
   title = await Astro.slots.render('title'),
   linkText = 'Xem tất cả',
-  linkUrl = getBlogPermalink(),
+  linkUrl = getBlogPermalink(type),
   information = await Astro.slots.render('information'),
   postIds = [],
 
@@ -29,7 +31,7 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const posts = APP_BLOG.isEnabled ? await findPostsByIds(postIds) : [];
+const posts = APP_BLOG.isEnabled ? await findPostsByIds(type, postIds) : [];
 ---
 
 {

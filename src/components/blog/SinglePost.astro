@@ -12,11 +12,12 @@ import { getFormattedDate, getAuthorPermalink } from '~/utils/utils';
 import type { Post } from '~/types';
 
 export interface Props {
+  type: string;
   post: Post;
   url: string | URL;
 }
 
-const { post, url } = Astro.props;
+const { type, post, url } = Astro.props;
 
 const headings = post.headings;
 
@@ -68,7 +69,7 @@ const structuredData = post.rating
               <>
                 {' '}
                 ·{' '}
-                <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category')}>
+                <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category', type)}>
                   {post.category.title}
                 </a>
               </>

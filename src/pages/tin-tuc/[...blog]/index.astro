@@ -23,7 +23,7 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { post } = Astro.props as Props;
 
-const url = getCanonical(getPermalink(post.permalink, 'post'));
+const url = getCanonical(getPermalink(post.permalink, 'post', 'post'));
 const image = (await findImage(post.image)) as ImageMetadata | string | undefined;
 
 const metadata = merge(
@@ -46,9 +46,9 @@ const metadata = merge(
 ---
 
 <Layout metadata={metadata}>
-  <SinglePost post={{ ...post, image: image }} url={url}>
+  <SinglePost type="post" post={{ ...post, image: image }} url={url}>
     {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
   </SinglePost>
-  <ToBlogLink />
-  <RelatedPosts post={post} />
+  <ToBlogLink type="post" />
+  <RelatedPosts type="post" post={post} />
 </Layout>
