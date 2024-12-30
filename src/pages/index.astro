@@ -16,6 +16,11 @@ const metadata = {
   title: 'Công ty Luật TNHH Youth & Partners - Người bạn đồng hành của Doanh nghiệp',
   ignoreTitleTemplate: true,
 };
+
+const lastestTypes = ['evaluation', 'labor', 'foreigner', 'post'];
+const lastestCategories = {
+  post: ['Tin tức pháp lý', 'Các vụ việc nổi bật', 'Hội thảo pháp lý'],
+};
 ---
 
 <Layout metadata={metadata}>
@@ -174,6 +179,8 @@ const metadata = {
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogLatestPosts
+    types={lastestTypes}
+    categories={lastestCategories}
     title="Kênh tin tức Youth & Partners"
     information={`Trang tin tức của chúng tôi cung cấp những thông tin cập nhật và mới nhất về các vấn đề pháp lý, 
     với bài viết từ các chuyên gia pháp lý hàng đầu, đảm bảo bạn luôn nắm bắt được những thay đổi quan trọng trong các lĩnh vực quan tâm.

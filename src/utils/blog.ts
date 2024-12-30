@@ -173,12 +173,30 @@ export const findPostsByIds = async (type: string, ids: Array<string>): Promise<
 };
 
 /** */
-export const findLatestBlogPosts = async (type: string, { count }: { count?: number }): Promise<Array<Post>> => {
-  const _count = count || 4;
-  const posts = await fetchPosts(type);
+export async function findLatestBlogPosts(types: string[], categories: Record<string, string[]>, count: number): Promise<Post[]> {
+  const allPosts: Post[] = [];
 
-  return posts ? posts.slice(0, _count) : [];
-};
+  for (const type of types) {
+    const posts = await getCollection(type);
+    const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
+
+    const collectionPosts = (await Promise.all(normalizedPosts))
+    .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
+      .filter((post) => !post.draft);
+
+    const typePosts = collectionPosts.map(post => ({ ...post, type }));
+
+    const filteredPosts = categories && categories[type]
+      ? typePosts.filter(post => categories[type].includes(post.category))
+      : typePosts;
+    
+    allPosts.push(...filteredPosts);
+  }
+
+  allPosts.sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
+
+  return allPosts.slice(0, count);
+}
 
 /** */
 export async function findPostsByAuthorAndTypes(author: string, types: string[], count: number): Promise<Post[]> {

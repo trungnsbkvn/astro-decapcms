@@ -3,24 +3,26 @@ import { APP_BLOG } from 'astrowind:config';
 
 import Grid from '~/components/blog/Grid.astro';
 
-import { getBlogPermalink } from '~/utils/blog-permalinks';
 import { findLatestBlogPosts } from '~/utils/blog';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Widget } from '~/types';
+import { getRootPathForType } from '~/utils/blog-permalinks';
 
 export interface Props extends Widget {
   title?: string;
   linkText?: string;
   linkUrl?: string | URL;
   information?: string;
+  types: string[];
+  categories: Record<string, string[]>;
   count?: number;
 }
 
 const {
   title = await Astro.slots.render('title'),
-  linkText = 'Xem tất cả',
-  linkUrl = getBlogPermalink(),
   information = await Astro.slots.render('information'),
+  types,
+  categories,
   count = 4,
 
   id,
@@ -29,11 +31,11 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const posts = await findLatestBlogPosts('post', { count });
+const posts = await findLatestBlogPosts(types, categories, count);
 
-const blogPosts = posts.map((post) => ({
+const typePosts = posts.map((post) => ({
   ...post,
-  permalink: `${APP_BLOG?.rootPath}/${post.permalink}`,
+  permalink: `${getRootPathForType(post.type)}/${post.permalink}`,
 }));
 ---
 
@@ -53,7 +55,7 @@ const blogPosts = posts.map((post) => ({
         {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
       </div>
 
-      <Grid posts={blogPosts} />
+      <Grid posts={typePosts} />
     </WidgetWrapper>
   ) : (
     <Fragment />
