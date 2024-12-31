@@ -15,6 +15,7 @@ collections:
     create: true
     extension: 'mdx'
     format: 'frontmatter'
+    preview_path: tin-tuc/{{slug}}
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
