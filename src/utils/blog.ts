@@ -174,7 +174,7 @@ export const findPostsByIds = async (type: string, ids: Array<string>): Promise<
 
 /** */
 export async function findLatestBlogPosts(types: string[], categories: Record<string, string[]>, count: number): Promise<Post[]> {
-  const allPosts: Post[] = [];
+  const latestPosts: Post[] = [];
 
   for (const type of types) {
     const posts = await getCollection(type);
@@ -184,18 +184,19 @@ export async function findLatestBlogPosts(types: string[], categories: Record<st
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
       .filter((post) => !post.draft);
 
-    const typePosts = collectionPosts.map(post => ({ ...post, type }));
-
     const filteredPosts = categories && categories[type]
-      ? typePosts.filter(post => categories[type].includes(post.category))
-      : typePosts;
+    ? collectionPosts.filter(post => categories[type].includes(post.category.title))
+    : collectionPosts;
     
-    allPosts.push(...filteredPosts);
+    const typePosts = filteredPosts.map(post => ({ ...post, type }));
+
+    typePosts.sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
+    if (typePosts.length > 0) {
+      latestPosts.push(typePosts[0]);
+    }
   }
 
-  allPosts.sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
-
-  return allPosts.slice(0, count);
+  return latestPosts.slice(0, count);
 }
 
 /** */
