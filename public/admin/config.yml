@@ -37,7 +37,7 @@ collections:
           label: 'Content',
           name: 'body',
           widget: 'markdown',
-          buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "quote", "numbered-list", "bulleted-list"],
+          buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "quote", "numbered-list", "bulleted-list"],
           editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
         }
   - name: 'legal'
@@ -67,6 +67,7 @@ collections:
           label: 'Content',
           name: 'body',
           widget: 'markdown',
+          buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "quote", "numbered-list", "bulleted-list"],
           editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
         }
   - name: 'consultation'
@@ -96,6 +97,7 @@ collections:
           label: 'Content',
           name: 'body',
           widget: 'markdown',
+          buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "quote", "numbered-list", "bulleted-list"],
           editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
         }        
   - name: 'labor'
@@ -125,6 +127,7 @@ collections:
           label: 'Content',
           name: 'body',
           widget: 'markdown',
+          buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "quote", "numbered-list", "bulleted-list"],
           editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
         }
   - name: 'foreigner'
@@ -154,6 +157,7 @@ collections:
           label: 'Content',
           name: 'body',
           widget: 'markdown',
+          buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "quote", "numbered-list", "bulleted-list"],
           editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
         }         
   - name: 'evaluation'
@@ -183,5 +187,6 @@ collections:
           label: 'Content',
           name: 'body',
           widget: 'markdown',
+          buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "quote", "numbered-list", "bulleted-list"],
           editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
         }                     
