@@ -42,14 +42,16 @@ const structuredData = post.rating
   : null;
 ---
 
-<section>
-  <article>
+<section
+  class="px-5 sm:mx-auto sm:max-w-2xl sm:px-8 lg:px-0 antialiased md:max-w-6xl grid gap-12 mt-4 overflow-hidden md:overflow-visible"
+>
+  <article class="min-w-full md:py-4 sm:max-w-none md:max-w-none">
     <header
       class={post.image
         ? 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
         : 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'}
     >
-      <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
+      <div class="flex text-center justify-center flex-col sm:flex-row mx-auto mt-0 sm:items-center">
         <p>
           <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
@@ -86,66 +88,124 @@ const structuredData = post.rating
       </div>
 
       <h1
-        class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"
+        class="text-center md:pb-2.5 font-semibold px-4 sm:px-6 mx-auto text-4xl md:text-5xl leading-tighter tracking-tighter font-heading"
       >
         {post.title}
       </h1>
-      <p
-        class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify"
-      >
+      <p class="mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify">
         {post.excerpt}
       </p>
       {
         post.image ? (
           <Image
             src={post.image}
-            class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
-            widths={[400, 900]}
-            sizes="(max-width: 900px) 400px, 900px"
+            class="w-full mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
+            widths={[500, 1500]}
+            sizes="(max-width: 1500px) 500px, 1500px"
             alt={post?.excerpt || ''}
-            width={900}
-            height={506}
+            width={1500}
+            height={500}
             loading="eager"
             decoding="async"
           />
         ) : (
-          <div class="max-w-3xl mx-auto px-4 sm:px-6">
+          <div class="mx-auto px-4 sm:px-6">
             <div class="border-t dark:border-slate-700" />
           </div>
         )
       }
     </header>
-    <div
-      class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:items-center dark:text-slate-400 transition-all duration-200"
-    >
-      {headings && headings.length > 0 && <TableOfContents {headings} />}
-    </div>
-    <div
-      class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0 text-justify"
-    >
-      <slot />
-    </div>
-    {
-      post.rating && (
-        <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8">
-          <div class="flex items-center">
-            <>
-              {[...Array(post.rating)].map(() => (
-                <Icon name="tabler:star" class="w-4 h-4 inline-block text-yellow-500" />
-              ))}
-              {[...Array(5 - post.rating)].map(() => (
-                <Icon name="tabler:star" class="w-4 h-4 inline-block text-gray-300" />
-              ))}
-            </>
-          </div>
+    <div class="grid grid-cols-1 md:grid-cols-[20%_auto] gap-10 mt-8">
+      <!-- aside  -->
+      <aside class="md:flex flex-col gap-4 hidden">
+        <div class="sticky top-24 self-start hidden md:block transition-all duration-200">
+          {headings && headings.length > 0 && <TableOfContents {headings} />}
         </div>
-      )
-    }
-    <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
-      <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
-      <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600" />
+      </aside>
+      <!-- post -->
+      <article class="max-w-full w-full">
+        <div
+          class="mx-auto prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0 text-justify"
+        >
+          <slot />
+        </div>
+        {
+          post.rating && (
+            <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8">
+              <div class="flex items-center">
+                <>
+                  {[...Array(post.rating)].map(() => (
+                    <Icon name="tabler:star" class="w-4 h-4 inline-block text-yellow-500" />
+                  ))}
+                  {[...Array(5 - post.rating)].map(() => (
+                    <Icon name="tabler:star" class="w-4 h-4 inline-block text-gray-300" />
+                  ))}
+                </>
+              </div>
+            </div>
+          )
+        }
+        <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
+          <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
+          <SocialShare
+            url={url}
+            text={post.title}
+            class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600"
+          />
+        </div>
+      </article>
     </div>
   </article>
 </section>
 
 {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
+
+<script>
+  const fnObserver = () => {
+    function handleIntersection(entries: IntersectionObserverEntry[], observer: IntersectionObserver) {
+      entries.forEach((entry) => {
+        const index = document.querySelector(`aside a[href="#${entry.target.id}"]`);
+
+        if (entry.isIntersecting) {
+          index?.classList.remove('bg-slate-200', 'dark:bg-slate-800'); // remove bg
+          index?.classList.add(
+            'bg-indigo-600',
+            'dark:bg-indigo-700',
+            'text-white',
+            'font-bold',
+            'transition-colors',
+            'duration-200'
+          );
+        } else {
+          index?.classList.add('bg-slate-200', 'dark:bg-slate-800'); // add bg
+          index?.classList.remove(
+            'bg-indigo-600',
+            'dark:bg-indigo-700',
+            'text-white',
+            'font-bold',
+            'transition-colors',
+            'duration-200'
+          );
+        }
+      });
+    }
+
+    const headings = document.querySelectorAll(
+      'div.prose h1, div.prose h2, div.prose h3, div.prose h4, div.prose h5, div.prose h6'
+    );
+
+    const options = {
+      root: null,
+      rootMargin: ' 15% 0px 0% 0px ',
+      threshold: 1,
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    headings.forEach((heading) => {
+      observer.observe(heading);
+    });
+  };
+  fnObserver();
+  document.addEventListener('astro:after-swap', fnObserver);
+</script>
