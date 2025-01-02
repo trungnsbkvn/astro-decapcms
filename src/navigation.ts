@@ -90,7 +90,7 @@ export const headerData = {
         },
         {
           text: 'Điểm mạnh của Youth & Partners',
-          href: '/tu-van-thuong-xuyen/diem-manh-cua-youth-partners',
+          href: '/tu-van-thuong-xuyen/diem-manh-cua-youth-and-partners',
         },
         {
           text: ' Pháp lý tư vấn thường xuyên khác',
