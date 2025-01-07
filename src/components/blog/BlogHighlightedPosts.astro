@@ -21,7 +21,7 @@ const {
   type,
   title = await Astro.slots.render('title'),
   linkText = 'Xem tất cả',
-  linkUrl = getBlogPermalink(type),
+  linkUrl = getBlogPermalink(type || 'post'),
   information = await Astro.slots.render('information'),
   postIds = [],
 
@@ -31,7 +31,7 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const posts = APP_BLOG.isEnabled ? await findPostsByIds(type, postIds) : [];
+const posts = await findPostsByIds(type || 'post', postIds);
 ---
 
 {

@@ -52,7 +52,7 @@ const structuredData = post.rating
         : 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'}
     >
       <div class="flex text-center justify-center flex-col sm:flex-row mx-auto mt-0 sm:items-center">
-        <p>
+        <p class="text-opacity-50 text-sm">
           <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
           {
@@ -99,7 +99,7 @@ const structuredData = post.rating
         post.image ? (
           <Image
             src={post.image}
-            class="w-full mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
+            class="w-full mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700 object-cover"
             widths={[500, 1500]}
             sizes="(max-width: 1500px) 500px, 1500px"
             alt={post?.excerpt || ''}
@@ -115,6 +115,7 @@ const structuredData = post.rating
         )
       }
     </header>
+    <hr />
     <div class="grid grid-cols-1 md:grid-cols-[20%_auto] gap-10 mt-8">
       <!-- aside  -->
       <aside class="md:flex flex-col gap-4 hidden">
@@ -172,7 +173,6 @@ const structuredData = post.rating
             'bg-indigo-600',
             'dark:bg-indigo-700',
             'text-white',
-            'font-bold',
             'transition-colors',
             'duration-200'
           );
@@ -182,7 +182,6 @@ const structuredData = post.rating
             'bg-indigo-600',
             'dark:bg-indigo-700',
             'text-white',
-            'font-bold',
             'transition-colors',
             'duration-200'
           );
