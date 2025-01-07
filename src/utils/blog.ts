@@ -262,7 +262,7 @@ export const getStaticPathsBlogPost = async (type: string) => {
 export const getStaticPathsBlogCategory = async (type: string, { paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogCategoryRouteEnabled) return [];
 
-  const posts = await fetchPostsFromAllTypes(BLOG_TYPES);
+  const posts = await fetchPosts(type);
   const categories = {};
   posts.map((post) => {
     if (post.category?.slug) {
