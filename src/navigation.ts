@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/blog-permalinks';
+import { getPermalink, getAsset } from './utils/blog-permalinks';
 
 export const headerData = {
   links: [
@@ -6,7 +6,7 @@ export const headerData = {
       text: 'Giới thiệu',
       links: [
         { text: 'Lịch sử thành lập', href: getPermalink('/gioi-thieu#lich-su-thanh-lap') },
-        { text: 'Luật sư và cộng sự', href: '/gioi-thieu#luat-su-va-cong-su' },
+        { text: 'Luật sư và cộng sự', href: '/luat-su-va-cong-su' },
         { text: 'Giải thưởng pháp lý', href: '/gioi-thieu#giai-thuong-phap-ly' },
         { text: 'Cảm nhận khách hàng', href: '/gioi-thieu#cam-nhan-khach-hang' },
         { text: 'Tôn chỉ hoạt động', href: '/gioi-thieu#ton-chi-hoat-dong' },
