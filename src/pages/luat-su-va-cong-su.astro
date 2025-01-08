@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
 import Partners from '~/components/widgets/Partners.astro';
 
 import { getPermalink } from '~/utils/blog-permalinks';
@@ -14,126 +14,193 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero
-    id="hero"
-    title="Luật sư và cộng sự"
-    tagline="Youth & Partners"
-    actions={[{ variant: 'primary', text: 'Liên hệ với chúng tôi', href: getPermalink('/lien-he#form') }]}
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:phone-call',
+        callToAction: {
+          target: '_blank',
+          text: 'Hotline',
+          href: 'tel:0889956888',
+        },
+      },
+      {
+        icon: 'tabler:mailbox',
+        callToAction: {
+          target: '_blank',
+          text: 'Email',
+          href: 'mailto:ceo@yplawfirm.vn',
+        },
+      },
+      {
+        icon: 'tabler:brand-meta',
+        callToAction: {
+          target: '_blank',
+          text: 'Facebook',
+          href: 'https://www.facebook.com/vinhphuclawyers',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/youth and partners/luat su Nguyen Van Thanh.png',
+      alt: 'Colorful Image',
+      loading: 'eager',
+    }}
   >
-    <Fragment slot="subtitle">
-      Công ty Luật TNHH Youth & Partners là một trong những công ty luật hàng đầu tại Việt Nam, với đội ngũ luật sư và
-      cộng sự giàu kinh nghiệm và chuyên môn sâu rộng. Công ty này cung cấp các dịch vụ pháp lý chất lượng cao, nhanh
-      chóng, chính xác và toàn diện.
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Luật sư và cộng sự</h2>
+      <p>
+        Công ty Luật TNHH Youth & Partners là một trong những công ty luật hàng đầu tại Việt Nam, với đội ngũ luật sư và
+        cộng sự giàu kinh nghiệm và chuyên môn sâu rộng. Công ty này cung cấp các dịch vụ pháp lý chất lượng cao, nhanh
+        chóng, chính xác và toàn diện.
+      </p>
       <br />
+      <p>
+        Đội ngũ luật sư của Youth & Partners bao gồm các chuyên gia có nhiều năm kinh nghiệm trong nhiều lĩnh vực khác
+        nhau như tư vấn pháp lý thường xuyên cho doanh nghiệp, giải quyết tranh chấp lao động, luật sư riêng tiếng Nhật,
+        Anh, Trung, Hàn, và dịch vụ audit, đánh giá và thẩm định pháp lý cho doanh nghiệp. Công ty luôn cam kết mang lại
+        công bằng và sự thành công cho khách hàng, giúp họ vững bước trên con đường phát triển.
+      </p>
       <br />
-      Đội ngũ luật sư của Youth & Partners bao gồm các chuyên gia có nhiều năm kinh nghiệm trong nhiều lĩnh vực khác nhau
-      như tư vấn pháp lý thường xuyên cho doanh nghiệp, giải quyết tranh chấp lao động, luật sư riêng tiếng Nhật, Anh, Trung,
-      Hàn, và dịch vụ audit, đánh giá và thẩm định pháp lý cho doanh nghiệp. Công ty luôn cam kết mang lại công bằng và sự
-      thành công cho khách hàng, giúp họ vững bước trên con đường phát triển.
-      <br />
-      <br />
-      Ngoài ra, Youth & Partners cũng tổ chức các khóa đào tạo, workshop để phổ cập kiến thức pháp lý cho cộng đồng, đặc
-      biệt là các khóa đào tạo về tổ chức trong sạch, chống quấy rối tình dục, bộ quy tắc RBA (Liên minh các Doanh nghiệp
-      có trách nhiệm xã hội), và các lĩnh vực tồn tại nhiều rủi ro tranh chấp trong doanh nghiệp
     </Fragment>
-  </Hero>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
 
   <Partners
     id="luat-su-va-cong-su"
     title="Luật sư và cộng sự"
     subtitle="Khách hàng hài lòng với dịch vụ pháp lý tại Youth & Partners, đánh giá cao sự tận tâm và chuyên nghiệp của đội ngũ luật sư trong việc giải quyết các vấn đề pháp lý phức tạp. Họ tin tưởng và sẵn lòng tiếp tục sử dụng dịch vụ của chúng tôi trong tương lai."
-    testimonials={[
+    teams={[
       {
-        name: 'Luật sư Nguyễn Văn Thành',
-        job: 'Luật sư điều hành',
+        name: 'Nguyễn Văn Thành',
+        position: 'Luật sư điều hành',
+        link: getPermalink('/tac-gia/luat-su-nguyen-van-thanh'),
         image: {
           src: '~/assets/images/team/Luật sư Nguyễn Văn Thành.jpg',
           alt: 'Luật sư Nguyễn Văn Thành',
         },
       },
       {
-        testimonial: `Tính chuyên nghiệp và sự tận tâm: Dịch vụ tư vấn chuyên nghiệp, luật sư hỗ trợ tận tình, hiệu quả trong xử lý tranh chấp, tuân thủ và hồ sơ pháp lý.
-Tốc độ phản hồi: Nhanh chóng, linh hoạt. Vấn đề đơn giản được giải quyết qua tin nhắn, vấn đề phức tạp có báo cáo pháp lý chi tiết, rõ ràng.
-Kinh nghiệm chuyên môn: Phong phú, bao quát các lĩnh vực thương mại, dân sự, lao động, v.v.
-Báo cáo và cập nhật: Đầy đủ, thường xuyên, rõ ràng.`,
-        name: 'Ms. Huyền Nguyễn',
-        job: 'Head of HR | Kowa (Việt Nam)',
+        name: 'Nguyễn Thu Nga',
+        position: 'Luật sư thành viên',
+        link: getPermalink('/tac-gia/luat-su-nguyen-thu-nga'),
         image: {
-          src: '~/assets/images/customers/Huyền Nguyễn.jpg',
-          alt: 'Ms. Huyền Nguyễn - Kowa (Việt Nam)',
+          src: '~/assets/images/team/Luật sư Nguyễn Thu Nga.jpg',
+          alt: 'Luật sư Nguyễn Thu Nga',
         },
       },
       {
-        testimonial: `Công ty Rồng Việt xin cảm ơn các cộng sự của Youth & Partners  đã giúp đỡ chúng tôi gánh vác một phần công việc tại công ty, đặc biệt trong những thời điểm mà công ty chúng tôi cần tập trung cao độ về pháp lý cũng như các điều luật được cập nhật liên tục kịp thời và chính xác.
-Cảm ơn tất cả mọi người vì đã không chỉ làm việc cùng nhau mà còn dành cho nhau sự tin tưởng, yêu thương và sẻ chia. Những điều đó chính là nguồn sức mạnh lớn nhất để Rồng Việt không ngừng tiến về phía trước.`,
-        name: 'Ms. Hồng',
-        job: 'Head of HR | Công ty TNHH TM&DV Rồng Việt',
+        name: 'Trần Chung Kiên',
+        position: 'Luật sư thành viên',
+        link: getPermalink('/tac-gia/luat-su-tran-chung-kien'),
         image: {
-          src: '~/assets/images/customers/Ms. Hồng.png',
-          alt: 'Ms. Hồng Image',
+          src: '~/assets/images/team/Luật sư Trần Chung Kiên.jpg',
+          alt: 'Luật sư Trần Chung Kiên',
         },
       },
       {
-        testimonial: `Amazing services and good spirit
-                                        We have been working with Youth & Partners for a long time. We had perfect experiences from enthusiastic and great staff. They are friendly and dedicated to work. Everything is well organized.
-                                        Keep up your great work!`,
-        name: 'Daniel Nguyen',
-        job: 'Founder & CEO WeSMART',
+        name: 'Nguyễn Thị Thơm',
+        position: 'Luật sư thành viên',
+        link: getPermalink('/tac-gia/luat-su-nguyen-thi-thom'),
         image: {
-          src: '~/assets/images/customers/trung.png',
-          alt: 'Daniel Nguyen',
+          src: '~/assets/images/team/Luật sư Nguyễn Thị Thơm.jpg',
+          alt: 'Luật sư Nguyễn Thị Thơm',
         },
       },
       {
-        testimonial: `Một địa chỉ tư vấn và hỗ trợ pháp luật tuyệt vời. Mình rất hài lòng về cách làm việc và hỗ trợ của các anh chị tại đây. Cảm ơn và chúc công ty ngày một phát triển, và hỗ trợ được nhiều khách hàng hơn nữa.`,
-        name: 'Ha Trung',
-        job: 'Khách hàng',
+        name: 'Phạm Thị Huyền Quyên',
+        position: 'Luật sư thành viên',
+        link: getPermalink('/tac-gia/luat-su-pham-thi-huyen-quyen'),
         image: {
-          src: '~/assets/images/customers/hatrung.png',
-          alt: 'Ha Trung',
+          src: '~/assets/images/team/Luật sư Phạm Thị Huyền Quyên.jpg',
+          alt: 'Luật sư Phạm Thị Huyền Quyên',
         },
       },
       {
-        testimonial: `Đội ngũ Luật sư chuyên môn dày dặn, xử lý công việc chuyên nghiệp, tư duy đột phá trong các phương án tư vấn cho khách hàng, đem đến sự hài lòng toàn diện cho khách hàng trên cơ sở thượng tôn pháp luật.`,
-        name: 'Hoa Trương',
-        job: 'Khách hàng',
+        name: 'Văn Thị Thanh Hoa',
+        position: 'Luật sư thành viên',
+        link: getPermalink('/tac-gia/luat-su-van-thi-thanh-hoa'),
         image: {
-          src: '~/assets/images/customers/hoatruong.png',
-          alt: 'Hoa Trương Image',
+          src: '~/assets/images/team/Luật sư Văn Thị Thanh Hoa.jpg',
+          alt: 'Luật sư Văn Thị Thanh Hoa',
         },
       },
       {
-        testimonial: `Mình rất hài lòng khi sử dụng dịch vụ pháp lý của Y&P Lawfirm. Các luật sự làm việc rất chuyên nghiệp,  Chúc cho các luật sư thật nhiều sức khỏe!`,
-        name: 'Van Quang Tran',
-        job: 'Khách hàng',
+        name: 'Bùi Đức Mạnh',
+        position: 'Chuyên viên pháp lý',
+        link: getPermalink('/tac-gia/bui-duc-manh'),
         image: {
-          src: '~/assets/images/customers/vanquangtran.png',
-          alt: 'Van Quang Tran Image',
+          src: '~/assets/images/team/Chuyên viên Bùi Đức Mạnh.PNG',
+          alt: 'Chuyên viên pháp lý Bùi Đức Mạnh',
         },
       },
       {
-        testimonial: `Công ty luật uy tín, có đội ngũ Luật sư và chuyên viên giàu kinh nghiêm trong các lĩnh vực doanh nghiệp, lao động, kinh doanh thương mại, tranh tụng.
-Một nơi xứng đáng để gửi gắm niềm tin.`,
-        name: 'Xuân Thoại Mai',
-        job: 'Khách hàng',
+        name: 'Nghiêm Minh Huyền',
+        position: 'Chuyên viên pháp lý',
+        link: getPermalink('/tac-gia/nghiem-minh-huyen'),
         image: {
-          src: '~/assets/images/customers/Xuân Thoại.png',
-          alt: 'Xuân Thoại Mai Image',
+          src: '~/assets/images/team/Chuyên viên Nghiêm Huyền.jpg',
+          alt: 'Chuyên viên pháp lý Nghiêm Minh Huyền',
         },
       },
       {
-        testimonial: `Đội ngũ luật sư chuyên môn cao, tác phong chuyên nghiệp, hỗ trợ khách hàng tận tâm, nhiệt tình. Tôi rất hài lòng với trải nghiệm sử dụng dịch vụ của Công ty Luật này.`,
-        name: 'Thu Hà Trần',
-        job: 'Khách hàng',
+        name: 'Nguyễn Phùng Mai Ánh',
+        position: 'Chuyên viên pháp lý',
+        link: getPermalink('/tac-gia/nguyen-phung-mai-anh'),
         image: {
-          src: '~/assets/images/customers/thu hà.png',
-          alt: 'Thu Hà Trần Image',
+          src: '~/assets/images/team/Chuyên viên Mai Ánh.jpg',
+          alt: 'Chuyên viên pháp lý Nguyễn Phùng Mai Ánh',
+        },
+      },
+      {
+        name: 'Đỗ Thị Lương',
+        position: 'Chuyên viên pháp lý',
+        link: getPermalink('/tac-gia/do-thi-luong'),
+        image: {
+          src: '~/assets/images/team/Chuyên viên Đỗ Thị Lương.jpg',
+          alt: 'Chuyên viên pháp lý Đỗ Thị Lương',
+        },
+      },
+      {
+        name: 'Nguyễn Thị Thu Trang',
+        position: 'Chuyên viên pháp lý',
+        link: getPermalink('/tac-gia/nguyen-thi-thu-trang'),
+        image: {
+          src: '~/assets/images/team/Chuyên viên Nguyễn Thị Thu Trang.jpg',
+          alt: 'Chuyên viên pháp lý Nguyễn Thị Thu Trang',
+        },
+      },
+      {
+        name: 'Nguyễn Thị Thùy Linh',
+        position: 'Chuyên viên pháp lý',
+        link: getPermalink('/tac-gia/nguyen-thi-thuy-linh'),
+        image: {
+          src: '~/assets/images/team/Chuyên viên Nguyễn Thị Thùy Linh.jpg',
+          alt: 'Chuyên viên pháp lý Nguyễn Thị Thùy Linh',
+        },
+      },
+      {
+        name: 'Nguyễn Thúy Hằng',
+        position: 'Chuyên viên pháp lý',
+        link: getPermalink('/tac-gia/nguyen-thuy-hang'),
+        image: {
+          src: '~/assets/images/team/Chuyên viên Nguyễn Thúy Hằng.jpg',
+          alt: 'Chuyên viên pháp lý Nguyễn Thúy Hằng',
+        },
+      },
+      {
+        name: 'Trần Thị Bích Liên',
+        position: 'Chuyên viên pháp lý',
+        link: getPermalink('/tac-gia/tran-thi-bich-lien'),
+        image: {
+          src: '~/assets/images/team/Chuyên viên Trần Thị Bích Liên.jpg',
+          alt: 'Chuyên viên pháp lý Trần Thị Bích Liên',
         },
       },
     ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Partners>
+  />
 </Layout>
