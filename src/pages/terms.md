@@ -35,10 +35,16 @@ Cố gắng giữ website không bị gián đoạn và kết nối không có l
 
 **Người phụ trách**:
 
-Công ty Luật TNHH Youth & Partners
+**Công ty Luật TNHH Youth & Partners**
 
-+ P316, Tháp Tây, Chung cư Học viện Quốc Phòng, Xuân La, Tây Hồ, Hà Nội
+**Email**: contact@yplawfirm.vn
 
-+ Hotline: 088 995 6888
+**Website**: [www.yplawfirm.vn](https://yplawfirm.vn/)
 
-+ Email: contact@yplawfirm.vn
+**Hotline**: 088 995 6888
+
+Hà Nội: P316, Tháp Tây, Chung cư Học viện Quốc Phòng, Xuân La, Tây Hồ, Hà Nội
+
+Bắc Ninh: Số nhà 222, đường Trần Hưng Đạo, phường Tiền An, thành phố Bắc Ninh, tỉnh Bắc Ninh
+
+Vĩnh Phúc: Số 170, đường Nguyễn Văn Linh, phường Liên Bảo, thành phố Vĩnh Yên, tỉnh Vĩnh Phúc.

@@ -46,8 +46,16 @@ Nếu bạn có câu hỏi liên quan đến việc xử lý dữ liệu cá nh�
 
 Bộ phận bảo vệ dữ liệu Công ty Luật TNHH Youth & Partners
 
-+ P316, Tháp Tây, Chung cư Học viện Quốc Phòng, Xuân La, Tây Hồ, Hà Nội
+**Công ty Luật TNHH Youth & Partners**
 
-+ Hotline: 088 995 6888
+**Email**: contact@yplawfirm.vn
 
-+ Email: contact@yplawfirm.vn
+**Website**: [www.yplawfirm.vn](https://yplawfirm.vn/)
+
+**Hotline**: 088 995 6888
+
+Hà Nội: P316, Tháp Tây, Chung cư Học viện Quốc Phòng, Xuân La, Tây Hồ, Hà Nội
+
+Bắc Ninh: Số nhà 222, đường Trần Hưng Đạo, phường Tiền An, thành phố Bắc Ninh, tỉnh Bắc Ninh
+
+Vĩnh Phúc: Số 170, đường Nguyễn Văn Linh, phường Liên Bảo, thành phố Vĩnh Yên, tỉnh Vĩnh Phúc.
