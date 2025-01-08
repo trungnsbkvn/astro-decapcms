@@ -44,9 +44,9 @@ Youth & Partners Law Firm cam kết bảo vệ dữ liệu cá nhân của khác
 
 Nếu bạn có câu hỏi liên quan đến việc xử lý dữ liệu cá nhân của bạn, bạn có thể liên hệ trực tiếp với nhân viên bảo vệ dữ liệu của chúng tôi, người sẽ sẵn sàng trả lời các yêu cầu hoặc khiếu nại của bạn:
 
-Bộ phận bảo vệ dữ liệu Công ty Luật TNHH Youth and Partners
+Bộ phận bảo vệ dữ liệu Công ty Luật TNHH Youth & Partners
 
-+ 170 Nguyễn Văn Linh, Liên Bảo, Vĩnh Yên, Vĩnh Phúc
++ P316, Tháp Tây, Chung cư Học viện Quốc Phòng, Xuân La, Tây Hồ, Hà Nội
 
 + Hotline: 088 995 6888
 

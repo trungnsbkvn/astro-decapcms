@@ -19,7 +19,7 @@ Các điều khoản sử dụng sau sẽ áp dụng cho người dùng truy c�
 
 **Phạm vi**
 
- Các Điều khoản Sử dụng sau sẽ áp dụng cho việc sử dụng website Youth & Partners cho người dùng của Công ty Luật TNHH Youth and Partners (sau đây gọi là "Y&P"):
+ Các Điều khoản Sử dụng sau sẽ áp dụng cho việc sử dụng website Youth & Partners cho người dùng của Công ty Luật TNHH Youth & Partners (sau đây gọi là "Y&P"):
 
 Bằng cách chấp nhận Điều khoản Sử dụng khi gửi thông tin trên website Youth & Partners, người dùng đồng ý rằng một thỏa thuận người dùng đã được thiết lập với Y&P và chấp nhận các Điều khoản Sử dụng sau đây khi sử dụng dịch vụ. Các điều khoản người dùng khác biệt hoặc xung đột với các Điều khoản Sử dụng Chung này sẽ không được áp dụng.
 
@@ -35,9 +35,9 @@ Cố gắng giữ website không bị gián đoạn và kết nối không có l
 
 **Người phụ trách**:
 
-Công ty Luật TNHH Youth and Partners
+Công ty Luật TNHH Youth & Partners
 
-+ 170 Nguyễn Văn Linh, Liên Bảo, Vĩnh Yên, Vĩnh Phúc
++ P316, Tháp Tây, Chung cư Học viện Quốc Phòng, Xuân La, Tây Hồ, Hà Nội
 
 + Hotline: 088 995 6888
 

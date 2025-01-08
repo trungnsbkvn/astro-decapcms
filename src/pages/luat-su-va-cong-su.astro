@@ -1,0 +1,139 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Partners from '~/components/widgets/Partners.astro';
+
+import { getPermalink } from '~/utils/blog-permalinks';
+
+const metadata = {
+  title: 'Luật sư và cộng sự',
+  description:
+    'Đội ngũ luật sư của Youth & Partners bao gồm các chuyên gia có nhiều năm kinh nghiệm trong nhiều lĩnh vực khác nhau như tư vấn pháp lý thường xuyên cho doanh nghiệp, giải quyết tranh chấp lao động, luật sư riêng tiếng Nhật, Anh, Trung, Hàn, và dịch vụ audit, đánh giá và thẩm định pháp lý cho doanh nghiệp.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    id="hero"
+    title="Luật sư và cộng sự"
+    tagline="Youth & Partners"
+    actions={[{ variant: 'primary', text: 'Liên hệ với chúng tôi', href: getPermalink('/lien-he#form') }]}
+  >
+    <Fragment slot="subtitle">
+      Công ty Luật TNHH Youth & Partners là một trong những công ty luật hàng đầu tại Việt Nam, với đội ngũ luật sư và
+      cộng sự giàu kinh nghiệm và chuyên môn sâu rộng. Công ty này cung cấp các dịch vụ pháp lý chất lượng cao, nhanh
+      chóng, chính xác và toàn diện.
+      <br />
+      <br />
+      Đội ngũ luật sư của Youth & Partners bao gồm các chuyên gia có nhiều năm kinh nghiệm trong nhiều lĩnh vực khác nhau
+      như tư vấn pháp lý thường xuyên cho doanh nghiệp, giải quyết tranh chấp lao động, luật sư riêng tiếng Nhật, Anh, Trung,
+      Hàn, và dịch vụ audit, đánh giá và thẩm định pháp lý cho doanh nghiệp. Công ty luôn cam kết mang lại công bằng và sự
+      thành công cho khách hàng, giúp họ vững bước trên con đường phát triển.
+      <br />
+      <br />
+      Ngoài ra, Youth & Partners cũng tổ chức các khóa đào tạo, workshop để phổ cập kiến thức pháp lý cho cộng đồng, đặc
+      biệt là các khóa đào tạo về tổ chức trong sạch, chống quấy rối tình dục, bộ quy tắc RBA (Liên minh các Doanh nghiệp
+      có trách nhiệm xã hội), và các lĩnh vực tồn tại nhiều rủi ro tranh chấp trong doanh nghiệp
+    </Fragment>
+  </Hero>
+
+  <Partners
+    id="luat-su-va-cong-su"
+    title="Luật sư và cộng sự"
+    subtitle="Khách hàng hài lòng với dịch vụ pháp lý tại Youth & Partners, đánh giá cao sự tận tâm và chuyên nghiệp của đội ngũ luật sư trong việc giải quyết các vấn đề pháp lý phức tạp. Họ tin tưởng và sẵn lòng tiếp tục sử dụng dịch vụ của chúng tôi trong tương lai."
+    testimonials={[
+      {
+        name: 'Luật sư Nguyễn Văn Thành',
+        job: 'Luật sư điều hành',
+        image: {
+          src: '~/assets/images/team/Luật sư Nguyễn Văn Thành.jpg',
+          alt: 'Luật sư Nguyễn Văn Thành',
+        },
+      },
+      {
+        testimonial: `Tính chuyên nghiệp và sự tận tâm: Dịch vụ tư vấn chuyên nghiệp, luật sư hỗ trợ tận tình, hiệu quả trong xử lý tranh chấp, tuân thủ và hồ sơ pháp lý.
+Tốc độ phản hồi: Nhanh chóng, linh hoạt. Vấn đề đơn giản được giải quyết qua tin nhắn, vấn đề phức tạp có báo cáo pháp lý chi tiết, rõ ràng.
+Kinh nghiệm chuyên môn: Phong phú, bao quát các lĩnh vực thương mại, dân sự, lao động, v.v.
+Báo cáo và cập nhật: Đầy đủ, thường xuyên, rõ ràng.`,
+        name: 'Ms. Huyền Nguyễn',
+        job: 'Head of HR | Kowa (Việt Nam)',
+        image: {
+          src: '~/assets/images/customers/Huyền Nguyễn.jpg',
+          alt: 'Ms. Huyền Nguyễn - Kowa (Việt Nam)',
+        },
+      },
+      {
+        testimonial: `Công ty Rồng Việt xin cảm ơn các cộng sự của Youth & Partners  đã giúp đỡ chúng tôi gánh vác một phần công việc tại công ty, đặc biệt trong những thời điểm mà công ty chúng tôi cần tập trung cao độ về pháp lý cũng như các điều luật được cập nhật liên tục kịp thời và chính xác.
+Cảm ơn tất cả mọi người vì đã không chỉ làm việc cùng nhau mà còn dành cho nhau sự tin tưởng, yêu thương và sẻ chia. Những điều đó chính là nguồn sức mạnh lớn nhất để Rồng Việt không ngừng tiến về phía trước.`,
+        name: 'Ms. Hồng',
+        job: 'Head of HR | Công ty TNHH TM&DV Rồng Việt',
+        image: {
+          src: '~/assets/images/customers/Ms. Hồng.png',
+          alt: 'Ms. Hồng Image',
+        },
+      },
+      {
+        testimonial: `Amazing services and good spirit
+                                        We have been working with Youth & Partners for a long time. We had perfect experiences from enthusiastic and great staff. They are friendly and dedicated to work. Everything is well organized.
+                                        Keep up your great work!`,
+        name: 'Daniel Nguyen',
+        job: 'Founder & CEO WeSMART',
+        image: {
+          src: '~/assets/images/customers/trung.png',
+          alt: 'Daniel Nguyen',
+        },
+      },
+      {
+        testimonial: `Một địa chỉ tư vấn và hỗ trợ pháp luật tuyệt vời. Mình rất hài lòng về cách làm việc và hỗ trợ của các anh chị tại đây. Cảm ơn và chúc công ty ngày một phát triển, và hỗ trợ được nhiều khách hàng hơn nữa.`,
+        name: 'Ha Trung',
+        job: 'Khách hàng',
+        image: {
+          src: '~/assets/images/customers/hatrung.png',
+          alt: 'Ha Trung',
+        },
+      },
+      {
+        testimonial: `Đội ngũ Luật sư chuyên môn dày dặn, xử lý công việc chuyên nghiệp, tư duy đột phá trong các phương án tư vấn cho khách hàng, đem đến sự hài lòng toàn diện cho khách hàng trên cơ sở thượng tôn pháp luật.`,
+        name: 'Hoa Trương',
+        job: 'Khách hàng',
+        image: {
+          src: '~/assets/images/customers/hoatruong.png',
+          alt: 'Hoa Trương Image',
+        },
+      },
+      {
+        testimonial: `Mình rất hài lòng khi sử dụng dịch vụ pháp lý của Y&P Lawfirm. Các luật sự làm việc rất chuyên nghiệp,  Chúc cho các luật sư thật nhiều sức khỏe!`,
+        name: 'Van Quang Tran',
+        job: 'Khách hàng',
+        image: {
+          src: '~/assets/images/customers/vanquangtran.png',
+          alt: 'Van Quang Tran Image',
+        },
+      },
+      {
+        testimonial: `Công ty luật uy tín, có đội ngũ Luật sư và chuyên viên giàu kinh nghiêm trong các lĩnh vực doanh nghiệp, lao động, kinh doanh thương mại, tranh tụng.
+Một nơi xứng đáng để gửi gắm niềm tin.`,
+        name: 'Xuân Thoại Mai',
+        job: 'Khách hàng',
+        image: {
+          src: '~/assets/images/customers/Xuân Thoại.png',
+          alt: 'Xuân Thoại Mai Image',
+        },
+      },
+      {
+        testimonial: `Đội ngũ luật sư chuyên môn cao, tác phong chuyên nghiệp, hỗ trợ khách hàng tận tâm, nhiệt tình. Tôi rất hài lòng với trải nghiệm sử dụng dịch vụ của Công ty Luật này.`,
+        name: 'Thu Hà Trần',
+        job: 'Khách hàng',
+        image: {
+          src: '~/assets/images/customers/thu hà.png',
+          alt: 'Thu Hà Trần Image',
+        },
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Partners>
+</Layout>
