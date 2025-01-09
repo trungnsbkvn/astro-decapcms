@@ -16,23 +16,23 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
     {
       teams &&
         teams.map(({ name, position, image, link }) => (
-          <div class="flex h-auto intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+          <div class="flex mx-auto h-auto intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
             <div class="flex flex-col p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600">
               <a class="relative block group" href={link ?? 'javascript:void(0)'}>
                 {image && (
-                  <div class="h-200 w-200 rounded-full border border-slate-200 dark:border-slate-600">
+                  <div class="h-400 w-full rounded-full border border-slate-200 dark:border-slate-600">
                     {typeof image === 'string' ? (
                       <Fragment set:html={image} />
                     ) : (
                       <Image
-                        class="h-200 w-200 rounded-full border-slate-200 dark:border-slate-600 min-w-full min-h-full"
-                        width={200}
-                        height={200}
-                        widths={[400, 768]}
+                        class="h-400 w-full border-slate-200 dark:border-slate-600 min-w-full min-h-full"
+                        width={400}
+                        height={400}
+                        widths={[800, 768]}
                         layout="fixed"
                         {...image}
                       />
