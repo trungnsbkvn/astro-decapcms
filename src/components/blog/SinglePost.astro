@@ -95,25 +95,39 @@ const structuredData = post.rating
       <p class="mx-auto mt-4 mb-8 text-lg md:text-lg text-muted dark:text-slate-400 text-justify">
         {post.excerpt}
       </p>
-      {
-        post.image ? (
+      <div class="grid grid-cols-1 md:grid-cols-[20%_auto] gap-10 mt-8">
+        <div class="md:flex flex-col gap-4 hidden">
           <Image
-            src={post.image}
+            src="~/assets/images/youth and partners/Poster.png"
             class="w-full mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700 object-cover"
-            widths={[500, 1500]}
-            sizes="(max-width: 1500px) 500px, 1500px"
-            alt={post?.excerpt || ''}
-            width={1500}
-            height={500}
+            alt="Tư vấn pháp luật - Youth & Partners"
+            height={450}
+            layout="fixed"
             loading="eager"
             decoding="async"
           />
-        ) : (
-          <div class="mx-auto px-4 sm:px-6">
-            <div class="border-t dark:border-slate-700" />
-          </div>
-        )
-      }
+        </div>
+        <div class="max-w-full w-full">
+          {
+            post.image ? (
+              <Image
+                src={post.image}
+                class="w-full mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700 object-cover"
+                alt={post?.excerpt || ''}
+                height={450}
+                width={1500}
+                layout="fixed"
+                loading="eager"
+                decoding="async"
+              />
+            ) : (
+              <div class="mx-auto px-4 sm:px-6">
+                <div class="border-t dark:border-slate-700" />
+              </div>
+            )
+          }
+        </div>
+      </div>
     </header>
     <hr />
     <div class="grid grid-cols-1 md:grid-cols-[20%_auto] gap-10 mt-8">
