@@ -1,5 +1,6 @@
 ---
 import { UI } from 'astrowind:config';
+import Tawk from '~/components/common/Tawk.astro';
 ---
 
 <script is:inline define:vars={{ defaultTheme: UI.theme }}>
@@ -151,9 +152,9 @@ import { UI } from 'astrowind:config';
     document.querySelector('#header nav')?.classList.add('hidden');
 
     //Show call to actions
-    document.getElementById('action_contact')?.classList.remove('invisible');
-    document.querySelector('#action_contact img')?.classList.remove('invisible');
-    document.querySelector('#action_contact svg')?.classList.remove('invisible');
+    //document.getElementById('action_contact')?.classList.remove('invisible');
+    //document.querySelector('#action_contact img')?.classList.remove('invisible');
+    //document.querySelector('#action_contact svg')?.classList.remove('invisible');
     document.getElementById('action_zalo')?.classList.add('animate-call');
     document.getElementById('action_call')?.classList.add('animate-call');
   };
