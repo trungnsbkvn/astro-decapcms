@@ -340,6 +340,6 @@ export const footerData = {
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
   ],
   footNote: `
-    Copyright © <a class="text-blue-600 underline dark:text-muted" href="https://yplawfirm.vn/"> Y&P Law Firm</a> · All rights reserved.
+    Copyright © <a class="text-blue-600 underline dark:text-muted" href="https://yplawfirm.vn/"> Youth & Partners Law Firm</a> · All rights reserved.
   `,
 };

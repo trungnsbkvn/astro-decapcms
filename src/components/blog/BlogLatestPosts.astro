@@ -1,7 +1,7 @@
 ---
 import { APP_BLOG } from 'astrowind:config';
 
-import Grid from '~/components/blog/Grid.astro';
+import Grid from '~/components/blog/BlogLatestGrid.astro';
 
 import { findLatestBlogPosts } from '~/utils/blog';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
@@ -13,7 +13,6 @@ export interface Props extends Widget {
   linkText?: string;
   linkUrl?: string | URL;
   information?: string;
-  types: string[];
   categories: Record<string, string[]>;
   count?: number;
 }
@@ -21,9 +20,8 @@ export interface Props extends Widget {
 const {
   title = await Astro.slots.render('title'),
   information = await Astro.slots.render('information'),
-  types,
   categories,
-  count = 4,
+  count = 6,
 
   id,
   isDark = false,
@@ -31,7 +29,7 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const posts = await findLatestBlogPosts(types, categories, count);
+const posts = await findLatestBlogPosts(categories, count);
 
 const typePosts = posts.map((post) => ({
   ...post,

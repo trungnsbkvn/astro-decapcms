@@ -17,8 +17,10 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 
-const lastestTypes = ['evaluation', 'labor', 'foreigner', 'post'];
 const lastestCategories = {
+  evaluation: [],
+  labor: [],
+  foreigner: [],
   post: ['Tin tức pháp lý', 'Các vụ việc nổi bật', 'Hội thảo pháp lý'],
 };
 ---
@@ -181,9 +183,8 @@ const lastestCategories = {
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogLatestPosts
-    types={lastestTypes}
     categories={lastestCategories}
-    count={4}
+    count={6}
     title="Kênh tin tức Youth & Partners"
     information={`Trang tin tức của chúng tôi cung cấp những thông tin cập nhật và mới nhất về các vấn đề pháp lý, 
     với bài viết từ các chuyên gia pháp lý hàng đầu, đảm bảo bạn luôn nắm bắt được những thay đổi quan trọng trong các lĩnh vực quan tâm.

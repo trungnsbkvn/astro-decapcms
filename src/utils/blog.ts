@@ -173,10 +173,10 @@ export const findPostsByIds = async (type: string, ids: Array<string>): Promise<
 };
 
 /** */
-export async function findLatestBlogPosts(types: string[], categories: Record<string, string[]>, count: number): Promise<Post[]> {
+export async function findLatestBlogPosts(categories: Record<string, string[]>, count: number): Promise<Post[]> {
   const latestPosts: Post[] = [];
 
-  for (const type of types) {
+  for (const type in categories) {
     const posts = await getCollection(type);
     const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 
@@ -184,16 +184,26 @@ export async function findLatestBlogPosts(types: string[], categories: Record<st
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
       .filter((post) => !post.draft);
 
-    const filteredPosts = categories && categories[type]
-    ? collectionPosts.filter(post => categories[type].includes(post.category.title))
-    : collectionPosts;
-    
+    if (categories[type].length === 0) {
+      // If no categories specified, get only 1 post for the type
+      if (collectionPosts.length > 0) {
+        latestPosts.push({ ...collectionPosts[0], type });
+      }
+      continue;
+    }
+  
+    const filteredPosts = collectionPosts.filter(post => categories[type].includes(post.category.title));
     const typePosts = filteredPosts.map(post => ({ ...post, type }));
 
     typePosts.sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
-    if (typePosts.length > 0) {
-      latestPosts.push(typePosts[0]);
+    const categoryMap = new Map<string, Post>();
+    for (const post of typePosts) {
+      if (!categoryMap.has(post.category.title)) {
+        categoryMap.set(post.category.title, post);
+      }
     }
+
+    latestPosts.push(...categoryMap.values());
   }
 
   return latestPosts.slice(0, count);
