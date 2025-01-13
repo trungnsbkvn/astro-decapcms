@@ -64,6 +64,12 @@ const structuredData = post.rating
                 <a class="inline-block" href={getAuthorPermalink(post.author)}>
                   <b>{post.author}</b>
                 </a>
+              </>
+            )
+          }
+          {
+            post.author != 'Luật sư Nguyễn Văn Thành' && (
+              <>
                 &nbsp;{'·'}&nbsp;
                 <Icon name="tabler:user-check" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
                 Tham vấn bởi:
