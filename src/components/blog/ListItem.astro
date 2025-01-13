@@ -83,7 +83,7 @@ const link = post.permalink;
               <>
                 {' '}
                 ·{' '}
-                <a class="hover:underline" href={getPermalink(post.category.slug, 'category', 'post')}>
+                <a class="hover:underline" href={getPermalink(post.category.slug, 'category', post.type)}>
                   {post.category.title}
                 </a>
               </>
