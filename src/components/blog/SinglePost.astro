@@ -58,13 +58,13 @@ const structuredData = post.rating
           {
             post.author && (
               <>
-                {' · '}
+                &nbsp;{'·'}&nbsp;
                 <Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
                 Tác giả:
                 <a class="inline-block" href={getAuthorPermalink(post.author)}>
                   <b>{post.author}</b>
                 </a>
-                {' · '}
+                &nbsp;{'·'}&nbsp;
                 <Icon name="tabler:user-check" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
                 Tham vấn bởi:
                 <a class="inline-block" href={getAuthorPermalink('Luật sư Nguyễn Văn Thành')}>
@@ -76,7 +76,7 @@ const structuredData = post.rating
           {
             post.category && (
               <>
-                {' · '}
+                &nbsp;{'·'}&nbsp;
                 <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category', type)}>
                   {post.category.title}
                 </a>
@@ -86,7 +86,7 @@ const structuredData = post.rating
           {
             post.readingTime && (
               <>
-                {' · '}
+                &nbsp;{'·'}&nbsp;
                 <span>{post.readingTime}</span> phút đọc
               </>
             )
