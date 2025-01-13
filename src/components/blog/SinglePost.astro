@@ -60,8 +60,14 @@ const structuredData = post.rating
               <>
                 {' '}
                 · <Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
+                Tác giả:
                 <a class="inline-block" href={getAuthorPermalink(post.author)}>
-                  {post.author}
+                  <b>{post.author}</b>
+                </a>{' '}
+                · <Icon name="tabler:user-check" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
+                Tham vấn bởi:
+                <a class="inline-block" href={getAuthorPermalink('Luật sư Nguyễn Văn Thành')}>
+                  <b>{'Luật sư Nguyễn Văn Thành'}</b>
                 </a>{' '}
               </>
             )
