@@ -136,7 +136,7 @@ export const applyGetPermalinks = (menu: object = {}) => {
           if (menu[key].type === 'home') {
             obj[key] = getHomePermalink();
           } else if (menu[key].type === 'blog') {
-            obj[key] = getBlogPermalink();
+            obj[key] = getBlogPermalink('post');
           } else if (menu[key].type === 'asset') {
             obj[key] = getAsset(menu[key].url);
           } else if (menu[key].url) {
