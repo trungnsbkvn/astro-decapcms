@@ -249,6 +249,14 @@ export const headerData = {
           href: getPermalink('/lien-he'),
         },
         {
+          text: 'Luật sư Bắc Ninh',
+          href: getPermalink('luat-su-bac-ninh', 'category'),
+        },
+        {
+          text: 'Luật sư Bắc Giang',
+          href: getPermalink('luat-su-bac-giang', 'category'),
+        },
+        {
           text: 'Thông tin tuyển dụng',
           href: getPermalink('thong-tin-tuyen-dung', 'category'),
         },
