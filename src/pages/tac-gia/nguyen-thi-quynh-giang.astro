@@ -1,0 +1,118 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+
+import AuthorRelatedPosts from '~/components/blog/AuthorRelatedPosts.astro';
+import { getPermalink } from '~/utils/blog-permalinks';
+
+const metadata = {
+  title: 'Chuyên viên pháp lý Nguyễn Thị Quỳnh Giang',
+  description:
+    'Thông tin tác giả Chuyên viên pháp lý Nguyễn Thị Quỳnh Giang, chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners.',
+};
+const author = 'Nguyễn Thị Quỳnh Giang';
+const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'legal'];
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    id="hero"
+    title="Chuyên viên pháp lý Nguyễn Thị Quỳnh Giang"
+    tagline="Thông tin tác giả"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
+  >
+    <Fragment slot="subtitle">
+      <br />
+      <i>Giới thiệu:</i><br /><br />
+      • Nguyễn Thị Quỳnh Giang là thực tập sinh tại YPLaw Firm từ 2025.
+      <br /><br />
+      • Với nền tảng kiến thức pháp lý từ Cử nhân ngành Luật học, Trường Đại học Luật, Đại học Quốc gia Hà Nội, Quỳnh Giang
+      luôn nỗ lực trau dồi và áp dụng kiến thức, kỹ năng vào thực tiễn công việc.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:phone-call',
+        callToAction: {
+          target: '_blank',
+          text: 'Hotline',
+          href: 'tel:0889956888',
+        },
+      },
+      {
+        icon: 'tabler:mailbox',
+        callToAction: {
+          target: '_blank',
+          text: 'Email',
+          href: 'mailto:contact@yplawfirm.vn',
+        },
+      },
+      {
+        icon: 'tabler:brand-meta',
+        callToAction: {
+          target: '_blank',
+          text: 'Facebook',
+          href: 'https://www.facebook.com/vinhphuclawyers',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/team/Chuyên viên Nguyễn Thị Quỳnh Giang.jpg',
+      alt: 'Chuyên viên pháp lý Nguyễn Thị Quỳnh Giang',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
+      <p>
+        • Tháng 6/2024 – tháng 01/2025: Thực tập tại Tòa án nhân dân quận Nam Từ Liêm, tiếp xúc với các quy trình tố
+        tụng và thực tiễn xét xử, từ đó nâng cao hiểu biết về pháp luật và kỹ năng làm việc trong môi trường chuyên
+        nghiệp <br />
+        • Hiện tại, Quỳnh Giang đang là thực tập sinh tại tại Công ty Luật TNHH Youth & Partners (YPLaw Firm), học hỏi và
+        đóng góp vào các hoạt động tư vấn và hỗ trợ pháp lý của công ty.
+      </p>
+      <br />
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="resume"
+    title="Học vấn"
+    items={[
+      {
+        title: `Cử nhân Luật <br /> <span class="font-normal">Ngành Luật học tại Trường Đại học Luật, Đại học Quốc gia Hà Nội </span> <br /> <span class="text-sm font-normal">Năm 2025</span>`,
+        icon: 'tabler:school',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <AuthorRelatedPosts
+    id="blog"
+    title="Bài viết của tác giả"
+    information={`Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thị Quỳnh Giang về mọi khía cạnh pháp lý về Lao động, Doanh nghiệp, Đầu tư, Giấy phép.`}
+    author={author}
+    types={types}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </AuthorRelatedPosts>
+</Layout>
