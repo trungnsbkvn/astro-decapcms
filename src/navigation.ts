@@ -261,6 +261,10 @@ export const headerData = {
           href: getPermalink('luat-su-bac-giang', 'category'),
         },
         {
+          text: 'Luật sư Hải Phòng',
+          href: getPermalink('luat-su-hai-phong', 'category'),
+        },
+        {
           text: 'Thông tin tuyển dụng',
           href: getPermalink('thong-tin-tuyen-dung', 'category'),
         },
