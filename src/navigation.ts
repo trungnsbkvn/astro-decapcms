@@ -265,6 +265,10 @@ export const headerData = {
           href: getPermalink('luat-su-hai-phong', 'category'),
         },
         {
+          text: 'Luật sư Hưng Yên',
+          href: getPermalink('luat-su-hung-yen', 'category'),
+        },
+        {
           text: 'Thông tin tuyển dụng',
           href: getPermalink('thong-tin-tuyen-dung', 'category'),
         },
