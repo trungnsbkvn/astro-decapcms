@@ -269,6 +269,10 @@ export const headerData = {
           href: getPermalink('luat-su-hung-yen', 'category'),
         },
         {
+          text: 'Luật sư Ninh Bình',
+          href: getPermalink('luat-su-ninh-binh', 'category'),
+        },        
+        {
           text: 'Thông tin tuyển dụng',
           href: getPermalink('thong-tin-tuyen-dung', 'category'),
         },
