@@ -271,7 +271,11 @@ export const headerData = {
         {
           text: 'Luật sư Ninh Bình',
           href: getPermalink('luat-su-ninh-binh', 'category'),
-        },        
+        },
+        {
+          text: 'Luật sư Tuyên Quang',
+          href: getPermalink('luat-su-tuyen-quang', 'category'),
+        },
         {
           text: 'Thông tin tuyển dụng',
           href: getPermalink('thong-tin-tuyen-dung', 'category'),
