@@ -277,6 +277,10 @@ export const headerData = {
           href: getPermalink('luat-su-tuyen-quang', 'category'),
         },
         {
+          text: 'Luật sư Thái Nguyên',
+          href: getPermalink('luat-su-thai-nguyen', 'category'),
+        },
+        {
           text: 'Thông tin tuyển dụng',
           href: getPermalink('thong-tin-tuyen-dung', 'category'),
         },
