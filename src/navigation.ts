@@ -247,7 +247,11 @@ export const headerData = {
         {
           text: 'Liên hệ tư vấn',
           href: getPermalink('/lien-he'),
-        },        
+        },
+        {
+          text: 'Luật sư Hà Nội',
+          href: getPermalink('luat-su-ha-noi', 'category'),
+        },
         {
           text: 'Luật sư Phú Thọ',
           href: getPermalink('luat-su-phu-tho', 'category'),
