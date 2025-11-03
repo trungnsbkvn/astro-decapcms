@@ -79,7 +79,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
-      - { label: 'Category', name: 'category', widget: 'select', options: ['Tư vấn pháp luật thường xuyên cho Doanh nghiệp', 'Tư vấn pháp luật thường xuyên cho Cá nhân', 'Khái niệm Tư vấn thường xuyên', 'Vì sao doanh nghiệp cần tư vấn thường xuyên', 'Mẫu hợp đồng dịch vụ', 'Phí dịch vụ tư vấn', 'Quy trình tư vấn', 'Điểm mạnh của Youth and Partners', 'Pháp lý tư vấn thường xuyên khác'] }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Tư vấn pháp luật thường xuyên cho Doanh nghiệp', 'Dịch vụ luật sư riêng', 'Khái niệm Tư vấn thường xuyên', 'Vì sao doanh nghiệp cần tư vấn thường xuyên', 'Mẫu hợp đồng dịch vụ', 'Phí dịch vụ tư vấn', 'Quy trình tư vấn', 'Điểm mạnh của Youth and Partners', 'Pháp lý tư vấn thường xuyên khác'] }
       - {
           label: 'Tags',
           name: 'tags',
