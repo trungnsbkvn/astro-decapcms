@@ -61,12 +61,12 @@ export const headerData = {
       text: 'Tư vấn thường xuyên',
       links: [
         {
-          text: 'Doanh nghiệp',
+          text: 'Tư vấn pháp luật thường xuyên',
           href: '/tu-van-thuong-xuyen/tu-van-phap-luat-thuong-xuyen-cho-doanh-nghiep',
         },
         {
-          text: 'Cá nhân',
-          href: '/tu-van-thuong-xuyen/tu-van-phap-luat-thuong-xuyen-cho-ca-nhan',
+          text: 'Dịch vụ luật sư riêng',
+          href: '/tu-van-thuong-xuyen/dich-vu-luat-su-rieng',
         },
         {
           text: 'Khái niệm Tư vấn thường xuyên',
