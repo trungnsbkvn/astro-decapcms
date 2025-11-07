@@ -31,7 +31,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi"] }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Luật sư Nguyễn Minh Anh", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi"] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5 }
       - {
           label: 'Content',
@@ -61,7 +61,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi"] }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Luật sư Nguyễn Minh Anh", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi"] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
@@ -91,7 +91,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi"] }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Luật sư Nguyễn Minh Anh", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi"] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
@@ -121,7 +121,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi"] }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Luật sư Nguyễn Minh Anh", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi"] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
@@ -151,7 +151,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi"] }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Luật sư Nguyễn Minh Anh", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi"] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
@@ -181,7 +181,7 @@ collections:
         }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
-      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi"] }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Luật sư Nguyễn Minh Anh", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi"] }
       - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
       - {
           label: 'Content',
