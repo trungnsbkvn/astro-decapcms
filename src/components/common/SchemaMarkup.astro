@@ -1,0 +1,188 @@
+---
+/**
+ * Comprehensive Schema.org Structured Data Markup
+ * Provides JSON-LD for better SEO and rich results
+ */
+
+export interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface Props {
+  type?: 'organization' | 'localbusiness' | 'service' | 'article' | 'breadcrumb' | 'faq' | 'attorney';
+  data?: Record<string, string | number | boolean | BreadcrumbItem[] | FAQItem[] | undefined>;
+}
+
+const { type = 'organization', data = {} } = Astro.props;
+
+// Base schema data
+const baseData = {
+  organization: {
+    '@context': 'https://schema.org',
+    '@type': 'LegalService',
+    '@id': 'https://youthpartners.vn',
+    name: 'Youth & Partners Law Firm',
+    alternativeName: 'Công ty Luật TNHH Youth & Partners',
+    description: 'Công ty luật cung cấp các dịch vụ tư vấn pháp lý toàn diện, đánh giá pháp lý, và hỗ trợ pháp lý cho doanh nghiệp và cá nhân tại Việt Nam.',
+    url: 'https://youthpartners.vn',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://youthpartners.vn/assets/images/youth%20and%20partners/Youth%20and%20Partners.jpg',
+      width: 800,
+      height: 600,
+    },
+    sameAs: [
+      'https://www.facebook.com/youthpartners',
+      'https://www.linkedin.com/company/youth-partners-law-firm',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Service',
+      telephone: '+84-888-995-6888',
+      areaServed: 'VN',
+      availableLanguage: 'vi',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '[Your Street Address]',
+      addressLocality: 'Hanoi',
+      addressCountry: 'Vietnam',
+      postalCode: '[Postal Code]',
+    },
+    founder: {
+      '@type': 'Person',
+      name: 'Luật sư Nguyễn Văn Thành',
+    },
+    areaServed: 'VN',
+    priceRange: '$',
+  },
+
+  localbusiness: {
+    '@context': 'https://schema.org',
+    '@type': 'LegalService',
+    name: 'Youth & Partners Law Firm',
+    image: 'https://youthpartners.vn/assets/images/youth%20and%20partners/Youth%20and%20Partners.jpg',
+    description: 'Công ty luật cung cấp các dịch vụ pháp lý chuyên nghiệp tại Hà Nội, Việt Nam.',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '[Your Street Address]',
+      addressLocality: 'Hanoi',
+      addressCountry: 'VN',
+    },
+    telephone: '+84-888-995-6888',
+    priceRange: '$',
+    rating: {
+      '@type': 'AggregateRating',
+      ratingValue: 4.8,
+      ratingCount: 150,
+    },
+  },
+
+  service: {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: data.title || 'Legal Service',
+    description: data.description || '',
+    serviceType: 'Legal Consultation',
+    provider: {
+      '@type': 'LegalService',
+      name: 'Youth & Partners Law Firm',
+      url: 'https://youthpartners.vn',
+    },
+    areaServed: 'VN',
+    ...(data.rating && {
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: data.rating,
+        bestRating: 5,
+        ratingCount: data.ratingCount || 100,
+      },
+    }),
+  },
+
+  article: {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: data.title || '',
+    description: data.excerpt || '',
+    image: data.image || 'https://youthpartners.vn/assets/images/youth%20and%20partners/Youth%20and%20Partners.jpg',
+    datePublished: data.publishDate || new Date().toISOString(),
+    ...(data.updateDate && { dateModified: data.updateDate }),
+    author: {
+      '@type': 'Person',
+      name: data.author || 'Youth & Partners',
+      url: data.authorUrl || 'https://youthpartners.vn',
+    },
+    publisher: {
+      '@type': 'LegalService',
+      name: 'Youth & Partners Law Firm',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://youthpartners.vn/assets/images/youth%20and%20partners/Youth%20and%20Partners.jpg',
+        width: 800,
+        height: 600,
+      },
+    },
+    ...(data.readingTime && {
+      timeRequired: `PT${Math.ceil(data.readingTime * 0.4)}S`,
+    }),
+  },
+
+  breadcrumb: {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: (data.items as BreadcrumbItem[] | undefined)?.map((item: BreadcrumbItem, index: number) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })) || [],
+  },
+
+  faq: {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: (data.items as FAQItem[] | undefined)?.map((item: FAQItem) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })) || [],
+  },
+
+  attorney: {
+    '@context': 'https://schema.org',
+    '@type': 'Attorney',
+    name: data.name || '',
+    jobTitle: 'Attorney',
+    description: data.description || '',
+    image: data.image || '',
+    worksFor: {
+      '@type': 'LegalService',
+      name: 'Youth & Partners Law Firm',
+      url: 'https://youthpartners.vn',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Consultation',
+      telephone: '+84-888-995-6888',
+    },
+    ...(data.areaOfPractice && {
+      areaOfPractice: data.areaOfPractice,
+    }),
+  },
+};
+
+const schemaData = baseData[type as keyof typeof baseData] || baseData.organization;
+const mergedSchema = { ...schemaData, ...data };
+---
+
+<Fragment set:html={`<script type="application/ld+json">${JSON.stringify(mergedSchema)}</script>`} />

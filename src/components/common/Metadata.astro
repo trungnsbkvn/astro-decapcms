@@ -9,9 +9,12 @@ import type { MetaData } from '~/types';
 import { getCanonical } from '~/utils/blog-permalinks';
 
 import { adaptOpenGraphImages } from '~/utils/images';
+import SchemaMarkup from '~/components/common/SchemaMarkup.astro';
 
 export interface Props extends MetaData {
   dontUseTitleTemplate?: boolean;
+  schemaType?: 'organization' | 'localbusiness' | 'service' | 'article' | 'breadcrumb' | 'faq' | 'attorney';
+  schemaData?: Record<string, string | number | boolean | undefined>;
 }
 
 const {
@@ -22,6 +25,8 @@ const {
   description,
   openGraph = {},
   twitter = {},
+  schemaType = 'organization',
+  schemaData = {},
 } = Astro.props;
 
 const seoProps: AstroSeoProps = merge(
@@ -66,3 +71,4 @@ const seoProps: AstroSeoProps = merge(
 ---
 
 <AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site) }} />
+<SchemaMarkup type={schemaType} data={schemaData} />

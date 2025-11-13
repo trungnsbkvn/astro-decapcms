@@ -8,8 +8,30 @@
 [build.processing.html]
   pretty_urls = false
 
+# Optimize Netlify build for server mode
+[build.cache]
+  packages = [".pnpm-store"]
+
+# Disable Edge Rendering for server mode - keep functions
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/entry:*"
+  status = 200
+
 # Cache static assets indefinitely (hash-busted by Astro)
 [[headers]]
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache HTML for 1 day (revalidate frequently)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Don't cache root index
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"

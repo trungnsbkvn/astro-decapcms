@@ -4,14 +4,14 @@ import { fileURLToPath } from 'url';
 import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
-import image from '@astrojs/image';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
-import netlify from '@astrojs/netlify';
+import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
 import astrowind from './vendor/integration';
+import pagefind from "astro-pagefind";
 
 import { readingTimeRemarkPlugin, extractHeadingsRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
@@ -22,11 +22,9 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  output: 'server',
-  adapter: netlify(),
+  output: 'static',
 
   integrations: [
-    image(),
     tailwind({
       applyBaseStyles: false,
     }),
@@ -51,22 +49,19 @@ export default defineConfig({
     partytown({
       config: { forward: ['dataLayer.push'], debug: false },
     }),
-    // pagefind disabled in server mode (doesn't work with dynamic rendering)
-    // pagefind(),
-
-    // Compression disabled in server mode (Netlify handles this)
-    // compress({
-    //   CSS: true,
-    //   HTML: {
-    //     'html-minifier-terser': {
-    //       removeAttributeQuotes: false,
-    //     },
-    //   },
-    //   Image: false,
-    //   JavaScript: true,
-    //   SVG: false,
-    //   Logger: 1,
-    // }),
+    pagefind(),
+    compress({
+      CSS: true,
+      HTML: {
+        'html-minifier-terser': {
+          removeAttributeQuotes: false,
+        },
+      },
+      Image: false,
+      JavaScript: true,
+      SVG: false,
+      Logger: 1,
+    }),
 
     astrowind({
       config: './src/config.yaml',
@@ -75,9 +70,12 @@ export default defineConfig({
 
   image: {
     domains: ['cdn.pixabay.com'],
+    // Optimize image service
     service: {
-      // Use @astrojs/image sharp service (installed as dev dep)
-      entrypoint: '@astrojs/image/sharp',
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        limitInputPixels: false,
+      },
     },
   },
 
@@ -88,39 +86,45 @@ export default defineConfig({
 
   vite: {
     resolve: {
-      alias: Object.assign(
-        {
-          '~': path.resolve(__dirname, './src'),
-        },
-        process.env.NODE_ENV !== 'production'
-          ? {
-              // In dev only: provide a minimal image service shim so getImage doesn't fail
-              'virtual:image-service': path.resolve(__dirname, './src/virtual-image-service.js'),
-            }
-          : {}
-      ) as any,
+      alias: {
+        '~': path.resolve(__dirname, './src'),
+      },
     },
+    // Build optimization
     build: {
-      // Optimize CSS and JS minification for better performance
+      // Better code splitting
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'vendor-core': ['react', 'solid-js'],
+            'vendor-ui': ['motion'],
+          },
+        },
+      },
+      // Minify settings
       minify: 'terser',
       terserOptions: {
         compress: {
           drop_console: true,
+          drop_debugger: true,
         },
-      },
-      cssCodeSplit: true,
-      // Reduce CSS chunk size
-      rollupOptions: {
         output: {
-          manualChunks: {
-            'vendor': ['solid-js', 'react'],
-          },
+          comments: false,
         },
       },
+      // CSS code splitting
+      cssCodeSplit: true,
+      // Reduce chunk size warnings
+      chunkSizeWarningLimit: 1200,
+      // Module preloading
+      // modulePreload: {
+      //   resolveDependencies: true,
+      // },
     },
+    // Development optimization
     ssr: {
-      // Optimize external dependencies in server mode
-      external: ['tabler-icons'],
+      external: ['sharp'],
     },
   },
 });
+
