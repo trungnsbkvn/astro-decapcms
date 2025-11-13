@@ -100,5 +100,27 @@ export default defineConfig({
           : {}
       ) as any,
     },
+    build: {
+      // Optimize CSS and JS minification for better performance
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+        },
+      },
+      cssCodeSplit: true,
+      // Reduce CSS chunk size
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'vendor': ['solid-js', 'react'],
+          },
+        },
+      },
+    },
+    ssr: {
+      // Optimize external dependencies in server mode
+      external: ['tabler-icons'],
+    },
   },
 });

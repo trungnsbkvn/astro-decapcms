@@ -20,4 +20,28 @@ import Image from '~/components/common/Image.astro';
     />
   </a>
 </div>
-<script crossorigin="anonymous" async src="https://embed.tawk.to/60e7f020d6e7610a49aa63d1/1fa50407q"></script>
+
+<!-- Defer Tawk script to improve rendering performance -->
+<script>
+  // Delay loading Tawk widget until after page is interactive
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const script = document.createElement('script');
+        script.crossOrigin = 'anonymous';
+        script.async = true;
+        script.src = 'https://embed.tawk.to/60e7f020d6e7610a49aa63d1/1fa50407q';
+        document.body.appendChild(script);
+      }, 2000);
+    });
+  } else {
+    // DOM is already loaded, delay by 2 seconds
+    setTimeout(() => {
+      const script = document.createElement('script');
+      script.crossOrigin = 'anonymous';
+      script.async = true;
+      script.src = 'https://embed.tawk.to/60e7f020d6e7610a49aa63d1/1fa50407q';
+      document.body.appendChild(script);
+    }, 2000);
+  }
+</script>
