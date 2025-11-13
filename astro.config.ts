@@ -4,14 +4,14 @@ import { fileURLToPath } from 'url';
 import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
+import image from '@astrojs/image';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
-import compress from 'astro-compress';
+import netlify from '@astrojs/netlify';
 import type { AstroIntegration } from 'astro';
 import astrowind from './vendor/integration';
-import pagefind from "astro-pagefind";
 
 import { readingTimeRemarkPlugin, extractHeadingsRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
@@ -22,9 +22,11 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  output: 'static',
+  output: 'server',
+  adapter: netlify(),
 
   integrations: [
+    image(),
     tailwind({
       applyBaseStyles: false,
     }),
@@ -49,19 +51,22 @@ export default defineConfig({
     partytown({
       config: { forward: ['dataLayer.push'], debug: false },
     }),
-    pagefind(),
-    compress({
-      CSS: true,
-      HTML: {
-        'html-minifier-terser': {
-          removeAttributeQuotes: false,
-        },
-      },
-      Image: false,
-      JavaScript: true,
-      SVG: false,
-      Logger: 1,
-    }),
+    // pagefind disabled in server mode (doesn't work with dynamic rendering)
+    // pagefind(),
+
+    // Compression disabled in server mode (Netlify handles this)
+    // compress({
+    //   CSS: true,
+    //   HTML: {
+    //     'html-minifier-terser': {
+    //       removeAttributeQuotes: false,
+    //     },
+    //   },
+    //   Image: false,
+    //   JavaScript: true,
+    //   SVG: false,
+    //   Logger: 1,
+    // }),
 
     astrowind({
       config: './src/config.yaml',
@@ -70,6 +75,10 @@ export default defineConfig({
 
   image: {
     domains: ['cdn.pixabay.com'],
+    service: {
+      // Use @astrojs/image sharp service (installed as dev dep)
+      entrypoint: '@astrojs/image/sharp',
+    },
   },
 
   markdown: {
@@ -79,9 +88,17 @@ export default defineConfig({
 
   vite: {
     resolve: {
-      alias: {
-        '~': path.resolve(__dirname, './src'),
-      },
+      alias: Object.assign(
+        {
+          '~': path.resolve(__dirname, './src'),
+        },
+        process.env.NODE_ENV !== 'production'
+          ? {
+              // In dev only: provide a minimal image service shim so getImage doesn't fail
+              'virtual:image-service': path.resolve(__dirname, './src/virtual-image-service.js'),
+            }
+          : {}
+      ) as any,
     },
   },
 });

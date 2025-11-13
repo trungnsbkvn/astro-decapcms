@@ -1,8 +1,14 @@
 [build]
   publish = "dist"
   command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
 [build.processing.html]
   pretty_urls = false
+
+# Cache static assets indefinitely (hash-busted by Astro)
 [[headers]]
   for = "/_astro/*"
   [headers.values]
