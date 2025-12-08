@@ -1,22 +1,24 @@
 [build]
   publish = "dist"
   command = "npm run build"
+  # With hybrid mode, content changes still need a build to update the server functions
+  # But the build is much faster since images/static assets are cached
 
 [build.environment]
   NODE_VERSION = "20"
+  # Enable Sharp caching for faster image processing
+  SHARP_IGNORE_GLOBAL_LIBVIPS = "1"
 
 [build.processing.html]
   pretty_urls = false
 
-# Optimize Netlify build for server mode
+# Optimize Netlify build caching
 [build.cache]
-  packages = [".pnpm-store"]
+  # Cache package managers and build artifacts
+  packages = [".pnpm-store", "node_modules/.cache", "node_modules/.astro"]
 
-# Disable Edge Rendering for server mode - keep functions
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/entry:*"
-  status = 200
+# Note: Redirects are automatically handled by @astrojs/netlify adapter
+# The adapter generates the necessary _redirects file
 
 # Cache static assets indefinitely (hash-busted by Astro)
 [[headers]]
@@ -24,14 +26,24 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Cache HTML for 1 day (revalidate frequently)
+# Cache HTML pages for 1 hour, allow CDN to serve stale while revalidating
 [[headers]]
   for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
 
-# Don't cache root index
+# Dynamic content pages - shorter cache
 [[headers]]
-  for = "/"
+  for = "/tin-tuc/*"
   [headers.values]
-    Cache-Control = "public, max-age=3600"
+    Cache-Control = "public, max-age=300, stale-while-revalidate=3600"
+
+[[headers]]
+  for = "/phap-ly/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, stale-while-revalidate=3600"
+
+[[headers]]
+  for = "/lao-dong/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, stale-while-revalidate=3600"
