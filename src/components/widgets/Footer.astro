@@ -1,6 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 import { SITE } from 'astrowind:config';
+import Image from '~/components/common/Image.astro';
 import { getHomePermalink } from '~/utils/blog-permalinks';
 
 interface Link {
@@ -55,6 +57,13 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
           <span class="text-sm font-normal"
             >Phú Thọ: Số 170, đường Nguyễn Văn Linh, phường Vĩnh Phúc, tỉnh Phú Thọ.</span
           ><br />
+          <div class="footer-cert">
+            <a href="http://online.gov.vn/EndUserInfo/WebsiteDetail/138300" 
+              target="_blank" rel="noopener" class="bct-link">
+                <Image src="~/assets/images/youth and partners/logo-bocongthuong.png" width={200}
+                    alt="Đã thông báo Bộ Công Thương" class="bct-logo" ></Image>
+            </a>
+        </div>
         </div>
         <div class="text-sm text-muted flex gap-1">
           {
