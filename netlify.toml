@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "pnpm run build"
   # With hybrid mode, content changes still need a build to update the server functions
   # But the build is much faster since images/static assets are cached
 
@@ -8,14 +8,21 @@
   NODE_VERSION = "20"
   # Enable Sharp caching for faster image processing
   SHARP_IGNORE_GLOBAL_LIBVIPS = "1"
+  # Disable Astro telemetry
+  ASTRO_TELEMETRY_DISABLED = "1"
 
 [build.processing.html]
   pretty_urls = false
 
-# Optimize Netlify build caching
-[build.cache]
-  # Cache package managers and build artifacts
-  packages = [".pnpm-store", "node_modules/.cache", "node_modules/.astro"]
+# Cache Astro's processed images between builds for faster deploys
+[[plugins]]
+  package = "netlify-plugin-cache"
+  [plugins.inputs]
+    # Cache the Astro image cache directory
+    paths = [
+      "node_modules/.astro",
+      ".astro"
+    ]
 
 # Note: Redirects are automatically handled by @astrojs/netlify adapter
 # The adapter generates the necessary _redirects file
@@ -47,3 +54,7 @@
   for = "/lao-dong/*"
   [headers.values]
     Cache-Control = "public, max-age=300, stale-while-revalidate=3600"
+
+# Enable Netlify Image CDN for on-demand image optimization
+[images]
+  remote_images = ["https://cdn.pixabay.com/.*"]

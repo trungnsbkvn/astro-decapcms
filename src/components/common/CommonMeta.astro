@@ -7,7 +7,10 @@ import { getAsset } from '~/utils/blog-permalinks';
 
 <link rel="sitemap" href={getAsset('/sitemap-index.xml')} />
 
-<!-- Preconnect to external domains -->
-<link rel="preconnect" href="https://cdn.pixabay.com" />
+<!-- 
+  Preconnect only to domains we actually use immediately.
+  dns-prefetch for deferred/lazy-loaded resources.
+  No Google Fonts - we use locally bundled @fontsource-variable/inter
+-->
 <link rel="dns-prefetch" href="https://embed.tawk.to" />
 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />

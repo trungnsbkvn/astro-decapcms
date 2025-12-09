@@ -1,7 +1,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import { defineConfig } from 'astro/config';
+import { defineConfig, sharpImageService } from 'astro/config';
 import netlify from '@astrojs/netlify';
 
 import sitemap from '@astrojs/sitemap';
@@ -62,9 +62,17 @@ export default defineConfig({
           removeAttributeQuotes: false,
         },
       },
-      Image: false,
+      Image: {
+        // Enable image compression for build output
+        sharp: {
+          webp: { quality: 80 },
+          avif: { quality: 75 },
+          jpeg: { quality: 80 },
+          png: { quality: 80, compressionLevel: 9 },
+        },
+      },
       JavaScript: true,
-      SVG: false,
+      SVG: true,
       Logger: 1,
     }),
 
@@ -75,15 +83,9 @@ export default defineConfig({
 
   image: {
     domains: ['cdn.pixabay.com'],
-    // Optimize image service for faster builds
-    service: {
-      entrypoint: 'astro/assets/services/sharp',
-      config: {
-        limitInputPixels: false,
-      },
-    },
-    // Reduce quality slightly for faster processing (still looks great)
-    // This reduces file sizes and processing time
+    // Use Sharp for image optimization
+    // Works for prerendered pages; on-demand pages use Netlify Image CDN
+    service: sharpImageService(),
   },
 
   markdown: {

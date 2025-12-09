@@ -36,21 +36,22 @@ export type ImagesOptimizer = (
 
 /* ******* */
 const config = {
-  // FIXME: Use this when image.width is minor than deviceSizes
-  imageSizes: [16, 32, 64, 128, 256, 384],
+  // Small image sizes for icons, thumbnails
+  imageSizes: [16, 32, 48, 96, 128, 256],
 
-  // OPTIMIZED: Reduced from 15 to 6 breakpoints for faster builds
-  // This covers most common screen sizes while reducing build time by ~60%
+  // OPTIMIZED: Focused on common viewport widths for responsive images
+  // Reduced breakpoints = faster builds + smaller srcset = less bandwidth
   deviceSizes: [
-    640,  // Mobile phones
-    828,  // iPhone XR/11/12/13/14
-    1080, // Large phones / small tablets
-    1920, // Full HD / Desktop
-    2560, // 2K / Retina displays
-    3840, // 4K displays
+    320,  // Small phones
+    480,  // Medium phones  
+    640,  // Large phones
+    768,  // Tablets
+    1024, // Small laptops
+    1280, // Laptops/Desktop
   ],
 
-  formats: ['image/webp'],
+  // AVIF first (best compression), WebP fallback
+  formats: ['image/avif', 'image/webp'],
 };
 
 const computeHeight = (width: number, aspectRatio: number) => {
@@ -95,6 +96,10 @@ export const getSizes = (width?: number, layout?: Layout): string | undefined =>
     // Image is always the width of the screen
     case `fullWidth`:
       return `100vw`;
+
+    // Cover: fills container, similar to fullWidth but may be constrained
+    case `cover`:
+      return width ? `(min-width: ${width}px) ${width}px, 100vw` : `100vw`;
 
     default:
       return undefined;
@@ -160,9 +165,12 @@ const getStyle = ({
     styleEntries.push(['object-fit', 'contain']);
     styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
   }
+  // Cover layout: fill the container while maintaining aspect ratio (like CSS object-fit: cover)
+  // Matches Netlify Image CDN's fit=cover behavior
   if (layout === 'cover') {
-    styleEntries.push(['max-width', '100%']);
-    styleEntries.push(['max-height', '100%']);
+    styleEntries.push(['width', '100%']);
+    styleEntries.push(['height', '100%']);
+    styleEntries.push(['object-fit', 'cover']);
   }
 
   const styles = Object.fromEntries(styleEntries.filter(([, value]) => value));
@@ -181,7 +189,12 @@ const getBreakpoints = ({
   breakpoints?: number[];
   layout: Layout;
 }): number[] => {
-  if (layout === 'fullWidth' || layout === 'cover' || layout === 'responsive' || layout === 'contained') {
+  // If explicit breakpoints provided, use them for layouts that fill containers
+  if (layout === 'fullWidth' || layout === 'responsive' || layout === 'contained') {
+    return breakpoints || config.deviceSizes;
+  }
+  // Cover layout: always use explicit breakpoints if provided
+  if (layout === 'cover') {
     return breakpoints || config.deviceSizes;
   }
   if (!width) {
@@ -189,16 +202,21 @@ const getBreakpoints = ({
   }
   const doubleWidth = width * 2;
   if (layout === 'fixed') {
+    // Fixed layout: only exact size and 2x for retina
     return [width, doubleWidth];
   }
   if (layout === 'constrained') {
-    return [
-      // Always include the image at 1x and 2x the specified width
-      width,
-      doubleWidth,
-      // Filter out any resolutions that are larger than the double-res image
-      ...(breakpoints || config.deviceSizes).filter((w) => w < doubleWidth),
-    ];
+    // Constrained: generate sizes up to 2x the specified width
+    // But cap at reasonable sizes to save bandwidth
+    const maxWidth = Math.min(doubleWidth, 1600); // Never generate images larger than 1600px
+    const relevantBreakpoints = (breakpoints || config.deviceSizes).filter((w) => w <= maxWidth);
+    
+    // Ensure the specified width is included
+    if (!relevantBreakpoints.includes(width)) {
+      relevantBreakpoints.push(width);
+    }
+    
+    return relevantBreakpoints;
   }
 
   return [];
@@ -216,17 +234,33 @@ export const astroAsseetsOptimizer: ImagesOptimizer = async (
     return [];
   }
 
-  return Promise.all(
-    breakpoints.map(async (w: number) => {
-      const result = await getImage({ src: image, width: w, inferSize: true, ...(format ? { format: format } : {}) });
+  try {
+    return await Promise.all(
+      breakpoints.map(async (w: number) => {
+        try {
+          const result = await getImage({ src: image, width: w, inferSize: true, ...(format ? { format: format } : {}) });
 
-      return {
-        src: result?.src,
-        width: result?.attributes?.width ?? w,
-        height: result?.attributes?.height,
-      };
-    })
-  );
+          return {
+            src: result?.src,
+            width: result?.attributes?.width ?? w,
+            height: result?.attributes?.height,
+          };
+        } catch {
+          // Fallback when image service is not available (e.g., in serverless runtime)
+          const src = typeof image === 'string' ? image : image.src;
+          return {
+            src,
+            width: w,
+            height: undefined,
+          };
+        }
+      })
+    );
+  } catch {
+    // Fallback: return original image without optimization
+    const src = typeof image === 'string' ? image : image.src;
+    return [{ src, width: _width || 800 }];
+  }
 };
 
 export const isUnpicCompatible = (image: string) => {

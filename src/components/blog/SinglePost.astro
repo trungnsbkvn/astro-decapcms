@@ -109,29 +109,36 @@ const structuredData = post.rating
         {post.excerpt}
       </p>
       <div class="grid grid-cols-1 md:grid-cols-[20%_auto] gap-10 mt-8">
-        <div class="md:flex flex-col gap-4 hidden">
+        <div class="md:flex flex-col gap-4 hidden h-[450px]">
           <Image
             src="~/assets/images/youth and partners/Poster.png"
-            class="w-full mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700 object-cover"
+            class="w-full h-full sm:rounded-md bg-gray-400 dark:bg-slate-700 object-cover object-center"
             alt="Tư vấn pháp luật - Youth & Partners"
+            width={220}
             height={450}
-            layout="fixed"
+            widths={[220]}
+            layout="cover"
             loading="eager"
             decoding="async"
+            format="avif"
           />
         </div>
-        <div class="max-w-full w-full">
+        <div class="max-w-full w-full h-[450px]">
           {
             post.image ? (
               <Image
                 src={post.image}
-                class="w-full mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700 object-cover"
+                class="w-full h-full sm:rounded-md bg-gray-400 dark:bg-slate-700 object-cover object-center"
                 alt={post?.excerpt || ''}
+                width={880}
                 height={450}
-                width={1500}
-                layout="fixed"
+                widths={[480, 880]}
+                sizes="(max-width: 768px) 480px, 880px"
+                layout="cover"
                 loading="eager"
                 decoding="async"
+                fetchpriority="high"
+                format="avif"
               />
             ) : (
               <div class="mx-auto px-4 sm:px-6">

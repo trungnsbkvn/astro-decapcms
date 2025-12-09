@@ -1,11 +1,31 @@
 ---
-// Preload critical hero images to improve LCP
-// This component should be placed in the <head> section
+/**
+ * Critical Image Preload Component
+ * Only use this for above-the-fold LCP images on specific pages.
+ * Import dynamically on pages that need it.
+ * 
+ * Note: Most pages don't need this - lazy loading handles non-critical images.
+ */
+
+export interface Props {
+  /** The processed image URL to preload */
+  src?: string;
+  /** Image srcset for responsive preloading */  
+  srcset?: string;
+  /** Image sizes attribute */
+  sizes?: string;
+}
+
+const { src, srcset, sizes } = Astro.props;
 ---
 
-<!-- Preload critical hero image for faster LCP -->
-<link rel="preload" as="image" href="~/assets/images/youth and partners/Youth and Partners.jpg" />
-
-<!-- Preload critical fonts if using custom fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+{src && (
+  <link 
+    rel="preload" 
+    as="image" 
+    href={src}
+    imagesrcset={srcset}
+    imagesizes={sizes}
+    fetchpriority="high"
+  />
+)}

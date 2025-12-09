@@ -31,15 +31,16 @@ const link = post.permalink;
             {image && (
               <Image
                 src={image}
-                class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
-                widths={[400, 900]}
-                width={900}
-                height={900}
-                sizes="(max-width: 900px) 400px, 900px"
+                class="absolute inset-0 object-cover w-full h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+                widths={[400, 600]}
+                width={600}
+                height={338}
+                sizes="(max-width: 768px) 400px, 600px"
                 alt={post.title}
-                aspectRatio="16:9"
+                layout="cover"
                 loading="lazy"
                 decoding="async"
+                format="avif"
               />
             )}
           </div>
@@ -49,15 +50,16 @@ const link = post.permalink;
           {image && (
             <Image
               src={image}
-              class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
-              widths={[400, 900]}
-              width={900}
-              height={900}
-              sizes="(max-width: 900px) 400px, 900px"
+              class="absolute inset-0 object-cover w-full h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+              widths={[400, 600]}
+              width={600}
+              height={338}
+              sizes="(max-width: 768px) 400px, 600px"
               alt={post.title}
-              aspectRatio="16:9"
+              layout="cover"
               loading="lazy"
               decoding="async"
+              format="avif"
             />
           )}
         </div>
