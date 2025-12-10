@@ -104,8 +104,30 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
   };
 };
 
+// Helper to get collection by type - using explicit calls for SSR compatibility
+const getCollectionByType = async (type: string): Promise<CollectionEntry<'post'>[]> => {
+  // Netlify SSR requires explicit collection names, not dynamic strings
+  switch (type) {
+    case 'post':
+      return await getCollection('post').catch(() => []);
+    case 'legal':
+      return await getCollection('legal').catch(() => []) as unknown as CollectionEntry<'post'>[];
+    case 'labor':
+      return await getCollection('labor').catch(() => []) as unknown as CollectionEntry<'post'>[];
+    case 'consultation':
+      return await getCollection('consultation').catch(() => []) as unknown as CollectionEntry<'post'>[];
+    case 'foreigner':
+      return await getCollection('foreigner').catch(() => []) as unknown as CollectionEntry<'post'>[];
+    case 'evaluation':
+      return await getCollection('evaluation').catch(() => []) as unknown as CollectionEntry<'post'>[];
+    default:
+      console.warn(`Unknown collection type: ${type}`);
+      return [];
+  }
+};
+
 const load = async function (type: string): Promise<Array<Post>> {
-  const posts = await getCollection(type);
+  const posts = await getCollectionByType(type);
   
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 
@@ -177,7 +199,7 @@ export async function findLatestBlogPosts(categories: Record<string, string[]>, 
   const latestPosts: Post[] = [];
 
   for (const type in categories) {
-    const posts = await getCollection(type);
+    const posts = await getCollectionByType(type);
     const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 
     const collectionPosts = (await Promise.all(normalizedPosts))
@@ -214,7 +236,7 @@ export async function findPostsByAuthorAndTypes(author: string, types: string[],
   const allPosts: Post[] = [];
 
   for (const type of types) {
-    const typedPost = await getCollection(type);
+    const typedPost = await getCollectionByType(type);
     const normalizedPosts = typedPost.map(async (post) => await getNormalizedPost(post));
 
     const collectionPosts = (await Promise.all(normalizedPosts))
@@ -233,7 +255,7 @@ export async function fetchPostsFromAllTypes(types: string[]): Promise<Post[]> {
   const allPosts: Post[] = [];
 
   for (const type of types) {
-    const typedPost = await getCollection(type);
+    const typedPost = await getCollectionByType(type);
     const normalizedPosts = typedPost.map(async (post) => await getNormalizedPost(post));
     const collectionPosts = (await Promise.all(normalizedPosts))
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
