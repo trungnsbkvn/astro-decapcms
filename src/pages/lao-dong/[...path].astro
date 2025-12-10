@@ -15,6 +15,9 @@ import type { MetaData } from '~/types';
 import RelatedPosts from '~/components/blog/RelatedPosts.astro';
 import { getBlogTypeSEO, getCategorySEO, getBlogListDescription, getCategoryDescription, getKeywordsString } from '~/utils/blog-seo';
 
+// Enable SSR for this dynamic route (Hybrid mode)
+export const prerender = false;
+
 const TYPE = 'labor';
 const ROOT_PATH = '/lao-dong';
 const blogSEO = getBlogTypeSEO(TYPE);

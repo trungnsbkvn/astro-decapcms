@@ -23,11 +23,13 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  // SERVER MODE: Pages render on-demand via Netlify Functions
-  // Static pages can be pre-rendered by adding `export const prerender = true`
-  // This eliminates rebuilds for content changes - new posts appear instantly
+  // SERVER MODE with Edge Functions: SSR by default, opt-in to static with `export const prerender = true`
+  // Edge Functions provide: better cold starts, global distribution, no function bundling issues
+  // Static pages (prerender: true) are generated at build time for best performance
   output: 'server',
-  adapter: netlify(),
+  adapter: netlify({
+    edgeMiddleware: true, // Use Edge Functions instead of regular Netlify Functions
+  }),
 
   integrations: [
     tailwind({

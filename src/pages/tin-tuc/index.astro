@@ -8,6 +8,9 @@ import { blogListRobots, getPaginatedPosts } from '~/utils/blog';
 import { getRootPathForType } from '~/utils/blog-permalinks';
 import { getBlogTypeSEO, getKeywordsString } from '~/utils/blog-seo';
 
+// Enable SSR for this dynamic route (Hybrid mode)
+export const prerender = false;
+
 const TYPE = 'post';
 const blogSEO = getBlogTypeSEO(TYPE);
 

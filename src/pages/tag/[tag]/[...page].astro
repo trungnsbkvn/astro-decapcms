@@ -7,7 +7,10 @@ import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
 
-// SSR: No prerender - pages render on-demand
+// Enable SSR for this dynamic route (Hybrid mode)
+export const prerender = false;
+
+// SSR: Pages render on-demand via Netlify Edge Functions
 const { tag: tagSlug, page: pageParam } = Astro.params;
 
 const currentPage = pageParam ? parseInt(pageParam, 10) || 1 : 1;

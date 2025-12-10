@@ -7,6 +7,9 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
+// Enable SSR for this API endpoint (Hybrid mode)
+export const prerender = false;
+
 // Helper to clean slug from title
 function cleanSlug(text: string): string {
   return text
