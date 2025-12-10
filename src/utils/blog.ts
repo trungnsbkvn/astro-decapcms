@@ -41,6 +41,76 @@ const generatePermalink = async ({
     .join('/');
 };
 
+/**
+ * LAZY NORMALIZATION: Only extract metadata, NO render() call
+ * This prevents EMFILE errors by not opening all MDX files at once
+ * Use this for listing pages where Content is not needed
+ */
+const getNormalizedPostLazy = async (post: CollectionEntry<'post'>): Promise<Post> => {
+  const { id, data } = post;
+
+  const {
+    publishDate: rawPublishDate = new Date(),
+    updateDate: rawUpdateDate,
+    title,
+    excerpt,
+    image,
+    tags: rawTags = [],
+    category: rawCategory,
+    author,
+    rating,
+    draft = false,
+    metadata = {},
+  } = data;
+
+  const slug = cleanSlug(title);
+  const publishDate = new Date(rawPublishDate);
+  const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
+
+  const category = rawCategory
+    ? {
+        slug: cleanSlug(rawCategory),
+        title: rawCategory,
+      }
+    : undefined;
+
+  const tags = rawTags.map((tag: string) => ({
+    slug: cleanSlug(tag),
+    title: tag,
+  }));
+
+  return {
+    id: id,
+    slug: slug,
+    permalink: await generatePermalink({ id, slug, publishDate, category: category?.slug }),
+
+    publishDate: publishDate,
+    updateDate: updateDate,
+
+    title: title,
+    excerpt: excerpt,
+    image: image,
+
+    category: category,
+    tags: tags,
+    author: author,
+    rating: rating,
+
+    draft: draft,
+
+    metadata,
+
+    // Content NOT rendered - will be undefined for listing pages
+    Content: undefined,
+    readingTime: undefined,
+    headings: undefined,
+  };
+};
+
+/**
+ * FULL NORMALIZATION: Includes render() for Content
+ * Use this ONLY for single post pages where Content is needed
+ */
 const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
   const { id, slug: rawSlug = '', data } = post;
   const { Content, remarkPluginFrontmatter } = await post.render();
@@ -126,6 +196,25 @@ const getCollectionByType = async (type: string): Promise<CollectionEntry<'post'
   }
 };
 
+/**
+ * LAZY LOAD: For listing pages - NO render(), fast and no EMFILE
+ */
+const loadLazy = async function (type: string): Promise<Array<Post>> {
+  const posts = await getCollectionByType(type);
+  
+  const normalizedPosts = posts.map(async (post) => await getNormalizedPostLazy(post));
+
+  const results = (await Promise.all(normalizedPosts))
+    .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
+    .filter((post) => !post.draft);
+
+  return results;
+};
+
+/**
+ * FULL LOAD: For single post pages - includes render() for Content
+ * @deprecated Use loadLazy + findPostBySlugWithContent for better performance
+ */
 const load = async function (type: string): Promise<Array<Post>> {
   const posts = await getCollectionByType(type);
   
@@ -155,8 +244,25 @@ export const blogTagRobots = APP_BLOG.tag.robots;
 
 export const blogPostsPerPage = APP_BLOG?.postsPerPage;
 
-/** */
+/** 
+ * Fetch posts for listing pages - uses LAZY load (no Content, fast)
+ * This prevents EMFILE errors on Netlify by not calling render() for all posts
+ */
 export const fetchPosts = async (type: string): Promise<Array<Post>> => {
+  const allPosts: Post[] = [];
+  const typePosts = await loadLazy(type);
+
+  const resultPosts = typePosts.map(post => ({ ...post, type }));
+  allPosts.push(...resultPosts);
+  
+  return allPosts;
+};
+
+/** 
+ * Fetch posts WITH Content rendered - use only when Content is needed
+ * @deprecated Prefer fetchPosts + findPostBySlugWithContent for better performance
+ */
+export const fetchPostsWithContent = async (type: string): Promise<Array<Post>> => {
   const allPosts: Post[] = [];
   const typePosts = await load(type);
 
@@ -422,10 +528,38 @@ export const isCategory = async (type: string, slug: string): Promise<boolean> =
   return categorySlugs.has(slug);
 };
 
-/** Fetch a single post by permalink slug (for SSR) */
+/** Fetch a single post by permalink slug (for SSR listing - NO Content) */
 export const findPostBySlug = async (type: string, slug: string): Promise<Post | undefined> => {
   const posts = await getCachedPosts(type);
   return posts.find((post) => post.permalink === slug);
+};
+
+/** 
+ * SSR OPTIMIZED: Fetch a single post WITH Content rendered
+ * Only renders ONE post, not all 381 - solves EMFILE error!
+ */
+export const findPostBySlugWithContent = async (type: string, slug: string): Promise<Post | undefined> => {
+  // First, find the post metadata using lazy load (fast, no file handles)
+  const posts = await getCachedPosts(type);
+  const postMeta = posts.find((post) => post.permalink === slug);
+  
+  if (!postMeta) return undefined;
+  
+  // Now get the raw collection entry and render ONLY this one post
+  const rawPosts = await getCollectionByType(type);
+  const rawPost = rawPosts.find((p) => p.id === postMeta.id);
+  
+  if (!rawPost) return undefined;
+  
+  // Render only this single post's content
+  const { Content, remarkPluginFrontmatter } = await rawPost.render();
+  
+  return {
+    ...postMeta,
+    Content,
+    readingTime: remarkPluginFrontmatter?.readingTime,
+    headings: remarkPluginFrontmatter?.headings,
+  };
 };
 
 /** Get paginated posts for SSR list pages */
@@ -577,4 +711,16 @@ export const getStaticPathsForCategoryPagination = async (type: string): Promise
     }
   }
   return paths;
+};
+
+/** Get all single post paths for pre-rendering */
+export const getStaticPathsForSinglePost = async (type: string): Promise<Array<{
+  params: { slug: string };
+  props: { post: Post };
+}>> => {
+  const allPosts = await fetchPosts(type);
+  return allPosts.map((post) => ({
+    params: { slug: post.permalink },
+    props: { post },
+  }));
 };
