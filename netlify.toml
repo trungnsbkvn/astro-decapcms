@@ -1,8 +1,8 @@
 [build]
   publish = "dist"
   command = "pnpm run build"
-  # With hybrid mode, content changes still need a build to update the server functions
-  # But the build is much faster since images/static assets are cached
+  # SSR Mode: Pages render on-demand via Netlify Functions
+  # No rebuild needed for content changes - posts appear instantly
 
 [build.environment]
   NODE_VERSION = "20"
@@ -11,6 +11,15 @@
   # Disable Astro telemetry
   ASTRO_TELEMETRY_DISABLED = "1"
 
+# Enable asset optimization (Netlify handles compression)
+[build.processing]
+  skip_processing = false
+[build.processing.css]
+  bundle = true
+  minify = true
+[build.processing.js]
+  bundle = true
+  minify = true
 [build.processing.html]
   pretty_urls = false
 
@@ -33,27 +42,104 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Cache HTML pages for 1 hour, allow CDN to serve stale while revalidating
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+# =============================================================================
+# SSR Blog Pages Caching Strategy (Best Practice for rarely-changed content)
+# =============================================================================
+# - max-age=3600 (1 hour): Browser/CDN serves cached version
+# - stale-while-revalidate=86400 (24 hours): Serves stale while fetching fresh
+# - stale-if-error=604800 (7 days): Serves stale if origin errors
+#
+# Result: 
+#   - Most users get instant cached responses
+#   - Content updates appear within 1 hour max
+#   - Site stays up even if Netlify Functions have issues
+#
+# To force immediate update: Use Netlify Dashboard > Deploys > Clear cache
+# =============================================================================
 
-# Dynamic content pages - shorter cache
 [[headers]]
   for = "/tin-tuc/*"
   [headers.values]
-    Cache-Control = "public, max-age=300, stale-while-revalidate=3600"
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400, stale-if-error=604800"
+    CDN-Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/phap-ly/*"
   [headers.values]
-    Cache-Control = "public, max-age=300, stale-while-revalidate=3600"
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400, stale-if-error=604800"
+    CDN-Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/lao-dong/*"
   [headers.values]
-    Cache-Control = "public, max-age=300, stale-while-revalidate=3600"
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400, stale-if-error=604800"
+    CDN-Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/tu-van-thuong-xuyen/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400, stale-if-error=604800"
+    CDN-Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/dau-tu-nuoc-ngoai/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400, stale-if-error=604800"
+    CDN-Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/dich-vu-danh-gia/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400, stale-if-error=604800"
+    CDN-Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/tag/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400, stale-if-error=604800"
+    CDN-Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+# Static pages - longer cache
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/gioi-thieu"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/lien-he"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/dich-vu"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+# RSS feed caching
+[[headers]]
+  for = "/rss.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+    Content-Type = "application/rss+xml; charset=utf-8"
+
+# Sitemap caching
+[[headers]]
+  for = "/sitemap*.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+# Security headers for all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
 
 # Enable Netlify Image CDN for on-demand image optimization
 [images]

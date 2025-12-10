@@ -46,6 +46,9 @@ export interface Post {
   readingTime?: number;
 
   headings?: MarkdownHeading[];
+
+  /** Content type: post, legal, labor, consultation, foreigner, evaluation */
+  type?: string;
 }
 
 export interface Taxonomy {
@@ -62,6 +65,7 @@ export interface MetaData {
   robots?: MetaDataRobots;
 
   description?: string;
+  keywords?: string;
 
   openGraph?: MetaDataOpenGraph;
   twitter?: MetaDataTwitter;

@@ -355,3 +355,122 @@ export async function getRelatedPosts(type: string, originalPost: Post, maxResul
 
   return selectedPosts;
 }
+
+// ============ SSR Helper Functions ============
+
+// Cache for posts by type to avoid repeated fetches
+// In production SSR: each request creates a new context, so cache is per-request
+// This is still useful for multiple calls within the same request
+const postsCache = new Map<string, { posts: Post[]; timestamp: number }>();
+const CACHE_TTL = import.meta.env.PROD ? 3600000 : 60000; // 1 hour prod, 1 min dev
+
+/** Get cached posts or fetch fresh */
+const getCachedPosts = async (type: string): Promise<Post[]> => {
+  const cached = postsCache.get(type);
+  const now = Date.now();
+  
+  if (cached && (now - cached.timestamp) < CACHE_TTL) {
+    return cached.posts;
+  }
+  
+  const posts = await fetchPosts(type);
+  postsCache.set(type, { posts, timestamp: now });
+  return posts;
+};
+
+// Category slugs cache - even faster lookup
+const categorySlugsCache = new Map<string, Set<string>>();
+
+/** Check if a slug matches any category in the type (fast check) */
+export const isCategory = async (type: string, slug: string): Promise<boolean> => {
+  // Check if we have cached category slugs
+  let categorySlugs = categorySlugsCache.get(type);
+  
+  if (!categorySlugs) {
+    const posts = await getCachedPosts(type);
+    categorySlugs = new Set<string>();
+    for (const post of posts) {
+      if (post.category?.slug) {
+        categorySlugs.add(post.category.slug);
+      }
+    }
+    categorySlugsCache.set(type, categorySlugs);
+  }
+  
+  return categorySlugs.has(slug);
+};
+
+/** Fetch a single post by permalink slug (for SSR) */
+export const findPostBySlug = async (type: string, slug: string): Promise<Post | undefined> => {
+  const posts = await getCachedPosts(type);
+  return posts.find((post) => post.permalink === slug);
+};
+
+/** Get paginated posts for SSR list pages */
+export const getPaginatedPosts = async (
+  type: string,
+  page: number = 1,
+  pageSize: number = blogPostsPerPage
+): Promise<{
+  posts: Post[];
+  totalPages: number;
+  currentPage: number;
+  total: number;
+}> => {
+  const allPosts = await getCachedPosts(type);
+  const total = allPosts.length;
+  const totalPages = Math.ceil(total / pageSize);
+  const start = (page - 1) * pageSize;
+  const posts = allPosts.slice(start, start + pageSize);
+
+  return { posts, totalPages, currentPage: page, total };
+};
+
+/** Get paginated posts by category for SSR */
+export const getPaginatedPostsByCategory = async (
+  type: string,
+  categorySlug: string,
+  page: number = 1,
+  pageSize: number = blogPostsPerPage
+): Promise<{
+  posts: Post[];
+  totalPages: number;
+  currentPage: number;
+  total: number;
+  category: { slug: string; title: string } | undefined;
+}> => {
+  const allPosts = await getCachedPosts(type);
+  const filteredPosts = allPosts.filter((post) => post.category?.slug === categorySlug);
+  const category = filteredPosts[0]?.category;
+  const total = filteredPosts.length;
+  const totalPages = Math.ceil(total / pageSize);
+  const start = (page - 1) * pageSize;
+  const posts = filteredPosts.slice(start, start + pageSize);
+
+  return { posts, totalPages, currentPage: page, total, category };
+};
+
+/** Get paginated posts by tag for SSR */
+export const getPaginatedPostsByTag = async (
+  tagSlug: string,
+  page: number = 1,
+  pageSize: number = blogPostsPerPage
+): Promise<{
+  posts: Post[];
+  totalPages: number;
+  currentPage: number;
+  total: number;
+  tag: { slug: string; title: string } | undefined;
+}> => {
+  const allPosts = await fetchPostsFromAllTypes(BLOG_TYPES);
+  const filteredPosts = allPosts.filter(
+    (post) => Array.isArray(post.tags) && post.tags.find((t) => t.slug === tagSlug)
+  );
+  const tag = filteredPosts[0]?.tags?.find((t) => t.slug === tagSlug);
+  const total = filteredPosts.length;
+  const totalPages = Math.ceil(total / pageSize);
+  const start = (page - 1) * pageSize;
+  const posts = filteredPosts.slice(start, start + pageSize);
+
+  return { posts, totalPages, currentPage: page, total, tag };
+};

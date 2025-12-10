@@ -54,25 +54,17 @@ export default defineConfig({
     partytown({
       config: { forward: ['dataLayer.push'], debug: false },
     }),
-    pagefind(),
+    // NOTE: Pagefind disabled for SSR mode - it requires pre-rendered pages
+    // For search, use a client-side solution or API-based search
+    // pagefind(),
+    
+    // MINIMAL compression - Netlify handles most optimization at CDN level
     compress({
       CSS: true,
-      HTML: {
-        'html-minifier-terser': {
-          removeAttributeQuotes: false,
-        },
-      },
-      Image: {
-        // Enable image compression for build output
-        sharp: {
-          webp: { quality: 80 },
-          avif: { quality: 75 },
-          jpeg: { quality: 80 },
-          png: { quality: 80, compressionLevel: 9 },
-        },
-      },
+      HTML: false,  // SSR pages compress at runtime
+      Image: false, // Netlify Image CDN handles this
       JavaScript: true,
-      SVG: true,
+      SVG: false,   // Minor savings, skip for faster builds
       Logger: 1,
     }),
 

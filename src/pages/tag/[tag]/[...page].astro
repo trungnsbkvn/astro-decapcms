@@ -1,6 +1,5 @@
 ---
-import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
-import { blogTagRobots, getStaticPathsBlogTag } from '~/utils/blog';
+import { blogTagRobots, getPaginatedPostsByTag } from '~/utils/blog';
 import { getRootPathForType } from '~/utils/blog-permalinks';
 
 import Layout from '~/layouts/PageLayout.astro';
@@ -8,24 +7,24 @@ import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
 
-export const prerender = true;
+// SSR: No prerender - pages render on-demand
+const { tag: tagSlug, page: pageParam } = Astro.params;
 
-export const getStaticPaths = (async ({ paginate }) => {
-  return await getStaticPathsBlogTag({ paginate });
-}) satisfies GetStaticPaths;
+const currentPage = pageParam ? parseInt(pageParam, 10) || 1 : 1;
 
-type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { posts, totalPages, tag } = await getPaginatedPostsByTag(tagSlug || '', currentPage);
 
-const { page, tag } = Astro.props as Props;
-
-const currentPage = page.currentPage ?? 1;
-
-const posts = await page.data;
+if (!tag || posts.length === 0) {
+  return Astro.redirect('/404');
+}
 
 const tagPosts = posts.map((post) => ({
   ...post,
   permalink: `${getRootPathForType(post.type)}/${post.permalink}`,
 }));
+
+const prevUrl = currentPage > 1 ? (currentPage === 2 ? `/tag/${tagSlug}` : `/tag/${tagSlug}/${currentPage - 1}`) : undefined;
+const nextUrl = currentPage < totalPages ? `/tag/${tagSlug}/${currentPage + 1}` : undefined;
 
 const metadata = {
   title: `Thẻ '${tag.title}'${currentPage > 1 ? ` — Trang ${currentPage} ` : ''}`,
@@ -40,6 +39,6 @@ const metadata = {
   <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <Headline>Thẻ: {tag.title}</Headline>
     <BlogList posts={tagPosts} />
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+    <Pagination prevUrl={prevUrl} nextUrl={nextUrl} />
   </section>
 </Layout>
