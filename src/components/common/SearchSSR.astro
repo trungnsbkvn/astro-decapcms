@@ -138,7 +138,13 @@ import SearchIcon from '~/components/icons/SearchIcon.astro';
         }
 
         const response = await fetch('/api/search.json');
-        this.searchData = await response.json();
+        
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        
+        const text = await response.text();
+        this.searchData = text ? JSON.parse(text) : [];
 
         // Initialize Fuse.js with Vietnamese-friendly options
         this.fuse = new Fuse(this.searchData, {
@@ -154,12 +160,15 @@ import SearchIcon from '~/components/icons/SearchIcon.astro';
         });
 
         if (this.resultsContainer) {
-          this.resultsContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400 text-center py-8">Nhập từ khóa để tìm kiếm...</p>';
+          const msg = this.searchData.length > 0 
+            ? 'Nhập từ khóa để tìm kiếm...' 
+            : 'Không có dữ liệu tìm kiếm';
+          this.resultsContainer.innerHTML = `<p class="text-gray-500 dark:text-gray-400 text-center py-8">${msg}</p>`;
         }
       } catch (error) {
         console.error('Failed to load search data:', error);
         if (this.resultsContainer) {
-          this.resultsContainer.innerHTML = '<p class="text-red-500 text-center py-8">Không thể tải dữ liệu tìm kiếm</p>';
+          this.resultsContainer.innerHTML = '<p class="text-red-500 text-center py-8">Không thể tải dữ liệu tìm kiếm. Vui lòng thử lại.</p>';
         }
       }
     }
