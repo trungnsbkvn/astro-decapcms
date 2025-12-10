@@ -5,6 +5,15 @@ import { getAsset } from '~/utils/blog-permalinks';
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<!-- 
+  Font preloading: @fontsource-variable/inter handles this automatically.
+  The font files have content-hashed names (e.g., inter-*.CBcvBZtf.woff2)
+  that change on each build, so we can't hardcode preload links.
+  
+  The font-display: swap in CustomStyles.astro ensures text is visible
+  immediately with a fallback font while the web font loads.
+-->
+
 <!-- DNS prefetch and preconnect for faster third-party resources -->
 <link rel="preconnect" href="https://embed.tawk.to" crossorigin />
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />

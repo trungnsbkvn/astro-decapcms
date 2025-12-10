@@ -93,11 +93,13 @@ export default defineConfig({
     },
     // Build optimization
     build: {
-      // Better code splitting
+      // Better code splitting - separate non-critical JS
       rollupOptions: {
         output: {
           manualChunks: {
+            // Core framework code - can load async
             'vendor-core': ['react', 'solid-js'],
+            // UI animations - defer loading
             'vendor-ui': ['motion'],
           },
         },
@@ -105,12 +107,14 @@ export default defineConfig({
       // OPTIMIZATION: Use esbuild instead of terser for faster builds
       // esbuild is 10-100x faster than terser with similar results
       minify: 'esbuild',
-      // CSS code splitting
+      // CSS code splitting - helps reduce critical CSS
       cssCodeSplit: true,
       // Reduce chunk size warnings
       chunkSizeWarningLimit: 1200,
-      // Faster source map generation
+      // No source maps in production
       sourcemap: false,
+      // Target modern browsers for smaller bundles
+      target: 'es2020',
     },
     // Build performance optimizations
     ssr: {
