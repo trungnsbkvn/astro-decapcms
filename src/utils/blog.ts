@@ -306,7 +306,8 @@ export async function findLatestBlogPosts(categories: Record<string, string[]>, 
 
   for (const type in categories) {
     const posts = await getCollectionByType(type);
-    const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
+    // Use lazy normalize - no Content needed for listing
+    const normalizedPosts = posts.map(async (post) => await getNormalizedPostLazy(post));
 
     const collectionPosts = (await Promise.all(normalizedPosts))
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
@@ -343,7 +344,8 @@ export async function findPostsByAuthorAndTypes(author: string, types: string[],
 
   for (const type of types) {
     const typedPost = await getCollectionByType(type);
-    const normalizedPosts = typedPost.map(async (post) => await getNormalizedPost(post));
+    // Use lazy normalize - no Content needed for listing
+    const normalizedPosts = typedPost.map(async (post) => await getNormalizedPostLazy(post));
 
     const collectionPosts = (await Promise.all(normalizedPosts))
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
@@ -362,7 +364,8 @@ export async function fetchPostsFromAllTypes(types: string[]): Promise<Post[]> {
 
   for (const type of types) {
     const typedPost = await getCollectionByType(type);
-    const normalizedPosts = typedPost.map(async (post) => await getNormalizedPost(post));
+    // Use lazy normalize - no Content needed for listing
+    const normalizedPosts = typedPost.map(async (post) => await getNormalizedPostLazy(post));
     const collectionPosts = (await Promise.all(normalizedPosts))
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
       .filter((post) => !post.draft);
