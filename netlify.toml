@@ -38,12 +38,9 @@
       ".astro"
     ]
 
-# Local plugin to log cache purge on deploy
-[[plugins]]
-  package = "./netlify/plugins/cache-purge"
-
 # Note: Redirects are automatically handled by @astrojs/netlify adapter
 # The adapter generates the necessary _redirects file
+# CDN cache is automatically invalidated on each deploy by Netlify
 
 # Cache static assets indefinitely (hash-busted by Astro)
 [[headers]]
