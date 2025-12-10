@@ -2,8 +2,28 @@ import type { PaginateFunction } from 'astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { Post } from '~/types';
-import { APP_BLOG } from 'astrowind:config';
+import { APP_BLOG, APP_LEGAL, APP_CONSULTATION, APP_LABOR, APP_FOREIGNER, APP_EVALUATION } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE, BLOG_TYPES } from './blog-permalinks';
+
+/** Get postsPerPage config by blog type */
+const getPostsPerPageByType = (type: string): number => {
+  switch (type) {
+    case 'post':
+      return APP_BLOG?.postsPerPage || 12;
+    case 'legal':
+      return APP_LEGAL?.postsPerPage || 12;
+    case 'labor':
+      return APP_LABOR?.postsPerPage || 12;
+    case 'consultation':
+      return APP_CONSULTATION?.postsPerPage || 12;
+    case 'foreigner':
+      return APP_FOREIGNER?.postsPerPage || 12;
+    case 'evaluation':
+      return APP_EVALUATION?.postsPerPage || 12;
+    default:
+      return APP_BLOG?.postsPerPage || 12;
+  }
+};
 
 const generatePermalink = async ({
   id,
@@ -384,7 +404,7 @@ export const getStaticPathsBlogList = async (type: string, { paginate }: { pagin
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
   return paginate(await fetchPosts(type), {
     params: { blog: BLOG_BASE || undefined },
-    pageSize: blogPostsPerPage,
+    pageSize: getPostsPerPageByType(type),
   });
 };
 
@@ -416,7 +436,7 @@ export const getStaticPathsBlogCategory = async (type: string, { paginate }: { p
       posts.filter((post) => post.category?.slug && categorySlug === post.category?.slug),
       {
         params: { category: categorySlug, blog: CATEGORY_BASE || undefined },
-        pageSize: blogPostsPerPage,
+        pageSize: getPostsPerPageByType(type),
         props: { category: categories[categorySlug] },
       }
     )
@@ -443,7 +463,7 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
       posts.filter((post) => Array.isArray(post.tags) && post.tags.find((elem) => elem.slug === tagSlug)),
       {
         params: { tag: tagSlug, blog: TAG_BASE || undefined },
-        pageSize: blogPostsPerPage,
+        pageSize: 12,
         props: { tag: tags[tagSlug] },
       }
     )
@@ -569,18 +589,19 @@ export const findPostBySlugWithContent = async (type: string, slug: string): Pro
 export const getPaginatedPosts = async (
   type: string,
   page: number = 1,
-  pageSize: number = blogPostsPerPage
+  pageSize?: number
 ): Promise<{
   posts: Post[];
   totalPages: number;
   currentPage: number;
   total: number;
 }> => {
+  const effectivePageSize = pageSize ?? getPostsPerPageByType(type);
   const allPosts = await getCachedPosts(type);
   const total = allPosts.length;
-  const totalPages = Math.ceil(total / pageSize);
-  const start = (page - 1) * pageSize;
-  const posts = allPosts.slice(start, start + pageSize);
+  const totalPages = Math.ceil(total / effectivePageSize);
+  const start = (page - 1) * effectivePageSize;
+  const posts = allPosts.slice(start, start + effectivePageSize);
 
   return { posts, totalPages, currentPage: page, total };
 };
@@ -590,7 +611,7 @@ export const getPaginatedPostsByCategory = async (
   type: string,
   categorySlug: string,
   page: number = 1,
-  pageSize: number = blogPostsPerPage
+  pageSize?: number
 ): Promise<{
   posts: Post[];
   totalPages: number;
@@ -598,13 +619,14 @@ export const getPaginatedPostsByCategory = async (
   total: number;
   category: { slug: string; title: string } | undefined;
 }> => {
+  const effectivePageSize = pageSize ?? getPostsPerPageByType(type);
   const allPosts = await getCachedPosts(type);
   const filteredPosts = allPosts.filter((post) => post.category?.slug === categorySlug);
   const category = filteredPosts[0]?.category;
   const total = filteredPosts.length;
-  const totalPages = Math.ceil(total / pageSize);
-  const start = (page - 1) * pageSize;
-  const posts = filteredPosts.slice(start, start + pageSize);
+  const totalPages = Math.ceil(total / effectivePageSize);
+  const start = (page - 1) * effectivePageSize;
+  const posts = filteredPosts.slice(start, start + effectivePageSize);
 
   return { posts, totalPages, currentPage: page, total, category };
 };
@@ -613,7 +635,7 @@ export const getPaginatedPostsByCategory = async (
 export const getPaginatedPostsByTag = async (
   tagSlug: string,
   page: number = 1,
-  pageSize: number = blogPostsPerPage
+  pageSize: number = 12
 ): Promise<{
   posts: Post[];
   totalPages: number;
@@ -641,13 +663,14 @@ export const getStaticPathsForBlogPagination = async (type: string): Promise<Arr
   params: { page: string };
   props: { posts: Post[]; totalPages: number; currentPage: number };
 }>> => {
+  const postsPerPage = getPostsPerPageByType(type);
   const allPosts = await fetchPosts(type);
-  const totalPages = Math.ceil(allPosts.length / blogPostsPerPage);
+  const totalPages = Math.ceil(allPosts.length / postsPerPage);
   
   const paths = [];
   for (let page = 2; page <= totalPages; page++) {
-    const start = (page - 1) * blogPostsPerPage;
-    const posts = allPosts.slice(start, start + blogPostsPerPage);
+    const start = (page - 1) * postsPerPage;
+    const posts = allPosts.slice(start, start + postsPerPage);
     paths.push({
       params: { page: String(page) },
       props: { posts, totalPages, currentPage: page },
@@ -661,6 +684,7 @@ export const getStaticPathsForCategoryIndex = async (type: string): Promise<Arra
   params: { category: string };
   props: { posts: Post[]; totalPages: number; category: { slug: string; title: string } };
 }>> => {
+  const postsPerPage = getPostsPerPageByType(type);
   const allPosts = await fetchPosts(type);
   const categories: Record<string, { slug: string; title: string }> = {};
   
@@ -673,8 +697,8 @@ export const getStaticPathsForCategoryIndex = async (type: string): Promise<Arra
   const paths = [];
   for (const categorySlug of Object.keys(categories)) {
     const categoryPosts = allPosts.filter((p) => p.category?.slug === categorySlug);
-    const totalPages = Math.ceil(categoryPosts.length / blogPostsPerPage);
-    const posts = categoryPosts.slice(0, blogPostsPerPage);
+    const totalPages = Math.ceil(categoryPosts.length / postsPerPage);
+    const posts = categoryPosts.slice(0, postsPerPage);
     
     paths.push({
       params: { category: categorySlug },
@@ -689,6 +713,7 @@ export const getStaticPathsForCategoryPagination = async (type: string): Promise
   params: { category: string; page: string };
   props: { posts: Post[]; totalPages: number; currentPage: number; category: { slug: string; title: string } };
 }>> => {
+  const postsPerPage = getPostsPerPageByType(type);
   const allPosts = await fetchPosts(type);
   const categories: Record<string, { slug: string; title: string }> = {};
   
@@ -701,11 +726,11 @@ export const getStaticPathsForCategoryPagination = async (type: string): Promise
   const paths = [];
   for (const categorySlug of Object.keys(categories)) {
     const categoryPosts = allPosts.filter((p) => p.category?.slug === categorySlug);
-    const totalPages = Math.ceil(categoryPosts.length / blogPostsPerPage);
+    const totalPages = Math.ceil(categoryPosts.length / postsPerPage);
     
     for (let page = 2; page <= totalPages; page++) {
-      const start = (page - 1) * blogPostsPerPage;
-      const posts = categoryPosts.slice(start, start + blogPostsPerPage);
+      const start = (page - 1) * postsPerPage;
+      const posts = categoryPosts.slice(start, start + postsPerPage);
       
       paths.push({
         params: { category: categorySlug, page: String(page) },

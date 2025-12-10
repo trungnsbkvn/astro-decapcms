@@ -28,7 +28,10 @@ export default defineConfig({
   // Static pages (prerender: true) are generated at build time for best performance
   output: 'server',
   adapter: netlify({
-    edgeMiddleware: true, // Use Edge Functions instead of regular Netlify Functions
+    edgeMiddleware: true, // Use Edge Functions for SSR (bypass Node chunks, better cold starts)
+    cacheOnDemandPages: true, // Cache SSR pages up to 1 year (integrates with Cache-Control)
+    // Optimize bundle for large sites
+    imageCDN: true, // Use Netlify Image CDN for on-demand image optimization
   }),
 
   integrations: [
@@ -93,17 +96,28 @@ export default defineConfig({
         '~': path.resolve(__dirname, './src'),
       },
     },
+    // Dev server optimization - ignore content files for faster HMR
+    server: {
+      watch: {
+        ignored: ['**/src/content/**/*.mdx', '**/src/content/**/*.md'],
+      },
+    },
     // Build optimization
     build: {
-      // Better code splitting - separate non-critical JS
+      // Consolidate chunks to reduce file count (helps with EMFILE)
       rollupOptions: {
         output: {
-          manualChunks: {
-            // Core framework code - can load async
-            'vendor-core': ['react', 'solid-js'],
-            // UI animations - defer loading
-            'vendor-ui': ['motion'],
+          // Consolidate all node_modules into single vendor chunk
+          manualChunks: (id) => {
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+            return null;
           },
+        },
+        // Reduce bundle analysis overhead
+        treeshake: {
+          moduleSideEffects: false,
         },
       },
       // OPTIMIZATION: Use esbuild instead of terser for faster builds
@@ -112,7 +126,7 @@ export default defineConfig({
       // CSS code splitting - helps reduce critical CSS
       cssCodeSplit: true,
       // Reduce chunk size warnings
-      chunkSizeWarningLimit: 1200,
+      chunkSizeWarningLimit: 1500,
       // No source maps in production
       sourcemap: false,
       // Target modern browsers for smaller bundles
@@ -120,12 +134,23 @@ export default defineConfig({
     },
     // Build performance optimizations
     ssr: {
-      external: ['sharp'],
+      // Externalize heavy dependencies to reduce bundle time
+      external: ['sharp', 'shiki', '@astrojs/prism'],
+      // Don't bundle node_modules in SSR (faster)
+      noExternal: [],
     },
     // Optimize dependency pre-bundling
     optimizeDeps: {
       exclude: ['sharp'],
+      // Pre-bundle common deps
+      include: ['lodash.merge', 'clsx'],
+    },
+    // Faster dev/build
+    esbuild: {
+      // Drop console in production
+      drop: ['debugger'],
+      // Faster parsing
+      legalComments: 'none',
     },
   },
 });
-
