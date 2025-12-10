@@ -1,5 +1,0 @@
-{
-  "name": "netlify-plugin-cache-purge",
-  "version": "1.0.0",
-  "description": "Purge CDN cache on successful deploy"
-}
