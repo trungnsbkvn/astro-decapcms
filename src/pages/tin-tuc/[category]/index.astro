@@ -1,0 +1,60 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Layout from '~/layouts/PageLayout.astro';
+import BlogList from '~/components/blog/List.astro';
+import Headline from '~/components/blog/Headline.astro';
+import Pagination from '~/components/blog/Pagination.astro';
+
+import { blogCategoryRobots, getStaticPathsForCategoryIndex } from '~/utils/blog';
+import { getRootPathForType } from '~/utils/blog-permalinks';
+import { getBlogTypeSEO, getCategorySEO, getCategoryDescription, getKeywordsString } from '~/utils/blog-seo';
+
+// Pre-render all category pages at build time
+export const prerender = true;
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return await getStaticPathsForCategoryIndex('post');
+};
+
+const TYPE = 'post';
+const ROOT_PATH = '/tin-tuc';
+
+const { category: categorySlug } = Astro.params;
+const { posts: rawPosts, totalPages, category } = Astro.props;
+
+const blogSEO = getBlogTypeSEO(TYPE);
+const categorySEO = getCategorySEO(TYPE, categorySlug);
+
+const posts = rawPosts.map((post: any) => ({
+  ...post,
+  permalink: `${getRootPathForType(post.type || TYPE)}/${post.permalink}`,
+}));
+const nextUrl = totalPages > 1 ? `${ROOT_PATH}/${categorySlug}/2` : undefined;
+
+const categoryTitle = category?.title || categorySlug;
+
+const metadata = {
+  title: categorySEO?.title 
+    ? `${categorySEO.title} - ${blogSEO.title}`
+    : `Danh mục: ${categoryTitle}`,
+  description: getCategoryDescription(TYPE, categorySlug, categoryTitle, 1),
+  keywords: categorySEO ? getKeywordsString(categorySEO.keywords) : getKeywordsString(blogSEO.keywords),
+  robots: {
+    index: blogCategoryRobots?.index,
+    follow: blogCategoryRobots?.follow,
+  },
+  openGraph: {
+    type: 'article',
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <Headline subtitle={categorySEO?.subtitle || `Tất cả bài viết trong danh mục ${categoryTitle}`}>
+      {categorySEO?.title || categoryTitle}
+    </Headline>
+    <BlogList posts={posts} />
+    <Pagination prevUrl={undefined} nextUrl={nextUrl} />
+  </section>
+</Layout>

@@ -496,3 +496,85 @@ export const getPaginatedPostsByTag = async (
 
   return { posts, totalPages, currentPage: page, total, tag };
 };
+
+// ============ Pre-render Static Paths Helpers (no paginate) ============
+
+/** Get all pagination pages for a blog type (for pre-rendering) */
+export const getStaticPathsForBlogPagination = async (type: string): Promise<Array<{
+  params: { page: string };
+  props: { posts: Post[]; totalPages: number; currentPage: number };
+}>> => {
+  const allPosts = await fetchPosts(type);
+  const totalPages = Math.ceil(allPosts.length / blogPostsPerPage);
+  
+  const paths = [];
+  for (let page = 2; page <= totalPages; page++) {
+    const start = (page - 1) * blogPostsPerPage;
+    const posts = allPosts.slice(start, start + blogPostsPerPage);
+    paths.push({
+      params: { page: String(page) },
+      props: { posts, totalPages, currentPage: page },
+    });
+  }
+  return paths;
+};
+
+/** Get all category page 1 paths (for pre-rendering) */
+export const getStaticPathsForCategoryIndex = async (type: string): Promise<Array<{
+  params: { category: string };
+  props: { posts: Post[]; totalPages: number; category: { slug: string; title: string } };
+}>> => {
+  const allPosts = await fetchPosts(type);
+  const categories: Record<string, { slug: string; title: string }> = {};
+  
+  allPosts.forEach((post) => {
+    if (post.category?.slug) {
+      categories[post.category.slug] = post.category;
+    }
+  });
+  
+  const paths = [];
+  for (const categorySlug of Object.keys(categories)) {
+    const categoryPosts = allPosts.filter((p) => p.category?.slug === categorySlug);
+    const totalPages = Math.ceil(categoryPosts.length / blogPostsPerPage);
+    const posts = categoryPosts.slice(0, blogPostsPerPage);
+    
+    paths.push({
+      params: { category: categorySlug },
+      props: { posts, totalPages, category: categories[categorySlug] },
+    });
+  }
+  return paths;
+};
+
+/** Get all category pagination pages 2+ (for pre-rendering) */
+export const getStaticPathsForCategoryPagination = async (type: string): Promise<Array<{
+  params: { category: string; page: string };
+  props: { posts: Post[]; totalPages: number; currentPage: number; category: { slug: string; title: string } };
+}>> => {
+  const allPosts = await fetchPosts(type);
+  const categories: Record<string, { slug: string; title: string }> = {};
+  
+  allPosts.forEach((post) => {
+    if (post.category?.slug) {
+      categories[post.category.slug] = post.category;
+    }
+  });
+  
+  const paths = [];
+  for (const categorySlug of Object.keys(categories)) {
+    const categoryPosts = allPosts.filter((p) => p.category?.slug === categorySlug);
+    const totalPages = Math.ceil(categoryPosts.length / blogPostsPerPage);
+    
+    for (let page = 2; page <= totalPages; page++) {
+      const start = (page - 1) * blogPostsPerPage;
+      const posts = categoryPosts.slice(start, start + blogPostsPerPage);
+      
+      paths.push({
+        params: { category: categorySlug, page: String(page) },
+        props: { posts, totalPages, currentPage: page, category: categories[categorySlug] },
+      });
+    }
+  }
+  return paths;
+};

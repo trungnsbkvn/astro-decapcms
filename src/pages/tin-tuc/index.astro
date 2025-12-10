@@ -8,8 +8,9 @@ import { blogListRobots, getPaginatedPosts } from '~/utils/blog';
 import { getRootPathForType } from '~/utils/blog-permalinks';
 import { getBlogTypeSEO, getKeywordsString } from '~/utils/blog-seo';
 
-// Enable SSR for this dynamic route (Hybrid mode)
-export const prerender = false;
+// Pre-render at build time to avoid EMFILE errors on Netlify
+// (loading 381 posts at runtime hits file descriptor limits)
+export const prerender = true;
 
 const TYPE = 'post';
 const blogSEO = getBlogTypeSEO(TYPE);
