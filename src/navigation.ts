@@ -365,7 +365,7 @@ export const footerData = {
     { text: 'Chính sách Bảo vệ dữ liệu', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/vinhphuclawyers' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/yplawfirm' },
     { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/c/YPLawFirmOfficial' },
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/vinhphuclawyers' },
     {
