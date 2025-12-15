@@ -371,7 +371,7 @@ export const footerData = {
     {
       ariaLabel: 'Linkedin',
       icon: 'tabler:brand-linkedin',
-      href: 'https://www.linkedin.com/company/vinh-phuc-lawyers',
+      href: 'https://www.linkedin.com/company/yplawfirm',
     },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
   ],

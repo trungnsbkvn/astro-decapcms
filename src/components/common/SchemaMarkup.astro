@@ -26,20 +26,20 @@ const baseData = {
   organization: {
     '@context': 'https://schema.org',
     '@type': 'LegalService',
-    '@id': 'https://youthpartners.vn',
+    '@id': 'https://yplawfirm.vn',
     name: 'Youth & Partners Law Firm',
     alternativeName: 'Công ty Luật TNHH Youth & Partners',
     description: 'Công ty luật cung cấp các dịch vụ tư vấn pháp lý toàn diện, đánh giá pháp lý, và hỗ trợ pháp lý cho doanh nghiệp và cá nhân tại Việt Nam.',
-    url: 'https://youthpartners.vn',
+    url: 'https://yplawfirm.vn',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://youthpartners.vn/assets/images/youth%20and%20partners/Youth%20and%20Partners.jpg',
+      url: 'https://yplawfirm.vn/assets/images/youth%20and%20partners/Youth%20and%20Partners.jpg',
       width: 800,
       height: 600,
     },
     sameAs: [
-      'https://www.facebook.com/youthpartners',
-      'https://www.linkedin.com/company/youth-partners-law-firm',
+      'https://www.facebook.com/yplawfirm',
+      'https://www.linkedin.com/company/yplawfirm',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -67,7 +67,7 @@ const baseData = {
     '@context': 'https://schema.org',
     '@type': 'LegalService',
     name: 'Youth & Partners Law Firm',
-    image: 'https://youthpartners.vn/assets/images/youth%20and%20partners/Youth%20and%20Partners.jpg',
+    image: 'https://yplawfirm.vn/assets/images/youth%20and%20partners/Youth%20and%20Partners.jpg',
     description: 'Công ty luật cung cấp các dịch vụ pháp lý chuyên nghiệp tại Hà Nội, Việt Nam.',
     address: {
       '@type': 'PostalAddress',
@@ -93,7 +93,7 @@ const baseData = {
     provider: {
       '@type': 'LegalService',
       name: 'Youth & Partners Law Firm',
-      url: 'https://youthpartners.vn',
+      url: 'https://yplawfirm.vn',
     },
     areaServed: 'VN',
     ...(data.rating && {
@@ -111,20 +111,20 @@ const baseData = {
     '@type': 'Article',
     headline: data.title || '',
     description: data.excerpt || '',
-    image: data.image || 'https://youthpartners.vn/assets/images/youth%20and%20partners/Youth%20and%20Partners.jpg',
+    image: data.image || 'https://yplawfirm.vn/assets/images/youth%20and%20partners/Youth%20and%20Partners.jpg',
     datePublished: data.publishDate || new Date().toISOString(),
     ...(data.updateDate && { dateModified: data.updateDate }),
     author: {
       '@type': 'Person',
       name: data.author || 'Youth & Partners',
-      url: data.authorUrl || 'https://youthpartners.vn',
+      url: data.authorUrl || 'https://yplawfirm.vn',
     },
     publisher: {
       '@type': 'LegalService',
       name: 'Youth & Partners Law Firm',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://youthpartners.vn/assets/images/youth%20and%20partners/Youth%20and%20Partners.jpg',
+        url: 'https://yplawfirm.vn/assets/images/youth%20and%20partners/Youth%20and%20Partners.jpg',
         width: 800,
         height: 600,
       },
@@ -168,7 +168,7 @@ const baseData = {
     worksFor: {
       '@type': 'LegalService',
       name: 'Youth & Partners Law Firm',
-      url: 'https://youthpartners.vn',
+      url: 'https://yplawfirm.vn',
     },
     contactPoint: {
       '@type': 'ContactPoint',
