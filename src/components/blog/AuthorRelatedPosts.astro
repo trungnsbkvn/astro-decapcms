@@ -3,8 +3,10 @@ import { APP_BLOG } from 'astrowind:config';
 
 import Grid from '~/components/blog/Grid.astro';
 
-import { findPostsByAuthorAndTypes } from '~/utils/blog';
+import { findPostsByAuthorAndTypes, findAllPostsByAuthorAndTypes } from '~/utils/blog';
 import { getRootPathForType } from '~/utils/blog-permalinks';
+import { getAuthorSlug } from '~/utils/authors';
+import { cleanSlug } from '~/utils/blog-permalinks';
 
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Widget } from '~/types';
@@ -31,11 +33,18 @@ const {
 } = Astro.props;
 
 const posts = await findPostsByAuthorAndTypes(author, types, count);
+const allPosts = await findAllPostsByAuthorAndTypes(author, types);
+const totalPosts = allPosts.length;
+// Try to get slug from AUTHORS mapping, fallback to generating from name
+const authorSlug = getAuthorSlug(author) || cleanSlug(author);
 
-const relatedPosts = posts.map((post) => ({
-  ...post,
-  permalink: `${getRootPathForType(post.type)}/${post.permalink}`,
-}));
+const relatedPosts = posts.map((post) => {
+  const postType = post.type ?? 'post';
+  return {
+    ...post,
+    permalink: `${getRootPathForType(postType)}/${post.permalink}`,
+  };
+});
 ---
 
 {
@@ -48,6 +57,11 @@ const relatedPosts = posts.map((post) => ({
               class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-2"
               set:html={title}
             />
+            {totalPosts > 0 && (
+              <p class="text-sm text-muted dark:text-slate-500">
+                Tổng cộng {totalPosts} bài viết
+              </p>
+            )}
           </div>
         )}
 
@@ -55,6 +69,26 @@ const relatedPosts = posts.map((post) => ({
       </div>
 
       <Grid posts={relatedPosts} />
+      
+      {totalPosts > 0 && authorSlug && (
+        <div class="mt-10 text-center">
+          <a 
+            href={`/tac-gia/${authorSlug}/bai-viet`}
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-white bg-primary hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-500 rounded-full shadow-md hover:shadow-lg transition-all duration-300 group"
+          >
+            <span>Xem tất cả {totalPosts} bài viết</span>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      )}
     </WidgetWrapper>
   ) : (
     <Fragment />

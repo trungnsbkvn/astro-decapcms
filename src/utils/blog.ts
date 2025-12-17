@@ -379,6 +379,49 @@ export async function findPostsByAuthorAndTypes(author: string, types: string[],
   return filteredPosts.slice(0, count);
 }
 
+/** Get all posts by author across types (no limit) */
+export async function findAllPostsByAuthorAndTypes(author: string, types: string[]): Promise<Post[]> {
+  const allPosts: Post[] = [];
+
+  for (const type of types) {
+    const typedPost = await getCollectionByType(type);
+    const normalizedPosts = typedPost.map(async (post) => await getNormalizedPostLazy(post));
+
+    const collectionPosts = (await Promise.all(normalizedPosts))
+      .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
+      .filter((post) => !post.draft);
+    
+    const resultPosts = collectionPosts.map(post => ({ ...post, type }));
+    allPosts.push(...resultPosts);
+  }
+
+  const filteredPosts = allPosts.filter(post => post.author === author);
+  // Sort all posts by date
+  filteredPosts.sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf());
+  return filteredPosts;
+}
+
+/** Get paginated posts by author for SSR */
+export const getPaginatedPostsByAuthor = async (
+  author: string,
+  types: string[],
+  page: number = 1,
+  pageSize: number = 12
+): Promise<{
+  posts: Post[];
+  totalPages: number;
+  currentPage: number;
+  total: number;
+}> => {
+  const allPosts = await findAllPostsByAuthorAndTypes(author, types);
+  const total = allPosts.length;
+  const totalPages = Math.ceil(total / pageSize);
+  const start = (page - 1) * pageSize;
+  const posts = allPosts.slice(start, start + pageSize);
+
+  return { posts, totalPages, currentPage: page, total };
+};
+
 export async function fetchPostsFromAllTypes(types: string[]): Promise<Post[]> {
   const allPosts: Post[] = [];
 
