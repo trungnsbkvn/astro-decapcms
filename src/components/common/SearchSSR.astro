@@ -8,7 +8,7 @@
 import SearchIcon from '~/components/icons/SearchIcon.astro';
 ---
 
-<site-search id="search" class="ms-auto">
+<site-search id="search" class="ms-auto notranslate" translate="no">
   <button data-open-modal disabled class="flex items-center justify-center rounded-md gap-1">
     <SearchIcon />
   </button>
@@ -20,6 +20,7 @@ import SearchIcon from '~/components/icons/SearchIcon.astro';
       <button
         data-close-modal
         class="ms-auto cursor-pointer rounded-full bg-black text-white px-4 py-2 dark:bg-white dark:text-black"
+        data-i18n="common.close"
       >
         Đóng
       </button>
@@ -28,11 +29,12 @@ import SearchIcon from '~/components/icons/SearchIcon.astro';
           type="search"
           id="search-input"
           placeholder="Tìm kiếm bài viết..."
+          data-i18n-placeholder="search.placeholder"
           class="w-full px-4 py-3 text-lg border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           autocomplete="off"
         />
         <div id="search-results" class="mt-4 max-h-[60vh] overflow-y-auto">
-          <p class="text-gray-500 dark:text-gray-400 text-center py-8">
+          <p class="text-gray-500 dark:text-gray-400 text-center py-8" data-i18n="search.enterKeyword">
             Nhập từ khóa để tìm kiếm...
           </p>
         </div>

@@ -44,15 +44,17 @@ const {
               )}
             </div>
             <div class="mt-0.5">
-              {title && <h3 class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</h3>}
+              {title && <h3 class={twMerge('text-xl font-bold notranslate', titleClass, itemClasses?.title)} translate="no">{title}</h3>}
               {description && (
                 <p
-                  class={twMerge(`${title ? 'mt-3' : ''} text-muted`, descriptionClass, itemClasses?.description)}
+                  class={twMerge(`${title ? 'mt-3' : ''} text-muted user-content`, descriptionClass, itemClasses?.description)}
+                  data-user-content
+                  translate="yes"
                   set:html={description}
                 />
               )}
               {callToAction && (
-                <div class={twMerge(`${title || description ? 'mt-3' : ''}`, actionClass, itemClasses?.actionClass)}>
+                <div class={twMerge(`${title || description ? 'mt-3' : ''} notranslate`, actionClass, itemClasses?.actionClass)} translate="no">
                   <Button variant="link" {...callToAction} />
                 </div>
               )}

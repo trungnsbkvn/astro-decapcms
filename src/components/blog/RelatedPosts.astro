@@ -19,11 +19,13 @@ const relatedPosts = post.tags ? await getRelatedPosts(type, post, 4) : [];
     <BlogHighlightedPosts
       classes={{
         container:
-          'pt-0 lg:pt-0 md:pt-0 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
+          'pt-0 lg:pt-0 md:pt-0 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade notranslate',
       }}
       type={type}
       title="Bài viết liên quan"
+      titleI18nKey="common.relatedPosts"
       linkText="Xem tất cả"
+      linkI18nKey="common.viewAll"
       linkUrl={getBlogPermalink(type)}
       postIds={relatedPosts.map((post) => post.id)}
     />

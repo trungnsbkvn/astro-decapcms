@@ -8,18 +8,18 @@ const title = `Lỗi 404 (Không tìm thấy trang yêu cầu)`;
 ---
 
 <Layout metadata={{ title }}>
-  <section class="flex items-center h-full p-16">
+  <section class="flex items-center h-full p-16 notranslate" translate="no">
     <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
       <div class="max-w-md text-center">
         <h2 class="mb-8 font-bold text-9xl">
-          <span class="sr-only">Không tìm thấy trang bạn yêu cầu</span>
+          <span class="sr-only" data-i18n="error.notFound">Không tìm thấy trang bạn yêu cầu</span>
           <span class="text-primary">404</span>
         </h2>
-        <p class="text-3xl font-semibold md:text-3xl">Xin lỗi, chúng tôi không thể tìm thấy trang này.</p>
-        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
+        <p class="text-3xl font-semibold md:text-3xl" data-i18n="error.pageNotFound">Xin lỗi, chúng tôi không thể tìm thấy trang này.</p>
+        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400" data-i18n="error.redirectMessage">
           Nhưng đừng lo, bạn có thể tìm thấy nhiều thông tin khác trên trang chủ của chúng tôi.
         </p>
-        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Trở về trang chủ</a>
+        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4" data-i18n="error.backToHome">Trở về trang chủ</a>
       </div>
     </div>
   </section>

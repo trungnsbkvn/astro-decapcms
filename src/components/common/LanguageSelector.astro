@@ -95,85 +95,243 @@ const langDisplayMap: Record<string, string> = {
 const textToKeyMap: Record<string, string> = {
   // Company info
   'Công ty Luật TNHH Youth & Partners': 'company.legalName',
+  'Công ty Luật TNHH': 'company.legalPrefix',
   'Youth & Partners': 'company.name',
-  'Luật sư Nguyễn Văn Thành': 'company.director',
-  // Navigation
+  'Luật sư Nguyễn Văn Thành': 'company.directorName',
+  'Giám đốc, người đại diện theo pháp luật:': 'company.director',
+  'Hotline': 'company.hotline',
+  'Trụ sở': 'company.headquarters',
+  'Hà Nội: P316, Tháp Tây, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội.': 'company.addressHanoi',
+  'Bắc Ninh: Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc, tỉnh Bắc Ninh.': 'company.addressBacNinh',
+  'Phú Thọ: Số 170, đường Nguyễn Văn Linh, phường Vĩnh Phúc, tỉnh Phú Thọ.': 'company.addressPhuTho',
+  
+  // Navigation main
   'Trang chủ': 'nav.home',
   'Giới thiệu': 'nav.about',
   'Dịch vụ': 'nav.services',
+  'Tin tức': 'nav.news',
+  'Liên hệ': 'nav.contact',
+  'Tìm kiếm': 'nav.search',
   'Pháp lý': 'nav.legal',
   'Tư vấn thường xuyên': 'nav.consultation',
   'Lao động': 'nav.labor',
   'Đầu tư nước ngoài': 'nav.investment',
   'Dịch vụ đánh giá': 'nav.evaluation',
-  'Tin tức': 'nav.news',
-  'Liên hệ': 'nav.contact',
-  'Tìm kiếm': 'nav.search',
+  
   // About section
   'Lịch sử thành lập': 'about.history',
   'Luật sư và cộng sự': 'about.lawyers',
+  'Luật sư và Cộng sự': 'about.lawyers',
   'Giải thưởng pháp lý': 'about.awards',
   'Cảm nhận khách hàng': 'about.testimonials',
   'Tôn chỉ hoạt động': 'about.principles',
   'Hồ sơ năng lực': 'about.capabilities',
-  // Legal services
+  'Tầm nhìn - sứ mệnh': 'about.vision',
+  'Sự kiện nội bộ': 'about.internalEvents',
+  'Bảo vệ dữ liệu cá nhân': 'about.dataProtection',
+  'Về chúng tôi': 'about.aboutUs',
+  
+  // Legal services menu
+  'Pháp lý thành lập Doanh nghiệp': 'legal.enterprise',
   'Doanh nghiệp': 'legal.enterprise',
-  'Hợp đồng': 'legal.contract',
+  'Kinh doanh thương mại': 'legal.commercial',
+  'Hợp đồng dân sự, thương mại': 'legal.contract',
   'Đất đai': 'legal.land',
   'Hôn nhân gia đình': 'legal.marriage',
-  'Thừa kế': 'legal.inheritance',
+  'Hôn nhân và gia đình': 'legal.marriage',
+  'Thừa kế, di chúc': 'legal.inheritance',
   'Sở hữu trí tuệ': 'legal.intellectual',
-  'Giấy phép': 'legal.license',
-  'Tranh tụng': 'legal.litigation',
-  // Labor
-  'Hợp đồng lao động': 'labor.contract',
-  'Bảo hiểm xã hội': 'labor.insurance',
-  'An toàn lao động': 'labor.safety',
-  'Nội quy lao động': 'labor.regulation',
-  'Tranh chấp lao động': 'labor.dispute',
-  'Giấy phép lao động': 'labor.permit',
-  // Investment
-  'Thành lập công ty': 'investment.establish',
-  'Giấy phép đầu tư': 'investment.license',
-  'Đăng ký đầu tư': 'investment.registration',
-  'Ưu đãi đầu tư': 'investment.incentives',
-  'M&A': 'investment.ma',
-  'Thoái vốn': 'investment.divestment',
-  // Evaluation
-  'Đánh giá RBA': 'evaluation.rba',
-  'Đánh giá SMETA': 'evaluation.smeta',
-  'Đánh giá SA8000': 'evaluation.sa8000',
-  'Đánh giá BSCI': 'evaluation.bsci',
-  'Tư vấn tuân thủ': 'evaluation.compliance',
-  // Footer
-  'Giám đốc, người đại diện theo pháp luật:': 'footer.director',
+  'Giấy phép kinh doanh': 'legal.license',
+  'Giấy phép con': 'legal.subLicense',
+  'Dân sự': 'legal.civil',
+  'Hình sự': 'legal.criminal',
+  'Tranh tụng, tố tụng': 'legal.litigation',
+  'Pháp lý khác': 'legal.other',
+  
+  // Consultation services
+  'Tư vấn pháp luật thường xuyên': 'consultation.regular',
+  'Dịch vụ luật sư riêng': 'consultation.privateLawyer',
+  'Khái niệm Tư vấn thường xuyên': 'consultation.concept',
+  'Vì sao doanh nghiệp cần tư vấn thường xuyên': 'consultation.whyNeeded',
+  'Mẫu hợp đồng dịch vụ': 'consultation.contractTemplate',
+  'Phí dịch vụ tư vấn': 'consultation.serviceFee',
+  'Quy trình tư vấn': 'consultation.process',
+  'Điểm mạnh của Youth & Partners': 'consultation.strengths',
+  'Pháp lý tư vấn thường xuyên khác': 'consultation.other',
+  
+  // Labor services menu
+  'Nội quy lao động - Thỏa ước': 'labor.regulations',
+  'Nội quy - Thỏa ước': 'labor.regulations',
+  'Thời giờ làm việc': 'labor.workingHours',
+  'Tiền lương & Phúc lợi': 'labor.salary',
+  'Lương & Phúc lợi': 'labor.salary',
+  'Hợp đồng lao động, đào tạo': 'labor.contracts',
+  'Chấm dứt hợp đồng': 'labor.termination',
+  'Xử lý kỷ luật': 'labor.discipline',
+  'Quấy rối tình dục': 'labor.harassment',
+  'Tranh chấp lao động': 'labor.disputes',
+  'Pháp luật lao động khác': 'labor.other',
+  'Pháp lý lao động khác': 'labor.other',
+  
+  // Investment services menu
+  'Thành lập mới dự án': 'investment.newProjects',
+  'Điều chỉnh dự án đầu tư': 'investment.projectAdjustment',
+  'Chuyển nhượng dự án': 'investment.transfer',
+  'Hiện diện thương mại': 'investment.presence',
+  'Luật sư tư vấn tiếng Anh': 'investment.englishLawyer',
+  'Luật sư tư vấn tiếng Nhật': 'investment.japaneseLawyer',
+  'Luật sư tư vấn tiếng Trung Quốc': 'investment.chineseLawyer',
+  'Giấy phép lao động': 'investment.workPermit',
+  'Pháp lý người nước ngoài': 'investment.foreignerLaw',
+  
+  // Evaluation services menu
+  'Khái niệm đánh giá': 'evaluation.concept',
+  'Lợi ích đánh giá': 'evaluation.benefits',
+  'Lợi ích của việc đánh giá': 'evaluation.benefits',
+  'Phí dịch vụ đánh giá': 'evaluation.pricing',
+  'Quy trình đánh giá': 'evaluation.process',
+  'Dịch vụ đánh giá cho doanh nghiệp': 'evaluation.business',
+  'Dịch vụ Đánh giá cho Doanh nghiệp': 'evaluation.business',
+  'Dịch vụ đánh giá trước kiểm toán': 'evaluation.preAudit',
+  'Dịch vụ đánh giá tiền trạm': 'evaluation.preAudit',
+  'Tiêu chuẩn xã hội': 'evaluation.standards',
+  'Các bộ tiêu chuẩn TNXH': 'evaluation.standards',
+  'Tiêu chuẩn RBA': 'evaluation.rba',
+  'Những sai sót thường gặp của DN': 'evaluation.mistakes',
+  'Các lỗi thường gặp của doanh nghiệp': 'evaluation.mistakes',
+  
+  // News categories
+  'Tin tức pháp lý': 'news.legal',
+  'Bình luận pháp lý': 'news.commentary',
+  'Các vụ việc nổi bật': 'news.highlights',
+  'Hội thảo pháp lý': 'news.seminars',
+  'Văn bản pháp lý': 'news.documents',
+  'Liên hệ tư vấn': 'news.contact',
+  'Thông tin tuyển dụng': 'news.recruitment',
+  'Tin tức - Liên hệ': 'news.newsAndContact',
+  'Đầu tư & Nước ngoài': 'nav.investmentAndForeign',
+  
+  // Lawyer locations
+  'Luật sư Hà Nội': 'news.lawyerHanoi',
+  'Luật sư Phú Thọ': 'news.lawyerPhuTho',
+  'Luật sư Bắc Ninh': 'news.lawyerBacNinh',
+  'Luật sư Bắc Giang': 'news.lawyerBacGiang',
+  'Luật sư Hải Phòng': 'news.lawyerHaiPhong',
+  'Luật sư Hưng Yên': 'news.lawyerHungYen',
+  'Luật sư Ninh Bình': 'news.lawyerNinhBinh',
+  'Luật sư Tuyên Quang': 'news.lawyerTuyenQuang',
+  'Luật sư Thái Nguyên': 'news.lawyerThaiNguyen',
+  
+  // Footer sections
+  'Điều khoản chung': 'footer.terms',
+  'Chính sách Bảo vệ dữ liệu': 'footer.privacy',
   'Chính sách bảo mật': 'footer.privacy',
   'Điều khoản sử dụng': 'footer.terms',
-  // Common
+  'Dịch vụ của Y&P': 'footer.servicesYP',
+  'Đầu tư và Người nước ngoài': 'footer.investmentForeign',
+
+  // Common UI elements
+  'Đọc thêm': 'common.readMore',
   'Xem thêm': 'common.readMore',
   'Tìm hiểu thêm': 'common.learnMore',
-  'Liên hệ ngay': 'common.contactNow',
-  'Tư vấn miễn phí': 'common.freeConsult',
-  'Gọi ngay': 'common.callNow',
-  'Gửi': 'common.send',
-  'Đang tải...': 'common.loading',
+  'Liên hệ chúng tôi': 'common.contactUs',
+  'Nhận báo giá': 'common.getQuote',
+  'Gửi': 'common.submit',
+  'Hủy': 'common.cancel',
   'Đóng': 'common.close',
-  'Quay lại': 'common.back',
-  'Tiếp theo': 'common.next',
-  'Trước': 'common.prev',
+  'Đang tải...': 'common.loading',
+  'Lỗi': 'common.error',
+  'Thành công': 'common.success',
+  'Cảnh báo': 'common.warning',
+  'Thông tin': 'common.info',
+  'Tìm kiếm...': 'common.search',
+  'Không tìm thấy kết quả': 'common.noResults',
+  'Về đầu trang': 'common.backToTop',
   'Chia sẻ': 'common.share',
-  'Bài viết liên quan': 'common.relatedPosts',
+  'Share:': 'common.share',
+  'In': 'common.print',
+  'Tải xuống': 'common.download',
   'Xem tất cả': 'common.viewAll',
-  // Post
+  'Trở về chuyên trang': 'common.backToPage',
+  'Bài viết liên quan': 'common.relatedPosts',
+  'Bài mới hơn': 'common.newerPosts',
+  'Bài cũ hơn': 'common.olderPosts',
+  'Mục lục': 'common.tableOfContents',
+  'Gửi thông tin': 'common.sendInfo',
+  'Liên hệ để được tư vấn': 'common.contactForConsult',
+  'Tổng cộng': 'common.totalPosts',
+  'bài viết': 'common.posts',
+  
+  // Post/Blog labels
   'Tác giả:': 'post.author',
   'Tham vấn bởi:': 'post.reviewedBy',
   'phút đọc': 'post.readingTime',
-  // Contact form
+  'Ngày đăng': 'post.publishDate',
+  'Cập nhật': 'post.updateDate',
+  'Danh mục': 'post.category',
+  'Thẻ': 'post.tags',
+  
+  // Contact page
+  'Liên hệ với chúng tôi!': 'contact.title',
+  'Hãy để lại thông tin bên dưới': 'contact.subtitle',
+  'Đội ngũ hỗ trợ của chúng tôi luôn sẵn lòng giúp đỡ bạn.': 'contact.description',
+  'Đội ngũ hỗ trợ của chúng tôi thường phản hồi trong vòng 24 giờ làm việc.': 'contact.responseTime',
+  'Hỗ trợ chung': 'contact.generalSupport',
+  'Liên hệ với chúng tôi để được hỗ trợ về các vấn đề pháp lý chung.': 'contact.generalDesc',
+  'Liên hệ bộ phận tư vấn': 'contact.consultDept',
+  'Trò chuyện với chúng tôi để giải đáp các câu hỏi về dịch vụ tư vấn pháp lý.': 'contact.consultDesc',
+  'Hỗ trợ kỹ thuật': 'contact.techSupport',
+  'Liên hệ với chúng tôi khi bạn gặp vấn đề kỹ thuật.': 'contact.techDesc',
+  'Chúng tôi luôn sẵn sàng hỗ trợ bạn!': 'contact.readyToHelp',
+  
+  // Forms
+  'Họ tên': 'forms.name',
   'Họ và tên': 'forms.name',
   'Số điện thoại': 'forms.phone',
-  'Email': 'forms.email',
+  'Nội dung tin nhắn': 'forms.message',
   'Nội dung': 'forms.message',
-  'Gửi yêu cầu': 'forms.submit',
+  'Tiêu đề': 'forms.subject',
+  'Công ty': 'forms.company',
+  'Chức vụ': 'forms.position',
+  'Bắt buộc': 'forms.required',
+  'Tùy chọn': 'forms.optional',
+  'Gửi tin nhắn': 'forms.sendMessage',
+  'Gửi yêu cầu': 'forms.sendMessage',
+  'Đang gửi...': 'forms.sending',
+  'Đã gửi thành công!': 'forms.sent',
+  
+  // Language selector
+  'Chọn ngôn ngữ': 'language.selectLanguage',
+  'Ngôn ngữ hiện tại': 'language.currentLanguage',
+  
+  // Error pages
+  'Không tìm thấy trang bạn yêu cầu': 'error.notFound',
+  'Xin lỗi, chúng tôi không thể tìm thấy trang này.': 'error.pageNotFound',
+  'Nhưng đừng lo, bạn có thể tìm thấy nhiều thông tin khác trên trang chủ của chúng tôi.': 'error.redirectMessage',
+  'Trở về trang chủ': 'error.backToHome',
+  
+  // About/Motto
+  'Phương châm hoạt động:': 'about.motto',
+  'Thời Gian – Tận Tâm – Tận Lực': 'about.mottoText',
+  
+  // Search
+  'Tìm kiếm bài viết...': 'search.placeholder',
+  'Nhập từ khóa để tìm kiếm...': 'search.enterKeyword',
+  
+  // Author pages
+  'Liên hệ với tác giả': 'contact.contactAuthor',
+  
+  // Homepage sections
+  'Tin mới nhất': 'news.latest',
+  'Cảm nhận của khách hàng': 'about.testimonials',
+  'Đối tác và khách hàng của chúng tôi': 'company.partners',
+  'Tôn chỉ hoạt động của chúng tôi': 'about.principles',
+  'Liên hệ để được tư vấn ngay': 'contact.consultNow',
+  'Liên hệ ngay': 'common.contactNow',
+  'Theo dõi chúng tôi': 'common.followUs',
+  'Chuyên viên pháp lý': 'common.legalStaff',
+  'Khách hàng hài lòng': 'common.satisfiedClients',
+  'Vụ thắng kiện': 'common.casesWon',
 };
 
 function getSavedLang(): string {
@@ -254,6 +412,39 @@ function applyTranslations(lang: string): void {
     document.documentElement.classList.remove('i18n-loading');
     return;
   }
+
+  // First, translate all elements with data-i18n attributes
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (key) {
+      const translation = getTranslation(lang, key);
+      if (translation) {
+        // Check if the element has child elements (like icons)
+        const hasChildElements = el.querySelector('*');
+        if (hasChildElements) {
+          // Only update direct text nodes
+          Array.from(el.childNodes).forEach(node => {
+            if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
+              node.textContent = translation;
+            }
+          });
+        } else {
+          el.textContent = translation;
+        }
+      }
+    }
+  });
+
+  // Translate placeholder attributes
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (key) {
+      const translation = getTranslation(lang, key);
+      if (translation) {
+        el.setAttribute('placeholder', translation);
+      }
+    }
+  });
 
   // Translate header
   const header = document.querySelector('header');

@@ -50,7 +50,7 @@ const relatedPosts = posts.map((post) => {
 {
   APP_BLOG.isEnabled ? (
     <WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container as string} bg={bg}>
-      <div class="flex flex-col lg:justify-between lg:flex-row mb-8">
+      <div class="flex flex-col lg:justify-between lg:flex-row mb-8 notranslate" translate="no">
         {title && (
           <div class="md:max-w-sm">
             <h2
@@ -59,7 +59,7 @@ const relatedPosts = posts.map((post) => {
             />
             {totalPosts > 0 && (
               <p class="text-sm text-muted dark:text-slate-500">
-                Tổng cộng {totalPosts} bài viết
+                <span data-i18n="common.totalPosts">Tổng cộng</span> {totalPosts} <span data-i18n="common.posts">bài viết</span>
               </p>
             )}
           </div>
@@ -71,12 +71,12 @@ const relatedPosts = posts.map((post) => {
       <Grid posts={relatedPosts} />
       
       {totalPosts > 0 && authorSlug && (
-        <div class="mt-10 text-center">
+        <div class="mt-10 text-center notranslate" translate="no">
           <a 
             href={`/tac-gia/${authorSlug}/bai-viet`}
             class="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-white bg-primary hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-500 rounded-full shadow-md hover:shadow-lg transition-all duration-300 group"
           >
-            <span>Xem tất cả {totalPosts} bài viết</span>
+            <span><span data-i18n="common.viewAllPosts">Xem tất cả</span> {totalPosts} <span data-i18n="common.posts">bài viết</span></span>
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" 

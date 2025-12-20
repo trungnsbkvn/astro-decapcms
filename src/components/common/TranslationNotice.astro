@@ -17,15 +17,16 @@ const { class: className = '', autoDismissSeconds = 3 } = Astro.props;
 <div
   id="translation-notice"
   class:list={[
-    'translation-notice fixed bottom-0 left-0 right-0 z-[99999] hidden transform translate-y-full transition-transform duration-300',
+    'translation-notice fixed bottom-0 left-0 right-0 z-[99999] hidden transform translate-y-full transition-transform duration-300 notranslate',
     className
   ]}
+  translate="no"
   data-auto-dismiss={autoDismissSeconds}
 >
   <div class="bg-white dark:bg-gray-800 px-4 py-3 shadow-[0_-2px_10px_rgba(0,0,0,0.1)] border-t border-gray-200 dark:border-gray-700">
     <div class="flex items-center justify-center gap-3 flex-wrap sm:flex-nowrap">
       <Icon name="tabler:language" class="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0" />
-      <p class="text-sm text-gray-700 dark:text-gray-200 font-medium text-center sm:text-left flex-1">
+      <p class="text-sm text-gray-700 dark:text-gray-200 font-medium text-center sm:text-left flex-1" data-i18n="common.translationNotice">
         Google Translate: Nội dung được dịch tự động. Để tư vấn pháp lý chính xác, vui lòng liên hệ trực tiếp.
       </p>
       <button
