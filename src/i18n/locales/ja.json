@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "about": "会社概要",
+    "services": "サービス",
+    "legal": "法律",
+    "consultation": "定期相談",
+    "labor": "労働",
+    "investment": "投資・外国人",
+    "evaluation": "評価サービス",
+    "news": "ニュース",
+    "contact": "お問い合わせ",
+    "search": "検索",
+    "toggleMenu": "メニューの切り替え",
+    "toggleTheme": "テーマの切り替え",
+    "rssFeed": "RSSフィード"
+  },
+  "about": {
+    "history": "設立履歴",
+    "lawyers": "弁護士およびパートナー",
+    "awards": "法律賞",
+    "testimonials": "クライアントの声",
+    "principles": "運営理念",
+    "capabilities": "能力プロフィール",
+    "vision": "ビジョン - ミッション",
+    "events": "内部イベント",
+    "privacy": "データプライバシー保護"
+  },
+  "legal": {
+    "business": "企業",
+    "commerce": "商業貿易",
+    "ip": "知的財産",
+    "land": "土地",
+    "family": "婚姻と家族",
+    "adoption": "養子縁組許可",
+    "civil": "民事",
+    "criminal": "刑事",
+    "other": "その他の法律"
+  },
+  "labor": {
+    "regulations": "内部規則 - 団体協約",
+    "workingHours": "労働時間",
+    "salary": "給与と福利",
+    "contracts": "労働契約、研修",
+    "termination": "契約終了",
+    "discipline": "懲戒処分",
+    "harassment": "セクハラ",
+    "disputes": "労働争議",
+    "other": "その他の労働法律"
+  },
+  "investment": {
+    "newProjects": "新規プロジェクト設立",
+    "projectAdjustment": "投資プロジェクト調整",
+    "transfer": "プロジェクト譲渡",
+    "presence": "商業プレゼンス",
+    "englishLawyer": "英語弁護士",
+    "japaneseLawyer": "日本語弁護士",
+    "chineseLawyer": "中国語弁護士",
+    "workPermit": "労働許可",
+    "foreignerLaw": "外国人法律"
+  },
+  "evaluation": {
+    "concept": "評価の概念",
+    "benefits": "評価の利点",
+    "pricing": "評価サービス料金",
+    "process": "評価プロセス",
+    "business": "企業評価サービス",
+    "preAudit": "事前監査評価サービス",
+    "standards": "社会基準",
+    "rba": "RBA基準",
+    "mistakes": "企業のよくある間違い"
+  },
+  "news": {
+    "legal": "法律ニュース",
+    "commentary": "法律解説",
+    "highlights": "注目案件",
+    "seminars": "法律セミナー",
+    "documents": "法律文書",
+    "contact": "相談連絡",
+    "recruitment": "採用情報"
+  },
+  "footer": {
+    "about": "会社概要",
+    "services": "サービス",
+    "news": "ニュース",
+    "contact": "お問い合わせ",
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "copyright": "著作権 © {{year}} Youth & Partners法律事務所 · 全著作権所有。"
+  },
+  "common": {
+    "readMore": "もっと読む",
+    "learnMore": "詳細を見る",
+    "contactUs": "お問い合わせ",
+    "getQuote": "見積もりを取得",
+    "submit": "送信",
+    "cancel": "キャンセル",
+    "close": "閉じる",
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "success": "成功",
+    "warning": "警告",
+    "info": "情報",
+    "search": "検索...",
+    "noResults": "結果が見つかりません",
+    "backToTop": "トップに戻る",
+    "share": "共有",
+    "print": "印刷",
+    "download": "ダウンロード"
+  },
+  "forms": {
+    "name": "氏名",
+    "email": "メールアドレス",
+    "phone": "電話番号",
+    "message": "メッセージ内容",
+    "subject": "件名",
+    "company": "会社",
+    "position": "役職",
+    "required": "必須",
+    "optional": "任意",
+    "sendMessage": "メッセージを送信",
+    "sending": "送信中...",
+    "sent": "メッセージが正常に送信されました！",
+    "error": "エラーが発生しました。もう一度お試しください。"
+  },
+  "language": {
+    "selectLanguage": "言語を選択",
+    "currentLanguage": "現在の言語",
+    "switchTo": "{{language}}に切り替え"
+  },
+  "meta": {
+    "title": "Youth & Partners法律事務所 - 企業の仲間",
+    "description": "Youth & Partners法律事務所は、以下の分野で一流の法律事務所の一つです：企業の定期的な法的相談/外部委託法務部サービス；労働争議の相談と解決；日本語、英語、中国語、韓国語の弁護士サービス；企業の監査、評価、法的評価サービス。"
+  }
+}

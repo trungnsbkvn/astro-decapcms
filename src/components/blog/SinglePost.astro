@@ -103,8 +103,8 @@ const ratingStructuredData = post.rating
               <>
                 &nbsp;{'·'}&nbsp;
                 <Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-                Tác giả:
-                <a class="inline-block" href={getAuthorPermalink(post.author)}>
+                <span class="notranslate" translate="no">Tác giả:</span>
+                <a class="inline-block user-content" data-user-content translate="yes" href={getAuthorPermalink(post.author)}>
                   <b>{post.author}</b>
                 </a>
               </>
@@ -115,8 +115,8 @@ const ratingStructuredData = post.rating
               <>
                 &nbsp;{'·'}&nbsp;
                 <Icon name="tabler:user-check" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-                Tham vấn bởi:
-                <a class="inline-block" href={getAuthorPermalink('Luật sư Nguyễn Văn Thành')}>
+                <span class="notranslate" translate="no">Tham vấn bởi:</span>
+                <a class="inline-block user-content" data-user-content translate="yes" href={getAuthorPermalink('Luật sư Nguyễn Văn Thành')}>
                   <b>{'Luật sư Nguyễn Văn Thành'}</b>
                 </a>
               </>
@@ -126,7 +126,7 @@ const ratingStructuredData = post.rating
             post.category && (
               <>
                 &nbsp;{'·'}&nbsp;
-                <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category', type)}>
+                <a class="hover:underline inline-block user-content" data-user-content translate="yes" href={getPermalink(post.category.slug, 'category', type)}>
                   {post.category.title}
                 </a>
               </>
@@ -136,7 +136,7 @@ const ratingStructuredData = post.rating
             post.readingTime && (
               <>
                 &nbsp;{'·'}&nbsp;
-                <span>{post.readingTime}</span> phút đọc
+                <span>{post.readingTime}</span> <span class="notranslate" translate="no">phút đọc</span>
               </>
             )
           }
@@ -144,11 +144,13 @@ const ratingStructuredData = post.rating
       </div>
 
       <h1
-        class="text-center md:pb-2.5 font-semibold mt-2 mx-auto text-4xl md:text-4xl leading-tighter tracking-tighter font-heading"
+        class="text-center md:pb-2.5 font-semibold mt-2 mx-auto text-4xl md:text-4xl leading-tighter tracking-tighter font-heading user-content"
+        data-user-content
+        translate="yes"
       >
         {post.title}
       </h1>
-      <p class="mx-auto mt-4 mb-8 text-lg md:text-lg text-muted dark:text-slate-400 text-justify">
+      <p class="mx-auto mt-4 mb-8 text-lg md:text-lg text-muted dark:text-slate-400 text-justify user-content" data-user-content translate="yes">
         {post.excerpt}
       </p>
       <div class="grid grid-cols-1 md:grid-cols-[20%_auto] gap-10 mt-8">
@@ -201,7 +203,7 @@ const ratingStructuredData = post.rating
         </div>
       </aside>
       <!-- post -->
-      <article class="max-w-full w-full">
+      <article class="max-w-full w-full user-content" data-user-content translate="yes">
         <div
           class="mx-auto min-w-full prose prose-md dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:mt-0 prose-headings:mb-4 prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-semibold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg prose-img:min-w-full prose-img:mb-0 prose-headings:scroll-mt-[90px] prose-li:my-0 text-justify"
         >

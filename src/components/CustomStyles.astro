@@ -66,4 +66,55 @@ import '@fontsource-variable/inter';
       color: snow;
     }
   }
+
+  /* Google Translate Integration Styles */
+  /* Hide Google Translate banner and branding */
+  .goog-te-banner-frame {
+    display: none !important;
+  }
+
+  .goog-te-gadget {
+    font-size: 0 !important;
+  }
+
+  .goog-te-gadget .goog-te-combo {
+    margin: 0 !important;
+  }
+
+  .goog-te-menu-value span:first-child {
+    display: none;
+  }
+
+  .goog-te-menu-value:before {
+    content: '' !important;
+  }
+
+  /* Hide Google Translate footer */
+  .goog-te-gadget-icon {
+    display: none !important;
+  }
+
+  /* Ensure notranslate elements are protected from translation */
+  .notranslate {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  [translate="no"] {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* User content styling for Google Translate */
+  .user-content {
+    /* Allow Google Translate to work on these elements */
+  }
+
+  [data-user-content] {
+    /* Allow Google Translate to work on these elements */
+  }
 </style>

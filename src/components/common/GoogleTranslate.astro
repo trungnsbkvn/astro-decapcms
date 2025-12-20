@@ -1,0 +1,91 @@
+---
+// Google Translate Integration Component
+// Only loads for non-default languages
+// This component is optional - the LanguageSelector handles Google Translate loading
+---
+
+<div id="google_translate_element" class="hidden"></div>
+
+<script is:inline>
+  // Determine if Google Translate should be loaded based on stored preference
+  document.addEventListener('DOMContentLoaded', () => {
+    const preferredLocale = localStorage.getItem('preferredLocale');
+    
+    // Only load if a non-default language is preferred
+    if (preferredLocale && preferredLocale !== 'vi') {
+      // Load Google Translate script
+      const script = document.createElement('script');
+      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.async = true;
+      document.head.appendChild(script);
+
+      // Initialize Google Translate
+      window.googleTranslateElementInit = function() {
+        try {
+          new google.translate.TranslateElement({
+            pageLanguage: 'vi',
+            includedLanguages: 'en,zh-CN,ja,ko',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+          }, 'google_translate_element');
+
+          // Hide the Google Translate widget completely
+          const widget = document.getElementById('google_translate_element');
+          if (widget) {
+            widget.style.display = 'none';
+          }
+        } catch (e) {
+          console.warn('Google Translate initialization failed:', e);
+        }
+      };
+    }
+  });
+</script>
+
+<style>
+  /* Hide Google Translate banner and branding */
+  :global(.goog-te-banner-frame) {
+    display: none !important;
+  }
+
+  :global(.goog-te-gadget) {
+    font-size: 0 !important;
+  }
+
+  :global(.goog-te-gadget .goog-te-combo) {
+    margin: 0 !important;
+  }
+
+  :global(.goog-te-menu-value span:first-child) {
+    display: none;
+  }
+
+  :global(.goog-te-menu-value:before) {
+    content: '' !important;
+  }
+
+  /* Hide Google Translate footer */
+  :global(.goog-te-gadget-icon) {
+    display: none !important;
+  }
+
+  /* Ensure notranslate elements are protected */
+  :global(.notranslate) {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  :global([translate="no"]) {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Prevent translation overlay */
+  :global(.goog-te-floating-shelf) {
+    display: none !important;
+  }
+</style>

@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "home": "홈",
+    "about": "회사 소개",
+    "services": "서비스",
+    "legal": "법률",
+    "consultation": "정기 상담",
+    "labor": "노동",
+    "investment": "투자 및 외국인",
+    "evaluation": "평가 서비스",
+    "news": "뉴스",
+    "contact": "연락처",
+    "search": "검색",
+    "toggleMenu": "메뉴 전환",
+    "toggleTheme": "테마 전환",
+    "rssFeed": "RSS 피드"
+  },
+  "about": {
+    "history": "설립 역사",
+    "lawyers": "변호사 및 동업자",
+    "awards": "법률 상",
+    "testimonials": "고객 후기",
+    "principles": "운영 원칙",
+    "capabilities": "능력 프로필",
+    "vision": "비전 - 사명",
+    "events": "내부 이벤트",
+    "privacy": "데이터 개인정보 보호"
+  },
+  "legal": {
+    "business": "기업",
+    "commerce": "상업 무역",
+    "ip": "지적 재산",
+    "land": "토지",
+    "family": "결혼 및 가족",
+    "adoption": "입양 허가",
+    "civil": "민사",
+    "criminal": "형사",
+    "other": "기타 법률"
+  },
+  "labor": {
+    "regulations": "내부 규정 - 단체 협약",
+    "workingHours": "근로 시간",
+    "salary": "급여 및 복리",
+    "contracts": "노동 계약, 교육",
+    "termination": "계약 종료",
+    "discipline": "징계 처리",
+    "harassment": "성희롱",
+    "disputes": "노동 분쟁",
+    "other": "기타 노동 법률"
+  },
+  "investment": {
+    "newProjects": "신규 프로젝트 설립",
+    "projectAdjustment": "투자 프로젝트 조정",
+    "transfer": "프로젝트 양도",
+    "presence": "상업적 존재",
+    "englishLawyer": "영어 변호사",
+    "japaneseLawyer": "일본어 변호사",
+    "chineseLawyer": "중국어 변호사",
+    "workPermit": "근로 허가",
+    "foreignerLaw": "외국인 법률"
+  },
+  "evaluation": {
+    "concept": "평가 개념",
+    "benefits": "평가의 이점",
+    "pricing": "평가 서비스 요금",
+    "process": "평가 프로세스",
+    "business": "기업 평가 서비스",
+    "preAudit": "사전 감사 평가 서비스",
+    "standards": "사회 기준",
+    "rba": "RBA 기준",
+    "mistakes": "기업의 흔한 실수"
+  },
+  "news": {
+    "legal": "법률 뉴스",
+    "commentary": "법률 해설",
+    "highlights": "주목 사례",
+    "seminars": "법률 세미나",
+    "documents": "법률 문서",
+    "contact": "상담 연락",
+    "recruitment": "채용 정보"
+  },
+  "footer": {
+    "about": "회사 소개",
+    "services": "서비스",
+    "news": "뉴스",
+    "contact": "연락처",
+    "terms": "서비스 약관",
+    "privacy": "개인정보 보호정책",
+    "copyright": "저작권 © {{year}} Youth & Partners 법률사무소 · 모든 권리 보유。"
+  },
+  "common": {
+    "readMore": "더 읽기",
+    "learnMore": "더 알아보기",
+    "contactUs": "문의하기",
+    "getQuote": "견적 받기",
+    "submit": "제출",
+    "cancel": "취소",
+    "close": "닫기",
+    "loading": "로딩 중...",
+    "error": "오류",
+    "success": "성공",
+    "warning": "경고",
+    "info": "정보",
+    "search": "검색...",
+    "noResults": "결과를 찾을 수 없습니다",
+    "backToTop": "맨 위로",
+    "share": "공유",
+    "print": "인쇄",
+    "download": "다운로드"
+  },
+  "forms": {
+    "name": "이름",
+    "email": "이메일",
+    "phone": "전화번호",
+    "message": "메시지 내용",
+    "subject": "제목",
+    "company": "회사",
+    "position": "직위",
+    "required": "필수",
+    "optional": "선택",
+    "sendMessage": "메시지 보내기",
+    "sending": "보내는 중...",
+    "sent": "메시지가 성공적으로 전송되었습니다!",
+    "error": "오류가 발생했습니다. 다시 시도해 주세요."
+  },
+  "language": {
+    "selectLanguage": "언어 선택",
+    "currentLanguage": "현재 언어",
+    "switchTo": "{{language}}로 전환"
+  },
+  "meta": {
+    "title": "Youth & Partners 법률사무소 - 기업의 동반자",
+    "description": "Youth & Partners 법률사무소는 다음과 같은 분야에서 선두 법률사무소 중 하나입니다: 기업 정기 법률 상담 / 외주 법무 부서 서비스; 노동 분쟁 상담 및 해결; 일본어, 영어, 중국어, 한국어 변호사 서비스; 기업 감사, 평가 및 법률 평가 서비스."
+  }
+}

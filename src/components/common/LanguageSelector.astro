@@ -1,0 +1,405 @@
+---
+/**
+ * Language Selector Component - Hybrid Translation System
+ * - i18n for UI elements (menu, footer, breadcrumbs) - Professional translations
+ * - Google Translate ONLY for user content (posts, news, FAQ)
+ * - Uses localStorage for consistent language preference
+ * - Zero performance cost for Vietnamese (default) users
+ */
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  class?: string;
+  compact?: boolean;
+}
+
+const { class: className = '', compact = false } = Astro.props;
+
+const languages = [
+  { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳', gtCode: 'vi' },
+  { code: 'en', name: 'English', flag: '🇬🇧', gtCode: 'en' },
+  { code: 'zh', name: '中文', flag: '🇨🇳', gtCode: 'zh-CN' },
+  { code: 'ja', name: '日本語', flag: '🇯🇵', gtCode: 'ja' },
+  { code: 'ko', name: '한국어', flag: '🇰🇷', gtCode: 'ko' },
+];
+---
+
+<div class:list={['language-selector relative notranslate', className]} data-language-selector translate="no">
+  <button
+    type="button"
+    class:list={[
+      'lang-toggle flex items-center gap-1.5 rounded-lg',
+      'hover:bg-gray-100 dark:hover:bg-gray-800',
+      'transition-colors duration-200',
+      'text-sm font-medium text-gray-700 dark:text-gray-300',
+      compact ? 'p-2' : 'px-3 py-2'
+    ]}
+    aria-label="Select language"
+  >
+    <Icon name="tabler:world" class="w-4 h-4" />
+    <span class="current-lang-code text-xs">VN</span>
+    <Icon name="tabler:chevron-down" class="w-3 h-3 transition-transform duration-200" />
+  </button>
+
+  <div class="lang-dropdown absolute right-0 mt-2 w-44 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible transform scale-95 transition-all duration-200 z-50" role="menu">
+    {languages.map((lang) => (
+      <button
+        type="button"
+        class="lang-option w-full flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors notranslate"
+        data-lang={lang.code}
+        data-gt-code={lang.gtCode}
+        role="menuitem"
+        translate="no"
+      >
+        <span class="text-lg leading-none">{lang.flag}</span>
+        <span class="flex-1 text-left">{lang.name}</span>
+        <Icon name="tabler:check" class="w-4 h-4 opacity-0 check-icon text-primary" />
+      </button>
+    ))}
+  </div>
+</div>
+
+<style>
+  .language-selector.open .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+  .language-selector.open .lang-toggle svg:last-child {
+    transform: rotate(180deg);
+  }
+  .lang-option.active {
+    background-color: rgb(243 244 246);
+  }
+  .lang-option.active .check-icon {
+    opacity: 1;
+  }
+  .dark .lang-option.active {
+    background-color: rgb(55 65 81);
+  }
+</style>
+
+<script>
+import { translations } from '~/i18n/translations';
+
+const LANG_KEY = 'site-language';
+const langDisplayMap: Record<string, string> = {
+  'vi': 'VN', 
+  'en': 'EN', 
+  'zh-CN': 'CN', 
+  'ja': 'JP', 
+  'ko': 'KR'
+};
+
+// Map Vietnamese text to translation keys for i18n
+const textToKeyMap: Record<string, string> = {
+  // Company info
+  'Công ty Luật TNHH Youth & Partners': 'company.legalName',
+  'Youth & Partners': 'company.name',
+  'Luật sư Nguyễn Văn Thành': 'company.director',
+  // Navigation
+  'Trang chủ': 'nav.home',
+  'Giới thiệu': 'nav.about',
+  'Dịch vụ': 'nav.services',
+  'Pháp lý': 'nav.legal',
+  'Tư vấn thường xuyên': 'nav.consultation',
+  'Lao động': 'nav.labor',
+  'Đầu tư nước ngoài': 'nav.investment',
+  'Dịch vụ đánh giá': 'nav.evaluation',
+  'Tin tức': 'nav.news',
+  'Liên hệ': 'nav.contact',
+  'Tìm kiếm': 'nav.search',
+  // About section
+  'Lịch sử thành lập': 'about.history',
+  'Luật sư và cộng sự': 'about.lawyers',
+  'Giải thưởng pháp lý': 'about.awards',
+  'Cảm nhận khách hàng': 'about.testimonials',
+  'Tôn chỉ hoạt động': 'about.principles',
+  'Hồ sơ năng lực': 'about.capabilities',
+  // Legal services
+  'Doanh nghiệp': 'legal.enterprise',
+  'Hợp đồng': 'legal.contract',
+  'Đất đai': 'legal.land',
+  'Hôn nhân gia đình': 'legal.marriage',
+  'Thừa kế': 'legal.inheritance',
+  'Sở hữu trí tuệ': 'legal.intellectual',
+  'Giấy phép': 'legal.license',
+  'Tranh tụng': 'legal.litigation',
+  // Labor
+  'Hợp đồng lao động': 'labor.contract',
+  'Bảo hiểm xã hội': 'labor.insurance',
+  'An toàn lao động': 'labor.safety',
+  'Nội quy lao động': 'labor.regulation',
+  'Tranh chấp lao động': 'labor.dispute',
+  'Giấy phép lao động': 'labor.permit',
+  // Investment
+  'Thành lập công ty': 'investment.establish',
+  'Giấy phép đầu tư': 'investment.license',
+  'Đăng ký đầu tư': 'investment.registration',
+  'Ưu đãi đầu tư': 'investment.incentives',
+  'M&A': 'investment.ma',
+  'Thoái vốn': 'investment.divestment',
+  // Evaluation
+  'Đánh giá RBA': 'evaluation.rba',
+  'Đánh giá SMETA': 'evaluation.smeta',
+  'Đánh giá SA8000': 'evaluation.sa8000',
+  'Đánh giá BSCI': 'evaluation.bsci',
+  'Tư vấn tuân thủ': 'evaluation.compliance',
+  // Footer
+  'Giám đốc, người đại diện theo pháp luật:': 'footer.director',
+  'Chính sách bảo mật': 'footer.privacy',
+  'Điều khoản sử dụng': 'footer.terms',
+  // Common
+  'Xem thêm': 'common.readMore',
+  'Tìm hiểu thêm': 'common.learnMore',
+  'Liên hệ ngay': 'common.contactNow',
+  'Tư vấn miễn phí': 'common.freeConsult',
+  'Gọi ngay': 'common.callNow',
+  'Gửi': 'common.send',
+  'Đang tải...': 'common.loading',
+  'Đóng': 'common.close',
+  'Quay lại': 'common.back',
+  'Tiếp theo': 'common.next',
+  'Trước': 'common.prev',
+  'Chia sẻ': 'common.share',
+  'Bài viết liên quan': 'common.relatedPosts',
+  'Xem tất cả': 'common.viewAll',
+  // Post
+  'Tác giả:': 'post.author',
+  'Tham vấn bởi:': 'post.reviewedBy',
+  'phút đọc': 'post.readingTime',
+  // Contact form
+  'Họ và tên': 'forms.name',
+  'Số điện thoại': 'forms.phone',
+  'Email': 'forms.email',
+  'Nội dung': 'forms.message',
+  'Gửi yêu cầu': 'forms.submit',
+};
+
+function getSavedLang(): string {
+  try {
+    return localStorage.getItem(LANG_KEY) || 'vi';
+  } catch {
+    return 'vi';
+  }
+}
+
+function saveLang(lang: string): void {
+  try {
+    localStorage.setItem(LANG_KEY, lang);
+  } catch { /* ignore */ }
+}
+
+function setGTCookie(lang: string): void {
+  // Clear existing cookies on all domains
+  document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+  document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + window.location.hostname;
+  document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.yplawfirm.vn';
+  
+  if (lang !== 'vi') {
+    const cookieValue = `/vi/${lang}`;
+    document.cookie = `googtrans=${cookieValue}; path=/; max-age=31536000`;
+    document.cookie = `googtrans=${cookieValue}; path=/; max-age=31536000; domain=${window.location.hostname}`;
+    document.cookie = `googtrans=${cookieValue}; path=/; max-age=31536000; domain=.yplawfirm.vn`;
+  }
+}
+
+function getTranslation(lang: string, key: string): string | null {
+  // The translations object is structured as: translations[section][lang][key]
+  const keys = key.split('.');
+  if (keys.length !== 2) return null;
+  
+  const [section, subKey] = keys;
+  const sectionData = (translations as any)[section];
+  if (!sectionData) return null;
+  
+  const langData = sectionData[lang];
+  if (!langData) return null;
+  
+  return langData[subKey] || null;
+}
+
+function translateTextNode(node: Text, lang: string): boolean {
+  const text = node.textContent?.trim();
+  if (!text) return false;
+
+  const key = textToKeyMap[text];
+  if (key) {
+    const translation = getTranslation(lang, key);
+    if (translation && node.textContent) {
+      node.textContent = node.textContent.replace(text, translation);
+      return true;
+    }
+  }
+  return false;
+}
+
+function translateElement(element: Element, lang: string): void {
+  // Skip user-content (handled by Google Translate)
+  if (element.classList.contains('user-content') || element.hasAttribute('data-user-content')) {
+    return;
+  }
+
+  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    const node = walker.currentNode as Text;
+    const parent = node.parentElement;
+    if (parent?.closest('.user-content, [data-user-content]')) continue;
+    translateTextNode(node, lang);
+  }
+}
+
+function applyTranslations(lang: string): void {
+  if (lang === 'vi') {
+    document.documentElement.classList.remove('i18n-loading');
+    return;
+  }
+
+  // Translate header
+  const header = document.querySelector('header');
+  if (header) translateElement(header, lang);
+
+  // Translate footer
+  const footer = document.querySelector('footer');
+  if (footer) translateElement(footer, lang);
+
+  // Translate navigation
+  document.querySelectorAll('nav').forEach(el => translateElement(el, lang));
+
+  // Translate elements with notranslate class (these are excluded from Google Translate)
+  document.querySelectorAll('.notranslate').forEach(el => translateElement(el, lang));
+
+  // Translate breadcrumbs
+  document.querySelectorAll('nav[aria-label="Breadcrumb"]').forEach(el => translateElement(el, lang));
+
+  // Remove loading class
+  document.documentElement.classList.remove('i18n-loading');
+}
+
+function loadGoogleTranslate(targetLang: string): void {
+  const win = window as any;
+
+  // Ensure notranslate elements have translate="no"
+  document.querySelectorAll('.notranslate, header, footer, nav').forEach(el => {
+    el.setAttribute('translate', 'no');
+  });
+
+  if (document.querySelector('script[src*="translate.google.com"]')) {
+    setTimeout(() => triggerTranslation(targetLang), 100);
+    return;
+  }
+
+  win.googleTranslateElementInit = function() {
+    new win.google.translate.TranslateElement({
+      pageLanguage: 'vi',
+      includedLanguages: 'en,zh-CN,ja,ko',
+      autoDisplay: false,
+      layout: win.google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element_hidden');
+
+    let attempts = 0;
+    const tryTrigger = () => {
+      attempts++;
+      if (attempts < 10) {
+        triggerTranslation(targetLang);
+        setTimeout(tryTrigger, 500);
+      }
+    };
+    setTimeout(tryTrigger, 500);
+  };
+
+  const script = document.createElement('script');
+  script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  script.async = true;
+  document.head.appendChild(script);
+}
+
+function triggerTranslation(targetLang: string): void {
+  const selectEl = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+  if (selectEl && selectEl.value !== targetLang) {
+    selectEl.value = targetLang;
+    selectEl.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+}
+
+function initDropdown(): void {
+  const savedLang = getSavedLang();
+  const selectors = document.querySelectorAll('[data-language-selector]');
+
+  selectors.forEach(selector => {
+    const toggle = selector.querySelector('.lang-toggle');
+    const options = selector.querySelectorAll('.lang-option');
+    const currentCode = selector.querySelector('.current-lang-code');
+
+    // Update display
+    if (currentCode) {
+      currentCode.textContent = langDisplayMap[savedLang] || 'VN';
+    }
+
+    // Mark active option
+    options.forEach(opt => {
+      opt.classList.remove('active');
+      if ((opt as HTMLElement).dataset.gtCode === savedLang) {
+        opt.classList.add('active');
+      }
+    });
+
+    // Toggle dropdown
+    toggle?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      selector.classList.toggle('open');
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!selector.contains(e.target as Node)) {
+        selector.classList.remove('open');
+      }
+    });
+
+    // Language selection
+    options.forEach(option => {
+      option.addEventListener('click', () => {
+        const gtCode = (option as HTMLElement).dataset.gtCode || 'vi';
+        saveLang(gtCode);
+        setGTCookie(gtCode);
+        selector.classList.remove('open');
+        location.reload();
+      });
+    });
+  });
+}
+
+function init(): void {
+  const savedLang = getSavedLang();
+
+  // Add translate="no" to all notranslate elements
+  document.querySelectorAll('.notranslate').forEach(el => {
+    el.setAttribute('translate', 'no');
+  });
+  document.querySelector('header')?.setAttribute('translate', 'no');
+  document.querySelector('footer')?.setAttribute('translate', 'no');
+
+  // Apply i18n translations first
+  applyTranslations(savedLang);
+
+  // Initialize dropdown
+  initDropdown();
+
+  // Load Google Translate for user content if non-Vietnamese
+  if (savedLang !== 'vi') {
+    setGTCookie(savedLang);
+    setTimeout(() => loadGoogleTranslate(savedLang), 100);
+  }
+}
+
+// Run as early as possible
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+</script>
+
+<!-- Hidden element for Google Translate -->
+<div id="google_translate_element_hidden" style="display:none!important;height:0!important;overflow:hidden!important;"></div>

@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "legal": "Legal",
+    "consultation": "Regular Consultation",
+    "labor": "Labor",
+    "investment": "Investment & Foreign",
+    "evaluation": "Evaluation Services",
+    "news": "News",
+    "contact": "Contact",
+    "search": "Search",
+    "toggleMenu": "Toggle menu",
+    "toggleTheme": "Toggle theme",
+    "rssFeed": "RSS Feed"
+  },
+  "about": {
+    "history": "Establishment History",
+    "lawyers": "Lawyers and Associates",
+    "awards": "Legal Awards",
+    "testimonials": "Client Testimonials",
+    "principles": "Operating Principles",
+    "capabilities": "Capability Profile",
+    "vision": "Vision - Mission",
+    "events": "Internal Events",
+    "privacy": "Data Privacy Protection"
+  },
+  "legal": {
+    "business": "Business",
+    "commerce": "Commercial Business",
+    "ip": "Intellectual Property",
+    "land": "Land",
+    "family": "Marriage and Family",
+    "adoption": "Adoption License",
+    "civil": "Civil",
+    "criminal": "Criminal",
+    "other": "Other Legal"
+  },
+  "labor": {
+    "regulations": "Internal Regulations - Collective Agreements",
+    "workingHours": "Working Hours",
+    "salary": "Salary & Benefits",
+    "contracts": "Labor Contracts, Training",
+    "termination": "Contract Termination",
+    "discipline": "Disciplinary Actions",
+    "harassment": "Sexual Harassment",
+    "disputes": "Labor Disputes",
+    "other": "Other Labor Legal"
+  },
+  "investment": {
+    "newProjects": "New Project Establishment",
+    "projectAdjustment": "Investment Project Adjustment",
+    "transfer": "Project Transfer",
+    "presence": "Commercial Presence",
+    "englishLawyer": "English-speaking Lawyer",
+    "japaneseLawyer": "Japanese-speaking Lawyer",
+    "chineseLawyer": "Chinese-speaking Lawyer",
+    "workPermit": "Work Permit",
+    "foreignerLaw": "Foreign Legal"
+  },
+  "evaluation": {
+    "concept": "Evaluation Concept",
+    "benefits": "Benefits of Evaluation",
+    "pricing": "Evaluation Service Fees",
+    "process": "Evaluation Process",
+    "business": "Business Evaluation Services",
+    "preAudit": "Pre-audit Evaluation Services",
+    "standards": "Social Standards",
+    "rba": "RBA Standards",
+    "mistakes": "Common Business Mistakes"
+  },
+  "news": {
+    "legal": "Legal News",
+    "commentary": "Legal Commentary",
+    "highlights": "Notable Cases",
+    "seminars": "Legal Seminars",
+    "documents": "Legal Documents",
+    "contact": "Contact Consultation",
+    "recruitment": "Recruitment Information"
+  },
+  "footer": {
+    "about": "About",
+    "services": "Services",
+    "news": "News",
+    "contact": "Contact",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "copyright": "Copyright © {{year}} Youth & Partners Law Firm · All rights reserved."
+  },
+  "common": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "getQuote": "Get Quote",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information",
+    "search": "Search...",
+    "noResults": "No results found",
+    "backToTop": "Back to Top",
+    "share": "Share",
+    "print": "Print",
+    "download": "Download"
+  },
+  "forms": {
+    "name": "Full Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "message": "Message",
+    "subject": "Subject",
+    "company": "Company",
+    "position": "Position",
+    "required": "Required",
+    "optional": "Optional",
+    "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "sent": "Message sent successfully!",
+    "error": "An error occurred. Please try again."
+  },
+  "language": {
+    "selectLanguage": "Select Language",
+    "currentLanguage": "Current Language",
+    "switchTo": "Switch to {{language}}"
+  },
+  "meta": {
+    "title": "Youth & Partners Law Firm - Business Companion",
+    "description": "Youth & Partners Law Firm is one of the leading law firms in: Regular legal consultation for businesses / Outsourced legal department services; Labor dispute consultation and resolution; Japanese, English, Chinese, Korean-speaking lawyer services; Audit, evaluation and legal assessment services for businesses."
+  }
+}

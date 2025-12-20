@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "services": "服务",
+    "legal": "法律",
+    "consultation": "定期咨询",
+    "labor": "劳动",
+    "investment": "投资与外国",
+    "evaluation": "评估服务",
+    "news": "新闻",
+    "contact": "联系我们",
+    "search": "搜索",
+    "toggleMenu": "切换菜单",
+    "toggleTheme": "切换主题",
+    "rssFeed": "RSS订阅"
+  },
+  "about": {
+    "history": "成立历史",
+    "lawyers": "律师与合伙人",
+    "awards": "法律奖项",
+    "testimonials": "客户评价",
+    "principles": "运营宗旨",
+    "capabilities": "能力概况",
+    "vision": "愿景 - 使命",
+    "events": "内部活动",
+    "privacy": "数据隐私保护"
+  },
+  "legal": {
+    "business": "企业",
+    "commerce": "商业贸易",
+    "ip": "知识产权",
+    "land": "土地",
+    "family": "婚姻与家庭",
+    "adoption": "收养许可",
+    "civil": "民事",
+    "criminal": "刑事",
+    "other": "其他法律"
+  },
+  "labor": {
+    "regulations": "内部规章 - 集体协议",
+    "workingHours": "工作时间",
+    "salary": "工资与福利",
+    "contracts": "劳动合同、培训",
+    "termination": "合同终止",
+    "discipline": "纪律处理",
+    "harassment": "性骚扰",
+    "disputes": "劳动争议",
+    "other": "其他劳动法律"
+  },
+  "investment": {
+    "newProjects": "新项目成立",
+    "projectAdjustment": "投资项目调整",
+    "transfer": "项目转让",
+    "presence": "商业存在",
+    "englishLawyer": "英语律师",
+    "japaneseLawyer": "日语律师",
+    "chineseLawyer": "中文律师",
+    "workPermit": "工作许可",
+    "foreignerLaw": "外国人法律"
+  },
+  "evaluation": {
+    "concept": "评估概念",
+    "benefits": "评估的好处",
+    "pricing": "评估服务费用",
+    "process": "评估流程",
+    "business": "企业评估服务",
+    "preAudit": "预审评估服务",
+    "standards": "社会标准",
+    "rba": "RBA标准",
+    "mistakes": "企业常见错误"
+  },
+  "news": {
+    "legal": "法律新闻",
+    "commentary": "法律评论",
+    "highlights": "突出案例",
+    "seminars": "法律研讨会",
+    "documents": "法律文件",
+    "contact": "咨询联系",
+    "recruitment": "招聘信息"
+  },
+  "footer": {
+    "about": "关于我们",
+    "services": "服务",
+    "news": "新闻",
+    "contact": "联系我们",
+    "terms": "服务条款",
+    "privacy": "隐私政策",
+    "copyright": "版权 © {{year}} Youth & Partners律师事务所 · 保留所有权利。"
+  },
+  "common": {
+    "readMore": "阅读更多",
+    "learnMore": "了解更多",
+    "contactUs": "联系我们",
+    "getQuote": "获取报价",
+    "submit": "提交",
+    "cancel": "取消",
+    "close": "关闭",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "warning": "警告",
+    "info": "信息",
+    "search": "搜索...",
+    "noResults": "未找到结果",
+    "backToTop": "回到顶部",
+    "share": "分享",
+    "print": "打印",
+    "download": "下载"
+  },
+  "forms": {
+    "name": "姓名",
+    "email": "电子邮件",
+    "phone": "电话号码",
+    "message": "消息内容",
+    "subject": "主题",
+    "company": "公司",
+    "position": "职位",
+    "required": "必填",
+    "optional": "可选",
+    "sendMessage": "发送消息",
+    "sending": "发送中...",
+    "sent": "消息发送成功！",
+    "error": "发生错误。请重试。"
+  },
+  "language": {
+    "selectLanguage": "选择语言",
+    "currentLanguage": "当前语言",
+    "switchTo": "切换到{{language}}"
+  },
+  "meta": {
+    "title": "Youth & Partners律师事务所 - 企业伙伴",
+    "description": "Youth & Partners律师事务所是在以下领域领先的律师事务所之一：企业定期法律咨询/外包法律部门服务；劳动争议咨询与解决；日语、英语、中文、韩语律师服务；企业审计、评估和法律评估服务。"
+  }
+}

@@ -13,6 +13,9 @@ import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
 import Tawk from '~/components/common/Tawk.astro';
+import EarlyTranslationScript from '~/components/common/EarlyTranslationScript.astro';
+import GoogleTranslate from '~/components/common/GoogleTranslate.astro';
+import TranslationNotice from '~/components/common/TranslationNotice.astro';
 // import { ViewTransitions } from 'astro:transitions';
 
 import type { MetaData as MetaDataType } from '~/types';
@@ -27,7 +30,10 @@ const { language, textDirection } = I18N;
 
 <!doctype html>
 <html lang={language} dir={textDirection} class="2xl:text-[18px]">
-  <head>
+<head>
+    <!-- Early Translation Script (must be first in head to prevent FOUC) -->
+    <EarlyTranslationScript />
+    
     <!-- Critical: Meta tags first for parser -->
     <CommonMeta />
     
@@ -45,10 +51,53 @@ const { language, textDirection } = I18N;
     
     <!-- Non-critical: Analytics (should be async) -->
     <Analytics />
+
+    <!-- Google Translate global styles - MUST hide banner and fix body positioning -->
+    <style is:global>
+      /* Hide Google Translate banner and ALL UI elements */
+      .goog-te-banner-frame,
+      .skiptranslate,
+      #goog-gt-tt,
+      .goog-te-balloon-frame,
+      div#goog-gt-,
+      .goog-text-highlight,
+      #google_translate_element,
+      #google_translate_element_hidden,
+      body > .skiptranslate,
+      .goog-te-spinner-pos,
+      .goog-te-gadget {
+        display: none !important;
+        height: 0 !important;
+        visibility: hidden !important;
+      }
+
+      /* Fix body positioning - Google Translate adds top: 40px */
+      body {
+        top: 0 !important;
+        position: static !important;
+      }
+
+      html.translated-ltr body,
+      html.translated-rtl body {
+        top: 0 !important;
+      }
+
+      /* Skip translation for specific elements */
+      .notranslate,
+      [translate="no"] {
+        font-family: inherit !important;
+      }
+    </style>
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
+    <!-- Google Translate Widget (hidden, used for translation) -->
+    <GoogleTranslate />
+    
     <slot />
+
+    <!-- Translation Notice (shows at bottom when Google Translate is active) -->
+    <TranslationNotice autoDismissSeconds={3} />
 
     <BasicScripts />
     <Tawk />

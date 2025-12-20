@@ -157,3 +157,76 @@
 lite-youtube {
   max-width: 100% !important;
 }
+
+/* ======================== */
+/* Google Translate Styling */
+/* ======================== */
+
+/* Hide Google Translate banner frame */
+.goog-te-banner-frame {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+/* Hide Google Translate footer */
+.goog-te-gadget {
+  font-size: 0 !important;
+  visibility: hidden !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  margin: 0 !important;
+  display: none !important;
+}
+
+.goog-te-gadget-icon {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.goog-te-menu-value span:first-child {
+  display: none !important;
+}
+
+.goog-te-menu-value:before {
+  content: '' !important;
+  display: none !important;
+}
+
+/* Hide floating shelf */
+.goog-te-floating-shelf {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Protect notranslate elements */
+.notranslate,
+[translate="no"] {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Ensure user content translates properly */
+.user-content,
+[data-user-content] {
+  /* Allow Google Translate to process these elements */
+}
+
+/* Hide Google Translate font face declarations */
+@-webkit-keyframes goog-animation {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes goog-animation {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

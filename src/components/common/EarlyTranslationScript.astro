@@ -1,0 +1,92 @@
+---
+/**
+ * Early Translation Script - Runs in <head> to prevent FOUC (Flash of Untranslated Content)
+ * This script:
+ * 1. Checks if user has selected a non-Vietnamese language
+ * 2. Sets up Google Translate cookie early
+ * 3. Loads Google Translate script to enable automatic translation
+ */
+---
+
+<script is:inline>
+(function() {
+  var LANG_KEY = 'site-language';
+  var lang;
+  try {
+    lang = localStorage.getItem(LANG_KEY) || 'vi';
+  } catch(e) {
+    lang = 'vi';
+  }
+
+  // If non-Vietnamese, set up translation
+  if (lang !== 'vi') {
+    document.documentElement.classList.add('i18n-loading');
+
+    // Set cookie for Google Translate EARLY so it activates on page load
+    var gtLangs = {
+      'en': 'en',
+      'zh': 'zh-CN',
+      'ja': 'ja',
+      'ko': 'ko'
+    };
+    var gtLang = gtLangs[lang];
+    if (gtLang) {
+      document.cookie = 'googtrans=/vi/' + gtLang + '; path=/; max-age=31536000';
+    }
+
+    // Initialize Google Translate callback
+    window.googleTranslateElementInit = function() {
+      if (typeof google !== 'undefined' && google.translate) {
+        new google.translate.TranslateElement({
+          pageLanguage: 'vi',
+          includedLanguages: 'en,zh-CN,ja,ko,vi',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+    };
+
+    // Load Google Translate script immediately
+    var script = document.createElement('script');
+    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.async = true;
+    script.type = 'text/javascript';
+    document.head.appendChild(script);
+  }
+})();
+</script>
+
+<style is:global>
+  /* Hide all fixed UI content briefly during i18n translation to prevent flash */
+  html.i18n-loading header,
+  html.i18n-loading footer,
+  html.i18n-loading nav[aria-label="Breadcrumb"],
+  html.i18n-loading .notranslate,
+  html.i18n-loading [translate="no"] {
+    opacity: 0;
+  }
+
+  /* Smooth fade-in after translation */
+  header, footer, nav[aria-label="Breadcrumb"], .notranslate, [translate="no"] {
+    transition: opacity 0.15s ease-in;
+  }
+
+  /* Remove loading class when translation is complete */
+  html.translated-ltr,
+  html.translated-rtl {
+    transition: none !important;
+  }
+
+  html.translated-ltr header,
+  html.translated-ltr footer,
+  html.translated-ltr nav[aria-label="Breadcrumb"],
+  html.translated-ltr .notranslate,
+  html.translated-ltr [translate="no"],
+  html.translated-rtl header,
+  html.translated-rtl footer,
+  html.translated-rtl nav[aria-label="Breadcrumb"],
+  html.translated-rtl .notranslate,
+  html.translated-rtl [translate="no"] {
+    opacity: 1;
+  }
+</style>

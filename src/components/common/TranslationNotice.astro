@@ -1,0 +1,109 @@
+---
+/**
+ * Translation Notice Component
+ * Shows a banner when content is being viewed in a translated version
+ * Auto-dismisses after a few seconds
+ */
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  class?: string;
+  autoDismissSeconds?: number;
+}
+
+const { class: className = '', autoDismissSeconds = 3 } = Astro.props;
+---
+
+<div
+  id="translation-notice"
+  class:list={[
+    'translation-notice fixed bottom-0 left-0 right-0 z-[99999] hidden transform translate-y-full transition-transform duration-300',
+    className
+  ]}
+  data-auto-dismiss={autoDismissSeconds}
+>
+  <div class="bg-white dark:bg-gray-800 px-4 py-3 shadow-[0_-2px_10px_rgba(0,0,0,0.1)] border-t border-gray-200 dark:border-gray-700">
+    <div class="flex items-center justify-center gap-3 flex-wrap sm:flex-nowrap">
+      <Icon name="tabler:language" class="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0" />
+      <p class="text-sm text-gray-700 dark:text-gray-200 font-medium text-center sm:text-left flex-1">
+        Google Translate: Nội dung được dịch tự động. Để tư vấn pháp lý chính xác, vui lòng liên hệ trực tiếp.
+      </p>
+      <button
+        type="button"
+        class="flex-shrink-0 p-1 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition-colors"
+        onclick="document.getElementById('translation-notice').classList.add('translate-y-full'); setTimeout(() => document.getElementById('translation-notice').classList.add('hidden'), 300);"
+        aria-label="Đóng"
+      >
+        <Icon name="tabler:x" class="w-4 h-4" />
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+(function() {
+  var timer = null;
+  var LANG_KEY = 'site-language';
+  var hasShown = false;
+
+  function showNotice() {
+    if (hasShown) return;
+    hasShown = true;
+    
+    var notice = document.getElementById('translation-notice');
+    if (!notice) return;
+
+    // Show with animation (slide up from bottom)
+    notice.classList.remove('hidden');
+    setTimeout(function() {
+      notice.classList.remove('translate-y-full');
+    }, 10);
+
+    // Auto-dismiss
+    var seconds = parseInt(notice.dataset.autoDismiss || '3', 10);
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(function() {
+      notice.classList.add('translate-y-full');
+      setTimeout(function() {
+        notice.classList.add('hidden');
+      }, 300);
+    }, seconds * 1000);
+  }
+
+  function checkTranslation() {
+    var html = document.documentElement;
+    
+    // Check if Google Translate is active (sets these classes)
+    var isTranslated = html.classList.contains('translated-ltr') ||
+                       html.classList.contains('translated-rtl');
+
+    // Also check localStorage for non-Vietnamese language
+    var savedLang;
+    try {
+      savedLang = localStorage.getItem(LANG_KEY) || 'vi';
+    } catch(e) {
+      savedLang = 'vi';
+    }
+    
+    var isNonVietnamese = savedLang !== 'vi';
+
+    if (isTranslated || isNonVietnamese) {
+      // Delay showing notice to allow translation to complete
+      setTimeout(showNotice, 1000);
+    }
+  }
+
+  // Check on load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', checkTranslation);
+  } else {
+    checkTranslation();
+  }
+
+  // Watch for translation changes
+  new MutationObserver(checkTranslation).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['class']
+  });
+})();
+</script>

@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "services": "Dịch vụ",
+    "legal": "Pháp lý",
+    "consultation": "Tư vấn thường xuyên",
+    "labor": "Lao động",
+    "investment": "Đầu tư & Nước ngoài",
+    "evaluation": "Dịch vụ đánh giá",
+    "news": "Tin tức",
+    "contact": "Liên hệ",
+    "search": "Tìm kiếm",
+    "toggleMenu": "Chuyển đổi menu",
+    "toggleTheme": "Chuyển đổi chủ đề",
+    "rssFeed": "RSS Feed"
+  },
+  "about": {
+    "history": "Lịch sử thành lập",
+    "lawyers": "Luật sư và cộng sự",
+    "awards": "Giải thưởng pháp lý",
+    "testimonials": "Cảm nhận khách hàng",
+    "principles": "Tôn chỉ hoạt động",
+    "capabilities": "Hồ sơ năng lực",
+    "vision": "Tầm nhìn - sứ mệnh",
+    "events": "Sự kiện nội bộ",
+    "privacy": "Bảo vệ dữ liệu cá nhân"
+  },
+  "legal": {
+    "business": "Doanh nghiệp",
+    "commerce": "Kinh doanh thương mại",
+    "ip": "Sở hữu trí tuệ",
+    "land": "Đất đai",
+    "family": "Hôn nhân và gia đình",
+    "adoption": "Giấy phép con",
+    "civil": "Dân sự",
+    "criminal": "Hình sự",
+    "other": "Pháp lý khác"
+  },
+  "labor": {
+    "regulations": "Nội quy - Thỏa ước",
+    "workingHours": "Thời giờ làm việc",
+    "salary": "Lương & Phúc lợi",
+    "contracts": "Hợp đồng lao động, đào tạo",
+    "termination": "Chấm dứt hợp đồng",
+    "discipline": "Xử lý kỷ luật",
+    "harassment": "Quấy rối tình dục",
+    "disputes": "Tranh chấp lao động",
+    "other": "Pháp lý lao động khác"
+  },
+  "investment": {
+    "newProjects": "Thành lập mới dự án",
+    "projectAdjustment": "Điều chỉnh dự án đầu tư",
+    "transfer": "Chuyển nhượng dự án",
+    "presence": "Hiện diện thương mại",
+    "englishLawyer": "Luật sư tư vấn tiếng Anh",
+    "japaneseLawyer": "Luật sư tư vấn tiếng Nhật",
+    "chineseLawyer": "Luật sư tư vấn tiếng Trung Quốc",
+    "workPermit": "Giấy phép lao động",
+    "foreignerLaw": "Pháp lý người nước ngoài"
+  },
+  "evaluation": {
+    "concept": "Khái niệm đánh giá",
+    "benefits": "Lợi ích của việc đánh giá",
+    "pricing": "Phí dịch vụ đánh giá",
+    "process": "Quy trình đánh giá",
+    "business": "Dịch vụ Đánh giá cho Doanh nghiệp",
+    "preAudit": "Dịch vụ đánh giá tiền trạm",
+    "standards": "Các bộ tiêu chuẩn TNXH",
+    "rba": "Tiêu chuẩn RBA",
+    "mistakes": "Các lỗi thường gặp của doanh nghiệp"
+  },
+  "news": {
+    "legal": "Tin tức pháp lý",
+    "commentary": "Bình luận pháp lý",
+    "highlights": "Các vụ việc nổi bật",
+    "seminars": "Hội thảo pháp lý",
+    "documents": "Văn bản pháp lý",
+    "contact": "Liên hệ tư vấn",
+    "recruitment": "Thông tin tuyển dụng"
+  },
+  "footer": {
+    "about": "Giới thiệu",
+    "services": "Dịch vụ",
+    "news": "Tin tức",
+    "contact": "Liên hệ",
+    "terms": "Điều khoản chung",
+    "privacy": "Chính sách Bảo vệ dữ liệu",
+    "copyright": "Bản quyền © {{year}} Công ty Luật TNHH Youth & Partners · Tất cả quyền được bảo lưu."
+  },
+  "common": {
+    "readMore": "Đọc thêm",
+    "learnMore": "Tìm hiểu thêm",
+    "contactUs": "Liên hệ chúng tôi",
+    "getQuote": "Nhận báo giá",
+    "submit": "Gửi",
+    "cancel": "Hủy",
+    "close": "Đóng",
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "success": "Thành công",
+    "warning": "Cảnh báo",
+    "info": "Thông tin",
+    "search": "Tìm kiếm...",
+    "noResults": "Không tìm thấy kết quả",
+    "backToTop": "Về đầu trang",
+    "share": "Chia sẻ",
+    "print": "In",
+    "download": "Tải xuống"
+  },
+  "forms": {
+    "name": "Họ và tên",
+    "email": "Email",
+    "phone": "Số điện thoại",
+    "message": "Nội dung tin nhắn",
+    "subject": "Tiêu đề",
+    "company": "Công ty",
+    "position": "Chức vụ",
+    "required": "Bắt buộc",
+    "optional": "Tùy chọn",
+    "sendMessage": "Gửi tin nhắn",
+    "sending": "Đang gửi...",
+    "sent": "Đã gửi thành công!",
+    "error": "Có lỗi xảy ra. Vui lòng thử lại."
+  },
+  "language": {
+    "selectLanguage": "Chọn ngôn ngữ",
+    "currentLanguage": "Ngôn ngữ hiện tại",
+    "switchTo": "Chuyển sang {{language}}"
+  },
+  "meta": {
+    "title": "Công ty Luật TNHH Youth & Partners - Người bạn đồng hành của Doanh nghiệp",
+    "description": "Công ty Luật TNHH Youth & Partners là một trong những công ty luật hàng đầu trong các lĩnh vực: Tư vấn pháp lý thường xuyên cho doanh nghiệp / Dịch vụ Phòng pháp chế thuê ngoài; Tư vấn và giải quyết tranh chấp lao động; Dịch vụ Luật sư riêng tiếng Nhật, Anh, Trung, Hàn; Dịch vụ Audit, đánh giá và thẩm định pháp lý cho Doanh nghiệp."
+  }
+}
