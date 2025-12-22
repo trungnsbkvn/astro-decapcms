@@ -9,6 +9,10 @@ export interface Props {
   content?: string;
   callToAction?: string | CallToAction;
   callToAction2?: string | CallToAction;
+  // i18n keys for translations
+  i18nTitle?: string;
+  i18nSubtitle?: string;
+  i18nTagline?: string;
 }
 
 const {
@@ -18,6 +22,9 @@ const {
   content = await Astro.slots.render('content'),
   callToAction = await Astro.slots.render('callToAction'),
   callToAction2 = await Astro.slots.render('callToAction2'),
+  i18nTitle,
+  i18nSubtitle,
+  i18nTagline,
 } = Astro.props;
 ---
 
@@ -32,6 +39,7 @@ const {
             <p
               class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade notranslate"
               translate="no"
+              {...(i18nTagline ? { 'data-i18n': i18nTagline } : {})}
               set:html={tagline}
             />
           )
@@ -41,6 +49,7 @@ const {
             <h1
               class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade notranslate"
               translate="no"
+              {...(i18nTitle ? { 'data-i18n': i18nTitle } : {})}
               set:html={title}
             />
           )
@@ -51,6 +60,7 @@ const {
               <p
                 class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade notranslate"
                 translate="no"
+                {...(i18nSubtitle ? { 'data-i18n': i18nSubtitle } : {})}
                 set:html={subtitle}
               />
             )

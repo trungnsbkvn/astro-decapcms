@@ -29,7 +29,7 @@ const {
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {
       testimonials &&
-        testimonials.map(({ title, testimonial, name, job, image }) => (
+        testimonials.map(({ title, testimonial, name, job, image, i18nJob }) => (
           <div class="flex h-auto intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
             <div class="flex flex-col p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600">
               {title && <h2 class="text-lg font-medium leading-6 pb-4">{title}</h2>}
@@ -60,9 +60,14 @@ const {
                   </div>
                 )}
 
-                <div class="grow ml-3 rtl:ml-0 rtl:mr-3 notranslate" translate="no">
-                  {name && <p class="text-base font-semibold">{name}</p>}
-                  {job && <p class="text-xs text-muted">{job}</p>}
+                <div class="grow ml-3 rtl:ml-0 rtl:mr-3">
+                  {name && <p class="text-base font-semibold notranslate" translate="no">{name}</p>}
+                  {job && (
+                    <p 
+                      class={`text-xs text-muted ${i18nJob ? 'notranslate' : ''}`}
+                      {...(i18nJob ? { 'data-i18n': i18nJob, 'translate': 'no' } : {})}
+                    >{job}</p>
+                  )}
                 </div>
               </div>
             </div>

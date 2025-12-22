@@ -13,6 +13,12 @@ const {
   disclaimer,
   button,
   description,
+  // i18n keys
+  i18nTitle,
+  i18nSubtitle,
+  i18nTagline,
+  i18nButton,
+  i18nDescription,
 
   id,
   isDark = false,
@@ -22,7 +28,7 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+  <Headline title={title} subtitle={subtitle} tagline={tagline} i18nTitle={i18nTitle} i18nSubtitle={i18nSubtitle} i18nTagline={i18nTagline} />
 
   {
     inputs && (
@@ -33,6 +39,8 @@ const {
           disclaimer={disclaimer}
           button={button}
           description={description}
+          i18nButton={i18nButton}
+          i18nDescription={i18nDescription}
         />
       </div>
     )

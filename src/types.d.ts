@@ -174,6 +174,7 @@ export interface Testimonial {
   testimonial?: string;
   name?: string;
   job?: string;
+  i18nJob?: string;
   image?: string | unknown;
 }
 
@@ -190,6 +191,7 @@ export interface Input {
   label?: string;
   autocomplete?: string;
   placeholder?: string;
+  i18nLabel?: string;
 }
 
 export interface Textarea {
@@ -197,10 +199,12 @@ export interface Textarea {
   name?: string;
   placeholder?: string;
   rows?: number;
+  i18nLabel?: string;
 }
 
 export interface Disclaimer {
   label?: string;
+  i18nLabel?: string;
 }
 
 // COMPONENTS
@@ -234,6 +238,8 @@ export interface Form {
   disclaimer?: Disclaimer;
   button?: string;
   description?: string;
+  i18nButton?: string;
+  i18nDescription?: string;
 }
 
 // WIDGETS

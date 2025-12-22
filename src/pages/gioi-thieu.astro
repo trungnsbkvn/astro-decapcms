@@ -27,10 +27,7 @@ const metadata = {
 
   <Hero tagline="Về chúng tôi" i18nTagline="about.aboutUs">
     <Fragment slot="title">
-      Công ty Luật TNHH
-      <span class="text-accent dark:text-white highlight"> Youth </span><span
-        class="text-primary dark:text-white highlight">& Partners</span
-      >
+      <span data-i18n="homepage.companyPrefix">Công ty Luật TNHH</span><span class="text-accent dark:text-white highlight notranslate" translate="no"> Youth </span><span class="text-primary dark:text-white highlight notranslate" translate="no">& Partners</span>&nbsp;<span data-i18n="homepage.companySuffix"></span>
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -65,6 +62,7 @@ const metadata = {
       {
         title:
           'Kiện toàn tổ chức và phát triển dịch vụ <br /> <span class="font-normal">Bổ sung nhân lực và phát triển mở rộng quy mô dịch vụ</span> <br /> <span class="text-sm font-normal">2024 - đến nay</span>',
+        i18nTitle: 'about.historyTitle1',
         description: `Từ năm 2024 đến nay, Youth & Partners Law Firm đã tiến hành kiện toàn bộ máy tổ chức, bổ sung nhân lực và mở rộng quy mô dịch vụ để đáp ứng nhu cầu ngày càng cao của khách hàng. Công ty tập trung vào việc cung cấp các giải pháp toàn diện và dịch vụ tư vấn pháp lý chuyên sâu trong nhiều lĩnh vực, bao gồm nhưng không giới hạn như:
         <br />•	Doanh nghiệp
         <br />•	Tư vấn thường xuyên
@@ -77,30 +75,39 @@ const metadata = {
         <br />•	Lao động và việc làm
         <br />•	Dịch vụ pháp lý về Đất đai
         `,
+        i18nDescription: 'about.historyDesc1',
         icon: 'tabler:award',
       },
       {
         title:
           'Mở rộng <br /> <span class="font-normal">Thêm 01 chi nhánh tại Hà Nội</span> <br /> <span class="text-sm font-normal">2021 - 2023</span>',
+        i18nTitle: 'about.historyTitle2',
         description: `Trong giai đoạn 2021 – 2023, Youth & Partners tiếp tục mở rộng mạng lưới với chi nhánh mới tại thủ đô Hà Nội, được đặt tại P316, Tháp Tây, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội. Đây là bước đi quan trọng trong việc củng cố sự hiện diện và mở rộng thị trường tại khu vực miền Bắc, đặc biệt là tại Hà Nội - trung tâm kinh tế lớn của cả nước.`,
+        i18nDescription: 'about.historyDesc2',
         icon: 'tabler:chart-arrows',
       },
       {
         title:
           'Mở rộng <br /> <span class="font-normal">Thêm 01 chi nhánh tại Bắc Ninh</span> <br /> <span class="text-sm font-normal">2020 - 2021</span>',
+        i18nTitle: 'about.historyTitle3',
         description: `Trong giai đoạn 2020 – 2021, Công ty Luật TNHH Youth & Partners đã thực hiện chiến lược mở rộng mạng lưới để nâng cao chất lượng dịch vụ và đáp ứng tốt hơn nhu cầu của khách hàng tại các khu vực trọng điểm. Cụ thể, công ty đã khai trương Văn phòng giao dịch tại Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc, tỉnh Bắc Ninh, qua đó mở rộng phạm vi hoạt động và gia tăng sự hiện diện tại thị trường khu vực.`,
+        i18nDescription: 'about.historyDesc3',
         icon: 'tabler:chart-arrows',
       },
       {
         title:
           'Mở rộng <br /> <span class="font-normal">Thay đổi địa chỉ công ty</span> <br /> <span class="text-sm font-normal">2020 - 2024</span>',
+        i18nTitle: 'about.historyTitle4',
         description: `Để đáp ứng nhu cầu phát triển, vào tháng 01 năm 2020, sau nửa năm hoạt động, công ty đã chuyển trụ sở đến Số 170 Nguyễn Văn Linh, phường Liên Bảo, thành phố Vĩnh Yên, tỉnh Vĩnh Phúc Đây cũng là địa chỉ trụ sở hiện tại của công ty. Cùng với bước chuyển quan trọng này, quy mô công ty cũng đã được mở rộng đáng kể, số lượng nhân sự tăng gấp ba lần so với ban đầu, đánh dấu một bước tiến vững chắc trong quá trình phát triển của Y&P Law Firm.`,
+        i18nDescription: 'about.historyDesc4',
         icon: 'tabler:chart-arrows',
       },
       {
         title:
           'Thành lập công ty <br /> <span class="font-normal">Youth & Partners</span> <br /> <span class="text-sm font-normal">09/10/2019</span>',
+        i18nTitle: 'about.historyTitle5',
         description: `Vào ngày 09 tháng 10 năm 2019, Công ty Luật TNHH Youth & Partners chính thức được thành lập tại số 67, đường Phạm Hồng Thái, Liên Bảo, Vĩnh Yên, Vĩnh Phúc.`,
+        i18nDescription: 'about.historyDesc5',
         icon: 'tabler:step-out',
       },
     ]}
@@ -123,6 +130,7 @@ const metadata = {
     callToAction={{
       text: 'Xem thêm',
       href: '/gioi-thieu#ho-so-nang-luc',
+      i18nText: 'about.viewMore',
     }}
     items={[
       {
@@ -130,17 +138,23 @@ const metadata = {
         description:
           'Được trao tặng cho các luật sư của chúng tôi vì những đóng góp xuất sắc trong các vụ việc phức tạp.',
         icon: 'tabler:globe',
+        i18nTitle: 'about.excellentLawyerAward',
+        i18nDescription: 'about.excellentLawyerDesc',
       },
       {
         title: 'Giải thưởng Đổi mới Pháp lý',
         description:
           'Tôn vinh những nỗ lực sáng tạo trong việc áp dụng công nghệ và các giải pháp pháp lý mới để nâng cao hiệu quả công việc.',
         icon: 'tabler:message-star',
+        i18nTitle: 'about.innovationAward',
+        i18nDescription: 'about.innovationAwardDesc',
       },
       {
         title: 'Giải thưởng Đóng góp cho Cộng đồng',
         description: 'Ghi nhận những hoạt động từ thiện và đóng góp tích cực cho cộng đồng và xã hội.',
         icon: 'tabler:award',
+        i18nTitle: 'about.communityAward',
+        i18nDescription: 'about.communityAwardDesc',
       },
     ]}
   />
@@ -202,6 +216,7 @@ Cảm ơn tất cả mọi người vì đã không chỉ làm việc cùng nhau
         testimonial: `Một địa chỉ tư vấn và hỗ trợ pháp luật tuyệt vời. Mình rất hài lòng về cách làm việc và hỗ trợ của các anh chị tại đây. Cảm ơn và chúc công ty ngày một phát triển, và hỗ trợ được nhiều khách hàng hơn nữa.`,
         name: 'Ha Trung',
         job: 'Khách hàng',
+        i18nJob: 'testimonials.customer',
         image: {
           src: '~/assets/images/customers/hatrung.png',
           alt: 'Ha Trung',
@@ -211,6 +226,7 @@ Cảm ơn tất cả mọi người vì đã không chỉ làm việc cùng nhau
         testimonial: `Đội ngũ Luật sư chuyên môn dày dặn, xử lý công việc chuyên nghiệp, tư duy đột phá trong các phương án tư vấn cho khách hàng, đem đến sự hài lòng toàn diện cho khách hàng trên cơ sở thượng tôn pháp luật.`,
         name: 'Hoa Trương',
         job: 'Khách hàng',
+        i18nJob: 'testimonials.customer',
         image: {
           src: '~/assets/images/customers/hoatruong.png',
           alt: 'Hoa Trương Image',
@@ -220,6 +236,7 @@ Cảm ơn tất cả mọi người vì đã không chỉ làm việc cùng nhau
         testimonial: `Mình rất hài lòng khi sử dụng dịch vụ pháp lý của Y&P Lawfirm. Các luật sự làm việc rất chuyên nghiệp,  Chúc cho các luật sư thật nhiều sức khỏe!`,
         name: 'Van Quang Tran',
         job: 'Khách hàng',
+        i18nJob: 'testimonials.customer',
         image: {
           src: '~/assets/images/customers/vanquangtran.png',
           alt: 'Van Quang Tran Image',
@@ -230,6 +247,7 @@ Cảm ơn tất cả mọi người vì đã không chỉ làm việc cùng nhau
 Một nơi xứng đáng để gửi gắm niềm tin.`,
         name: 'Xuân Thoại Mai',
         job: 'Khách hàng',
+        i18nJob: 'testimonials.customer',
         image: {
           src: '~/assets/images/customers/Xuân Thoại.png',
           alt: 'Xuân Thoại Mai Image',
@@ -239,6 +257,7 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
         testimonial: `Đội ngũ luật sư chuyên môn cao, tác phong chuyên nghiệp, hỗ trợ khách hàng tận tâm, nhiệt tình. Tôi rất hài lòng với trải nghiệm sử dụng dịch vụ của Công ty Luật này.`,
         name: 'Thu Hà Trần',
         job: 'Khách hàng',
+        i18nJob: 'testimonials.customer',
         image: {
           src: '~/assets/images/customers/thu hà.png',
           alt: 'Thu Hà Trần Image',
@@ -265,18 +284,24 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
         description:
           'Chúng tôi hiểu rằng mỗi vụ việc pháp lý đều có những yêu cầu về thời gian và các yếu tố khắt khe. Vì vậy, đội ngũ luật sư của chúng tôi luôn nỗ lực tối đa để đảm bảo tiến trình công việc diễn ra nhanh chóng, hiệu quả, và giúp khách hàng đạt được kết quả mong muốn trong thời gian sớm nhất.',
         icon: 'tabler:clock-24',
+        i18nTitle: 'about.time',
+        i18nDescription: 'about.timeDesc',
       },
       {
         title: 'Tận tâm',
         description:
           'Mỗi luật sư tại Youth & Partners đều cam kết đặt trọn tâm huyết vào từng hồ sơ, luôn lắng nghe và thấu hiểu nhu cầu của khách hàng để đưa ra các giải pháp tối ưu và phù hợp nhất. Chúng tôi tin rằng sự tận tâm là yếu tố then chốt để xây dựng niềm tin và mối quan hệ lâu dài với khách hàng.',
         icon: 'tabler:heart',
+        i18nTitle: 'about.dedication',
+        i18nDescription: 'about.dedicationDesc',
       },
       {
         title: 'Tận lực',
         description:
           'Chúng tôi không chỉ cung cấp dịch vụ pháp lý đơn thuần, mà luôn nỗ lực vượt qua mọi thử thách để bảo vệ quyền lợi hợp pháp của khách hàng. Với đội ngũ luật sư giàu kinh nghiệm và luôn sẵn sàng đối mặt với mọi tình huống, Youth & Partners Law Firm cam kết mang lại công bằng và sự thành công cho khách hàng, giúp họ vững bước trên con đường phát triển.',
         icon: 'tabler:award',
+        i18nTitle: 'about.excellence',
+        i18nDescription: 'about.excellenceDesc',
       },
     ]}
     image={{
@@ -289,6 +314,10 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
 
   <CallToAction
     id="ho-so-nang-luc"
+    title="Hồ sơ năng lực của Youth & Partners"
+    subtitle="Tại đây, bạn sẽ tìm thấy những thông tin chi tiết về năng lực chuyên môn, các dịch vụ pháp lý mà chúng tôi cung cấp, và các thành tựu nổi bật của đội ngũ luật sư tại công ty"
+    i18nTitle="about.capabilityProfile"
+    i18nSubtitle="about.capabilitySubtitle"
     actions={[
       {
         variant: 'primary',
@@ -296,6 +325,7 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
         text: 'Hồ sơ năng lực tiếng Việt',
         href: '/assets/profiles/20251212_PROFILE YP_VIETNAMESE VERSION.pdf',
         icon: 'tabler:download',
+        i18nText: 'about.profileVietnamese',
       },
       {
         variant: 'primary',
@@ -303,15 +333,10 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
         text: 'Hồ sơ năng lực tiếng Anh',
         href: '/assets/profiles/20251212_PROFILE YP_ENGLISH VERSION.pdf',
         icon: 'tabler:download',
+        i18nText: 'about.profileEnglish',
       },
     ]}
   >
-    <Fragment slot="title">Hồ sơ năng lực của Youth & Partners</Fragment>
-
-    <Fragment slot="subtitle">
-      Tại đây, bạn sẽ tìm thấy những thông tin chi tiết về năng lực chuyên môn, các dịch vụ pháp lý mà chúng tôi cung
-      cấp, và các thành tựu nổi bật của đội ngũ luật sư tại công ty
-    </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
@@ -323,26 +348,35 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
     id="tam-nhin-su-menh"
     title="Tầm nhìn và sứ mệnh"
     i18nTitle="about.visionAndMission"
+    i18nSubtitle="about.visionSubtitle"
     subtitle="<b>Tầm nhìn</b> Youth & Partners hướng tới mục tiêu trở thành một trong những công ty luật hàng đầu tại Việt Nam, nơi khách hàng luôn đặt trọn niềm tin khi tìm kiếm các giải pháp pháp lý. Chúng tôi không ngừng đổi mới, nâng cao chất lượng dịch vụ và phát triển đội ngũ luật sư giàu kinh nghiệm, tận tâm để đáp ứng nhu cầu ngày càng cao của khách hàng. Với sự nhiệt huyết, chuyên nghiệp và khả năng thích ứng vượt trội, chúng tôi đặt tham vọng trở thành biểu tượng của sự xuất sắc trong lĩnh vực pháp lý, mang lại giá trị bền vững cho khách hàng và xã hội. <br /><br /> <b>Sứ mệnh</b> Công ty Luật TNHH Youth & Partners cam kết đồng hành cùng khách hàng trong hành trình bảo vệ quyền lợi và thực hiện các mục tiêu pháp lý một cách hiệu quả và kịp thời. Với phương châm “Thời gian, Tận tâm, Tận lực”, chúng tôi luôn đặt lợi ích của khách hàng lên hàng đầu, làm việc với tinh thần trách nhiệm cao nhất để giải quyết các vấn đề pháp lý đa dạng và phức tạp. Sứ mệnh của chúng tôi không chỉ giới hạn ở việc cung cấp dịch vụ pháp lý mà còn hướng tới việc trở thành đối tác tin cậy, hỗ trợ khách hàng và đối tác vượt qua mọi thách thức pháp lý, từ đó góp phần vào sự phát triển bền vững của Doanh nghiệp và cộng đồng. Với tinh thần trách nhiệm, nhiệt huyết và sự tận tâm, Youth & Partners Law Firm không ngừng phấn đấu để mỗi giải pháp pháp lý mà chúng tôi cung cấp đều mang lại giá trị thiết thực và thành công cho khách hàng."
     items={[
       {
         title: 'Chính trực',
         description:
           'Chúng tôi luôn hành động với sự trung thực và đạo đức nghề nghiệp, đặt lợi ích của khách hàng lên hàng đầu.',
+        i18nTitle: 'about.integrity',
+        i18nDescription: 'about.integrityDesc',
       },
       {
         title: 'Sáng tạo',
         description:
           'Chúng tôi luôn tìm kiếm những giải pháp pháp lý sáng tạo và hiệu quả để đáp ứng nhu cầu đa dạng của khách hàng.',
+        i18nTitle: 'about.creativity',
+        i18nDescription: 'about.creativityDesc',
       },
       {
         title: 'Hợp tác',
         description:
           'Chúng tôi tin rằng sự hợp tác chặt chẽ giữa đội ngũ nhân viên và khách hàng là chìa khóa để đạt được thành công.',
+        i18nTitle: 'about.cooperation',
+        i18nDescription: 'about.cooperationDesc',
       },
       {
         title: 'Chất lượng',
         description: 'Chúng tôi không ngừng nâng cao chất lượng dịch vụ để đáp ứng và vượt qua kỳ vọng của khách hàng.',
+        i18nTitle: 'about.quality',
+        i18nDescription: 'about.qualityDesc',
       },
     ]}
   />
@@ -353,10 +387,10 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
     title="Các con số biết nói"
     i18nTitle="about.statsTitle"
     stats={[
-      { title: 'Văn phòng', amount: '5' },
-      { title: 'Chuyên viên pháp lý', amount: '30+' },
-      { title: 'Khách hàng hài lòng', amount: '1176' },
-      { title: 'Vụ thắng kiện', amount: '723' },
+      { title: 'Văn phòng', amount: '5', i18nTitle: 'about.offices' },
+      { title: 'Chuyên viên pháp lý', amount: '30+', i18nTitle: 'about.legalExperts' },
+      { title: 'Khách hàng hài lòng', amount: '1176', i18nTitle: 'about.satisfiedClients' },
+      { title: 'Vụ thắng kiện', amount: '723', i18nTitle: 'about.casesWon' },
     ]}
   >
     <Fragment slot="bg">
@@ -370,6 +404,7 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
     title="Dịch vụ của Chúng tôi"
     subtitle="Tại Youth & Partners Law Firm, chúng tôi tự hào cung cấp các dịch vụ pháp lý và tư vấn chuyên nghiệp, được thiết kế để đáp ứng nhu cầu đa dạng của khách hàng. Với đội ngũ luật sư giàu kinh nghiệm và chuyên môn sâu rộng, chúng tôi cam kết mang lại giải pháp tối ưu cho mọi vấn đề pháp lý bao gồm nhưng không giới hạn như:"
     i18nTitle="about.ourServicesTitle"
+    i18nSubtitle="about.ourServicesSubtitle"
     columns={3}
     isBeforeContent={true}
     items={[
@@ -378,18 +413,24 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
         description:
           'Đội ngũ luật sư giàu kinh nghiệm của chúng tôi luôn sẵn sàng giải quyết mọi vấn đề pháp lý phức tạp. Chúng tôi cung cấp các dịch vụ pháp lý toàn diện từ tranh chấp thương mại, quyền sở hữu trí tuệ đến các vấn đề dân sự và hình sự.',
         icon: 'tabler:template',
+        i18nTitle: 'about.legalService',
+        i18nDescription: 'about.legalServiceDesc',
       },
       {
         title: 'Tư vấn Thường xuyên cho Doanh nghiệp',
         description:
           'Chúng tôi cung cấp dịch vụ tư vấn thường xuyên cho các doanh nghiệp, hỗ trợ bạn trong việc quản lý rủi ro pháp lý, tuân thủ quy định pháp luật và tối ưu hóa quy trình hoạt động.',
         icon: 'tabler:template',
+        i18nTitle: 'about.regularConsultService',
+        i18nDescription: 'about.regularConsultServiceDesc',
       },
       {
         title: 'Tư vấn Lao động',
         description:
           'Chúng tôi tư vấn về các vấn đề lao động nhằm đảm bảo quyền lợi cho cả người sử dụng lao động và nhân viên. Dịch vụ của chúng tôi bao gồm tư vấn hợp đồng lao động, quyền lợi nhân viên, giải quyết tranh chấp và tối ưu hóa quy trình lao động.',
         icon: 'tabler:template',
+        i18nTitle: 'about.laborConsultService',
+        i18nDescription: 'about.laborConsultServiceDesc',
       },
     ]}
   />
@@ -405,12 +446,16 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
         description:
           'Chúng tôi cung cấp các giải pháp pháp lý cho nhà đầu tư và người nước ngoài muốn kinh doanh hoặc sinh sống tại Việt Nam. Chúng tôi hỗ trợ từ việc thành lập doanh nghiệp, xin giấy phép lao động đến giải quyết các vấn đề pháp lý liên quan khác.',
         icon: 'tabler:template',
+        i18nTitle: 'about.investmentService',
+        i18nDescription: 'about.investmentServiceDesc',
       },
       {
         title: 'Dịch vụ Đánh giá Doanh nghiệp',
         description:
           'Chúng tôi cung cấp các giải pháp đánh giá doanh nghiệp toàn diện, giúp bạn hiểu rõ hơn về hiệu suất, tình hình tài chính và các yếu tố rủi ro của doanh nghiệp. Chúng tôi cam kết mang đến cho bạn những đánh giá chính xác và toàn diện nhất.',
         icon: 'tabler:template',
+        i18nTitle: 'about.evaluationServiceTitle',
+        i18nDescription: 'about.evaluationServiceDesc',
       },
     ]}
     image={{
@@ -424,23 +469,33 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
   <Features2
     title="Địa chỉ văn phòng"
     tagline="Hãy đến thăm chúng tôi"
+    i18nTitle="about.officeAddress"
+    i18nTagline="about.visitUs"
     columns={4}
     items={[
       {
         title: 'Hà Nội',
+        i18nTitle: 'about.hanoiOffice',
         description: 'P316, Tháp Tây, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội',
+        i18nDescription: 'about.hanoiAddress',
       },
       {
         title: 'Phú Thọ',
+        i18nTitle: 'about.phuThoOffice',
         description: 'Số 170, đường Nguyễn Văn Linh, phường Vĩnh Phúc, tỉnh Phú Thọ',
+        i18nDescription: 'about.phuThoAddress',
       },
       {
         title: 'Bắc Ninh',
+        i18nTitle: 'about.bacNinhOffice',
         description: 'Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc, tỉnh Bắc Ninh',
+        i18nDescription: 'about.bacNinhAddress',
       },
       {
         title: 'VPDD Vĩnh Tường',
-        description: 'Ngã 5 thôn Sen, xã Vĩnh Hưng, tỉnh Phú Thọ',
+        i18nTitle: 'about.vinhTuongOffice',
+        description: 'Ngã 5 thôn Sen, xã Vĩnh Hưng, tỉnh Phú Thọ',
+        i18nDescription: 'about.vinhTuongAddress',
       },
     ]}
   >
@@ -455,6 +510,8 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
     id="danh-sach-khach-hang"
     title="Khách hàng của chúng tôi"
     subtitle="Chúng tôi tự hào về mạng lưới đối tác và khách hàng rộng khắp, bao gồm các doanh nghiệp, tổ chức và cá nhân uy tín trong nhiều lĩnh vực khác nhau. Những đối tác hợp tác của chúng tôi gồm có các công ty luật hàng đầu, các tổ chức tư vấn chiến lược, và các công ty tài chính quốc tế. Chúng tôi làm việc chặt chẽ với họ để mang lại các giải pháp pháp lý tối ưu và chuyên nghiệp nhất."
+    i18nTitle="about.ourCustomers"
+    i18nSubtitle="about.ourCustomersSubtitle"
     icons={[]}
     images={[
       {
@@ -561,11 +618,14 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
   <Features3
     title="Liên hệ để được tư vấn ngay"
     subtitle="Tất cả các vấn đề bạn đang thắc mắc"
+    i18nTitle="about.contactNowTitle"
+    i18nSubtitle="about.contactNowSubtitle"
     columns={4}
     items={[
       {
         title: 'Hotline',
         icon: 'tabler:phone',
+        i18nTitle: 'company.hotline',
         callToAction: {
           target: '_blank',
           text: '0889956888',
@@ -576,6 +636,7 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
       {
         title: 'Email',
         icon: 'tabler:mail',
+        i18nTitle: 'company.email',
         callToAction: {
           target: '_blank',
           text: 'contact@yplawfirm.vn',
@@ -586,21 +647,25 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
       {
         title: 'Chat với chuyên viên',
         icon: 'tabler:message-circle',
+        i18nTitle: 'about.chatWithExpert',
         callToAction: {
           target: '_blank',
           text: 'Bắt đầu chat',
           href: '/',
           variant: 'link',
+          i18nText: 'about.startChat',
         },
       },
       {
         title: 'Liên hệ',
         icon: 'tabler:message-circle',
+        i18nTitle: 'nav.contact',
         callToAction: {
           target: '_blank',
           text: 'Hãy để lại lời nhắn',
           href: '/lien-he',
           variant: 'link',
+          i18nText: 'about.leaveMessage',
         },
       },
     ]}
@@ -610,3 +675,6 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
     </Fragment>
   </Features3>
 </Layout>
+
+
+

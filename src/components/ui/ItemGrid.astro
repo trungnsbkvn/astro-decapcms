@@ -46,14 +46,14 @@ const {
             <div class="mt-0.5">
               {title && (
                 <h3 
-                  class:list={[twMerge('text-xl font-bold', titleClass, itemClasses?.title)]}
-                  {...(i18nTitle ? { 'data-i18n': i18nTitle } : {})}
+                  class:list={[twMerge('text-xl font-bold', titleClass, itemClasses?.title, i18nTitle ? 'notranslate' : '')]}
+                  {...(i18nTitle ? { 'data-i18n': i18nTitle, 'translate': 'no' } : {})}
                 >{title}</h3>
               )}
               {description && (
                 <p
-                  class:list={[twMerge(`${title ? 'mt-3' : ''} text-muted`, descriptionClass, itemClasses?.description)]}
-                  {...(i18nDescription ? { 'data-i18n': i18nDescription } : {})}
+                  class:list={[twMerge(`${title ? 'mt-3' : ''} text-muted`, descriptionClass, itemClasses?.description, i18nDescription ? 'notranslate' : '')]}
+                  {...(i18nDescription ? { 'data-i18n': i18nDescription, 'translate': 'no' } : {})}
                   set:html={description}
                 />
               )}

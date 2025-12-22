@@ -47,16 +47,16 @@ const {
           <div class={`pt-1 ${index !== items.length - 1 ? 'pb-8' : ''}`}>
             {title && (
               <p 
-                class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)} 
+                class={twMerge('text-xl font-bold', titleClass, itemClasses?.title, i18nTitle ? 'notranslate' : '')} 
                 set:html={title}
-                {...(i18nTitle ? { 'data-i18n': i18nTitle } : {})}
+                {...(i18nTitle ? { 'data-i18n': i18nTitle, 'translate': 'no' } : {})}
               />
             )}
             {description && (
               <p
-                class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)}
+                class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description, i18nDescription ? 'notranslate' : '')}
                 set:html={description}
-                {...(i18nDescription ? { 'data-i18n': i18nDescription } : {})}
+                {...(i18nDescription ? { 'data-i18n': i18nDescription, 'translate': 'no' } : {})}
               />
             )}
           </div>

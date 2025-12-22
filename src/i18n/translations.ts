@@ -149,7 +149,28 @@ export const translations = {
       timePeriod2020_2021: '2020 - 2021',
       timePeriod2020_2024: '2020 - 2024',
       establishDate: '09/10/2019',
+      // History timeline full HTML titles (used by i18n system)
+      historyTitle1: 'Kiện toàn tổ chức và phát triển dịch vụ <br /> <span class="font-normal">Bổ sung nhân lực và phát triển mở rộng quy mô dịch vụ</span> <br /> <span class="text-sm font-normal">2024 - đến nay</span>',
+      historyTitle2: 'Mở rộng <br /> <span class="font-normal">Thêm 01 chi nhánh tại Hà Nội</span> <br /> <span class="text-sm font-normal">2021 - 2023</span>',
+      historyTitle3: 'Mở rộng <br /> <span class="font-normal">Thêm 01 chi nhánh tại Bắc Ninh</span> <br /> <span class="text-sm font-normal">2020 - 2021</span>',
+      historyTitle4: 'Mở rộng <br /> <span class="font-normal">Thay đổi địa chỉ công ty</span> <br /> <span class="text-sm font-normal">2020 - 2024</span>',
+      historyTitle5: 'Thành lập công ty <br /> <span class="font-normal">Youth & Partners</span> <br /> <span class="text-sm font-normal">09/10/2019</span>',
       // History timeline descriptions
+      historyDesc1: `Từ năm 2024 đến nay, Youth & Partners Law Firm đã tiến hành kiện toàn bộ máy tổ chức, bổ sung nhân lực và mở rộng quy mô dịch vụ để đáp ứng nhu cầu ngày càng cao của khách hàng. Công ty tập trung vào việc cung cấp các giải pháp toàn diện và dịch vụ tư vấn pháp lý chuyên sâu trong nhiều lĩnh vực, bao gồm nhưng không giới hạn như:
+        <br />•	Doanh nghiệp
+        <br />•	Tư vấn thường xuyên
+        <br />•	Sở hữu trí tuệ
+        <br />•	Quản trị Doanh nghiệp và tuân thủ
+        <br />•	Dự án Đầu tư
+        <br />•	Dịch vụ hỗ trợ Doanh nghiệp
+        <br />•	M&A (Mua bán và sáp nhập)
+        <br />•	Tranh tụng và giải quyết tranh chấp (Dân sự, Hình sự và Hành chính)
+        <br />•	Lao động và việc làm
+        <br />•	Dịch vụ pháp lý về Đất đai`,
+      historyDesc2: 'Trong giai đoạn 2021 – 2023, Youth & Partners tiếp tục mở rộng mạng lưới với chi nhánh mới tại thủ đô Hà Nội, được đặt tại P316, Tháp Tây, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội. Đây là bước đi quan trọng trong việc củng cố sự hiện diện và mở rộng thị trường tại khu vực miền Bắc, đặc biệt là tại Hà Nội - trung tâm kinh tế lớn của cả nước.',
+      historyDesc3: 'Trong giai đoạn 2020 – 2021, Công ty Luật TNHH Youth & Partners đã thực hiện chiến lược mở rộng mạng lưới để nâng cao chất lượng dịch vụ và đáp ứng tốt hơn nhu cầu của khách hàng tại các khu vực trọng điểm. Cụ thể, công ty đã khai trương Văn phòng giao dịch tại Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc, tỉnh Bắc Ninh, qua đó mở rộng phạm vi hoạt động và gia tăng sự hiện diện tại thị trường khu vực.',
+      historyDesc4: 'Để đáp ứng nhu cầu phát triển, vào tháng 01 năm 2020, sau nửa năm hoạt động, công ty đã chuyển trụ sở đến Số 170 Nguyễn Văn Linh, phường Liên Bảo, thành phố Vĩnh Yên, tỉnh Vĩnh Phúc Đây cũng là địa chỉ trụ sở hiện tại của công ty. Cùng với bước chuyển quan trọng này, quy mô công ty cũng đã được mở rộng đáng kể, số lượng nhân sự tăng gấp ba lần so với ban đầu, đánh dấu một bước tiến vững chắc trong quá trình phát triển của Y&P Law Firm.',
+      historyDesc5: 'Vào ngày 09 tháng 10 năm 2019, Công ty Luật TNHH Youth & Partners chính thức được thành lập tại số 67, đường Phạm Hồng Thái, Liên Bảo, Vĩnh Yên, Vĩnh Phúc.',
       historyOrgDevDesc: 'Từ năm 2024 đến nay, Youth & Partners Law Firm đã tiến hành kiện toàn bộ máy tổ chức, bổ sung nhân lực và mở rộng quy mô dịch vụ để đáp ứng nhu cầu ngày càng cao của khách hàng.',
       historyExpandHanoiDesc: 'Trong giai đoạn 2021 – 2023, Youth & Partners tiếp tục mở rộng mạng lưới với chi nhánh mới tại thủ đô Hà Nội.',
       historyExpandBacNinhDesc: 'Trong giai đoạn 2020 – 2021, Công ty Luật TNHH Youth & Partners đã thực hiện chiến lược mở rộng mạng lưới để nâng cao chất lượng dịch vụ.',
@@ -167,6 +188,46 @@ export const translations = {
       legalExperts: 'Chuyên viên pháp lý',
       satisfiedClients: 'Khách hàng hài lòng',
       casesWon: 'Vụ thắng kiện',
+      // Vision/Mission descriptions
+      visionSubtitle: '<b>Tầm nhìn</b> Youth & Partners hướng tới mục tiêu trở thành một trong những công ty luật hàng đầu tại Việt Nam, nơi khách hàng luôn đặt trọn niềm tin khi tìm kiếm các giải pháp pháp lý. Chúng tôi không ngừng đổi mới, nâng cao chất lượng dịch vụ và phát triển đội ngũ luật sư giàu kinh nghiệm, tận tâm để đáp ứng nhu cầu ngày càng cao của khách hàng. Với sự nhiệt huyết, chuyên nghiệp và khả năng thích ứng vượt trội, chúng tôi đặt tham vọng trở thành biểu tượng của sự xuất sắc trong lĩnh vực pháp lý, mang lại giá trị bền vững cho khách hàng và xã hội. <br /><br /> <b>Sứ mệnh</b> Công ty Luật TNHH Youth & Partners cam kết đồng hành cùng khách hàng trong hành trình bảo vệ quyền lợi và thực hiện các mục tiêu pháp lý một cách hiệu quả và kịp thời. Với phương châm "Thời gian, Tận tâm, Tận lực", chúng tôi luôn đặt lợi ích của khách hàng lên hàng đầu, làm việc với tinh thần trách nhiệm cao nhất để giải quyết các vấn đề pháp lý đa dạng và phức tạp. Sứ mệnh của chúng tôi không chỉ giới hạn ở việc cung cấp dịch vụ pháp lý mà còn hướng tới việc trở thành đối tác tin cậy, hỗ trợ khách hàng và đối tác vượt qua mọi thách thức pháp lý, từ đó góp phần vào sự phát triển bền vững của Doanh nghiệp và cộng đồng. Với tinh thần trách nhiệm, nhiệt huyết và sự tận tâm, Youth & Partners Law Firm không ngừng phấn đấu để mỗi giải pháp pháp lý mà chúng tôi cung cấp đều mang lại giá trị thiết thực và thành công cho khách hàng.',
+      // Core values descriptions
+      integrityDesc: 'Chúng tôi luôn hành động với sự trung thực và đạo đức nghề nghiệp, đặt lợi ích của khách hàng lên hàng đầu.',
+      creativityDesc: 'Chúng tôi luôn tìm kiếm những giải pháp pháp lý sáng tạo và hiệu quả để đáp ứng nhu cầu đa dạng của khách hàng.',
+      cooperationDesc: 'Chúng tôi tin rằng sự hợp tác chặt chẽ giữa đội ngũ nhân viên và khách hàng là chìa khóa để đạt được thành công.',
+      qualityDesc: 'Chúng tôi không ngừng nâng cao chất lượng dịch vụ để đáp ứng và vượt qua kỳ vọng của khách hàng.',
+      // Services descriptions
+      ourServicesSubtitle: 'Tại Youth & Partners Law Firm, chúng tôi tự hào cung cấp các dịch vụ pháp lý và tư vấn chuyên nghiệp, được thiết kế để đáp ứng nhu cầu đa dạng của khách hàng. Với đội ngũ luật sư giàu kinh nghiệm và chuyên môn sâu rộng, chúng tôi cam kết mang lại giải pháp tối ưu cho mọi vấn đề pháp lý bao gồm nhưng không giới hạn như:',
+      legalService: 'Dịch vụ Pháp lý',
+      legalServiceDesc: 'Đội ngũ luật sư giàu kinh nghiệm của chúng tôi luôn sẵn sàng giải quyết mọi vấn đề pháp lý phức tạp. Chúng tôi cung cấp các dịch vụ pháp lý toàn diện từ tranh chấp thương mại, quyền sở hữu trí tuệ đến các vấn đề dân sự và hình sự.',
+      regularConsultService: 'Tư vấn Thường xuyên cho Doanh nghiệp',
+      regularConsultServiceDesc: 'Chúng tôi cung cấp dịch vụ tư vấn thường xuyên cho các doanh nghiệp, hỗ trợ bạn trong việc quản lý rủi ro pháp lý, tuân thủ quy định pháp luật và tối ưu hóa quy trình hoạt động.',
+      laborConsultService: 'Tư vấn Lao động',
+      laborConsultServiceDesc: 'Chúng tôi tư vấn về các vấn đề lao động nhằm đảm bảo quyền lợi cho cả người sử dụng lao động và nhân viên. Dịch vụ của chúng tôi bao gồm tư vấn hợp đồng lao động, quyền lợi nhân viên, giải quyết tranh chấp và tối ưu hóa quy trình lao động.',
+      investmentService: 'Đầu tư và Người Nước Ngoài',
+      investmentServiceDesc: 'Chúng tôi cung cấp các giải pháp pháp lý cho nhà đầu tư và người nước ngoài muốn kinh doanh hoặc sinh sống tại Việt Nam. Chúng tôi hỗ trợ từ việc thành lập doanh nghiệp, xin giấy phép lao động đến giải quyết các vấn đề pháp lý liên quan khác.',
+      evaluationServiceTitle: 'Dịch vụ Đánh giá Doanh nghiệp',
+      evaluationServiceDesc: 'Chúng tôi cung cấp các giải pháp đánh giá doanh nghiệp toàn diện, giúp bạn hiểu rõ hơn về hiệu suất, tình hình tài chính và các yếu tố rủi ro của doanh nghiệp. Chúng tôi cam kết mang đến cho bạn những đánh giá chính xác và toàn diện nhất.',
+      // Capability profile
+      capabilitySubtitle: 'Tại đây, bạn sẽ tìm thấy những thông tin chi tiết về năng lực chuyên môn, các dịch vụ pháp lý mà chúng tôi cung cấp, và các thành tựu nổi bật của đội ngũ luật sư tại công ty',
+      // Office addresses
+      hanoiOffice: 'Hà Nội',
+      hanoiAddress: 'P316, Tháp Tây, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội',
+      phuThoOffice: 'Phú Thọ',
+      phuThoAddress: 'Số 170, đường Nguyễn Văn Linh, phường Vĩnh Phúc, tỉnh Phú Thọ',
+      bacNinhOffice: 'Bắc Ninh',
+      bacNinhAddress: 'Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc, tỉnh Bắc Ninh',
+      vinhTuongOffice: 'VPDD Vĩnh Tường',
+      vinhTuongAddress: 'Ngã 5 thôn Sen, xã Vĩnh Hưng, tỉnh Phú Thọ',
+      // Customers section
+      ourCustomers: 'Khách hàng của chúng tôi',
+      ourCustomersSubtitle: 'Chúng tôi tự hào về mạng lưới đối tác và khách hàng rộng khắp, bao gồm các doanh nghiệp, tổ chức và cá nhân uy tín trong nhiều lĩnh vực khác nhau. Những đối tác hợp tác của chúng tôi gồm có các công ty luật hàng đầu, các tổ chức tư vấn chiến lược, và các công ty tài chính quốc tế. Chúng tôi làm việc chặt chẽ với họ để mang lại các giải pháp pháp lý tối ưu và chuyên nghiệp nhất.',
+      // Contact section
+      contactNowTitle: 'Liên hệ để được tư vấn ngay',
+      contactNowSubtitle: 'Tất cả các vấn đề bạn đang thắc mắc',
+      chatWithExpert: 'Chat với chuyên viên',
+      startChat: 'Bắt đầu chat',
+      leaveMessage: 'Hãy để lại lời nhắn',
+      viewMore: 'Xem thêm',
     },
     en: {
       history: 'Establishment History',
@@ -221,7 +282,28 @@ export const translations = {
       timePeriod2020_2021: '2020 - 2021',
       timePeriod2020_2024: '2020 - 2024',
       establishDate: 'Oct 09, 2019',
+      // History timeline full HTML titles (used by i18n system)
+      historyTitle1: 'Organization & Service Development <br /> <span class="font-normal">Adding personnel and expanding service scale</span> <br /> <span class="text-sm font-normal">2024 - present</span>',
+      historyTitle2: 'Expansion <br /> <span class="font-normal">Added 01 branch in Hanoi</span> <br /> <span class="text-sm font-normal">2021 - 2023</span>',
+      historyTitle3: 'Expansion <br /> <span class="font-normal">Added 01 branch in Bac Ninh</span> <br /> <span class="text-sm font-normal">2020 - 2021</span>',
+      historyTitle4: 'Expansion <br /> <span class="font-normal">Company address change</span> <br /> <span class="text-sm font-normal">2020 - 2024</span>',
+      historyTitle5: 'Company Establishment <br /> <span class="font-normal">Youth & Partners</span> <br /> <span class="text-sm font-normal">Oct 09, 2019</span>',
       // History timeline descriptions
+      historyDesc1: `From 2024 to present, Youth & Partners Law Firm has restructured its organization, added personnel and expanded service scale to meet the increasing demands of clients. The company focuses on providing comprehensive solutions and in-depth legal consulting services in many areas, including but not limited to:
+        <br />• Enterprise
+        <br />• Regular Consulting
+        <br />• Intellectual Property
+        <br />• Corporate Governance and Compliance
+        <br />• Investment Projects
+        <br />• Business Support Services
+        <br />• M&A (Mergers and Acquisitions)
+        <br />• Litigation and Dispute Resolution (Civil, Criminal and Administrative)
+        <br />• Labor and Employment
+        <br />• Real Estate Legal Services`,
+      historyDesc2: 'During 2021-2023, Youth & Partners continued to expand its network with a new branch in Hanoi capital, located at P316, West Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi City. This is an important step in consolidating our presence and expanding the market in the Northern region, especially in Hanoi - the major economic center of the country.',
+      historyDesc3: 'During 2020-2021, Youth & Partners Law Firm LLC implemented a network expansion strategy to improve service quality and better meet customer needs in key areas. Specifically, the company opened a Transaction Office at 26 Doan Tran Nghiep, Kinh Bac Ward, Bac Ninh Province, thereby expanding the scope of operations and increasing presence in the regional market.',
+      historyDesc4: 'To meet development needs, in January 2020, after six months of operation, the company relocated its headquarters to 170 Nguyen Van Linh, Lien Bao Ward, Vinh Yen City, Vinh Phuc Province. This is also the current headquarters of the company. Along with this important transition, the company scale has also been significantly expanded, with personnel tripling compared to the beginning, marking a solid step forward in the development of Y&P Law Firm.',
+      historyDesc5: 'On October 09, 2019, Youth & Partners Law Firm LLC was officially established at 67 Pham Hong Thai Street, Lien Bao, Vinh Yen, Vinh Phuc.',
       historyOrgDevDesc: 'From 2024 to present, Youth & Partners Law Firm has restructured its organization, added personnel and expanded service scale to meet the increasing demands of clients.',
       historyExpandHanoiDesc: 'During 2021-2023, Youth & Partners continued to expand its network with a new branch in Hanoi capital.',
       historyExpandBacNinhDesc: 'During 2020-2021, Youth & Partners Law Firm LLC implemented a network expansion strategy to improve service quality.',
@@ -239,6 +321,46 @@ export const translations = {
       legalExperts: 'Legal Experts',
       satisfiedClients: 'Satisfied Clients',
       casesWon: 'Cases Won',
+      // Vision/Mission descriptions
+      visionSubtitle: '<b>Vision</b> Youth & Partners aims to become one of the leading law firms in Vietnam, where clients always place their full trust when seeking legal solutions. We continuously innovate, improve service quality, and develop a team of experienced, dedicated lawyers to meet the ever-increasing demands of our clients. With enthusiasm, professionalism, and exceptional adaptability, we aspire to become a symbol of excellence in the legal field, bringing sustainable value to clients and society. <br /><br /> <b>Mission</b> Youth & Partners Law Firm LLC is committed to accompanying clients on their journey to protect their rights and achieve legal goals effectively and promptly. With the motto "Time, Dedication, Excellence", we always put our clients\' interests first, working with the highest sense of responsibility to resolve diverse and complex legal issues. Our mission is not limited to providing legal services but also aims to become a trusted partner, supporting clients and partners to overcome all legal challenges, thereby contributing to the sustainable development of businesses and the community.',
+      // Core values descriptions
+      integrityDesc: 'We always act with honesty and professional ethics, putting clients\' interests first.',
+      creativityDesc: 'We always seek creative and effective legal solutions to meet the diverse needs of our clients.',
+      cooperationDesc: 'We believe that close cooperation between our team and clients is the key to success.',
+      qualityDesc: 'We continuously improve service quality to meet and exceed client expectations.',
+      // Services descriptions
+      ourServicesSubtitle: 'At Youth & Partners Law Firm, we are proud to provide professional legal services and consulting, designed to meet the diverse needs of our clients. With a team of experienced lawyers and extensive expertise, we are committed to providing optimal solutions for all legal issues including but not limited to:',
+      legalService: 'Legal Services',
+      legalServiceDesc: 'Our experienced team of lawyers is always ready to resolve all complex legal issues. We provide comprehensive legal services from commercial disputes, intellectual property rights to civil and criminal matters.',
+      regularConsultService: 'Regular Business Consultation',
+      regularConsultServiceDesc: 'We provide regular consulting services for businesses, supporting you in managing legal risks, complying with legal regulations, and optimizing operational processes.',
+      laborConsultService: 'Labor Consultation',
+      laborConsultServiceDesc: 'We advise on labor issues to ensure the rights of both employers and employees. Our services include labor contract consulting, employee benefits, dispute resolution, and labor process optimization.',
+      investmentService: 'Investment and Foreigners',
+      investmentServiceDesc: 'We provide legal solutions for investors and foreigners who want to do business or live in Vietnam. We support from establishing businesses, applying for work permits to resolving other related legal issues.',
+      evaluationServiceTitle: 'Business Evaluation Service',
+      evaluationServiceDesc: 'We provide comprehensive business evaluation solutions, helping you better understand the performance, financial situation, and risk factors of your business. We are committed to providing you with the most accurate and comprehensive assessments.',
+      // Capability profile
+      capabilitySubtitle: 'Here you will find detailed information about our professional capabilities, legal services we provide, and outstanding achievements of our team of lawyers',
+      // Office addresses
+      hanoiOffice: 'Hanoi',
+      hanoiAddress: 'P316, West Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi City',
+      phuThoOffice: 'Phu Tho',
+      phuThoAddress: '170 Nguyen Van Linh Street, Vinh Phuc Ward, Phu Tho Province',
+      bacNinhOffice: 'Bac Ninh',
+      bacNinhAddress: '26 Doan Tran Nghiep, Kinh Bac Ward, Bac Ninh Province',
+      vinhTuongOffice: 'Vinh Tuong Rep. Office',
+      vinhTuongAddress: '5-way Intersection Sen Village, Vinh Hung Commune, Phu Tho Province',
+      // Customers section
+      ourCustomers: 'Our Customers',
+      ourCustomersSubtitle: 'We are proud of our extensive network of partners and customers, including reputable businesses, organizations, and individuals in many different fields. Our partners include leading law firms, strategic consulting organizations, and international financial companies. We work closely with them to provide optimal and professional legal solutions.',
+      // Contact section
+      contactNowTitle: 'Contact Us for Immediate Consultation',
+      contactNowSubtitle: 'All your questions answered',
+      chatWithExpert: 'Chat with Expert',
+      startChat: 'Start Chat',
+      leaveMessage: 'Leave a Message',
+      viewMore: 'View More',
     },
     zh: {
       history: '成立历史',
@@ -292,7 +414,18 @@ export const translations = {
       timePeriod2020_2021: '2020 - 2021',
       timePeriod2020_2024: '2020 - 2024',
       establishDate: '2019年10月09日',
+      // History timeline full HTML titles
+      historyTitle1: '组织发展和服务扩展 <br /> <span class="font-normal">增加人员并扩大服务规模</span> <br /> <span class="text-sm font-normal">2024年至今</span>',
+      historyTitle2: '扩展 <br /> <span class="font-normal">在河内新增01个分支</span> <br /> <span class="text-sm font-normal">2021 - 2023</span>',
+      historyTitle3: '扩展 <br /> <span class="font-normal">在北宁新增01个分支</span> <br /> <span class="text-sm font-normal">2020 - 2021</span>',
+      historyTitle4: '扩展 <br /> <span class="font-normal">公司地址变更</span> <br /> <span class="text-sm font-normal">2020 - 2024</span>',
+      historyTitle5: '公司成立 <br /> <span class="font-normal">Youth & Partners</span> <br /> <span class="text-sm font-normal">2019年10月09日</span>',
       // History timeline descriptions
+      historyDesc1: '从2024年至今，Youth & Partners律所已进行组织整顿，增加人员并扩大服务规模，以满足客户日益增长的需求。公司专注于提供全面解决方案和深入的法律咨询服务，包括但不限于：<br />• 企业<br />• 常规咨询<br />• 知识产权<br />• 公司治理与合规<br />• 投资项目<br />• 企业支持服务<br />• 并购（M&A）<br />• 诉讼和争议解决（民事、刑事和行政）<br />• 劳动与就业<br />• 房地产法律服务',
+      historyDesc2: '2021-2023年间，Youth & Partners继续扩展网络，在河内首都开设新分支，位于河内市义都区国防学院公寓西塔P316。这是巩固北方市场存在和扩展的重要一步，特别是在河内——全国主要经济中心。',
+      historyDesc3: '2020-2021年间，Youth & Partners律所实施网络扩展战略以提高服务质量并更好地满足重点地区客户需求。具体而言，公司在北宁省京北区段陈业街26号开设交易办事处，从而扩大运营范围并增加在区域市场的存在。',
+      historyDesc4: '为满足发展需求，2020年1月，运营半年后，公司将总部迁至永福省永安市连宝区阮文灵路170号。这也是公司目前的总部地址。随着这一重要转变，公司规模也显著扩大，人员比最初增加了三倍，标志着Y&P律所发展的坚实一步。',
+      historyDesc5: '2019年10月09日，Youth & Partners律所正式成立于永福省永安市连宝区范鸿泰街67号。',
       historyOrgDevDesc: '从2024年至今，Youth & Partners律所已进行组织整顿，增加人员并扩大服务规模，以满足客户日益增长的需求。',
       historyExpandHanoiDesc: '2021-2023年间，Youth & Partners继续扩展网络，在河内首都开设新分支。',
       historyExpandBacNinhDesc: '2020-2021年间，Youth & Partners律所实施网络扩展战略以提高服务质量。',
@@ -361,7 +494,18 @@ export const translations = {
       timePeriod2020_2021: '2020年〜2021年',
       timePeriod2020_2024: '2020年〜2024年',
       establishDate: '2019年10月09日',
+      // History timeline full HTML titles
+      historyTitle1: '組織開発とサービス拡大 <br /> <span class="font-normal">人員を追加しサービス規模を拡大</span> <br /> <span class="text-sm font-normal">2024年〜現在</span>',
+      historyTitle2: '拡張 <br /> <span class="font-normal">ハノイに01支店を追加</span> <br /> <span class="text-sm font-normal">2021年〜2023年</span>',
+      historyTitle3: '拡張 <br /> <span class="font-normal">バクニンに01支店を追加</span> <br /> <span class="text-sm font-normal">2020年〜2021年</span>',
+      historyTitle4: '拡張 <br /> <span class="font-normal">会社住所変更</span> <br /> <span class="text-sm font-normal">2020年〜2024年</span>',
+      historyTitle5: '会社設立 <br /> <span class="font-normal">Youth & Partners</span> <br /> <span class="text-sm font-normal">2019年10月09日</span>',
       // History timeline descriptions
+      historyDesc1: '2024年から現在まで、Youth & Partners法律事務所は組織を整備し、人員を追加してサービス規模を拡大し、お客様の高まるニーズに応えています。会社は以下を含むがこれに限定されない多くの分野で包括的なソリューションと専門的な法律コンサルティングサービスの提供に注力しています：<br />• 企業<br />• 定期コンサルティング<br />• 知的財産<br />• コーポレートガバナンスとコンプライアンス<br />• 投資プロジェクト<br />• ビジネスサポートサービス<br />• M&A（合併・買収）<br />• 訴訟と紛争解決（民事、刑事、行政）<br />• 労働と雇用<br />• 不動産法律サービス',
+      historyDesc2: '2021年から2023年の間、Youth & Partnersはハノイ首都に新しい支店を開設し、ネットワークを拡大しました。支店はハノイ市ギア・ド区国防学院アパート西棟P316に位置しています。これは特にベトナムの主要経済中心地であるハノイにおいて、北部地域での存在感を強化し市場を拡大するための重要な一歩です。',
+      historyDesc3: '2020年から2021年の間、Youth & Partners法律事務所はサービス品質向上と重点地域のお客様のニーズにより良く対応するためネットワーク拡大戦略を実施しました。具体的には、バクニン省キンバク区ドアン・チャン・ギエップ26番地に取引オフィスを開設し、事業範囲を拡大し地域市場での存在感を高めました。',
+      historyDesc4: '発展ニーズに応えるため、2020年1月、半年の運営後、ビンフック省ビンイエン市リエンバオ区グエン・ヴァン・リン170番地に本社を移転しました。これは会社の現在の本社所在地でもあります。この重要な転換に伴い、会社の規模も大幅に拡大し、人員は当初の3倍に増加し、Y&P法律事務所の発展における着実な一歩を示しています。',
+      historyDesc5: '2019年10月09日、Youth & Partners法律事務所がビンフック省ビンイエン市リエンバオ区ファム・ホン・タイ通り67番地に正式に設立されました。',
       historyOrgDevDesc: '2024年から現在まで、Youth & Partners法律事務所は組織を整備し、人員を追加してサービス規模を拡大し、お客様の高まるニーズに応えています。',
       historyExpandHanoiDesc: '2021年から2023年の間、Youth & Partnersはハノイ首都に新しい支店を開設し、ネットワークを拡大しました。',
       historyExpandBacNinhDesc: '2020年から2021年の間、Youth & Partners法律事務所はサービス品質向上のためネットワーク拡大戦略を実施しました。',
@@ -430,7 +574,18 @@ export const translations = {
       timePeriod2020_2021: '2020년 ~ 2021년',
       timePeriod2020_2024: '2020년 ~ 2024년',
       establishDate: '2019년 10월 09일',
+      // History timeline full HTML titles
+      historyTitle1: '조직 개발 및 서비스 확장 <br /> <span class="font-normal">인력 추가 및 서비스 규모 확대</span> <br /> <span class="text-sm font-normal">2024년 ~ 현재</span>',
+      historyTitle2: '확장 <br /> <span class="font-normal">하노이에 01개 지점 추가</span> <br /> <span class="text-sm font-normal">2021년 ~ 2023년</span>',
+      historyTitle3: '확장 <br /> <span class="font-normal">박닌에 01개 지점 추가</span> <br /> <span class="text-sm font-normal">2020년 ~ 2021년</span>',
+      historyTitle4: '확장 <br /> <span class="font-normal">회사 주소 변경</span> <br /> <span class="text-sm font-normal">2020년 ~ 2024년</span>',
+      historyTitle5: '회사 설립 <br /> <span class="font-normal">Youth & Partners</span> <br /> <span class="text-sm font-normal">2019년 10월 09일</span>',
       // History timeline descriptions
+      historyDesc1: '2024년부터 현재까지 Youth & Partners 법률사무소는 조직을 정비하고 인력을 추가하여 서비스 규모를 확대하여 고객의 증가하는 요구에 부응하고 있습니다. 회사는 다음을 포함하되 이에 국한되지 않는 많은 분야에서 포괄적인 솔루션과 심층 법률 컨설팅 서비스 제공에 집중하고 있습니다:<br />• 기업<br />• 정기 컨설팅<br />• 지적재산<br />• 기업 거버넌스 및 규정 준수<br />• 투자 프로젝트<br />• 비즈니스 지원 서비스<br />• M&A (인수합병)<br />• 소송 및 분쟁 해결 (민사, 형사, 행정)<br />• 노동 및 고용<br />• 부동산 법률 서비스',
+      historyDesc2: '2021년부터 2023년까지 Youth & Partners는 하노이 수도에 새로운 지점을 열어 네트워크를 확장했습니다. 지점은 하노이시 응히아도구 국방학원 아파트 서타워 P316에 위치해 있습니다. 이는 특히 베트남의 주요 경제 중심지인 하노이에서 북부 지역의 존재감을 강화하고 시장을 확장하는 중요한 단계입니다.',
+      historyDesc3: '2020년부터 2021년까지 Youth & Partners 법률사무소는 서비스 품질 향상과 주요 지역 고객의 요구를 더 잘 충족시키기 위한 네트워크 확장 전략을 실시했습니다. 구체적으로 박닌성 킨박구 도안찬응이엡 26번지에 거래 사무소를 개설하여 운영 범위를 확대하고 지역 시장에서의 존재감을 높였습니다.',
+      historyDesc4: '발전 요구에 부응하기 위해 2020년 1월, 6개월간의 운영 후 빈푹성 빈옌시 리엔바오구 응우옌반린 170번지로 본사를 이전했습니다. 이곳은 현재 회사 본사 주소이기도 합니다. 이 중요한 전환과 함께 회사 규모도 크게 확대되어 인력이 초기 대비 3배로 증가하여 Y&P 법률사무소의 발전에 있어 확고한 한 걸음을 보여주었습니다.',
+      historyDesc5: '2019년 10월 09일, Youth & Partners 법률사무소가 빈푹성 빈옌시 리엔바오 팜홍타이 67번지에 공식적으로 설립되었습니다.',
       historyOrgDevDesc: '2024년부터 현재까지 Youth & Partners 법률사무소는 조직을 정비하고 인력을 추가하여 서비스 규모를 확대하여 고객의 증가하는 요구에 부응하고 있습니다.',
       historyExpandHanoiDesc: '2021년부터 2023년까지 Youth & Partners는 하노이 수도에 새로운 지점을 열어 네트워크를 확장했습니다.',
       historyExpandBacNinhDesc: '2020년부터 2021년까지 Youth & Partners 법률사무소는 서비스 품질 향상을 위한 네트워크 확장 전략을 실시했습니다.',

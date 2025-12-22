@@ -32,7 +32,7 @@ const {
         containerClass
       )}
     >
-      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
+      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {}, i18nTitle, i18nDescription }) => (
         <div
           class={twMerge(
             'relative flex flex-col intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
@@ -43,9 +43,18 @@ const {
           {(icon || defaultIcon) && (
             <Icon name={icon || defaultIcon} class={twMerge('mb-2 w-10 h-10', defaultIconClass, itemClasses?.icon)} />
           )}
-          <div class={twMerge('text-xl font-bold notranslate', titleClass, itemClasses?.title)} translate="no">{title}</div>
+          <div 
+            class={twMerge('text-xl font-bold notranslate', titleClass, itemClasses?.title)} 
+            translate="no"
+            {...(i18nTitle ? { 'data-i18n': i18nTitle } : {})}
+          >{title}</div>
           {description && (
-            <p class={twMerge('text-muted mt-2 notranslate', descriptionClass, itemClasses?.description)} translate="no" set:html={description} />
+            <p 
+              class={twMerge('text-muted mt-2 notranslate', descriptionClass, itemClasses?.description)} 
+              translate="no" 
+              {...(i18nDescription ? { 'data-i18n': i18nDescription } : {})}
+              set:html={description} 
+            />
           )}
           {callToAction && (
             <div class="mt-2 notranslate" translate="no">

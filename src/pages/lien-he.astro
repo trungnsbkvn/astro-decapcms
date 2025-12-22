@@ -15,72 +15,91 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Youth & Partners Lawfirm" title="Liên hệ với chúng tôi!" />
+  <HeroText tagline="Youth & Partners Lawfirm" title="Liên hệ với chúng tôi!" i18nTitle="contact.title" />
 
   <ContactUs
     id="form"
     title="Hãy để lại thông tin bên dưới"
     subtitle="Đội ngũ hỗ trợ của chúng tôi luôn sẵn lòng giúp đỡ bạn."
+    i18nTitle="contact.subtitle"
+    i18nSubtitle="contact.description"
     button="Gửi thông tin"
+    i18nButton="forms.sendMessage"
     inputs={[
       {
         type: 'text',
         name: 'name',
         label: 'Họ tên',
+        i18nLabel: 'forms.name',
       },
       {
         type: 'email',
         name: 'email',
         label: 'Email',
+        i18nLabel: 'forms.email',
       },
       {
         type: 'phone',
         name: 'phone',
         label: 'Số điện thoại',
+        i18nLabel: 'forms.phone',
       },
     ]}
     textarea={{
       label: 'Nội dung',
       name: 'message',
+      i18nLabel: 'forms.message',
     }}
     disclaimer={{
       label: 'Bằng việc gửi biểu mẫu liên hệ này, bạn xác nhận và đồng ý với việc thu thập thông tin cá nhân của bạn.',
+      i18nLabel: 'contact.disclaimer',
     }}
     description="Đội ngũ hỗ trợ của chúng tôi thường phản hồi trong vòng 24 giờ làm việc."
+    i18nDescription="contact.responseTime"
   />
   <!-- Features2 Widget ************** -->
 
   <Features2
     title="Chúng tôi luôn sẵn sàng hỗ trợ bạn!"
+    i18nTitle="contact.readyToHelp"
     items={[
       {
         title: 'Hỗ trợ chung',
         description: `Liên hệ với chúng tôi để được hỗ trợ về các vấn đề pháp lý chung, điều hướng trang web, thanh toán, truy cập các tài liệu pháp lý đã mua hoặc các câu hỏi về dịch vụ của chúng tôi.`,
+        i18nTitle: 'contact.generalSupport',
+        i18nDescription: 'contactExtra.generalSupportDesc',
       },
       {
         title: 'Liên hệ bộ phận tư vấn',
         description:
           'Trò chuyện với chúng tôi để giải đáp các câu hỏi về dịch vụ tư vấn pháp lý, tùy chọn tư vấn cá nhân hóa, hoặc các yêu cầu liên quan đến các vụ việc cụ thể.',
+        i18nTitle: 'contact.consultDept',
+        i18nDescription: 'contactExtra.consultDeptDesc',
       },
       {
         title: 'Hỗ trợ kỹ thuật',
         description:
           'Liên hệ với chúng tôi khi bạn gặp vấn đề khó khăn trong việc truy cập tài liệu, vấn đề khi trao đổi qua email hoặc các thách thức kỹ thuật khác liên quan đến việc sử dụng dịch vụ của chúng tôi.',
+        i18nTitle: 'contact.techSupport',
+        i18nDescription: 'contactExtra.techSupportDesc',
       },
       {
         title: 'Điện thoại',
         description: '088 995 6888',
         icon: 'tabler:headset',
+        i18nTitle: 'company.hotline',
       },
       {
         title: 'Email',
         description: 'contact@yplawfirm.vn',
         icon: 'tabler:mail',
+        i18nTitle: 'company.email',
       },
       {
         title: 'Trụ sở',
         description: 'P316, Tháp Tây, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội',
         icon: 'tabler:map-pin',
+        i18nTitle: 'company.headquarters',
       },
     ]}
   />

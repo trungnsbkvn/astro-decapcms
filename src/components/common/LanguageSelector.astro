@@ -764,7 +764,9 @@ function applyTranslations(lang: string): void {
   }
 
   // First, translate all elements with data-i18n attributes (highest priority)
-  document.querySelectorAll('[data-i18n]').forEach(el => {
+  const i18nElements = document.querySelectorAll('[data-i18n]');
+  
+  i18nElements.forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (key) {
       const translation = getTranslation(lang, key);
@@ -772,6 +774,8 @@ function applyTranslations(lang: string): void {
       if (translation != null) {
         // Check if the element has icons (SVG) that should be preserved
         const hasIcons = el.querySelector('svg, img, .icon');
+        // Check if translation contains HTML tags
+        const translationHasHtml = /<[^>]+>/.test(translation);
         // Check for styled spans that wrap text (common pattern: <span class="font-medium">Text</span>)
         const styledTextSpan = el.querySelector('span[class]');
         
@@ -788,6 +792,9 @@ function applyTranslations(lang: string): void {
               node.textContent = '';
             }
           }
+        } else if (translationHasHtml) {
+          // Translation contains HTML - use innerHTML directly
+          el.innerHTML = translation;
         } else if (styledTextSpan && !styledTextSpan.querySelector('*')) {
           // Element has a styled span containing only text - update the span's content
           styledTextSpan.textContent = translation;
