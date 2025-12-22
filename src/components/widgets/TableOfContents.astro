@@ -28,8 +28,8 @@ function buildToc(headings: TableOfContent[]) {
 }
 ---
 
-<nav class="dark:text-black notranslate" translate="no">
-  <p class="font-semibold mb-3 text-2xl dark:text-white" data-i18n="common.tableOfContents">Mục lục</p>
+<nav class="dark:text-black user-content" data-user-content>
+  <p class="font-semibold mb-3 text-2xl dark:text-white notranslate" translate="no" data-i18n="common.tableOfContents">Mục lục</p>
   <ul class="[text-wrap:balance] flex flex-col gap-1 text-md">
     {toc.map((heading) => <TableOfContentsHeading heading={heading} />)}
   </ul>

@@ -248,7 +248,8 @@
     "publishDate": "Published",
     "updateDate": "Updated",
     "category": "Category",
-    "tags": "Tags"
+    "tags": "Tags",
+    "lawyerTitle": "Lawyer"
   },
   "error": {
     "notFound": "Page Not Found",

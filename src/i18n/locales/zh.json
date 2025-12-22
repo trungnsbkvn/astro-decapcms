@@ -248,7 +248,8 @@
     "publishDate": "发布日期",
     "updateDate": "更新日期",
     "category": "分类",
-    "tags": "标签"
+    "tags": "标签",
+    "lawyerTitle": "律师"
   },
   "error": {
     "notFound": "页面未找到",

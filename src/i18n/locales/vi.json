@@ -248,7 +248,8 @@
     "publishDate": "Ngày đăng",
     "updateDate": "Cập nhật",
     "category": "Danh mục",
-    "tags": "Thẻ"
+    "tags": "Thẻ",
+    "lawyerTitle": "Luật sư"
   },
   "error": {
     "notFound": "Không tìm thấy trang",

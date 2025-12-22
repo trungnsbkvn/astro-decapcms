@@ -2376,6 +2376,7 @@ export const translations = {
       tags: 'Thẻ',
       education: 'Học vấn',
       authorPosts: 'Bài viết của tác giả',
+      lawyerTitle: 'Luật sư',
     },
     en: {
       author: 'Author:',
@@ -2387,6 +2388,7 @@ export const translations = {
       tags: 'Tags',
       education: 'Education',
       authorPosts: 'Author\'s Posts',
+      lawyerTitle: 'Lawyer',
     },
     zh: {
       author: '作者：',
@@ -2398,6 +2400,7 @@ export const translations = {
       tags: '标签',
       education: '学历',
       authorPosts: '作者文章',
+      lawyerTitle: '律师',
     },
     ja: {
       author: '著者：',
@@ -2409,6 +2412,7 @@ export const translations = {
       tags: 'タグ',
       education: '学歴',
       authorPosts: '著者の記事',
+      lawyerTitle: '弁護士',
     },
     ko: {
       author: '작성자:',
@@ -2420,6 +2424,7 @@ export const translations = {
       tags: '태그',
       education: '학력',
       authorPosts: '저자 게시물',
+      lawyerTitle: '변호사',
     },
   },
 

@@ -248,7 +248,8 @@
     "publishDate": "게시일",
     "updateDate": "업데이트",
     "category": "카테고리",
-    "tags": "태그"
+    "tags": "태그",
+    "lawyerTitle": "변호사"
   },
   "error": {
     "notFound": "페이지를 찾을 수 없습니다",

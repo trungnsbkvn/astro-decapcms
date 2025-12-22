@@ -248,7 +248,8 @@
     "publishDate": "公開日",
     "updateDate": "更新日",
     "category": "カテゴリ",
-    "tags": "タグ"
+    "tags": "タグ",
+    "lawyerTitle": "弁護士"
   },
   "error": {
     "notFound": "ページが見つかりません",
