@@ -323,3 +323,120 @@ export function getCategoryDescription(type: string, categorySlug: string, categ
 export function getKeywordsString(keywords: string[]): string {
   return keywords.join(', ');
 }
+
+/**
+ * Map category slug to i18n key for translations
+ * Returns the i18n key for the category title (without "Title" suffix for base key)
+ */
+export function getCategoryI18nKey(categorySlug: string): string | null {
+  const slugToI18nMap: Record<string, string> = {
+    // ========== POST (Tin tức) Categories ==========
+    'tin-moi': 'blog.tinMoiTitle',
+    'su-kien': 'blog.suKienTitle',
+    'su-kien-noi-bo': 'blog.suKienNoiBoTitle',
+    'ban-tin-phap-ly': 'blog.banTinPhapLyTitle',
+    'binh-luan-phap-ly': 'blog.binhLuanPhapLyTitle',
+    'cac-vu-viec-noi-bat': 'blog.cacVuViecNoiBatTitle',
+    'hoi-thao-phap-ly': 'blog.hoiThaoPhapLyTitle',
+    'tin-tuc-phap-ly': 'blog.tinTucPhapLyTitle',
+    'van-ban-phap-ly': 'blog.vanBanPhapLyTitle',
+    'thong-tin-tuyen-dung': 'blog.thongTinTuyenDungTitle',
+    
+    // ========== LEGAL (Pháp lý) Categories ==========
+    'doanh-nghiep': 'blog.doanhNghiepTitle',
+    'hop-dong': 'blog.hopDongTitle',
+    'tranh-chap': 'blog.tranhChapTitle',
+    'so-huu-tri-tue': 'blog.soHuuTriTueTitle',
+    'kinh-doanh-thuong-mai': 'blog.kinhDoanhThuongMaiTitle',
+    'dat-dai': 'blog.datDaiTitle',
+    'hon-nhan-va-gia-dinh': 'blog.honNhanVaGiaDinhTitle',
+    'giay-phep-con': 'blog.giayPhepConTitle',
+    'dan-su': 'blog.danSuTitle',
+    'hinh-su': 'blog.hinhSuTitle',
+    'phap-ly-khac': 'blog.phapLyKhacTitle',
+    'cac-loi-thuong-gap-cua-doanh-nghiep': 'blog.cacLoiThuongGapTitle',
+    
+    // ========== CONSULTATION (Tư vấn thường xuyên) Categories ==========
+    'phap-che-thue-ngoai': 'blog.phapCheThueNgoaiTitle',
+    'tu-van-thuong-xuyen': 'blog.tuVanThuongXuyenTitle',
+    'luat-su-rieng': 'blog.luatSuRiengTitle',
+    'dich-vu-luat-su-rieng': 'blog.dichVuLuatSuRiengTitle',
+    'khai-niem-tu-van-thuong-xuyen': 'blog.khaiNiemTuVanThuongXuyenTitle',
+    'vi-sao-doanh-nghiep-can-tu-van-thuong-xuyen': 'blog.viSaoCanTuVanTitle',
+    'tu-van-phap-luat-thuong-xuyen-cho-doanh-nghiep': 'blog.tuVanPhapLuatThuongXuyenTitle',
+    'phi-dich-vu-tu-van': 'blog.phiDichVuTuVanTitle',
+    'quy-trinh-tu-van': 'blog.quyTrinhTuVanTitle',
+    'mau-hop-dong-dich-vu': 'blog.mauHopDongDichVuTitle',
+    'diem-manh-cua-youth-and-partners': 'blog.diemManhYPTitle',
+    'phap-ly-tu-van-thuong-xuyen-khac': 'blog.phapLyTuVanKhacTitle',
+    // Lawyer by region
+    'luat-su-ha-noi': 'blog.luatSuHaNoiTitle',
+    'luat-su-bac-giang': 'blog.luatSuBacGiangTitle',
+    'luat-su-bac-ninh': 'blog.luatSuBacNinhTitle',
+    'luat-su-hai-phong': 'blog.luatSuHaiPhongTitle',
+    'luat-su-hung-yen': 'blog.luatSuHungYenTitle',
+    'luat-su-ninh-binh': 'blog.luatSuNinhBinhTitle',
+    'luat-su-phu-tho': 'blog.luatSuPhuThoTitle',
+    'luat-su-thai-nguyen': 'blog.luatSuThaiNguyenTitle',
+    'luat-su-tuyen-quang': 'blog.luatSuTuyenQuangTitle',
+    // Lawyer by language
+    'luat-su-tu-van-tieng-anh': 'blog.luatSuTiengAnhTitle',
+    'luat-su-tu-van-tieng-nhat': 'blog.luatSuTiengNhatTitle',
+    'luat-su-tu-van-tieng-trung-quoc': 'blog.luatSuTiengTrungTitle',
+    
+    // ========== LABOR (Lao động) Categories ==========
+    'hop-dong-lao-dong': 'blog.hopDongLaoDongTitle',
+    'hop-dong-lao-dong-dao-tao': 'blog.hopDongLaoDongDaoTaoTitle',
+    'tranh-chap-lao-dong': 'blog.tranhChapLaoDongTitle',
+    'ky-luat-lao-dong': 'blog.kyLuatLaoDongTitle',
+    'xu-ly-ky-luat': 'blog.xuLyKyLuatTitle',
+    'bao-hiem-xa-hoi': 'blog.baoHiemXaHoiTitle',
+    'nguoi-lao-dong-nuoc-ngoai': 'blog.nguoiLaoDongNuocNgoaiTitle',
+    'thoi-gio-lam-viec': 'blog.thoiGioLamViecTitle',
+    'lao-dong': 'blog.laoDongTitle',
+    'luong-va-phuc-loi': 'blog.luongVaPhucLoiTitle',
+    'noi-quy-thoa-uoc': 'blog.noiQuyThoaUocTitle',
+    'cham-dut-hop-dong': 'blog.chamDutHopDongTitle',
+    'quay-roi-tinh-duc': 'blog.quayRoiTinhDucTitle',
+    'giay-phep-lao-dong': 'blog.giayPhepLaoDongTitle',
+    'phap-ly-lao-dong-khac': 'blog.phapLyLaoDongKhacTitle',
+    
+    // ========== FOREIGNER (Đầu tư nước ngoài) Categories ==========
+    'thanh-lap-cong-ty': 'blog.thanhLapCongTyTitle',
+    'thanh-lap-moi-du-an': 'blog.thanhLapMoiDuAnTitle',
+    'giay-phep-dau-tu': 'blog.giayPhepDauTuTitle',
+    'ma': 'blog.maTitle',
+    'bat-dong-san': 'blog.batDongSanTitle',
+    'doanh-nghiep-va-dau-tu-nuoc-ngoai': 'blog.doanhNghiepVaDauTuTitle',
+    'hien-dien-thuong-mai': 'blog.hienDienThuongMaiTitle',
+    'dieu-chinh-du-an-dau-tu': 'blog.dieuChinhDuAnTitle',
+    'chuyen-nhuong-du-an': 'blog.chuyenNhuongDuAnTitle',
+    'phap-ly-nguoi-nuoc-ngoai': 'blog.phapLyNguoiNuocNgoaiTitle',
+    
+    // ========== EVALUATION (Dịch vụ đánh giá) Categories ==========
+    'due-diligence': 'blog.dueDiligenceTitle',
+    'audit-lao-dong': 'blog.auditLaoDongTitle',
+    'esg': 'blog.esgTitle',
+    'compliance': 'blog.complianceTitle',
+    'khai-niem-danh-gia': 'blog.khaiNiemDanhGiaTitle',
+    'loi-ich-cua-viec-danh-gia': 'blog.loiIchDanhGiaTitle',
+    'quy-trinh-danh-gia': 'blog.quyTrinhDanhGiaTitle',
+    'phi-dich-vu-danh-gia': 'blog.phiDichVuDanhGiaTitle',
+    'dich-vu-danh-gia-cho-doanh-nghiep': 'blog.dichVuDanhGiaDoanhNghiepTitle',
+    'dich-vu-danh-gia-tien-tram': 'blog.dichVuDanhGiaTienTramTitle',
+    'cac-bo-tieu-chuan-tnxh': 'blog.cacBoTieuChuanTNXHTitle',
+    'tieu-chuan-rba': 'blog.tieuChuanRBATitle',
+  };
+  return slugToI18nMap[categorySlug] || null;
+}
+
+/**
+ * Get both title and subtitle i18n keys for a category
+ */
+export function getCategoryI18nKeys(categorySlug: string): { title: string; subtitle: string } | null {
+  const titleKey = getCategoryI18nKey(categorySlug);
+  if (!titleKey) return null;
+  // Replace 'Title' with 'Subtitle' to get subtitle key
+  const subtitleKey = titleKey.replace('Title', 'Subtitle');
+  return { title: titleKey, subtitle: subtitleKey };
+}

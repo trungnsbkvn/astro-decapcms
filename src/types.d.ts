@@ -180,8 +180,10 @@ export interface Testimonial {
 
 export interface Team {
   name?: string;
+  title?: string;
   position?: string;
   i18nPosition?: string;
+  i18nMemberTitle?: string;
   image?: string | unknown;
   link?: string;
 }

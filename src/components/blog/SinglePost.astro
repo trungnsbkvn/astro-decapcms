@@ -8,6 +8,7 @@ import TableOfContents from '~/components/widgets/TableOfContents.astro';
 
 import { getPermalink } from '~/utils/blog-permalinks';
 import { getFormattedDate, getAuthorPermalink } from '~/utils/utils';
+import { getCategoryI18nKey } from '~/utils/blog-seo';
 
 import type { Post } from '~/types';
 import type { ImageMetadata } from 'astro';
@@ -21,6 +22,7 @@ export interface Props {
 const { type, post, url } = Astro.props;
 
 const headings = post.headings;
+const categoryI18nKey = post.category?.slug ? getCategoryI18nKey(post.category.slug) : null;
 
 // Get image URL for structured data
 const getImageUrl = (image: ImageMetadata | string | undefined): string => {
@@ -126,7 +128,12 @@ const ratingStructuredData = post.rating
             post.category && (
               <>
                 &nbsp;{'·'}&nbsp;
-                <a class="hover:underline inline-block user-content" data-user-content translate="yes" href={getPermalink(post.category.slug, 'category', type)}>
+                <a 
+                  class="hover:underline inline-block notranslate" 
+                  translate="no"
+                  href={getPermalink(post.category.slug, 'category', type)}
+                  {...(categoryI18nKey ? { 'data-i18n': categoryI18nKey } : {})}
+                >
                   {post.category.title}
                 </a>
               </>

@@ -40,7 +40,9 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline>Thẻ: {tag.title}</Headline>
+    <Headline i18nTitle="blog.tagPrefix">
+      <span data-i18n="blog.tagPrefix">Thẻ:</span> <span class="notranslate" translate="no">{tag.title}</span>
+    </Headline>
     <BlogList posts={tagPosts} />
     <Pagination prevUrl={prevUrl} nextUrl={nextUrl} />
   </section>

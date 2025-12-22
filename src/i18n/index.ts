@@ -76,24 +76,44 @@ function replaceParams(str: string, params?: Record<string, string | number>): s
 
 /**
  * Main translation function
- * @param key - Translation key (dot notation, e.g., 'nav.home')
+ * @param key - Translation key (dot notation, e.g., 'nav.home', 'blog.datDaiTitle')
  * @param locale - Target locale (defaults to 'vi')
  * @param params - Dynamic parameters to replace in the translation
  * @returns Translated string or the key itself if not found
+ * 
+ * Structure: translations.section.locale.key (e.g., translations.blog.vi.datDaiTitle)
+ * Usage: t('blog.datDaiTitle', 'vi') => 'Đất đai'
  */
 export function t(
   key: string,
   locale: SupportedLocale = DEFAULT_LOCALE,
   params?: Record<string, string | number>
 ): string {
-  // Get translation for the requested locale
-  const localeTranslations = translations[locale];
-  let value = getNestedValue(localeTranslations as Record<string, unknown>, key);
+  // Parse key into section and remaining path
+  // e.g., 'blog.datDaiTitle' => section='blog', remainingKey='datDaiTitle'
+  const parts = key.split('.');
+  if (parts.length < 2) {
+    console.warn(`Invalid translation key format: ${key}. Expected format: section.key`);
+    return key;
+  }
+  
+  const section = parts[0];
+  const remainingKey = parts.slice(1).join('.');
+  
+  // Access translations[section][locale][remainingKey]
+  const sectionTranslations = (translations as Record<string, unknown>)[section];
+  if (!sectionTranslations || typeof sectionTranslations !== 'object') {
+    console.warn(`Translation section not found: ${section}`);
+    return key;
+  }
+  
+  const localeTranslations = (sectionTranslations as Record<string, unknown>)[locale];
+  let value = localeTranslations ? getNestedValue(localeTranslations as Record<string, unknown>, remainingKey) : undefined;
   
   // Fallback to default locale if not found
   if (value === undefined && locale !== DEFAULT_LOCALE) {
-    const defaultTranslations = translations[DEFAULT_LOCALE];
-    value = getNestedValue(defaultTranslations as Record<string, unknown>, key);
+    const defaultLocaleTranslations = (sectionTranslations as Record<string, unknown>)[DEFAULT_LOCALE];
+    value = defaultLocaleTranslations ? getNestedValue(defaultLocaleTranslations as Record<string, unknown>, remainingKey) : undefined;
   }
   
   // Return key if translation not found

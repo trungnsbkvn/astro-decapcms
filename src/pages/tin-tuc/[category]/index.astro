@@ -7,7 +7,8 @@ import Pagination from '~/components/blog/Pagination.astro';
 
 import { blogCategoryRobots, getStaticPathsForCategoryIndex } from '~/utils/blog';
 import { getRootPathForType } from '~/utils/blog-permalinks';
-import { getBlogTypeSEO, getCategorySEO, getCategoryDescription, getKeywordsString } from '~/utils/blog-seo';
+import { getBlogTypeSEO, getCategorySEO, getCategoryDescription, getKeywordsString, getCategoryI18nKeys } from '~/utils/blog-seo';
+import { t } from '~/i18n';
 
 // Pre-render all category pages at build time
 export const prerender = true;
@@ -23,21 +24,26 @@ const { category: categorySlug } = Astro.params;
 const { posts: rawPosts, totalPages, category } = Astro.props;
 
 const blogSEO = getBlogTypeSEO(TYPE);
-const categorySEO = getCategorySEO(TYPE, categorySlug);
+const categorySEO = getCategorySEO(TYPE, categorySlug as string);
 
-const posts = rawPosts.map((post: any) => ({
+const posts = (rawPosts as any[]).map((post: any) => ({
   ...post,
   permalink: `${getRootPathForType(post.type || TYPE)}/${post.permalink}`,
 }));
-const nextUrl = totalPages > 1 ? `${ROOT_PATH}/${categorySlug}/2` : undefined;
+const nextUrl = (totalPages as number) > 1 ? `${ROOT_PATH}/${categorySlug}/2` : undefined;
 
-const categoryTitle = category?.title || categorySlug;
+// Get i18n keys from centralized function
+const i18nKeys = getCategoryI18nKeys(categorySlug as string);
+
+// Use i18n translation for initial render, fallback to CMS data
+const categoryTitle = i18nKeys ? t(i18nKeys.title, 'vi') : ((category as any)?.title || categorySlug);
+const categorySubtitle = i18nKeys ? t(i18nKeys.subtitle, 'vi') : `Tất cả bài viết trong danh mục ${categoryTitle}`;
 
 const metadata = {
   title: categorySEO?.title 
     ? `${categorySEO.title} - ${blogSEO.title}`
     : `Danh mục: ${categoryTitle}`,
-  description: getCategoryDescription(TYPE, categorySlug, categoryTitle, 1),
+  description: getCategoryDescription(TYPE, categorySlug as string, categoryTitle as string, 1),
   keywords: categorySEO ? getKeywordsString(categorySEO.keywords) : getKeywordsString(blogSEO.keywords),
   robots: {
     index: blogCategoryRobots?.index,
@@ -51,8 +57,12 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline subtitle={categorySEO?.subtitle || `Tất cả bài viết trong danh mục ${categoryTitle}`}>
-      {categorySEO?.title || categoryTitle}
+    <Headline 
+      subtitle={categorySubtitle}
+      i18nTitle={i18nKeys?.title}
+      i18nSubtitle={i18nKeys?.subtitle}
+    >
+      {categoryTitle}
     </Headline>
     <BlogList posts={posts} />
     <Pagination prevUrl={undefined} nextUrl={nextUrl} />
