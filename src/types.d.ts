@@ -118,6 +118,10 @@ export interface Headline {
   subtitle?: string;
   tagline?: string;
   classes?: Record<string, string>;
+  // i18n props
+  i18nTitle?: string;
+  i18nSubtitle?: string;
+  i18nTagline?: string;
 }
 
 interface TeamMember {
@@ -147,6 +151,9 @@ export interface Item {
   classes?: Record<string, string>;
   callToAction?: CallToAction;
   image?: Image;
+  // i18n props
+  i18nTitle?: string;
+  i18nDescription?: string;
 }
 
 export interface Price {
@@ -287,6 +294,8 @@ export interface Steps extends Omit<Headline, 'classes'>, Widget {
     description?: string;
     icon?: string;
     classes?: Record<string, string>;
+    i18nTitle?: string;
+    i18nDescription?: string;
   }>;
   callToAction?: string | CallToAction;
   image?: string | Image;

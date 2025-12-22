@@ -15,6 +15,8 @@ export interface Props extends Widget {
   information?: string;
   categories: Record<string, string[]>;
   count?: number;
+  i18nTitle?: string;
+  i18nInformation?: string;
 }
 
 const {
@@ -22,6 +24,9 @@ const {
   information = await Astro.slots.render('information'),
   categories,
   count = 6,
+  
+  i18nTitle,
+  i18nInformation,
 
   id,
   isDark = false,
@@ -46,12 +51,13 @@ const typePosts = posts.map((post) => ({
             <h2
               class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-2 notranslate"
               translate="no"
+              {...(i18nTitle ? { 'data-i18n': i18nTitle } : {})}
               set:html={title}
             />
           </div>
         )}
 
-        {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md user-content" data-user-content translate="yes" set:html={information} />}
+        {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md notranslate" translate="no" {...(i18nInformation ? { 'data-i18n': i18nInformation } : {})} set:html={information} />}
       </div>
 
       <Grid posts={typePosts} />

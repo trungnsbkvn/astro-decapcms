@@ -12,6 +12,10 @@ const {
   columns = 2,
 
   defaultIcon,
+  
+  i18nTitle,
+  i18nSubtitle,
+  i18nTagline,
 
   id,
   isDark = false,
@@ -21,7 +25,7 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
-  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
+  <Headline title={title} subtitle={subtitle} tagline={tagline} i18nTitle={i18nTitle} i18nSubtitle={i18nSubtitle} i18nTagline={i18nTagline} classes={classes?.headline as Record<string, string>} />
   <ItemGrid
     items={items}
     columns={columns}

@@ -17,6 +17,10 @@ const {
   image = await Astro.slots.render('image'),
   isReversed = false,
   isAfterContent = false,
+  
+  i18nTitle,
+  i18nSubtitle,
+  i18nTagline,
 
   id,
   isDark = false,
@@ -35,6 +39,9 @@ const {
     title={title}
     subtitle={subtitle}
     tagline={tagline}
+    i18nTitle={i18nTitle}
+    i18nSubtitle={i18nSubtitle}
+    i18nTagline={i18nTagline}
     classes={{
       container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
       title: 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading',
@@ -44,11 +51,11 @@ const {
   <div class="mx-auto max-w-7xl p-4 md:px-8">
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
       <div class="md:basis-1/2 self-center">
-        {content && <div class="mb-12 text-lg dark:text-slate-400 user-content" data-user-content translate="yes" set:html={content} />}
+        {content && <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
 
         {
           callToAction && (
-            <div class="mt-[-40px] mb-8 text-primary notranslate" translate="no">
+            <div class="mt-[-40px] mb-8 text-primary">
               <Button variant="link" {...callToAction} />
             </div>
           )

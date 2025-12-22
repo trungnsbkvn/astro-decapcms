@@ -10,6 +10,7 @@ const {
   icon = '',
   class: className = '',
   type,
+  i18nText,
   ...rest
 } = Astro.props;
 
@@ -19,18 +20,27 @@ const variants = {
   tertiary: 'btn btn-tertiary',
   link: 'cursor-pointer hover:text-primary',
 };
+
+// Add notranslate class if i18n key is provided
+const hasI18n = !!i18nText;
 ---
 
 {
   type === 'button' || type === 'submit' || type === 'reset' ? (
-    <button type={type} class={twMerge(variants[variant] || '', className)} {...rest}>
+    <button 
+      type={type} 
+      class={twMerge(variants[variant] || '', hasI18n ? 'notranslate' : '', className)} 
+      {...(hasI18n ? { 'translate': 'no', 'data-i18n': i18nText } : {})}
+      {...rest}
+    >
       <Fragment set:html={text} />
       {icon && <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" />}
     </button>
   ) : (
     <a
-      class={twMerge(variants[variant] || '', className)}
+      class={twMerge(variants[variant] || '', hasI18n ? 'notranslate' : '', className)}
       {...(target ? { target: target, rel: 'noopener noreferrer' } : {})}
+      {...(hasI18n ? { 'translate': 'no', 'data-i18n': i18nText } : {})}
       {...rest}
     >
       <Fragment set:html={text} />

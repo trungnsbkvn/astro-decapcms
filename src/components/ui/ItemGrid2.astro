@@ -45,7 +45,7 @@ const {
           )}
           <div class={twMerge('text-xl font-bold notranslate', titleClass, itemClasses?.title)} translate="no">{title}</div>
           {description && (
-            <p class={twMerge('text-muted mt-2 user-content', descriptionClass, itemClasses?.description)} data-user-content translate="yes" set:html={description} />
+            <p class={twMerge('text-muted mt-2 notranslate', descriptionClass, itemClasses?.description)} translate="no" set:html={description} />
           )}
           {callToAction && (
             <div class="mt-2 notranslate" translate="no">

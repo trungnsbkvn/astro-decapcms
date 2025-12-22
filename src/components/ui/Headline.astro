@@ -7,6 +7,10 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   tagline,
   classes = {},
+  // i18n keys for translations
+  i18nTagline,
+  i18nTitle,
+  i18nSubtitle,
 } = Astro.props;
 
 const {
@@ -18,18 +22,29 @@ const {
 
 {
   (title || subtitle || tagline) && (
-    <div class={twMerge('mb-8 md:mx-auto md:mb-12 text-center notranslate', containerClass)} translate="no">
+    <div class={twMerge('mb-8 md:mx-auto md:mb-12 text-center', containerClass)}>
       {tagline && (
-        <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase" set:html={tagline} />
+        <p 
+          class:list={["text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase", { "notranslate": i18nTagline }]}
+          {...(i18nTagline ? { translate: "no", 'data-i18n': i18nTagline } : {})}
+          set:html={tagline} 
+        />
       )}
       {title && (
         <h2
-          class={twMerge('font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl', titleClass)}
+          class:list={[twMerge('font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl', titleClass), { "notranslate": i18nTitle }]}
+          {...(i18nTitle ? { translate: "no", 'data-i18n': i18nTitle } : {})}
           set:html={title}
         />
       )}
 
-      {subtitle && <p class={twMerge('mt-4 text-muted user-content', subtitleClass)} data-user-content translate="yes" set:html={subtitle} />}
+      {subtitle && (
+        <p 
+          class:list={[twMerge('mt-4 text-muted', subtitleClass), { "notranslate": i18nSubtitle }]}
+          {...(i18nSubtitle ? { translate: "no", 'data-i18n': i18nSubtitle } : {})}
+          set:html={subtitle} 
+        />
+      )}
     </div>
   )
 }

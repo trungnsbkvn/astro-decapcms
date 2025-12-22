@@ -15,6 +15,11 @@ const {
 
   id,
   bg = await Astro.slots.render('bg'),
+  
+  // i18n keys for translations
+  i18nTagline,
+  i18nTitle,
+  i18nSubtitle,
 } = Astro.props;
 ---
 
@@ -33,6 +38,7 @@ const {
             <p
               class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade notranslate"
               translate="no"
+              {...(i18nTagline ? { 'data-i18n': i18nTagline } : {})}
               set:html={tagline}
             />
           )
@@ -42,6 +48,7 @@ const {
             <h1
               class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade notranslate"
               translate="no"
+              {...(i18nTitle ? { 'data-i18n': i18nTitle } : {})}
               set:html={title}
             />
           )
@@ -50,9 +57,9 @@ const {
           {
             subtitle && (
               <p
-                class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade text-justify user-content"
-                data-user-content
-                translate="yes"
+                class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade text-justify notranslate"
+                translate="no"
+                {...(i18nSubtitle ? { 'data-i18n': i18nSubtitle } : {})}
                 set:html={subtitle}
               />
             )

@@ -25,7 +25,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero tagline="Về chúng tôi">
+  <Hero tagline="Về chúng tôi" i18nTagline="about.aboutUs">
     <Fragment slot="title">
       Công ty Luật TNHH
       <span class="text-accent dark:text-white highlight"> Youth </span><span
@@ -34,22 +34,11 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Với phương châm hoạt động: “Thời Gian – Tận Tâm – Tận Lực”, chúng tôi luôn cam kết mang đến những dịch vụ pháp lý
-      chất lượng, nhanh chóng, chính xác và toàn diện nhất. Tại Y&P Law Firm, chúng tôi tin rằng giá trị thực sự của một
-      Doanh nghiệp, một tổ chức tư vấn pháp lý, được xây dựng trên nền tảng những giá trị cốt lõi. Các dịch vụ của chúng
-      tôi không chỉ được thực hiện với chuyên môn vững vàng mà còn với cái tâm và tầm của đội ngũ luật sư giàu kinh
-      nghiệm. Chúng tôi hiểu rằng sự hài lòng và tin tưởng của Quý khách hàng chính là thước đo quan trọng nhất cho sự
-      thành công của chúng tôi.
-      <br />
-      <br />
-      Với nhiều năm kinh nghiệm hợp tác và cung cấp dịch vụ tư vấn pháp lý cho các Doanh nghiệp lớn, uy tín trong và ngoài
-      nước, đặc biệt là các tập đoàn hàng đầu như Samsung, Viettel, FPT, cũng như các nhà cung cấp, đối tác của Samsung và
-      nhiều Doanh nghiệp Hàn Quốc, Nhật Bản tại Việt Nam, Y&P Law Firm tự tin có thể đáp ứng mọi yêu cầu pháp lý phức tạp
-      của Quý khách hàng, các Doanh nghiệp và các nhà Đầu tư tại Việt Nam.
-      <br />
-      <br />
-      Chúng tôi cam kết đồng hành cùng Quý khách trên hành trình phát triển bền vững, giải quyết hiệu quả mọi vấn đề pháp
-      lý, giúp Quý khách đạt được mục tiêu và gia tăng giá trị Doanh nghiệp.
+      <span class="notranslate" translate="no" data-i18n="about.heroSubtitle">Với phương châm hoạt động: "Thời Gian – Tận Tâm – Tận Lực", chúng tôi luôn cam kết mang đến những dịch vụ pháp lý chất lượng, nhanh chóng, chính xác và toàn diện nhất. Tại Y&P Law Firm, chúng tôi tin rằng giá trị thực sự của một Doanh nghiệp, một tổ chức tư vấn pháp lý, được xây dựng trên nền tảng những giá trị cốt lõi. Các dịch vụ của chúng tôi không chỉ được thực hiện với chuyên môn vững vàng mà còn với cái tâm và tầm của đội ngũ luật sư giàu kinh nghiệm. Chúng tôi hiểu rằng sự hài lòng và tin tưởng của Quý khách hàng chính là thước đo quan trọng nhất cho sự thành công của chúng tôi.</span>
+      <br /><br />
+      <span class="notranslate" translate="no" data-i18n="about.heroSubtitle2">Với nhiều năm kinh nghiệm hợp tác và cung cấp dịch vụ tư vấn pháp lý cho các Doanh nghiệp lớn, uy tín trong và ngoài nước, đặc biệt là các tập đoàn hàng đầu như Samsung, Viettel, FPT, cũng như các nhà cung cấp, đối tác của Samsung và nhiều Doanh nghiệp Hàn Quốc, Nhật Bản tại Việt Nam, Y&P Law Firm tự tin có thể đáp ứng mọi yêu cầu pháp lý phức tạp của Quý khách hàng, các Doanh nghiệp và các nhà Đầu tư tại Việt Nam.</span>
+      <br /><br />
+      <span class="notranslate" translate="no" data-i18n="about.heroSubtitle3">Chúng tôi cam kết đồng hành cùng Quý khách trên hành trình phát triển bền vững, giải quyết hiệu quả mọi vấn đề pháp lý, giúp Quý khách đạt được mục tiêu và gia tăng giá trị Doanh nghiệp.</span>
     </Fragment>
 
     <Fragment slot="image">
@@ -71,6 +60,7 @@ const metadata = {
   <Steps
     id="lich-su-thanh-lap"
     title="Lịch sử thành lập"
+    i18nTitle="about.history"
     items={[
       {
         title:
@@ -127,6 +117,8 @@ const metadata = {
     id="giai-thuong-phap-ly"
     title="Giải thưởng pháp lý"
     subtitle="Chúng tôi tự hào về những thành tựu và giải thưởng pháp lý đã đạt được, minh chứng cho sự cam kết và uy tín trong ngành pháp luật"
+    i18nTitle="about.awards"
+    i18nSubtitle="about.awardsSubtitle"
     isReversed={true}
     callToAction={{
       text: 'Xem thêm',
@@ -159,6 +151,8 @@ const metadata = {
     id="cam-nhan-khach-hang"
     title="Cảm nhận của khách hàng"
     subtitle="Khách hàng hài lòng với dịch vụ pháp lý tại Youth & Partners, đánh giá cao sự tận tâm và chuyên nghiệp của đội ngũ luật sư trong việc giải quyết các vấn đề pháp lý phức tạp. Họ tin tưởng và sẵn lòng tiếp tục sử dụng dịch vụ của chúng tôi trong tương lai."
+    i18nTitle="homepage.clientTestimonials"
+    i18nSubtitle="homepage.testimonialsSubtitle"
     testimonials={[
       {
         testimonial: `Làm việc với Y&P rất yên tâm khi được tư vấn chi tiết, không chỉ đúng các nội dung được hỏi mà còn thêm cả các nội dung liên quan khác nếu có, nhằm cho doanh nghiệp có cái nhìn tổng quan hơn, từ đó đưa ra quyết định đúng và chính xác hơn. Thái độ của luật sư tư vấn hoà nhã, lắng nghe và rất "chiều ý" khách hàng. 
@@ -264,6 +258,7 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
     isReversed
     tagline="Y&P Law Firm"
     title="Tôn chỉ hoạt động của chúng tôi"
+    i18nTitle="about.principlesTitle"
     items={[
       {
         title: 'Thời gian',
@@ -327,6 +322,7 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
   <Steps2
     id="tam-nhin-su-menh"
     title="Tầm nhìn và sứ mệnh"
+    i18nTitle="about.visionAndMission"
     subtitle="<b>Tầm nhìn</b> Youth & Partners hướng tới mục tiêu trở thành một trong những công ty luật hàng đầu tại Việt Nam, nơi khách hàng luôn đặt trọn niềm tin khi tìm kiếm các giải pháp pháp lý. Chúng tôi không ngừng đổi mới, nâng cao chất lượng dịch vụ và phát triển đội ngũ luật sư giàu kinh nghiệm, tận tâm để đáp ứng nhu cầu ngày càng cao của khách hàng. Với sự nhiệt huyết, chuyên nghiệp và khả năng thích ứng vượt trội, chúng tôi đặt tham vọng trở thành biểu tượng của sự xuất sắc trong lĩnh vực pháp lý, mang lại giá trị bền vững cho khách hàng và xã hội. <br /><br /> <b>Sứ mệnh</b> Công ty Luật TNHH Youth & Partners cam kết đồng hành cùng khách hàng trong hành trình bảo vệ quyền lợi và thực hiện các mục tiêu pháp lý một cách hiệu quả và kịp thời. Với phương châm “Thời gian, Tận tâm, Tận lực”, chúng tôi luôn đặt lợi ích của khách hàng lên hàng đầu, làm việc với tinh thần trách nhiệm cao nhất để giải quyết các vấn đề pháp lý đa dạng và phức tạp. Sứ mệnh của chúng tôi không chỉ giới hạn ở việc cung cấp dịch vụ pháp lý mà còn hướng tới việc trở thành đối tác tin cậy, hỗ trợ khách hàng và đối tác vượt qua mọi thách thức pháp lý, từ đó góp phần vào sự phát triển bền vững của Doanh nghiệp và cộng đồng. Với tinh thần trách nhiệm, nhiệt huyết và sự tận tâm, Youth & Partners Law Firm không ngừng phấn đấu để mỗi giải pháp pháp lý mà chúng tôi cung cấp đều mang lại giá trị thiết thực và thành công cho khách hàng."
     items={[
       {
@@ -355,6 +351,7 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
 
   <Stats
     title="Các con số biết nói"
+    i18nTitle="about.statsTitle"
     stats={[
       { title: 'Văn phòng', amount: '5' },
       { title: 'Chuyên viên pháp lý', amount: '30+' },
@@ -372,6 +369,7 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
   <Features3
     title="Dịch vụ của Chúng tôi"
     subtitle="Tại Youth & Partners Law Firm, chúng tôi tự hào cung cấp các dịch vụ pháp lý và tư vấn chuyên nghiệp, được thiết kế để đáp ứng nhu cầu đa dạng của khách hàng. Với đội ngũ luật sư giàu kinh nghiệm và chuyên môn sâu rộng, chúng tôi cam kết mang lại giải pháp tối ưu cho mọi vấn đề pháp lý bao gồm nhưng không giới hạn như:"
+    i18nTitle="about.ourServicesTitle"
     columns={3}
     isBeforeContent={true}
     items={[

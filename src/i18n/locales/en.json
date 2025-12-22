@@ -1,4 +1,31 @@
 {
+  "site": {
+    "name": "Youth & Partners",
+    "legalName": "Youth & Partners Law Firm",
+    "tagline": "Your Business Companion",
+    "description": "Youth & Partners Law Firm - Business legal consulting, labor law, foreign investment, outsourced legal department, RBA and ESG compliance assessment in Vietnam."
+  },
+  "company": {
+    "name": "Youth & Partners",
+    "legalName": "Youth & Partners Law Firm",
+    "legalPrefix": "Law Firm",
+    "shortName": "Y&P Law Firm",
+    "director": "Director, Legal Representative:",
+    "directorName": "Lawyer Nguyen Van Thanh",
+    "hotline": "Hotline",
+    "email": "Email",
+    "headquarters": "Headquarters",
+    "addressHanoi": "Hanoi: P316, West Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi City.",
+    "addressBacNinh": "Bac Ninh: 26 Doan Tran Nghiep Street, Kinh Bac Ward, Bac Ninh Province.",
+    "addressPhuTho": "Phu Tho: 170 Nguyen Van Linh Street, Vinh Phuc Ward, Phu Tho Province."
+  },
+  "hero": {
+    "title": "Youth & Partners Law Firm",
+    "subtitle": "is one of the leading law firms in the fields of: Regular legal consulting for businesses/Outsourced Legal Department services; Labor dispute consulting and resolution; Private lawyer services in Japanese, English, Chinese, Korean; Audit, legal assessment and appraisal services for businesses, specialized DD (Due diligence) services in Labor, human rights, business ethics, management systems, safety, health, and environment for businesses.",
+    "mobileTagline": "Like a companion.",
+    "contactBtn": "Contact for consultation",
+    "learnMoreBtn": "Learn more"
+  },
   "nav": {
     "home": "Home",
     "about": "About",
@@ -6,13 +33,14 @@
     "legal": "Legal",
     "consultation": "Regular Consultation",
     "labor": "Labor",
-    "investment": "Investment & Foreign",
+    "investment": "Foreign Investment",
+    "investmentAndForeign": "Investment & Foreign",
     "evaluation": "Evaluation Services",
     "news": "News",
     "contact": "Contact",
     "search": "Search",
-    "toggleMenu": "Toggle menu",
-    "toggleTheme": "Toggle theme",
+    "toggleMenu": "Toggle Menu",
+    "toggleTheme": "Toggle Theme",
     "rssFeed": "RSS Feed"
   },
   "about": {
@@ -23,22 +51,75 @@
     "principles": "Operating Principles",
     "capabilities": "Capability Profile",
     "vision": "Vision - Mission",
+    "visionAndMission": "Vision and Mission",
     "events": "Internal Events",
-    "privacy": "Data Privacy Protection"
+    "internalEvents": "Internal Events",
+    "dataProtection": "Data Privacy Protection",
+    "aboutUs": "About Us",
+    "principlesTitle": "Our Operating Principles",
+    "time": "Timeliness",
+    "dedication": "Dedication",
+    "excellence": "Excellence",
+    "statsTitle": "Numbers That Speak",
+    "offices": "Offices",
+    "legalExperts": "Legal Experts",
+    "satisfiedClients": "Satisfied Clients",
+    "casesWon": "Cases Won",
+    "capabilityProfile": "Youth & Partners Capability Profile",
+    "profileVietnamese": "Vietnamese Profile",
+    "profileEnglish": "English Profile",
+    "integrity": "Integrity",
+    "creativity": "Creativity",
+    "cooperation": "Cooperation",
+    "quality": "Quality",
+    "ourServicesTitle": "Our Services",
+    "motto": "Operating Motto:",
+    "mottoText": "Timeliness – Dedication – Excellence",
+    "visionTitle": "Vision",
+    "missionTitle": "Mission",
+    "officeAddress": "Office Address",
+    "visitUs": "Visit Us",
+    "excellentLawyerAward": "Excellent Lawyer Award",
+    "innovationAward": "Legal Innovation Award",
+    "communityAward": "Community Contribution Award",
+    "timeDesc": "We understand that every legal matter has specific time requirements and strict factors.",
+    "dedicationDesc": "Every lawyer at Youth & Partners is committed to putting their heart into each case.",
+    "excellenceDesc": "We don't just provide legal services, we strive to overcome all challenges.",
+    "integrityDesc": "We always act with honesty and professional ethics.",
+    "creativityDesc": "We always seek creative and effective legal solutions.",
+    "cooperationDesc": "We believe that close cooperation is the key to success.",
+    "qualityDesc": "We continuously improve our service quality.",
+    "capabilityDesc": "Here you will find detailed information about our professional capabilities.",
+    "awardsSubtitle": "We are proud of the achievements and legal awards we have received."
   },
   "legal": {
-    "business": "Business",
-    "commerce": "Commercial Business",
-    "ip": "Intellectual Property",
+    "enterprise": "Enterprise",
+    "commercial": "Commercial Business",
+    "contract": "Civil and Commercial Contracts",
     "land": "Land",
-    "family": "Marriage and Family",
-    "adoption": "Adoption License",
+    "marriage": "Marriage and Family",
+    "inheritance": "Inheritance and Wills",
+    "intellectual": "Intellectual Property",
+    "license": "Business License",
+    "subLicense": "Sub-License",
     "civil": "Civil",
     "criminal": "Criminal",
+    "litigation": "Litigation",
     "other": "Other Legal"
   },
+  "consultation": {
+    "regular": "Regular Legal Consultation",
+    "privateLawyer": "Private Lawyer Service",
+    "concept": "Regular Consultation Concept",
+    "whyNeeded": "Why Businesses Need Regular Consultation",
+    "contractTemplate": "Service Contract Template",
+    "serviceFee": "Consultation Service Fee",
+    "process": "Consultation Process",
+    "strengths": "Youth & Partners Strengths",
+    "other": "Other Regular Consultation"
+  },
   "labor": {
-    "regulations": "Internal Regulations - Collective Agreements",
+    "regulations": "Regulations - Collective Agreements",
     "workingHours": "Working Hours",
     "salary": "Salary & Benefits",
     "contracts": "Labor Contracts, Training",
@@ -57,16 +138,16 @@
     "japaneseLawyer": "Japanese-speaking Lawyer",
     "chineseLawyer": "Chinese-speaking Lawyer",
     "workPermit": "Work Permit",
-    "foreignerLaw": "Foreign Legal"
+    "foreignerLaw": "Foreigner Legal"
   },
   "evaluation": {
     "concept": "Evaluation Concept",
     "benefits": "Benefits of Evaluation",
-    "pricing": "Evaluation Service Fees",
+    "pricing": "Evaluation Service Fee",
     "process": "Evaluation Process",
     "business": "Business Evaluation Services",
     "preAudit": "Pre-audit Evaluation Services",
-    "standards": "Social Standards",
+    "standards": "Social Responsibility Standards",
     "rba": "RBA Standards",
     "mistakes": "Common Business Mistakes"
   },
@@ -77,7 +158,8 @@
     "seminars": "Legal Seminars",
     "documents": "Legal Documents",
     "contact": "Contact Consultation",
-    "recruitment": "Recruitment Information"
+    "recruitment": "Recruitment Information",
+    "newsAndContact": "News - Contact"
   },
   "footer": {
     "about": "About",
@@ -86,7 +168,12 @@
     "contact": "Contact",
     "terms": "Terms of Service",
     "privacy": "Privacy Policy",
-    "copyright": "Copyright © {{year}} Youth & Partners Law Firm · All rights reserved."
+    "copyright": "Copyright © {{year}} Youth & Partners Law Firm · All Rights Reserved.",
+    "servicesYP": "Y&P Services",
+    "investmentForeign": "Investment and Foreigners",
+    "chatZalo": "Chat with us on Zalo",
+    "callNow": "Call Now 088 995 6888",
+    "notifiedMOIT": "Notified to MOIT"
   },
   "common": {
     "readMore": "Read More",
@@ -106,7 +193,20 @@
     "backToTop": "Back to Top",
     "share": "Share",
     "print": "Print",
-    "download": "Download"
+    "download": "Download",
+    "viewAll": "View All",
+    "backToPage": "Back to Page",
+    "relatedPosts": "Related Posts",
+    "newerPosts": "Newer Posts",
+    "olderPosts": "Older Posts",
+    "tableOfContents": "Table of Contents",
+    "sendInfo": "Send Information",
+    "contactForConsult": "Contact for Consultation",
+    "totalPosts": "Total",
+    "posts": "posts",
+    "prevPage": "Previous Page",
+    "nextPage": "Next Page",
+    "page": "Page"
   },
   "forms": {
     "name": "Full Name",
@@ -120,7 +220,7 @@
     "optional": "Optional",
     "sendMessage": "Send Message",
     "sending": "Sending...",
-    "sent": "Message sent successfully!",
+    "sent": "Sent successfully!",
     "error": "An error occurred. Please try again."
   },
   "language": {
@@ -128,8 +228,109 @@
     "currentLanguage": "Current Language",
     "switchTo": "Switch to {{language}}"
   },
-  "meta": {
-    "title": "Youth & Partners Law Firm - Business Companion",
-    "description": "Youth & Partners Law Firm is one of the leading law firms in: Regular legal consultation for businesses / Outsourced legal department services; Labor dispute consultation and resolution; Japanese, English, Chinese, Korean-speaking lawyer services; Audit, evaluation and legal assessment services for businesses."
+  "contact": {
+    "title": "Contact Us!",
+    "subtitle": "Leave your information below",
+    "description": "Our support team is always ready to help you.",
+    "responseTime": "Our support team usually responds within 24 business hours.",
+    "generalSupport": "General Support",
+    "consultDept": "Contact Consultation Department",
+    "techSupport": "Technical Support",
+    "readyToHelp": "We are always ready to help you!",
+    "contactUs": "Contact Us",
+    "phone": "Phone",
+    "disclaimer": "By submitting this form, you agree to the collection of your personal information."
+  },
+  "post": {
+    "author": "Author:",
+    "reviewedBy": "Reviewed by:",
+    "readingTime": "min read",
+    "publishDate": "Published",
+    "updateDate": "Updated",
+    "category": "Category",
+    "tags": "Tags"
+  },
+  "error": {
+    "notFound": "Page Not Found",
+    "pageNotFound": "Sorry, we couldn't find this page.",
+    "backToHome": "Back to Home"
+  },
+  "team": {
+    "managingLawyer": "Managing Lawyer",
+    "partnerLawyer": "Partner Lawyer",
+    "seniorAssociate": "Senior Associate",
+    "associate": "Associate",
+    "legalConsultant": "Legal Consultant",
+    "paralegal": "Paralegal"
+  },
+  "testimonials": {
+    "title": "Client Testimonials",
+    "subtitle": "Clients are satisfied with legal services at Youth & Partners, highly appreciating the dedication and professionalism of our legal team in resolving complex legal issues. They trust and are willing to continue using our services in the future."
+  },
+  "services": {
+    "professionalLegal": "Professional Legal Services",
+    "legalServices": "Legal Services",
+    "serviceIntro": "Service Introduction",
+    "investmentProject": "Investment Projects",
+    "ma": "M & A",
+    "maFull": "Mergers and Acquisitions (M&A)",
+    "regularConsulting": "Regular Business Consulting",
+    "litigation": "Litigation and Dispute Resolution",
+    "laborEmployment": "Labor and Employment",
+    "landServices": "Land Legal Services",
+    "governance": "Corporate Governance and Compliance",
+    "businessSupport": "Business Support Services"
+  },
+  "homepage": {
+    "ourServices": "OUR SERVICES",
+    "servicesSubtitle": "Our law firm always strives to provide quality, fast, accurate and complete services to our clients.",
+    "regularConsultation": "Regular Legal Consultation for Businesses",
+    "regularConsultationDesc": "With diverse experience in many business sectors, especially foreign-invested manufacturing enterprises, over the years we have proudly been the provider of high-quality regular legal consulting services to many large domestic and foreign enterprises in Vietnam such as Samsung, Intel Vietnam, Viettel, FPT, TopCV, Cosmos, Rikkeisoft... as well as many Korean, Japanese, and Australian enterprises.",
+    "regularConsultationDesc2": "In particular, to date, Y&P is one of the very few law firms that can provide in-depth consulting on Corporate Social Responsibility (CSR) issues or specifically the RBA Code of Conduct (Responsible Business Alliance) currently applied to many businesses, especially electronics enterprises. This makes us a trusted and suitable partner for manufacturing enterprises that must comply with this Code.",
+    "laborLaw": "Labor Law Consulting",
+    "laborLawDesc": "As a law firm currently providing regular legal consulting for over 20 enterprises and continuously participating in consulting and resolving many labor cases/lawsuits, Y&P Law Firm can confidently claim to be a leading expert in Vietnam in this field. Our website has a dedicated labor law section, with in-depth analysis of regulations, collective agreements, labor/training contracts, wages & benefits, working hours, contract termination, disciplinary actions, sexual harassment, NDA/NCA...",
+    "laborLawDesc2": "In addition, we regularly organize/co-organize training courses and workshops with thousands of attendees as speakers to disseminate labor knowledge to the community. Additionally, we annually organize our own training courses on clean organization, anti-sexual harassment, RBA code of conduct, emphasizing areas with high dispute risks in enterprises such as resignation handling, complaints, denunciations, and disciplinary actions. Especially for regular consulting clients of Y&P Law Firm, the training program is free.",
+    "foreignInvestment": "Foreign Investment Consulting",
+    "foreignInvestmentDesc": "Y&P Law Firm's investment project consulting experience includes advising domestic and foreign enterprises throughout the consulting process to help clients navigate the complex intersection of Vietnamese and foreign laws. We are committed to supporting clients in all forms of investment from the beginning of the investment plan until the project is operational.",
+    "foreignInvestmentDesc2": "M&A is one of the main foundations of Y&P Law Firm's investment consulting field, focusing on mergers and acquisitions. With our strong grasp of investment incentive policies, taxation and finance in FDI investment activities, we have helped clients execute thousands of complex structured transactions and overcome many challenges from current legal regulations to constantly changing geopolitical situations.",
+    "evaluationService": "Business Evaluation Services",
+    "evaluationServiceDesc": "Today, compliance with local legal regulations and meeting social responsibility standards is a matter of survival for businesses. Many businesses have paid the price of their legal entity's existence for neglecting compliance with laws and social responsibility standards.",
+    "evaluationServiceDesc2": "The Managing Lawyer of Y&P Law Firm is a Lead Auditor of Samsung Corporation in Vendor Audit campaigns/programs. Accordingly, we have enough experience and confidence to provide comprehensive business evaluation services, helping clients gain deep insights into their entire business operations and identify potential risk factors.",
+    "beYourPartner": "Let us be your companion",
+    "trackResponse": "Track Response",
+    "trackResponseDesc": "Monitor your email or phone for responses from our customer support team. If you don't receive a response within the expected time, please contact us again to ensure your issue is not overlooked.",
+    "weWillComplete": "We will complete!",
+    "latestNews": "Latest News",
+    "latestNewsDesc": "Our news page provides the latest updates on legal issues, with articles from leading legal experts, ensuring you always stay informed about important changes in your areas of interest.",
+    "clientTestimonials": "Client Testimonials",
+    "ourPartners": "Our Partners and Clients",
+    "ourPartnersDesc": "We are proud of our extensive network of partners and clients, including reputable businesses, organizations, and individuals in various fields. Our cooperation partners include leading law firms, strategic consulting organizations, and international financial companies. We work closely with them to deliver optimal and professional legal solutions.",
+    "contactNow": "Contact Now",
+    "followUs": "Follow Us",
+    "likeAFriend": "Like a companion.",
+    "contactForConsultNow": "Contact for consultation now",
+    "contactForConsultDesc": "We are always ready to listen and support you with dedication and professionalism. Let us help you solve all legal issues quickly and efficiently!",
+    "legalExperts": "Legal Experts",
+    "satisfiedClients": "Satisfied Clients",
+    "casesWon": "Cases Won"
+  },
+  "principles": {
+    "title": "Our Operating Principles",
+    "tagline": "Y&P Law Firm",
+    "time": "Timeliness",
+    "timeDesc": "We understand that every legal matter has specific time requirements and strict factors. Therefore, our legal team always strives to ensure that work progresses quickly and efficiently, helping clients achieve desired results in the shortest time possible.",
+    "dedication": "Dedication",
+    "dedicationDesc": "Every lawyer at Youth & Partners is committed to putting their heart into each case, always listening and understanding client needs to provide optimal and most suitable solutions. We believe that dedication is the key factor in building trust and long-term relationships with clients.",
+    "excellence": "Excellence",
+    "excellenceDesc": "We don't just provide legal services, but always strive to overcome all challenges to protect the legitimate rights of our clients. With our team of experienced lawyers who are always ready to face any situation, Youth & Partners Law Firm is committed to bringing justice and success to our clients, helping them move forward on the path of development."
+  },
+  "steps": {
+    "contact": "Contact",
+    "contactDesc": "Describe your issue and gather relevant documents. Contact us via Hotline, Zalo, WhatsApp, Facebook or Email",
+    "sendRequest": "Send Request",
+    "sendRequestDesc": "Describe your issue in detail via email or phone and attach relevant documents",
+    "trackResponse": "Track Response",
+    "trackResponseDesc": "Monitor your email or phone for responses from our customer support team. If you don't receive a response within the expected time, please contact us again to ensure your issue is not overlooked.",
+    "complete": "We will complete!"
   }
 }

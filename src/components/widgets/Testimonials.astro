@@ -11,6 +11,10 @@ const {
   tagline = '',
   testimonials = [],
   callToAction,
+  
+  i18nTitle,
+  i18nSubtitle,
+  i18nTagline,
 
   id,
   isDark = false,
@@ -20,7 +24,7 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+  <Headline title={title} subtitle={subtitle} tagline={tagline} i18nTitle={i18nTitle} i18nSubtitle={i18nSubtitle} i18nTagline={i18nTagline} />
 
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {
@@ -30,7 +34,7 @@ const {
             <div class="flex flex-col p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600">
               {title && <h2 class="text-lg font-medium leading-6 pb-4 notranslate" translate="no">{title}</h2>}
               {testimonial && (
-                <blockquote class="flex-auto user-content" data-user-content translate="yes">
+                <blockquote class="flex-auto notranslate" translate="no">
                   <p class="text-muted">" {testimonial} "</p>
                 </blockquote>
               )}
