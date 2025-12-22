@@ -22,7 +22,8 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     id="hero"
     title="Chuyên viên pháp lý Trần Thị Bích Liên"
     tagline="Thông tin tác giả"
-    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
+    i18nTagline="lawyerProfile.authorInfo"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
       <br />
@@ -77,7 +78,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
       <p>
         • Từ 2020 - 2024: Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners. Trong suốt thời gian công tác tại
         công ty, bà Trần Thị Bích Liên đã tích lũy được kinh nghiệm sâu rộng trong các lĩnh vực Dân sự, Hành chính, và
@@ -100,6 +101,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <Steps
     id="resume"
     title="Học vấn"
+    i18nTitle="lawyerProfile.education"
     items={[
       {
         title: `Tham gia khóa đào tạo nghề Luật sư <br /> <span class="font-normal">Học viện Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2024</span>`,
@@ -118,6 +120,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <AuthorRelatedPosts
     id="blog"
     title="Bài viết của tác giả"
+    i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Chuyên viên pháp lý Trần Thị Bích Liên về mọi khía cạnh pháp lý về Dân sự, Hình sự, Hành chính, Đất đai.`}
     author={author}
     types={types}

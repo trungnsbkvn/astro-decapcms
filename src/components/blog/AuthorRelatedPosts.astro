@@ -17,6 +17,9 @@ export interface Props extends Widget {
   count?: number;
   author: string;
   types: string[];
+  // i18n keys for translations
+  i18nTitle?: string;
+  i18nInformation?: string;
 }
 
 const {
@@ -25,6 +28,9 @@ const {
   count = 4,
   author = '',
   types = [],
+  // i18n keys for translations
+  i18nTitle,
+  i18nInformation,
 
   id,
   isDark = false,
@@ -55,6 +61,7 @@ const relatedPosts = posts.map((post) => {
           <div class="md:max-w-sm">
             <h2
               class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-2"
+              {...(i18nTitle ? { 'data-i18n': i18nTitle } : {})}
               set:html={title}
             />
             {totalPosts > 0 && (
@@ -65,7 +72,7 @@ const relatedPosts = posts.map((post) => {
           </div>
         )}
 
-        {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
+        {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" {...(i18nInformation ? { 'data-i18n': i18nInformation } : {})} set:html={information} />}
       </div>
 
       <Grid posts={relatedPosts} />

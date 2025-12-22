@@ -22,7 +22,8 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     id="hero"
     title="Luật sư Nguyễn Hoàng Ngọc Lan"
     tagline="Thông tin tác giả"
-    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
+    i18nTagline="lawyerProfile.authorInfo"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
       Luật sư Lan là một chuyên gia pháp lý có chuyên môn sâu trong lĩnh vực y tế, nổi bật với kinh nghiệm tư vấn và giải quyết các vấn đề pháp lý liên quan đến giấy phép hoạt động trong ngành y. Với sự am hiểu sâu sắc về các quy định pháp luật và quy trình hành chính, Luật sư Lan đã hỗ trợ nhiều bệnh viện, phòng khám, trung tâm y tế và các cơ sở chăm sóc sức khỏe khác trong việc xin cấp và điều chỉnh các loại giấy phép, đảm bảo tuân thủ đúng quy định pháp luật Việt Nam.
@@ -67,7 +68,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
       <p>
         Luật sư Lan có nhiều năm kinh nghiệm chuyên sâu trong lĩnh vực pháp lý y tế, đặc biệt là tư vấn và xử lý các hồ sơ liên quan đến giấy phép con trong ngành y, bao gồm:<br />
       •	Giấy phép hoạt động khám bệnh, chữa bệnh.<br />
@@ -92,6 +93,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <Steps
     id="resume"
     title="Học vấn"
+    i18nTitle="lawyerProfile.education"
     items={[
       {
         title: `Cấp chứng chỉ hành nghề Luật sư<br /> <span class="font-normal">Bộ Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2024</span>`,
@@ -118,6 +120,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <AuthorRelatedPosts
     id="blog"
     title="Bài viết của tác giả"
+    i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Luật sư Nguyễn Hoàng Ngọc Lan về mọi khía cạnh pháp lý về giấy phép, doanh nghiệp và đầu tư nước ngoài.`}
     author={author}
     types={types}

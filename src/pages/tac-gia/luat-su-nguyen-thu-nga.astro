@@ -22,7 +22,8 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     id="hero"
     title="Luật sư Nguyễn Thu Nga"
     tagline="Thông tin tác giả"
-    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
+    i18nTagline="lawyerProfile.authorInfo"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
       <br />
@@ -82,7 +83,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
       <p>
         Luật sư Nga có hơn 10 năm kinh nghiệm trong lĩnh vực pháp lý, chuyên tư vấn cho các doanh nghiệp, đặc biệt là
         các doanh nghiệp FDI hoạt động tại Việt Nam.
@@ -110,6 +111,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <Steps
     id="resume"
     title="Học vấn"
+    i18nTitle="lawyerProfile.education"
     items={[
       {
         title: `Tốt nghiệp Khóa đào tạo pháp luật Nhật Bản <br /> <span class="font-normal">Trung tâm Nghiên cứu và Đào tạo pháp luật Nhật Bản - Đại học tổng hợp Nagoya tại Hà Nội</span> <br /> <span class="text-sm font-normal">Năm 2016</span>`,
@@ -128,6 +130,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <AuthorRelatedPosts
     id="blog"
     title="Bài viết của tác giả"
+    i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Luật sư Nguyễn Thu Nga về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Đầu tư.`}
     author={author}
     types={types}

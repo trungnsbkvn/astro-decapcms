@@ -22,7 +22,8 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     id="hero"
     title="Luật sư Văn Thị Thanh Hoa"
     tagline="Thông tin tác giả"
-    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
+    i18nTagline="lawyerProfile.authorInfo"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
       <br />
@@ -79,7 +80,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
       <p>
         Với hơn 12 năm kinh nghiệm, Luật sư Văn Thị Thanh Hoa đã giải quyết thành công nhiều vụ việc pháp lý phức tạp
         trong các lĩnh vực Dân sự, Hình sự, Đất đai, hôn nhân và gia đình.
@@ -101,6 +102,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <Steps
     id="resume"
     title="Học vấn"
+    i18nTitle="lawyerProfile.education"
     items={[
       {
         title: `Cấp chứng chỉ hành nghề Luật sư<br /> <span class="font-normal">Bộ Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2016</span>`,
@@ -119,6 +121,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <AuthorRelatedPosts
     id="blog"
     title="Bài viết của tác giả"
+    i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Luật sư Văn Thị Thanh Hoa về mọi khía cạnh pháp lý về Đại diện trong và ngoài Tố tụng, Dân sự, Hình sự, Hành chính, Đất đai.`}
     author={author}
     types={types}

@@ -181,6 +181,7 @@ export interface Testimonial {
 export interface Team {
   name?: string;
   position?: string;
+  i18nPosition?: string;
   image?: string | unknown;
   link?: string;
 }

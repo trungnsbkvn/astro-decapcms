@@ -22,7 +22,8 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     id="hero"
     title="Luật sư Nguyễn Thị Hướng"
     tagline="Thông tin tác giả"
-    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
+    i18nTagline="lawyerProfile.authorInfo"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
       <br />
@@ -94,7 +95,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
       <p>
         Luật sư Hướng có hơn 07 năm kinh nghiệm trong lĩnh vực pháp lý, chuyên sâu các lĩnh vực Dân sự, Hình sự, Hành
         chính, Kinh doanh thương mại và tố tụng cho khách hàng.
@@ -117,6 +118,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <Steps
     id="resume"
     title="Học vấn"
+    i18nTitle="lawyerProfile.education"
     items={[
       {
         title: `Cấp chứng chỉ hành nghề Luật sư<br /> <span class="font-normal">Bộ Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2020</span>`,
@@ -135,6 +137,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <AuthorRelatedPosts
     id="blog"
     title="Bài viết của tác giả"
+    i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Luật sư Nguyễn Thị Hướng về mọi khía cạnh pháp lý về Dân sự, Hôn nhân và gia đình, Đất đai, Hình sự, Doanh nghiệp, Lao động và Đầu tư.`}
     author={author}
     types={types}

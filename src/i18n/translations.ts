@@ -301,14 +301,14 @@ export const translations = {
         <br />• Labor and Employment
         <br />• Real Estate Legal Services`,
       historyDesc2: 'During 2021-2023, Youth & Partners continued to expand its network with a new branch in Hanoi capital, located at P316, West Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi City. This is an important step in consolidating our presence and expanding the market in the Northern region, especially in Hanoi - the major economic center of the country.',
-      historyDesc3: 'During 2020-2021, Youth & Partners Law Firm LLC implemented a network expansion strategy to improve service quality and better meet customer needs in key areas. Specifically, the company opened a Transaction Office at 26 Doan Tran Nghiep, Kinh Bac Ward, Bac Ninh Province, thereby expanding the scope of operations and increasing presence in the regional market.',
+      historyDesc3: 'During 2020-2021, Youth & Partners Law Firm implemented a network expansion strategy to improve service quality and better meet customer needs in key areas. Specifically, the company opened a Transaction Office at 26 Doan Tran Nghiep, Kinh Bac Ward, Bac Ninh Province, thereby expanding the scope of operations and increasing presence in the regional market.',
       historyDesc4: 'To meet development needs, in January 2020, after six months of operation, the company relocated its headquarters to 170 Nguyen Van Linh, Lien Bao Ward, Vinh Yen City, Vinh Phuc Province. This is also the current headquarters of the company. Along with this important transition, the company scale has also been significantly expanded, with personnel tripling compared to the beginning, marking a solid step forward in the development of Y&P Law Firm.',
-      historyDesc5: 'On October 09, 2019, Youth & Partners Law Firm LLC was officially established at 67 Pham Hong Thai Street, Lien Bao, Vinh Yen, Vinh Phuc.',
+      historyDesc5: 'On October 09, 2019, Youth & Partners Law Firm was officially established at 67 Pham Hong Thai Street, Lien Bao, Vinh Yen, Vinh Phuc.',
       historyOrgDevDesc: 'From 2024 to present, Youth & Partners Law Firm has restructured its organization, added personnel and expanded service scale to meet the increasing demands of clients.',
       historyExpandHanoiDesc: 'During 2021-2023, Youth & Partners continued to expand its network with a new branch in Hanoi capital.',
-      historyExpandBacNinhDesc: 'During 2020-2021, Youth & Partners Law Firm LLC implemented a network expansion strategy to improve service quality.',
+      historyExpandBacNinhDesc: 'During 2020-2021, Youth & Partners Law Firm implemented a network expansion strategy to improve service quality.',
       historyAddressChangeDesc: 'To meet development needs, in January 2020, the company relocated its headquarters to a new address.',
-      historyEstablishDesc: 'On October 09, 2019, Youth & Partners Law Firm LLC was officially established.',
+      historyEstablishDesc: 'On October 09, 2019, Youth & Partners Law Firm was officially established.',
       // Operating principles
       principlesTitle: 'Our Operating Principles',
       time: 'Time',
@@ -322,7 +322,7 @@ export const translations = {
       satisfiedClients: 'Satisfied Clients',
       casesWon: 'Cases Won',
       // Vision/Mission descriptions
-      visionSubtitle: '<b>Vision</b> Youth & Partners aims to become one of the leading law firms in Vietnam, where clients always place their full trust when seeking legal solutions. We continuously innovate, improve service quality, and develop a team of experienced, dedicated lawyers to meet the ever-increasing demands of our clients. With enthusiasm, professionalism, and exceptional adaptability, we aspire to become a symbol of excellence in the legal field, bringing sustainable value to clients and society. <br /><br /> <b>Mission</b> Youth & Partners Law Firm LLC is committed to accompanying clients on their journey to protect their rights and achieve legal goals effectively and promptly. With the motto "Time, Dedication, Excellence", we always put our clients\' interests first, working with the highest sense of responsibility to resolve diverse and complex legal issues. Our mission is not limited to providing legal services but also aims to become a trusted partner, supporting clients and partners to overcome all legal challenges, thereby contributing to the sustainable development of businesses and the community.',
+      visionSubtitle: '<b>Vision</b> Youth & Partners aims to become one of the leading law firms in Vietnam, where clients always place their full trust when seeking legal solutions. We continuously innovate, improve service quality, and develop a team of experienced, dedicated lawyers to meet the ever-increasing demands of our clients. With enthusiasm, professionalism, and exceptional adaptability, we aspire to become a symbol of excellence in the legal field, bringing sustainable value to clients and society. <br /><br /> <b>Mission</b> Youth & Partners Law Firm is committed to accompanying clients on their journey to protect their rights and achieve legal goals effectively and promptly. With the motto "Time, Dedication, Excellence", we always put our clients\' interests first, working with the highest sense of responsibility to resolve diverse and complex legal issues. Our mission is not limited to providing legal services but also aims to become a trusted partner, supporting clients and partners to overcome all legal challenges, thereby contributing to the sustainable development of businesses and the community.',
       // Core values descriptions
       integrityDesc: 'We always act with honesty and professional ethics, putting clients\' interests first.',
       creativityDesc: 'We always seek creative and effective legal solutions to meet the diverse needs of our clients.',
@@ -1898,6 +1898,9 @@ export const translations = {
   team: {
     vi: {
       lawyersAndAssociates: 'Luật sư và cộng sự',
+      lawyersSubtitle: 'Khách hàng hài lòng với dịch vụ pháp lý tại Youth & Partners, đánh giá cao sự tận tâm và chuyên nghiệp của đội ngũ luật sư trong việc giải quyết các vấn đề pháp lý phức tạp. Họ tin tưởng và sẵn lòng tiếp tục sử dụng dịch vụ của chúng tôi trong tương lai.',
+      lawyersIntro: 'Công ty Luật TNHH Youth & Partners là một trong những công ty luật hàng đầu tại Việt Nam, với đội ngũ luật sư và cộng sự giàu kinh nghiệm và chuyên môn sâu rộng. Công ty này cung cấp các dịch vụ pháp lý chất lượng cao, nhanh chóng, chính xác và toàn diện.',
+      lawyersIntro2: 'Đội ngũ luật sư của Youth & Partners bao gồm các chuyên gia có nhiều năm kinh nghiệm trong nhiều lĩnh vực khác nhau như tư vấn pháp lý thường xuyên cho doanh nghiệp, giải quyết tranh chấp lao động, luật sư riêng tiếng Nhật, Anh, Trung, Hàn, và dịch vụ audit, đánh giá và thẩm định pháp lý cho doanh nghiệp. Công ty luôn cam kết mang lại công bằng và sự thành công cho khách hàng, giúp họ vững bước trên con đường phát triển.',
       managingLawyer: 'Luật sư điều hành',
       partnerLawyer: 'Luật sư thành viên',
       seniorAssociate: 'Cộng sự cao cấp',
@@ -1908,6 +1911,9 @@ export const translations = {
     },
     en: {
       lawyersAndAssociates: 'Lawyers and Associates',
+      lawyersSubtitle: 'Clients are satisfied with the legal services at Youth & Partners, appreciating the dedication and professionalism of our legal team in resolving complex legal matters. They trust and are willing to continue using our services in the future.',
+      lawyersIntro: 'Youth & Partners Law Firm is one of the leading law firms in Vietnam, with a team of experienced lawyers and associates with deep expertise. The company provides high-quality, fast, accurate, and comprehensive legal services.',
+      lawyersIntro2: 'The legal team at Youth & Partners includes experts with many years of experience in various fields such as regular legal consulting for businesses, labor dispute resolution, private lawyers in Japanese, English, Chinese, Korean, and audit, assessment and legal due diligence services for businesses. The company is always committed to bringing fairness and success to clients, helping them move forward on their development path.',
       managingLawyer: 'Managing Lawyer',
       partnerLawyer: 'Partner Lawyer',
       seniorAssociate: 'Senior Associate',
@@ -1918,6 +1924,9 @@ export const translations = {
     },
     zh: {
       lawyersAndAssociates: '律师与合伙人',
+      lawyersSubtitle: '客户对Youth & Partners的法律服务感到满意，高度评价我们法律团队在解决复杂法律问题方面的专业和敬业精神。他们信任并愿意继续使用我们的服务。',
+      lawyersIntro: 'Youth & Partners律师事务所是越南领先的律师事务所之一，拥有经验丰富、专业精深的律师和合伙人团队。公司提供优质、快速、准确和全面的法律服务。',
+      lawyersIntro2: 'Youth & Partners的法律团队包括在多个领域拥有多年经验的专家，如企业常规法律咨询、劳动争议解决、日语、英语、中文、韩语私人律师，以及企业审计、评估和法律尽职调查服务。公司始终致力于为客户带来公平和成功，帮助他们在发展道路上稳步前进。',
       managingLawyer: '执行律师',
       partnerLawyer: '合伙律师',
       seniorAssociate: '高级助理',
@@ -1928,6 +1937,9 @@ export const translations = {
     },
     ja: {
       lawyersAndAssociates: '弁護士およびアソシエイト',
+      lawyersSubtitle: 'お客様はYouth & Partnersの法務サービスに満足しており、複雑な法的問題の解決における当チームの献身と専門性を高く評価しています。お客様は信頼し、今後も当社のサービスを利用し続けることを望んでいます。',
+      lawyersIntro: 'Youth & Partners法律事務所はベトナムを代表する法律事務所の一つで、経験豊富で専門性の高い弁護士とアソシエイトのチームを擁しています。当社は高品質、迅速、正確かつ包括的な法務サービスを提供しています。',
+      lawyersIntro2: 'Youth & Partnersの法務チームは、企業向け定期法務コンサルティング、労働紛争解決、日本語・英語・中国語・韓国語対応のプライベート弁護士、企業向け監査・評価・法的デューデリジェンスサービスなど、様々な分野で長年の経験を持つ専門家で構成されています。当社は常にお客様に公正と成功をもたらし、発展の道を着実に歩めるようお手伝いすることをお約束します。',
       managingLawyer: 'マネージングロイヤー',
       partnerLawyer: 'パートナー弁護士',
       seniorAssociate: 'シニアアソシエイト',
@@ -1938,6 +1950,9 @@ export const translations = {
     },
     ko: {
       lawyersAndAssociates: '변호사 및 동료',
+      lawyersSubtitle: '고객들은 Youth & Partners의 법률 서비스에 만족하며, 복잡한 법적 문제 해결에 있어 저희 팀의 헌신과 전문성을 높이 평가합니다. 고객들은 신뢰하며 앞으로도 저희 서비스를 계속 이용하기를 원합니다.',
+      lawyersIntro: 'Youth & Partners 법률사무소는 베트남 최고의 법률사무소 중 하나로, 경험이 풍부하고 전문성이 뛰어난 변호사와 어소시에이트 팀을 보유하고 있습니다. 저희 회사는 고품질, 신속, 정확하고 포괄적인 법률 서비스를 제공합니다.',
+      lawyersIntro2: 'Youth & Partners의 법률 팀은 기업 정기 법률 컨설팅, 노동 분쟁 해결, 일본어·영어·중국어·한국어 개인 변호사, 기업 감사·평가·법적 실사 서비스 등 다양한 분야에서 다년간의 경험을 가진 전문가들로 구성되어 있습니다. 저희 회사는 항상 고객에게 공정함과 성공을 가져다주고 발전의 길을 굳건히 걸어갈 수 있도록 도와드리겠다고 약속합니다.',
       managingLawyer: '관리 변호사',
       partnerLawyer: '파트너 변호사',
       seniorAssociate: '시니어 어소시에이트',
@@ -2969,6 +2984,45 @@ export const translations = {
     ko: {
       authorLabel: '저자',
       postsBy: '작성자',
+    },
+  },
+
+  // Lawyer profile pages
+  lawyerProfile: {
+    vi: {
+      authorInfo: 'Thông tin tác giả',
+      contactAuthor: 'Liên hệ với tác giả',
+      experience: 'Kinh nghiệm',
+      education: 'Học vấn',
+      authorPosts: 'Bài viết của tác giả',
+    },
+    en: {
+      authorInfo: 'Author Information',
+      contactAuthor: 'Contact Author',
+      experience: 'Experience',
+      education: 'Education',
+      authorPosts: 'Author Posts',
+    },
+    zh: {
+      authorInfo: '作者信息',
+      contactAuthor: '联系作者',
+      experience: '经验',
+      education: '学历',
+      authorPosts: '作者文章',
+    },
+    ja: {
+      authorInfo: '著者情報',
+      contactAuthor: '著者に連絡する',
+      experience: '経験',
+      education: '学歴',
+      authorPosts: '著者の記事',
+    },
+    ko: {
+      authorInfo: '저자 정보',
+      contactAuthor: '저자에게 연락',
+      experience: '경력',
+      education: '학력',
+      authorPosts: '저자 게시물',
     },
   },
 

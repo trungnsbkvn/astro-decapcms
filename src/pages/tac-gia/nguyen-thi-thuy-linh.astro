@@ -23,7 +23,8 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     id="hero"
     title="Chuyên viên pháp lý Nguyễn Thị Thùy Linh"
     tagline="Thông tin tác giả"
-    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
+    i18nTagline="lawyerProfile.authorInfo"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
       <br />
@@ -79,7 +80,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
       <p>
         • Giải quyết các vụ việc hôn nhân gia đình bao gồm cả các vụ việc ly hôn có yếu tố nước ngoài;<br />
         • Tư vấn thường xuyên cho hơn 15 Doanh nghiệp trong và ngoài nước trong các lĩnh vực Doanh nghiệp, lao động, Đầu
@@ -105,6 +106,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <Steps
     id="resume"
     title="Học vấn"
+    i18nTitle="lawyerProfile.education"
     items={[
       {
         title: `Cử nhân Luật <br /> <span class="font-normal">Khoa Luật kinh tế, trường Đại học Luật Hà Nội</span> <br /> <span class="text-sm font-normal">Năm 2023</span>`,
@@ -119,6 +121,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <AuthorRelatedPosts
     id="blog"
     title="Bài viết của tác giả"
+    i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thị Thùy Linh về mọi khía cạnh pháp lý về Lao động, Doanh nghiệp, Đầu tư, Hôn nhân & Gia đình.`}
     author={author}
     types={types}

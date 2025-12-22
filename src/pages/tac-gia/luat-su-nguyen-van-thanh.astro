@@ -23,7 +23,8 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     id="hero"
     title="Luật sư Nguyễn Văn Thành"
     tagline="Thông tin tác giả"
-    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
+    i18nTagline="lawyerProfile.authorInfo"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
       Ông Nguyễn Văn Thành là Luật sư Điều hành <span class="text-accent dark:text-white highlight"> Youth </span><span
@@ -84,7 +85,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
       <p>
         Luật sư Thành, nguyên là Trưởng phòng pháp chế Samsung SDI Việt Nam (từ 2015) và hiện đang là Luật sư điều hành
         Youth & Partners Law Firm (từ 2019). <br />
@@ -120,6 +121,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <Steps
     id="resume"
     title="Học vấn"
+    i18nTitle="lawyerProfile.education"
     items={[
       {
         title: `Cấp chứng chỉ Lead Auditor (đánh giá viên trưởng) cho chương Lao động & Đạo đức kinh doanh trong chuỗi cung ứng toàn cầu<br /> <span class="font-normal">Verité, Inc.</span> <br /> <span class="text-sm font-normal">Năm 2016</span>`,
@@ -150,6 +152,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <AuthorRelatedPosts
     id="blog"
     title="Bài viết của tác giả"
+    i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Luật sư Nguyễn Văn Thành về mọi khía cạnh pháp lý về lao động, doanh nghiệp và đầu tư nước ngoài.`}
     author={author}
     types={types}

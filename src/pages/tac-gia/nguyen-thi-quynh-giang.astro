@@ -23,7 +23,8 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     id="hero"
     title="Chuyên viên pháp lý Nguyễn Thị Quỳnh Giang"
     tagline="Thông tin tác giả"
-    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
+    i18nTagline="lawyerProfile.authorInfo"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
       <br />
@@ -73,7 +74,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
       <p>
         • Tháng 6/2024 – tháng 01/2025: Thực tập tại Tòa án nhân dân quận Nam Từ Liêm, tiếp xúc với các quy trình tố
         tụng và thực tiễn xét xử, từ đó nâng cao hiểu biết về pháp luật và kỹ năng làm việc trong môi trường chuyên
@@ -94,6 +95,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <Steps
     id="resume"
     title="Học vấn"
+    i18nTitle="lawyerProfile.education"
     items={[
       {
         title: `Cử nhân Luật <br /> <span class="font-normal">Ngành Luật học tại Trường Đại học Luật, Đại học Quốc gia Hà Nội </span> <br /> <span class="text-sm font-normal">Năm 2025</span>`,
@@ -108,6 +110,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <AuthorRelatedPosts
     id="blog"
     title="Bài viết của tác giả"
+    i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thị Quỳnh Giang về mọi khía cạnh pháp lý về Lao động, Doanh nghiệp, Đầu tư, Giấy phép.`}
     author={author}
     types={types}

@@ -21,7 +21,8 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     id="hero"
     title="Chuyên viên pháp lý Nguyễn Thúy Hằng"
     tagline="Thông tin tác giả"
-    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
+    i18nTagline="lawyerProfile.authorInfo"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
       <br />
@@ -72,7 +73,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
       <p>
         • Từng làm việc và thực tập chuyên môn tại Công ty tư vấn Đầu tư Hà Thị, Tòa án nhân dân thành phố Vĩnh Yên với
         vai trò nhân viên pháp lý, thực tập sinh pháp lý <br />
@@ -92,6 +93,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <Steps
     id="resume"
     title="Học vấn"
+    i18nTitle="lawyerProfile.education"
     items={[
       {
         title: `Cử nhân Luật <br /> <span class="font-normal">Luật Kinh tế tại Đại học Luật Hà Nội </span> <br /> <span class="text-sm font-normal">Năm 2024</span>`,
@@ -106,6 +108,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <AuthorRelatedPosts
     id="blog"
     title="Bài viết của tác giả"
+    i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thúy Hằng về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Giấy phép.`}
     author={author}
     types={types}

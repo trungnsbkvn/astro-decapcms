@@ -22,7 +22,8 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     id="hero"
     title="Luật sư Mang Diệu Hiền"
     tagline="Thông tin tác giả"
-    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
+    i18nTagline="lawyerProfile.authorInfo"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
       Luật sư Mang Diệu Hiền là một chuyên gia pháp lý có uy tín, chuyên sâu trong lĩnh vực tư vấn và hỗ trợ cấp phép các loại giấy phép con. Với nền tảng học vấn vững chắc và kinh nghiệm thực tiễn phong phú, Luật sư Mang Diệu Hiền đã hỗ trợ nhiều cá nhân, doanh nghiệp hoàn thiện các thủ tục pháp lý phức tạp liên quan đến giấy phép hoạt động, đảm bảo tuân thủ đúng quy định pháp luật Việt Nam.
@@ -67,7 +68,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
       <p>
         Luật sư Mang Diệu Hiền có hơn 10 năm kinh nghiệm trong lĩnh vực pháp lý, đặc biệt là trong việc tư vấn và xử lý các hồ sơ liên quan đến giấy phép con như: <br />
         + Giấy phép kinh doanh (đăng ký doanh nghiệp, giấy phép hoạt động các ngành nghề có điều kiện).<br />
@@ -94,6 +95,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <Steps
     id="resume"
     title="Học vấn"
+    i18nTitle="lawyerProfile.education"
     items={[
       {
         title: `Cấp chứng chỉ hành nghề Luật sư<br /> <span class="font-normal">Bộ Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2019</span>`,
@@ -116,6 +118,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <AuthorRelatedPosts
     id="blog"
     title="Bài viết của tác giả"
+    i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Luật sư Mang Diệu Hiền về mọi khía cạnh pháp lý về giấy phép, doanh nghiệp và đầu tư nước ngoài.`}
     author={author}
     types={types}

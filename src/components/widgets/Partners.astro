@@ -1,12 +1,20 @@
 ---
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
 import Button from '~/components/ui/Button.astro';
 import Image from '~/components/common/Image.astro';
 import type { Teams as Props } from '~/types';
 
 const {
+  title = '',
+  subtitle = '',
+  tagline = '',
   teams = [],
   callToAction,
+  
+  i18nTitle,
+  i18nSubtitle,
+  i18nTagline,
 
   id,
   isDark = false,
@@ -16,10 +24,12 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} i18nTitle={i18nTitle} i18nSubtitle={i18nSubtitle} i18nTagline={i18nTagline} />
+
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
     {
       teams &&
-        teams.map(({ name, position, image, link }) => (
+        teams.map(({ name, position, image, link, i18nPosition }) => (
           <div class="w-full max-w-[280px] h-auto intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
             <div class="flex flex-col h-full p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600">
               <a class="relative block group" href={link ?? 'javascript:void(0)'}>
@@ -45,13 +55,18 @@ const {
               <div class="flex items-center">
                 <div class="grow">
                   {name && (
-                    <p class="text-base font-semibold">
+                    <p class="text-base font-semibold notranslate" translate="no">
                       <a class="relative block group" href={link ?? 'javascript:void(0)'}>
                         {name}
                       </a>
                     </p>
                   )}
-                  {position && <p class="text-xs text-muted">{position}</p>}
+                  {position && (
+                    <p 
+                      class={`text-xs text-muted ${i18nPosition ? 'notranslate' : ''}`}
+                      {...(i18nPosition ? { 'data-i18n': i18nPosition, 'translate': 'no' } : {})}
+                    >{position}</p>
+                  )}
                 </div>
               </div>
             </div>

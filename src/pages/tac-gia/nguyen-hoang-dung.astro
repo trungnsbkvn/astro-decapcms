@@ -21,7 +21,8 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     id="hero"
     title="Chuyên viên pháp lý Nguyễn Hoàng Dũng"
     tagline="Thông tin tác giả"
-    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form') }]}
+    i18nTagline="lawyerProfile.authorInfo"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
       <br />
@@ -89,7 +90,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kinh nghiệm</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
       <p>
         • Năm 2023: Làm việc tại Công ty Luật TNHH Hồng Bách và cộng sự. <br />
         • Năm 2024: Làm việc tại Trung tâm tư vấn pháp luật Đoàn luật sư tỉnh Hà Nam. <br />
@@ -108,6 +109,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <Steps
     id="resume"
     title="Học vấn"
+    i18nTitle="lawyerProfile.education"
     items={[
       {
         title: `Tốt nghiệp <br /> <span class="font-normal">Học viện Tư pháp</span> <br /> <span class="text-sm font-normal">• Tham gia và tốt nghiệp Khóa đào tạo nghề Luật sư</span> <br /> <span class="text-sm font-normal">•	Được đào tạo chuyên sâu về kỹ năng hành nghề và kinh nghiệm thực tiễn trong nghề luật sư</span><br /><span class="text-sm font-normal">Năm 2025</span>`,
@@ -126,6 +128,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   <AuthorRelatedPosts
     id="blog"
     title="Bài viết của tác giả"
+    i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Hoàng Dũng về mọi khía cạnh pháp lý về Dân sự, Hôn nhân và gia đình, Đất đai, Hình sự, Hành chính, Doanh nghiệp, Lao động, Đầu tư.`}
     author={author}
     types={types}
