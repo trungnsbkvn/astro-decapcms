@@ -25,6 +25,43 @@ export interface Props {
 }
 
 const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
+
+// Map footer titles to i18n keys
+const titleToI18nKey: Record<string, string> = {
+  'Giới thiệu': 'nav.about',
+  'Dịch vụ': 'nav.services',
+  'Tin tức': 'nav.news',
+  'Liên hệ': 'nav.contact',
+};
+
+// Map footer link texts to i18n keys
+const linkTextToI18nKey: Record<string, string> = {
+  'Về chúng tôi': 'about.aboutUs',
+  'Lịch sử thành lập': 'about.history',
+  'Luật sư và cộng sự': 'about.lawyers',
+  'Giải thưởng pháp lý': 'about.awards',
+  'Cảm nhận khách hàng': 'about.testimonials',
+  'Tôn chỉ hoạt động': 'about.principles',
+  'Hồ sơ năng lực': 'about.capabilities',
+  'Tầm nhìn - sứ mệnh': 'about.vision',
+  'Sự kiện nội bộ': 'about.internalEvents',
+  'Bảo vệ dữ liệu cá nhân': 'about.dataProtection',
+  'Dịch vụ của Y&P': 'footer.servicesYP',
+  'Pháp lý': 'nav.legal',
+  'Tư vấn thường xuyên': 'nav.consultation',
+  'Lao động': 'nav.labor',
+  'Đầu tư và Người nước ngoài': 'footer.investmentForeign',
+  'Dịch vụ đánh giá': 'nav.evaluation',
+  'Tin tức pháp lý': 'news.legal',
+  'Bình luận pháp lý': 'news.commentary',
+  'Các vụ việc nổi bật': 'news.highlights',
+  'Hội thảo pháp lý': 'news.seminars',
+  'Văn bản pháp lý': 'news.documents',
+  'Liên hệ tư vấn': 'news.contact',
+  'Thông tin tuyển dụng': 'news.recruitment',
+  'Điều khoản chung': 'footer.terms',
+  'Chính sách Bảo vệ dữ liệu': 'footer.privacy',
+};
 ---
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose notranslate']} translate="no">
@@ -77,6 +114,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
                 <a
                   class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
                   href={href}
+                  data-i18n={text ? linkTextToI18nKey[text] : undefined}
                   set:html={text}
                 />
               </>
@@ -87,7 +125,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
       {
         links.map(({ title, links }) => (
           <div class="col-span-6 md:col-span-3 lg:col-span-2">
-            <div class="dark:text-gray-300 font-medium mb-2">{title}</div>
+            <div class="dark:text-gray-300 font-medium mb-2" data-i18n={title ? titleToI18nKey[title] : undefined}>{title}</div>
             {links && Array.isArray(links) && links.length > 0 && (
               <ul class="text-sm">
                 {links.map(({ text, href, ariaLabel }) => (
@@ -96,6 +134,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
                       class="text-muted hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
                       href={href}
                       aria-label={ariaLabel}
+                      data-i18n={text ? linkTextToI18nKey[text] : undefined}
                     >
                       <Fragment set:html={text} />
                     </a>
