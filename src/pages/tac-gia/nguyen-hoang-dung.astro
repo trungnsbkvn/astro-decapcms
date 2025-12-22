@@ -19,13 +19,13 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
 <Layout metadata={metadata}>
   <Hero
     id="hero"
-    title="Chuyên viên pháp lý Nguyễn Hoàng Dũng"
+    title={`<span data-i18n="lawyerProfile.legalSpecialist">Chuyên viên pháp lý</span> <span class="notranslate" translate="no">Nguyễn Hoàng Dũng</span>`}
     tagline="Thông tin tác giả"
     i18nTagline="lawyerProfile.authorInfo"
     actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
-      <span class="notranslate" translate="no">
+      <span class="notranslate" translate="no" data-i18n="lawyers.nguyenHoangDungBio">
       <br />
       <i>Lĩnh vực phụ trách:</i><br /><br />
       • Dân sự: Tư vấn về hợp đồng, giao dịch Dân sự, đại diện tham gia giải quyết tranh chấp di sản thừa kế, yêu cầu bồi
@@ -93,7 +93,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   >
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
-      <p class="notranslate" translate="no">
+      <p class="notranslate" translate="no" data-i18n="lawyers.nguyenHoangDungExp">
         • Năm 2023: Làm việc tại Công ty Luật TNHH Hồng Bách và cộng sự. <br />
         • Năm 2024: Làm việc tại Trung tâm tư vấn pháp luật Đoàn luật sư tỉnh Hà Nam. <br />
         • Năm 2025: Làm việc tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm).
@@ -114,11 +114,11 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     i18nTitle="lawyerProfile.education"
     items={[
       {
-        title: `Tốt nghiệp <br /> <span class="font-normal">Học viện Tư pháp</span> <br /> <span class="text-sm font-normal">• Tham gia và tốt nghiệp Khóa đào tạo nghề Luật sư</span> <br /> <span class="text-sm font-normal">•	Được đào tạo chuyên sâu về kỹ năng hành nghề và kinh nghiệm thực tiễn trong nghề luật sư</span><br /><span class="text-sm font-normal">Năm 2025</span>`,
+        title: `<span data-i18n="lawyers.nguyenHoangDungEdu1">Tốt nghiệp</span> <br /> <span class="font-normal" data-i18n="lawyers.nguyenHoangDungEdu1Org">Học viện Tư pháp</span> <br /> <span class="text-sm font-normal" data-i18n="lawyers.nguyenHoangDungEdu1Desc">• Tham gia và tốt nghiệp Khóa đào tạo nghề Luật sư<br />• Được đào tạo chuyên sâu về kỹ năng hành nghề và kinh nghiệm thực tiễn trong nghề luật sư</span><br /><span class="text-sm font-normal" data-i18n="lawyers.nguyenHoangDungEdu1Year">Năm 2025</span>`,
         icon: 'tabler:school',
       },
       {
-        title: `Cử nhân Luật <br /> <span class="font-normal">Luật thương mại quốc tế tại Đại học Luật Hà Nội </span> <br /> <span class="text-sm font-normal">Năm 2023</span>`,
+        title: `<span data-i18n="lawyers.nguyenHoangDungEdu2">Cử nhân Luật</span> <br /> <span class="font-normal" data-i18n="lawyers.nguyenHoangDungEdu2Org">Luật thương mại quốc tế tại Đại học Luật Hà Nội</span> <br /> <span class="text-sm font-normal" data-i18n="lawyers.nguyenHoangDungEdu2Year">Năm 2023</span>`,
         icon: 'tabler:school',
       },
     ]}
@@ -132,6 +132,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     title="Bài viết của tác giả"
     i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Hoàng Dũng về mọi khía cạnh pháp lý về Dân sự, Hôn nhân và gia đình, Đất đai, Hình sự, Hành chính, Doanh nghiệp, Lao động, Đầu tư.`}
+    i18nInformation="lawyers.nguyenHoangDungPostsInfo"
     author={author}
     types={types}
   >

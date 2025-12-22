@@ -20,13 +20,13 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
 <Layout metadata={metadata}>
   <Hero
     id="hero"
-    title="Luật sư Nguyễn Thu Nga"
+    title={`<span data-i18n="lawyerProfile.lawyer">Luật sư</span> <span class="notranslate" translate="no">Nguyễn Thu Nga</span>`}
     tagline="Thông tin tác giả"
     i18nTagline="lawyerProfile.authorInfo"
     actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
-      <span class="notranslate" translate="no">
+      <span class="notranslate" translate="no" data-i18n="lawyers.nguyenThuNgaBio">
       <br />
       <i>Lĩnh vực phụ trách:</i><br /><br />
       • Doanh nghiệp: Tư vấn toàn diện về các vấn đề pháp lý liên quan đến thành lập, hoạt động và quản trị Doanh nghiệp,
@@ -86,19 +86,19 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   >
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
-      <p class="notranslate" translate="no">
+      <p class="notranslate" translate="no" data-i18n="lawyers.nguyenThuNgaExp">
         Luật sư Nga có hơn 10 năm kinh nghiệm trong lĩnh vực pháp lý, chuyên tư vấn cho các doanh nghiệp, đặc biệt là
         các doanh nghiệp FDI hoạt động tại Việt Nam.
       </p>
       <br />
-      <p class="notranslate" translate="no">
+      <p class="notranslate" translate="no" data-i18n="lawyers.nguyenThuNgaExp2">
         Với kinh nghiệm làm việc tại các cơ quan nhà nước về lao động, đầu tư và là Phụ trách Pháp chế tại một doanh
         nghiệp của Nhật Bản, Luật sư Nga có kinh nghiệm phong phú về các vấn đề pháp lý của doanh nghiệp như tuân thủ
         pháp luật lao động và pháp luật doanh nghiệp, thực hiện các thủ tục hành chính, rà soát hợp đồng, đánh giá rủi
         ro pháp lý, và tư vấn các vấn đề pháp lý liên quan đến thủ tục đầu tư và phát triển tại Việt Nam.
       </p>
       <br />
-      <p class="notranslate" translate="no">
+      <p class="notranslate" translate="no" data-i18n="lawyers.nguyenThuNgaExp3">
         Ngoài ra, khả năng giao tiếp tốt bằng tiếng Nhật giúp Luật sư Nga là cầu nối quan trọng giữa các doanh nghiệp
         Nhật Bản với chính quyền và doanh nghiệp tại Việt Nam.
       </p>
@@ -116,11 +116,11 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     i18nTitle="lawyerProfile.education"
     items={[
       {
-        title: `Tốt nghiệp Khóa đào tạo pháp luật Nhật Bản <br /> <span class="font-normal">Trung tâm Nghiên cứu và Đào tạo pháp luật Nhật Bản - Đại học tổng hợp Nagoya tại Hà Nội</span> <br /> <span class="text-sm font-normal">Năm 2016</span>`,
+        title: `<span data-i18n="lawyers.nguyenThuNgaEdu1">Tốt nghiệp Khóa đào tạo pháp luật Nhật Bản</span> <br /> <span class="font-normal" data-i18n="lawyers.nguyenThuNgaEdu1Org">Trung tâm Nghiên cứu và Đào tạo pháp luật Nhật Bản - Đại học tổng hợp Nagoya tại Hà Nội</span> <br /> <span class="text-sm font-normal" data-i18n="lawyers.nguyenThuNgaEdu1Year">Năm 2016</span>`,
         icon: 'tabler:school',
       },
       {
-        title: `Cử nhân Luật <br /> <span class="font-normal">Trường ĐH Luật Hà Nội</span> <br /> <span class="text-sm font-normal">Năm 2012</span>`,
+        title: `<span data-i18n="lawyers.nguyenThuNgaEdu2">Cử nhân Luật</span> <br /> <span class="font-normal" data-i18n="lawyers.nguyenThuNgaEdu2Org">Trường ĐH Luật Hà Nội</span> <br /> <span class="text-sm font-normal" data-i18n="lawyers.nguyenThuNgaEdu2Year">Năm 2012</span>`,
         icon: 'tabler:school',
       },
     ]}
@@ -134,6 +134,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     title="Bài viết của tác giả"
     i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Luật sư Nguyễn Thu Nga về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Đầu tư.`}
+    i18nInformation="lawyers.nguyenThuNgaPostsInfo"
     author={author}
     types={types}
   >

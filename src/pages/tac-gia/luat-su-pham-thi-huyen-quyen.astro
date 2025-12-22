@@ -21,13 +21,13 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
 <Layout metadata={metadata}>
   <Hero
     id="hero"
-    title="Luật sư Phạm Thị Huyền Quyên"
+    title={`<span data-i18n="lawyerProfile.lawyer">Luật sư</span> <span class="notranslate" translate="no">Phạm Thị Huyền Quyên</span>`}
     tagline="Thông tin tác giả"
     i18nTagline="lawyerProfile.authorInfo"
     actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
-      <span class="notranslate" translate="no">
+      <span class="notranslate" translate="no" data-i18n="lawyers.phamThiHuyenQuyenBio">
       <br />
       <i>Lĩnh vực phụ trách:</i><br /><br />
       • Doanh nghiệp: Tư vấn toàn diện về các vấn đề pháp lý liên quan đến thành lập, hoạt động và quản trị Doanh nghiệp,
@@ -87,17 +87,17 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   >
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
-      <p class="notranslate" translate="no">
+      <p class="notranslate" translate="no" data-i18n="lawyers.phamThiHuyenQuyenExp">
         Với 8 năm kinh nghiệm trong lĩnh vực tư vấn Doanh nghiệp và pháp chế nội bộ, Luật sư Phạm Thị Huyền Quyên đã trở
         thành một đối tác tin cậy của nhiều Doanh nghiệp.
       </p>
       <br />
-      <p class="notranslate" translate="no">
+      <p class="notranslate" translate="no" data-i18n="lawyers.phamThiHuyenQuyenExp2">
         Bà sở hữu kiến thức chuyên sâu về luật Doanh nghiệp, luật lao động và các quy định pháp luật liên quan, giúp
         Doanh nghiệp giải quyết hiệu quả các vấn đề pháp lý phát sinh trong quá trình hoạt động.
       </p>
       <br />
-      <p class="notranslate" translate="no">
+      <p class="notranslate" translate="no" data-i18n="lawyers.phamThiHuyenQuyenExp3">
         Đặc biệt, bà chú trọng vào việc đảm bảo tuân thủ pháp luật trong các hoạt động của Doanh nghiệp, từ việc thiết
         lập cơ cấu tổ chức, quản lý tài chính đến việc xử lý các vấn đề tranh chấp và mâu thuẫn nội bộ.
       </p>
@@ -115,11 +115,11 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     i18nTitle="lawyerProfile.education"
     items={[
       {
-        title: `Cấp chứng chỉ hành nghề Luật sư<br /> <span class="font-normal">Bộ Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2016</span>`,
+        title: `<span data-i18n="lawyers.phamThiHuyenQuyenEdu1">Cấp chứng chỉ hành nghề Luật sư</span><br /> <span class="font-normal" data-i18n="lawyers.phamThiHuyenQuyenEdu1Org">Bộ Tư Pháp</span> <br /> <span class="text-sm font-normal" data-i18n="lawyers.phamThiHuyenQuyenEdu1Year">Năm 2016</span>`,
         icon: 'tabler:school',
       },
       {
-        title: `Cử nhân Luật <br /> <span class="font-normal">Trường ĐH Luật Hà Nội</span> <br /> <span class="text-sm font-normal">Năm 2012</span>`,
+        title: `<span data-i18n="lawyers.phamThiHuyenQuyenEdu2">Cử nhân Luật</span> <br /> <span class="font-normal" data-i18n="lawyers.phamThiHuyenQuyenEdu2Org">Trường ĐH Luật Hà Nội</span> <br /> <span class="text-sm font-normal" data-i18n="lawyers.phamThiHuyenQuyenEdu2Year">Năm 2012</span>`,
         icon: 'tabler:school',
       },
     ]}
@@ -133,6 +133,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     title="Bài viết của tác giả"
     i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Luật sư Phạm Thị Huyền Quyên về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Đầu tư.`}
+    i18nInformation="lawyers.phamThiHuyenQuyenPostsInfo"
     author={author}
     types={types}
   >

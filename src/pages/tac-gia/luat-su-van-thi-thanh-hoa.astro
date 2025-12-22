@@ -20,13 +20,13 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
 <Layout metadata={metadata}>
   <Hero
     id="hero"
-    title="Luật sư Văn Thị Thanh Hoa"
+    title={`<span data-i18n="lawyerProfile.lawyer">Luật sư</span> <span class="notranslate" translate="no">Văn Thị Thanh Hoa</span>`}
     tagline="Thông tin tác giả"
     i18nTagline="lawyerProfile.authorInfo"
     actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
-      <span class="notranslate" translate="no">
+      <span class="notranslate" translate="no" data-i18n="lawyers.vanThiThanhHoaBio">
       <br />
       <i>Lĩnh vực phụ trách:</i><br /><br />
       • Dân sự: Tư vấn về hợp đồng, giao dịch Dân sự, thừa kế, bồi thường thiệt hại và các vấn đề pháp lý liên quan khác
@@ -83,12 +83,12 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   >
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
-      <p class="notranslate" translate="no">
+      <p class="notranslate" translate="no" data-i18n="lawyers.vanThiThanhHoaExp">
         Với hơn 12 năm kinh nghiệm, Luật sư Văn Thị Thanh Hoa đã giải quyết thành công nhiều vụ việc pháp lý phức tạp
         trong các lĩnh vực Dân sự, Hình sự, Đất đai, hôn nhân và gia đình.
       </p>
       <br />
-      <p class="notranslate" translate="no">
+      <p class="notranslate" translate="no" data-i18n="lawyers.vanThiThanhHoaExp2">
         Bà được biết đến với khả năng tư vấn pháp lý xuất sắc và chiến lược giải quyết vụ việc tối ưu, giúp khách hàng
         đạt được kết quả mong muốn.
       </p>
@@ -107,11 +107,11 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     i18nTitle="lawyerProfile.education"
     items={[
       {
-        title: `Cấp chứng chỉ hành nghề Luật sư<br /> <span class="font-normal">Bộ Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2016</span>`,
+        title: `<span data-i18n="lawyers.vanThiThanhHoaEdu1">Cấp chứng chỉ hành nghề Luật sư</span><br /> <span class="font-normal" data-i18n="lawyers.vanThiThanhHoaEdu1Org">Bộ Tư Pháp</span> <br /> <span class="text-sm font-normal" data-i18n="lawyers.vanThiThanhHoaEdu1Year">Năm 2016</span>`,
         icon: 'tabler:school',
       },
       {
-        title: `Cử nhân Luật <br /> <span class="font-normal">Trường ĐH Luật Hà Nội</span> <br /> <span class="text-sm font-normal">Năm 2012</span>`,
+        title: `<span data-i18n="lawyers.vanThiThanhHoaEdu2">Cử nhân Luật</span> <br /> <span class="font-normal" data-i18n="lawyers.vanThiThanhHoaEdu2Org">Trường ĐH Luật Hà Nội</span> <br /> <span class="text-sm font-normal" data-i18n="lawyers.vanThiThanhHoaEdu2Year">Năm 2012</span>`,
         icon: 'tabler:school',
       },
     ]}
@@ -125,6 +125,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     title="Bài viết của tác giả"
     i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Luật sư Văn Thị Thanh Hoa về mọi khía cạnh pháp lý về Đại diện trong và ngoài Tố tụng, Dân sự, Hình sự, Hành chính, Đất đai.`}
+    i18nInformation="lawyers.vanThiThanhHoaPostsInfo"
     author={author}
     types={types}
   >

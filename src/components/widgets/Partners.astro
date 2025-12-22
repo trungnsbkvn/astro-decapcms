@@ -29,7 +29,7 @@ const {
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
     {
       teams &&
-        teams.map(({ name, position, image, link, i18nPosition }) => (
+        teams.map(({ name, title: memberTitle, position, image, link, i18nPosition, i18nMemberTitle }) => (
           <div class="w-full max-w-[280px] h-auto intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
             <div class="flex flex-col h-full p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600">
               <a class="relative block group" href={link ?? 'javascript:void(0)'}>
@@ -55,9 +55,16 @@ const {
               <div class="flex items-center">
                 <div class="grow">
                   {name && (
-                    <p class="text-base font-semibold notranslate" translate="no">
+                    <p class="text-base font-semibold">
                       <a class="relative block group" href={link ?? 'javascript:void(0)'}>
-                        {name}
+                        {memberTitle && (
+                          <span 
+                            class={i18nMemberTitle ? 'notranslate' : ''}
+                            {...(i18nMemberTitle ? { 'data-i18n': i18nMemberTitle, 'translate': 'no' } : {})}
+                          >{memberTitle}</span>
+                        )}
+                        {memberTitle && ' '}
+                        <span class="notranslate" translate="no">{name}</span>
                       </a>
                     </p>
                   )}

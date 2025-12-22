@@ -2995,6 +2995,9 @@ export const translations = {
       experience: 'Kinh nghiệm',
       education: 'Học vấn',
       authorPosts: 'Bài viết của tác giả',
+      lawyer: 'Luật sư',
+      legalSpecialist: 'Chuyên viên pháp lý',
+      doctor: 'Tiến sĩ',
     },
     en: {
       authorInfo: 'Author Information',
@@ -3002,6 +3005,9 @@ export const translations = {
       experience: 'Experience',
       education: 'Education',
       authorPosts: 'Author Posts',
+      lawyer: 'Lawyer',
+      legalSpecialist: 'Legal Specialist',
+      doctor: 'Dr.',
     },
     zh: {
       authorInfo: '作者信息',
@@ -3009,6 +3015,9 @@ export const translations = {
       experience: '经验',
       education: '学历',
       authorPosts: '作者文章',
+      lawyer: '律师',
+      legalSpecialist: '法律专员',
+      doctor: '博士',
     },
     ja: {
       authorInfo: '著者情報',
@@ -3016,6 +3025,9 @@ export const translations = {
       experience: '経験',
       education: '学歴',
       authorPosts: '著者の記事',
+      lawyer: '弁護士',
+      legalSpecialist: '法務専門家',
+      doctor: '博士',
     },
     ko: {
       authorInfo: '저자 정보',
@@ -3023,6 +3035,9 @@ export const translations = {
       experience: '경력',
       education: '학력',
       authorPosts: '저자 게시물',
+      lawyer: '변호사',
+      legalSpecialist: '법률 전문가',
+      doctor: '박사',
     },
   },
 
@@ -3548,6 +3563,140 @@ export const translations = {
       nguyenThiHuongEdu2Year: 'Năm 2017',
       nguyenThiHuongPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Thị Hướng về mọi khía cạnh pháp lý về Dân sự, Hình sự, Hành chính, Kinh doanh thương mại.',
 
+      // Nguyễn Thị Thơm
+      nguyenThiThomBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Doanh nghiệp: Tư vấn pháp lý về thành lập, hoạt động và quản lý Doanh nghiệp, các vấn đề liên quan đến hợp đồng, pháp lý kinh doanh<br /><br />• Lao động: Tư vấn về các vấn đề liên quan đến lao động, hợp đồng lao động, tranh chấp lao động và quyền lợi của người lao động<br /><br />• Đầu tư: Tư vấn về các vấn đề Đầu tư, bao gồm Đầu tư trong và ngoài nước, chiến lược phát triển Doanh nghiệp và các vấn đề pháp lý liên quan đến Đầu tư bất động sản.',
+      nguyenThiThomExp: 'Với 09 năm kinh nghiệm trong lĩnh vực pháp chế Doanh nghiệp, trong đó có 05 năm làm việc tại các công ty có vốn Đầu tư nước ngoài và 04 năm tại các công ty Đầu tư và phát triển dự án bất động sản, Luật sư Nguyễn Thị Thơm đã tích lũy được kiến thức sâu rộng và kỹ năng xử lý công việc chuyên nghiệp.',
+      nguyenThiThomExp2: 'Luật sư Thơm chuyên tư vấn và hỗ trợ pháp lý cho các Doanh nghiệp, giúp họ đưa ra các chiến lược phù hợp để tránh tranh chấp pháp lý và giảm thiểu rủi ro trong quá trình hoạt động và kinh doanh.',
+      nguyenThiThomEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      nguyenThiThomEdu1Org: 'Bộ Tư Pháp',
+      nguyenThiThomEdu1Year: 'Năm 2016',
+      nguyenThiThomEdu2: 'Cử nhân Luật',
+      nguyenThiThomEdu2Org: 'Trường ĐH Luật Hà Nội',
+      nguyenThiThomEdu2Year: 'Năm 2012',
+      nguyenThiThomPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Thị Thơm về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Đầu tư.',
+
+      // Nguyễn Thu Nga
+      nguyenThuNgaBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Doanh nghiệp: Tư vấn toàn diện về các vấn đề pháp lý liên quan đến thành lập, hoạt động và quản trị Doanh nghiệp, bảo vệ quyền lợi của cổ đông, và giải quyết các tranh chấp giữa các bên trong Doanh nghiệp. Luật sư Nga giúp các Doanh nghiệp trong việc xây dựng chiến lược pháp lý phù hợp để bảo vệ và phát triển hoạt động kinh doanh, từ việc hợp tác với các đối tác, đến việc soạn thảo hợp đồng kinh tế, thương mại<br /><br />• Lao động: Tư vấn về các vấn đề liên quan đến hợp đồng lao động, quyền lợi của người lao động, tranh chấp lao động, cũng như các quy định về bảo hiểm xã hội, phúc lợi và các quyền lợi khác của người lao động trong Doanh nghiệp. Luật sư Nga hỗ trợ Doanh nghiệp xây dựng chính sách nhân sự, quản lý các mối quan hệ lao động, và giải quyết tranh chấp giữa người sử dụng lao động và người lao động<br /><br />• Đầu tư: Tư vấn pháp lý về các vấn đề Đầu tư trong và ngoài nước, bao gồm các thủ tục Đầu tư, chọn lựa phương thức Đầu tư và cấu trúc giao dịch hợp lý, nhằm tối đa hóa lợi ích và giảm thiểu rủi ro. Luật sư Nga cũng hỗ trợ Doanh nghiệp trong việc tuân thủ các quy định pháp lý liên quan đến Đầu tư và chuyển nhượng vốn, giúp các Doanh nghiệp định hướng chiến lược Đầu tư hiệu quả.',
+      nguyenThuNgaExp: 'Luật sư Nga có hơn 10 năm kinh nghiệm trong lĩnh vực pháp lý, chuyên tư vấn cho các doanh nghiệp, đặc biệt là các doanh nghiệp FDI hoạt động tại Việt Nam.',
+      nguyenThuNgaExp2: 'Với kinh nghiệm làm việc tại các cơ quan nhà nước về lao động, đầu tư và là Phụ trách Pháp chế tại một doanh nghiệp của Nhật Bản, Luật sư Nga có kinh nghiệm phong phú về các vấn đề pháp lý của doanh nghiệp như tuân thủ pháp luật lao động và pháp luật doanh nghiệp, thực hiện các thủ tục hành chính, rà soát hợp đồng, đánh giá rủi ro pháp lý, và tư vấn các vấn đề pháp lý liên quan đến thủ tục đầu tư và phát triển tại Việt Nam.',
+      nguyenThuNgaExp3: 'Ngoài ra, khả năng giao tiếp tốt bằng tiếng Nhật giúp Luật sư Nga là cầu nối quan trọng giữa các doanh nghiệp Nhật Bản với chính quyền và doanh nghiệp tại Việt Nam.',
+      nguyenThuNgaEdu1: 'Tốt nghiệp Khóa đào tạo pháp luật Nhật Bản',
+      nguyenThuNgaEdu1Org: 'Trung tâm Nghiên cứu và Đào tạo pháp luật Nhật Bản - Đại học tổng hợp Nagoya tại Hà Nội',
+      nguyenThuNgaEdu1Year: 'Năm 2016',
+      nguyenThuNgaEdu2: 'Cử nhân Luật',
+      nguyenThuNgaEdu2Org: 'Trường ĐH Luật Hà Nội',
+      nguyenThuNgaEdu2Year: 'Năm 2012',
+      nguyenThuNgaPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Thu Nga về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Đầu tư.',
+
+      // Phạm Thị Huyền Quyên
+      phamThiHuyenQuyenBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Doanh nghiệp: Tư vấn toàn diện về các vấn đề pháp lý liên quan đến thành lập, hoạt động và quản trị Doanh nghiệp, bao gồm các vấn đề về quản lý tài chính, bảo vệ quyền lợi cổ đông, soạn thảo hợp đồng và giải quyết tranh chấp nội bộ. Bà giúp Doanh nghiệp xây dựng và triển khai các chiến lược phát triển bền vững, đảm bảo tuân thủ các quy định pháp lý trong suốt quá trình hoạt động<br /><br />• Lao động: Tư vấn về các vấn đề lao động trong Doanh nghiệp, bao gồm hợp đồng lao động, quyền lợi người lao động, bảo hiểm xã hội, các chế độ phúc lợi, và giải quyết tranh chấp lao động. Bà hỗ trợ Doanh nghiệp trong việc xây dựng các chính sách nhân sự và duy trì môi trường làm việc tuân thủ quy định pháp lý<br /><br />• Đầu tư: Tư vấn các vấn đề liên quan đến Đầu tư, bao gồm lập kế hoạch Đầu tư, các thủ tục liên quan đến việc huy động vốn, chuyển nhượng cổ phần và quản lý rủi ro Đầu tư. Luật sư Quyên giúp Doanh nghiệp tối ưu hóa chiến lược Đầu tư, đồng thời đảm bảo tuân thủ các yêu cầu pháp lý trong và ngoài nước.',
+      phamThiHuyenQuyenExp: 'Với 8 năm kinh nghiệm trong lĩnh vực tư vấn Doanh nghiệp và pháp chế nội bộ, Luật sư Phạm Thị Huyền Quyên đã trở thành một đối tác tin cậy của nhiều Doanh nghiệp.',
+      phamThiHuyenQuyenExp2: 'Bà sở hữu kiến thức chuyên sâu về luật Doanh nghiệp, luật lao động và các quy định pháp luật liên quan, giúp Doanh nghiệp giải quyết hiệu quả các vấn đề pháp lý phát sinh trong quá trình hoạt động.',
+      phamThiHuyenQuyenExp3: 'Đặc biệt, bà chú trọng vào việc đảm bảo tuân thủ pháp luật trong các hoạt động của Doanh nghiệp, từ việc thiết lập cơ cấu tổ chức, quản lý tài chính đến việc xử lý các vấn đề tranh chấp và mâu thuẫn nội bộ.',
+      phamThiHuyenQuyenEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      phamThiHuyenQuyenEdu1Org: 'Bộ Tư Pháp',
+      phamThiHuyenQuyenEdu1Year: 'Năm 2016',
+      phamThiHuyenQuyenEdu2: 'Cử nhân Luật',
+      phamThiHuyenQuyenEdu2Org: 'Trường ĐH Luật Hà Nội',
+      phamThiHuyenQuyenEdu2Year: 'Năm 2012',
+      phamThiHuyenQuyenPostsInfo: 'Các bài viết chuyên sâu của Luật sư Phạm Thị Huyền Quyên về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Đầu tư.',
+
+      // Văn Thị Thanh Hoa
+      vanThiThanhHoaBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Dân sự: Tư vấn về hợp đồng, giao dịch Dân sự, thừa kế, bồi thường thiệt hại và các vấn đề pháp lý liên quan khác<br /><br />• Hình sự: Tư vấn và bảo vệ quyền lợi hợp pháp của bị hại, đồng thời tham gia bào chữa cho bị can, bị cáo trong các giai đoạn tố tụng Hình sự. Thực hiện các công việc liên quan đến hành vi phạm tội và xác định mức độ trách nhiệm pháp lý của các đối tượng trong vụ án Hình sự<br /><br />• Đất đai: Tư vấn về các vấn đề liên quan đến Đất đai, bao gồm nhưng không giới hạn như chuyển nhượng, cấp đổi giấy chứng nhận quyền sử dụng đất, giải quyết tranh chấp Đất đai<br /><br />• Hôn nhân và gia đình: Tư vấn về ly hôn, chia tài sản, quyền nuôi con, và các vấn đề pháp lý liên quan đến hôn nhân và gia đình.',
+      vanThiThanhHoaExp: 'Với hơn 12 năm kinh nghiệm, Luật sư Văn Thị Thanh Hoa đã giải quyết thành công nhiều vụ việc pháp lý phức tạp trong các lĩnh vực Dân sự, Hình sự, Đất đai, hôn nhân và gia đình.',
+      vanThiThanhHoaExp2: 'Bà được biết đến với khả năng tư vấn pháp lý xuất sắc và chiến lược giải quyết vụ việc tối ưu, giúp khách hàng đạt được kết quả mong muốn.',
+      vanThiThanhHoaEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      vanThiThanhHoaEdu1Org: 'Bộ Tư Pháp',
+      vanThiThanhHoaEdu1Year: 'Năm 2016',
+      vanThiThanhHoaEdu2: 'Cử nhân Luật',
+      vanThiThanhHoaEdu2Org: 'Trường ĐH Luật Hà Nội',
+      vanThiThanhHoaEdu2Year: 'Năm 2012',
+      vanThiThanhHoaPostsInfo: 'Các bài viết chuyên sâu của Luật sư Văn Thị Thanh Hoa về mọi khía cạnh pháp lý về Đại diện trong và ngoài Tố tụng, Dân sự, Hình sự, Hành chính, Đất đai.',
+
+      // Nghiêm Minh Huyền
+      nghiemMinhHuyenBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />Huyền Nghiêm là chuyên viên, trợ lý Luật sư, biên tập viên hỗ trợ quản lý các bài viết trên website của Y&P Law Firm, hỗ trợ các chuyên viên viết bài phân tích, dịch vụ, tổng hợp quy định, chính sách mới, nổi bật liên quan đến các lĩnh vực: doanh nghiêp, hôn nhân và gia đình, Đất đai, Hình sự,...<br /><br />• Lĩnh vực Đất đai: Cập nhật nhanh, hỗ trợ khách hàng về thực hiện các thủ tục Hành chính liên quan đến Đất đai: đăng ký cấp GCN lần đầu, đăng ký biến động, phân chia di sản thừa kế, tặng cho,...<br /><br />• Lĩnh vực Dân sự, Hình sự: Đọc và nghiên cứu hồ sơ các vụ việc trên thực tế; Hỗ trợ Luật sư sao chụp hồ sơ, tài liệu, soạn thảo các loại đơn và giấy tờ.',
+      nghiemMinhHuyenExp: '• Năm 2019: Thực tập tại UBND quận Bắc Từ Liêm: Thực hiện các công việc tiếp nhận hồ sơ và trả kết quả, giải quyết các hồ sơ đăng ký hộ kinh doanh, mã số thuế<br />• Năm 2020: Thực tập tại Công ty Luật TNHH Á Châu: Soạn thảo các hồ sơ liên quan đến Doanh nghiệp như thành lập, thay đổi, giải thể, đăng ký con dấu; Tìm hiểu về sở hữu trí tuệ, Giấy phép con, đăng ký website,...<br />• Từ năm 2020 - năm 2021: Làm việc tại Công ty Luật TNHH Nam Dương: thực hiện các công tác liên hệ với khách hàng có vi phạm hợp đồng vay theo yêu cầu của đối tác (Ngân hàng: MB bank, VP bank,...; Công ty tài chính: Mcredit, FEcredit,...)<br />• Năm 2021: Làm việc tại Trung tâm khoa học Hành chính và văn thư lưu trữ (SCARMA): Thực hiện các công việc sắp xếp, chỉnh lý, lên file danh sách lưu trữ dữ liệu và lưu kho của MB bank<br />• Từ năm 2022 đến năm 2024: Làm việc tại Công ty TNHH SGS Việt Nam: Kiểm duyệt các nội dung đăng tải lên mạng xã hội<br />• Từ năm 2024 - nay: Làm việc tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm).',
+      nghiemMinhHuyenEdu1: 'Tốt nghiệp',
+      nghiemMinhHuyenEdu1Org: 'Học viện Tư pháp',
+      nghiemMinhHuyenEdu1Desc: '• Tham gia và tốt nghiệp Khóa đào tạo nghề ba chức danh: Thẩm phán, Kiểm sát viên, Luật sư<br />• Được đào tạo chuyên sâu về kỹ năng hành nghề và kinh nghiệm thực tiễn trong các chức danh tư pháp<br />• Thực tập tại các cơ quan Tòa án, Viện Kiểm sát và Văn phòng Luật, theo sự phân công và hướng dẫn của Học viện, nhằm rèn luyện kỹ năng và nâng cao khả năng giải quyết các tình huống pháp lý thực tế',
+      nghiemMinhHuyenEdu1Year: 'Tháng 12/2020 - Tháng 8/2022',
+      nghiemMinhHuyenEdu2: 'Cử nhân Luật',
+      nghiemMinhHuyenEdu2Org: 'Trường Đại học Luật Hà Nội',
+      nghiemMinhHuyenEdu2Desc: '• Tốt nghiệp chuyên ngành Luật, GPA: 7.31/10<br />• Được đào tạo chuyên sâu về các kiến thức pháp lý cơ bản và bộ luật trong các lĩnh vực pháp luật Dân sự, Hình sự, Hành chính, kinh tế và quốc tế',
+      nghiemMinhHuyenEdu2Year: 'Tháng 9/2016 - Tháng 7/2020',
+      nghiemMinhHuyenPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nghiêm Minh Huyền về mọi khía cạnh pháp lý về Dân sự, Hình sự, Hành chính, Đất đai.',
+
+      // Nguyễn Hoàng Dũng
+      nguyenHoangDungBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Dân sự: Tư vấn về hợp đồng, giao dịch Dân sự, đại diện tham gia giải quyết tranh chấp di sản thừa kế, yêu cầu bồi thường thiệt hại trong giao dịch dân sự và các vấn đề pháp lý liên quan khác.<br /><br />• Hôn nhân và gia đình: Tư vấn về hồ sơ, trình tự thủ tục ly hôn, chia tài sản chung, quyền nuôi con, và các vấn đề pháp lý liên quan đến hôn nhân và gia đình.<br /><br />• Đất đai: Tư vấn về hồ sơ, trình tự, thủ tục hành chính liên quan đến đất đai, tham gia giải quyết tranh chấp quyền sử dụng đất.<br /><br />• Hình sự: Tư vấn pháp luật, soạn thảo văn bản nhằm bào chữa cho bị can, bị cáo, hoặc bảo vệ quyền và lợi ích hợp pháp cho bị hại, người liên quan trong vụ án hình sự.<br /><br />• Hành chính: Tư vấn về hồ sơ, trình tự thủ tục, đại diện khách hàng thu thập tài liệu chứng cứ, tham gia bảo vệ quyền lợi ích hợp pháp của khách hàng trong khiếu nại, tố cáo và vụ án hành chính.<br /><br />• Doanh nghiệp: Tư vấn pháp lý về thành lập, hoạt động và quản lý Doanh nghiệp, soạn thảo hợp đồng kinh tế, hợp đồng hợp tác kinh doanh v.v.<br /><br />• Lao động: Tư vấn về các vấn đề liên quan đến lao động, hợp đồng lao động, tranh chấp lao động và quyền lợi của người lao động và người sử dụng lao động.<br /><br />• Đầu tư: Tư vấn, soạn thảo hồ sơ, đại diện làm việc với cơ quan nhà nước trong quá trình thực hiện dự án đầu tư.',
+      nguyenHoangDungExp: '• Năm 2023: Làm việc tại Công ty Luật TNHH Hồng Bách và cộng sự.<br />• Năm 2024: Làm việc tại Trung tâm tư vấn pháp luật Đoàn luật sư tỉnh Hà Nam.<br />• Năm 2025: Làm việc tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm).',
+      nguyenHoangDungEdu1: 'Tốt nghiệp',
+      nguyenHoangDungEdu1Org: 'Học viện Tư pháp',
+      nguyenHoangDungEdu1Desc: '• Tham gia và tốt nghiệp Khóa đào tạo nghề Luật sư<br />• Được đào tạo chuyên sâu về kỹ năng hành nghề và kinh nghiệm thực tiễn trong nghề luật sư',
+      nguyenHoangDungEdu1Year: 'Năm 2025',
+      nguyenHoangDungEdu2: 'Cử nhân Luật',
+      nguyenHoangDungEdu2Org: 'Luật thương mại quốc tế tại Đại học Luật Hà Nội',
+      nguyenHoangDungEdu2Year: 'Năm 2023',
+      nguyenHoangDungPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Hoàng Dũng về mọi khía cạnh pháp lý về Dân sự, Hôn nhân và gia đình, Đất đai, Hình sự, Hành chính, Doanh nghiệp, Lao động, Đầu tư.',
+
+      // Nguyễn Phan Thục Chi
+      nguyenPhanThucChiBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Doanh nghiệp: Hỗ trợ tư vấn pháp luật thường xuyên cho các Doanh nghiệp: Hỗ trợ rà soát các loại Hợp đồng trong Doanh nghiệp như Hợp đồng nguyên tắc, Hợp đồng mua bán hàng hoá, Hợp đồng lao động,…; hỗ trợ soạn thảo báo cáo pháp lý tư vấn các lĩnh vực như lao động, kinh doanh thương mại,…<br /><br />• Hỗ trợ mảng giấy phép liên quan đến dự án Đầu tư có vốn Đầu tư nước ngoài, bao gồm các vấn đề liên quan đến thành lập doanh nghiệp, điều chỉnh Giấy chứng nhận đăng ký đầu tư,…',
+      nguyenPhanThucChiExp: '• T8/2024 – T11/2024: Thực tập sinh tại phòng HCNS tại Chi nhánh công ty TNHH TOTO Việt Nam tại Vĩnh Phúc – hỗ trợ rà soát điều lệ công ty và tra cứu cho các vấn đề liên quan đến an sinh xã hội và lao động.<br />• T12/2024 – T5/2025: Nhân viên phòng HCNS Công ty TNHH KITZ Corporation Việt Nam – rà soát, kiểm tra hợp đồng và tra cứu các vấn đề liên quan đến an sinh xã hội, lao động và thuế; hỗ trợ thủ tục xuất cảnh cho người lao động Việt Nam ra đào tạo tại nước ngoài (Đài Loan, Nhật Bản).<br />• Hiện là Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners.',
+      nguyenPhanThucChiEdu1: 'Cử nhân Luật',
+      nguyenPhanThucChiEdu1Org: 'Luật Kinh tế tại Đại học Luật Hà Nội',
+      nguyenPhanThucChiEdu1Year: 'Năm 2024',
+      nguyenPhanThucChiPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Phan Thục Chi về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Giấy phép.',
+
+      // Nguyễn Phùng Mai Ánh
+      nguyenPhungMaiAnhBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />Với kiến thức sâu rộng và kinh nghiệm thực tiễn, Mai Ánh đảm nhiệm vai trò biên tập viên chuyên về lĩnh vực Dân sự và Hành chính. Các bài viết của Mai Ánh tập trung phân tích, tổng hợp và làm rõ các quy định pháp luật, chính sách nổi bật liên quan đến quyền sử dụng đất, hợp đồng, hôn nhân gia đình và các vấn đề pháp lý Dân sự.',
+      nguyenPhungMaiAnhExp: '• 2021: Thực tập tại Công ty Luật 24h, hỗ trợ luật sư nghiên cứu và soạn thảo hồ sơ, kiểm tra giấy tờ, tài liệu pháp lý<br />• 2023: Thực tập tại Ủy ban nhân dân xã Việt Xuân, phối hợp với Công chức Tư pháp – Hộ tịch thực hiện chứng thực giấy tờ, hòa giải tranh chấp Đất đai, nhập liệu và xử lý tài liệu Hành chính<br />• 2024: Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners, chuyên xử lý thủ tục Đất đai và tư vấn pháp lý về quyền sử dụng đất, quy hoạch, chuyển nhượng và các vấn đề liên quan.',
+      nguyenPhungMaiAnhEdu1: 'Cử nhân Luật',
+      nguyenPhungMaiAnhEdu1Org: 'Khoa Luật, Học viện Hành chính Quốc Gia',
+      nguyenPhungMaiAnhEdu1Year: 'Năm 2024',
+      nguyenPhungMaiAnhPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Phùng Mai Ánh về mọi khía cạnh pháp lý về Dân sự, Hành chính, Đất đai.',
+
+      // Nguyễn Thị Quỳnh Giang
+      nguyenThiQuynhGiangBio: '<br /><i>Giới thiệu:</i><br /><br />• Nguyễn Thị Quỳnh Giang là thực tập sinh tại YPLaw Firm từ 2025.<br /><br />• Với nền tảng kiến thức pháp lý từ Cử nhân ngành Luật học, Trường Đại học Luật, Đại học Quốc gia Hà Nội, Quỳnh Giang luôn nỗ lực trau dồi và áp dụng kiến thức, kỹ năng vào thực tiễn công việc.',
+      nguyenThiQuynhGiangExp: '• Tháng 6/2024 – tháng 01/2025: Thực tập tại Tòa án nhân dân quận Nam Từ Liêm, tiếp xúc với các quy trình tố tụng và thực tiễn xét xử, từ đó nâng cao hiểu biết về pháp luật và kỹ năng làm việc trong môi trường chuyên nghiệp<br />• Hiện tại, Quỳnh Giang đang là thực tập sinh tại tại Công ty Luật TNHH Youth & Partners (YPLaw Firm), học hỏi và đóng góp vào các hoạt động tư vấn và hỗ trợ pháp lý của công ty.',
+      nguyenThiQuynhGiangEdu1: 'Cử nhân Luật',
+      nguyenThiQuynhGiangEdu1Org: 'Ngành Luật học tại Trường Đại học Luật, Đại học Quốc gia Hà Nội',
+      nguyenThiQuynhGiangEdu1Year: 'Năm 2025',
+      nguyenThiQuynhGiangPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thị Quỳnh Giang về mọi khía cạnh pháp lý về Lao động, Doanh nghiệp, Đầu tư, Giấy phép.',
+
+      // Nguyễn Thị Thu Trang
+      nguyenThiThuTrangBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Soạn thảo hợp đồng, tư vấn pháp lý về lao động, thuế, bất động sản và Đầu tư nước ngoài<br /><br />• Đảm bảo tuân thủ pháp luật trong các hoạt động Doanh nghiệp<br /><br />• Xây dựng và điều chỉnh các biểu mẫu và quy chế nội bộ Doanh nghiệp.',
+      nguyenThiThuTrangExp: '• Soạn thảo và đánh giá các hợp đồng song ngữ (Anh - Việt) bao gồm hợp đồng nguyên tắc, hợp đồng dịch vụ, hợp đồng lao động, NDA, v.v<br />• Tư vấn pháp lý cho khách hàng Doanh nghiệp về các lĩnh vực lao động, thuế, bất động sản, hoạt động kinh doanh<br />• Tham gia xây dựng và đánh giá các biểu mẫu nội bộ như quy chế dân chủ, nội quy lao động, quy chế lương thưởng<br />• Soạn thảo hồ sơ điều chỉnh và cấp đổi giấy chứng nhận Đầu tư cho Doanh nghiệp có vốn Đầu tư nước ngoài.',
+      nguyenThiThuTrangEdu1: 'Cử nhân Luật',
+      nguyenThiThuTrangEdu1Org: 'Ngành Luật tại Đại học Luật Hà Nội',
+      nguyenThiThuTrangEdu1Year: 'Năm 2022',
+      nguyenThiThuTrangPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thị Thu Trang về mọi khía cạnh pháp lý về Lao động, Doanh nghiệp, Đầu tư, Giấy phép.',
+
+      // Nguyễn Thị Thùy Linh
+      nguyenThiThuyLinhBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Soạn thảo Hợp đồng, tư vấn pháp lý về lao động, bất động sản và Đầu tư nước ngoài cho các Doanh nghiệp trong và ngoài nước<br /><br />• Xây dựng và điều chỉnh các biểu mẫu và quy chế nội bộ Doanh nghiệp<br /><br />• Soạn thảo hồ sơ thành lập, thay đổi nội dung đăng ký Doanh nghiệp<br /><br />• Soạn thảo hồ sơ điều chỉnh và cấp đổi giấy chứng nhận đăng ký Đầu tư cho Doanh nghiệp có vốn Đầu tư nước ngoài<br /><br />• Giải quyết các vụ việc hôn nhân gia đình bao gồm cả các vụ việc ly hôn có yếu tố nước ngoài.',
+      nguyenThiThuyLinhExp: '• Giải quyết các vụ việc hôn nhân gia đình bao gồm cả các vụ việc ly hôn có yếu tố nước ngoài;<br />• Tư vấn thường xuyên cho hơn 15 Doanh nghiệp trong và ngoài nước trong các lĩnh vực Doanh nghiệp, lao động, Đầu tư, kinh doanh bất động sản,…<br />• Soạn thảo và đánh giá các hợp đồng song ngữ (Anh - Việt) bao gồm hợp đồng nguyên tắc, hợp đồng dịch vụ, hợp đồng lao động, NDA, v.v.<br />• Xây dựng và đánh giá các biểu mẫu nội bộ như quy chế dân chủ, nội quy lao động, quy chế lương thưởng của Doanh nghiệp<br />• Soạn thảo hồ sơ điều chỉnh và cấp đổi giấy chứng nhận đăng ký Đầu tư cho Doanh nghiệp có vốn Đầu tư nước ngoài<br />• Soạn thảo hồ sơ thành lập, thay đổi nội dung đăng ký Doanh nghiệp.',
+      nguyenThiThuyLinhEdu1: 'Cử nhân Luật',
+      nguyenThiThuyLinhEdu1Org: 'Khoa Luật kinh tế, trường Đại học Luật Hà Nội',
+      nguyenThiThuyLinhEdu1Year: 'Năm 2023',
+      nguyenThiThuyLinhPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thị Thùy Linh về mọi khía cạnh pháp lý về Lao động, Doanh nghiệp, Đầu tư, Hôn nhân & Gia đình.',
+
+      // Nguyễn Thúy Hằng
+      nguyenThuyHangBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Soạn thảo và đánh giá các hợp đồng bao gồm hợp đồng nguyên tắc, hợp đồng dịch vụ, hợp đồng lao động, v.v.<br /><br />• Tư vấn pháp lý cho khách hàng Doanh nghiệp về các lĩnh vực lao động, thuế, bất động sản, hoạt động kinh doanh<br /><br />• Tham gia xây dựng và đánh giá các biểu mẫu nội bộ như quy chế dân chủ, nội quy lao động, quy chế lương thưởng.',
+      nguyenThuyHangExp: '• Từng làm việc và thực tập chuyên môn tại Công ty tư vấn Đầu tư Hà Thị, Tòa án nhân dân thành phố Vĩnh Yên với vai trò nhân viên pháp lý, thực tập sinh pháp lý<br />• Thực hiện các công việc như rà soát hợp đồng, soạn thảo một số văn bản thông dụng, xây dựng quy định nội bộ và dịch thuật pháp lý.',
+      nguyenThuyHangEdu1: 'Cử nhân Luật',
+      nguyenThuyHangEdu1Org: 'Luật Kinh tế tại Đại học Luật Hà Nội',
+      nguyenThuyHangEdu1Year: 'Năm 2024',
+      nguyenThuyHangPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thúy Hằng về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Giấy phép.',
+
+      // Trần Thị Bích Liên
+      tranThiBichLienBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Dân sự: Tư vấn về hợp đồng, giao dịch Dân sự, thừa kế, hôn nhân & gia đình, bồi thường thiệt hại, và các vấn đề pháp lý liên quan khác<br /><br />• Đất đai: Tư vấn toàn diện về các thủ tục Đất đai, bao gồm nhưng không giới hạn các vấn đề mua bán, tặng cho, sang tên đổi chủ bất động sản, cấp đổi, cấp lại, cấp mới giấy chứng nhận quyền sử dụng đất, đính chính quyền sử dụng đất, chuyển đổi mục đích sử dụng đất, và giải quyết tranh chấp Đất đai<br /><br />• Hành chính: Tư vấn về các thủ tục Hành chính, giải quyết khiếu nại, tố cáo và các vấn đề pháp lý liên quan đến Hành chính.',
+      tranThiBichLienExp: '• Từ 2020 - 2024: Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners. Trong suốt thời gian công tác tại công ty, bà Trần Thị Bích Liên đã tích lũy được kinh nghiệm sâu rộng trong các lĩnh vực Dân sự, Hành chính, và Đất đai<br />• Bà đã tham gia trực tiếp và thành công trong việc giải quyết nhiều vụ tranh chấp Đất đai, hôn nhân và gia đình, bảo vệ quyền lợi hợp pháp của khách hàng<br />• Đồng thời, bà còn thực hiện nhiều thủ tục Hành chính và Đất đai phức tạp, phục vụ nhu cầu của cả cá nhân và tổ chức, góp phần nâng cao hiệu quả và bảo đảm quyền lợi cho khách hàng.',
+      tranThiBichLienEdu1: 'Tham gia khóa đào tạo nghề Luật sư',
+      tranThiBichLienEdu1Org: 'Học viện Tư Pháp',
+      tranThiBichLienEdu1Year: 'Năm 2024',
+      tranThiBichLienEdu2: 'Cử nhân Luật',
+      tranThiBichLienEdu2Org: 'Khoa Luật học, Trường Đại học Luật Hà Nội',
+      tranThiBichLienEdu2Year: 'Năm 2016',
+      tranThiBichLienPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Trần Thị Bích Liên về mọi khía cạnh pháp lý về Dân sự, Hình sự, Hành chính, Đất đai.',
+
       // Common fields for area of responsibility
       areaOfResponsibility: 'Lĩnh vực phụ trách:',
       civilLaw: 'Dân sự: Tư vấn về hợp đồng, giao dịch, thừa kế, hôn nhân gia đình, bồi thường thiệt hại...',
@@ -3729,6 +3878,212 @@ export const translations = {
       mangDieuHienEdu3Org: 'Ho Chi Minh City University of Law',
       mangDieuHienEdu3Year: '2010',
       mangDieuHienPostsInfo: 'In-depth articles by Lawyer Mang Dieu Hien on all legal aspects of licenses, business and foreign investment.',
+
+      // Nguyen Hoang Ngoc Lan
+      nguyenHoangNgocLanBio: 'Lawyer Lan is a legal expert with deep expertise in the healthcare field, notable for her experience in consulting and resolving legal issues related to operating licenses in the medical industry. With a deep understanding of legal regulations and administrative procedures, Lawyer Lan has assisted many hospitals, clinics, medical centers and other healthcare facilities in applying for and adjusting various licenses, ensuring compliance with Vietnamese law.',
+      nguyenHoangNgocLanExp: `Lawyer Lan has many years of in-depth experience in healthcare legal field, especially consulting and processing documents related to sub-licenses in the medical industry, including:<br />
+        • Medical examination and treatment operating license.<br />
+        • Adjustment of medical examination and treatment operating license.<br />
+        • Medical practice license and other specialized licenses in the healthcare field.<br />
+        Notable achievements of Lawyer Lan:<br />
+        • Successfully consulted for many hospitals, clinics, medical centers and healthcare facilities in preparing and completing license application documents from competent state agencies.<br />
+        • Helping clients understand legal requirements, ensuring documents and papers meet all regulatory standards, saving time and costs.<br />
+        • Representing clients in working with regulatory agencies, ensuring the licensing process is fast, transparent and efficient.<br />
+        • Providing comprehensive legal solutions tailored to each specific case, from newly established medical facilities to large-scale healthcare organizations.`,
+      nguyenHoangNgocLanEdu1: 'Lawyer Practice Certificate',
+      nguyenHoangNgocLanEdu1Org: 'Ministry of Justice',
+      nguyenHoangNgocLanEdu1Year: '2024',
+      nguyenHoangNgocLanEdu2: 'Master of Law',
+      nguyenHoangNgocLanEdu2Org: 'Hanoi Law University',
+      nguyenHoangNgocLanEdu2Year: '2022',
+      nguyenHoangNgocLanEdu3: 'Graduated',
+      nguyenHoangNgocLanEdu3Org: 'Judicial Academy',
+      nguyenHoangNgocLanEdu3Year: '2021',
+      nguyenHoangNgocLanEdu4: 'Bachelor of Law',
+      nguyenHoangNgocLanEdu4Org: 'Hanoi Law University',
+      nguyenHoangNgocLanEdu4Year: '2020',
+      nguyenHoangNgocLanPostsInfo: 'In-depth articles by Lawyer Nguyen Hoang Ngoc Lan on all legal aspects of licenses, business and foreign investment.',
+
+      // Nguyen Minh Anh
+      nguyenMinhAnhBio: 'Lawyer Nguyen Minh Anh is a legal expert with over 7 years of experience in economic law, land law and civil law. With an excellent educational background and practical experience at reputable organizations, Lawyer Minh Anh has proven her competence in legal consulting, dispute resolution and supporting businesses and individuals in complex cases. With extensive legal knowledge and sharp thinking, Lawyer Minh Anh always provides effective legal solutions that optimize client benefits in business commerce, land and civil fields.',
+      nguyenMinhAnhExp: `• 11/2022 - 09/2024: Deputy Head of Legal Inspection Department, Hoa Binh International Trade Investment and Tourism Co., Ltd <br />
+        Legal consulting, contract negotiation, working with government agencies, contract review, business and civil dispute resolution and internal compliance control.<br />
+        • 06/2019 - 11/2022: Consulting Department Manager, Viet Kim Law Co., Ltd<br />
+        Managing consulting department, case research, court litigation (civil, business commerce), corporate restructuring consulting, M&A, and dispute resolution.<br />
+        • 06/2017 - 06/2019: Intern, Trong Hai and Associates Law Office<br />
+        Drafting documents, reviewing contracts, assisting lawyers in civil and business commerce cases.`,
+      nguyenMinhAnhEdu1: 'Lawyer Practice Certificate',
+      nguyenMinhAnhEdu1Org: 'Ministry of Justice',
+      nguyenMinhAnhEdu1Year: '2024',
+      nguyenMinhAnhEdu2: 'Master of Economic Law',
+      nguyenMinhAnhEdu2Org: 'Hanoi Law University',
+      nguyenMinhAnhEdu2Year: '2023',
+      nguyenMinhAnhEdu3: 'Graduated',
+      nguyenMinhAnhEdu3Org: 'Judicial Academy',
+      nguyenMinhAnhEdu3Year: '2021',
+      nguyenMinhAnhEdu4: 'Bachelor of Law (Excellent)',
+      nguyenMinhAnhEdu4Org: 'Vinh University',
+      nguyenMinhAnhEdu4Year: '2019',
+      nguyenMinhAnhPostsInfo: 'In-depth articles by Lawyer Nguyen Minh Anh on all legal aspects of licenses, land, business and foreign investment.',
+
+      // Nguyen Thi Huong
+      nguyenThiHuongBio: `<i>Areas of Responsibility:</i><br /><br />
+      • Civil: Consulting on contracts, civil transactions, inheritance, compensation for damages and other related legal issues.
+      <br /><br />
+      • Marriage and Family: Consulting on divorce, property division, child custody, and legal issues related to marriage and family.
+      <br /><br />
+      • Land: Consulting on land-related issues, including but not limited to land dispute resolution, transfer, and exchange of land use right certificates.
+      <br /><br />
+      • Criminal: Consulting and protecting the legal rights of victims, while defending suspects and defendants in criminal proceedings. Handling matters related to criminal acts and determining the level of legal responsibility of subjects in criminal cases.
+      <br /><br />
+      • Business: Legal consulting on establishment, operation and management of businesses, contract-related issues, and business law.
+      <br /><br />
+      • Labor: Consulting on labor-related issues, labor contracts, labor disputes and workers' rights.
+      <br /><br />
+      • Investment: Consulting on investment issues, including domestic and foreign investment, business development strategies and legal issues related to real estate investment.`,
+      nguyenThiHuongExp: 'Lawyer Huong has over 7 years of experience in the legal field, specializing in Civil, Criminal, Administrative, Business Commerce and litigation for clients.',
+      nguyenThiHuongExp2: 'With many years of experience in litigation, defense, protection, representation, consulting, drafting, providing forms, contracts, and legal documents for domestic and foreign organizations and individuals... Lawyer Huong has successfully protected clients\' rights and interests in complex cases, while helping clients resolve legal issues effectively.',
+      nguyenThiHuongEdu1: 'Lawyer Practice Certificate',
+      nguyenThiHuongEdu1Org: 'Ministry of Justice',
+      nguyenThiHuongEdu1Year: '2020',
+      nguyenThiHuongEdu2: 'Bachelor of International Law',
+      nguyenThiHuongEdu2Org: 'Diplomatic Academy of Vietnam',
+      nguyenThiHuongEdu2Year: '2017',
+      nguyenThiHuongPostsInfo: 'In-depth articles by Lawyer Nguyen Thi Huong on all legal aspects of Civil, Criminal, Administrative, Business Commerce.',
+
+      // Nguyen Thi Thom
+      nguyenThiThomBio: '<br /><i>Areas of responsibility:</i><br /><br />• Enterprise: Legal consulting on establishment, operation and management of Enterprises, issues related to contracts, business law<br /><br />• Labor: Consulting on labor-related issues, labor contracts, labor disputes and employee rights<br /><br />• Investment: Consulting on investment issues, including domestic and foreign investment, enterprise development strategies and legal issues related to real estate investment.',
+      nguyenThiThomExp: 'With 09 years of experience in corporate legal affairs, including 05 years working at foreign-invested companies and 04 years at real estate investment and development companies, Lawyer Nguyen Thi Thom has accumulated extensive knowledge and professional work handling skills.',
+      nguyenThiThomExp2: 'Lawyer Thom specializes in legal consulting and support for Enterprises, helping them develop appropriate strategies to avoid legal disputes and minimize risks in their operations and business.',
+      nguyenThiThomEdu1: 'Lawyer Practice Certificate',
+      nguyenThiThomEdu1Org: 'Ministry of Justice',
+      nguyenThiThomEdu1Year: '2016',
+      nguyenThiThomEdu2: 'Bachelor of Law',
+      nguyenThiThomEdu2Org: 'Hanoi Law University',
+      nguyenThiThomEdu2Year: '2012',
+      nguyenThiThomPostsInfo: 'In-depth articles by Lawyer Nguyen Thi Thom on all legal aspects of Enterprise, Labor, Investment.',
+
+      // Nguyen Thu Nga
+      nguyenThuNgaBio: '<br /><i>Areas of responsibility:</i><br /><br />• Enterprise: Comprehensive consulting on legal issues related to establishment, operation and governance of Enterprises, protecting shareholder rights, and resolving disputes between parties in Enterprise. Lawyer Nga helps Enterprises build appropriate legal strategies to protect and develop business operations, from cooperating with partners to drafting economic and commercial contracts<br /><br />• Labor: Consulting on issues related to labor contracts, employee rights, labor disputes, as well as regulations on social insurance, benefits and other rights of employees in Enterprise. Lawyer Nga supports Enterprises in building HR policies, managing labor relations, and resolving disputes between employers and employees<br /><br />• Investment: Legal consulting on domestic and foreign investment issues, including investment procedures, selecting appropriate investment methods and transaction structures to maximize benefits and minimize risks. Lawyer Nga also supports Enterprises in complying with legal regulations related to investment and capital transfer, helping Enterprises orient effective investment strategies.',
+      nguyenThuNgaExp: 'Lawyer Nga has over 10 years of experience in the legal field, specializing in consulting for enterprises, especially FDI enterprises operating in Vietnam.',
+      nguyenThuNgaExp2: 'With experience working at government agencies on labor, investment and as Head of Legal at a Japanese enterprise, Lawyer Nga has rich experience in enterprise legal issues such as labor law and corporate law compliance, administrative procedures, contract review, legal risk assessment, and consulting on legal issues related to investment and development procedures in Vietnam.',
+      nguyenThuNgaExp3: 'Additionally, good Japanese communication skills make Lawyer Nga an important bridge between Japanese enterprises and authorities and enterprises in Vietnam.',
+      nguyenThuNgaEdu1: 'Graduated from Japanese Law Training Course',
+      nguyenThuNgaEdu1Org: 'Center for Japanese Law Research and Training - Nagoya University at Hanoi',
+      nguyenThuNgaEdu1Year: '2016',
+      nguyenThuNgaEdu2: 'Bachelor of Law',
+      nguyenThuNgaEdu2Org: 'Hanoi Law University',
+      nguyenThuNgaEdu2Year: '2012',
+      nguyenThuNgaPostsInfo: 'In-depth articles by Lawyer Nguyen Thu Nga on all legal aspects of Enterprise, Labor, Investment.',
+
+      // Pham Thi Huyen Quyen
+      phamThiHuyenQuyenBio: '<br /><i>Areas of responsibility:</i><br /><br />• Enterprise: Comprehensive consulting on legal issues related to establishment, operation and governance of Enterprises, including financial management, shareholder rights protection, contract drafting and internal dispute resolution. She helps Enterprises build and implement sustainable development strategies, ensuring compliance with legal regulations throughout operations<br /><br />• Labor: Consulting on labor issues in Enterprises, including labor contracts, employee rights, social insurance, welfare policies, and labor dispute resolution. She supports Enterprises in building HR policies and maintaining a legally compliant work environment<br /><br />• Investment: Consulting on investment-related issues, including investment planning, procedures related to capital raising, share transfer and investment risk management. Lawyer Quyen helps Enterprises optimize investment strategies while ensuring compliance with domestic and international legal requirements.',
+      phamThiHuyenQuyenExp: 'With 8 years of experience in enterprise consulting and internal legal affairs, Lawyer Pham Thi Huyen Quyen has become a trusted partner of many Enterprises.',
+      phamThiHuyenQuyenExp2: 'She possesses in-depth knowledge of corporate law, labor law and related legal regulations, helping Enterprises effectively resolve legal issues arising during operations.',
+      phamThiHuyenQuyenExp3: 'In particular, she focuses on ensuring legal compliance in Enterprise activities, from establishing organizational structure, financial management to handling disputes and internal conflicts.',
+      phamThiHuyenQuyenEdu1: 'Lawyer Practice Certificate',
+      phamThiHuyenQuyenEdu1Org: 'Ministry of Justice',
+      phamThiHuyenQuyenEdu1Year: '2016',
+      phamThiHuyenQuyenEdu2: 'Bachelor of Law',
+      phamThiHuyenQuyenEdu2Org: 'Hanoi Law University',
+      phamThiHuyenQuyenEdu2Year: '2012',
+      phamThiHuyenQuyenPostsInfo: 'In-depth articles by Lawyer Pham Thi Huyen Quyen on all legal aspects of Enterprise, Labor, Investment.',
+
+      // Van Thi Thanh Hoa
+      vanThiThanhHoaBio: '<br /><i>Areas of responsibility:</i><br /><br />• Civil: Consulting on contracts, civil transactions, inheritance, compensation for damages and other related legal issues<br /><br />• Criminal: Consulting and protecting legitimate rights of victims, participating in defense for suspects and defendants in criminal proceedings. Handling matters related to criminal acts and determining the level of legal responsibility of subjects in criminal cases<br /><br />• Land: Consulting on land-related issues, including but not limited to transfer, re-issuance of land use right certificates, resolving land disputes<br /><br />• Marriage and Family: Consulting on divorce, property division, child custody, and legal issues related to marriage and family.',
+      vanThiThanhHoaExp: 'With over 12 years of experience, Lawyer Van Thi Thanh Hoa has successfully resolved many complex legal cases in Civil, Criminal, Land, Marriage and Family fields.',
+      vanThiThanhHoaExp2: 'She is known for her excellent legal consulting ability and optimal case resolution strategies, helping clients achieve desired results.',
+      vanThiThanhHoaEdu1: 'Lawyer Practice Certificate',
+      vanThiThanhHoaEdu1Org: 'Ministry of Justice',
+      vanThiThanhHoaEdu1Year: '2016',
+      vanThiThanhHoaEdu2: 'Bachelor of Law',
+      vanThiThanhHoaEdu2Org: 'Hanoi Law University',
+      vanThiThanhHoaEdu2Year: '2012',
+      vanThiThanhHoaPostsInfo: 'In-depth articles by Lawyer Van Thi Thanh Hoa on all legal aspects of Representation in and out of Court, Civil, Criminal, Administrative, Land.',
+
+      // Nghiem Minh Huyen
+      nghiemMinhHuyenBio: '<br /><i>Areas of responsibility:</i><br /><br />Huyen Nghiem is a legal specialist, lawyer assistant, editor supporting the management of articles on Y&P Law Firm website, supporting specialists in writing analysis articles, services, summarizing regulations, new and notable policies related to: enterprise, marriage and family, Land, Criminal,...<br /><br />• Land field: Quick updates, supporting customers in administrative procedures related to Land: first-time certificate registration, change registration, inheritance division, donation,...<br /><br />• Civil, Criminal field: Reading and researching case files in practice; Assisting lawyers in photocopying files, documents, drafting applications and papers.',
+      nghiemMinhHuyenExp: '• 2019: Internship at Bac Tu Liem District People\'s Committee: Receiving files and returning results, resolving business household registration, tax code<br />• 2020: Internship at A Chau Law Co., Ltd: Drafting enterprise-related documents such as establishment, change, dissolution, seal registration; Learning about intellectual property, Sub-licenses, website registration,...<br />• 2020-2021: Working at Nam Duong Law Co., Ltd: Contacting customers with loan contract violations as requested by partners (Banks: MB bank, VP bank,...; Finance companies: Mcredit, FEcredit,...)<br />• 2021: Working at Center for Administrative Science and Archives (SCARMA): Organizing, editing, creating data storage lists and warehousing for MB bank<br />• 2022-2024: Working at SGS Vietnam Co., Ltd: Moderating content posted on social media<br />• 2024-present: Working at Youth & Partners Law Co., Ltd (Y&P Law Firm).',
+      nghiemMinhHuyenEdu1: 'Graduated',
+      nghiemMinhHuyenEdu1Org: 'Judicial Academy',
+      nghiemMinhHuyenEdu1Desc: '• Participated and graduated from Training Course for three positions: Judge, Prosecutor, Lawyer<br />• Trained in-depth on professional skills and practical experience in judicial positions<br />• Interned at Courts, Procuracy and Law Offices, under the assignment and guidance of the Academy, to practice skills and improve ability to resolve practical legal situations',
+      nghiemMinhHuyenEdu1Year: 'Dec 2020 - Aug 2022',
+      nghiemMinhHuyenEdu2: 'Bachelor of Law',
+      nghiemMinhHuyenEdu2Org: 'Hanoi Law University',
+      nghiemMinhHuyenEdu2Desc: '• Graduated in Law major, GPA: 7.31/10<br />• Trained in-depth on basic legal knowledge and codes in Civil, Criminal, Administrative, Economic and International law',
+      nghiemMinhHuyenEdu2Year: 'Sep 2016 - Jul 2020',
+      nghiemMinhHuyenPostsInfo: 'In-depth articles by Legal Specialist Nghiem Minh Huyen on all legal aspects of Civil, Criminal, Administrative, Land.',
+
+      // Nguyen Hoang Dung
+      nguyenHoangDungBio: '<br /><i>Areas of responsibility:</i><br /><br />• Civil: Consulting on contracts, civil transactions, representing in inheritance dispute resolution, compensation claims in civil transactions and other related legal issues.<br /><br />• Marriage and Family: Consulting on documents, divorce procedures, common property division, child custody, and legal issues related to marriage and family.<br /><br />• Land: Consulting on documents, procedures, administrative procedures related to land, participating in land use right disputes resolution.<br /><br />• Criminal: Legal consulting, document drafting for defending suspects and defendants, or protecting legitimate rights and interests of victims and related persons in criminal cases.<br /><br />• Administrative: Consulting on documents, procedures, representing clients in collecting evidence, participating in protecting legitimate rights and interests in complaints, denunciations and administrative cases.<br /><br />• Enterprise: Legal consulting on establishment, operation and management of Enterprise, drafting economic contracts, business cooperation contracts, etc.<br /><br />• Labor: Consulting on labor-related issues, labor contracts, labor disputes and rights of employees and employers.<br /><br />• Investment: Consulting, document drafting, representing to work with government agencies in investment project implementation.',
+      nguyenHoangDungExp: '• 2023: Working at Hong Bach and Associates Law Co., Ltd.<br />• 2024: Working at Legal Consulting Center of Ha Nam Province Bar Association.<br />• 2025: Working at Youth & Partners Law Co., Ltd (Y&P Law Firm).',
+      nguyenHoangDungEdu1: 'Graduated',
+      nguyenHoangDungEdu1Org: 'Judicial Academy',
+      nguyenHoangDungEdu1Desc: '• Participated and graduated from Lawyer Training Course<br />• Trained in-depth on professional skills and practical experience in lawyer profession',
+      nguyenHoangDungEdu1Year: '2025',
+      nguyenHoangDungEdu2: 'Bachelor of Law',
+      nguyenHoangDungEdu2Org: 'International Trade Law at Hanoi Law University',
+      nguyenHoangDungEdu2Year: '2023',
+      nguyenHoangDungPostsInfo: 'In-depth articles by Legal Specialist Nguyen Hoang Dung on all legal aspects of Civil, Marriage and Family, Land, Criminal, Administrative, Enterprise, Labor, Investment.',
+
+      // Nguyen Phan Thuc Chi
+      nguyenPhanThucChiBio: '<br /><i>Areas of responsibility:</i><br /><br />• Enterprise: Supporting regular legal consulting for Enterprises: Supporting review of contracts in Enterprise such as Framework contracts, Goods sales contracts, Labor contracts,...; supporting legal report drafting consulting in areas such as labor, business commerce,...<br /><br />• Supporting license matters related to foreign investment projects, including issues related to enterprise establishment, adjusting Investment Registration Certificate,...',
+      nguyenPhanThucChiExp: '• Aug 2024 – Nov 2024: HR-Admin intern at TOTO Vietnam Co., Ltd Branch in Vinh Phuc – supporting company charter review and researching social security and labor issues.<br />• Dec 2024 – May 2025: HR-Admin staff at KITZ Corporation Vietnam Co., Ltd – reviewing, checking contracts and researching social security, labor and tax issues; supporting exit procedures for Vietnamese workers to train abroad (Taiwan, Japan).<br />• Currently Legal Specialist at Youth & Partners Law Co., Ltd.',
+      nguyenPhanThucChiEdu1: 'Bachelor of Law',
+      nguyenPhanThucChiEdu1Org: 'Economic Law at Hanoi Law University',
+      nguyenPhanThucChiEdu1Year: '2024',
+      nguyenPhanThucChiPostsInfo: 'In-depth articles by Legal Specialist Nguyen Phan Thuc Chi on all legal aspects of Enterprise, Labor, Licenses.',
+
+      // Nguyen Phung Mai Anh
+      nguyenPhungMaiAnhBio: '<br /><i>Areas of responsibility:</i><br /><br />With extensive knowledge and practical experience, Mai Anh serves as editor specializing in Civil and Administrative fields. Mai Anh\'s articles focus on analyzing, synthesizing and clarifying legal regulations, notable policies related to land use rights, contracts, marriage and family and Civil legal issues.',
+      nguyenPhungMaiAnhExp: '• 2021: Internship at 24h Law Company, supporting lawyers in research and document drafting, checking legal documents<br />• 2023: Internship at Viet Xuan Commune People\'s Committee, coordinating with Justice-Civil Status Officer to perform document certification, mediating Land disputes, data entry and processing Administrative documents<br />• 2024: Legal Specialist at Youth & Partners Law Co., Ltd, specializing in Land procedures and legal consulting on land use rights, planning, transfer and related issues.',
+      nguyenPhungMaiAnhEdu1: 'Bachelor of Law',
+      nguyenPhungMaiAnhEdu1Org: 'Faculty of Law, National Academy of Public Administration',
+      nguyenPhungMaiAnhEdu1Year: '2024',
+      nguyenPhungMaiAnhPostsInfo: 'In-depth articles by Legal Specialist Nguyen Phung Mai Anh on all legal aspects of Civil, Administrative, Land.',
+
+      // Nguyen Thi Quynh Giang
+      nguyenThiQuynhGiangBio: '<br /><i>Introduction:</i><br /><br />• Nguyen Thi Quynh Giang has been an intern at YPLaw Firm since 2025.<br /><br />• With legal knowledge foundation from Bachelor of Law, School of Law, Vietnam National University Hanoi, Quynh Giang always strives to develop and apply knowledge and skills in practical work.',
+      nguyenThiQuynhGiangExp: '• Jun 2024 – Jan 2025: Internship at Nam Tu Liem District People\'s Court, engaging with litigation processes and trial practices, thereby enhancing legal understanding and professional working skills<br />• Currently, Quynh Giang is an intern at Youth & Partners Law Co., Ltd (YPLaw Firm), learning and contributing to the company\'s legal consulting and support activities.',
+      nguyenThiQuynhGiangEdu1: 'Bachelor of Law',
+      nguyenThiQuynhGiangEdu1Org: 'Law major at School of Law, Vietnam National University Hanoi',
+      nguyenThiQuynhGiangEdu1Year: '2025',
+      nguyenThiQuynhGiangPostsInfo: 'In-depth articles by Legal Specialist Nguyen Thi Quynh Giang on all legal aspects of Labor, Enterprise, Investment, Licenses.',
+
+      // Nguyen Thi Thu Trang
+      nguyenThiThuTrangBio: '<br /><i>Areas of responsibility:</i><br /><br />• Contract drafting, legal consulting on labor, tax, real estate and foreign investment<br /><br />• Ensuring legal compliance in Enterprise activities<br /><br />• Building and adjusting internal forms and regulations of Enterprise.',
+      nguyenThiThuTrangExp: '• Drafting and evaluating bilingual contracts (English - Vietnamese) including framework contracts, service contracts, labor contracts, NDA, etc.<br />• Legal consulting for Enterprise clients on labor, tax, real estate, business operations<br />• Participating in building and evaluating internal forms such as democracy regulations, labor rules, salary and bonus regulations<br />• Drafting documents for adjusting and re-issuing Investment Certificates for foreign-invested Enterprises.',
+      nguyenThiThuTrangEdu1: 'Bachelor of Law',
+      nguyenThiThuTrangEdu1Org: 'Law major at Hanoi Law University',
+      nguyenThiThuTrangEdu1Year: '2022',
+      nguyenThiThuTrangPostsInfo: 'In-depth articles by Legal Specialist Nguyen Thi Thu Trang on all legal aspects of Labor, Enterprise, Investment, Licenses.',
+
+      // Nguyen Thi Thuy Linh
+      nguyenThiThuyLinhBio: '<br /><i>Areas of responsibility:</i><br /><br />• Contract drafting, legal consulting on labor, real estate and foreign investment for domestic and foreign Enterprises<br /><br />• Building and adjusting internal forms and regulations of Enterprise<br /><br />• Drafting documents for establishment, changing Enterprise registration content<br /><br />• Drafting documents for adjusting and re-issuing Investment Registration Certificates for foreign-invested Enterprises<br /><br />• Resolving marriage and family cases including divorce cases with foreign elements.',
+      nguyenThiThuyLinhExp: '• Resolving marriage and family cases including divorce cases with foreign elements;<br />• Regular consulting for over 15 domestic and foreign Enterprises in Enterprise, labor, Investment, real estate business fields,...<br />• Drafting and evaluating bilingual contracts (English - Vietnamese) including framework contracts, service contracts, labor contracts, NDA, etc.<br />• Building and evaluating internal forms such as democracy regulations, labor rules, salary and bonus regulations of Enterprise<br />• Drafting documents for adjusting and re-issuing Investment Registration Certificates for foreign-invested Enterprises<br />• Drafting documents for establishment, changing Enterprise registration content.',
+      nguyenThiThuyLinhEdu1: 'Bachelor of Law',
+      nguyenThiThuyLinhEdu1Org: 'Faculty of Economic Law, Hanoi Law University',
+      nguyenThiThuyLinhEdu1Year: '2023',
+      nguyenThiThuyLinhPostsInfo: 'In-depth articles by Legal Specialist Nguyen Thi Thuy Linh on all legal aspects of Labor, Enterprise, Investment, Marriage & Family.',
+
+      // Nguyen Thuy Hang
+      nguyenThuyHangBio: '<br /><i>Areas of responsibility:</i><br /><br />• Drafting and evaluating contracts including framework contracts, service contracts, labor contracts, etc.<br /><br />• Legal consulting for Enterprise clients on labor, tax, real estate, business operations<br /><br />• Participating in building and evaluating internal forms such as democracy regulations, labor rules, salary and bonus regulations.',
+      nguyenThuyHangExp: '• Worked and interned at Ha Thi Investment Consulting Company, Vinh Yen City People\'s Court as legal staff, legal intern<br />• Performed tasks such as contract review, drafting common documents, building internal regulations and legal translation.',
+      nguyenThuyHangEdu1: 'Bachelor of Law',
+      nguyenThuyHangEdu1Org: 'Economic Law at Hanoi Law University',
+      nguyenThuyHangEdu1Year: '2024',
+      nguyenThuyHangPostsInfo: 'In-depth articles by Legal Specialist Nguyen Thuy Hang on all legal aspects of Enterprise, Labor, Licenses.',
+
+      // Tran Thi Bich Lien
+      tranThiBichLienBio: '<br /><i>Areas of responsibility:</i><br /><br />• Civil: Consulting on contracts, civil transactions, inheritance, marriage & family, compensation for damages, and other related legal issues<br /><br />• Land: Comprehensive consulting on Land procedures, including but not limited to buying, selling, donating, transferring ownership of real estate, re-issuing, issuing new land use right certificates, correcting land use rights, changing land use purposes, and resolving Land disputes<br /><br />• Administrative: Consulting on Administrative procedures, resolving complaints, denunciations and legal issues related to Administrative matters.',
+      tranThiBichLienExp: '• From 2020 - 2024: Legal Specialist at Youth & Partners Law Co., Ltd. Throughout her time at the company, Mrs. Tran Thi Bich Lien accumulated extensive experience in Civil, Administrative, and Land fields<br />• She directly participated and succeeded in resolving many Land, marriage and family disputes, protecting clients\' legitimate rights<br />• Additionally, she performed many complex Administrative and Land procedures, serving the needs of both individuals and organizations, contributing to efficiency and protecting clients\' rights.',
+      tranThiBichLienEdu1: 'Participated in Lawyer Training Course',
+      tranThiBichLienEdu1Org: 'Judicial Academy',
+      tranThiBichLienEdu1Year: '2024',
+      tranThiBichLienEdu2: 'Bachelor of Law',
+      tranThiBichLienEdu2Org: 'Faculty of Law, Hanoi Law University',
+      tranThiBichLienEdu2Year: '2016',
+      tranThiBichLienPostsInfo: 'In-depth articles by Legal Specialist Tran Thi Bich Lien on all legal aspects of Civil, Criminal, Administrative, Land.',
 
       // Common fields for area of responsibility
       areaOfResponsibility: 'Areas of responsibility:',
@@ -3912,6 +4267,212 @@ export const translations = {
       mangDieuHienEdu3Year: '2010年',
       mangDieuHienPostsInfo: '芒妙贤律师关于许可证、企业和外国投资各方面的深度文章。',
 
+      // Nguyen Hoang Ngoc Lan
+      nguyenHoangNgocLanBio: '阮黄玉兰律师是一位在医疗领域具有深厚专业知识的法律专家，以其在咨询和解决医疗行业经营许可证相关法律问题方面的经验而著称。凭借对法律法规和行政程序的深刻理解，阮黄玉兰律师已帮助众多医院、诊所、医疗中心和其他医疗保健机构申请和调整各类许可证，确保符合越南法律规定。',
+      nguyenHoangNgocLanExp: `阮黄玉兰律师在医疗法律领域拥有多年深入经验，特别是在医疗行业子许可证相关文件的咨询和处理方面，包括：<br />
+        • 医疗检查和治疗经营许可证。<br />
+        • 医疗检查和治疗经营许可证的调整。<br />
+        • 医疗执业许可证和医疗领域的其他专业许可证。<br />
+        阮黄玉兰律师的突出成就：<br />
+        • 成功为众多医院、诊所、医疗中心和医疗保健机构提供咨询，帮助准备和完善向国家主管机关申请许可的文件。<br />
+        • 帮助客户了解法律要求，确保文件和材料符合所有监管标准，节省时间和成本。<br />
+        • 代表客户与监管机构合作，确保许可流程快速、透明和高效。<br />
+        • 提供针对每个具体情况的全面法律解决方案，从新成立的医疗机构到大型医疗保健组织。`,
+      nguyenHoangNgocLanEdu1: '律师执业证书',
+      nguyenHoangNgocLanEdu1Org: '司法部',
+      nguyenHoangNgocLanEdu1Year: '2024年',
+      nguyenHoangNgocLanEdu2: '法学硕士',
+      nguyenHoangNgocLanEdu2Org: '河内法律大学',
+      nguyenHoangNgocLanEdu2Year: '2022年',
+      nguyenHoangNgocLanEdu3: '毕业',
+      nguyenHoangNgocLanEdu3Org: '司法学院',
+      nguyenHoangNgocLanEdu3Year: '2021年',
+      nguyenHoangNgocLanEdu4: '法学学士',
+      nguyenHoangNgocLanEdu4Org: '河内法律大学',
+      nguyenHoangNgocLanEdu4Year: '2020年',
+      nguyenHoangNgocLanPostsInfo: '阮黄玉兰律师关于许可证、企业和外国投资各方面的深度文章。',
+
+      // Nguyen Minh Anh
+      nguyenMinhAnhBio: '阮明英律师是一位在经济法、土地法和民事法领域拥有7年以上经验的法律专家。凭借优秀的教育背景和在知名机构的实践经验，阮明英律师已证明了她在法律咨询、争议解决以及支持企业和个人处理复杂案件方面的能力。凭借广泛的法律知识和敏锐的思维，阮明英律师始终提供有效的法律解决方案，为客户在商业贸易、土地和民事领域优化利益。',
+      nguyenMinhAnhExp: `• 2022年11月 - 2024年9月：和平国际贸易投资旅游有限公司法律监察部副主任 <br />
+        法律咨询、合同谈判、与政府机构合作、合同审查、商业和民事争议解决及内部合规控制。<br />
+        • 2019年6月 - 2022年11月：越金律师事务所咨询部经理<br />
+        管理咨询部、案件研究、法院诉讼（民事、商业贸易）、企业重组咨询、并购及争议解决。<br />
+        • 2017年6月 - 2019年6月：仲海律师事务所实习生<br />
+        起草文件、审查合同、协助律师处理民事和商业贸易案件。`,
+      nguyenMinhAnhEdu1: '律师执业证书',
+      nguyenMinhAnhEdu1Org: '司法部',
+      nguyenMinhAnhEdu1Year: '2024年',
+      nguyenMinhAnhEdu2: '经济法硕士',
+      nguyenMinhAnhEdu2Org: '河内法律大学',
+      nguyenMinhAnhEdu2Year: '2023年',
+      nguyenMinhAnhEdu3: '毕业',
+      nguyenMinhAnhEdu3Org: '司法学院',
+      nguyenMinhAnhEdu3Year: '2021年',
+      nguyenMinhAnhEdu4: '法学学士（优秀）',
+      nguyenMinhAnhEdu4Org: '荣市大学',
+      nguyenMinhAnhEdu4Year: '2019年',
+      nguyenMinhAnhPostsInfo: '阮明英律师关于许可证、土地、企业和外国投资各方面的深度文章。',
+
+      // Nguyen Thi Huong
+      nguyenThiHuongBio: `<i>负责领域：</i><br /><br />
+      • 民事：合同、民事交易、继承、损害赔偿及其他相关法律问题咨询。
+      <br /><br />
+      • 婚姻家庭：离婚、财产分割、子女抚养权及婚姻家庭相关法律问题咨询。
+      <br /><br />
+      • 土地：土地相关问题咨询，包括但不限于土地争议解决、转让、土地使用权证换发。
+      <br /><br />
+      • 刑事：为被害人提供咨询和保护其合法权益，同时在刑事诉讼各阶段为犯罪嫌疑人和被告人辩护。处理与犯罪行为相关的事务，确定刑事案件中各主体的法律责任程度。
+      <br /><br />
+      • 企业：企业设立、运营和管理的法律咨询，合同相关问题及商业法律。
+      <br /><br />
+      • 劳动：劳动相关问题、劳动合同、劳动争议和劳动者权益咨询。
+      <br /><br />
+      • 投资：投资问题咨询，包括国内外投资、企业发展战略及房地产投资相关法律问题。`,
+      nguyenThiHuongExp: '阮氏香律师在法律领域拥有7年以上经验，专注于民事、刑事、行政、商业贸易和诉讼业务。',
+      nguyenThiHuongExp2: '凭借多年的诉讼、辩护、保护、代理、咨询、起草、提供表格、合同和法律文件的经验，为国内外组织和个人服务……阮氏香律师已成功保护客户在复杂案件中的权益，同时帮助客户有效解决法律问题。',
+      nguyenThiHuongEdu1: '律师执业证书',
+      nguyenThiHuongEdu1Org: '司法部',
+      nguyenThiHuongEdu1Year: '2020年',
+      nguyenThiHuongEdu2: '国际法学士',
+      nguyenThiHuongEdu2Org: '外交学院',
+      nguyenThiHuongEdu2Year: '2017年',
+      nguyenThiHuongPostsInfo: '阮氏香律师关于民事、刑事、行政、商业贸易各方面的深度文章。',
+
+      // 阮氏深
+      nguyenThiThomBio: '<br /><i>负责领域：</i><br /><br />• 企业：企业设立、运营和管理的法律咨询，合同相关问题及商业法律<br /><br />• 劳动：劳动相关问题、劳动合同、劳动争议和劳动者权益咨询<br /><br />• 投资：投资问题咨询，包括国内外投资、企业发展战略及房地产投资相关法律问题。',
+      nguyenThiThomExp: '凭借09年企业法务经验，其中05年在外资企业工作，04年在房地产投资开发公司工作，阮氏深律师积累了丰富的知识和专业的工作处理技能。',
+      nguyenThiThomExp2: '深律师专注于为企业提供法律咨询和支持，帮助企业制定适当的策略以避免法律纠纷，降低运营和经营中的风险。',
+      nguyenThiThomEdu1: '律师执业证书',
+      nguyenThiThomEdu1Org: '司法部',
+      nguyenThiThomEdu1Year: '2016年',
+      nguyenThiThomEdu2: '法学学士',
+      nguyenThiThomEdu2Org: '河内法律大学',
+      nguyenThiThomEdu2Year: '2012年',
+      nguyenThiThomPostsInfo: '阮氏深律师关于企业、劳动、投资各方面的深度文章。',
+
+      // 阮秋娥
+      nguyenThuNgaBio: '<br /><i>负责领域：</i><br /><br />• 企业：企业设立、运营和治理相关法律问题的全面咨询，保护股东权益，解决企业各方争议。阮娥律师帮助企业制定适当的法律策略，保护和发展业务活动，从与合作伙伴合作到起草经济和商业合同<br /><br />• 劳动：劳动合同、员工权益、劳动争议以及社会保险、福利和企业员工其他权益相关咨询。阮娥律师支持企业建立人力资源政策，管理劳动关系，解决雇主与员工之间的争议<br /><br />• 投资：国内外投资问题的法律咨询，包括投资程序、选择适当的投资方式和交易结构以最大化利益、最小化风险。阮娥律师还支持企业遵守投资和资本转让相关法规，帮助企业制定有效的投资策略。',
+      nguyenThuNgaExp: '阮娥律师在法律领域拥有10年以上经验，专注于为企业提供咨询，特别是在越南运营的外资企业。',
+      nguyenThuNgaExp2: '凭借在劳动、投资政府机构和日本企业法务负责人的工作经验，阮娥律师在企业法律问题方面拥有丰富经验，如劳动法和企业法合规、行政程序、合同审查、法律风险评估以及越南投资和发展程序相关法律咨询。',
+      nguyenThuNgaExp3: '此外，良好的日语沟通能力使阮娥律师成为日本企业与越南政府和企业之间的重要桥梁。',
+      nguyenThuNgaEdu1: '日本法律培训课程毕业',
+      nguyenThuNgaEdu1Org: '日本法律研究与培训中心 - 名古屋大学河内分校',
+      nguyenThuNgaEdu1Year: '2016年',
+      nguyenThuNgaEdu2: '法学学士',
+      nguyenThuNgaEdu2Org: '河内法律大学',
+      nguyenThuNgaEdu2Year: '2012年',
+      nguyenThuNgaPostsInfo: '阮秋娥律师关于企业、劳动、投资各方面的深度文章。',
+
+      // 范氏玄君
+      phamThiHuyenQuyenBio: '<br /><i>负责领域：</i><br /><br />• 企业：企业设立、运营和治理相关法律问题的全面咨询，包括财务管理、股东权益保护、合同起草和内部争议解决。她帮助企业建立和实施可持续发展战略，确保运营全程合规<br /><br />• 劳动：企业劳动问题咨询，包括劳动合同、员工权益、社会保险、福利政策和劳动争议解决。她支持企业建立人力资源政策并维护合规的工作环境<br /><br />• 投资：投资相关问题咨询，包括投资规划、融资程序、股权转让和投资风险管理。君律师帮助企业优化投资策略，同时确保符合国内外法律要求。',
+      phamThiHuyenQuyenExp: '凭借8年企业咨询和内部法务经验，范氏玄君律师已成为众多企业的可信赖合作伙伴。',
+      phamThiHuyenQuyenExp2: '她拥有企业法、劳动法及相关法规的深入知识，帮助企业有效解决运营中产生的法律问题。',
+      phamThiHuyenQuyenExp3: '特别是，她注重确保企业活动的法律合规，从建立组织架构、财务管理到处理争议和内部冲突。',
+      phamThiHuyenQuyenEdu1: '律师执业证书',
+      phamThiHuyenQuyenEdu1Org: '司法部',
+      phamThiHuyenQuyenEdu1Year: '2016年',
+      phamThiHuyenQuyenEdu2: '法学学士',
+      phamThiHuyenQuyenEdu2Org: '河内法律大学',
+      phamThiHuyenQuyenEdu2Year: '2012年',
+      phamThiHuyenQuyenPostsInfo: '范氏玄君律师关于企业、劳动、投资各方面的深度文章。',
+
+      // 文氏清花
+      vanThiThanhHoaBio: '<br /><i>负责领域：</i><br /><br />• 民事：合同、民事交易、继承、损害赔偿及其他相关法律问题咨询<br /><br />• 刑事：为受害者提供咨询和保护合法权益，同时在刑事诉讼各阶段为嫌疑人和被告辩护。处理与犯罪行为相关的事务并确定刑事案件中各主体的法律责任程度<br /><br />• 土地：土地相关问题咨询，包括但不限于转让、换发土地使用权证、解决土地纠纷<br /><br />• 婚姻家庭：离婚、财产分割、子女抚养权及婚姻家庭相关法律问题咨询。',
+      vanThiThanhHoaExp: '凭借12年以上经验，文氏清花律师已成功解决民事、刑事、土地、婚姻家庭领域的众多复杂法律案件。',
+      vanThiThanhHoaExp2: '她以出色的法律咨询能力和最优案件解决策略著称，帮助客户实现预期结果。',
+      vanThiThanhHoaEdu1: '律师执业证书',
+      vanThiThanhHoaEdu1Org: '司法部',
+      vanThiThanhHoaEdu1Year: '2016年',
+      vanThiThanhHoaEdu2: '法学学士',
+      vanThiThanhHoaEdu2Org: '河内法律大学',
+      vanThiThanhHoaEdu2Year: '2012年',
+      vanThiThanhHoaPostsInfo: '文氏清花律师关于诉讼内外代理、民事、刑事、行政、土地各方面的深度文章。',
+
+      // 严明玄
+      nghiemMinhHuyenBio: '<br /><i>负责领域：</i><br /><br />严玄是法律专员、律师助理、编辑，支持管理Y&P律师事务所网站文章，支持专员撰写分析文章、服务、总结法规、新政策，涉及领域：企业、婚姻家庭、土地、刑事等...<br /><br />• 土地领域：快速更新，支持客户办理土地相关行政手续：首次登记、变更登记、遗产分割、赠与等...<br /><br />• 民事、刑事领域：阅读和研究实际案卷；协助律师复印文件、资料，起草各类申请和文件。',
+      nghiemMinhHuyenExp: '• 2019年：在北从廉区人民委员会实习：接收文件和返还结果，处理个体工商户登记、税号<br />• 2020年：在亚洲律师事务所实习：起草企业相关文件如成立、变更、解散、印章登记；了解知识产权、子许可证、网站登记等...<br />• 2020-2021年：在南洋律师事务所工作：根据合作伙伴要求联系违反贷款合同的客户（银行：MB银行、VP银行等；金融公司：Mcredit、FEcredit等）<br />• 2021年：在行政科学和档案中心（SCARMA）工作：整理、编辑、创建MB银行的数据存储列表和仓储<br />• 2022-2024年：在越南SGS有限公司工作：审核发布到社交媒体的内容<br />• 2024年至今：在Youth & Partners律师事务所工作。',
+      nghiemMinhHuyenEdu1: '毕业',
+      nghiemMinhHuyenEdu1Org: '司法学院',
+      nghiemMinhHuyenEdu1Desc: '• 参加并毕业于三职称培训课程：法官、检察官、律师<br />• 接受司法职称专业技能和实践经验的深度培训<br />• 在学院的分配和指导下，在法院、检察院和律师事务所实习，以锻炼技能并提高解决实际法律情况的能力',
+      nghiemMinhHuyenEdu1Year: '2020年12月 - 2022年8月',
+      nghiemMinhHuyenEdu2: '法学学士',
+      nghiemMinhHuyenEdu2Org: '河内法律大学',
+      nghiemMinhHuyenEdu2Desc: '• 法学专业毕业，GPA：7.31/10<br />• 接受民事、刑事、行政、经济和国际法领域基础法律知识和法典的深度培训',
+      nghiemMinhHuyenEdu2Year: '2016年9月 - 2020年7月',
+      nghiemMinhHuyenPostsInfo: '法律专员严明玄关于民事、刑事、行政、土地各方面的深度文章。',
+
+      // 阮黄勇
+      nguyenHoangDungBio: '<br /><i>负责领域：</i><br /><br />• 民事：合同、民事交易咨询，代理参与遗产继承纠纷解决、民事交易中的损害赔偿请求及其他相关法律问题。<br /><br />• 婚姻家庭：离婚文件、程序、共同财产分割、子女抚养权及婚姻家庭相关法律问题咨询。<br /><br />• 土地：土地相关文件、程序、行政手续咨询，参与土地使用权纠纷解决。<br /><br />• 刑事：法律咨询、文书起草，为嫌疑人、被告辩护，或保护刑事案件中受害者、相关人员的合法权益。<br /><br />• 行政：文件、程序咨询，代理客户收集证据，参与保护客户在投诉、举报和行政案件中的合法权益。<br /><br />• 企业：企业设立、运营和管理的法律咨询，起草经济合同、商业合作合同等。<br /><br />• 劳动：劳动相关问题、劳动合同、劳动纠纷及员工和雇主权益咨询。<br /><br />• 投资：投资项目实施过程中的咨询、文件起草、代理与政府机关对接。',
+      nguyenHoangDungExp: '• 2023年：在宏百及合伙人律师事务所工作。<br />• 2024年：在河南省律师协会法律咨询中心工作。<br />• 2025年：在Youth & Partners律师事务所工作。',
+      nguyenHoangDungEdu1: '毕业',
+      nguyenHoangDungEdu1Org: '司法学院',
+      nguyenHoangDungEdu1Desc: '• 参加并毕业于律师培训课程<br />• 接受律师职业专业技能和实践经验的深度培训',
+      nguyenHoangDungEdu1Year: '2025年',
+      nguyenHoangDungEdu2: '法学学士',
+      nguyenHoangDungEdu2Org: '河内法律大学国际贸易法',
+      nguyenHoangDungEdu2Year: '2023年',
+      nguyenHoangDungPostsInfo: '法律专员阮黄勇关于民事、婚姻家庭、土地、刑事、行政、企业、劳动、投资各方面的深度文章。',
+
+      // 阮潘淑芝
+      nguyenPhanThucChiBio: '<br /><i>负责领域：</i><br /><br />• 企业：支持企业常规法律咨询：支持审查企业各类合同如框架合同、货物买卖合同、劳动合同等；支持起草劳动、商业贸易等领域的法律咨询报告...<br /><br />• 支持外国投资项目相关许可证事宜，包括企业设立、投资登记证调整等相关问题...',
+      nguyenPhanThucChiExp: '• 2024年8月 – 2024年11月：越南TOTO有限公司永福分公司人事行政部实习生 – 支持公司章程审查和社会保障、劳动问题查询。<br />• 2024年12月 – 2025年5月：越南KITZ Corporation有限公司人事行政部员工 – 审查、检查合同和查询社会保障、劳动和税务问题；支持越南劳动者出国培训（台湾、日本）的出境手续。<br />• 现任Youth & Partners律师事务所法律专员。',
+      nguyenPhanThucChiEdu1: '法学学士',
+      nguyenPhanThucChiEdu1Org: '河内法律大学经济法',
+      nguyenPhanThucChiEdu1Year: '2024年',
+      nguyenPhanThucChiPostsInfo: '法律专员阮潘淑芝关于企业、劳动、许可证各方面的深度文章。',
+
+      // 阮冯梅映
+      nguyenPhungMaiAnhBio: '<br /><i>负责领域：</i><br /><br />凭借广泛的知识和实践经验，梅映担任民事和行政领域专业编辑。梅映的文章专注于分析、综合和阐明与土地使用权、合同、婚姻家庭和民事法律问题相关的法律法规、重要政策。',
+      nguyenPhungMaiAnhExp: '• 2021年：在24小时律师事务所实习，支持律师研究和起草文件，检查法律文件<br />• 2023年：在越春乡人民委员会实习，配合司法-户籍公务员进行文件公证，调解土地纠纷，录入和处理行政文件<br />• 2024年：Youth & Partners律师事务所法律专员，专门处理土地手续和土地使用权、规划、转让及相关问题的法律咨询。',
+      nguyenPhungMaiAnhEdu1: '法学学士',
+      nguyenPhungMaiAnhEdu1Org: '国家行政学院法律系',
+      nguyenPhungMaiAnhEdu1Year: '2024年',
+      nguyenPhungMaiAnhPostsInfo: '法律专员阮冯梅映关于民事、行政、土地各方面的深度文章。',
+
+      // 阮氏琼江
+      nguyenThiQuynhGiangBio: '<br /><i>介绍：</i><br /><br />• 阮氏琼江自2025年起在YPLaw事务所实习。<br /><br />• 凭借河内国家大学法学院法学学士的法律知识基础，琼江始终努力在实际工作中发展和应用知识、技能。',
+      nguyenThiQuynhGiangExp: '• 2024年6月 – 2025年1月：在南慈廉区人民法院实习，接触诉讼程序和审判实践，从而增强法律理解和专业工作技能<br />• 目前，琼江是Youth & Partners律师事务所（YPLaw Firm）的实习生，学习并参与公司的法律咨询和支持活动。',
+      nguyenThiQuynhGiangEdu1: '法学学士',
+      nguyenThiQuynhGiangEdu1Org: '河内国家大学法学院法学专业',
+      nguyenThiQuynhGiangEdu1Year: '2025年',
+      nguyenThiQuynhGiangPostsInfo: '法律专员阮氏琼江关于劳动、企业、投资、许可证各方面的深度文章。',
+
+      // 阮氏秋庄
+      nguyenThiThuTrangBio: '<br /><i>负责领域：</i><br /><br />• 合同起草、劳动、税务、房地产和外国投资法律咨询<br /><br />• 确保企业活动的法律合规<br /><br />• 建立和调整企业内部表格和规章制度。',
+      nguyenThiThuTrangExp: '• 起草和评估双语合同（英-越）包括框架合同、服务合同、劳动合同、保密协议等<br />• 为企业客户提供劳动、税务、房地产、商业运营法律咨询<br />• 参与建立和评估民主规章、劳动规则、工资奖金规章等内部表格<br />• 为外资企业起草投资证书调整和换发文件。',
+      nguyenThiThuTrangEdu1: '法学学士',
+      nguyenThiThuTrangEdu1Org: '河内法律大学法学专业',
+      nguyenThiThuTrangEdu1Year: '2022年',
+      nguyenThiThuTrangPostsInfo: '法律专员阮氏秋庄关于劳动、企业、投资、许可证各方面的深度文章。',
+
+      // 阮氏翠玲
+      nguyenThiThuyLinhBio: '<br /><i>负责领域：</i><br /><br />• 为国内外企业提供合同起草、劳动、房地产和外国投资法律咨询<br /><br />• 建立和调整企业内部表格和规章制度<br /><br />• 起草企业设立、变更登记内容文件<br /><br />• 为外资企业起草投资登记证调整和换发文件<br /><br />• 解决婚姻家庭案件，包括涉外离婚案件。',
+      nguyenThiThuyLinhExp: '• 解决婚姻家庭案件，包括涉外离婚案件；<br />• 为15家以上国内外企业提供企业、劳动、投资、房地产业务等领域的常规咨询...<br />• 起草和评估双语合同（英-越）包括框架合同、服务合同、劳动合同、保密协议等<br />• 建立和评估企业的民主规章、劳动规则、工资奖金规章等内部表格<br />• 为外资企业起草投资登记证调整和换发文件<br />• 起草企业设立、变更登记内容文件。',
+      nguyenThiThuyLinhEdu1: '法学学士',
+      nguyenThiThuyLinhEdu1Org: '河内法律大学经济法系',
+      nguyenThiThuyLinhEdu1Year: '2023年',
+      nguyenThiThuyLinhPostsInfo: '法律专员阮氏翠玲关于劳动、企业、投资、婚姻家庭各方面的深度文章。',
+
+      // 阮翠恒
+      nguyenThuyHangBio: '<br /><i>负责领域：</i><br /><br />• 起草和评估合同包括框架合同、服务合同、劳动合同等<br /><br />• 为企业客户提供劳动、税务、房地产、商业运营法律咨询<br /><br />• 参与建立和评估民主规章、劳动规则、工资奖金规章等内部表格。',
+      nguyenThuyHangExp: '• 曾在河氏投资咨询公司、永安市人民法院担任法律员工、法律实习生工作和实习<br />• 执行合同审查、起草常用文件、建立内部规定和法律翻译等工作。',
+      nguyenThuyHangEdu1: '法学学士',
+      nguyenThuyHangEdu1Org: '河内法律大学经济法',
+      nguyenThuyHangEdu1Year: '2024年',
+      nguyenThuyHangPostsInfo: '法律专员阮翠恒关于企业、劳动、许可证各方面的深度文章。',
+
+      // 陈氏碧莲
+      tranThiBichLienBio: '<br /><i>负责领域：</i><br /><br />• 民事：合同、民事交易、继承、婚姻家庭、损害赔偿及其他相关法律问题咨询<br /><br />• 土地：土地手续全面咨询，包括但不限于买卖、赠与、房地产过户、换发、补发、新发土地使用权证、更正土地使用权、变更土地用途和解决土地纠纷<br /><br />• 行政：行政手续、投诉、举报和行政相关法律问题咨询。',
+      tranThiBichLienExp: '• 2020-2024年：Youth & Partners律师事务所法律专员。在公司工作期间，陈氏碧莲女士在民事、行政和土地领域积累了丰富经验<br />• 她直接参与并成功解决了许多土地、婚姻家庭纠纷，保护了客户的合法权益<br />• 同时，她还办理了许多复杂的行政和土地手续，服务于个人和组织的需求，提高效率并保障客户权益。',
+      tranThiBichLienEdu1: '参加律师培训课程',
+      tranThiBichLienEdu1Org: '司法学院',
+      tranThiBichLienEdu1Year: '2024年',
+      tranThiBichLienEdu2: '法学学士',
+      tranThiBichLienEdu2Org: '河内法律大学法学系',
+      tranThiBichLienEdu2Year: '2016年',
+      tranThiBichLienPostsInfo: '法律专员陈氏碧莲关于民事、刑事、行政、土地各方面的深度文章。',
+
       // Common fields for area of responsibility
       areaOfResponsibility: '负责领域：',
       civilLaw: '民事：合同、交易、继承、家庭、损害赔偿咨询...',
@@ -4094,6 +4655,212 @@ export const translations = {
       mangDieuHienEdu3Year: '2010年',
       mangDieuHienPostsInfo: 'マン・ジエウ・ヒエン弁護士による許可、企業、外国投資に関するあらゆる法的側面についての詳細な記事。',
 
+      // Nguyen Hoang Ngoc Lan
+      nguyenHoangNgocLanBio: 'ラン弁護士は医療分野に深い専門知識を持つ法律専門家で、医療業界の営業許可に関連する法的問題の相談と解決の経験で知られています。法規制と行政手続きへの深い理解により、ラン弁護士は多くの病院、クリニック、医療センター、その他の医療施設が各種許可の申請と調整を行い、ベトナム法への準拠を確保するのを支援してきました。',
+      nguyenHoangNgocLanExp: `ラン弁護士は医療法分野で長年の深い経験を持ち、特に医療業界のサブライセンスに関連する文書の相談と処理を専門としています：<br />
+        • 医療検査・治療営業許可。<br />
+        • 医療検査・治療営業許可の調整。<br />
+        • 医療実務許可証および医療分野のその他の専門許可。<br />
+        ラン弁護士の主な実績：<br />
+        • 多くの病院、クリニック、医療センター、医療施設に対し、管轄国家機関への許可申請書類の準備と完成を成功裏にコンサルティング。<br />
+        • クライアントが法的要件を理解し、文書と書類がすべての規制基準を満たすことを確保し、時間とコストを節約。<br />
+        • 規制機関とのクライアント代理、許可プロセスが迅速、透明、効率的であることを保証。<br />
+        • 新設の医療施設から大規模な医療機関まで、各具体的なケースに合わせた包括的な法的ソリューションの提供。`,
+      nguyenHoangNgocLanEdu1: '弁護士実務資格',
+      nguyenHoangNgocLanEdu1Org: '司法省',
+      nguyenHoangNgocLanEdu1Year: '2024年',
+      nguyenHoangNgocLanEdu2: '法学修士',
+      nguyenHoangNgocLanEdu2Org: 'ハノイ法科大学',
+      nguyenHoangNgocLanEdu2Year: '2022年',
+      nguyenHoangNgocLanEdu3: '卒業',
+      nguyenHoangNgocLanEdu3Org: '司法学院',
+      nguyenHoangNgocLanEdu3Year: '2021年',
+      nguyenHoangNgocLanEdu4: '法学学士',
+      nguyenHoangNgocLanEdu4Org: 'ハノイ法科大学',
+      nguyenHoangNgocLanEdu4Year: '2020年',
+      nguyenHoangNgocLanPostsInfo: 'グエン・ホアン・ゴック・ラン弁護士による許可、企業、外国投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // Nguyen Minh Anh
+      nguyenMinhAnhBio: 'グエン・ミン・アン弁護士は、経済法、土地法、民事法の分野で7年以上の経験を持つ法律専門家です。優れた教育背景と評判の高い組織での実務経験により、ミン・アン弁護士は法律相談、紛争解決、複雑な案件での企業と個人のサポートにおける能力を証明しています。広範な法律知識と鋭い思考力により、ミン・アン弁護士は常に商業ビジネス、土地、民事分野でクライアントの利益を最適化する効果的な法的ソリューションを提供しています。',
+      nguyenMinhAnhExp: `• 2022年11月 - 2024年9月：ホアビン国際貿易投資観光会社 法務監査部副部長 <br />
+        法律相談、契約交渉、政府機関との連携、契約審査、商業・民事紛争解決、内部コンプライアンス管理。<br />
+        • 2019年6月 - 2022年11月：ベトキム法律会社 相談部マネージャー<br />
+        相談部管理、案件調査、裁判所訴訟（民事、商業ビジネス）、企業再編相談、M&A、紛争解決。<br />
+        • 2017年6月 - 2019年6月：チョンハイ法律事務所 インターン<br />
+        文書作成、契約審査、民事・商業ビジネス案件での弁護士サポート。`,
+      nguyenMinhAnhEdu1: '弁護士実務資格',
+      nguyenMinhAnhEdu1Org: '司法省',
+      nguyenMinhAnhEdu1Year: '2024年',
+      nguyenMinhAnhEdu2: '経済法修士',
+      nguyenMinhAnhEdu2Org: 'ハノイ法科大学',
+      nguyenMinhAnhEdu2Year: '2023年',
+      nguyenMinhAnhEdu3: '卒業',
+      nguyenMinhAnhEdu3Org: '司法学院',
+      nguyenMinhAnhEdu3Year: '2021年',
+      nguyenMinhAnhEdu4: '法学学士（優秀）',
+      nguyenMinhAnhEdu4Org: 'ヴィン大学',
+      nguyenMinhAnhEdu4Year: '2019年',
+      nguyenMinhAnhPostsInfo: 'グエン・ミン・アン弁護士による許可、土地、企業、外国投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // Nguyen Thi Huong
+      nguyenThiHuongBio: `<i>担当分野：</i><br /><br />
+      • 民事：契約、民事取引、相続、損害賠償およびその他の関連法的問題の相談。
+      <br /><br />
+      • 婚姻家族：離婚、財産分割、子供の親権、婚姻家族に関連する法的問題の相談。
+      <br /><br />
+      • 土地：土地紛争解決、譲渡、土地使用権証明書の交換など、土地関連問題の相談。
+      <br /><br />
+      • 刑事：被害者の相談と正当な利益の保護、また刑事訴訟の各段階で容疑者と被告人の弁護。犯罪行為関連の事項を処理し、刑事事件における各主体の法的責任の程度を判断。
+      <br /><br />
+      • 企業：企業の設立、運営、管理に関する法律相談、契約関連問題、ビジネス法。
+      <br /><br />
+      • 労働：労働関連問題、労働契約、労働紛争、労働者の権利に関する相談。
+      <br /><br />
+      • 投資：国内外の投資、企業発展戦略、不動産投資関連の法的問題を含む投資問題の相談。`,
+      nguyenThiHuongExp: 'フオン弁護士は法律分野で7年以上の経験を持ち、クライアント向けの民事、刑事、行政、商業ビジネス、訴訟を専門としています。',
+      nguyenThiHuongExp2: '訴訟、弁護、保護、代理、相談、起草、フォーム提供、契約、国内外の組織と個人への法的文書提供の長年の経験により...フオン弁護士は複雑な案件でクライアントの権利と利益を保護し、法的問題を効果的に解決するのを支援してきました。',
+      nguyenThiHuongEdu1: '弁護士実務資格',
+      nguyenThiHuongEdu1Org: '司法省',
+      nguyenThiHuongEdu1Year: '2020年',
+      nguyenThiHuongEdu2: '国際法学士',
+      nguyenThiHuongEdu2Org: '外交学院',
+      nguyenThiHuongEdu2Year: '2017年',
+      nguyenThiHuongPostsInfo: 'グエン・ティ・フオン弁護士による民事、刑事、行政、商業ビジネスに関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・ティ・トム
+      nguyenThiThomBio: '<br /><i>担当分野：</i><br /><br />• 企業：企業の設立、運営、管理に関する法的コンサルティング、契約関連事項、ビジネス法律<br /><br />• 労働：労働関連問題、労働契約、労働紛争、労働者の権利に関するコンサルティング<br /><br />• 投資：国内外投資、企業発展戦略、不動産投資関連法的問題を含む投資問題のコンサルティング。',
+      nguyenThiThomExp: '企業法務分野で09年の経験を持ち、そのうち05年は外資系企業、04年は不動産投資開発会社で勤務。グエン・ティ・トム弁護士は幅広い知識と専門的な業務処理スキルを蓄積してきました。',
+      nguyenThiThomExp2: 'トム弁護士は企業への法的コンサルティングとサポートを専門とし、法的紛争を回避し、事業運営におけるリスクを最小限に抑える適切な戦略の策定を支援しています。',
+      nguyenThiThomEdu1: '弁護士実務資格',
+      nguyenThiThomEdu1Org: '司法省',
+      nguyenThiThomEdu1Year: '2016年',
+      nguyenThiThomEdu2: '法学学士',
+      nguyenThiThomEdu2Org: 'ハノイ法科大学',
+      nguyenThiThomEdu2Year: '2012年',
+      nguyenThiThomPostsInfo: 'グエン・ティ・トム弁護士による企業、労働、投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・トゥー・ガー
+      nguyenThuNgaBio: '<br /><i>担当分野：</i><br /><br />• 企業：企業の設立、運営、ガバナンスに関する法的問題の包括的コンサルティング、株主権益の保護、企業内の当事者間紛争の解決。ガー弁護士は、パートナーとの協力から経済・商業契約の作成まで、事業活動を保護・発展させる適切な法的戦略の構築を支援<br /><br />• 労働：労働契約、従業員の権利、労働紛争、社会保険、福利厚生、企業内従業員のその他の権利に関するコンサルティング。ガー弁護士は、人事政策の構築、労使関係の管理、雇用者と従業員間の紛争解決を支援<br /><br />• 投資：投資手続き、適切な投資方法と取引構造の選択による利益の最大化とリスクの最小化を含む、国内外投資問題の法的コンサルティング。ガー弁護士は投資と資本移転に関する法規遵守を支援し、効果的な投資戦略の策定を支援。',
+      nguyenThuNgaExp: 'ガー弁護士は法律分野で10年以上の経験を持ち、ベトナムで事業を展開する外資系企業を中心に企業へのコンサルティングを専門としています。',
+      nguyenThuNgaExp2: '労働・投資に関する政府機関および日本企業の法務責任者としての経験を持ち、労働法・企業法のコンプライアンス、行政手続き、契約審査、法的リスク評価、ベトナムでの投資・開発手続きに関する法的コンサルティングなど、企業の法的問題に豊富な経験を有しています。',
+      nguyenThuNgaExp3: 'さらに、優れた日本語コミュニケーション能力により、日本企業とベトナムの政府・企業間の重要な架け橋となっています。',
+      nguyenThuNgaEdu1: '日本法研修コース修了',
+      nguyenThuNgaEdu1Org: '日本法研究研修センター - 名古屋大学ハノイ分校',
+      nguyenThuNgaEdu1Year: '2016年',
+      nguyenThuNgaEdu2: '法学学士',
+      nguyenThuNgaEdu2Org: 'ハノイ法科大学',
+      nguyenThuNgaEdu2Year: '2012年',
+      nguyenThuNgaPostsInfo: 'グエン・トゥー・ガー弁護士による企業、労働、投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // ファム・ティ・フエン・クエン
+      phamThiHuyenQuyenBio: '<br /><i>担当分野：</i><br /><br />• 企業：企業の設立、運営、ガバナンスに関する法的問題の包括的コンサルティング、財務管理、株主権益保護、契約作成、社内紛争解決を含む。持続可能な発展戦略の構築・実施を支援し、運営全体を通じて法規遵守を確保<br /><br />• 労働：労働契約、従業員の権利、社会保険、福利厚生政策、労働紛争解決を含む企業の労働問題コンサルティング。人事政策の構築と法的に準拠した職場環境の維持を支援<br /><br />• 投資：投資計画、資金調達手続き、株式譲渡、投資リスク管理を含む投資関連問題のコンサルティング。クエン弁護士は投資戦略の最適化を支援しながら、国内外の法的要件への準拠を確保。',
+      phamThiHuyenQuyenExp: '企業コンサルティングと社内法務で8年の経験を持ち、ファム・ティ・フエン・クエン弁護士は多くの企業の信頼できるパートナーとなっています。',
+      phamThiHuyenQuyenExp2: '企業法、労働法、関連法規に関する深い知識を持ち、企業の運営中に発生する法的問題を効果的に解決することを支援しています。',
+      phamThiHuyenQuyenExp3: '特に、組織構造の確立、財務管理から紛争や社内対立の処理まで、企業活動における法的コンプライアンスの確保に注力しています。',
+      phamThiHuyenQuyenEdu1: '弁護士実務資格',
+      phamThiHuyenQuyenEdu1Org: '司法省',
+      phamThiHuyenQuyenEdu1Year: '2016年',
+      phamThiHuyenQuyenEdu2: '法学学士',
+      phamThiHuyenQuyenEdu2Org: 'ハノイ法科大学',
+      phamThiHuyenQuyenEdu2Year: '2012年',
+      phamThiHuyenQuyenPostsInfo: 'ファム・ティ・フエン・クエン弁護士による企業、労働、投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // ヴァン・ティ・タイン・ホア
+      vanThiThanhHoaBio: '<br /><i>担当分野：</i><br /><br />• 民事：契約、民事取引、相続、損害賠償およびその他の関連法的問題のコンサルティング<br /><br />• 刑事：被害者の合法的権利の保護とコンサルティング、刑事訴訟の各段階での被疑者・被告人の弁護。犯罪行為に関連する業務の処理および刑事事件における各主体の法的責任の程度の判断<br /><br />• 土地：土地関連問題のコンサルティング、譲渡、土地使用権証明書の再発行、土地紛争の解決を含むがこれに限定されない<br /><br />• 婚姻・家族：離婚、財産分割、子供の親権、婚姻・家族に関連する法的問題のコンサルティング。',
+      vanThiThanhHoaExp: '12年以上の経験を持つヴァン・ティ・タイン・ホア弁護士は、民事、刑事、土地、婚姻・家族分野の多くの複雑な法的案件を成功裏に解決してきました。',
+      vanThiThanhHoaExp2: '彼女は優れた法的コンサルティング能力と最適な案件解決戦略で知られ、クライアントが望む結果を達成することを支援しています。',
+      vanThiThanhHoaEdu1: '弁護士実務資格',
+      vanThiThanhHoaEdu1Org: '司法省',
+      vanThiThanhHoaEdu1Year: '2016年',
+      vanThiThanhHoaEdu2: '法学学士',
+      vanThiThanhHoaEdu2Org: 'ハノイ法科大学',
+      vanThiThanhHoaEdu2Year: '2012年',
+      vanThiThanhHoaPostsInfo: 'ヴァン・ティ・タイン・ホア弁護士による訴訟内外の代理、民事、刑事、行政、土地に関するあらゆる法的側面についての詳細な記事。',
+
+      // ギエム・ミン・フエン
+      nghiemMinhHuyenBio: '<br /><i>担当分野：</i><br /><br />フエン・ギエムは法務スペシャリスト、弁護士アシスタント、Y&P法律事務所ウェブサイトの記事管理を支援するエディターで、企業、婚姻・家族、土地、刑事などの分野に関する分析記事、サービス、規制、新しく注目すべき政策のまとめの執筆を支援しています...<br /><br />• 土地分野：迅速な更新、土地関連の行政手続きの顧客支援：初回証明書登録、変更登録、相続分割、贈与...<br /><br />• 民事・刑事分野：実際の案件ファイルの読解と調査；弁護士のファイル、書類のコピー、申請書と書類の作成支援。',
+      nghiemMinhHuyenExp: '• 2019年：バクトゥリエム区人民委員会でインターン：ファイル受付と結果返却、個人事業主登録、税コード処理<br />• 2020年：アチャウ法律事務所でインターン：設立、変更、解散、印鑑登録などの企業関連書類作成；知的財産、サブライセンス、ウェブサイト登録について学習...<br />• 2020-2021年：ナムズオン法律事務所勤務：パートナー（銀行：MBバンク、VPバンク...；金融会社：Mcredit、FEcredit...）の要請により融資契約違反の顧客に連絡<br />• 2021年：行政科学・アーカイブセンター（SCARMA）勤務：MBバンクのデータ保管リスト整理、編集、倉庫管理<br />• 2022-2024年：SGSベトナム有限会社勤務：ソーシャルメディア投稿コンテンツの審査<br />• 2024年-現在：Youth & Partners法律事務所勤務。',
+      nghiemMinhHuyenEdu1: '卒業',
+      nghiemMinhHuyenEdu1Org: '司法学院',
+      nghiemMinhHuyenEdu1Desc: '• 裁判官、検察官、弁護士の3つの職位のための研修コースに参加し卒業<br />• 司法職位における専門スキルと実務経験の集中研修を受講<br />• 学院の配属と指導の下、裁判所、検察庁、法律事務所でインターンし、スキルを磨き、実際の法的状況を解決する能力を向上',
+      nghiemMinhHuyenEdu1Year: '2020年12月 - 2022年8月',
+      nghiemMinhHuyenEdu2: '法学学士',
+      nghiemMinhHuyenEdu2Org: 'ハノイ法科大学',
+      nghiemMinhHuyenEdu2Desc: '• 法学専攻卒業、GPA：7.31/10<br />• 民事、刑事、行政、経済、国際法分野の基礎法律知識と法典の集中研修を受講',
+      nghiemMinhHuyenEdu2Year: '2016年9月 - 2020年7月',
+      nghiemMinhHuyenPostsInfo: '法務スペシャリスト ギエム・ミン・フエンによる民事、刑事、行政、土地に関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・ホアン・ズン
+      nguyenHoangDungBio: '<br /><i>担当分野：</i><br /><br />• 民事：契約、民事取引のコンサルティング、相続紛争解決への代理参加、民事取引における損害賠償請求およびその他の関連法的問題。<br /><br />• 婚姻・家族：離婚書類、手続き、共有財産分割、子供の親権、婚姻・家族に関連する法的問題のコンサルティング。<br /><br />• 土地：土地関連の書類、手続き、行政手続きのコンサルティング、土地使用権紛争解決への参加。<br /><br />• 刑事：法的コンサルティング、被疑者・被告人の弁護、または刑事事件における被害者・関係者の合法的権利と利益の保護のための文書作成。<br /><br />• 行政：書類、手続きのコンサルティング、証拠収集のためのクライアント代理、苦情、告発、行政事件における合法的権利と利益の保護への参加。<br /><br />• 企業：企業の設立、運営、管理に関する法的コンサルティング、経済契約、ビジネス協力契約などの作成。<br /><br />• 労働：労働関連問題、労働契約、労働紛争、従業員と雇用者の権利のコンサルティング。<br /><br />• 投資：投資プロジェクト実施における政府機関との協働のためのコンサルティング、書類作成、代理。',
+      nguyenHoangDungExp: '• 2023年：ホンバック・アンド・アソシエイツ法律事務所勤務。<br />• 2024年：ハナム省弁護士会法律相談センター勤務。<br />• 2025年：Youth & Partners法律事務所勤務。',
+      nguyenHoangDungEdu1: '卒業',
+      nguyenHoangDungEdu1Org: '司法学院',
+      nguyenHoangDungEdu1Desc: '• 弁護士研修コースに参加し卒業<br />• 弁護士職における専門スキルと実務経験の集中研修を受講',
+      nguyenHoangDungEdu1Year: '2025年',
+      nguyenHoangDungEdu2: '法学学士',
+      nguyenHoangDungEdu2Org: 'ハノイ法科大学国際貿易法',
+      nguyenHoangDungEdu2Year: '2023年',
+      nguyenHoangDungPostsInfo: '法務スペシャリスト グエン・ホアン・ズンによる民事、婚姻・家族、土地、刑事、行政、企業、労働、投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・ファン・トゥック・チー
+      nguyenPhanThucChiBio: '<br /><i>担当分野：</i><br /><br />• 企業：企業への定期的な法的コンサルティング支援：基本契約、商品売買契約、労働契約などの企業契約の審査支援；労働、商業ビジネスなどの分野の法的報告書作成コンサルティング支援...<br /><br />• 外国投資プロジェクトに関連するライセンス関連事項の支援、企業設立、投資登録証の調整などの関連問題を含む...',
+      nguyenPhanThucChiExp: '• 2024年8月 – 2024年11月：TOTOベトナム有限会社ヴィンフック支店人事総務部インターン – 会社定款の審査と社会保障・労働問題の調査支援。<br />• 2024年12月 – 2025年5月：KITZコーポレーションベトナム有限会社人事総務部スタッフ – 契約の審査・確認と社会保障・労働・税務問題の調査；ベトナム人労働者の海外（台湾、日本）研修のための出国手続き支援。<br />• 現在Youth & Partners法律事務所法務スペシャリスト。',
+      nguyenPhanThucChiEdu1: '法学学士',
+      nguyenPhanThucChiEdu1Org: 'ハノイ法科大学経済法',
+      nguyenPhanThucChiEdu1Year: '2024年',
+      nguyenPhanThucChiPostsInfo: '法務スペシャリスト グエン・ファン・トゥック・チーによる企業、労働、ライセンスに関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・フン・マイ・アイン
+      nguyenPhungMaiAnhBio: '<br /><i>担当分野：</i><br /><br />幅広い知識と実務経験を持ち、マイ・アインは民事・行政分野専門の編集者として活動しています。マイ・アインの記事は土地使用権、契約、婚姻・家族、民事法的問題に関する法規・注目政策の分析、総合、明確化に焦点を当てています。',
+      nguyenPhungMaiAnhExp: '• 2021年：24時間法律事務所でインターン、弁護士の調査・書類作成支援、法的書類の確認<br />• 2023年：ヴィエトスアン社人民委員会でインターン、司法・戸籍担当者と連携して書類認証、土地紛争調停、行政書類のデータ入力・処理<br />• 2024年：Youth & Partners法律事務所法務スペシャリスト、土地手続きと土地使用権・計画・譲渡および関連問題の法的コンサルティングを専門としている。',
+      nguyenPhungMaiAnhEdu1: '法学学士',
+      nguyenPhungMaiAnhEdu1Org: '国家行政学院法学部',
+      nguyenPhungMaiAnhEdu1Year: '2024年',
+      nguyenPhungMaiAnhPostsInfo: '法務スペシャリスト グエン・フン・マイ・アインによる民事、行政、土地に関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・ティ・クイン・ザン
+      nguyenThiQuynhGiangBio: '<br /><i>紹介：</i><br /><br />• グエン・ティ・クイン・ザンは2025年からYPLaw事務所のインターンです。<br /><br />• ベトナム国立大学ハノイ法学部法学学士の法的知識基盤を持ち、クイン・ザンは常に実務で知識とスキルを発展・応用することに努力しています。',
+      nguyenThiQuynhGiangExp: '• 2024年6月 – 2025年1月：ナムトゥリエム区人民法院でインターン、訴訟手続きと裁判実務に接し、法的理解と専門的な仕事のスキルを向上<br />• 現在、クイン・ザンはYouth & Partners法律事務所（YPLaw Firm）のインターンとして、会社の法的コンサルティングと支援活動の学習と貢献をしています。',
+      nguyenThiQuynhGiangEdu1: '法学学士',
+      nguyenThiQuynhGiangEdu1Org: 'ベトナム国立大学ハノイ法学部法学専攻',
+      nguyenThiQuynhGiangEdu1Year: '2025年',
+      nguyenThiQuynhGiangPostsInfo: '法務スペシャリスト グエン・ティ・クイン・ザンによる労働、企業、投資、ライセンスに関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・ティ・トゥー・チャン
+      nguyenThiThuTrangBio: '<br /><i>担当分野：</i><br /><br />• 契約作成、労働、税務、不動産、外国投資に関する法的コンサルティング<br /><br />• 企業活動における法的コンプライアンスの確保<br /><br />• 企業内部フォームと規則の構築・調整。',
+      nguyenThiThuTrangExp: '• バイリンガル契約（英越）の作成・評価（基本契約、サービス契約、労働契約、NDA等を含む）<br />• 企業クライアントへの労働、税務、不動産、事業運営に関する法的コンサルティング<br />• 民主規則、労働規則、給与賞与規則等の内部フォームの構築・評価に参加<br />• 外資系企業の投資証明書の調整・再発行書類作成。',
+      nguyenThiThuTrangEdu1: '法学学士',
+      nguyenThiThuTrangEdu1Org: 'ハノイ法科大学法学専攻',
+      nguyenThiThuTrangEdu1Year: '2022年',
+      nguyenThiThuTrangPostsInfo: '法務スペシャリスト グエン・ティ・トゥー・チャンによる労働、企業、投資、ライセンスに関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・ティ・トゥイ・リン
+      nguyenThiThuyLinhBio: '<br /><i>担当分野：</i><br /><br />• 国内外企業への契約作成、労働、不動産、外国投資に関する法的コンサルティング<br /><br />• 企業内部フォームと規則の構築・調整<br /><br />• 企業設立、登記内容変更書類の作成<br /><br />• 外資系企業の投資登記証明書の調整・再発行書類作成<br /><br />• 渉外離婚案件を含む婚姻・家族案件の解決。',
+      nguyenThiThuyLinhExp: '• 渉外離婚案件を含む婚姻・家族案件の解決；<br />• 15社以上の国内外企業への企業、労働、投資、不動産ビジネス等の分野での定期コンサルティング...<br />• バイリンガル契約（英越）の作成・評価（基本契約、サービス契約、労働契約、NDA等を含む）<br />• 企業の民主規則、労働規則、給与賞与規則等の内部フォームの構築・評価<br />• 外資系企業の投資登記証明書の調整・再発行書類作成<br />• 企業設立、登記内容変更書類の作成。',
+      nguyenThiThuyLinhEdu1: '法学学士',
+      nguyenThiThuyLinhEdu1Org: 'ハノイ法科大学経済法学部',
+      nguyenThiThuyLinhEdu1Year: '2023年',
+      nguyenThiThuyLinhPostsInfo: '法務スペシャリスト グエン・ティ・トゥイ・リンによる労働、企業、投資、婚姻・家族に関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・トゥイ・ハン
+      nguyenThuyHangBio: '<br /><i>担当分野：</i><br /><br />• 基本契約、サービス契約、労働契約等を含む契約の作成・評価<br /><br />• 企業クライアントへの労働、税務、不動産、事業運営に関する法的コンサルティング<br /><br />• 民主規則、労働規則、給与賞与規則等の内部フォームの構築・評価に参加。',
+      nguyenThuyHangExp: '• ハティ投資コンサルティング会社、ヴィンイェン市人民裁判所で法務スタッフ、法務インターンとして勤務・インターン<br />• 契約レビュー、一般文書の作成、内部規則の構築、法律翻訳等の業務を遂行。',
+      nguyenThuyHangEdu1: '法学学士',
+      nguyenThuyHangEdu1Org: 'ハノイ法科大学経済法',
+      nguyenThuyHangEdu1Year: '2024年',
+      nguyenThuyHangPostsInfo: '法務スペシャリスト グエン・トゥイ・ハンによる企業、労働、ライセンスに関するあらゆる法的側面についての詳細な記事。',
+
+      // チャン・ティ・ビック・リエン
+      tranThiBichLienBio: '<br /><i>担当分野：</i><br /><br />• 民事：契約、民事取引、相続、婚姻・家族、損害賠償およびその他の関連法的問題のコンサルティング<br /><br />• 土地：土地手続きの包括的コンサルティング、売買、贈与、不動産の名義変更、土地使用権証明書の再発行・新規発行、土地使用権の訂正、土地利用目的の変更、土地紛争の解決を含むがこれに限定されない<br /><br />• 行政：行政手続き、苦情、告発および行政関連法的問題のコンサルティング。',
+      tranThiBichLienExp: '• 2020-2024年：Youth & Partners法律事務所法務スペシャリスト。会社での勤務期間中、チャン・ティ・ビック・リエン氏は民事、行政、土地分野で豊富な経験を蓄積<br />• 多くの土地、婚姻・家族紛争の解決に直接参加し成功、クライアントの正当な権利を保護<br />• 同時に、多くの複雑な行政・土地手続きを行い、個人と組織の両方のニーズに対応し、効率向上とクライアントの権利保護に貢献。',
+      tranThiBichLienEdu1: '弁護士研修コースに参加',
+      tranThiBichLienEdu1Org: '司法学院',
+      tranThiBichLienEdu1Year: '2024年',
+      tranThiBichLienEdu2: '法学学士',
+      tranThiBichLienEdu2Org: 'ハノイ法科大学法学部',
+      tranThiBichLienEdu2Year: '2016年',
+      tranThiBichLienPostsInfo: '法務スペシャリスト チャン・ティ・ビック・リエンによる民事、刑事、行政、土地に関するあらゆる法的側面についての詳細な記事。',
+
       // Common fields for area of responsibility
       areaOfResponsibility: '担当分野：',
       civilLaw: '民事：契約、取引、相続、家族、損害賠償の相談...',
@@ -4275,6 +5042,212 @@ export const translations = {
       mangDieuHienEdu3Org: '호치민시 법대',
       mangDieuHienEdu3Year: '2010년',
       mangDieuHienPostsInfo: '망 지에우 히엔 변호사의 허가, 기업 및 외국인 투자 관련 심층 기사.',
+
+      // Nguyen Hoang Ngoc Lan
+      nguyenHoangNgocLanBio: '란 변호사는 의료 분야에 깊은 전문 지식을 가진 법률 전문가로, 의료 산업의 영업 허가와 관련된 법적 문제에 대한 자문 및 해결 경험으로 유명합니다. 법규 및 행정 절차에 대한 깊은 이해를 바탕으로, 란 변호사는 많은 병원, 클리닉, 의료 센터 및 기타 의료 시설이 각종 허가를 신청하고 조정하여 베트남 법률 준수를 보장하도록 지원해 왔습니다.',
+      nguyenHoangNgocLanExp: `란 변호사는 의료법 분야에서 수년간의 심층 경험을 보유하고 있으며, 특히 의료 산업의 부속 허가 관련 서류의 자문 및 처리를 전문으로 합니다:<br />
+        • 진료 및 치료 영업 허가.<br />
+        • 진료 및 치료 영업 허가 조정.<br />
+        • 의료 실무 허가증 및 의료 분야의 기타 전문 허가.<br />
+        란 변호사의 주요 성과:<br />
+        • 많은 병원, 클리닉, 의료 센터 및 의료 시설이 관할 국가 기관에 허가 신청 서류를 준비하고 완성하는 데 성공적으로 자문.<br />
+        • 고객이 법적 요구 사항을 이해하고 문서와 서류가 모든 규제 기준을 충족하도록 하여 시간과 비용 절약.<br />
+        • 규제 기관과의 고객 대리, 허가 과정이 신속하고 투명하며 효율적으로 이루어지도록 보장.<br />
+        • 신규 설립 의료 시설부터 대규모 의료 기관까지 각 구체적인 사례에 맞는 포괄적인 법률 솔루션 제공.`,
+      nguyenHoangNgocLanEdu1: '변호사 실무 자격증',
+      nguyenHoangNgocLanEdu1Org: '법무부',
+      nguyenHoangNgocLanEdu1Year: '2024년',
+      nguyenHoangNgocLanEdu2: '법학 석사',
+      nguyenHoangNgocLanEdu2Org: '하노이 법대',
+      nguyenHoangNgocLanEdu2Year: '2022년',
+      nguyenHoangNgocLanEdu3: '졸업',
+      nguyenHoangNgocLanEdu3Org: '사법학원',
+      nguyenHoangNgocLanEdu3Year: '2021년',
+      nguyenHoangNgocLanEdu4: '법학 학사',
+      nguyenHoangNgocLanEdu4Org: '하노이 법대',
+      nguyenHoangNgocLanEdu4Year: '2020년',
+      nguyenHoangNgocLanPostsInfo: '응우옌 호앙 응옥 란 변호사의 허가, 기업 및 외국인 투자 관련 심층 기사.',
+
+      // Nguyen Minh Anh
+      nguyenMinhAnhBio: '응우옌 민 아인 변호사는 경제법, 토지법 및 민사법 분야에서 7년 이상의 경험을 가진 법률 전문가입니다. 우수한 교육 배경과 평판 높은 기관에서의 실무 경험을 바탕으로, 민 아인 변호사는 법률 자문, 분쟁 해결 및 복잡한 사건에서 기업과 개인 지원에 대한 능력을 입증했습니다. 광범위한 법률 지식과 예리한 사고력으로, 민 아인 변호사는 항상 상업 비즈니스, 토지 및 민사 분야에서 고객의 이익을 최적화하는 효과적인 법률 솔루션을 제공합니다.',
+      nguyenMinhAnhExp: `• 2022년 11월 - 2024년 9월: 호아빈 국제 무역 투자 관광 회사 법무 감사부 부장 <br />
+        법률 자문, 계약 협상, 정부 기관과의 협력, 계약 검토, 상업 및 민사 분쟁 해결, 내부 준수 통제.<br />
+        • 2019년 6월 - 2022년 11월: 비엣킴 법률 회사 자문부 매니저<br />
+        자문부 관리, 사건 조사, 법원 소송(민사, 상업 비즈니스), 기업 구조조정 자문, M&A, 분쟁 해결.<br />
+        • 2017년 6월 - 2019년 6월: 쫑하이 법률 사무소 인턴<br />
+        문서 작성, 계약 검토, 민사 및 상업 비즈니스 사건에서 변호사 지원.`,
+      nguyenMinhAnhEdu1: '변호사 실무 자격증',
+      nguyenMinhAnhEdu1Org: '법무부',
+      nguyenMinhAnhEdu1Year: '2024년',
+      nguyenMinhAnhEdu2: '경제법 석사',
+      nguyenMinhAnhEdu2Org: '하노이 법대',
+      nguyenMinhAnhEdu2Year: '2023년',
+      nguyenMinhAnhEdu3: '졸업',
+      nguyenMinhAnhEdu3Org: '사법학원',
+      nguyenMinhAnhEdu3Year: '2021년',
+      nguyenMinhAnhEdu4: '법학 학사 (우수)',
+      nguyenMinhAnhEdu4Org: '빈 대학교',
+      nguyenMinhAnhEdu4Year: '2019년',
+      nguyenMinhAnhPostsInfo: '응우옌 민 아인 변호사의 허가, 토지, 기업 및 외국인 투자 관련 심층 기사.',
+
+      // Nguyen Thi Huong
+      nguyenThiHuongBio: `<i>담당 분야:</i><br /><br />
+      • 민사: 계약, 민사 거래, 상속, 손해배상 및 기타 관련 법적 문제 자문.
+      <br /><br />
+      • 혼인가정: 이혼, 재산 분할, 자녀 양육권 및 혼인가정 관련 법적 문제 자문.
+      <br /><br />
+      • 토지: 토지 분쟁 해결, 양도, 토지 사용권 증서 교환 등 토지 관련 문제 자문.
+      <br /><br />
+      • 형사: 피해자 자문 및 정당한 이익 보호, 형사 소송의 각 단계에서 혐의자와 피고인 변호. 범죄 행위 관련 사항 처리 및 형사 사건에서 각 주체의 법적 책임 정도 판단.
+      <br /><br />
+      • 기업: 기업 설립, 운영 및 관리에 관한 법률 자문, 계약 관련 문제 및 비즈니스 법률.
+      <br /><br />
+      • 노동: 노동 관련 문제, 노동 계약, 노동 분쟁 및 노동자 권리 자문.
+      <br /><br />
+      • 투자: 국내외 투자, 기업 발전 전략 및 부동산 투자 관련 법적 문제를 포함한 투자 문제 자문.`,
+      nguyenThiHuongExp: '흐엉 변호사는 법률 분야에서 7년 이상의 경험을 보유하고 있으며, 고객을 위한 민사, 형사, 행정, 상업 비즈니스 및 소송을 전문으로 합니다.',
+      nguyenThiHuongExp2: '소송, 변호, 보호, 대리, 자문, 기안, 양식 제공, 계약, 국내외 조직 및 개인을 위한 법적 문서 제공의 수년간 경험을 바탕으로... 흐엉 변호사는 복잡한 사건에서 고객의 권리와 이익을 성공적으로 보호하고 법적 문제를 효과적으로 해결하도록 도왔습니다.',
+      nguyenThiHuongEdu1: '변호사 실무 자격증',
+      nguyenThiHuongEdu1Org: '법무부',
+      nguyenThiHuongEdu1Year: '2020년',
+      nguyenThiHuongEdu2: '국제법 학사',
+      nguyenThiHuongEdu2Org: '외교학원',
+      nguyenThiHuongEdu2Year: '2017년',
+      nguyenThiHuongPostsInfo: '응우옌 티 흐엉 변호사의 민사, 형사, 행정, 상업 비즈니스 관련 심층 기사.',
+
+      // 응우옌 티 텀
+      nguyenThiThomBio: '<br /><i>담당 분야:</i><br /><br />• 기업: 기업 설립, 운영 및 관리에 관한 법률 자문, 계약 관련 문제, 비즈니스 법률<br /><br />• 노동: 노동 관련 문제, 노동 계약, 노동 분쟁 및 노동자 권리에 관한 자문<br /><br />• 투자: 국내외 투자, 기업 발전 전략 및 부동산 투자 관련 법적 문제를 포함한 투자 문제 자문.',
+      nguyenThiThomExp: '기업 법무 분야에서 09년의 경험을 보유하고 있으며, 그 중 05년은 외국인 투자 기업에서, 04년은 부동산 투자 개발 회사에서 근무. 응우옌 티 텀 변호사는 광범위한 지식과 전문적인 업무 처리 능력을 축적해 왔습니다.',
+      nguyenThiThomExp2: '텀 변호사는 기업을 위한 법률 자문 및 지원을 전문으로 하며, 법적 분쟁을 피하고 사업 운영에서 리스크를 최소화하는 적절한 전략 수립을 돕습니다.',
+      nguyenThiThomEdu1: '변호사 실무 자격증',
+      nguyenThiThomEdu1Org: '법무부',
+      nguyenThiThomEdu1Year: '2016년',
+      nguyenThiThomEdu2: '법학 학사',
+      nguyenThiThomEdu2Org: '하노이 법대',
+      nguyenThiThomEdu2Year: '2012년',
+      nguyenThiThomPostsInfo: '응우옌 티 텀 변호사의 기업, 노동, 투자 관련 심층 기사.',
+
+      // 응우옌 투 응아
+      nguyenThuNgaBio: '<br /><i>담당 분야:</i><br /><br />• 기업: 기업 설립, 운영 및 거버넌스 관련 법률 문제에 대한 포괄적 자문, 주주 권익 보호, 기업 내 당사자 간 분쟁 해결. 응아 변호사는 파트너와의 협력부터 경제 및 상업 계약 작성까지 비즈니스 활동을 보호하고 발전시키는 적절한 법적 전략 수립을 지원<br /><br />• 노동: 노동 계약, 직원 권리, 노동 분쟁, 사회보험, 복리후생 및 기업 직원의 기타 권리에 관한 자문. 응아 변호사는 HR 정책 수립, 노사관계 관리, 고용주와 직원 간 분쟁 해결을 지원<br /><br />• 투자: 이익 극대화와 리스크 최소화를 위한 투자 절차, 적절한 투자 방식 및 거래 구조 선택을 포함한 국내외 투자 문제에 대한 법률 자문. 응아 변호사는 투자 및 자본 이전 관련 법규 준수를 지원하고 효과적인 투자 전략 수립을 돕습니다.',
+      nguyenThuNgaExp: '응아 변호사는 법률 분야에서 10년 이상의 경험을 보유하고 있으며, 베트남에서 운영하는 FDI 기업을 중심으로 기업 자문을 전문으로 합니다.',
+      nguyenThuNgaExp2: '노동, 투자 관련 정부 기관 및 일본 기업의 법무 책임자로서의 경험을 바탕으로 노동법 및 기업법 컴플라이언스, 행정 절차, 계약 검토, 법적 리스크 평가, 베트남에서의 투자 및 개발 절차 관련 법률 자문 등 기업 법률 문제에 풍부한 경험을 보유하고 있습니다.',
+      nguyenThuNgaExp3: '또한, 뛰어난 일본어 의사소통 능력으로 일본 기업과 베트남 정부 및 기업 간의 중요한 가교 역할을 합니다.',
+      nguyenThuNgaEdu1: '일본 법률 연수 과정 수료',
+      nguyenThuNgaEdu1Org: '일본 법률 연구 및 연수 센터 - 나고야 대학교 하노이 분교',
+      nguyenThuNgaEdu1Year: '2016년',
+      nguyenThuNgaEdu2: '법학 학사',
+      nguyenThuNgaEdu2Org: '하노이 법대',
+      nguyenThuNgaEdu2Year: '2012년',
+      nguyenThuNgaPostsInfo: '응우옌 투 응아 변호사의 기업, 노동, 투자 관련 심층 기사.',
+
+      // 팜 티 후옌 꿴
+      phamThiHuyenQuyenBio: '<br /><i>담당 분야:</i><br /><br />• 기업: 재무 관리, 주주 권익 보호, 계약 작성 및 내부 분쟁 해결을 포함한 기업 설립, 운영 및 거버넌스 관련 법률 문제에 대한 포괄적 자문. 지속 가능한 발전 전략의 수립 및 실행을 지원하고 운영 전반에 걸쳐 법규 준수 확보<br /><br />• 노동: 노동 계약, 직원 권리, 사회보험, 복리후생 정책 및 노동 분쟁 해결을 포함한 기업 노동 문제 자문. HR 정책 수립과 법적으로 준수하는 근무 환경 유지 지원<br /><br />• 투자: 투자 계획, 자금 조달 절차, 주식 양도 및 투자 리스크 관리를 포함한 투자 관련 문제 자문. 꿴 변호사는 국내외 법적 요구 사항 준수를 보장하면서 투자 전략 최적화를 돕습니다.',
+      phamThiHuyenQuyenExp: '기업 자문 및 사내 법무에서 8년의 경험을 바탕으로 팜 티 후옌 꿴 변호사는 많은 기업의 신뢰할 수 있는 파트너가 되었습니다.',
+      phamThiHuyenQuyenExp2: '기업법, 노동법 및 관련 법규에 대한 깊은 지식을 보유하고 있어 기업이 운영 중 발생하는 법적 문제를 효과적으로 해결하도록 돕습니다.',
+      phamThiHuyenQuyenExp3: '특히, 조직 구조 확립, 재무 관리부터 분쟁 및 내부 갈등 처리까지 기업 활동의 법적 컴플라이언스 확보에 중점을 둡니다.',
+      phamThiHuyenQuyenEdu1: '변호사 실무 자격증',
+      phamThiHuyenQuyenEdu1Org: '법무부',
+      phamThiHuyenQuyenEdu1Year: '2016년',
+      phamThiHuyenQuyenEdu2: '법학 학사',
+      phamThiHuyenQuyenEdu2Org: '하노이 법대',
+      phamThiHuyenQuyenEdu2Year: '2012년',
+      phamThiHuyenQuyenPostsInfo: '팜 티 후옌 꿴 변호사의 기업, 노동, 투자 관련 심층 기사.',
+
+      // 반 티 타인 호아
+      vanThiThanhHoaBio: '<br /><i>담당 분야:</i><br /><br />• 민사: 계약, 민사 거래, 상속, 손해배상 및 기타 관련 법적 문제 자문<br /><br />• 형사: 피해자의 합법적 권리 보호 및 자문, 형사 소송 각 단계에서 혐의자와 피고인 변호. 범죄 행위 관련 업무 처리 및 형사 사건에서 각 주체의 법적 책임 정도 결정<br /><br />• 토지: 양도, 토지 사용권 증서 재발급, 토지 분쟁 해결을 포함하되 이에 국한되지 않는 토지 관련 문제 자문<br /><br />• 혼인가정: 이혼, 재산 분할, 자녀 양육권 및 혼인가정 관련 법적 문제 자문.',
+      vanThiThanhHoaExp: '12년 이상의 경험을 바탕으로 반 티 타인 호아 변호사는 민사, 형사, 토지, 혼인가정 분야의 많은 복잡한 법적 사건을 성공적으로 해결해 왔습니다.',
+      vanThiThanhHoaExp2: '그녀는 뛰어난 법률 자문 능력과 최적의 사건 해결 전략으로 알려져 있으며, 고객이 원하는 결과를 달성하도록 돕습니다.',
+      vanThiThanhHoaEdu1: '변호사 실무 자격증',
+      vanThiThanhHoaEdu1Org: '법무부',
+      vanThiThanhHoaEdu1Year: '2016년',
+      vanThiThanhHoaEdu2: '법학 학사',
+      vanThiThanhHoaEdu2Org: '하노이 법대',
+      vanThiThanhHoaEdu2Year: '2012년',
+      vanThiThanhHoaPostsInfo: '반 티 타인 호아 변호사의 소송 내외 대리, 민사, 형사, 행정, 토지 관련 심층 기사.',
+
+      // 응히엠 민 후옌
+      nghiemMinhHuyenBio: '<br /><i>담당 분야:</i><br /><br />후옌 응히엠은 법률 전문가, 변호사 보조, Y&P 로펌 웹사이트 기사 관리를 지원하는 편집자로, 기업, 혼인가정, 토지, 형사 등 분야 관련 분석 기사, 서비스, 규정, 새롭고 주목할만한 정책 요약 작성을 지원합니다...<br /><br />• 토지 분야: 빠른 업데이트, 토지 관련 행정 절차 고객 지원: 최초 증서 등록, 변경 등록, 상속 분할, 증여...<br /><br />• 민사, 형사 분야: 실제 사건 파일 읽기 및 연구; 변호사의 파일, 서류 복사, 신청서 및 서류 작성 지원.',
+      nghiemMinhHuyenExp: '• 2019년: 박뜨리엠구 인민위원회 인턴: 파일 접수 및 결과 반환, 개인 사업자 등록, 세금 코드 처리<br />• 2020년: 아차우 법률사무소 인턴: 설립, 변경, 해산, 인장 등록 등 기업 관련 서류 작성; 지적재산권, 하위 라이선스, 웹사이트 등록 학습...<br />• 2020-2021년: 남즈엉 법률사무소 근무: 파트너(은행: MB은행, VP은행...; 금융회사: Mcredit, FEcredit...) 요청에 따라 대출 계약 위반 고객 연락<br />• 2021년: 행정과학기록센터(SCARMA) 근무: MB은행 데이터 저장 목록 정리, 편집, 창고 관리<br />• 2022-2024년: SGS 베트남 유한회사 근무: 소셜 미디어 게시 콘텐츠 검토<br />• 2024년-현재: Youth & Partners 로펌 근무.',
+      nghiemMinhHuyenEdu1: '졸업',
+      nghiemMinhHuyenEdu1Org: '사법학원',
+      nghiemMinhHuyenEdu1Desc: '• 판사, 검사, 변호사 3개 직위 연수 과정 참여 및 졸업<br />• 사법 직위의 전문 기술 및 실무 경험 심화 교육 수료<br />• 학원의 배정 및 지도 하에 법원, 검찰청, 법률사무소에서 인턴하여 기술을 연마하고 실제 법적 상황을 해결하는 능력 향상',
+      nghiemMinhHuyenEdu1Year: '2020년 12월 - 2022년 8월',
+      nghiemMinhHuyenEdu2: '법학 학사',
+      nghiemMinhHuyenEdu2Org: '하노이 법대',
+      nghiemMinhHuyenEdu2Desc: '• 법학 전공 졸업, GPA: 7.31/10<br />• 민사, 형사, 행정, 경제, 국제법 분야 기초 법률 지식 및 법전 심화 교육 수료',
+      nghiemMinhHuyenEdu2Year: '2016년 9월 - 2020년 7월',
+      nghiemMinhHuyenPostsInfo: '법률 전문가 응히엠 민 후옌의 민사, 형사, 행정, 토지 관련 심층 기사.',
+
+      // 응우옌 호앙 중
+      nguyenHoangDungBio: '<br /><i>담당 분야:</i><br /><br />• 민사: 계약, 민사 거래 자문, 상속 분쟁 해결 대리 참여, 민사 거래에서의 손해배상 청구 및 기타 관련 법적 문제.<br /><br />• 혼인가정: 이혼 서류, 절차, 공동 재산 분할, 자녀 양육권 및 혼인가정 관련 법적 문제 자문.<br /><br />• 토지: 토지 관련 서류, 절차, 행정 절차 자문, 토지 사용권 분쟁 해결 참여.<br /><br />• 형사: 법률 자문, 혐의자와 피고인 변호 또는 형사 사건에서 피해자와 관련자의 합법적 권리와 이익 보호를 위한 문서 작성.<br /><br />• 행정: 서류, 절차 자문, 증거 수집을 위한 고객 대리, 민원, 고발 및 행정 사건에서 합법적 권리와 이익 보호 참여.<br /><br />• 기업: 기업 설립, 운영 및 관리에 관한 법률 자문, 경제 계약, 비즈니스 협력 계약 등 작성.<br /><br />• 노동: 노동 관련 문제, 노동 계약, 노동 분쟁 및 직원과 고용주 권리 자문.<br /><br />• 투자: 투자 프로젝트 실행 시 정부 기관과의 협력을 위한 자문, 서류 작성, 대리.',
+      nguyenHoangDungExp: '• 2023년: 홍박 앤 어소시에이츠 법률사무소 근무.<br />• 2024년: 하남성 변호사협회 법률상담센터 근무.<br />• 2025년: Youth & Partners 로펌 근무.',
+      nguyenHoangDungEdu1: '졸업',
+      nguyenHoangDungEdu1Org: '사법학원',
+      nguyenHoangDungEdu1Desc: '• 변호사 연수 과정 참여 및 졸업<br />• 변호사 직업의 전문 기술 및 실무 경험 심화 교육 수료',
+      nguyenHoangDungEdu1Year: '2025년',
+      nguyenHoangDungEdu2: '법학 학사',
+      nguyenHoangDungEdu2Org: '하노이 법대 국제무역법',
+      nguyenHoangDungEdu2Year: '2023년',
+      nguyenHoangDungPostsInfo: '법률 전문가 응우옌 호앙 중의 민사, 혼인가정, 토지, 형사, 행정, 기업, 노동, 투자 관련 심층 기사.',
+
+      // 응우옌 판 툭 찌
+      nguyenPhanThucChiBio: '<br /><i>담당 분야:</i><br /><br />• 기업: 기업을 위한 정기 법률 자문 지원: 기본 계약, 상품 매매 계약, 노동 계약 등 기업 계약 검토 지원; 노동, 상업 비즈니스 등 분야의 법률 보고서 작성 자문 지원...<br /><br />• 외국인 투자 프로젝트 관련 허가 사항 지원, 기업 설립, 투자 등록증 조정 등 관련 문제 포함...',
+      nguyenPhanThucChiExp: '• 2024년 8월 – 2024년 11월: 빈푹 소재 TOTO 베트남 유한회사 지점 인사총무부 인턴 – 회사 정관 검토 및 사회보장, 노동 문제 조사 지원.<br />• 2024년 12월 – 2025년 5월: KITZ Corporation 베트남 유한회사 인사총무부 직원 – 계약 검토, 확인 및 사회보장, 노동, 세금 문제 조사; 베트남 노동자의 해외(대만, 일본) 연수를 위한 출국 절차 지원.<br />• 현재 Youth & Partners 로펌 법률 전문가.',
+      nguyenPhanThucChiEdu1: '법학 학사',
+      nguyenPhanThucChiEdu1Org: '하노이 법대 경제법',
+      nguyenPhanThucChiEdu1Year: '2024년',
+      nguyenPhanThucChiPostsInfo: '법률 전문가 응우옌 판 툭 찌의 기업, 노동, 허가 관련 심층 기사.',
+
+      // 응우옌 풍 마이 아인
+      nguyenPhungMaiAnhBio: '<br /><i>담당 분야:</i><br /><br />폭넓은 지식과 실무 경험을 바탕으로 마이 아인은 민사 및 행정 분야 전문 편집자로 활동하고 있습니다. 마이 아인의 기사는 토지 사용권, 계약, 혼인가정 및 민사 법적 문제와 관련된 법규, 주목할 만한 정책의 분석, 종합, 명확화에 초점을 맞추고 있습니다.',
+      nguyenPhungMaiAnhExp: '• 2021년: 24시간 법률사무소 인턴, 변호사의 연구 및 서류 작성 지원, 법적 서류 확인<br />• 2023년: 비엣쑤안 사 인민위원회 인턴, 사법-호적 공무원과 협력하여 서류 공증, 토지 분쟁 조정, 행정 서류 데이터 입력 및 처리<br />• 2024년: Youth & Partners 로펌 법률 전문가, 토지 절차 및 토지 사용권, 계획, 양도 및 관련 문제에 대한 법률 자문 전문.',
+      nguyenPhungMaiAnhEdu1: '법학 학사',
+      nguyenPhungMaiAnhEdu1Org: '국가행정학원 법학과',
+      nguyenPhungMaiAnhEdu1Year: '2024년',
+      nguyenPhungMaiAnhPostsInfo: '법률 전문가 응우옌 풍 마이 아인의 민사, 행정, 토지 관련 심층 기사.',
+
+      // 응우옌 티 꿴 장
+      nguyenThiQuynhGiangBio: '<br /><i>소개:</i><br /><br />• 응우옌 티 꿴 장은 2025년부터 YPLaw 사무소의 인턴입니다.<br /><br />• 베트남 국립대학교 하노이 법대 법학 학사의 법적 지식 기반을 바탕으로 꿴 장은 항상 실무에서 지식과 기술을 발전시키고 적용하기 위해 노력하고 있습니다.',
+      nguyenThiQuynhGiangExp: '• 2024년 6월 – 2025년 1월: 남뜨리엠구 인민법원 인턴, 소송 절차와 재판 실무에 접하며 법적 이해와 전문 업무 기술 향상<br />• 현재 꿴 장은 Youth & Partners 로펌(YPLaw Firm)의 인턴으로 회사의 법률 자문 및 지원 활동을 학습하고 기여하고 있습니다.',
+      nguyenThiQuynhGiangEdu1: '법학 학사',
+      nguyenThiQuynhGiangEdu1Org: '베트남 국립대학교 하노이 법대 법학 전공',
+      nguyenThiQuynhGiangEdu1Year: '2025년',
+      nguyenThiQuynhGiangPostsInfo: '법률 전문가 응우옌 티 꿴 장의 노동, 기업, 투자, 허가 관련 심층 기사.',
+
+      // 응우옌 티 투 짱
+      nguyenThiThuTrangBio: '<br /><i>담당 분야:</i><br /><br />• 계약 작성, 노동, 세금, 부동산 및 외국인 투자에 관한 법률 자문<br /><br />• 기업 활동에서의 법적 컴플라이언스 보장<br /><br />• 기업 내부 양식 및 규정 구축 및 조정.',
+      nguyenThiThuTrangExp: '• 이중 언어 계약(영-베트남어) 작성 및 평가(기본 계약, 서비스 계약, 노동 계약, NDA 등 포함)<br />• 기업 고객을 위한 노동, 세금, 부동산, 비즈니스 운영에 관한 법률 자문<br />• 민주 규정, 노동 규칙, 급여 보너스 규정 등 내부 양식 구축 및 평가 참여<br />• 외국인 투자 기업을 위한 투자 증서 조정 및 재발급 서류 작성.',
+      nguyenThiThuTrangEdu1: '법학 학사',
+      nguyenThiThuTrangEdu1Org: '하노이 법대 법학 전공',
+      nguyenThiThuTrangEdu1Year: '2022년',
+      nguyenThiThuTrangPostsInfo: '법률 전문가 응우옌 티 투 짱의 노동, 기업, 투자, 허가 관련 심층 기사.',
+
+      // 응우옌 티 투이 린
+      nguyenThiThuyLinhBio: '<br /><i>담당 분야:</i><br /><br />• 국내외 기업을 위한 계약 작성, 노동, 부동산 및 외국인 투자에 관한 법률 자문<br /><br />• 기업 내부 양식 및 규정 구축 및 조정<br /><br />• 기업 설립, 등록 내용 변경 서류 작성<br /><br />• 외국인 투자 기업을 위한 투자 등록증 조정 및 재발급 서류 작성<br /><br />• 외국적 요소가 있는 이혼 사건을 포함한 혼인가정 사건 해결.',
+      nguyenThiThuyLinhExp: '• 외국적 요소가 있는 이혼 사건을 포함한 혼인가정 사건 해결;<br />• 15개 이상 국내외 기업을 위한 기업, 노동, 투자, 부동산 비즈니스 등 분야의 정기 자문...<br />• 이중 언어 계약(영-베트남어) 작성 및 평가(기본 계약, 서비스 계약, 노동 계약, NDA 등 포함)<br />• 기업의 민주 규정, 노동 규칙, 급여 보너스 규정 등 내부 양식 구축 및 평가<br />• 외국인 투자 기업을 위한 투자 등록증 조정 및 재발급 서류 작성<br />• 기업 설립, 등록 내용 변경 서류 작성.',
+      nguyenThiThuyLinhEdu1: '법학 학사',
+      nguyenThiThuyLinhEdu1Org: '하노이 법대 경제법학과',
+      nguyenThiThuyLinhEdu1Year: '2023년',
+      nguyenThiThuyLinhPostsInfo: '법률 전문가 응우옌 티 투이 린의 노동, 기업, 투자, 혼인가정 관련 심층 기사.',
+
+      // 응우옌 투이 항
+      nguyenThuyHangBio: '<br /><i>담당 분야:</i><br /><br />• 기본 계약, 서비스 계약, 노동 계약 등을 포함한 계약 작성 및 평가<br /><br />• 기업 고객을 위한 노동, 세금, 부동산, 비즈니스 운영에 관한 법률 자문<br /><br />• 민주 규정, 노동 규칙, 급여 보너스 규정 등 내부 양식 구축 및 평가 참여.',
+      nguyenThuyHangExp: '• 하티 투자 컨설팅 회사, 빈옌시 인민법원에서 법무 직원, 법률 인턴으로 근무 및 인턴<br />• 계약 검토, 일반 문서 작성, 내부 규정 구축 및 법률 번역 등의 업무 수행.',
+      nguyenThuyHangEdu1: '법학 학사',
+      nguyenThuyHangEdu1Org: '하노이 법대 경제법',
+      nguyenThuyHangEdu1Year: '2024년',
+      nguyenThuyHangPostsInfo: '법률 전문가 응우옌 투이 항의 기업, 노동, 허가 관련 심층 기사.',
+
+      // 짠 티 빅 리엔
+      tranThiBichLienBio: '<br /><i>담당 분야:</i><br /><br />• 민사: 계약, 민사 거래, 상속, 혼인가정, 손해배상 및 기타 관련 법적 문제 자문<br /><br />• 토지: 토지 절차에 대한 포괄적 자문, 매매, 증여, 부동산 명의 변경, 토지 사용권 증서 재발급, 신규 발급, 토지 사용권 정정, 토지 용도 변경, 토지 분쟁 해결 포함하되 이에 국한되지 않음<br /><br />• 행정: 행정 절차, 민원, 고발 및 행정 관련 법적 문제 자문.',
+      tranThiBichLienExp: '• 2020-2024년: Youth & Partners 로펌 법률 전문가. 회사 근무 기간 동안 짠 티 빅 리엔 씨는 민사, 행정, 토지 분야에서 풍부한 경험 축적<br />• 많은 토지, 혼인가정 분쟁 해결에 직접 참여하여 성공, 고객의 정당한 권리 보호<br />• 동시에 많은 복잡한 행정 및 토지 절차를 처리하여 개인과 조직 모두의 요구에 부응, 효율성 향상 및 고객 권리 보호에 기여.',
+      tranThiBichLienEdu1: '변호사 연수 과정 참여',
+      tranThiBichLienEdu1Org: '사법학원',
+      tranThiBichLienEdu1Year: '2024년',
+      tranThiBichLienEdu2: '법학 학사',
+      tranThiBichLienEdu2Org: '하노이 법대 법학과',
+      tranThiBichLienEdu2Year: '2016년',
+      tranThiBichLienPostsInfo: '법률 전문가 짠 티 빅 리엔의 민사, 형사, 행정, 토지 관련 심층 기사.',
 
       // Common fields for area of responsibility
       areaOfResponsibility: '담당 분야:',

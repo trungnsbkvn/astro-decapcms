@@ -21,7 +21,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
 <Layout metadata={metadata}>
   <Hero
     id="hero"
-    title="TS Đoàn Xuân Trường"
+    title={`<span data-i18n="lawyerProfile.doctor">TS</span> <span class="notranslate" translate="no">Đoàn Xuân Trường</span>`}
     tagline="Thông tin tác giả"
     i18nTagline="lawyerProfile.authorInfo"
     actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}

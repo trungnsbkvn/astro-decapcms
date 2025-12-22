@@ -20,13 +20,13 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
 <Layout metadata={metadata}>
   <Hero
     id="hero"
-    title="Luật sư Nguyễn Minh Anh"
+    title={`<span data-i18n="lawyerProfile.lawyer">Luật sư</span> <span class="notranslate" translate="no">Nguyễn Minh Anh</span>`}
     tagline="Thông tin tác giả"
     i18nTagline="lawyerProfile.authorInfo"
     actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
-      <span class="notranslate" translate="no">Luật sư Nguyễn Minh Anh là một chuyên gia pháp lý với hơn 7 năm kinh nghiệm trong lĩnh vực luật kinh tế, luật đất đai và dân sự. Sở hữu nền tảng học vấn xuất sắc cùng kinh nghiệm thực tiễn tại các tổ chức uy tín, Luật sư Minh Anh đã khẳng định năng lực trong việc tư vấn pháp lý, giải quyết tranh chấp và hỗ trợ doanh nghiệp, cá nhân trong các vụ việc/vụ án phức tạp. Với sự am hiểu sâu rộng về pháp luật và tư duy nhạy bén, Luật sư Minh Anh luôn mang đến các giải pháp pháp lý hiệu quả, tối ưu lợi ích cho khách hàng trong các lĩnh vực kinh doanh thương mại, đất đai và dân sự.</span>
+      <span class="notranslate" translate="no" data-i18n="lawyers.nguyenMinhAnhBio">Luật sư Nguyễn Minh Anh là một chuyên gia pháp lý với hơn 7 năm kinh nghiệm trong lĩnh vực luật kinh tế, luật đất đai và dân sự. Sở hữu nền tảng học vấn xuất sắc cùng kinh nghiệm thực tiễn tại các tổ chức uy tín, Luật sư Minh Anh đã khẳng định năng lực trong việc tư vấn pháp lý, giải quyết tranh chấp và hỗ trợ doanh nghiệp, cá nhân trong các vụ việc/vụ án phức tạp. Với sự am hiểu sâu rộng về pháp luật và tư duy nhạy bén, Luật sư Minh Anh luôn mang đến các giải pháp pháp lý hiệu quả, tối ưu lợi ích cho khách hàng trong các lĩnh vực kinh doanh thương mại, đất đai và dân sự.</span>
     </Fragment>
   </Hero>
 
@@ -69,7 +69,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   >
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
-      <p class="notranslate" translate="no">
+      <p class="notranslate" translate="no" data-i18n="lawyers.nguyenMinhAnhExp">
         •	11/2022 - 09/2024: Phó phòng Thanh tra Pháp chế, Công ty TNHH Đầu tư Thương mại và Du lịch Quốc tế Hòa Bình <br />
         Tư vấn pháp lý, đàm phán hợp đồng, làm việc với cơ quan nhà nước, rà soát hợp đồng, giải quyết tranh chấp kinh doanh, dân sự và kiểm soát tuân thủ nội bộ.<br />
         •	06/2019 - 11/2022: Quản lý Trưởng phòng Tư vấn, Công ty Luật TNHH Việt Kim<br />
@@ -93,19 +93,19 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     i18nTitle="lawyerProfile.education"
     items={[
       {
-        title: `Cấp chứng chỉ hành nghề Luật sư<br /> <span class="font-normal">Bộ Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2024</span>`,
+        title: `<span class="notranslate" translate="no" data-i18n="lawyers.nguyenMinhAnhEdu1">Cấp chứng chỉ hành nghề Luật sư</span><br /> <span class="font-normal notranslate" translate="no" data-i18n="lawyers.nguyenMinhAnhEdu1Org">Bộ Tư Pháp</span> <br /> <span class="text-sm font-normal notranslate" translate="no" data-i18n="lawyers.nguyenMinhAnhEdu1Year">Năm 2024</span>`,
         icon: 'tabler:school',
       },
       {
-        title: `Thạc sỹ Luật Kinh tế<br /> <span class="font-normal">Trường ĐH Luật Hà Nội</span> <br /> <span class="text-sm font-normal">Năm 2023</span>`,
+        title: `<span class="notranslate" translate="no" data-i18n="lawyers.nguyenMinhAnhEdu2">Thạc sỹ Luật Kinh tế</span><br /> <span class="font-normal notranslate" translate="no" data-i18n="lawyers.nguyenMinhAnhEdu2Org">Trường ĐH Luật Hà Nội</span> <br /> <span class="text-sm font-normal notranslate" translate="no" data-i18n="lawyers.nguyenMinhAnhEdu2Year">Năm 2023</span>`,
         icon: 'tabler:school',
       },
       {
-        title: `Tốt nghiệp <br /> <span class="font-normal">Học viện Tư Pháp</span> <br /> <span class="text-sm font-normal">Năm 2021</span>`,
+        title: `<span class="notranslate" translate="no" data-i18n="lawyers.nguyenMinhAnhEdu3">Tốt nghiệp</span> <br /> <span class="font-normal notranslate" translate="no" data-i18n="lawyers.nguyenMinhAnhEdu3Org">Học viện Tư Pháp</span> <br /> <span class="text-sm font-normal notranslate" translate="no" data-i18n="lawyers.nguyenMinhAnhEdu3Year">Năm 2021</span>`,
         icon: 'tabler:school',
       },
       {
-        title: `Cử nhân Luật (Xuất sắc)<br /> <span class="font-normal">Đại học Vinh</span> <br /> <span class="text-sm font-normal">Năm 2019</span>`,
+        title: `<span class="notranslate" translate="no" data-i18n="lawyers.nguyenMinhAnhEdu4">Cử nhân Luật (Xuất sắc)</span><br /> <span class="font-normal notranslate" translate="no" data-i18n="lawyers.nguyenMinhAnhEdu4Org">Đại học Vinh</span> <br /> <span class="text-sm font-normal notranslate" translate="no" data-i18n="lawyers.nguyenMinhAnhEdu4Year">Năm 2019</span>`,
         icon: 'tabler:school',
       },
     ]}
@@ -119,6 +119,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     title="Bài viết của tác giả"
     i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Luật sư Nguyễn Minh Anh về mọi khía cạnh pháp lý về giấy phép, đất đai, doanh nghiệp và đầu tư nước ngoài.`}
+    i18nInformation="lawyers.nguyenMinhAnhPostsInfo"
     author={author}
     types={types}
   >

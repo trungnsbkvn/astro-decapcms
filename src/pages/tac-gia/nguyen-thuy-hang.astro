@@ -19,13 +19,13 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
 <Layout metadata={metadata}>
   <Hero
     id="hero"
-    title="Chuyên viên pháp lý Nguyễn Thúy Hằng"
+    title={`<span data-i18n="lawyerProfile.legalSpecialist">Chuyên viên pháp lý</span> <span class="notranslate" translate="no">Nguyễn Thúy Hằng</span>`}
     tagline="Thông tin tác giả"
     i18nTagline="lawyerProfile.authorInfo"
     actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
-      <span class="notranslate" translate="no">
+      <span class="notranslate" translate="no" data-i18n="lawyers.nguyenThuyHangBio">
       <br />
       <i>Lĩnh vực phụ trách:</i><br /><br />
       • Soạn thảo và đánh giá các hợp đồng bao gồm hợp đồng nguyên tắc, hợp đồng dịch vụ, hợp đồng lao động, v.v.
@@ -76,7 +76,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   >
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
-      <p class="notranslate" translate="no">
+      <p class="notranslate" translate="no" data-i18n="lawyers.nguyenThuyHangExp">
         • Từng làm việc và thực tập chuyên môn tại Công ty tư vấn Đầu tư Hà Thị, Tòa án nhân dân thành phố Vĩnh Yên với
         vai trò nhân viên pháp lý, thực tập sinh pháp lý <br />
         • Thực hiện các công việc như rà soát hợp đồng, soạn thảo một số văn bản thông dụng, xây dựng quy định nội bộ và
@@ -98,7 +98,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     i18nTitle="lawyerProfile.education"
     items={[
       {
-        title: `Cử nhân Luật <br /> <span class="font-normal">Luật Kinh tế tại Đại học Luật Hà Nội </span> <br /> <span class="text-sm font-normal">Năm 2024</span>`,
+        title: `<span data-i18n="lawyers.nguyenThuyHangEdu1">Cử nhân Luật</span> <br /> <span class="font-normal" data-i18n="lawyers.nguyenThuyHangEdu1Org">Luật Kinh tế tại Đại học Luật Hà Nội</span> <br /> <span class="text-sm font-normal" data-i18n="lawyers.nguyenThuyHangEdu1Year">Năm 2024</span>`,
         icon: 'tabler:school',
       },
     ]}
@@ -112,6 +112,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     title="Bài viết của tác giả"
     i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thúy Hằng về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Giấy phép.`}
+    i18nInformation="lawyers.nguyenThuyHangPostsInfo"
     author={author}
     types={types}
   >
