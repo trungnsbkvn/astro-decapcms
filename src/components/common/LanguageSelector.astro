@@ -746,23 +746,15 @@ function translateElement(element: Element, lang: string, forceTranslate: boolea
     return;
   }
 
-  // For notranslate elements, skip even with forceTranslate
-  if (element.classList.contains('notranslate') || element.getAttribute('translate') === 'no') {
-    // But still recurse into children that might need translation
-    element.querySelectorAll(':scope > *').forEach(child => {
-      if (!child.classList.contains('notranslate') && child.getAttribute('translate') !== 'no') {
-        translateElement(child, lang, forceTranslate);
-      }
-    });
-    return;
-  }
+  // When forceTranslate is true (for header/footer), we DO translate even notranslate elements
+  // because notranslate is for Google Translate, not our i18n system
 
   const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
   while (walker.nextNode()) {
     const node = walker.currentNode as Text;
     const parent = node.parentElement;
-    // Skip if parent is notranslate, user-content, or has data-i18n (handled separately)
-    if (parent?.closest('.user-content, [data-user-content], .notranslate, [translate="no"]')) continue;
+    // Skip if parent is user-content or has data-i18n (handled separately)
+    if (parent?.closest('.user-content, [data-user-content]')) continue;
     if (parent?.hasAttribute('data-i18n')) continue;
     translateTextNode(node, lang);
   }
@@ -780,25 +772,29 @@ function applyTranslations(lang: string): void {
     if (key) {
       const translation = getTranslation(lang, key);
       if (translation) {
-        // Check if the element has child elements (like icons)
-        const hasChildElements = el.querySelector('*');
-        if (hasChildElements) {
-          // Only update direct text nodes
+        // Check if the element has meaningful child elements (not just br/hr)
+        const meaningfulChildren = el.querySelector(':not(br):not(hr)');
+        if (meaningfulChildren) {
+          // Element has real child elements (like icons, spans with classes) - only update direct text nodes
+          // Find the first significant text node and replace it
+          let replaced = false;
           Array.from(el.childNodes).forEach(node => {
-            if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
+            if (!replaced && node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
               node.textContent = translation;
+              replaced = true;
+            } else if (replaced && node.nodeType === Node.TEXT_NODE) {
+              // Clear other text nodes to avoid duplication
+              node.textContent = '';
             }
           });
         } else {
+          // Element only has text or br/hr tags - safe to replace innerHTML
           // Handle HTML content (like br tags) - always use innerHTML for translations with HTML
-          // Check both the current content and the translation for HTML tags
-          const hasHtml = el.innerHTML.includes('<') || 
-                         translation.includes('<') || 
-                         translation.includes('\n');
-          if (hasHtml) {
+          const hasNewlines = translation.includes('\n');
+          if (hasNewlines) {
             el.innerHTML = translation.replace(/\n\n/g, '<br /><br />').replace(/\n/g, '<br />');
           } else {
-            el.textContent = translation;
+            el.innerHTML = translation;
           }
         }
       }

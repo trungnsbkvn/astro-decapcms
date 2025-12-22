@@ -142,6 +142,7 @@ export interface Stat {
   amount?: number | string;
   title?: string;
   icon?: string;
+  i18nTitle?: string;
 }
 
 export interface Item {

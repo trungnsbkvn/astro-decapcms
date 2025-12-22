@@ -23,7 +23,7 @@ const {
 {
   items && items.length && (
     <div class={containerClass}>
-      {items.map(({ title, description, icon, classes: itemClasses = {} }, index = 0) => (
+      {items.map(({ title, description, icon, classes: itemClasses = {}, i18nTitle, i18nDescription }, index = 0) => (
         <div
           class={twMerge(
             'flex intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
@@ -45,12 +45,18 @@ const {
             {index !== items.length - 1 && <div class="w-px h-full bg-black/10 dark:bg-slate-400/50" />}
           </div>
           <div class={`pt-1 ${index !== items.length - 1 ? 'pb-8' : ''}`}>
-            {title && <p class={twMerge('text-xl font-bold notranslate', titleClass, itemClasses?.title)} translate="no" set:html={title} />}
+            {title && (
+              <p 
+                class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)} 
+                set:html={title}
+                {...(i18nTitle ? { 'data-i18n': i18nTitle } : {})}
+              />
+            )}
             {description && (
               <p
-                class={twMerge('text-muted mt-2 notranslate', descriptionClass, itemClasses?.description)}
-                translate="no"
+                class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)}
                 set:html={description}
+                {...(i18nDescription ? { 'data-i18n': i18nDescription } : {})}
               />
             )}
           </div>

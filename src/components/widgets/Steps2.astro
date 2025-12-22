@@ -67,13 +67,13 @@ const {
                   </div>
                   <div class="pl-4 rtl:pl-0 rtl:pr-4">
                     <h3 
-                      class:list={["mb-4 text-xl font-semibold font-heading", { "notranslate": itemI18nTitle }]}
-                      {...(itemI18nTitle ? { translate: "no", 'data-i18n': itemI18nTitle } : {})}
+                      class="mb-4 text-xl font-semibold font-heading"
+                      {...(itemI18nTitle ? { 'data-i18n': itemI18nTitle } : {})}
                       set:html={title2}
                     />
                     <p 
-                      class:list={["text-muted dark:text-gray-400", { "notranslate": itemI18nDescription }]}
-                      {...(itemI18nDescription ? { translate: "no", 'data-i18n': itemI18nDescription } : {})}
+                      class="text-muted dark:text-gray-400"
+                      {...(itemI18nDescription ? { 'data-i18n': itemI18nDescription } : {})}
                       set:html={description}
                     />
                   </div>

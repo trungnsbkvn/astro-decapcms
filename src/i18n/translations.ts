@@ -453,6 +453,8 @@ export const translations = {
   homepage: {
     vi: {
       // Hero section
+      companyPrefix: 'Công ty Luật TNHH',
+      companySuffix: '',
       companyTitle: 'Công ty Luật TNHH',
       heroSubtitle: 'là một trong những công ty luật hàng đầu trong các lĩnh vực: Tư vấn pháp lý thường xuyên cho doanh nghiệp/Dịch vụ Phòng pháp chế thuê ngoài; Tư vấn và giải quyết tranh chấp lao động; Dịch vụ Luật sư riêng tiếng Nhật, Anh, Trung, Hàn; Dịch vụ Audit, đánh giá và thẩm định pháp lý cho Doanh nghiệp, dịch vụ DD (Due diligence) riêng các lĩnh vực Lao động, nhân quyền, đạo đức kinh doanh, hệ thống quản lý, an toàn, sức khỏe, môi trường cho Doanh nghiệp.',
       likeAFriend: 'Như một người bạn đồng hành.',
@@ -504,7 +506,9 @@ export const translations = {
       followUs: 'Theo dõi chúng tôi',
     },
     en: {
-      companyTitle: 'Law Firm LLC',
+      companyPrefix: '',
+      companySuffix: 'Law Firm',
+      companyTitle: 'Law Firm',
       heroSubtitle: 'is one of the leading law firms in Vietnam, specializing in: Regular legal consultation for enterprises/Outsourced Legal Department services; Labor dispute consultation and resolution; Private lawyer services in Japanese, English, Chinese, Korean; Legal audit, evaluation and due diligence services for enterprises, DD (Due diligence) services in Labor, Human Rights, Business Ethics, Management Systems, Safety, Health, and Environment for enterprises.',
       likeAFriend: 'Like a trusted companion.',
       ourServices: 'OUR SERVICES',
@@ -547,7 +551,9 @@ export const translations = {
       followUs: 'Follow Us',
     },
     zh: {
-      companyTitle: '律师事务所有限公司',
+      companyPrefix: '',
+      companySuffix: '律师事务所',
+      companyTitle: '律师事务所',
       heroSubtitle: '是越南领先的律师事务所之一，专注于：企业常年法律顾问/外包法务部服务；劳动争议咨询与解决；日语、英语、中文、韩语私人律师服务；企业法律审计、评估和尽职调查服务，以及劳动、人权、商业道德、管理体系、安全、健康、环境领域的尽职调查服务。',
       likeAFriend: '如您的同行伙伴。',
       ourServices: '我们的服务',
@@ -590,6 +596,8 @@ export const translations = {
       followUs: '关注我们',
     },
     ja: {
+      companyPrefix: '',
+      companySuffix: '法律事務所',
       companyTitle: '法律事務所',
       heroSubtitle: 'ベトナムの主要な法律事務所の一つで、企業向け定期法律相談/アウトソーシング法務部サービス、労働紛争の相談と解決、日本語・英語・中国語・韓国語でのプライベート弁護士サービス、企業法務監査・評価・デューデリジェンスサービス、労働・人権・ビジネス倫理・管理システム・安全・健康・環境分野のデューデリジェンスを専門としています。',
       likeAFriend: 'あなたのパートナーとして。',
@@ -633,6 +641,8 @@ export const translations = {
       followUs: 'フォロー',
     },
     ko: {
+      companyPrefix: '',
+      companySuffix: '법률사무소',
       companyTitle: '법률사무소',
       heroSubtitle: '베트남의 선도적인 법률사무소 중 하나로, 기업을 위한 정기 법률 상담/아웃소싱 법무부 서비스, 노동 분쟁 상담 및 해결, 일본어·영어·중국어·한국어 개인 변호사 서비스, 기업 법률 감사·평가·실사 서비스, 노동·인권·비즈니스 윤리·관리 시스템·안전·건강·환경 분야의 실사 서비스를 전문으로 합니다.',
       likeAFriend: '당신의 파트너로서.',
@@ -2261,8 +2271,8 @@ export const translations = {
     },
     en: {
       name: 'Youth & Partners',
-      legalName: 'Youth & Partners Law Firm LLC',
-      legalPrefix: 'Law Firm LLC',
+      legalName: 'Youth & Partners Law Firm',
+      legalPrefix: 'Law Firm',
       director: 'Director, legal representative:',
       directorName: 'Lawyer Nguyen Van Thanh',
       hotline: 'Hotline',

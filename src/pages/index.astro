@@ -42,22 +42,21 @@ const lastestCategories = {
       { text: 'Tìm hiểu thêm', href: '/gioi-thieu.html' },
     ]}
     image={{ src: '~/assets/images/youth and partners/Youth and Partners.jpg', alt: 'Luật sư tư vấn' }}
+    i18nTitle="homepage.companyTitle"
+    i18nSubtitle="homepage.heroSubtitle"
   >
     <Fragment slot="title">
-      Công ty Luật TNHH
-      <span class="text-accent dark:text-white highlight"> Youth </span><span
-        class="text-primary dark:text-white highlight">& Partners</span
-      >
+      <span data-i18n="homepage.companyPrefix">Công ty Luật TNHH</span><span class="text-accent dark:text-white highlight notranslate" translate="no"> Youth </span><span class="text-primary dark:text-white highlight notranslate" translate="no">& Partners </span><span data-i18n="homepage.companySuffix"></span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="block mb-1 sm:hidden font-bold text-blue-600 text-center">Như một người bạn đồng hành.</span>
+      <span class="block mb-1 sm:hidden font-bold text-blue-600 text-center" data-i18n="homepage.likeAFriend">Như một người bạn đồng hành.</span>
       <span class="hidden sm:inline text-center">
-        <span class="font-semibold">Youth & Partners</span> là một trong những công ty luật hàng đầu trong các lĩnh vực:
+        <span class="font-semibold notranslate" translate="no">Youth & Partners</span> <span data-i18n="homepage.heroSubtitle">là một trong những công ty luật hàng đầu trong các lĩnh vực:
         Tư vấn pháp lý thường xuyên cho doanh nghiệp/Dịch vụ Phòng pháp chế thuê ngoài; Tư vấn và giải quyết tranh chấp lao
         động; Dịch vụ Luật sư riêng tiếng Nhật, Anh, Trung, Hàn; Dịch vụ Audit, đánh giá và thẩm định pháp lý cho Doanh nghiệp,
         dịch vụ DD (Due diligence) riêng các lĩnh vực Lao động, nhân quyền, đạo đức kinh doanh, hệ thống quản lý, an toàn,
-        sức khỏe, môi trường cho Doanh nghiệp.
+        sức khỏe, môi trường cho Doanh nghiệp.</span>
       </span>
     </Fragment>
   </Hero>
@@ -164,21 +163,28 @@ const lastestCategories = {
         description:
           'Mô tả vấn đề của bạn và thu thập tài liệu liên quan. Liên hệ với chúng tôi qua Hotline, Zalo, WhatsApp, Facebook hoặc Email',
         icon: 'tabler:report-search',
+        i18nTitle: 'homepage.contact',
+        i18nDescription: 'homepage.contactDesc',
       },
       {
         title: '<span class="font-medium">Gửi yêu cầu</span>',
         description: 'Mô tả chi tiết vấn đề qua email hoặc điện thoại và đính kèm tài liệu liên quan',
         icon: 'tabler:phone',
+        i18nTitle: 'homepage.sendRequest',
+        i18nDescription: 'homepage.sendRequestDesc',
       },
       {
         title: '<span class="font-medium">Theo dõi phản hồi</span>',
         description:
           'Theo dõi email hoặc điện thoại của bạn để nhận phản hồi từ đội ngũ hỗ trợ khách hàng của chúng tôi. Nếu không nhận được phản hồi trong thời gian dự kiến, hãy liên hệ lại để đảm bảo vấn đề của bạn không bị bỏ sót.',
         icon: 'tabler:calendar-month',
+        i18nTitle: 'homepage.trackResponse',
+        i18nDescription: 'homepage.trackResponseDesc',
       },
       {
         title: 'Chúng tôi sẽ hoàn thành!',
         icon: 'tabler:check',
+        i18nTitle: 'homepage.weWillComplete',
       },
     ]}
     image={{
@@ -191,9 +197,9 @@ const lastestCategories = {
 
   <Stats
     stats={[
-      { title: 'Chuyên viên pháp lý', amount: '30+' },
-      { title: 'Khách hàng hài lòng', amount: '1176' },
-      { title: 'Vụ thắng kiện', amount: '723' },
+      { title: 'Chuyên viên pháp lý', amount: '30+', i18nTitle: 'homepage.legalStaff' },
+      { title: 'Khách hàng hài lòng', amount: '1176', i18nTitle: 'homepage.satisfiedClients' },
+      { title: 'Vụ thắng kiện', amount: '723', i18nTitle: 'homepage.casesWon' },
     ]}
   >
     <Fragment slot="bg">
@@ -454,6 +460,7 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
         title: 'Theo dõi chúng tôi',
         description: '@youthandpartners',
         icon: 'tabler:brand-facebook',
+        i18nTitle: 'homepage.followUs',
       },
     ]}
   >
