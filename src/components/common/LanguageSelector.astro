@@ -661,8 +661,21 @@ function setGTCookie(lang: string): void {
   }
 }
 
+// Map Google Translate codes to i18n codes
+// Google Translate uses 'zh-CN' but our translations use 'zh'
+const gtToI18nMap: Record<string, string> = {
+  'zh-CN': 'zh',
+  'en': 'en',
+  'ja': 'ja',
+  'ko': 'ko',
+  'vi': 'vi',
+};
+
 function getTranslation(lang: string, key: string): string | null {
-  // The translations object is structured as: translations[section][lang][key]
+  // Convert Google Translate code to i18n code if needed
+  const i18nLang = gtToI18nMap[lang] || lang;
+  
+  // The translations object is structured as: translations[section][i18nLang][key]
   const keys = key.split('.');
   if (keys.length !== 2) return null;
   
@@ -670,7 +683,7 @@ function getTranslation(lang: string, key: string): string | null {
   const sectionData = (translations as any)[section];
   if (!sectionData) return null;
   
-  const langData = sectionData[lang];
+  const langData = sectionData[i18nLang];
   if (!langData) return null;
   
   // Use explicit undefined check to allow empty strings
