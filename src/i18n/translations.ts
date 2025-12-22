@@ -3350,6 +3350,233 @@ export const translations = {
       nguyenVanThanhEdu5Org: 'Trường ĐH Luật Hà Nội',
       nguyenVanThanhEdu5Year: 'Năm 2011',
       nguyenVanThanhPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Văn Thành về mọi khía cạnh pháp lý về lao động, doanh nghiệp và đầu tư nước ngoài.',
+
+      // Nguyen Hoang Anh
+      nguyenHoangAnhBio: 'Luật sư Nguyễn Hoàng Anh là một chuyên gia pháp lý giàu kinh nghiệm, chuyên cung cấp dịch vụ tư vấn và hỗ trợ pháp lý trong nhiều lĩnh vực, đặc biệt là các thủ tục liên quan đến giấy phép con.',
+      nguyenHoangAnhExp: `Luật sư Nguyễn Hoàng Anh sở hữu hơn 10 năm kinh nghiệm trong lĩnh vực pháp lý, với trọng tâm là tư vấn và xử lý các hồ sơ liên quan đến giấy phép con, bao gồm:<br />
+        - Giấy phép đăng ký kinh doanh, giấy phép hoạt động cho các ngành nghề có điều kiện.<br />
+        - Giấy phép môi trường, xây dựng, an toàn thực phẩm, lao động, và các loại giấy phép chuyên ngành khác.<br />
+        - Hỗ trợ doanh nghiệp trong việc xin cấp mới, gia hạn, hoặc điều chỉnh các giấy phép theo quy định pháp luật.`,
+      nguyenHoangAnhExp2: `Nổi bật trong sự nghiệp của Luật sư Nguyễn Hoàng Anh:<br />
+        + Tư vấn thành công cho nhiều doanh nghiệp trong và ngoài nước, từ khởi nghiệp đến quy mô lớn, trong việc hoàn thiện hồ sơ pháp lý và xin cấp giấy phép.<br />
+        + Đại diện khách hàng làm việc với các cơ quan nhà nước, đảm bảo quy trình nhanh chóng, minh bạch và hiệu quả.<br />
+        + Cung cấp các giải pháp pháp lý toàn diện, phù hợp với nhu cầu cụ thể của từng khách hàng, giúp tối ưu hóa chi phí và thời gian.`,
+      nguyenHoangAnhEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      nguyenHoangAnhEdu1Org: 'Bộ Tư Pháp',
+      nguyenHoangAnhEdu1Year: 'Năm 2022',
+      nguyenHoangAnhEdu2: 'Tốt nghiệp',
+      nguyenHoangAnhEdu2Org: 'Học viện Tư Pháp',
+      nguyenHoangAnhEdu2Year: 'Năm 2021',
+      nguyenHoangAnhEdu3: 'Thạc sỹ Luật',
+      nguyenHoangAnhEdu3Org: 'Trường ĐH Luật Hà Nội',
+      nguyenHoangAnhEdu3Year: 'Năm 2018',
+      nguyenHoangAnhEdu4: 'Cử nhân Luật',
+      nguyenHoangAnhEdu4Org: 'Trường ĐH Luật Hà Nội',
+      nguyenHoangAnhEdu4Year: 'Năm 2014',
+      nguyenHoangAnhPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Hoàng Anh về mọi khía cạnh pháp lý về giấy phép, doanh nghiệp và đầu tư nước ngoài.',
+
+      // TS Doan Xuan Truong
+      doanXuanTruongBio: `<i>Lĩnh vực phụ trách:</i><br /><br />
+      • Dân sự: Tư vấn về hợp đồng, giao dịch, thừa kế, hôn nhân gia đình, bồi thường thiệt hại...
+      <br /><br />
+      • Đất đai: Tư vấn về tất cả các thủ tục Đất đai bao gồm nhưng không giới hạn như mua bán, tặng cho, sang tên đổi chủ bất động sản, cấp đổi, cấp lại, cấp mới, đính chính quyền sử dụng đất, chuyển đổi mục đích sử dụng đất, giải quyết tranh chấp Đất đai...
+      <br /><br />
+      • Hành chính: Tư vấn về thủ tục Hành chính, khiếu nại tố cáo.`,
+      doanXuanTruongExp: 'TS Đoàn Xuân Trường hiện là giảng viên của Trường Đại học học Luật Hà Nội.',
+      doanXuanTruongExp2: 'TS Đoàn Xuân Trường có hơn 15 năm kinh nghiệm hoạt động giảng dạy, hướng dẫn tuân thủ pháp luật; thực hiện nhiều vụ việc tư vấn pháp lý cho người lao động và doanh nghiệp, xây dựng nhiều báo cáo độc lập đối với các chủ đề thuộc lĩnh vực luật lao động đương đại.',
+      doanXuanTruongEdu1: 'Tiến sĩ Luật lao động',
+      doanXuanTruongEdu1Org: 'Trường ĐH Luật Hà Nội',
+      doanXuanTruongEdu1Year: 'Năm 2022',
+      doanXuanTruongEdu2: 'Thạc sĩ luật',
+      doanXuanTruongEdu2Org: 'Học viện Khoa học Xã hội',
+      doanXuanTruongEdu2Year: 'Năm 2014',
+      doanXuanTruongEdu3: 'Cử nhân Luật',
+      doanXuanTruongEdu3Org: 'Trường ĐH Luật Hà Nội',
+      doanXuanTruongEdu3Year: 'Năm 2011',
+      doanXuanTruongPostsInfo: 'Các bài viết chuyên sâu của TS Đoàn Xuân Trường về mọi khía cạnh pháp lý về Dân sự, Đất đai, Hành chính.',
+
+      // Tran Chung Kien
+      tranChungKienBio: `<i>Lĩnh vực phụ trách:</i><br /><br />
+      • Dân sự: Tư vấn và đại diện khách hàng trong các vụ án về hợp đồng, giao dịch Dân sự, thừa kế, hôn nhân gia đình, bồi thường thiệt hại và các vấn đề pháp lý khác
+      <br /><br />
+      • Đại diện trong và ngoài tố tụng: Đại diện cho khách hàng trong các vụ án Dân sự, Hình sự và Hành chính tại các cấp tòa án, tham gia vào các thủ tục tố tụng, bảo vệ quyền lợi hợp pháp của khách hàng trong và ngoài tố tụng
+      <br /><br />
+      • Hình sự: Tư vấn và bảo vệ quyền lợi hợp pháp của bị hại, đồng thời tham gia bào chữa cho bị can, bị cáo trong các giai đoạn tố tụng Hình sự. Thực hiện các công việc liên quan đến hành vi phạm tội và xác định mức độ trách nhiệm pháp lý của các đối tượng trong vụ án Hình sự
+      <br /><br />
+      • Hành chính: Tư vấn về các thủ tục Hành chính, giải quyết khiếu nại, tố cáo và các vấn đề pháp lý liên quan đến Hành chính.`,
+      tranChungKienExp: `• Năm 2015: Tốt nghiệp Khoa Luật học, Đại học Luật Hà Nội <br />
+        • Từ 2015 - 2022: Công chức, Kiểm sát viên ngành Kiểm sát nhân dân. Trong suốt thời gian này, ông đã tích lũy kinh nghiệm thực tiễn trong việc tham gia các vụ án Dân sự, Hình sự và Hành chính, thực hiện công tác kiểm sát các hoạt động tố tụng và bảo vệ công lý, góp phần vào việc duy trì trật tự pháp lý và bảo vệ quyền lợi hợp pháp của các bên liên quan <br />
+        • Từ 2022 - 2024: Làm việc tại Công ty Luật TNHH Youth & Partners, chuyên tư vấn và đại diện cho khách hàng trong các vụ việc liên quan đến luật Dân sự, Hình sự, Hành chính và tố tụng. Ông đã thành công trong việc bảo vệ quyền lợi khách hàng trong các vụ án phức tạp, đồng thời giúp khách hàng giải quyết các vấn đề pháp lý một cách hiệu quả và bảo vệ tối đa quyền và lợi ích hợp pháp của họ.`,
+      tranChungKienEdu1: 'Được bổ nhiệm làm Kiểm sát viên',
+      tranChungKienEdu1Org: 'Viện Kiểm Sát Nhân Dân Tối Cao',
+      tranChungKienEdu1Year: 'Năm 2021',
+      tranChungKienEdu2: 'Được cấp chứng chỉ đào tạo nghiệp vụ kiểm sát',
+      tranChungKienEdu2Org: 'Viện Kiểm Sát Nhân Dân Tối Cao',
+      tranChungKienEdu2Year: 'Năm 2019',
+      tranChungKienEdu3: 'Cử nhân Luật',
+      tranChungKienEdu3Org: 'Khoa Luật học, Đại học Luật Hà Nội',
+      tranChungKienEdu3Year: 'Năm 2015',
+      tranChungKienPostsInfo: 'Các bài viết chuyên sâu của Luật sư Trần Chung Kiên về mọi khía cạnh pháp lý về Dân sự, Hình sự, Hành chính và tố tụng.',
+
+      // Bui Duc Manh
+      buiDucManhBio: `<i>Lĩnh vực phụ trách:</i><br /><br />
+      • Dân sự: Tư vấn về hợp đồng, giao dịch, thừa kế, hôn nhân gia đình, bồi thường thiệt hại...
+      <br /><br />
+      • Đất đai: Tư vấn về tất cả các thủ tục Đất đai bao gồm nhưng không giới hạn như mua bán, tặng cho, sang tên đổi chủ bất động sản, cấp đổi, cấp lại, cấp mới, đính chính quyền sử dụng đất, chuyển đổi mục đích sử dụng đất, giải quyết tranh chấp Đất đai...
+      <br /><br />
+      • Hành chính: Tư vấn về thủ tục Hành chính, khiếu nại tố cáo.`,
+      buiDucManhExp: `- Từ 2022 - 2024: Chuyên viên Pháp lý tại Công ty Luật TNHH Youth & Partners. Trong suốt thời gian làm việc tại công ty, chuyên viên Mạnh đã tích lũy được nhiều kinh nghiệm quý báu trong các lĩnh vực Dân sự, Hành chính, Đất đai và xin cấp Giấy phép. Cụ thể: <br />
+        • Tham gia giải quyết thành công nhiều vụ tranh chấp Đất đai, bảo vệ quyền lợi hợp pháp của khách hàng liên quan đến tài sản bất động sản.<br />
+        • Hỗ trợ và tư vấn cho khách hàng trong các thủ tục Hành chính, đặc biệt là trong việc thực hiện các thủ tục Hành chính phức tạp liên quan đến Đất đai và các Giấy phép cần thiết cho cá nhân và tổ chức.<br />
+        • Tham gia trực tiếp vào việc soạn thảo và thực hiện các thủ tục liên quan đến cấp Giấy phép con, đáp ứng nhu cầu của Doanh nghiệp và cá nhân trong quá trình hoạt động kinh doanh và Đầu tư.`,
+      buiDucManhEdu1: 'Tốt nghiệp',
+      buiDucManhEdu1Org: 'Học viện Tư Pháp',
+      buiDucManhEdu1Year: 'Năm 2024',
+      buiDucManhEdu2: 'Cử nhân Luật',
+      buiDucManhEdu2Org: 'Khoa Luật Kinh tế, Trường Đại học Kinh tế & Quản trị Kinh doanh Thái Nguyên',
+      buiDucManhEdu2Year: 'Năm 2022',
+      buiDucManhPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Bùi Đức Mạnh về mọi khía cạnh pháp lý về lao động, doanh nghiệp và đầu tư nước ngoài.',
+
+      // Do Thi Luong
+      doThiLuongBio: `<i>Lĩnh vực phụ trách:</i><br /><br />
+      • Tư vấn pháp luật thường xuyên cho các Doanh nghiệp: soạn thảo và rà soát các loại Hợp đồng trong Doanh nghiệp như Hợp đồng nguyên tắc, Hợp đồng mua bán hàng hoá, Hợp đồng lao động, …; soạn thảo báo cáo pháp lý tư vấn các lĩnh vực như lao động, kinh doanh thương mại, …; tư vấn, rà soát và soạn thảo các tài liệu khác theo yêu cầu của khách hàng
+      <br /><br />
+      • Phụ trách phòng Doanh nghiệp và sở hữu trí tuệ: tư vấn và thực hiện các trọn gói các thủ tục Doanh nghiệp (như đăng ký Doanh nghiệp, thay đổi nội dung đăng ký Doanh nghiệp, giải thể…), sở hữu trí tuệ (đăng ký nhãn hiệu, kiểu dáng công nghiệp, …); thủ tục xin các Giấy phép liên quan trong quá trình hoạt động của Doanh nghiệp như Giấy phép thành lập trung tâm ngoại ngữ, Giấy phép lao động,…
+      <br /><br />
+      • Hỗ trợ và tham gia các dự án thành lập, điều chỉnh dự án Đầu tư có vốn Đầu tư nước ngoài.`,
+      doThiLuongExp: `• 2017-2020: làm việc tại Công ty TNHH Tư vấn Đầu tư và Sở hữu trí tuệ Hoàng Phi: tư vấn, soạn thảo hồ sơ, thực hiện các thủ tục đăng ký Doanh nghiệp, sở hữu trí tuệ, thủ tục khác <br />
+        • 2020-2022: làm việc tại Công ty TNHH Luật Aliat: chuyên sâu tư vấn, soạn hồ sơ, làm việc với cơ quan nhà nước trong lĩnh vực sở hữu trí tuệ; tư vấn và thực hiện các thủ tục Doanh nghiệp <br />
+        • 2023 - nay: làm việc tại Công ty Luật TNHH Youth & Partners: chuyên viên tư vấn pháp luật thường xuyên cho các Doanh nghiệp; phụ trách phòng Doanh nghiệp và sở hữu trí tuệ.`,
+      doThiLuongEdu1: 'Tham gia khóa đào tạo nghề Luật sư',
+      doThiLuongEdu1Org: 'Học viện Tư Pháp',
+      doThiLuongEdu1Year: 'Năm 2024',
+      doThiLuongEdu2: 'Cử nhân Luật',
+      doThiLuongEdu2Org: 'Khoa Luật kinh tế - Trường Đại học Luật Hà Nội',
+      doThiLuongEdu2Year: 'Năm 2017',
+      doThiLuongPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Đỗ Thị Lương về mọi khía cạnh pháp lý về Lao động, Doanh nghiệp, Đầu tư, Giấy phép, Sở hữu Trí tuệ.',
+
+      // Mang Dieu Hien
+      mangDieuHienBio: 'Luật sư Mang Diệu Hiền là một chuyên gia pháp lý có uy tín, chuyên sâu trong lĩnh vực tư vấn và hỗ trợ cấp phép các loại giấy phép con. Với nền tảng học vấn vững chắc và kinh nghiệm thực tiễn phong phú, Luật sư Mang Diệu Hiền đã hỗ trợ nhiều cá nhân, doanh nghiệp hoàn thiện các thủ tục pháp lý phức tạp liên quan đến giấy phép hoạt động, đảm bảo tuân thủ đúng quy định pháp luật Việt Nam.',
+      mangDieuHienExp: `Luật sư Mang Diệu Hiền có hơn 10 năm kinh nghiệm trong lĩnh vực pháp lý, đặc biệt là trong việc tư vấn và xử lý các hồ sơ liên quan đến giấy phép con như: <br />
+        + Giấy phép kinh doanh (đăng ký doanh nghiệp, giấy phép hoạt động các ngành nghề có điều kiện).<br />
+        + Giấy phép xây dựng, môi trường, an toàn thực phẩm, quảng cáo, và các loại giấy phép chuyên ngành khác.<br />
+        + Hỗ trợ doanh nghiệp trong việc xin cấp, gia hạn, hoặc điều chỉnh các giấy phép con theo quy định pháp luật.`,
+      mangDieuHienExp2: `Với sự am hiểu sâu sắc về hệ thống pháp luật Việt Nam và quy trình hành chính, Luật sư Mang Diệu Hiền đã:<br />
+        + Tư vấn thành công cho hàng trăm doanh nghiệp vừa và nhỏ trong việc hoàn thiện các thủ tục pháp lý, đảm bảo đúng tiến độ và yêu cầu pháp luật.<br />
+        + Đại diện khách hàng làm việc với các cơ quan nhà nước, giúp tiết kiệm thời gian và chi phí.<br />
+        + Cung cấp các giải pháp pháp lý tối ưu, phù hợp với từng trường hợp cụ thể, từ các doanh nghiệp khởi nghiệp đến các công ty lớn.`,
+      mangDieuHienEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      mangDieuHienEdu1Org: 'Bộ Tư Pháp',
+      mangDieuHienEdu1Year: 'Năm 2019',
+      mangDieuHienEdu2: 'Tốt nghiệp',
+      mangDieuHienEdu2Org: 'Học viện Tư Pháp',
+      mangDieuHienEdu2Year: 'Năm 2015',
+      mangDieuHienEdu3: 'Cử nhân Luật',
+      mangDieuHienEdu3Org: 'Đại học Luật TP. Hồ Chí Minh',
+      mangDieuHienEdu3Year: 'Năm 2010',
+      mangDieuHienPostsInfo: 'Các bài viết chuyên sâu của Luật sư Mang Diệu Hiền về mọi khía cạnh pháp lý về giấy phép, doanh nghiệp và đầu tư nước ngoài.',
+
+      // Nguyen Hoang Ngoc Lan
+      nguyenHoangNgocLanBio: 'Luật sư Lan là một chuyên gia pháp lý có chuyên môn sâu trong lĩnh vực y tế, nổi bật với kinh nghiệm tư vấn và giải quyết các vấn đề pháp lý liên quan đến giấy phép hoạt động trong ngành y. Với sự am hiểu sâu sắc về các quy định pháp luật và quy trình hành chính, Luật sư Lan đã hỗ trợ nhiều bệnh viện, phòng khám, trung tâm y tế và các cơ sở chăm sóc sức khỏe khác trong việc xin cấp và điều chỉnh các loại giấy phép, đảm bảo tuân thủ đúng quy định pháp luật Việt Nam.',
+      nguyenHoangNgocLanExp: `Luật sư Lan có nhiều năm kinh nghiệm chuyên sâu trong lĩnh vực pháp lý y tế, đặc biệt là tư vấn và xử lý các hồ sơ liên quan đến giấy phép con trong ngành y, bao gồm:<br />
+        • Giấy phép hoạt động khám bệnh, chữa bệnh.<br />
+        • Điều chỉnh giấy phép hoạt động khám bệnh, chữa bệnh.<br />
+        • Giấy phép hành nghề y và các giấy phép chuyên ngành khác trong lĩnh vực y tế.<br />
+        Những thành tựu nổi bật của Luật sư Lan:<br />
+        • Tư vấn thành công cho nhiều bệnh viện, phòng khám, trung tâm y tế và các cơ sở chăm sóc sức khỏe trong việc chuẩn bị và hoàn thiện hồ sơ xin cấp phép từ các cơ quan nhà nước có thẩm quyền.<br />
+        • Hỗ trợ khách hàng hiểu rõ các yêu cầu pháp lý, đảm bảo hồ sơ và giấy tờ đáp ứng đầy đủ các tiêu chuẩn quy định, giúp tiết kiệm thời gian và chi phí.<br />
+        • Đại diện khách hàng làm việc với các cơ quan quản lý, đảm bảo quy trình xin cấp phép diễn ra nhanh chóng, minh bạch và hiệu quả.<br />
+        • Cung cấp giải pháp pháp lý toàn diện, phù hợp với từng trường hợp cụ thể, từ các cơ sở y tế mới thành lập đến các tổ chức y tế quy mô lớn.`,
+      nguyenHoangNgocLanEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      nguyenHoangNgocLanEdu1Org: 'Bộ Tư Pháp',
+      nguyenHoangNgocLanEdu1Year: 'Năm 2024',
+      nguyenHoangNgocLanEdu2: 'Thạc sỹ Luật',
+      nguyenHoangNgocLanEdu2Org: 'Trường ĐH Luật Hà Nội',
+      nguyenHoangNgocLanEdu2Year: 'Năm 2022',
+      nguyenHoangNgocLanEdu3: 'Tốt nghiệp',
+      nguyenHoangNgocLanEdu3Org: 'Học viện Tư Pháp',
+      nguyenHoangNgocLanEdu3Year: 'Năm 2021',
+      nguyenHoangNgocLanEdu4: 'Cử nhân Luật',
+      nguyenHoangNgocLanEdu4Org: 'Trường ĐH Luật Hà Nội',
+      nguyenHoangNgocLanEdu4Year: 'Năm 2020',
+      nguyenHoangNgocLanPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Hoàng Ngọc Lan về mọi khía cạnh pháp lý về giấy phép, doanh nghiệp và đầu tư nước ngoài.',
+
+      // Nguyen Minh Anh
+      nguyenMinhAnhBio: 'Luật sư Nguyễn Minh Anh là một chuyên gia pháp lý với hơn 7 năm kinh nghiệm trong lĩnh vực luật kinh tế, luật đất đai và dân sự. Sở hữu nền tảng học vấn xuất sắc cùng kinh nghiệm thực tiễn tại các tổ chức uy tín, Luật sư Minh Anh đã khẳng định năng lực trong việc tư vấn pháp lý, giải quyết tranh chấp và hỗ trợ doanh nghiệp, cá nhân trong các vụ việc/vụ án phức tạp. Với sự am hiểu sâu rộng về pháp luật và tư duy nhạy bén, Luật sư Minh Anh luôn mang đến các giải pháp pháp lý hiệu quả, tối ưu lợi ích cho khách hàng trong các lĩnh vực kinh doanh thương mại, đất đai và dân sự.',
+      nguyenMinhAnhExp: `• 11/2022 - 09/2024: Phó phòng Thanh tra Pháp chế, Công ty TNHH Đầu tư Thương mại và Du lịch Quốc tế Hòa Bình <br />
+        Tư vấn pháp lý, đàm phán hợp đồng, làm việc với cơ quan nhà nước, rà soát hợp đồng, giải quyết tranh chấp kinh doanh, dân sự và kiểm soát tuân thủ nội bộ.<br />
+        • 06/2019 - 11/2022: Quản lý Trưởng phòng Tư vấn, Công ty Luật TNHH Việt Kim<br />
+        Quản lý phòng tư vấn, nghiên cứu hồ sơ, tố tụng tại Tòa (dân sự, kinh doanh thương mại), tư vấn tái cấu trúc doanh nghiệp, M&A, và giải quyết tranh chấp.<br />
+        • 06/2017 - 06/2019: Thực tập sinh, Văn phòng Luật sư Trọng Hải và Cộng sự<br />
+        Soạn thảo văn bản, rà soát hợp đồng, hỗ trợ luật sư trong các vụ án dân sự và kinh doanh thương mại.`,
+      nguyenMinhAnhEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      nguyenMinhAnhEdu1Org: 'Bộ Tư Pháp',
+      nguyenMinhAnhEdu1Year: 'Năm 2024',
+      nguyenMinhAnhEdu2: 'Thạc sỹ Luật Kinh tế',
+      nguyenMinhAnhEdu2Org: 'Trường ĐH Luật Hà Nội',
+      nguyenMinhAnhEdu2Year: 'Năm 2023',
+      nguyenMinhAnhEdu3: 'Tốt nghiệp',
+      nguyenMinhAnhEdu3Org: 'Học viện Tư Pháp',
+      nguyenMinhAnhEdu3Year: 'Năm 2021',
+      nguyenMinhAnhEdu4: 'Cử nhân Luật (Xuất sắc)',
+      nguyenMinhAnhEdu4Org: 'Đại học Vinh',
+      nguyenMinhAnhEdu4Year: 'Năm 2019',
+      nguyenMinhAnhPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Minh Anh về mọi khía cạnh pháp lý về giấy phép, đất đai, doanh nghiệp và đầu tư nước ngoài.',
+
+      // Nguyen Thi Huong
+      nguyenThiHuongBio: `<i>Lĩnh vực phụ trách:</i><br /><br />
+      • Dân sự: Tư vấn về hợp đồng, giao dịch Dân sự, thừa kế, bồi thường thiệt hại và các vấn đề pháp lý liên quan khác.
+      <br /><br />
+      • Hôn nhân và gia đình: Tư vấn về ly hôn, chia tài sản, quyền nuôi con, và các vấn đề pháp lý liên quan đến hôn nhân và gia đình.
+      <br /><br />
+      • Đất đai: Tư vấn về các vấn đề liên quan đến Đất đai, bao gồm nhưng không giới hạn như giải quyết tranh chấp Đất đai, chuyển nhượng, cấp đổi giấy chứng nhận quyền sử dụng đất.
+      <br /><br />
+      • Hình sự: Tư vấn và bảo vệ quyền lợi hợp pháp của bị hại, đồng thời tham gia bào chữa cho bị can, bị cáo trong các giai đoạn tố tụng Hình sự. Thực hiện các công việc liên quan đến hành vi phạm tội và xác định mức độ trách nhiệm pháp lý của các đối tượng trong vụ án Hình sự
+      <br /><br />
+      • Doanh nghiệp: Tư vấn pháp lý về thành lập, hoạt động và quản lý Doanh nghiệp, các vấn đề liên quan đến hợp đồng, pháp lý kinh doanh.
+      <br /><br />
+      • Lao động: Tư vấn về các vấn đề liên quan đến lao động, hợp đồng lao động, tranh chấp lao động và quyền lợi của người lao động
+      <br /><br />
+      • Đầu tư: Tư vấn về các vấn đề Đầu tư, bao gồm Đầu tư trong và ngoài nước, chiến lược phát triển Doanh nghiệp và các vấn đề pháp lý liên quan đến Đầu tư bất động sản.`,
+      nguyenThiHuongExp: 'Luật sư Hướng có hơn 07 năm kinh nghiệm trong lĩnh vực pháp lý, chuyên sâu các lĩnh vực Dân sự, Hình sự, Hành chính, Kinh doanh thương mại và tố tụng cho khách hàng.',
+      nguyenThiHuongExp2: 'Với nhiều năm kinh nghiệm tham gia tranh tụng, bào chữa, bảo vệ, đại diện, tư vấn, soạn thảo, cung cấp biểu mẫu, hợp đồng, văn kiện liên quan đến pháp luật cho tổ chức, cá nhân trong và ngoài nước… Luật sư Hướng đã thành công trong việc bảo vệ quyền và lợi ích của khách hàng trong các vụ án phức tạp, đồng thời giúp khách hàng giải quyết các vấn đề pháp lý một cách hiệu quả.',
+      nguyenThiHuongEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      nguyenThiHuongEdu1Org: 'Bộ Tư Pháp',
+      nguyenThiHuongEdu1Year: 'Năm 2020',
+      nguyenThiHuongEdu2: 'Cử nhân Luật Quốc Tế',
+      nguyenThiHuongEdu2Org: 'Học viện Ngoại Giao',
+      nguyenThiHuongEdu2Year: 'Năm 2017',
+      nguyenThiHuongPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Thị Hướng về mọi khía cạnh pháp lý về Dân sự, Hình sự, Hành chính, Kinh doanh thương mại.',
+
+      // Common fields for area of responsibility
+      areaOfResponsibility: 'Lĩnh vực phụ trách:',
+      civilLaw: 'Dân sự: Tư vấn về hợp đồng, giao dịch, thừa kế, hôn nhân gia đình, bồi thường thiệt hại...',
+      landLaw: 'Đất đai: Tư vấn về tất cả các thủ tục Đất đai bao gồm nhưng không giới hạn như mua bán, tặng cho, sang tên đổi chủ bất động sản, cấp đổi, cấp lại, cấp mới, đính chính quyền sử dụng đất, chuyển đổi mục đích sử dụng đất, giải quyết tranh chấp Đất đai...',
+      adminLaw: 'Hành chính: Tư vấn về thủ tục Hành chính, khiếu nại tố cáo.',
+      
+      // Common education terms
+      lawyerCertificate: 'Cấp chứng chỉ hành nghề Luật sư',
+      graduated: 'Tốt nghiệp',
+      masterOfLaw: 'Thạc sỹ Luật',
+      bachelorOfLaw: 'Cử nhân Luật',
+      doctorOfLaw: 'Tiến sĩ Luật lao động',
+      bachelorOfForeignLanguages: 'Cử nhân ngoại ngữ',
+      leadAuditorCert: 'Cấp chứng chỉ Lead Auditor (đánh giá viên trưởng) cho chương Lao động & Đạo đức kinh doanh trong chuỗi cung ứng toàn cầu',
+      lawyerTrainingCourse: 'Tham gia khóa đào tạo nghề Luật sư',
+      
+      // Common organization names
+      ministryOfJustice: 'Bộ Tư Pháp',
+      judicialAcademy: 'Học viện Tư Pháp',
+      hanoiLawUniversity: 'Trường ĐH Luật Hà Nội',
+      hcmLawUniversity: 'Đại học Luật TP. Hồ Chí Minh',
+      socialScienceAcademy: 'Học viện Khoa học Xã hội',
+      foreignLanguagesUniversity: 'ĐH Ngoại ngữ, ĐH Quốc Gia Hà Nội',
+      thaiNguyenUniversity: 'Khoa Luật Kinh tế, Trường Đại học Kinh tế & Quản trị Kinh doanh Thái Nguyên',
+      hanoiLawEconomics: 'Khoa Luật kinh tế - Trường Đại học Luật Hà Nội',
+      verite: 'Verité, Inc.',
+      
+      // Year prefix
+      year: 'Năm',
     },
     en: {
       // Nguyen Van Thanh
@@ -3377,6 +3604,161 @@ export const translations = {
       nguyenVanThanhEdu5Org: 'Hanoi Law University',
       nguyenVanThanhEdu5Year: '2011',
       nguyenVanThanhPostsInfo: 'In-depth articles by Lawyer Nguyen Van Thanh on all legal aspects of labor, business and foreign investment.',
+
+      // Nguyen Hoang Anh
+      nguyenHoangAnhBio: 'Lawyer Nguyen Hoang Anh is an experienced legal expert, specializing in providing legal consulting and support services in various fields, especially procedures related to sub-licenses.',
+      nguyenHoangAnhExp: `Lawyer Nguyen Hoang Anh has over 10 years of experience in the legal field, focusing on consulting and processing documents related to sub-licenses, including:<br />
+        - Business registration licenses, operating licenses for conditional industries.<br />
+        - Environmental, construction, food safety, labor, and other specialized licenses.<br />
+        - Supporting businesses in applying for new, renewing, or adjusting licenses according to legal regulations.`,
+      nguyenHoangAnhExp2: `Highlights in Lawyer Nguyen Hoang Anh's career:<br />
+        + Successfully consulted many domestic and foreign businesses, from startups to large scale, in completing legal documents and obtaining licenses.<br />
+        + Representing clients in working with government agencies, ensuring fast, transparent and efficient procedures.<br />
+        + Providing comprehensive legal solutions tailored to each client's specific needs, optimizing costs and time.`,
+      nguyenHoangAnhEdu1: 'Lawyer Practice Certificate',
+      nguyenHoangAnhEdu1Org: 'Ministry of Justice',
+      nguyenHoangAnhEdu1Year: '2022',
+      nguyenHoangAnhEdu2: 'Graduated',
+      nguyenHoangAnhEdu2Org: 'Judicial Academy',
+      nguyenHoangAnhEdu2Year: '2021',
+      nguyenHoangAnhEdu3: 'Master of Law',
+      nguyenHoangAnhEdu3Org: 'Hanoi Law University',
+      nguyenHoangAnhEdu3Year: '2018',
+      nguyenHoangAnhEdu4: 'Bachelor of Law',
+      nguyenHoangAnhEdu4Org: 'Hanoi Law University',
+      nguyenHoangAnhEdu4Year: '2014',
+      nguyenHoangAnhPostsInfo: 'In-depth articles by Lawyer Nguyen Hoang Anh on all legal aspects of licenses, business and foreign investment.',
+
+      // TS Doan Xuan Truong
+      doanXuanTruongBio: `<i>Areas of Responsibility:</i><br /><br />
+      • Civil: Consulting on contracts, transactions, inheritance, family marriage, compensation for damages...
+      <br /><br />
+      • Land: Consulting on all land procedures including but not limited to buying, selling, donating, transferring ownership of real estate, exchanging, re-issuing, issuing new, correcting land use rights, changing land use purposes, resolving land disputes...
+      <br /><br />
+      • Administrative: Consulting on administrative procedures, complaints and denunciations.`,
+      doanXuanTruongExp: 'Dr. Doan Xuan Truong is currently a lecturer at Hanoi Law University.',
+      doanXuanTruongExp2: 'Dr. Doan Xuan Truong has over 15 years of experience in teaching, guiding legal compliance; handling many legal consulting cases for workers and businesses, building many independent reports on topics in the field of contemporary labor law.',
+      doanXuanTruongEdu1: 'Doctor of Labor Law',
+      doanXuanTruongEdu1Org: 'Hanoi Law University',
+      doanXuanTruongEdu1Year: '2022',
+      doanXuanTruongEdu2: 'Master of Law',
+      doanXuanTruongEdu2Org: 'Academy of Social Sciences',
+      doanXuanTruongEdu2Year: '2014',
+      doanXuanTruongEdu3: 'Bachelor of Law',
+      doanXuanTruongEdu3Org: 'Hanoi Law University',
+      doanXuanTruongEdu3Year: '2011',
+      doanXuanTruongPostsInfo: 'In-depth articles by Dr. Doan Xuan Truong on all legal aspects of Civil, Land, and Administrative law.',
+
+      // Tran Chung Kien
+      tranChungKienBio: `<i>Areas of Responsibility:</i><br /><br />
+      • Civil: Consulting and representing clients in cases involving contracts, civil transactions, inheritance, family marriage, compensation for damages and other legal issues
+      <br /><br />
+      • Litigation representation: Representing clients in Civil, Criminal and Administrative cases at all court levels, participating in litigation procedures, protecting clients' legal rights in and out of court
+      <br /><br />
+      • Criminal: Consulting and protecting the legal rights of victims, while defending suspects and defendants in criminal proceedings. Handling matters related to criminal acts and determining the level of legal responsibility of subjects in criminal cases
+      <br /><br />
+      • Administrative: Consulting on administrative procedures, resolving complaints, denunciations and legal issues related to administration.`,
+      tranChungKienExp: `• 2015: Graduated from Faculty of Law, Hanoi Law University <br />
+        • 2015 - 2022: Civil servant, Prosecutor in the People's Procuracy. During this time, he accumulated practical experience in participating in Civil, Criminal and Administrative cases, supervising litigation activities and protecting justice, contributing to maintaining legal order and protecting the legitimate rights of parties involved <br />
+        • 2022 - 2024: Working at Youth & Partners Law Firm LLC, specializing in consulting and representing clients in matters related to Civil, Criminal, Administrative and litigation law. He has successfully protected clients' rights in complex cases, while helping clients resolve legal issues effectively and maximally protecting their legitimate rights and interests.`,
+      tranChungKienEdu1: 'Appointed as Prosecutor',
+      tranChungKienEdu1Org: 'Supreme People\'s Procuracy',
+      tranChungKienEdu1Year: '2021',
+      tranChungKienEdu2: 'Prosecutor Training Certificate',
+      tranChungKienEdu2Org: 'Supreme People\'s Procuracy',
+      tranChungKienEdu2Year: '2019',
+      tranChungKienEdu3: 'Bachelor of Law',
+      tranChungKienEdu3Org: 'Faculty of Law, Hanoi Law University',
+      tranChungKienEdu3Year: '2015',
+      tranChungKienPostsInfo: 'In-depth articles by Lawyer Tran Chung Kien on all legal aspects of Civil, Criminal, Administrative and litigation law.',
+
+      // Bui Duc Manh
+      buiDucManhBio: `<i>Areas of Responsibility:</i><br /><br />
+      • Civil: Consulting on contracts, transactions, inheritance, family marriage, compensation for damages...
+      <br /><br />
+      • Land: Consulting on all land procedures including but not limited to buying, selling, donating, transferring ownership of real estate, exchanging, re-issuing, issuing new, correcting land use rights, changing land use purposes, resolving land disputes...
+      <br /><br />
+      • Administrative: Consulting on administrative procedures, complaints and denunciations.`,
+      buiDucManhExp: `- From 2022 - 2024: Legal Specialist at Youth & Partners Law Firm LLC. Throughout his time at the company, specialist Manh has accumulated valuable experience in Civil, Administrative, Land and Licensing fields. Specifically: <br />
+        • Successfully participated in resolving many land disputes, protecting clients' legitimate rights related to real estate assets.<br />
+        • Supporting and advising clients on administrative procedures, especially in implementing complex administrative procedures related to land and necessary licenses for individuals and organizations.<br />
+        • Directly participated in drafting and implementing procedures related to sub-license issuance, meeting the needs of businesses and individuals in business and investment operations.`,
+      buiDucManhEdu1: 'Graduated',
+      buiDucManhEdu1Org: 'Judicial Academy',
+      buiDucManhEdu1Year: '2024',
+      buiDucManhEdu2: 'Bachelor of Law',
+      buiDucManhEdu2Org: 'Faculty of Economic Law, Thai Nguyen University of Economics and Business Administration',
+      buiDucManhEdu2Year: '2022',
+      buiDucManhPostsInfo: 'In-depth articles by Legal Specialist Bui Duc Manh on all legal aspects of labor, business and foreign investment.',
+
+      // Do Thi Luong
+      doThiLuongBio: `<i>Areas of Responsibility:</i><br /><br />
+      • Regular legal consulting for businesses: drafting and reviewing various types of contracts in business such as framework contracts, goods sale contracts, labor contracts, etc.; drafting legal advisory reports on fields such as labor, business commerce, etc.; consulting, reviewing and drafting other documents as requested by clients
+      <br /><br />
+      • In charge of Business and Intellectual Property department: consulting and providing full package services for business procedures (such as business registration, changing business registration content, dissolution...), intellectual property (trademark registration, industrial designs, etc.); procedures for obtaining related licenses during business operations such as foreign language center establishment license, work permit, etc.
+      <br /><br />
+      • Supporting and participating in projects to establish and adjust foreign-invested investment projects.`,
+      doThiLuongExp: `• 2017-2020: Working at Hoang Phi Investment and Intellectual Property Consulting Co., Ltd: consulting, drafting documents, implementing business registration procedures, intellectual property, other procedures <br />
+        • 2020-2022: Working at Aliat Law Co., Ltd: in-depth consulting, drafting documents, working with government agencies in the field of intellectual property; consulting and implementing business procedures <br />
+        • 2023 - present: Working at Youth & Partners Law Firm LLC: regular legal consulting specialist for businesses; in charge of Business and Intellectual Property department.`,
+      doThiLuongEdu1: 'Participated in Lawyer Training Course',
+      doThiLuongEdu1Org: 'Judicial Academy',
+      doThiLuongEdu1Year: '2024',
+      doThiLuongEdu2: 'Bachelor of Law',
+      doThiLuongEdu2Org: 'Faculty of Economic Law - Hanoi Law University',
+      doThiLuongEdu2Year: '2017',
+      doThiLuongPostsInfo: 'In-depth articles by Legal Specialist Do Thi Luong on all legal aspects of Labor, Business, Investment, Licensing, Intellectual Property.',
+
+      // Mang Dieu Hien
+      mangDieuHienBio: 'Lawyer Mang Dieu Hien is a reputable legal expert, specializing in consulting and supporting the licensing of various sub-licenses. With a solid educational background and rich practical experience, Lawyer Mang Dieu Hien has assisted many individuals and businesses in completing complex legal procedures related to operating licenses, ensuring compliance with Vietnamese law.',
+      mangDieuHienExp: `Lawyer Mang Dieu Hien has over 10 years of experience in the legal field, especially in consulting and processing documents related to sub-licenses such as: <br />
+        + Business licenses (business registration, operating licenses for conditional industries).<br />
+        + Construction permits, environmental permits, food safety, advertising, and other specialized licenses.<br />
+        + Supporting businesses in applying for, renewing, or adjusting sub-licenses according to legal regulations.`,
+      mangDieuHienExp2: `With a deep understanding of the Vietnamese legal system and administrative processes, Lawyer Mang Dieu Hien has:<br />
+        + Successfully consulted for hundreds of small and medium enterprises in completing legal procedures, ensuring compliance with schedules and legal requirements.<br />
+        + Representing clients in working with government agencies, saving time and costs.<br />
+        + Providing optimal legal solutions tailored to each specific case, from startups to large companies.`,
+      mangDieuHienEdu1: 'Lawyer Practice Certificate',
+      mangDieuHienEdu1Org: 'Ministry of Justice',
+      mangDieuHienEdu1Year: '2019',
+      mangDieuHienEdu2: 'Graduated',
+      mangDieuHienEdu2Org: 'Judicial Academy',
+      mangDieuHienEdu2Year: '2015',
+      mangDieuHienEdu3: 'Bachelor of Law',
+      mangDieuHienEdu3Org: 'Ho Chi Minh City University of Law',
+      mangDieuHienEdu3Year: '2010',
+      mangDieuHienPostsInfo: 'In-depth articles by Lawyer Mang Dieu Hien on all legal aspects of licenses, business and foreign investment.',
+
+      // Common fields for area of responsibility
+      areaOfResponsibility: 'Areas of responsibility:',
+      civilLaw: 'Civil: Consulting on contracts, transactions, inheritance, family, compensation for damages...',
+      landLaw: 'Land: Consulting on all land procedures including but not limited to buying, selling, donating, transferring ownership of real estate, exchanging, re-issuing, issuing new, correcting land use rights, changing land use purposes, resolving land disputes...',
+      adminLaw: 'Administrative: Consulting on administrative procedures, complaints and denunciations.',
+
+      // Common education terms
+      lawyerCertificate: 'Lawyer Practice Certificate',
+      graduated: 'Graduated',
+      masterOfLaw: 'Master of Law',
+      bachelorOfLaw: 'Bachelor of Law',
+      doctorOfLaw: 'Doctor of Labor Law',
+      bachelorOfForeignLanguages: 'Bachelor of Foreign Languages',
+      leadAuditorCert: 'Lead Auditor Certificate for Labor & Business Ethics in Global Supply Chain',
+      lawyerTrainingCourse: 'Participated in Lawyer Training Course',
+      
+      // Common organization names
+      ministryOfJustice: 'Ministry of Justice',
+      judicialAcademy: 'Judicial Academy',
+      hanoiLawUniversity: 'Hanoi Law University',
+      hcmLawUniversity: 'Ho Chi Minh City University of Law',
+      socialScienceAcademy: 'Academy of Social Sciences',
+      foreignLanguagesUniversity: 'University of Languages and International Studies, Vietnam National University',
+      thaiNguyenUniversity: 'Faculty of Economic Law, Thai Nguyen University of Economics and Business Administration',
+      hanoiLawEconomics: 'Faculty of Economic Law - Hanoi Law University',
+      verite: 'Verité, Inc.',
+      
+      // Year prefix
+      year: '',
     },
     zh: {
       // Nguyen Van Thanh
@@ -3404,6 +3786,161 @@ export const translations = {
       nguyenVanThanhEdu5Org: '河内法律大学',
       nguyenVanThanhEdu5Year: '2011年',
       nguyenVanThanhPostsInfo: '阮文成律师关于劳动、企业和外国投资等各个法律方面的深度文章。',
+
+      // Nguyen Hoang Anh
+      nguyenHoangAnhBio: '阮黄英律师是一位经验丰富的法律专家，专门提供各个领域的法律咨询和支持服务，特别是与子许可证相关的程序。',
+      nguyenHoangAnhExp: `阮黄英律师在法律领域拥有10多年的经验，专注于咨询和处理与子许可证相关的文件，包括：<br />
+        - 营业执照、有条件行业的经营许可证<br />
+        - 环境、建设、食品安全、劳动和其他专业许可证<br />
+        - 协助企业申请新许可证、续期或根据法律规定调整许可证`,
+      nguyenHoangAnhExp2: `阮黄英律师职业生涯的亮点：<br />
+        + 成功为许多国内外企业提供咨询，从初创企业到大型企业，帮助完善法律文件和获得许可证<br />
+        + 代表客户与政府机构合作，确保快速、透明和高效的程序<br />
+        + 提供针对每个客户具体需求的全面法律解决方案，优化成本和时间`,
+      nguyenHoangAnhEdu1: '律师执业证书',
+      nguyenHoangAnhEdu1Org: '司法部',
+      nguyenHoangAnhEdu1Year: '2022年',
+      nguyenHoangAnhEdu2: '毕业',
+      nguyenHoangAnhEdu2Org: '司法学院',
+      nguyenHoangAnhEdu2Year: '2021年',
+      nguyenHoangAnhEdu3: '法学硕士',
+      nguyenHoangAnhEdu3Org: '河内法律大学',
+      nguyenHoangAnhEdu3Year: '2018年',
+      nguyenHoangAnhEdu4: '法学学士',
+      nguyenHoangAnhEdu4Org: '河内法律大学',
+      nguyenHoangAnhEdu4Year: '2014年',
+      nguyenHoangAnhPostsInfo: '阮黄英律师关于许可证、企业和外国投资等各个法律方面的深度文章。',
+
+      // TS Doan Xuan Truong
+      doanXuanTruongBio: `<i>负责领域：</i><br /><br />
+      • 民事：合同、交易、继承、婚姻家庭、损害赔偿咨询...
+      <br /><br />
+      • 土地：所有土地程序咨询，包括但不限于房地产买卖、赠与、过户、换发、补发、新发、更正土地使用权、变更土地用途、解决土地纠纷...
+      <br /><br />
+      • 行政：行政程序、投诉和举报咨询。`,
+      doanXuanTruongExp: '段春长博士现为河内法律大学讲师。',
+      doanXuanTruongExp2: '段春长博士拥有15年以上的教学和法律合规指导经验；为劳动者和企业处理了许多法律咨询案件，在当代劳动法领域编写了多份独立报告。',
+      doanXuanTruongEdu1: '劳动法博士',
+      doanXuanTruongEdu1Org: '河内法律大学',
+      doanXuanTruongEdu1Year: '2022年',
+      doanXuanTruongEdu2: '法学硕士',
+      doanXuanTruongEdu2Org: '社会科学学院',
+      doanXuanTruongEdu2Year: '2014年',
+      doanXuanTruongEdu3: '法学学士',
+      doanXuanTruongEdu3Org: '河内法律大学',
+      doanXuanTruongEdu3Year: '2011年',
+      doanXuanTruongPostsInfo: '段春长博士关于民事、土地和行政法各方面的深度文章。',
+
+      // Tran Chung Kien
+      tranChungKienBio: `<i>负责领域：</i><br /><br />
+      • 民事：在涉及合同、民事交易、继承、婚姻家庭、损害赔偿等案件中为客户提供咨询和代理
+      <br /><br />
+      • 诉讼代理：在各级法院代理客户处理民事、刑事和行政案件，参与诉讼程序，保护客户在诉讼内外的合法权益
+      <br /><br />
+      • 刑事：为被害人提供咨询和保护其合法权益，同时在刑事诉讼各阶段为犯罪嫌疑人和被告人辩护。处理与犯罪行为相关的事务，确定刑事案件中各主体的法律责任程度
+      <br /><br />
+      • 行政：行政程序咨询，解决投诉、举报和行政相关法律问题。`,
+      tranChungKienExp: `• 2015年：毕业于河内法律大学法学院 <br />
+        • 2015-2022年：人民检察院公务员、检察员。在此期间，他积累了参与民事、刑事和行政案件的实践经验，监督诉讼活动，维护司法公正，为维护法律秩序和保护相关方合法权益做出贡献 <br />
+        • 2022-2024年：在Youth & Partners律师事务所工作，专门为客户提供民事、刑事、行政和诉讼法相关的咨询和代理服务。他成功地在复杂案件中保护客户权益，帮助客户有效解决法律问题，最大限度地保护其合法权益。`,
+      tranChungKienEdu1: '被任命为检察官',
+      tranChungKienEdu1Org: '最高人民检察院',
+      tranChungKienEdu1Year: '2021年',
+      tranChungKienEdu2: '获得检察业务培训证书',
+      tranChungKienEdu2Org: '最高人民检察院',
+      tranChungKienEdu2Year: '2019年',
+      tranChungKienEdu3: '法学学士',
+      tranChungKienEdu3Org: '河内法律大学法学院',
+      tranChungKienEdu3Year: '2015年',
+      tranChungKienPostsInfo: '陈忠坚律师关于民事、刑事、行政和诉讼法各方面的深度文章。',
+
+      // Bui Duc Manh
+      buiDucManhBio: `<i>负责领域：</i><br /><br />
+      • 民事：合同、交易、继承、婚姻家庭、损害赔偿咨询...
+      <br /><br />
+      • 土地：所有土地程序咨询，包括但不限于房地产买卖、赠与、过户、换发、补发、新发、更正土地使用权、变更土地用途、解决土地纠纷...
+      <br /><br />
+      • 行政：行政程序、投诉和举报咨询。`,
+      buiDucManhExp: `- 2022-2024年：在Youth & Partners律师事务所担任法律专员。在公司工作期间，裴德孟专员在民事、行政、土地和许可证领域积累了宝贵经验。具体包括：<br />
+        • 成功参与解决多起土地纠纷，保护客户与不动产相关的合法权益。<br />
+        • 在行政程序方面为客户提供支持和咨询，特别是在实施与土地和个人组织必要许可证相关的复杂行政程序方面。<br />
+        • 直接参与起草和实施与子许可证发放相关的程序，满足企业和个人在经营和投资活动中的需求。`,
+      buiDucManhEdu1: '毕业',
+      buiDucManhEdu1Org: '司法学院',
+      buiDucManhEdu1Year: '2024年',
+      buiDucManhEdu2: '法学学士',
+      buiDucManhEdu2Org: '泰原经济与工商管理大学经济法学院',
+      buiDucManhEdu2Year: '2022年',
+      buiDucManhPostsInfo: '法律专员裴德孟关于劳动、企业和外国投资各方面的深度文章。',
+
+      // Do Thi Luong
+      doThiLuongBio: `<i>负责领域：</i><br /><br />
+      • 为企业提供常规法律咨询：起草和审查企业各类合同，如框架合同、商品买卖合同、劳动合同等；起草劳动、商业贸易等领域的法律咨询报告；根据客户要求咨询、审查和起草其他文件
+      <br /><br />
+      • 负责企业和知识产权部门：咨询并提供企业程序的全套服务（如企业注册、变更企业注册内容、解散等），知识产权（商标注册、工业设计等）；办理企业运营过程中的相关许可证手续，如外语中心设立许可证、工作许可证等
+      <br /><br />
+      • 支持并参与外国投资项目的设立和调整。`,
+      doThiLuongExp: `• 2017-2020年：在黄飞投资与知识产权咨询有限公司工作：咨询、起草文件、办理企业注册、知识产权等程序 <br />
+        • 2020-2022年：在Aliat律师事务所工作：专业咨询、起草文件、与政府机构在知识产权领域合作；咨询并办理企业程序 <br />
+        • 2023年至今：在Youth & Partners律师事务所工作：为企业提供常规法律咨询专员；负责企业和知识产权部门。`,
+      doThiLuongEdu1: '参加律师培训课程',
+      doThiLuongEdu1Org: '司法学院',
+      doThiLuongEdu1Year: '2024年',
+      doThiLuongEdu2: '法学学士',
+      doThiLuongEdu2Org: '河内法律大学经济法学院',
+      doThiLuongEdu2Year: '2017年',
+      doThiLuongPostsInfo: '法律专员杜氏良关于劳动、企业、投资、许可证、知识产权各方面的深度文章。',
+
+      // Mang Dieu Hien
+      mangDieuHienBio: '芒妙贤律师是一位有声誉的法律专家，专门提供各类子许可证的咨询和支持服务。凭借扎实的教育背景和丰富的实践经验，芒妙贤律师已帮助众多个人和企业完成与经营许可证相关的复杂法律程序，确保符合越南法律规定。',
+      mangDieuHienExp: `芒妙贤律师在法律领域拥有10年以上的经验，特别是在咨询和处理与子许可证相关的文件方面：<br />
+        + 营业执照（企业注册、有条件行业的经营许可证）。<br />
+        + 建设许可证、环境许可证、食品安全、广告和其他专业许可证。<br />
+        + 协助企业按照法律规定申请、续期或调整子许可证。`,
+      mangDieuHienExp2: `凭借对越南法律体系和行政程序的深刻理解，芒妙贤律师已：<br />
+        + 成功为数百家中小企业提供咨询，帮助完善法律程序，确保符合进度和法律要求。<br />
+        + 代表客户与政府机构合作，节省时间和成本。<br />
+        + 提供针对每个具体情况的最优法律解决方案，从初创企业到大型公司。`,
+      mangDieuHienEdu1: '律师执业证书',
+      mangDieuHienEdu1Org: '司法部',
+      mangDieuHienEdu1Year: '2019年',
+      mangDieuHienEdu2: '毕业',
+      mangDieuHienEdu2Org: '司法学院',
+      mangDieuHienEdu2Year: '2015年',
+      mangDieuHienEdu3: '法学学士',
+      mangDieuHienEdu3Org: '胡志明市法律大学',
+      mangDieuHienEdu3Year: '2010年',
+      mangDieuHienPostsInfo: '芒妙贤律师关于许可证、企业和外国投资各方面的深度文章。',
+
+      // Common fields for area of responsibility
+      areaOfResponsibility: '负责领域：',
+      civilLaw: '民事：合同、交易、继承、家庭、损害赔偿咨询...',
+      landLaw: '土地：所有土地程序咨询，包括但不限于房地产买卖、赠与、过户、换发、补发、新发、更正土地使用权、变更土地用途、解决土地纠纷...',
+      adminLaw: '行政：行政程序、投诉和举报咨询。',
+
+      // Common education terms
+      lawyerCertificate: '律师执业证书',
+      graduated: '毕业',
+      masterOfLaw: '法学硕士',
+      bachelorOfLaw: '法学学士',
+      doctorOfLaw: '劳动法博士',
+      bachelorOfForeignLanguages: '外语学士',
+      leadAuditorCert: '全球供应链劳动与商业道德首席审计员证书',
+      lawyerTrainingCourse: '参加律师培训课程',
+      
+      // Common organization names
+      ministryOfJustice: '司法部',
+      judicialAcademy: '司法学院',
+      hanoiLawUniversity: '河内法律大学',
+      hcmLawUniversity: '胡志明市法律大学',
+      socialScienceAcademy: '社会科学学院',
+      foreignLanguagesUniversity: '越南国立大学外国语大学',
+      thaiNguyenUniversity: '泰原经济与工商管理大学经济法学院',
+      hanoiLawEconomics: '河内法律大学经济法学院',
+      verite: 'Verité, Inc.',
+      
+      // Year prefix
+      year: '年',
     },
     ja: {
       // Nguyen Van Thanh
@@ -3431,6 +3968,161 @@ export const translations = {
       nguyenVanThanhEdu5Org: 'ハノイ法科大学',
       nguyenVanThanhEdu5Year: '2011年',
       nguyenVanThanhPostsInfo: 'グエン・ヴァン・タン弁護士による労働、企業、外国投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // Nguyen Hoang Anh
+      nguyenHoangAnhBio: 'グエン・ホアン・アン弁護士は、様々な分野、特にサブライセンス関連の手続きに特化した法律相談およびサポートサービスを提供する経験豊富な法律専門家です。',
+      nguyenHoangAnhExp: `グエン・ホアン・アン弁護士は、法律分野で10年以上の経験を持ち、サブライセンス関連の書類の相談と処理に重点を置いています：<br />
+        - 事業登録証、条件付き業種の営業許可<br />
+        - 環境、建設、食品安全、労働、その他の専門許可<br />
+        - 法的規制に従った新規発行、更新、または許可の調整における企業のサポート`,
+      nguyenHoangAnhExp2: `グエン・ホアン・アン弁護士のキャリアのハイライト：<br />
+        + スタートアップから大規模まで、多くの国内外の企業に法的文書の完成と許可取得を成功裏にコンサルティング<br />
+        + 政府機関との顧客代理、迅速で透明で効率的な手続きを保証<br />
+        + 各顧客の特定のニーズに合わせた包括的な法的ソリューションを提供し、コストと時間を最適化`,
+      nguyenHoangAnhEdu1: '弁護士実務資格',
+      nguyenHoangAnhEdu1Org: '司法省',
+      nguyenHoangAnhEdu1Year: '2022年',
+      nguyenHoangAnhEdu2: '卒業',
+      nguyenHoangAnhEdu2Org: '司法学院',
+      nguyenHoangAnhEdu2Year: '2021年',
+      nguyenHoangAnhEdu3: '法学修士',
+      nguyenHoangAnhEdu3Org: 'ハノイ法科大学',
+      nguyenHoangAnhEdu3Year: '2018年',
+      nguyenHoangAnhEdu4: '法学学士',
+      nguyenHoangAnhEdu4Org: 'ハノイ法科大学',
+      nguyenHoangAnhEdu4Year: '2014年',
+      nguyenHoangAnhPostsInfo: 'グエン・ホアン・アン弁護士による許可、企業、外国投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // TS Doan Xuan Truong
+      doanXuanTruongBio: `<i>担当分野：</i><br /><br />
+      • 民事：契約、取引、相続、婚姻家族、損害賠償の相談...
+      <br /><br />
+      • 土地：不動産の売買、贈与、名義変更、交換、再発行、新規発行、土地使用権の訂正、土地利用目的の変更、土地紛争の解決など、すべての土地手続きに関する相談...
+      <br /><br />
+      • 行政：行政手続き、苦情および告発の相談。`,
+      doanXuanTruongExp: 'ドアン・スアン・チュオン博士は現在、ハノイ法科大学の講師です。',
+      doanXuanTruongExp2: 'ドアン・スアン・チュオン博士は15年以上の教育および法令遵守指導の経験があり、労働者と企業のための多くの法律相談案件を処理し、現代労働法の分野で多数の独自報告書を執筆しています。',
+      doanXuanTruongEdu1: '労働法博士',
+      doanXuanTruongEdu1Org: 'ハノイ法科大学',
+      doanXuanTruongEdu1Year: '2022年',
+      doanXuanTruongEdu2: '法学修士',
+      doanXuanTruongEdu2Org: '社会科学アカデミー',
+      doanXuanTruongEdu2Year: '2014年',
+      doanXuanTruongEdu3: '法学学士',
+      doanXuanTruongEdu3Org: 'ハノイ法科大学',
+      doanXuanTruongEdu3Year: '2011年',
+      doanXuanTruongPostsInfo: 'ドアン・スアン・チュオン博士による民事、土地、行政法のあらゆる側面についての詳細な記事。',
+
+      // Tran Chung Kien
+      tranChungKienBio: `<i>担当分野：</i><br /><br />
+      • 民事：契約、民事取引、相続、婚姻家族、損害賠償などの案件でクライアントの相談および代理を行う
+      <br /><br />
+      • 訴訟代理：各級裁判所でクライアントの民事、刑事、行政案件を代理し、訴訟手続きに参加し、法廷内外でクライアントの正当な利益を保護する
+      <br /><br />
+      • 刑事：被害者の相談と正当な利益の保護、また刑事訴訟の各段階で容疑者と被告人の弁護を行う。犯罪行為に関連する事項を扱い、刑事案件における各主体の法的責任の程度を判断する
+      <br /><br />
+      • 行政：行政手続きの相談、苦情、告発および行政関連法律問題の解決。`,
+      tranChungKienExp: `• 2015年：ハノイ法科大学法学部卒業 <br />
+        • 2015-2022年：人民検察院の公務員、検察官。この期間中、民事、刑事、行政案件への参加、訴訟活動の監督、司法公正の維持、法秩序の維持と関係者の正当な利益の保護に貢献する実践経験を積む <br />
+        • 2022-2024年：Youth & Partners法律事務所で勤務し、民事、刑事、行政および訴訟法に関連するクライアントへの相談と代理サービスを専門とする。複雑な案件でクライアントの権利を保護し、法的問題を効果的に解決し、正当な利益を最大限に保護することに成功。`,
+      tranChungKienEdu1: '検察官に任命',
+      tranChungKienEdu1Org: '最高人民検察院',
+      tranChungKienEdu1Year: '2021年',
+      tranChungKienEdu2: '検察業務研修証明書取得',
+      tranChungKienEdu2Org: '最高人民検察院',
+      tranChungKienEdu2Year: '2019年',
+      tranChungKienEdu3: '法学学士',
+      tranChungKienEdu3Org: 'ハノイ法科大学法学部',
+      tranChungKienEdu3Year: '2015年',
+      tranChungKienPostsInfo: 'チャン・チュン・キエン弁護士による民事、刑事、行政および訴訟法のあらゆる側面についての詳細な記事。',
+
+      // Bui Duc Manh
+      buiDucManhBio: `<i>担当分野：</i><br /><br />
+      • 民事：契約、取引、相続、婚姻家族、損害賠償の相談...
+      <br /><br />
+      • 土地：不動産の売買、贈与、名義変更、交換、再発行、新規発行、土地使用権の訂正、土地利用目的の変更、土地紛争の解決など、すべての土地手続きに関する相談...
+      <br /><br />
+      • 行政：行政手続き、苦情および告発の相談。`,
+      buiDucManhExp: `- 2022-2024年：Youth & Partners法律事務所の法律専門家。会社での勤務中、マン専門家は民事、行政、土地、許可の分野で貴重な経験を積みました。具体的には：<br />
+        • 多くの土地紛争の解決に成功し、不動産に関するクライアントの正当な権利を保護。<br />
+        • 行政手続きにおけるクライアントのサポートとアドバイス、特に土地や個人・組織に必要な許可に関連する複雑な行政手続きの実施。<br />
+        • サブライセンス発行に関連する手続きの起草と実施に直接参加し、事業および投資活動における企業や個人のニーズに対応。`,
+      buiDucManhEdu1: '卒業',
+      buiDucManhEdu1Org: '司法学院',
+      buiDucManhEdu1Year: '2024年',
+      buiDucManhEdu2: '法学学士',
+      buiDucManhEdu2Org: 'タイグエン経済経営大学経済法学部',
+      buiDucManhEdu2Year: '2022年',
+      buiDucManhPostsInfo: '法律専門家ブイ・ドゥック・マンによる労働、企業、外国投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // Do Thi Luong
+      doThiLuongBio: `<i>担当分野：</i><br /><br />
+      • 企業への定期的な法律相談：枠組み契約、商品売買契約、労働契約などの企業内各種契約の起草とレビュー；労働、商業ビジネスなどの分野の法律相談報告書の作成；クライアントの要望に応じたその他の文書の相談、レビュー、起草
+      <br /><br />
+      • 企業・知的財産部門の責任者：企業手続き（企業登録、企業登録内容の変更、解散など）、知的財産（商標登録、工業デザインなど）の包括的なサービスの相談と実施；外国語センター設立許可、労働許可証などの企業運営中の関連許可手続き
+      <br /><br />
+      • 外国投資プロジェクトの設立・調整のサポートと参加。`,
+      doThiLuongExp: `• 2017-2020年：ホアンフィ投資・知的財産コンサルティング会社勤務：相談、文書作成、企業登録、知的財産、その他の手続き実施 <br />
+        • 2020-2022年：アリアット法律会社勤務：知的財産分野での専門相談、文書作成、政府機関との連携；企業手続きの相談と実施 <br />
+        • 2023年～現在：Youth & Partners法律事務所勤務：企業への定期的な法律相談専門家；企業・知的財産部門責任者。`,
+      doThiLuongEdu1: '弁護士研修コースに参加',
+      doThiLuongEdu1Org: '司法学院',
+      doThiLuongEdu1Year: '2024年',
+      doThiLuongEdu2: '法学学士',
+      doThiLuongEdu2Org: 'ハノイ法科大学経済法学部',
+      doThiLuongEdu2Year: '2017年',
+      doThiLuongPostsInfo: '法律専門家ド・ティ・ルオンによる労働、企業、投資、許可、知的財産に関するあらゆる法的側面についての詳細な記事。',
+
+      // Mang Dieu Hien
+      mangDieuHienBio: 'マン・ジエウ・ヒエン弁護士は、各種サブライセンスの相談とサポートを専門とする評判の高い法律専門家です。確固たる教育背景と豊富な実務経験により、マン・ジエウ・ヒエン弁護士は多くの個人や企業の営業許可に関連する複雑な法的手続きの完成を支援し、ベトナム法への準拠を確保しています。',
+      mangDieuHienExp: `マン・ジエウ・ヒエン弁護士は法律分野で10年以上の経験を持ち、特にサブライセンスに関連する文書の相談と処理を専門としています：<br />
+        + 事業登録証（企業登録、条件付き業種の営業許可）。<br />
+        + 建設許可、環境許可、食品安全、広告、その他の専門許可。<br />
+        + 法的規制に従ったサブライセンスの申請、更新、調整における企業のサポート。`,
+      mangDieuHienExp2: `ベトナムの法律体系と行政手続きへの深い理解により、マン・ジエウ・ヒエン弁護士は：<br />
+        + 数百の中小企業の法的手続きの完成を成功裏にコンサルティングし、スケジュールと法的要件への準拠を確保。<br />
+        + 政府機関との顧客代理、時間とコストの節約。<br />
+        + スタートアップから大企業まで、各具体的なケースに合わせた最適な法的ソリューションの提供。`,
+      mangDieuHienEdu1: '弁護士実務資格',
+      mangDieuHienEdu1Org: '司法省',
+      mangDieuHienEdu1Year: '2019年',
+      mangDieuHienEdu2: '卒業',
+      mangDieuHienEdu2Org: '司法学院',
+      mangDieuHienEdu2Year: '2015年',
+      mangDieuHienEdu3: '法学学士',
+      mangDieuHienEdu3Org: 'ホーチミン市法科大学',
+      mangDieuHienEdu3Year: '2010年',
+      mangDieuHienPostsInfo: 'マン・ジエウ・ヒエン弁護士による許可、企業、外国投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // Common fields for area of responsibility
+      areaOfResponsibility: '担当分野：',
+      civilLaw: '民事：契約、取引、相続、家族、損害賠償の相談...',
+      landLaw: '土地：不動産の売買、贈与、名義変更、交換、再発行、新規発行、土地使用権の訂正、土地利用目的の変更、土地紛争の解決など、すべての土地手続きに関する相談...',
+      adminLaw: '行政：行政手続き、苦情および告発の相談。',
+
+      // Common education terms
+      lawyerCertificate: '弁護士実務資格',
+      graduated: '卒業',
+      masterOfLaw: '法学修士',
+      bachelorOfLaw: '法学学士',
+      doctorOfLaw: '労働法博士',
+      bachelorOfForeignLanguages: '外国語学士',
+      leadAuditorCert: 'グローバルサプライチェーンにおける労働・ビジネス倫理のリードオーディター資格',
+      lawyerTrainingCourse: '弁護士研修コースに参加',
+      
+      // Common organization names
+      ministryOfJustice: '司法省',
+      judicialAcademy: '司法学院',
+      hanoiLawUniversity: 'ハノイ法科大学',
+      hcmLawUniversity: 'ホーチミン市法科大学',
+      socialScienceAcademy: '社会科学アカデミー',
+      foreignLanguagesUniversity: 'ベトナム国立大学外国語大学',
+      thaiNguyenUniversity: 'タイグエン経済経営大学経済法学部',
+      hanoiLawEconomics: 'ハノイ法科大学経済法学部',
+      verite: 'Verité, Inc.',
+      
+      // Year prefix
+      year: '年',
     },
     ko: {
       // Nguyen Van Thanh
@@ -3458,6 +4150,161 @@ export const translations = {
       nguyenVanThanhEdu5Org: '하노이 법대',
       nguyenVanThanhEdu5Year: '2011년',
       nguyenVanThanhPostsInfo: '응우옌 반 타인 변호사의 노동, 기업 및 외국인 투자에 관한 모든 법적 측면에 대한 심층 기사.',
+
+      // Nguyen Hoang Anh
+      nguyenHoangAnhBio: '응우옌 황 아인 변호사는 다양한 분야, 특히 부속 허가 관련 절차에서 법률 자문 및 지원 서비스를 전문으로 하는 경험이 풍부한 법률 전문가입니다.',
+      nguyenHoangAnhExp: `응우옌 황 아인 변호사는 10년 이상의 법률 분야 경험을 보유하고 있으며, 부속 허가 관련 서류 자문 및 처리에 중점을 두고 있습니다:<br />
+        - 사업자 등록증, 조건부 업종 운영 허가<br />
+        - 환경, 건설, 식품안전, 노동 및 기타 전문 허가<br />
+        - 기업의 신규 발급, 연장 또는 허가 조정 지원`,
+      nguyenHoangAnhExp2: `응우옌 황 아인 변호사의 주요 경력:<br />
+        + 국내외 스타트업부터 대기업까지 다양한 기업의 법적 서류 완성 및 허가 취득을 성공적으로 자문<br />
+        + 정부 기관과의 고객 대리, 신속하고 투명하며 효율적인 절차 보장<br />
+        + 각 고객의 구체적인 요구에 맞는 종합적인 법률 솔루션 제공, 비용 및 시간 최적화`,
+      nguyenHoangAnhEdu1: '변호사 실무 자격증',
+      nguyenHoangAnhEdu1Org: '법무부',
+      nguyenHoangAnhEdu1Year: '2022년',
+      nguyenHoangAnhEdu2: '졸업',
+      nguyenHoangAnhEdu2Org: '사법학원',
+      nguyenHoangAnhEdu2Year: '2021년',
+      nguyenHoangAnhEdu3: '법학 석사',
+      nguyenHoangAnhEdu3Org: '하노이 법대',
+      nguyenHoangAnhEdu3Year: '2018년',
+      nguyenHoangAnhEdu4: '법학 학사',
+      nguyenHoangAnhEdu4Org: '하노이 법대',
+      nguyenHoangAnhEdu4Year: '2014년',
+      nguyenHoangAnhPostsInfo: '응우옌 황 아인 변호사의 허가, 기업 및 외국인 투자에 관한 심층 기사.',
+
+      // TS Doan Xuan Truong
+      doanXuanTruongBio: `<i>담당 분야:</i><br /><br />
+      • 민사: 계약, 거래, 상속, 혼인가정, 손해배상 자문...
+      <br /><br />
+      • 토지: 부동산 매매, 증여, 명의 변경, 갱신, 재발급, 신규 발급, 토지 사용권 정정, 토지 용도 변경, 토지 분쟁 해결 등 모든 토지 절차 자문...
+      <br /><br />
+      • 행정: 행정 절차, 민원 및 고발 자문.`,
+      doanXuanTruongExp: '도안 쑤언 쯔엉 박사는 현재 하노이 법대 강사입니다.',
+      doanXuanTruongExp2: '도안 쑤언 쯔엉 박사는 15년 이상의 교육 및 법률 준수 지도 경험을 보유하고 있으며, 근로자와 기업을 위한 많은 법률 자문 사건을 처리했고, 현대 노동법 분야에서 다수의 독립 보고서를 작성했습니다.',
+      doanXuanTruongEdu1: '노동법 박사',
+      doanXuanTruongEdu1Org: '하노이 법대',
+      doanXuanTruongEdu1Year: '2022년',
+      doanXuanTruongEdu2: '법학 석사',
+      doanXuanTruongEdu2Org: '사회과학 아카데미',
+      doanXuanTruongEdu2Year: '2014년',
+      doanXuanTruongEdu3: '법학 학사',
+      doanXuanTruongEdu3Org: '하노이 법대',
+      doanXuanTruongEdu3Year: '2011년',
+      doanXuanTruongPostsInfo: '도안 쑤언 쯔엉 박사의 민사, 토지 및 행정법 관련 심층 기사.',
+
+      // Tran Chung Kien
+      tranChungKienBio: `<i>담당 분야:</i><br /><br />
+      • 민사: 계약, 민사 거래, 상속, 혼인가정, 손해배상 관련 사건에서 고객 자문 및 대리
+      <br /><br />
+      • 소송 대리: 각급 법원에서 민사, 형사, 행정 사건의 고객 대리, 소송 절차 참여, 법정 안팎에서 고객의 정당한 이익 보호
+      <br /><br />
+      • 형사: 피해자 자문 및 정당한 이익 보호, 형사 소송의 각 단계에서 혐의자와 피고인 변호. 범죄 행위 관련 문제를 처리하고 형사 사건에서 각 주체의 법적 책임 정도를 판단
+      <br /><br />
+      • 행정: 행정 절차 자문, 민원, 고발 및 행정 관련 법률 문제 해결.`,
+      tranChungKienExp: `• 2015년: 하노이 법대 법학과 졸업 <br />
+        • 2015-2022년: 인민검찰원 공무원, 검찰관. 이 기간 동안 민사, 형사, 행정 사건 참여, 소송 활동 감독, 사법 정의 유지, 법질서 유지 및 관계자의 정당한 이익 보호에 기여하는 실무 경험을 쌓음 <br />
+        • 2022-2024년: Youth & Partners 법률사무소에서 근무하며 민사, 형사, 행정 및 소송법과 관련된 고객 자문 및 대리 서비스 전문. 복잡한 사건에서 고객의 권리를 보호하고 법적 문제를 효과적으로 해결하며 정당한 이익을 최대한 보호하는 데 성공.`,
+      tranChungKienEdu1: '검찰관으로 임명',
+      tranChungKienEdu1Org: '대검찰청',
+      tranChungKienEdu1Year: '2021년',
+      tranChungKienEdu2: '검찰 업무 연수 자격증 취득',
+      tranChungKienEdu2Org: '대검찰청',
+      tranChungKienEdu2Year: '2019년',
+      tranChungKienEdu3: '법학 학사',
+      tranChungKienEdu3Org: '하노이 법대 법학과',
+      tranChungKienEdu3Year: '2015년',
+      tranChungKienPostsInfo: '짠 쭝 끼엔 변호사의 민사, 형사, 행정 및 소송법 관련 심층 기사.',
+
+      // Bui Duc Manh
+      buiDucManhBio: `<i>담당 분야:</i><br /><br />
+      • 민사: 계약, 거래, 상속, 혼인가정, 손해배상 자문...
+      <br /><br />
+      • 토지: 부동산 매매, 증여, 명의 변경, 갱신, 재발급, 신규 발급, 토지 사용권 정정, 토지 용도 변경, 토지 분쟁 해결 등 모든 토지 절차 자문...
+      <br /><br />
+      • 행정: 행정 절차, 민원 및 고발 자문.`,
+      buiDucManhExp: `- 2022-2024년: Youth & Partners 법률사무소 법률 전문가. 회사 근무 기간 동안 마인 전문가는 민사, 행정, 토지 및 허가 분야에서 귀중한 경험을 쌓았습니다. 구체적으로: <br />
+        • 많은 토지 분쟁 해결에 성공적으로 참여하여 부동산 관련 고객의 정당한 권리 보호.<br />
+        • 행정 절차에서 고객 지원 및 자문, 특히 토지 및 개인과 조직에 필요한 허가와 관련된 복잡한 행정 절차 이행.<br />
+        • 부속 허가 발급 관련 절차의 기안 및 이행에 직접 참여하여 사업 및 투자 활동에서 기업과 개인의 요구 충족.`,
+      buiDucManhEdu1: '졸업',
+      buiDucManhEdu1Org: '사법학원',
+      buiDucManhEdu1Year: '2024년',
+      buiDucManhEdu2: '법학 학사',
+      buiDucManhEdu2Org: '타이응우옌 경제경영대학 경제법학과',
+      buiDucManhEdu2Year: '2022년',
+      buiDucManhPostsInfo: '법률 전문가 부이 득 마인의 노동, 기업 및 외국인 투자 관련 심층 기사.',
+
+      // Do Thi Luong
+      doThiLuongBio: `<i>담당 분야:</i><br /><br />
+      • 기업을 위한 정기 법률 자문: 기본 계약, 상품 매매 계약, 노동 계약 등 기업 내 각종 계약의 작성 및 검토; 노동, 상업 사업 등 분야의 법률 자문 보고서 작성; 고객 요청에 따른 기타 문서의 자문, 검토 및 작성
+      <br /><br />
+      • 기업 및 지식재산 부서 담당: 기업 절차(기업 등록, 기업 등록 내용 변경, 해산 등), 지식재산(상표 등록, 산업 디자인 등)의 패키지 서비스 자문 및 이행; 외국어 센터 설립 허가, 노동 허가증 등 기업 운영 중 관련 허가 절차
+      <br /><br />
+      • 외국인 투자 프로젝트의 설립 및 조정 지원 및 참여.`,
+      doThiLuongExp: `• 2017-2020년: 호앙피 투자 및 지식재산 컨설팅 회사 근무: 자문, 문서 작성, 기업 등록, 지식재산 등 절차 이행 <br />
+        • 2020-2022년: 알리아트 법률 회사 근무: 지식재산 분야에서 전문 자문, 문서 작성, 정부 기관과의 협력; 기업 절차 자문 및 이행 <br />
+        • 2023년~현재: Youth & Partners 법률사무소 근무: 기업을 위한 정기 법률 자문 전문가; 기업 및 지식재산 부서 담당.`,
+      doThiLuongEdu1: '변호사 연수 과정 참여',
+      doThiLuongEdu1Org: '사법학원',
+      doThiLuongEdu1Year: '2024년',
+      doThiLuongEdu2: '법학 학사',
+      doThiLuongEdu2Org: '하노이 법대 경제법학과',
+      doThiLuongEdu2Year: '2017년',
+      doThiLuongPostsInfo: '법률 전문가 도 티 르엉의 노동, 기업, 투자, 허가, 지식재산 관련 심층 기사.',
+
+      // Mang Dieu Hien
+      mangDieuHienBio: '망 지에우 히엔 변호사는 각종 부속 허가의 자문과 지원을 전문으로 하는 명성 있는 법률 전문가입니다. 탄탄한 교육 배경과 풍부한 실무 경험을 바탕으로, 망 지에우 히엔 변호사는 많은 개인과 기업이 운영 허가와 관련된 복잡한 법적 절차를 완료하도록 지원하여 베트남 법률 준수를 보장하고 있습니다.',
+      mangDieuHienExp: `망 지에우 히엔 변호사는 10년 이상의 법률 분야 경험을 보유하고 있으며, 특히 부속 허가 관련 서류의 자문 및 처리를 전문으로 합니다: <br />
+        + 사업 허가증(기업 등록, 조건부 업종 운영 허가).<br />
+        + 건설 허가, 환경 허가, 식품 안전, 광고 및 기타 전문 허가.<br />
+        + 법적 규정에 따른 부속 허가의 신청, 연장 또는 조정에서 기업 지원.`,
+      mangDieuHienExp2: `베트남 법률 시스템과 행정 절차에 대한 깊은 이해를 바탕으로, 망 지에우 히엔 변호사는:<br />
+        + 수백 개의 중소기업의 법적 절차 완료를 성공적으로 자문하여 일정 및 법적 요구 사항 준수 보장.<br />
+        + 정부 기관과의 고객 대리, 시간 및 비용 절약.<br />
+        + 스타트업부터 대기업까지 각 구체적인 사례에 맞는 최적의 법률 솔루션 제공.`,
+      mangDieuHienEdu1: '변호사 실무 자격증',
+      mangDieuHienEdu1Org: '법무부',
+      mangDieuHienEdu1Year: '2019년',
+      mangDieuHienEdu2: '졸업',
+      mangDieuHienEdu2Org: '사법학원',
+      mangDieuHienEdu2Year: '2015년',
+      mangDieuHienEdu3: '법학 학사',
+      mangDieuHienEdu3Org: '호치민시 법대',
+      mangDieuHienEdu3Year: '2010년',
+      mangDieuHienPostsInfo: '망 지에우 히엔 변호사의 허가, 기업 및 외국인 투자 관련 심층 기사.',
+
+      // Common fields for area of responsibility
+      areaOfResponsibility: '담당 분야:',
+      civilLaw: '민사: 계약, 거래, 상속, 가족, 손해배상 자문...',
+      landLaw: '토지: 부동산 매매, 증여, 명의 변경, 토지 사용권 갱신, 재발급, 신규 발급, 정정, 목적 변경, 토지 분쟁 해결 등 모든 토지 절차 자문...',
+      adminLaw: '행정: 행정 절차, 민원 및 고발 자문.',
+
+      // Common education terms
+      lawyerCertificate: '변호사 실무 자격증',
+      graduated: '졸업',
+      masterOfLaw: '법학 석사',
+      bachelorOfLaw: '법학 학사',
+      doctorOfLaw: '노동법 박사',
+      bachelorOfForeignLanguages: '외국어 학사',
+      leadAuditorCert: '글로벌 공급망 노동 및 비즈니스 윤리 리드 오디터 자격증',
+      lawyerTrainingCourse: '변호사 연수 과정 참여',
+      
+      // Common organization names
+      ministryOfJustice: '법무부',
+      judicialAcademy: '사법학원',
+      hanoiLawUniversity: '하노이 법대',
+      hcmLawUniversity: '호치민시 법대',
+      socialScienceAcademy: '사회과학 아카데미',
+      foreignLanguagesUniversity: '베트남 국립대학교 외국어대학',
+      thaiNguyenUniversity: '타이응우옌 경제경영대학 경제법학과',
+      hanoiLawEconomics: '하노이 법대 경제법학과',
+      verite: 'Verité, Inc.',
+      
+      // Year prefix
+      year: '년',
     },
   },
 } as const;

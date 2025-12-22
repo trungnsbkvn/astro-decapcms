@@ -26,11 +26,13 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
+      <span class="notranslate" translate="no">
       <br />
       <i>Lĩnh vực phụ trách:</i><br /><br />
       Với kiến thức sâu rộng và kinh nghiệm thực tiễn, Mai Ánh đảm nhiệm vai trò biên tập viên chuyên về lĩnh vực Dân sự
       và Hành chính. Các bài viết của Mai Ánh tập trung phân tích, tổng hợp và làm rõ các quy định pháp luật, chính sách
       nổi bật liên quan đến quyền sử dụng đất, hợp đồng, hôn nhân gia đình và các vấn đề pháp lý Dân sự.
+      </span>
     </Fragment>
   </Hero>
 
@@ -73,7 +75,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   >
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
-      <p>
+      <p class="notranslate" translate="no">
         • 2021: Thực tập tại Công ty Luật 24h, hỗ trợ luật sư nghiên cứu và soạn thảo hồ sơ, kiểm tra giấy tờ, tài liệu
         pháp lý <br />
         • 2023: Thực tập tại Ủy ban nhân dân xã Việt Xuân, phối hợp với Công chức Tư pháp – Hộ tịch thực hiện chứng thực

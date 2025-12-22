@@ -26,6 +26,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
   >
     <Fragment slot="subtitle">
+      <span class="notranslate" translate="no" data-i18n="lawyers.tranChungKienBio">
       <br />
       <i>Lĩnh vực phụ trách:</i><br /><br />
       • Dân sự: Tư vấn và đại diện khách hàng trong các vụ án về hợp đồng, giao dịch Dân sự, thừa kế, hôn nhân gia đình,
@@ -40,6 +41,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
       <br /><br />
       • Hành chính: Tư vấn về các thủ tục Hành chính, giải quyết khiếu nại, tố cáo và các vấn đề pháp lý liên quan đến Hành
       chính.
+      </span>
     </Fragment>
   </Hero>
 
@@ -82,7 +84,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
   >
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
-      <p>
+      <p class="notranslate" translate="no" data-i18n="lawyers.tranChungKienExp">
         • Năm 2015: Tốt nghiệp Khoa Luật học, Đại học Luật Hà Nội <br />
         • Từ 2015 - 2022: Công chức, Kiểm sát viên ngành Kiểm sát nhân dân. Trong suốt thời gian này, ông đã tích lũy kinh
         nghiệm thực tiễn trong việc tham gia các vụ án Dân sự, Hình sự và Hành chính, thực hiện công tác kiểm sát các hoạt
@@ -109,15 +111,15 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     i18nTitle="lawyerProfile.education"
     items={[
       {
-        title: `Được bổ nhiệm làm Kiểm sát viên <br /> <span class="font-normal">Viện Kiểm Sát Nhân Dân Tối Cao</span> <br /> <span class="text-sm font-normal">Năm 2021</span>`,
+        title: `<span class="notranslate" translate="no" data-i18n="lawyers.tranChungKienEdu1">Được bổ nhiệm làm Kiểm sát viên</span> <br /> <span class="font-normal notranslate" translate="no" data-i18n="lawyers.tranChungKienEdu1Org">Viện Kiểm Sát Nhân Dân Tối Cao</span> <br /> <span class="text-sm font-normal notranslate" translate="no" data-i18n="lawyers.tranChungKienEdu1Year">Năm 2021</span>`,
         icon: 'tabler:school',
       },
       {
-        title: `Được cấp chứng chỉ đào tạo nghiệp vụ kiểm sát <br /> <span class="font-normal">Viện Kiểm Sát Nhân Dân Tối Cao</span> <br /> <span class="text-sm font-normal">Năm 2019</span>`,
+        title: `<span class="notranslate" translate="no" data-i18n="lawyers.tranChungKienEdu2">Được cấp chứng chỉ đào tạo nghiệp vụ kiểm sát</span> <br /> <span class="font-normal notranslate" translate="no" data-i18n="lawyers.tranChungKienEdu2Org">Viện Kiểm Sát Nhân Dân Tối Cao</span> <br /> <span class="text-sm font-normal notranslate" translate="no" data-i18n="lawyers.tranChungKienEdu2Year">Năm 2019</span>`,
         icon: 'tabler:school',
       },
       {
-        title: `Cử nhân Luật <br /> <span class="font-normal">Khoa Luật học, Đại học Luật Hà Nội</span> <br /> <span class="text-sm font-normal">Năm 2015</span>`,
+        title: `<span class="notranslate" translate="no" data-i18n="lawyers.tranChungKienEdu3">Cử nhân Luật</span> <br /> <span class="font-normal notranslate" translate="no" data-i18n="lawyers.tranChungKienEdu3Org">Khoa Luật học, Đại học Luật Hà Nội</span> <br /> <span class="text-sm font-normal notranslate" translate="no" data-i18n="lawyers.tranChungKienEdu3Year">Năm 2015</span>`,
         icon: 'tabler:school',
       },
     ]}
@@ -131,6 +133,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     title="Bài viết của tác giả"
     i18nTitle="lawyerProfile.authorPosts"
     information={`Các bài viết chuyên sâu của Luật sư Trần Chung Kiên về mọi khía cạnh pháp lý về Đại diện trong và ngoài Tố tụng, Dân sự, Hình sự, Hành chính.`}
+    i18nInformation="lawyers.tranChungKienPostsInfo"
     author={author}
     types={types}
   >
