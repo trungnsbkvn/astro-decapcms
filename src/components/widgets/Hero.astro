@@ -36,8 +36,11 @@ const {
         {
           tagline && (
             <p
-              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade notranslate"
-              translate="no"
+              class:list={[
+                "text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade",
+                { notranslate: i18nTagline }
+              ]}
+              translate={i18nTagline ? "no" : undefined}
               {...(i18nTagline ? { 'data-i18n': i18nTagline } : {})}
               set:html={tagline}
             />
@@ -46,8 +49,11 @@ const {
         {
           title && (
             <h1
-              class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade notranslate"
-              translate="no"
+              class:list={[
+                "text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade",
+                { notranslate: i18nTitle }
+              ]}
+              translate={i18nTitle ? "no" : undefined}
               {...(i18nTitle ? { 'data-i18n': i18nTitle } : {})}
               set:html={title}
             />
@@ -57,8 +63,11 @@ const {
           {
             subtitle && (
               <p
-                class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade text-justify notranslate"
-                translate="no"
+                class:list={[
+                  "text-xl text-muted mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade text-justify",
+                  { notranslate: i18nSubtitle }
+                ]}
+                translate={i18nSubtitle ? "no" : undefined}
                 {...(i18nSubtitle ? { 'data-i18n': i18nSubtitle } : {})}
                 set:html={subtitle}
               />

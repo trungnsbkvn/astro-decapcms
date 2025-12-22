@@ -66,7 +66,7 @@ const relatedPosts = posts.map((post) => {
             />
             {totalPosts > 0 && (
               <p class="text-sm text-muted dark:text-slate-500">
-                <span data-i18n="common.totalPosts">Tổng cộng</span> {totalPosts} <span data-i18n="common.posts">bài viết</span>
+                <span data-i18n="common.totalPosts">Tổng cộng</span>&nbsp;{totalPosts}&nbsp;<span data-i18n="common.posts">bài viết</span>
               </p>
             )}
           </div>
@@ -83,7 +83,7 @@ const relatedPosts = posts.map((post) => {
             href={`/tac-gia/${authorSlug}/bai-viet`}
             class="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium text-white bg-primary hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-500 rounded-full shadow-md hover:shadow-lg transition-all duration-300 group"
           >
-            <span><span data-i18n="common.viewAllPosts">Xem tất cả</span> {totalPosts} <span data-i18n="common.posts">bài viết</span></span>
+            <span><span data-i18n="common.viewAllPosts">Xem tất cả</span>&nbsp;{totalPosts}&nbsp;<span data-i18n="common.posts">bài viết</span></span>
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" 

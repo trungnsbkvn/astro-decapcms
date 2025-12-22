@@ -3321,6 +3321,145 @@ export const translations = {
       techSupportDesc: '문서 접근, 이메일 통신 문제 또는 서비스 사용과 관련된 기타 기술적 문제가 있을 때 연락하세요.',
     },
   },
+
+  // Individual Lawyer Profiles
+  lawyers: {
+    vi: {
+      // Nguyen Van Thanh
+      nguyenVanThanhBio: 'Ông Nguyễn Văn Thành là Luật sư Điều hành <span class="text-accent dark:text-white highlight"> Youth </span><span class="text-primary dark:text-white highlight">& Partners</span> Law Firm với hơn 14 năm kinh nghiệm nghiên cứu, đưa ra các giải pháp thiết thực cho những vấn đề pháp lý phức tạp mà Doanh nghiệp phải đối mặt. Đồng thời, ông Thành còn giữ vai trò Tổng Cố vấn Pháp lý tại Samsung SDI Việt Nam.',
+      nguyenVanThanhExp: `Luật sư Thành, nguyên là Trưởng phòng pháp chế Samsung SDI Việt Nam (từ 2015) và hiện đang là Luật sư điều hành Youth & Partners Law Firm (từ 2019). <br />
+        - Ban chủ nhiệm Câu lạc bộ pháp chế tỉnh Vĩnh Phúc: 3/2024 <br />
+        - Thẻ hành nghề luật sư số: 10652/LS do Liên đoàn luật sư Việt Nam cấp <br />
+        - Thành viên Liên đoàn luật sư Việt Nam: 2015<br />
+        - Luật sư thuộc Đoàn luật sư, Hội luật gia Việt Nam`,
+      nguyenVanThanhExp2: 'Luật sư Thành có kinh nghiệm tư vấn chuyên sâu các vấn đề nội bộ của Doanh nghiệp, lao động và kinh doanh - thương mại, ông am hiểu sâu sắc các bộ quy tắc quốc tế liên quan tới Doanh nghiệp và Người lao động, có kinh nghiệm tuyệt vời trong việc giải quyết các tranh chấp nội bộ trong doanh nghiệp, các tranh chấp, vấn đề pháp lý liên quan đến các đối tác, nhà cung cấp của Doanh nghiệp.',
+      nguyenVanThanhExp3: 'Luật sư Thành là một trong số rất ít các Luật sư tại Việt Nam có chứng chỉ Kiểm toán cao cấp về hệ thống quản lý, lao động, nhân quyền, đạo đức kinh doanh của tổ chức Liên minh các Doanh nghiệp có Trách nhiệm xã hội (RBA). Với vai trò Lead Auditor (Trưởng đoàn thanh tra các nhà cung ứng của Samsung Việt Nam), Luật sư Thành đã có kinh nghiệm đi audit (đánh giá) hàng trăm nhà cung cấp của Samsung Việt Nam về khía cạnh tuân thủ bộ tiêu chuẩn quốc tế RBA (RBA code of conduct) và quy định của pháp luật Việt Nam.',
+      nguyenVanThanhEdu1: 'Cấp chứng chỉ Lead Auditor (đánh giá viên trưởng) cho chương Lao động & Đạo đức kinh doanh trong chuỗi cung ứng toàn cầu',
+      nguyenVanThanhEdu1Org: 'Verité, Inc.',
+      nguyenVanThanhEdu1Year: 'Năm 2016',
+      nguyenVanThanhEdu2: 'Cấp chứng chỉ hành nghề Luật sư',
+      nguyenVanThanhEdu2Org: 'Bộ Tư Pháp',
+      nguyenVanThanhEdu2Year: 'Năm 2015',
+      nguyenVanThanhEdu3: 'Tốt nghiệp',
+      nguyenVanThanhEdu3Org: 'Học viện Tư Pháp',
+      nguyenVanThanhEdu3Year: 'Năm 2012',
+      nguyenVanThanhEdu4: 'Cử nhân ngoại ngữ',
+      nguyenVanThanhEdu4Org: 'ĐH Ngoại ngữ, ĐH Quốc Gia Hà Nội',
+      nguyenVanThanhEdu4Year: 'Năm 2012',
+      nguyenVanThanhEdu5: 'Cử nhân Luật',
+      nguyenVanThanhEdu5Org: 'Trường ĐH Luật Hà Nội',
+      nguyenVanThanhEdu5Year: 'Năm 2011',
+      nguyenVanThanhPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Văn Thành về mọi khía cạnh pháp lý về lao động, doanh nghiệp và đầu tư nước ngoài.',
+    },
+    en: {
+      // Nguyen Van Thanh
+      nguyenVanThanhBio: 'Mr. Nguyen Van Thanh is the Managing Lawyer of <span class="text-accent dark:text-white highlight"> Youth </span><span class="text-primary dark:text-white highlight">& Partners</span> Law Firm with over 14 years of experience in research and providing practical solutions for complex legal issues that businesses face. Additionally, Mr. Thanh holds the position of General Legal Counsel at Samsung SDI Vietnam.',
+      nguyenVanThanhExp: `Lawyer Thanh, formerly Head of Legal Department at Samsung SDI Vietnam (since 2015) and currently Managing Lawyer at Youth & Partners Law Firm (since 2019). <br />
+        - Executive Committee of Vinh Phuc Province Legal Club: 3/2024 <br />
+        - Lawyer License No: 10652/LS issued by Vietnam Bar Federation <br />
+        - Member of Vietnam Bar Federation: 2015<br />
+        - Lawyer of Bar Association, Vietnam Lawyers Association`,
+      nguyenVanThanhExp2: 'Lawyer Thanh has extensive consulting experience in internal corporate issues, labor and business - commerce matters. He has deep understanding of international codes of conduct related to Businesses and Employees, with excellent experience in resolving internal disputes within companies, disputes and legal issues related to partners and suppliers of Businesses.',
+      nguyenVanThanhExp3: 'Lawyer Thanh is one of the very few Lawyers in Vietnam who holds an Advanced Auditor certificate in management systems, labor, human rights, and business ethics from the Responsible Business Alliance (RBA). As Lead Auditor (Head of Samsung Vietnam supplier inspection team), Lawyer Thanh has experience auditing hundreds of Samsung Vietnam suppliers on compliance with international RBA standards (RBA code of conduct) and Vietnamese law.',
+      nguyenVanThanhEdu1: 'Lead Auditor Certificate for Labor & Business Ethics in Global Supply Chain',
+      nguyenVanThanhEdu1Org: 'Verité, Inc.',
+      nguyenVanThanhEdu1Year: '2016',
+      nguyenVanThanhEdu2: 'Lawyer Practice Certificate',
+      nguyenVanThanhEdu2Org: 'Ministry of Justice',
+      nguyenVanThanhEdu2Year: '2015',
+      nguyenVanThanhEdu3: 'Graduated',
+      nguyenVanThanhEdu3Org: 'Judicial Academy',
+      nguyenVanThanhEdu3Year: '2012',
+      nguyenVanThanhEdu4: 'Bachelor of Foreign Languages',
+      nguyenVanThanhEdu4Org: 'University of Languages and International Studies, Vietnam National University',
+      nguyenVanThanhEdu4Year: '2012',
+      nguyenVanThanhEdu5: 'Bachelor of Law',
+      nguyenVanThanhEdu5Org: 'Hanoi Law University',
+      nguyenVanThanhEdu5Year: '2011',
+      nguyenVanThanhPostsInfo: 'In-depth articles by Lawyer Nguyen Van Thanh on all legal aspects of labor, business and foreign investment.',
+    },
+    zh: {
+      // Nguyen Van Thanh
+      nguyenVanThanhBio: '阮文成先生是 <span class="text-accent dark:text-white highlight"> Youth </span><span class="text-primary dark:text-white highlight">& Partners</span> 律师事务所的执行律师，拥有超过14年的研究经验，为企业面临的复杂法律问题提供切实可行的解决方案。同时，他还担任三星SDI越南的总法律顾问。',
+      nguyenVanThanhExp: `成律师，曾任三星SDI越南法务部门主管（自2015年）及现任Youth & Partners律师事务所执行律师（自2019年）。<br />
+        - 永福省法务俱乐部执行委员会：2024年3月 <br />
+        - 律师执照号：10652/LS，由越南律师联合会颁发 <br />
+        - 越南律师联合会会员：2015年<br />
+        - 律师协会、越南律师协会律师`,
+      nguyenVanThanhExp2: '成律师在企业内部事务、劳动和商业-贸易方面拥有深厚的咨询经验，深刻理解与企业和员工相关的国际行为准则，在解决企业内部纠纷、与合作伙伴和供应商相关的争议和法律问题方面拥有丰富的经验。',
+      nguyenVanThanhExp3: '成律师是越南极少数拥有负责任商业联盟（RBA）管理体系、劳动、人权和商业道德高级审计员证书的律师之一。作为首席审计员（三星越南供应商检查团负责人），成律师有审计数百家三星越南供应商关于遵守国际RBA标准（RBA行为准则）和越南法律的经验。',
+      nguyenVanThanhEdu1: '全球供应链劳动与商业道德首席审计员证书',
+      nguyenVanThanhEdu1Org: 'Verité, Inc.',
+      nguyenVanThanhEdu1Year: '2016年',
+      nguyenVanThanhEdu2: '律师执业证书',
+      nguyenVanThanhEdu2Org: '司法部',
+      nguyenVanThanhEdu2Year: '2015年',
+      nguyenVanThanhEdu3: '毕业',
+      nguyenVanThanhEdu3Org: '司法学院',
+      nguyenVanThanhEdu3Year: '2012年',
+      nguyenVanThanhEdu4: '外语学士',
+      nguyenVanThanhEdu4Org: '越南国立大学外国语大学',
+      nguyenVanThanhEdu4Year: '2012年',
+      nguyenVanThanhEdu5: '法学学士',
+      nguyenVanThanhEdu5Org: '河内法律大学',
+      nguyenVanThanhEdu5Year: '2011年',
+      nguyenVanThanhPostsInfo: '阮文成律师关于劳动、企业和外国投资等各个法律方面的深度文章。',
+    },
+    ja: {
+      // Nguyen Van Thanh
+      nguyenVanThanhBio: 'グエン・ヴァン・タン氏は、<span class="text-accent dark:text-white highlight"> Youth </span><span class="text-primary dark:text-white highlight">& Partners</span> 法律事務所の執行弁護士であり、14年以上の研究経験を持ち、企業が直面する複雑な法的問題に対して実践的なソリューションを提供しています。また、サムスンSDIベトナムの総合法務顧問も務めています。',
+      nguyenVanThanhExp: `タン弁護士は、元サムスンSDIベトナム法務部門長（2015年から）であり、現在Youth & Partners法律事務所の執行弁護士（2019年から）です。<br />
+        - ヴィンフック省法務クラブ執行委員会：2024年3月 <br />
+        - 弁護士免許番号：10652/LS、ベトナム弁護士連盟発行 <br />
+        - ベトナム弁護士連盟会員：2015年<br />
+        - 弁護士会、ベトナム弁護士協会弁護士`,
+      nguyenVanThanhExp2: 'タン弁護士は、企業内部問題、労働、ビジネス・商業に関する豊富なコンサルティング経験を持ち、企業と従業員に関連する国際行動規範を深く理解し、企業内部の紛争、パートナーやサプライヤーに関連する紛争や法的問題の解決に優れた経験を持っています。',
+      nguyenVanThanhExp3: 'タン弁護士は、ベトナムで責任あるビジネス同盟（RBA）の経営システム、労働、人権、ビジネス倫理に関する上級監査人資格を持つ数少ない弁護士の一人です。リードオーディター（サムスンベトナムサプライヤー検査チーム長）として、国際RBA基準（RBA行動規範）とベトナム法への準拠について、サムスンベトナムの数百のサプライヤーを監査した経験があります。',
+      nguyenVanThanhEdu1: 'グローバルサプライチェーンにおける労働・ビジネス倫理のリードオーディター資格',
+      nguyenVanThanhEdu1Org: 'Verité, Inc.',
+      nguyenVanThanhEdu1Year: '2016年',
+      nguyenVanThanhEdu2: '弁護士実務資格',
+      nguyenVanThanhEdu2Org: '司法省',
+      nguyenVanThanhEdu2Year: '2015年',
+      nguyenVanThanhEdu3: '卒業',
+      nguyenVanThanhEdu3Org: '司法学院',
+      nguyenVanThanhEdu3Year: '2012年',
+      nguyenVanThanhEdu4: '外国語学士',
+      nguyenVanThanhEdu4Org: 'ベトナム国立大学外国語大学',
+      nguyenVanThanhEdu4Year: '2012年',
+      nguyenVanThanhEdu5: '法学学士',
+      nguyenVanThanhEdu5Org: 'ハノイ法科大学',
+      nguyenVanThanhEdu5Year: '2011年',
+      nguyenVanThanhPostsInfo: 'グエン・ヴァン・タン弁護士による労働、企業、外国投資に関するあらゆる法的側面についての詳細な記事。',
+    },
+    ko: {
+      // Nguyen Van Thanh
+      nguyenVanThanhBio: '응우옌 반 타인 씨는 <span class="text-accent dark:text-white highlight"> Youth </span><span class="text-primary dark:text-white highlight">& Partners</span> 법률사무소의 대표 변호사로, 14년 이상의 연구 경험을 바탕으로 기업이 직면하는 복잡한 법적 문제에 대한 실질적인 솔루션을 제공합니다. 또한 삼성SDI 베트남의 총괄 법무 고문직도 겸하고 있습니다.',
+      nguyenVanThanhExp: `타인 변호사는 전 삼성SDI 베트남 법무부장(2015년부터)이며, 현재 Youth & Partners 법률사무소 대표 변호사(2019년부터)입니다.<br />
+        - 빈푹성 법무 클럽 집행위원회: 2024년 3월 <br />
+        - 변호사 면허 번호: 10652/LS, 베트남 변호사 연맹 발급 <br />
+        - 베트남 변호사 연맹 회원: 2015년<br />
+        - 변호사 협회, 베트남 변호사 협회 변호사`,
+      nguyenVanThanhExp2: '타인 변호사는 기업 내부 문제, 노동 및 비즈니스-상업 문제에 대한 깊은 컨설팅 경험을 보유하고 있으며, 기업과 직원 관련 국제 행동 강령을 깊이 이해하고 있으며, 기업 내부 분쟁, 파트너 및 공급업체 관련 분쟁 및 법적 문제 해결에 뛰어난 경험을 가지고 있습니다.',
+      nguyenVanThanhExp3: '타인 변호사는 베트남에서 책임 있는 비즈니스 연합(RBA)의 경영 시스템, 노동, 인권 및 비즈니스 윤리에 관한 고급 감사원 자격을 보유한 몇 안 되는 변호사 중 한 명입니다. 리드 오디터(삼성 베트남 공급업체 검사팀장)로서 국제 RBA 표준(RBA 행동 강령) 및 베트남 법률 준수에 대해 삼성 베트남의 수백 개 공급업체를 감사한 경험이 있습니다.',
+      nguyenVanThanhEdu1: '글로벌 공급망 노동 및 비즈니스 윤리 리드 오디터 자격증',
+      nguyenVanThanhEdu1Org: 'Verité, Inc.',
+      nguyenVanThanhEdu1Year: '2016년',
+      nguyenVanThanhEdu2: '변호사 실무 자격증',
+      nguyenVanThanhEdu2Org: '법무부',
+      nguyenVanThanhEdu2Year: '2015년',
+      nguyenVanThanhEdu3: '졸업',
+      nguyenVanThanhEdu3Org: '사법학원',
+      nguyenVanThanhEdu3Year: '2012년',
+      nguyenVanThanhEdu4: '외국어 학사',
+      nguyenVanThanhEdu4Org: '베트남 국립대학교 외국어대학',
+      nguyenVanThanhEdu4Year: '2012년',
+      nguyenVanThanhEdu5: '법학 학사',
+      nguyenVanThanhEdu5Org: '하노이 법대',
+      nguyenVanThanhEdu5Year: '2011년',
+      nguyenVanThanhPostsInfo: '응우옌 반 타인 변호사의 노동, 기업 및 외국인 투자에 관한 모든 법적 측면에 대한 심층 기사.',
+    },
+  },
 } as const;
 
 export default translations;
