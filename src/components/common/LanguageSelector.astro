@@ -489,11 +489,6 @@ const textToKeyMap: Record<string, string> = {
   'Head of HR': 'testimonials.headOfHR',
   'Founder & CEO': 'testimonials.founderCEO',
   
-  // Contact email/phone descriptions (Steps2)
-  'contact@yplawfirm.vn': 'company.email',
-  '088 995 6888': 'company.phone',
-  '@youthandpartners': 'company.socialHandle',
-  
   // About page - History section (note: most entries already defined in earlier about section)
   
   // About page - Vision/Mission section
@@ -678,7 +673,9 @@ function getTranslation(lang: string, key: string): string | null {
   const langData = sectionData[lang];
   if (!langData) return null;
   
-  return langData[subKey] || null;
+  // Use explicit undefined check to allow empty strings
+  const value = langData[subKey];
+  return value !== undefined ? value : null;
 }
 
 // Normalize text for comparison (remove extra whitespace, line breaks)
@@ -771,25 +768,31 @@ function applyTranslations(lang: string): void {
     const key = el.getAttribute('data-i18n');
     if (key) {
       const translation = getTranslation(lang, key);
-      if (translation) {
-        // Check if the element has meaningful child elements (not just br/hr)
-        const meaningfulChildren = el.querySelector(':not(br):not(hr)');
-        if (meaningfulChildren) {
-          // Element has real child elements (like icons, spans with classes) - only update direct text nodes
-          // Find the first significant text node and replace it
+      // Use != null to allow empty strings (e.g., companyPrefix in English should be empty)
+      if (translation != null) {
+        // Check if the element has icons (SVG) that should be preserved
+        const hasIcons = el.querySelector('svg, img, .icon');
+        // Check for styled spans that wrap text (common pattern: <span class="font-medium">Text</span>)
+        const styledTextSpan = el.querySelector('span[class]');
+        
+        if (hasIcons) {
+          // Element has icons - only update text nodes, preserve icons
           let replaced = false;
-          Array.from(el.childNodes).forEach(node => {
-            if (!replaced && node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
+          const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+          while (walker.nextNode()) {
+            const node = walker.currentNode as Text;
+            if (!replaced && node.textContent?.trim()) {
               node.textContent = translation;
               replaced = true;
-            } else if (replaced && node.nodeType === Node.TEXT_NODE) {
-              // Clear other text nodes to avoid duplication
+            } else if (replaced && node.textContent?.trim()) {
               node.textContent = '';
             }
-          });
+          }
+        } else if (styledTextSpan && !styledTextSpan.querySelector('*')) {
+          // Element has a styled span containing only text - update the span's content
+          styledTextSpan.textContent = translation;
         } else {
-          // Element only has text or br/hr tags - safe to replace innerHTML
-          // Handle HTML content (like br tags) - always use innerHTML for translations with HTML
+          // Safe to replace innerHTML (plain text or simple structure)
           const hasNewlines = translation.includes('\n');
           if (hasNewlines) {
             el.innerHTML = translation.replace(/\n\n/g, '<br /><br />').replace(/\n/g, '<br />');

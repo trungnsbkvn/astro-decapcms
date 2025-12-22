@@ -38,12 +38,11 @@ const lastestCategories = {
         href: 'tel:0889956888',
         target: '_blank',
         icon: 'tabler:phone-call',
+        i18nText: 'common.contactForConsult',
       },
-      { text: 'Tìm hiểu thêm', href: '/gioi-thieu.html' },
+      { text: 'Tìm hiểu thêm', href: '/gioi-thieu.html', i18nText: 'common.learnMore' },
     ]}
     image={{ src: '~/assets/images/youth and partners/Youth and Partners.jpg', alt: 'Luật sư tư vấn' }}
-    i18nTitle="homepage.companyTitle"
-    i18nSubtitle="homepage.heroSubtitle"
   >
     <Fragment slot="title">
       <span data-i18n="homepage.companyPrefix">Công ty Luật TNHH</span><span class="text-accent dark:text-white highlight notranslate" translate="no"> Youth </span><span class="text-primary dark:text-white highlight notranslate" translate="no">& Partners </span><span data-i18n="homepage.companySuffix"></span>
@@ -444,21 +443,24 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
     callToAction={{
       text: 'Liên hệ ngay',
       href: '/lien-he',
+      i18nText: 'homepage.contactNow',
     }}
     items={[
       {
         title: 'Email',
         description: 'contact@yplawfirm.vn',
         icon: 'tabler:mail',
+        i18nTitle: 'company.email',
       },
       {
         title: 'Hotline',
         description: '088 995 6888',
         icon: 'tabler:headset',
+        i18nTitle: 'company.hotline',
       },
       {
         title: 'Theo dõi chúng tôi',
-        description: '@youthandpartners',
+        description: '@yplawfirm',
         icon: 'tabler:brand-facebook',
         i18nTitle: 'homepage.followUs',
       },
