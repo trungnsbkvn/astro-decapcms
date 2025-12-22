@@ -78,7 +78,7 @@ const categoryI18nKey = post.category?.slug ? getCategoryI18nKey(post.category.s
               <>
                 {' '}
                 · <Icon name="tabler:user" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
-                <span>{post.author.replaceAll('-', ' ')}</span>
+                <span class="notranslate" translate="no">{post.author.replaceAll('-', ' ')}</span>
               </>
             )
           }
