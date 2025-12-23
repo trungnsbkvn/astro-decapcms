@@ -15,7 +15,7 @@
     "hotline": "ホットライン",
     "email": "メール",
     "headquarters": "本社",
-    "addressHanoi": "ハノイ：国防学院アパート西棟P316、ギアドー区、ハノイ市。",
+    "addressHanoi": "ハノイ：国防学院アパート東棟P219、ギアドー区、ハノイ市。",
     "addressBacNinh": "バクニン：バクニン省キンバク区ドアントランギップ通り26番地。",
     "addressPhuTho": "フート：フート省ヴィンフック区グエンヴァンリン通り170番地。"
   },
@@ -333,5 +333,114 @@
     "trackResponse": "返答を追跡",
     "trackResponseDesc": "カスタマーサポートチームからの返答を受け取るために、メールまたは電話を監視してください。予想される時間内に返答がない場合は、問題が見落とされないように再度ご連絡ください。",
     "complete": "完了します！"
+  },
+  "search": {
+    "placeholder": "記事を検索...",
+    "enterKeyword": "キーワードを入力して検索...",
+    "noResults": "検索結果が見つかりません",
+    "noData": "検索データがありません",
+    "loadError": "検索データの読み込みに失敗しました。もう一度お試しください。",
+    "loading": "読み込み中..."
+  },
+  "location": {
+    "hanoi": "ハノイ",
+    "phutho": "フート",
+    "bacninh": "バクニン",
+    "vinhtuong": "ヴィントゥオン事務所",
+    "hanoiAddress": "P219、イーストタワー、国防アカデミーアパート、ギアド区、ハノイ",
+    "phuthoAddress": "フート省ヴィンフック区グエンヴァンリン通り170番地",
+    "bacninhAddress": "バクニン省キンバック区ドアントランギエップ通り26番地",
+    "vinhtuongAddress": "フート省ヴィンフン社セン村交差点"
+  },
+  "meta": {
+    "title": "Youth & Partners法律事務所 - 企業の仲間",
+    "description": "Youth & Partners法律事務所は、以下の分野で一流の法律事務所の一つです：企業の定期的な法的相談/外部委託法務部サービス；労働争議の相談と解決；日本語、英語、中国語、韓国語の弁護士サービス；企業の監査、評価、法的評価サービス。"
+  },
+  "blogTypes": {
+    "postTitle": "法律ニュース",
+    "postSubtitle": "Youth & Partners法律事務所からの最新法律ニュース",
+    "legalTitle": "企業法務",
+    "legalSubtitle": "当社の法律ページは法的問題に関する最新情報を提供します",
+    "consultationTitle": "定期法律相談",
+    "consultationSubtitle": "定期法律相談サービス - 信頼できるビジネスパートナー",
+    "laborTitle": "労働法",
+    "laborSubtitle": "企業向けの労働法問題の相談と解決",
+    "foreignerTitle": "外国投資",
+    "foreignerSubtitle": "ベトナムの外国投資家向けの包括的な法的サポート",
+    "evaluationTitle": "法的評価サービス",
+    "evaluationSubtitle": "専門的な法的評価、デューデリジェンス、監査サービス"
+  },
+  "blogCategories": {
+    "tinMoi": "最新ニュース",
+    "suKien": "イベント",
+    "tinMoiSubtitle": "最新の法律ニュース",
+    "suKienSubtitle": "Youth & Partnersのイベントと活動"
+  },
+  "author": {
+    "authorLabel": "著者",
+    "postsBy": "投稿者"
+  },
+  "lawyerProfile": {
+    "authorInfo": "著者情報",
+    "contactAuthor": "著者に連絡する",
+    "experience": "経験",
+    "education": "学歴",
+    "authorPosts": "著者の記事",
+    "lawyer": "弁護士",
+    "legalSpecialist": "法務専門家",
+    "doctor": "博士"
+  },
+  "servicesExtra": {
+    "enterprise": "企業",
+    "regularConsulting": "定期コンサルティング",
+    "intellectualProperty": "知的財産",
+    "laborEmploymentShort": "労働・雇用",
+    "enterpriseSupport": "企業支援サービス",
+    "superiorExpertise": "卓越した専門知識",
+    "negotiationStrategy": "効果的な交渉戦略",
+    "dedicatedProtection": "顧客権利の献身的保護",
+    "deepKnowledge": "深い専門知識",
+    "laborDisputeExp": "労働紛争解決経験",
+    "strategicConsulting": "戦略的コンサルティングと最適ソリューション",
+    "knowledgeExperience": "専門知識と経験",
+    "continuousSupport": "継続的サポートと支援",
+    "comprehensiveSupportShort": "包括的サポート",
+    "experiencedTeam": "経験豊富な専門家チーム",
+    "flexibleSolutions": "柔軟でカスタマイズされたソリューション",
+    "richExperience": "豊富で多様な経験",
+    "dedicatedTeam": "献身的でプロフェッショナルな専門家チーム",
+    "customSolutions": "カスタマイズされた柔軟なソリューション",
+    "marketAnalysis": "市場調査、分析、評価",
+    "findPartners": "適切なパートナーの発見",
+    "fdiProjectInfo": "外国投資プロジェクト情報",
+    "investmentSetup": "投資活動設立サポート",
+    "investmentStructure": "投資構造",
+    "investorRepresentation": "投資家代理",
+    "branchOfficeSetup": "駐在員事務所・支店設立サービス",
+    "featuredProjects": "当社の代表的な投資コンサルティングプロジェクト",
+    "featuredProjectsSubtitle": "私たちは、あらゆる規模の企業や組織に対して数多くのコンサルティングプロジェクトを成功裏に完了し、実質的な価値と効果的な法的ソリューションを提供してきたことを誇りに思います。",
+    "workWithUs": "Youth & Partnersと共に成功へ",
+    "projectAvenue": "AVENUE GARDENプロジェクト",
+    "projectEmbassy": "EMBASSY GARDENプロジェクト",
+    "projectSwiss": "SWISS – BELRESIDENCES UPPER EAST SAIGONプロジェクト",
+    "description": "説明：",
+    "ypRole": "Y&Pの役割："
+  },
+  "footerExtra": {
+    "director": "取締役、法定代理人：",
+    "directorName": "弁護士 グエン・ヴァン・タイン",
+    "allRights": "全著作権所有。"
+  },
+  "commonExtra": {
+    "toggleMenu": "メニュー切替",
+    "shortNameUpper": "YOUTH & PARTNERS",
+    "initials": "YP",
+    "likePartner": "信頼できるパートナーとして。"
+  },
+  "contactExtra": {
+    "readyToHelpTitle": "私たちはいつでもお手伝いする準備ができています！",
+    "generalSupportDesc": "一般的な法的質問、ウェブサイトのナビゲーション、支払い、購入した法的文書へのアクセス、またはサービスに関する質問についてはお問い合わせください。",
+    "consultDeptDesc": "法律相談サービス、個別相談オプション、または特定のケースに関連するリクエストについてはチャットでお問い合わせください。",
+    "techSupportDesc": "文書へのアクセスに問題がある場合、メール通信の問題、またはサービスの使用に関連するその他の技術的な課題がある場合はお問い合わせください。"
   }
 }

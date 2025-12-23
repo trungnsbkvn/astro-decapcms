@@ -15,7 +15,7 @@
     "hotline": "热线电话",
     "email": "电子邮件",
     "headquarters": "总部",
-    "addressHanoi": "河内：国防学院公寓西塔P316，义都坊，河内市。",
+    "addressHanoi": "河内：国防学院公寓东塔P219，义都坊，河内市。",
     "addressBacNinh": "北宁：北宁省京北坊段陈业街26号。",
     "addressPhuTho": "富寿：富寿省永福坊阮文灵街170号。"
   },
@@ -333,5 +333,114 @@
     "trackResponse": "跟踪回复",
     "trackResponseDesc": "监控您的电子邮件或电话以获取我们客户支持团队的回复。如果您在预期时间内没有收到回复，请再次联系我们以确保您的问题不被忽视。",
     "complete": "我们将完成！"
+  },
+  "search": {
+    "placeholder": "搜索文章...",
+    "enterKeyword": "输入关键词搜索...",
+    "noResults": "未找到结果",
+    "noData": "没有搜索数据",
+    "loadError": "无法加载搜索数据。请重试。",
+    "loading": "加载中..."
+  },
+  "location": {
+    "hanoi": "河内",
+    "phutho": "富寿",
+    "bacninh": "北宁",
+    "vinhtuong": "永祥代表处",
+    "hanoiAddress": "P219，东塔，国防学院公寓，义都坊，河内市",
+    "phuthoAddress": "富寿省永福坊阮文灵路170号",
+    "bacninhAddress": "北宁省京北坊段陈业街26号",
+    "vinhtuongAddress": "富寿省永兴社仙村五岔路口"
+  },
+  "meta": {
+    "title": "Youth & Partners律师事务所 - 企业伙伴",
+    "description": "Youth & Partners律师事务所是在以下领域领先的律师事务所之一：企业定期法律咨询/外包法律部门服务；劳动争议咨询与解决；日语、英语、中文、韩语律师服务；企业审计、评估和法律评估服务。"
+  },
+  "blogTypes": {
+    "postTitle": "法律新闻",
+    "postSubtitle": "Youth & Partners律师事务所最新法律新闻更新",
+    "legalTitle": "企业法律",
+    "legalSubtitle": "我们的法律页面提供有关法律事务的最新信息",
+    "consultationTitle": "定期法律咨询",
+    "consultationSubtitle": "定期法律咨询服务 - 您值得信赖的商业伙伴",
+    "laborTitle": "劳动法",
+    "laborSubtitle": "为企业提供劳动法问题的咨询和解决方案",
+    "foreignerTitle": "外国投资",
+    "foreignerSubtitle": "为在越南的外国投资者提供全面的法律支持",
+    "evaluationTitle": "法律评估服务",
+    "evaluationSubtitle": "专业法律评估、尽职调查和审计服务"
+  },
+  "blogCategories": {
+    "tinMoi": "最新消息",
+    "suKien": "活动",
+    "tinMoiSubtitle": "最新法律新闻",
+    "suKienSubtitle": "Youth & Partners的活动"
+  },
+  "author": {
+    "authorLabel": "作者",
+    "postsBy": "文章作者"
+  },
+  "lawyerProfile": {
+    "authorInfo": "作者信息",
+    "contactAuthor": "联系作者",
+    "experience": "经验",
+    "education": "学历",
+    "authorPosts": "作者文章",
+    "lawyer": "律师",
+    "legalSpecialist": "法律专员",
+    "doctor": "博士"
+  },
+  "servicesExtra": {
+    "enterprise": "企业",
+    "regularConsulting": "定期咨询",
+    "intellectualProperty": "知识产权",
+    "laborEmploymentShort": "劳动就业",
+    "enterpriseSupport": "企业支持服务",
+    "superiorExpertise": "卓越专业知识",
+    "negotiationStrategy": "高效谈判策略",
+    "dedicatedProtection": "全心保护客户权益",
+    "deepKnowledge": "深厚专业知识",
+    "laborDisputeExp": "劳动争议解决经验",
+    "strategicConsulting": "战略咨询与最佳解决方案",
+    "knowledgeExperience": "专业知识与经验",
+    "continuousSupport": "持续支持与协助",
+    "comprehensiveSupportShort": "全面支持",
+    "experiencedTeam": "经验丰富的专家团队",
+    "flexibleSolutions": "灵活定制解决方案",
+    "richExperience": "丰富多样的经验",
+    "dedicatedTeam": "专业敬业的专家团队",
+    "customSolutions": "定制灵活解决方案",
+    "marketAnalysis": "市场研究、分析与评估",
+    "findPartners": "寻找合适合作伙伴",
+    "fdiProjectInfo": "外国投资项目信息",
+    "investmentSetup": "投资活动设立支持",
+    "investmentStructure": "投资结构",
+    "investorRepresentation": "投资者代理",
+    "branchOfficeSetup": "代表处和分公司设立服务",
+    "featuredProjects": "我们的精选投资咨询项目",
+    "featuredProjectsSubtitle": "我们自豪地为各类规模的企业和组织成功完成了众多咨询项目，带来了切实的价值和有效的法律解决方案。",
+    "workWithUs": "与Youth & Partners合作共创成功",
+    "projectAvenue": "AVENUE GARDEN项目",
+    "projectEmbassy": "EMBASSY GARDEN项目",
+    "projectSwiss": "SWISS – BELRESIDENCES UPPER EAST SAIGON项目",
+    "description": "描述：",
+    "ypRole": "Y&P角色："
+  },
+  "footerExtra": {
+    "director": "董事、法定代表人：",
+    "directorName": "律师 阮文胜",
+    "allRights": "版权所有。"
+  },
+  "commonExtra": {
+    "toggleMenu": "切换菜单",
+    "shortNameUpper": "YOUTH & PARTNERS",
+    "initials": "YP",
+    "likePartner": "如同可信赖的伙伴。"
+  },
+  "contactExtra": {
+    "readyToHelpTitle": "我们随时准备为您提供帮助！",
+    "generalSupportDesc": "联系我们以获得一般法律问题、网站导航、付款、访问已购买的法律文件或有关我们服务的问题的支持。",
+    "consultDeptDesc": "与我们聊天以回答有关法律咨询服务、个性化咨询选项或与特定案例相关的请求的问题。",
+    "techSupportDesc": "当您在访问文件、电子邮件通信问题或与使用我们服务相关的其他技术挑战时遇到困难，请联系我们。"
   }
 }

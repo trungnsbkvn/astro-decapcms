@@ -15,7 +15,7 @@
     "hotline": "Hotline",
     "email": "Email",
     "headquarters": "Headquarters",
-    "addressHanoi": "Hanoi: P316, West Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi City.",
+    "addressHanoi": "Hanoi: P219, East Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi City.",
     "addressBacNinh": "Bac Ninh: 26 Doan Tran Nghiep Street, Kinh Bac Ward, Bac Ninh Province.",
     "addressPhuTho": "Phu Tho: 170 Nguyen Van Linh Street, Vinh Phuc Ward, Phu Tho Province."
   },
@@ -333,5 +333,114 @@
     "trackResponse": "Track Response",
     "trackResponseDesc": "Monitor your email or phone for responses from our customer support team. If you don't receive a response within the expected time, please contact us again to ensure your issue is not overlooked.",
     "complete": "We will complete!"
+  },
+  "search": {
+    "placeholder": "Search articles...",
+    "enterKeyword": "Enter keywords to search...",
+    "noResults": "No results found for",
+    "noData": "No search data available",
+    "loadError": "Failed to load search data. Please try again.",
+    "loading": "Loading..."
+  },
+  "location": {
+    "hanoi": "Hanoi",
+    "phutho": "Phu Tho",
+    "bacninh": "Bac Ninh",
+    "vinhtuong": "Vinh Tuong Office",
+    "hanoiAddress": "P219, East Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi",
+    "phuthoAddress": "170 Nguyen Van Linh Street, Vinh Phuc Ward, Phu Tho Province",
+    "bacninhAddress": "26 Doan Tran Nghiep, Kinh Bac Ward, Bac Ninh Province",
+    "vinhtuongAddress": "Sen Village Crossroads, Vinh Hung Commune, Phu Tho Province"
+  },
+  "meta": {
+    "title": "Youth & Partners Law Firm - Business Companion",
+    "description": "Youth & Partners Law Firm is one of the leading law firms in: Regular legal consultation for businesses / Outsourced legal department services; Labor dispute consultation and resolution; Japanese, English, Chinese, Korean-speaking lawyer services; Audit, evaluation and legal evaluation services for businesses."
+  },
+  "blogTypes": {
+    "postTitle": "Legal News",
+    "postSubtitle": "Latest legal news updates from Youth & Partners Law Firm",
+    "legalTitle": "Business Legal",
+    "legalSubtitle": "Our legal page provides updated and latest information on legal matters",
+    "consultationTitle": "Regular Legal Consultation",
+    "consultationSubtitle": "Regular legal consultation service - Your reliable business companion",
+    "laborTitle": "Labor Law",
+    "laborSubtitle": "Consultation and resolution of labor law issues for businesses",
+    "foreignerTitle": "Foreign Investment",
+    "foreignerSubtitle": "Comprehensive legal support for foreign investors in Vietnam",
+    "evaluationTitle": "Legal Evaluation Services",
+    "evaluationSubtitle": "Professional legal assessment, due diligence and audit services"
+  },
+  "blogCategories": {
+    "tinMoi": "Latest News",
+    "suKien": "Events",
+    "tinMoiSubtitle": "Latest legal news",
+    "suKienSubtitle": "Events and activities of Youth & Partners"
+  },
+  "author": {
+    "authorLabel": "Author",
+    "postsBy": "Posts by"
+  },
+  "lawyerProfile": {
+    "authorInfo": "Author Information",
+    "contactAuthor": "Contact Author",
+    "experience": "Experience",
+    "education": "Education",
+    "authorPosts": "Author Posts",
+    "lawyer": "Lawyer",
+    "legalSpecialist": "Legal Specialist",
+    "doctor": "Dr."
+  },
+  "servicesExtra": {
+    "enterprise": "Enterprise",
+    "regularConsulting": "Regular Consulting",
+    "intellectualProperty": "Intellectual Property",
+    "laborEmploymentShort": "Labor & Employment",
+    "enterpriseSupport": "Business Support Services",
+    "superiorExpertise": "Superior Expertise",
+    "negotiationStrategy": "Effective Negotiation Strategy",
+    "dedicatedProtection": "Dedicated Client Rights Protection",
+    "deepKnowledge": "Deep Professional Knowledge",
+    "laborDisputeExp": "Labor Dispute Resolution Experience",
+    "strategicConsulting": "Strategic Consulting & Optimal Solutions",
+    "knowledgeExperience": "Professional Knowledge & Experience",
+    "continuousSupport": "Continuous Support & Assistance",
+    "comprehensiveSupportShort": "Comprehensive Support",
+    "experiencedTeam": "Experienced Expert Team",
+    "flexibleSolutions": "Flexible & Customized Solutions",
+    "richExperience": "Rich & Diverse Experience",
+    "dedicatedTeam": "Dedicated & Professional Expert Team",
+    "customSolutions": "Customized & Flexible Solutions",
+    "marketAnalysis": "Market Research, Analysis & Evaluation",
+    "findPartners": "Finding Suitable Partners",
+    "fdiProjectInfo": "Foreign Investment Project Information",
+    "investmentSetup": "Investment Activity Setup Support",
+    "investmentStructure": "Investment Structure",
+    "investorRepresentation": "Investor Representation",
+    "branchOfficeSetup": "Representative Office & Branch Setup Services",
+    "featuredProjects": "Our Featured Investment Consulting Projects",
+    "featuredProjectsSubtitle": "We are proud to have successfully completed numerous consulting projects for businesses and organizations of all sizes, delivering real value and effective legal solutions.",
+    "workWithUs": "Work with Youth & Partners for Success",
+    "projectAvenue": "AVENUE GARDEN Project",
+    "projectEmbassy": "EMBASSY GARDEN Project",
+    "projectSwiss": "SWISS – BELRESIDENCES UPPER EAST SAIGON Project",
+    "description": "Description:",
+    "ypRole": "Y&P Role:"
+  },
+  "footerExtra": {
+    "director": "Director, Legal Representative:",
+    "directorName": "Lawyer Nguyen Van Thanh",
+    "allRights": "All rights reserved."
+  },
+  "commonExtra": {
+    "toggleMenu": "Toggle Menu",
+    "shortNameUpper": "YOUTH & PARTNERS",
+    "initials": "YP",
+    "likePartner": "Like a trusted partner."
+  },
+  "contactExtra": {
+    "readyToHelpTitle": "We are always ready to help you!",
+    "generalSupportDesc": "Contact us for support with general legal questions, website navigation, payments, accessing purchased legal documents, or questions about our services.",
+    "consultDeptDesc": "Chat with us to answer questions about legal consulting services, personalized consulting options, or requests related to specific cases.",
+    "techSupportDesc": "Contact us when you have difficulty accessing documents, issues with email communication, or other technical challenges related to using our services."
   }
 }

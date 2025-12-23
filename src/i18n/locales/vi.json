@@ -15,7 +15,7 @@
     "hotline": "Hotline",
     "email": "Email",
     "headquarters": "Trụ sở",
-    "addressHanoi": "Hà Nội: P316, Tháp Tây, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội.",
+    "addressHanoi": "Hà Nội: P219, Tháp Đông, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội.",
     "addressBacNinh": "Bắc Ninh: Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc, tỉnh Bắc Ninh.",
     "addressPhuTho": "Phú Thọ: Số 170, đường Nguyễn Văn Linh, phường Vĩnh Phúc, tỉnh Phú Thọ."
   },
@@ -333,5 +333,114 @@
     "trackResponse": "Theo dõi phản hồi",
     "trackResponseDesc": "Theo dõi email hoặc điện thoại của bạn để nhận phản hồi từ đội ngũ hỗ trợ khách hàng của chúng tôi. Nếu không nhận được phản hồi trong thời gian dự kiến, hãy liên hệ lại để đảm bảo vấn đề của bạn không bị bỏ sót.",
     "complete": "Chúng tôi sẽ hoàn thành!"
+  },
+  "search": {
+    "placeholder": "Tìm kiếm bài viết...",
+    "enterKeyword": "Nhập từ khóa để tìm kiếm...",
+    "noResults": "Không tìm thấy kết quả cho",
+    "noData": "Không có dữ liệu tìm kiếm",
+    "loadError": "Không thể tải dữ liệu tìm kiếm. Vui lòng thử lại.",
+    "loading": "Đang tải..."
+  },
+  "location": {
+    "hanoi": "Hà Nội",
+    "phutho": "Phú Thọ",
+    "bacninh": "Bắc Ninh",
+    "vinhtuong": "VPDD Vĩnh Tường",
+    "hanoiAddress": "P219, Tháp Đông, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội",
+    "phuthoAddress": "Số 170, đường Nguyễn Văn Linh, phường Vĩnh Phúc, tỉnh Phú Thọ",
+    "bacninhAddress": "Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc, tỉnh Bắc Ninh",
+    "vinhtuongAddress": "Ngã 5 thôn Sen, xã Vĩnh Hưng, tỉnh Phú Thọ"
+  },
+  "meta": {
+    "title": "Công ty Luật TNHH Youth & Partners - Người bạn đồng hành của Doanh nghiệp",
+    "description": "Công ty Luật TNHH Youth & Partners là một trong những công ty luật hàng đầu trong các lĩnh vực: Tư vấn pháp lý thường xuyên cho doanh nghiệp / Dịch vụ Phòng pháp chế thuê ngoài; Tư vấn và giải quyết tranh chấp lao động; Dịch vụ Luật sư riêng tiếng Nhật, Anh, Trung, Hàn; Dịch vụ Audit, đánh giá và thẩm định pháp lý cho Doanh nghiệp."
+  },
+  "blogTypes": {
+    "postTitle": "Tin tức pháp luật",
+    "postSubtitle": "Cập nhật tin tức pháp luật mới nhất từ Công ty Luật Youth & Partners",
+    "legalTitle": "Pháp lý doanh nghiệp",
+    "legalSubtitle": "Trang pháp lý của chúng tôi cung cấp những thông tin cập nhật và mới nhất về các vấn đề pháp lý",
+    "consultationTitle": "Tư vấn pháp lý thường xuyên",
+    "consultationSubtitle": "Dịch vụ tư vấn pháp lý thường xuyên - Người bạn đồng hành đáng tin cậy của doanh nghiệp",
+    "laborTitle": "Pháp luật lao động",
+    "laborSubtitle": "Tư vấn và giải quyết các vấn đề pháp luật lao động cho doanh nghiệp",
+    "foreignerTitle": "Đầu tư nước ngoài",
+    "foreignerSubtitle": "Hỗ trợ pháp lý toàn diện cho nhà đầu tư nước ngoài tại Việt Nam",
+    "evaluationTitle": "Dịch vụ đánh giá pháp lý",
+    "evaluationSubtitle": "Dịch vụ đánh giá, thẩm định và audit pháp lý chuyên nghiệp"
+  },
+  "blogCategories": {
+    "tinMoi": "Tin mới",
+    "suKien": "Sự kiện",
+    "tinMoiSubtitle": "Tin tức pháp luật mới nhất",
+    "suKienSubtitle": "Sự kiện và hoạt động của Youth & Partners"
+  },
+  "author": {
+    "authorLabel": "Tác giả",
+    "postsBy": "Bài viết của"
+  },
+  "lawyerProfile": {
+    "authorInfo": "Thông tin tác giả",
+    "contactAuthor": "Liên hệ với tác giả",
+    "experience": "Kinh nghiệm",
+    "education": "Học vấn",
+    "authorPosts": "Bài viết của tác giả",
+    "lawyer": "Luật sư",
+    "legalSpecialist": "Chuyên viên pháp lý",
+    "doctor": "Tiến sĩ"
+  },
+  "servicesExtra": {
+    "enterprise": "Doanh nghiệp",
+    "regularConsulting": "Tư vấn thường xuyên",
+    "intellectualProperty": "Sở hữu trí tuệ",
+    "laborEmploymentShort": "Lao động việc làm",
+    "enterpriseSupport": "Dịch vụ bổ trợ doanh nghiệp",
+    "superiorExpertise": "Chuyên môn vượt trội",
+    "negotiationStrategy": "Chiến lược đàm phán hiệu quả",
+    "dedicatedProtection": "Tận tâm và bảo vệ quyền lợi khách hàng",
+    "deepKnowledge": "Kiến thức chuyên môn sâu rộng",
+    "laborDisputeExp": "Kinh nghiệm giải quyết tranh chấp lao động",
+    "strategicConsulting": "Tư vấn chiến lược và giải pháp tối ưu",
+    "knowledgeExperience": "Kiến thức chuyên môn và kinh nghiệm",
+    "continuousSupport": "Đồng hành và hỗ trợ liên tục",
+    "comprehensiveSupportShort": "Hỗ trợ toàn diện",
+    "experiencedTeam": "Đội ngũ chuyên gia giàu kinh nghiệm",
+    "flexibleSolutions": "Giải pháp linh hoạt và tùy chỉnh",
+    "richExperience": "Kinh nghiệm phong phú và đa dạng",
+    "dedicatedTeam": "Đội ngũ chuyên gia tận tâm và chuyên nghiệp",
+    "customSolutions": "Giải pháp tùy chỉnh và linh hoạt",
+    "marketAnalysis": "Tìm hiểu, Phân tích và Đánh giá Thị trường",
+    "findPartners": "Tìm Kiếm Đối tác Thích Hợp",
+    "fdiProjectInfo": "Thông Tin Dự Án Gọi Vốn Đầu Tư Nước Ngoài",
+    "investmentSetup": "Hỗ Trợ Thiết Lập Các Loại Hình Hoạt Động Đầu Tư",
+    "investmentStructure": "Cấu Trúc Đầu Tư",
+    "investorRepresentation": "Đại Diện Thay Mặt Nhà Đầu Tư",
+    "branchOfficeSetup": "Thực Hiện Dịch Vụ Lập Văn Phòng Đại Diện, Chi Nhánh",
+    "featuredProjects": "Một số dự án tư vấn đầu tư tiêu biểu của chúng tôi",
+    "featuredProjectsSubtitle": "Chúng tôi tự hào đã thực hiện thành công nhiều dự án tư vấn cho các doanh nghiệp và tổ chức lớn nhỏ, mang lại những giá trị thiết thực và giải pháp pháp lý hiệu quả.",
+    "workWithUs": "Cùng làm việc với Youth & Partners để thành công",
+    "projectAvenue": "Dự án AVENUE GARDEN",
+    "projectEmbassy": "Dự án EMBASSY GARDEN",
+    "projectSwiss": "Dự án SWISS – BELRESIDENCES UPPER EAST SAIGON",
+    "description": "Mô tả:",
+    "ypRole": "Vai trò của Y&P:"
+  },
+  "footerExtra": {
+    "director": "Giám đốc, người đại diện theo pháp luật:",
+    "directorName": "Luật sư Nguyễn Văn Thành",
+    "allRights": "All rights reserved."
+  },
+  "commonExtra": {
+    "toggleMenu": "Toggle Menu",
+    "shortNameUpper": "YOUTH & PARTNERS",
+    "initials": "YP",
+    "likePartner": "Như một người bạn đồng hành."
+  },
+  "contactExtra": {
+    "readyToHelpTitle": "Chúng tôi luôn sẵn sàng hỗ trợ bạn!",
+    "generalSupportDesc": "Liên hệ với chúng tôi để được hỗ trợ về các vấn đề pháp lý chung, điều hướng trang web, thanh toán, truy cập các tài liệu pháp lý đã mua hoặc các câu hỏi về dịch vụ của chúng tôi.",
+    "consultDeptDesc": "Trò chuyện với chúng tôi để giải đáp các câu hỏi về dịch vụ tư vấn pháp lý, tùy chọn tư vấn cá nhân hóa, hoặc các yêu cầu liên quan đến các vụ việc cụ thể.",
+    "techSupportDesc": "Liên hệ với chúng tôi khi bạn gặp vấn đề khó khăn trong việc truy cập tài liệu, vấn đề khi trao đổi qua email hoặc các thách thức kỹ thuật khác liên quan đến việc sử dụng dịch vụ của chúng tôi."
   }
 }

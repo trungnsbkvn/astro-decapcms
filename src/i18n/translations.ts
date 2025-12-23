@@ -1,99 +1,56 @@
 /**
  * Comprehensive i18n translations for all UI elements
- * Single source of truth for all languages
+ * 
+ * ARCHITECTURE:
+ * - JSON files (locales/*.json) are the SOURCE OF TRUTH for common UI translations
+ * - This file imports JSON and adds additional blog/service-specific translations
+ * - To add new translations: add to JSON files first, they will be auto-merged
  */
 
-export const translations = {
-  // Navigation and Header
-  nav: {
-    vi: {
-      home: 'Trang chủ',
-      about: 'Giới thiệu',
-      services: 'Dịch vụ',
-      legal: 'Pháp lý',
-      consultation: 'Tư vấn thường xuyên',
-      labor: 'Lao động',
-      investment: 'Đầu tư & Nước ngoài',
-      investmentAndForeign: 'Đầu tư & Nước ngoài',
-      evaluation: 'Dịch vụ đánh giá',
-      news: 'Tin tức',
-      contact: 'Liên hệ',
-      search: 'Tìm kiếm',
-      toggleMenu: 'Chuyển đổi menu',
-      toggleTheme: 'Chuyển đổi chủ đề',
-      rssFeed: 'RSS Feed',
-    },
-    en: {
-      home: 'Home',
-      about: 'About',
-      services: 'Services',
-      legal: 'Legal',
-      consultation: 'Regular Consultation',
-      labor: 'Labor',
-      investment: 'Investment & Foreign',
-      investmentAndForeign: 'Investment & Foreign',
-      evaluation: 'Evaluation Services',
-      news: 'News',
-      contact: 'Contact',
-      search: 'Search',
-      toggleMenu: 'Toggle menu',
-      toggleTheme: 'Toggle theme',
-      rssFeed: 'RSS Feed',
-    },
-    zh: {
-      home: '首页',
-      about: '关于我们',
-      services: '服务',
-      legal: '法律',
-      consultation: '定期咨询',
-      labor: '劳动',
-      investment: '投资与外国',
-      investmentAndForeign: '投资与外国',
-      evaluation: '评估服务',
-      news: '新闻',
-      contact: '联系我们',
-      search: '搜索',
-      toggleMenu: '切换菜单',
-      toggleTheme: '切换主题',
-      rssFeed: 'RSS订阅',
-    },
-    ja: {
-      home: 'ホーム',
-      about: '会社概要',
-      services: 'サービス',
-      legal: '法律',
-      consultation: '定期相談',
-      labor: '労働',
-      investment: '投資・外国人',
-      investmentAndForeign: '投資・外国人',
-      evaluation: '評価サービス',
-      news: 'ニュース',
-      contact: 'お問い合わせ',
-      search: '検索',
-      toggleMenu: 'メニューの切り替え',
-      toggleTheme: 'テーマの切り替え',
-      rssFeed: 'RSSフィード',
-    },
-    ko: {
-      home: '홈',
-      about: '회사 소개',
-      services: '서비스',
-      legal: '법률',
-      consultation: '정기 상담',
-      labor: '노동',
-      investment: '투자 및 외국인',
-      investmentAndForeign: '투자 및 외국인',
-      evaluation: '평가 서비스',
-      news: '뉴스',
-      contact: '연락처',
-      search: '검색',
-      toggleMenu: '메뉴 전환',
-      toggleTheme: '테마 전환',
-      rssFeed: 'RSS 피드',
-    },
-  },
+// Import JSON locale files as source of truth
+import viJson from './locales/vi.json';
+import enJson from './locales/en.json';
+import zhJson from './locales/zh.json';
+import jaJson from './locales/ja.json';
+import koJson from './locales/ko.json';
 
-  // About section links
+// Type for locale data
+type LocaleData = typeof viJson;
+type SectionKey = keyof LocaleData;
+type LocaleKey = 'vi' | 'en' | 'zh' | 'ja' | 'ko';
+
+// All JSON locales
+const jsonLocales = { vi: viJson, en: enJson, zh: zhJson, ja: jaJson, ko: koJson };
+
+/**
+ * Transform JSON structure { vi: { nav: {...} } } to { nav: { vi: {...} } }
+ */
+function transformJsonToSectionBased(): Record<string, Record<LocaleKey, unknown>> {
+  const result: Record<string, Record<LocaleKey, unknown>> = {};
+  const sections = Object.keys(viJson) as SectionKey[];
+  
+  for (const section of sections) {
+    result[section] = {} as Record<LocaleKey, unknown>;
+    for (const [locale, data] of Object.entries(jsonLocales)) {
+      const localeData = data as LocaleData;
+      if (localeData[section]) {
+        result[section][locale as LocaleKey] = localeData[section];
+      }
+    }
+  }
+  return result;
+}
+
+// Get base translations from JSON
+const jsonTranslations = transformJsonToSectionBased();
+
+// Additional translations not yet in JSON (blog-specific, extended content)
+// NOTE: Sections that exist in JSON files are automatically imported and merged.
+// Only add sections here that:
+// 1. Don't exist in JSON at all (e.g., blog, author, blogCategories)
+// 2. Have extended keys beyond what's in JSON
+const additionalTranslations = {
+  // Extended About section (JSON has basic keys, this adds extended content)
   about: {
     vi: {
       history: 'Lịch sử thành lập',
@@ -167,7 +124,7 @@ export const translations = {
         <br />•	Tranh tụng và giải quyết tranh chấp (Dân sự, Hình sự và Hành chính)
         <br />•	Lao động và việc làm
         <br />•	Dịch vụ pháp lý về Đất đai`,
-      historyDesc2: 'Trong giai đoạn 2021 – 2023, Youth & Partners tiếp tục mở rộng mạng lưới với chi nhánh mới tại thủ đô Hà Nội, được đặt tại P316, Tháp Tây, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội. Đây là bước đi quan trọng trong việc củng cố sự hiện diện và mở rộng thị trường tại khu vực miền Bắc, đặc biệt là tại Hà Nội - trung tâm kinh tế lớn của cả nước.',
+      historyDesc2: 'Trong giai đoạn 2021 – 2023, Youth & Partners tiếp tục mở rộng mạng lưới với chi nhánh mới tại thủ đô Hà Nội, được đặt tại P219, Tháp Đông, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội. Đây là bước đi quan trọng trong việc củng cố sự hiện diện và mở rộng thị trường tại khu vực miền Bắc, đặc biệt là tại Hà Nội - trung tâm kinh tế lớn của cả nước.',
       historyDesc3: 'Trong giai đoạn 2020 – 2021, Công ty Luật TNHH Youth & Partners đã thực hiện chiến lược mở rộng mạng lưới để nâng cao chất lượng dịch vụ và đáp ứng tốt hơn nhu cầu của khách hàng tại các khu vực trọng điểm. Cụ thể, công ty đã khai trương Văn phòng giao dịch tại Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc, tỉnh Bắc Ninh, qua đó mở rộng phạm vi hoạt động và gia tăng sự hiện diện tại thị trường khu vực.',
       historyDesc4: 'Để đáp ứng nhu cầu phát triển, vào tháng 01 năm 2020, sau nửa năm hoạt động, công ty đã chuyển trụ sở đến Số 170 Nguyễn Văn Linh, phường Liên Bảo, thành phố Vĩnh Yên, tỉnh Vĩnh Phúc Đây cũng là địa chỉ trụ sở hiện tại của công ty. Cùng với bước chuyển quan trọng này, quy mô công ty cũng đã được mở rộng đáng kể, số lượng nhân sự tăng gấp ba lần so với ban đầu, đánh dấu một bước tiến vững chắc trong quá trình phát triển của Y&P Law Firm.',
       historyDesc5: 'Vào ngày 09 tháng 10 năm 2019, Công ty Luật TNHH Youth & Partners chính thức được thành lập tại số 67, đường Phạm Hồng Thái, Liên Bảo, Vĩnh Yên, Vĩnh Phúc.',
@@ -211,7 +168,7 @@ export const translations = {
       capabilitySubtitle: 'Tại đây, bạn sẽ tìm thấy những thông tin chi tiết về năng lực chuyên môn, các dịch vụ pháp lý mà chúng tôi cung cấp, và các thành tựu nổi bật của đội ngũ luật sư tại công ty',
       // Office addresses
       hanoiOffice: 'Hà Nội',
-      hanoiAddress: 'P316, Tháp Tây, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội',
+      hanoiAddress: 'P219, Tháp Đông, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội',
       phuThoOffice: 'Phú Thọ',
       phuThoAddress: 'Số 170, đường Nguyễn Văn Linh, phường Vĩnh Phúc, tỉnh Phú Thọ',
       bacNinhOffice: 'Bắc Ninh',
@@ -300,7 +257,7 @@ export const translations = {
         <br />• Litigation and Dispute Resolution (Civil, Criminal and Administrative)
         <br />• Labor and Employment
         <br />• Real Estate Legal Services`,
-      historyDesc2: 'During 2021-2023, Youth & Partners continued to expand its network with a new branch in Hanoi capital, located at P316, West Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi City. This is an important step in consolidating our presence and expanding the market in the Northern region, especially in Hanoi - the major economic center of the country.',
+      historyDesc2: 'During 2021-2023, Youth & Partners continued to expand its network with a new branch in Hanoi capital, located at P219, East Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi City. This is an important step in consolidating our presence and expanding the market in the Northern region, especially in Hanoi - the major economic center of the country.',
       historyDesc3: 'During 2020-2021, Youth & Partners Law Firm implemented a network expansion strategy to improve service quality and better meet customer needs in key areas. Specifically, the company opened a Transaction Office at 26 Doan Tran Nghiep, Kinh Bac Ward, Bac Ninh Province, thereby expanding the scope of operations and increasing presence in the regional market.',
       historyDesc4: 'To meet development needs, in January 2020, after six months of operation, the company relocated its headquarters to 170 Nguyen Van Linh, Lien Bao Ward, Vinh Yen City, Vinh Phuc Province. This is also the current headquarters of the company. Along with this important transition, the company scale has also been significantly expanded, with personnel tripling compared to the beginning, marking a solid step forward in the development of Y&P Law Firm.',
       historyDesc5: 'On October 09, 2019, Youth & Partners Law Firm was officially established at 67 Pham Hong Thai Street, Lien Bao, Vinh Yen, Vinh Phuc.',
@@ -344,7 +301,7 @@ export const translations = {
       capabilitySubtitle: 'Here you will find detailed information about our professional capabilities, legal services we provide, and outstanding achievements of our team of lawyers',
       // Office addresses
       hanoiOffice: 'Hanoi',
-      hanoiAddress: 'P316, West Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi City',
+      hanoiAddress: 'P219, East Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi City',
       phuThoOffice: 'Phu Tho',
       phuThoAddress: '170 Nguyen Van Linh Street, Vinh Phuc Ward, Phu Tho Province',
       bacNinhOffice: 'Bac Ninh',
@@ -422,7 +379,7 @@ export const translations = {
       historyTitle5: '公司成立 <br /> <span class="font-normal">Youth & Partners</span> <br /> <span class="text-sm font-normal">2019年10月09日</span>',
       // History timeline descriptions
       historyDesc1: '从2024年至今，Youth & Partners律所已进行组织整顿，增加人员并扩大服务规模，以满足客户日益增长的需求。公司专注于提供全面解决方案和深入的法律咨询服务，包括但不限于：<br />• 企业<br />• 常规咨询<br />• 知识产权<br />• 公司治理与合规<br />• 投资项目<br />• 企业支持服务<br />• 并购（M&A）<br />• 诉讼和争议解决（民事、刑事和行政）<br />• 劳动与就业<br />• 房地产法律服务',
-      historyDesc2: '2021-2023年间，Youth & Partners继续扩展网络，在河内首都开设新分支，位于河内市义都区国防学院公寓西塔P316。这是巩固北方市场存在和扩展的重要一步，特别是在河内——全国主要经济中心。',
+      historyDesc2: '2021-2023年间，Youth & Partners继续扩展网络，在河内首都开设新分支，位于河内市义都区国防学院公寓东塔P219。这是巩固北方市场存在和扩展的重要一步，特别是在河内——全国主要经济中心。',
       historyDesc3: '2020-2021年间，Youth & Partners律所实施网络扩展战略以提高服务质量并更好地满足重点地区客户需求。具体而言，公司在北宁省京北区段陈业街26号开设交易办事处，从而扩大运营范围并增加在区域市场的存在。',
       historyDesc4: '为满足发展需求，2020年1月，运营半年后，公司将总部迁至永福省永安市连宝区阮文灵路170号。这也是公司目前的总部地址。随着这一重要转变，公司规模也显著扩大，人员比最初增加了三倍，标志着Y&P律所发展的坚实一步。',
       historyDesc5: '2019年10月09日，Youth & Partners律所正式成立于永福省永安市连宝区范鸿泰街67号。',
@@ -502,7 +459,7 @@ export const translations = {
       historyTitle5: '会社設立 <br /> <span class="font-normal">Youth & Partners</span> <br /> <span class="text-sm font-normal">2019年10月09日</span>',
       // History timeline descriptions
       historyDesc1: '2024年から現在まで、Youth & Partners法律事務所は組織を整備し、人員を追加してサービス規模を拡大し、お客様の高まるニーズに応えています。会社は以下を含むがこれに限定されない多くの分野で包括的なソリューションと専門的な法律コンサルティングサービスの提供に注力しています：<br />• 企業<br />• 定期コンサルティング<br />• 知的財産<br />• コーポレートガバナンスとコンプライアンス<br />• 投資プロジェクト<br />• ビジネスサポートサービス<br />• M&A（合併・買収）<br />• 訴訟と紛争解決（民事、刑事、行政）<br />• 労働と雇用<br />• 不動産法律サービス',
-      historyDesc2: '2021年から2023年の間、Youth & Partnersはハノイ首都に新しい支店を開設し、ネットワークを拡大しました。支店はハノイ市ギア・ド区国防学院アパート西棟P316に位置しています。これは特にベトナムの主要経済中心地であるハノイにおいて、北部地域での存在感を強化し市場を拡大するための重要な一歩です。',
+      historyDesc2: '2021年から2023年の間、Youth & Partnersはハノイ首都に新しい支店を開設し、ネットワークを拡大しました。支店はハノイ市ギア・ド区国防学院アパート東棟P219に位置しています。これは特にベトナムの主要経済中心地であるハノイにおいて、北部地域での存在感を強化し市場を拡大するための重要な一歩です。',
       historyDesc3: '2020年から2021年の間、Youth & Partners法律事務所はサービス品質向上と重点地域のお客様のニーズにより良く対応するためネットワーク拡大戦略を実施しました。具体的には、バクニン省キンバク区ドアン・チャン・ギエップ26番地に取引オフィスを開設し、事業範囲を拡大し地域市場での存在感を高めました。',
       historyDesc4: '発展ニーズに応えるため、2020年1月、半年の運営後、ビンフック省ビンイエン市リエンバオ区グエン・ヴァン・リン170番地に本社を移転しました。これは会社の現在の本社所在地でもあります。この重要な転換に伴い、会社の規模も大幅に拡大し、人員は当初の3倍に増加し、Y&P法律事務所の発展における着実な一歩を示しています。',
       historyDesc5: '2019年10月09日、Youth & Partners法律事務所がビンフック省ビンイエン市リエンバオ区ファム・ホン・タイ通り67番地に正式に設立されました。',
@@ -582,7 +539,7 @@ export const translations = {
       historyTitle5: '회사 설립 <br /> <span class="font-normal">Youth & Partners</span> <br /> <span class="text-sm font-normal">2019년 10월 09일</span>',
       // History timeline descriptions
       historyDesc1: '2024년부터 현재까지 Youth & Partners 법률사무소는 조직을 정비하고 인력을 추가하여 서비스 규모를 확대하여 고객의 증가하는 요구에 부응하고 있습니다. 회사는 다음을 포함하되 이에 국한되지 않는 많은 분야에서 포괄적인 솔루션과 심층 법률 컨설팅 서비스 제공에 집중하고 있습니다:<br />• 기업<br />• 정기 컨설팅<br />• 지적재산<br />• 기업 거버넌스 및 규정 준수<br />• 투자 프로젝트<br />• 비즈니스 지원 서비스<br />• M&A (인수합병)<br />• 소송 및 분쟁 해결 (민사, 형사, 행정)<br />• 노동 및 고용<br />• 부동산 법률 서비스',
-      historyDesc2: '2021년부터 2023년까지 Youth & Partners는 하노이 수도에 새로운 지점을 열어 네트워크를 확장했습니다. 지점은 하노이시 응히아도구 국방학원 아파트 서타워 P316에 위치해 있습니다. 이는 특히 베트남의 주요 경제 중심지인 하노이에서 북부 지역의 존재감을 강화하고 시장을 확장하는 중요한 단계입니다.',
+      historyDesc2: '2021년부터 2023년까지 Youth & Partners는 하노이 수도에 새로운 지점을 열어 네트워크를 확장했습니다. 지점은 하노이시 응히아도구 국방학원 아파트 동타워 P219에 위치해 있습니다. 이는 특히 베트남의 주요 경제 중심지인 하노이에서 북부 지역의 존재감을 강화하고 시장을 확장하는 중요한 단계입니다.',
       historyDesc3: '2020년부터 2021년까지 Youth & Partners 법률사무소는 서비스 품질 향상과 주요 지역 고객의 요구를 더 잘 충족시키기 위한 네트워크 확장 전략을 실시했습니다. 구체적으로 박닌성 킨박구 도안찬응이엡 26번지에 거래 사무소를 개설하여 운영 범위를 확대하고 지역 시장에서의 존재감을 높였습니다.',
       historyDesc4: '발전 요구에 부응하기 위해 2020년 1월, 6개월간의 운영 후 빈푹성 빈옌시 리엔바오구 응우옌반린 170번지로 본사를 이전했습니다. 이곳은 현재 회사 본사 주소이기도 합니다. 이 중요한 전환과 함께 회사 규모도 크게 확대되어 인력이 초기 대비 3배로 증가하여 Y&P 법률사무소의 발전에 있어 확고한 한 걸음을 보여주었습니다.',
       historyDesc5: '2019년 10월 09일, Youth & Partners 법률사무소가 빈푹성 빈옌시 리엔바오 팜홍타이 67번지에 공식적으로 설립되었습니다.',
@@ -842,327 +799,10 @@ export const translations = {
     },
   },
 
-  // Legal services
-  legal: {
-    vi: {
-      business: 'Doanh nghiệp',
-      enterprise: 'Doanh nghiệp',
-      commerce: 'Kinh doanh thương mại',
-      commercial: 'Kinh doanh thương mại',
-      ip: 'Sở hữu trí tuệ',
-      intellectual: 'Sở hữu trí tuệ',
-      land: 'Đất đai',
-      family: 'Hôn nhân và gia đình',
-      marriage: 'Hôn nhân và gia đình',
-      adoption: 'Giấy phép con',
-      subLicense: 'Giấy phép con',
-      civil: 'Dân sự',
-      criminal: 'Hình sự',
-      other: 'Pháp lý khác',
-    },
-    en: {
-      business: 'Business',
-      enterprise: 'Business',
-      commerce: 'Commercial Business',
-      commercial: 'Commercial Business',
-      ip: 'Intellectual Property',
-      intellectual: 'Intellectual Property',
-      land: 'Land',
-      family: 'Marriage and Family',
-      marriage: 'Marriage and Family',
-      adoption: 'Sub-License',
-      subLicense: 'Sub-License',
-      civil: 'Civil',
-      criminal: 'Criminal',
-      other: 'Other Legal',
-    },
-    zh: {
-      business: '企业',
-      enterprise: '企业',
-      commerce: '商业贸易',
-      commercial: '商业贸易',
-      ip: '知识产权',
-      intellectual: '知识产权',
-      land: '土地',
-      family: '婚姻与家庭',
-      marriage: '婚姻与家庭',
-      adoption: '子许可证',
-      subLicense: '子许可证',
-      civil: '民事',
-      criminal: '刑事',
-      other: '其他法律',
-    },
-    ja: {
-      business: '企業',
-      enterprise: '企業',
-      commerce: '商業貿易',
-      commercial: '商業貿易',
-      ip: '知的財産',
-      intellectual: '知的財産',
-      land: '土地',
-      family: '婚姻と家族',
-      marriage: '婚姻と家族',
-      adoption: 'サブライセンス',
-      subLicense: 'サブライセンス',
-      civil: '民事',
-      criminal: '刑事',
-      other: 'その他の法律',
-    },
-    ko: {
-      business: '기업',
-      enterprise: '기업',
-      commerce: '상업 무역',
-      commercial: '상업 무역',
-      ip: '지적 재산',
-      intellectual: '지적 재산',
-      land: '토지',
-      family: '결혼 및 가족',
-      marriage: '결혼 및 가족',
-      adoption: '서브라이선스',
-      subLicense: '서브라이선스',
-      civil: '민사',
-      criminal: '형사',
-      other: '기타 법률',
-    },
-  },
+  // NOTE: legal, labor, consultation, investment, evaluation sections are in JSON files
+  // Only add extended keys here that don't exist in JSON
 
-  // Labor services
-  labor: {
-    vi: {
-      regulations: 'Nội quy - Thỏa ước',
-      workingHours: 'Thời giờ làm việc',
-      salary: 'Lương & Phúc lợi',
-      contracts: 'Hợp đồng lao động, đào tạo',
-      termination: 'Chấm dứt hợp đồng',
-      discipline: 'Xử lý kỷ luật',
-      harassment: 'Quấy rối tình dục',
-      disputes: 'Tranh chấp lao động',
-      other: 'Pháp lý lao động khác',
-    },
-    en: {
-      regulations: 'Internal Regulations - Collective Agreements',
-      workingHours: 'Working Hours',
-      salary: 'Salary & Benefits',
-      contracts: 'Labor Contracts, Training',
-      termination: 'Contract Termination',
-      discipline: 'Disciplinary Actions',
-      harassment: 'Sexual Harassment',
-      disputes: 'Labor Disputes',
-      other: 'Other Labor Legal',
-    },
-    zh: {
-      regulations: '内部规章 - 集体协议',
-      workingHours: '工作时间',
-      salary: '工资与福利',
-      contracts: '劳动合同、培训',
-      termination: '合同终止',
-      discipline: '纪律处理',
-      harassment: '性骚扰',
-      disputes: '劳动争议',
-      other: '其他劳动法律',
-    },
-    ja: {
-      regulations: '内部規則 - 団体協約',
-      workingHours: '労働時間',
-      salary: '給与と福利',
-      contracts: '労働契約、研修',
-      termination: '契約終了',
-      discipline: '懲戒処分',
-      harassment: 'セクハラ',
-      disputes: '労働争議',
-      other: 'その他の労働法律',
-    },
-    ko: {
-      regulations: '내부 규정 - 단체 협약',
-      workingHours: '근로 시간',
-      salary: '급여 및 복리',
-      contracts: '노동 계약, 교육',
-      termination: '계약 종료',
-      discipline: '징계 처리',
-      harassment: '성희롱',
-      disputes: '노동 분쟁',
-      other: '기타 노동 법률',
-    },
-  },
-
-  // Consultation services
-  consultation: {
-    vi: {
-      regular: 'Tư vấn pháp luật thường xuyên',
-      privateLawyer: 'Dịch vụ luật sư riêng',
-      concept: 'Khái niệm Tư vấn thường xuyên',
-      whyNeeded: 'Vì sao doanh nghiệp cần tư vấn thường xuyên',
-      contractTemplate: 'Mẫu hợp đồng dịch vụ',
-      serviceFee: 'Phí dịch vụ tư vấn',
-      process: 'Quy trình tư vấn',
-      strengths: 'Điểm mạnh của Youth & Partners',
-      other: 'Pháp lý tư vấn thường xuyên khác',
-    },
-    en: {
-      regular: 'Regular Legal Consultation',
-      privateLawyer: 'Personal Lawyer Service',
-      concept: 'Regular Consultation Concept',
-      whyNeeded: 'Why Businesses Need Regular Consultation',
-      contractTemplate: 'Service Contract Template',
-      serviceFee: 'Consultation Service Fee',
-      process: 'Consultation Process',
-      strengths: 'Youth & Partners Strengths',
-      other: 'Other Regular Consultation',
-    },
-    zh: {
-      regular: '定期法律咨询',
-      privateLawyer: '私人律师服务',
-      concept: '定期咨询概念',
-      whyNeeded: '企业为何需要定期咨询',
-      contractTemplate: '服务合同模板',
-      serviceFee: '咨询服务费',
-      process: '咨询流程',
-      strengths: 'Youth & Partners的优势',
-      other: '其他定期咨询',
-    },
-    ja: {
-      regular: '定期法律相談',
-      privateLawyer: 'プライベート弁護士サービス',
-      concept: '定期相談の概念',
-      whyNeeded: '企業が定期相談を必要とする理由',
-      contractTemplate: 'サービス契約テンプレート',
-      serviceFee: '相談サービス料金',
-      process: '相談プロセス',
-      strengths: 'Youth & Partnersの強み',
-      other: 'その他の定期相談',
-    },
-    ko: {
-      regular: '정기 법률 상담',
-      privateLawyer: '개인 변호사 서비스',
-      concept: '정기 상담 개념',
-      whyNeeded: '기업이 정기 상담이 필요한 이유',
-      contractTemplate: '서비스 계약 템플릿',
-      serviceFee: '상담 서비스 비용',
-      process: '상담 프로세스',
-      strengths: 'Youth & Partners의 강점',
-      other: '기타 정기 상담',
-    },
-  },
-
-  // Investment & Foreign services
-  investment: {
-    vi: {
-      newProjects: 'Thành lập mới dự án',
-      projectAdjustment: 'Điều chỉnh dự án đầu tư',
-      transfer: 'Chuyển nhượng dự án',
-      presence: 'Hiện diện thương mại',
-      englishLawyer: 'Luật sư tư vấn tiếng Anh',
-      japaneseLawyer: 'Luật sư tư vấn tiếng Nhật',
-      chineseLawyer: 'Luật sư tư vấn tiếng Trung Quốc',
-      workPermit: 'Giấy phép lao động',
-      foreignerLaw: 'Pháp lý người nước ngoài',
-    },
-    en: {
-      newProjects: 'New Project Establishment',
-      projectAdjustment: 'Investment Project Adjustment',
-      transfer: 'Project Transfer',
-      presence: 'Commercial Presence',
-      englishLawyer: 'English-speaking Lawyer',
-      japaneseLawyer: 'Japanese-speaking Lawyer',
-      chineseLawyer: 'Chinese-speaking Lawyer',
-      workPermit: 'Work Permit',
-      foreignerLaw: 'Foreign Legal',
-    },
-    zh: {
-      newProjects: '新项目成立',
-      projectAdjustment: '投资项目调整',
-      transfer: '项目转让',
-      presence: '商业存在',
-      englishLawyer: '英语律师',
-      japaneseLawyer: '日语律师',
-      chineseLawyer: '中文律师',
-      workPermit: '工作许可',
-      foreignerLaw: '外国人法律',
-    },
-    ja: {
-      newProjects: '新規プロジェクト設立',
-      projectAdjustment: '投資プロジェクト調整',
-      transfer: 'プロジェクト譲渡',
-      presence: '商業プレゼンス',
-      englishLawyer: '英語弁護士',
-      japaneseLawyer: '日本語弁護士',
-      chineseLawyer: '中国語弁護士',
-      workPermit: '労働許可',
-      foreignerLaw: '外国人法律',
-    },
-    ko: {
-      newProjects: '신규 프로젝트 설립',
-      projectAdjustment: '투자 프로젝트 조정',
-      transfer: '프로젝트 양도',
-      presence: '상업적 존재',
-      englishLawyer: '영어 변호사',
-      japaneseLawyer: '일본어 변호사',
-      chineseLawyer: '중국어 변호사',
-      workPermit: '근로 허가',
-      foreignerLaw: '외국인 법률',
-    },
-  },
-
-  // Evaluation services
-  evaluation: {
-    vi: {
-      concept: 'Khái niệm đánh giá',
-      benefits: 'Lợi ích của việc đánh giá',
-      pricing: 'Phí dịch vụ đánh giá',
-      process: 'Quy trình đánh giá',
-      business: 'Dịch vụ Đánh giá cho Doanh nghiệp',
-      preAudit: 'Dịch vụ đánh giá tiền trạm',
-      standards: 'Các bộ tiêu chuẩn TNXH',
-      rba: 'Tiêu chuẩn RBA',
-      mistakes: 'Các lỗi thường gặp của doanh nghiệp',
-    },
-    en: {
-      concept: 'Evaluation Concept',
-      benefits: 'Benefits of Evaluation',
-      pricing: 'Evaluation Service Fees',
-      process: 'Evaluation Process',
-      business: 'Business Evaluation Services',
-      preAudit: 'Pre-audit Evaluation Services',
-      standards: 'Social Standards',
-      rba: 'RBA Standards',
-      mistakes: 'Common Business Mistakes',
-    },
-    zh: {
-      concept: '评估概念',
-      benefits: '评估的好处',
-      pricing: '评估服务费用',
-      process: '评估流程',
-      business: '企业评估服务',
-      preAudit: '预审评估服务',
-      standards: '社会标准',
-      rba: 'RBA标准',
-      mistakes: '企业常见错误',
-    },
-    ja: {
-      concept: '評価の概念',
-      benefits: '評価の利点',
-      pricing: '評価サービス料金',
-      process: '評価プロセス',
-      business: '企業評価サービス',
-      preAudit: '事前監査評価サービス',
-      standards: '社会基準',
-      rba: 'RBA基準',
-      mistakes: '企業のよくある間違い',
-    },
-    ko: {
-      concept: '평가 개념',
-      benefits: '평가의 이점',
-      pricing: '평가 서비스 요금',
-      process: '평가 프로세스',
-      business: '기업 평가 서비스',
-      preAudit: '사전 감사 평가 서비스',
-      standards: '사회 기준',
-      rba: 'RBA 기준',
-      mistakes: '기업의 흔한 실수',
-    },
-  },
-
-  // Services page
+  // Services page (extended content beyond JSON)
   services: {
     vi: {
       professionalLegal: 'Dịch vụ pháp lý chuyên môn',
@@ -2320,50 +1960,6 @@ export const translations = {
     },
   },
 
-  // Search
-  search: {
-    vi: {
-      placeholder: 'Tìm kiếm bài viết...',
-      enterKeyword: 'Nhập từ khóa để tìm kiếm...',
-      noResults: 'Không tìm thấy kết quả cho',
-      noData: 'Không có dữ liệu tìm kiếm',
-      loadError: 'Không thể tải dữ liệu tìm kiếm. Vui lòng thử lại.',
-      loading: 'Đang tải...',
-    },
-    en: {
-      placeholder: 'Search articles...',
-      enterKeyword: 'Enter keywords to search...',
-      noResults: 'No results found for',
-      noData: 'No search data available',
-      loadError: 'Failed to load search data. Please try again.',
-      loading: 'Loading...',
-    },
-    zh: {
-      placeholder: '搜索文章...',
-      enterKeyword: '输入关键词搜索...',
-      noResults: '未找到结果',
-      noData: '没有搜索数据',
-      loadError: '无法加载搜索数据。请重试。',
-      loading: '加载中...',
-    },
-    ja: {
-      placeholder: '記事を検索...',
-      enterKeyword: 'キーワードを入力して検索...',
-      noResults: '検索結果が見つかりません',
-      noData: '検索データがありません',
-      loadError: '検索データの読み込みに失敗しました。もう一度お試しください。',
-      loading: '読み込み中...',
-    },
-    ko: {
-      placeholder: '기사 검색...',
-      enterKeyword: '검색어를 입력하세요...',
-      noResults: '검색 결과 없음',
-      noData: '검색 데이터 없음',
-      loadError: '검색 데이터를 불러올 수 없습니다. 다시 시도해 주세요.',
-      loading: '로딩 중...',
-    },
-  },
-
   // Post/Blog labels
   post: {
     vi: {
@@ -2438,7 +2034,7 @@ export const translations = {
       directorName: 'Luật sư Nguyễn Văn Thành',
       hotline: 'Hotline',
       email: 'Email',
-      addressHanoi: 'Hà Nội: P316, Tháp Tây, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội.',
+      addressHanoi: 'Hà Nội: P219, Tháp Đông, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội.',
       addressBacNinh: 'Bắc Ninh: Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc, tỉnh Bắc Ninh.',
       addressPhuTho: 'Phú Thọ: Số 170, đường Nguyễn Văn Linh, phường Vĩnh Phúc, tỉnh Phú Thọ.',
       headquarters: 'Trụ sở',
@@ -2452,7 +2048,7 @@ export const translations = {
       directorName: 'Lawyer Nguyen Van Thanh',
       hotline: 'Hotline',
       email: 'Email',
-      addressHanoi: 'Hanoi: P316, West Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi City.',
+      addressHanoi: 'Hanoi: P219, East Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi City.',
       addressBacNinh: 'Bac Ninh: 26 Doan Tran Nghiep Street, Kinh Bac Ward, Bac Ninh Province.',
       addressPhuTho: 'Phu Tho: 170 Nguyen Van Linh Street, Vinh Phuc Ward, Phu Tho Province.',
       headquarters: 'Headquarters',
@@ -2466,7 +2062,7 @@ export const translations = {
       directorName: '律师阮文成',
       hotline: '热线电话',
       email: '电子邮件',
-      addressHanoi: '河内：西塔P316，国防学院公寓，义都坊，河内市。',
+      addressHanoi: '河内：东塔P219，国防学院公寓，义都坊，河内市。',
       addressBacNinh: '北宁：北宁省京北坊段陈业街26号。',
       addressPhuTho: '富寿：富寿省永福坊阮文灵路170号。',
       headquarters: '总部',
@@ -2480,7 +2076,7 @@ export const translations = {
       directorName: '弁護士グエン・ヴァン・タイン',
       hotline: 'ホットライン',
       email: 'メール',
-      addressHanoi: 'ハノイ：ウェストタワーP316、国防学院アパート、ギアド区、ハノイ市。',
+      addressHanoi: 'ハノイ：イーストタワーP219、国防学院アパート、ギアド区、ハノイ市。',
       addressBacNinh: 'バクニン：バクニン省キンバック区ドアン・トラン・ギエップ通り26番。',
       addressPhuTho: 'フート：フート省ヴィンフック区グエン・ヴァン・リン通り170番。',
       headquarters: '本社',
@@ -2494,7 +2090,7 @@ export const translations = {
       directorName: '변호사 응우옌 반 타인',
       hotline: '핫라인',
       email: '이메일',
-      addressHanoi: '하노이: P316, 웨스트타워, 국방학원 아파트, 응히아도구, 하노이시.',
+      addressHanoi: '하노이: P219, 이스트타워, 국방학원 아파트, 응히아도구, 하노이시.',
       addressBacNinh: '박닌: 박닌성 킨박구 도안쩐응히엡거리 26번.',
       addressPhuTho: '푸토: 푸토성 빈푹구 응우옌반린거리 170번.',
       headquarters: '본사',
@@ -2779,566 +2375,6 @@ export const translations = {
       manager: '매니저',
       headOfHR: '인사팀장',
       founderCEO: '창업자 겸 CEO',
-    },
-  },
-
-  // SEO and meta
-  // Location/Office section
-  location: {
-    vi: {
-      hanoi: 'Hà Nội',
-      phutho: 'Phú Thọ',
-      bacninh: 'Bắc Ninh',
-      vinhtuong: 'VPDD Vĩnh Tường',
-      hanoiAddress: 'P316, Tháp Tây, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội',
-      phuthoAddress: 'Số 170, đường Nguyễn Văn Linh, phường Vĩnh Phúc, tỉnh Phú Thọ',
-      bacninhAddress: 'Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc, tỉnh Bắc Ninh',
-      vinhtuongAddress: 'Ngã 5 thôn Sen, xã Vĩnh Hưng, tỉnh Phú Thọ',
-    },
-    en: {
-      hanoi: 'Hanoi',
-      phutho: 'Phu Tho',
-      bacninh: 'Bac Ninh',
-      vinhtuong: 'Vinh Tuong Office',
-      hanoiAddress: 'P316, West Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi',
-      phuthoAddress: '170 Nguyen Van Linh Street, Vinh Phuc Ward, Phu Tho Province',
-      bacninhAddress: '26 Doan Tran Nghiep, Kinh Bac Ward, Bac Ninh Province',
-      vinhtuongAddress: 'Sen Village Crossroads, Vinh Hung Commune, Phu Tho Province',
-    },
-    zh: {
-      hanoi: '河内',
-      phutho: '富寿',
-      bacninh: '北宁',
-      vinhtuong: '永祥代表处',
-      hanoiAddress: 'P316，西塔，国防学院公寓，义都坊，河内市',
-      phuthoAddress: '富寿省永福坊阮文灵路170号',
-      bacninhAddress: '北宁省京北坊段陈业街26号',
-      vinhtuongAddress: '富寿省永兴社仙村五岔路口',
-    },
-    ja: {
-      hanoi: 'ハノイ',
-      phutho: 'フート',
-      bacninh: 'バクニン',
-      vinhtuong: 'ヴィントゥオン事務所',
-      hanoiAddress: 'P316、ウェストタワー、国防アカデミーアパート、ギアド区、ハノイ',
-      phuthoAddress: 'フート省ヴィンフック区グエンヴァンリン通り170番地',
-      bacninhAddress: 'バクニン省キンバック区ドアントランギエップ通り26番地',
-      vinhtuongAddress: 'フート省ヴィンフン社セン村交差点',
-    },
-    ko: {
-      hanoi: '하노이',
-      phutho: '푸토',
-      bacninh: '박닌',
-      vinhtuong: '빈뜨엉 사무소',
-      hanoiAddress: 'P316, 웨스트 타워, 국방아카데미 아파트, 응이아도 구, 하노이',
-      phuthoAddress: '푸토성 빈푹구 응우옌반린 거리 170번지',
-      bacninhAddress: '박닌성 킨박구 도안쩐응입 거리 26번지',
-      vinhtuongAddress: '푸토성 빈흥사 센마을 오거리',
-    },
-  },
-
-  meta: {
-    vi: {
-      title: 'Công ty Luật TNHH Youth & Partners - Người bạn đồng hành của Doanh nghiệp',
-      description: 'Công ty Luật TNHH Youth & Partners là một trong những công ty luật hàng đầu trong các lĩnh vực: Tư vấn pháp lý thường xuyên cho doanh nghiệp / Dịch vụ Phòng pháp chế thuê ngoài; Tư vấn và giải quyết tranh chấp lao động; Dịch vụ Luật sư riêng tiếng Nhật, Anh, Trung, Hàn; Dịch vụ Audit, đánh giá và thẩm định pháp lý cho Doanh nghiệp.',
-    },
-    en: {
-      title: 'Youth & Partners Law Firm - Business Companion',
-      description: 'Youth & Partners Law Firm is one of the leading law firms in: Regular legal consultation for businesses / Outsourced legal department services; Labor dispute consultation and resolution; Japanese, English, Chinese, Korean-speaking lawyer services; Audit, evaluation and legal evaluation services for businesses.',
-    },
-    zh: {
-      title: 'Youth & Partners律师事务所 - 企业伙伴',
-      description: 'Youth & Partners律师事务所是在以下领域领先的律师事务所之一：企业定期法律咨询/外包法律部门服务；劳动争议咨询与解决；日语、英语、中文、韩语律师服务；企业审计、评估和法律评估服务。',
-    },
-    ja: {
-      title: 'Youth & Partners法律事務所 - 企業の仲間',
-      description: 'Youth & Partners法律事務所は、以下の分野で一流の法律事務所の一つです：企業の定期的な法的相談/外部委託法務部サービス；労働争議の相談と解決；日本語、英語、中国語、韓国語の弁護士サービス；企業の監査、評価、法的評価サービス。',
-    },
-    ko: {
-      title: 'Youth & Partners 법률사무소 - 기업의 동반자',
-      description: 'Youth & Partners 법률사무소는 다음과 같은 분야에서 선두 법률사무소 중 하나입니다: 기업 정기 법률 상담 / 외주 법무 부서 서비스; 노동 분쟁 상담 및 해결; 일본어, 영어, 중국어, 한국어 변호사 서비스; 기업 감사, 평가 및 법률 평가 서비스.',
-    },
-  },
-
-  // Blog type page titles and subtitles
-  blogTypes: {
-    vi: {
-      postTitle: 'Tin tức pháp luật',
-      postSubtitle: 'Cập nhật tin tức pháp luật mới nhất từ Công ty Luật Youth & Partners',
-      legalTitle: 'Pháp lý doanh nghiệp',
-      legalSubtitle: 'Trang pháp lý của chúng tôi cung cấp những thông tin cập nhật và mới nhất về các vấn đề pháp lý',
-      consultationTitle: 'Tư vấn pháp lý thường xuyên',
-      consultationSubtitle: 'Dịch vụ tư vấn pháp lý thường xuyên - Người bạn đồng hành đáng tin cậy của doanh nghiệp',
-      laborTitle: 'Pháp luật lao động',
-      laborSubtitle: 'Tư vấn và giải quyết các vấn đề pháp luật lao động cho doanh nghiệp',
-      foreignerTitle: 'Đầu tư nước ngoài',
-      foreignerSubtitle: 'Hỗ trợ pháp lý toàn diện cho nhà đầu tư nước ngoài tại Việt Nam',
-      evaluationTitle: 'Dịch vụ đánh giá pháp lý',
-      evaluationSubtitle: 'Dịch vụ đánh giá, thẩm định và audit pháp lý chuyên nghiệp',
-    },
-    en: {
-      postTitle: 'Legal News',
-      postSubtitle: 'Latest legal news updates from Youth & Partners Law Firm',
-      legalTitle: 'Business Legal',
-      legalSubtitle: 'Our legal page provides updated and latest information on legal matters',
-      consultationTitle: 'Regular Legal Consultation',
-      consultationSubtitle: 'Regular legal consultation service - Your reliable business companion',
-      laborTitle: 'Labor Law',
-      laborSubtitle: 'Consultation and resolution of labor law issues for businesses',
-      foreignerTitle: 'Foreign Investment',
-      foreignerSubtitle: 'Comprehensive legal support for foreign investors in Vietnam',
-      evaluationTitle: 'Legal Evaluation Services',
-      evaluationSubtitle: 'Professional legal assessment, due diligence and audit services',
-    },
-    zh: {
-      postTitle: '法律新闻',
-      postSubtitle: 'Youth & Partners律师事务所最新法律新闻更新',
-      legalTitle: '企业法律',
-      legalSubtitle: '我们的法律页面提供有关法律事务的最新信息',
-      consultationTitle: '定期法律咨询',
-      consultationSubtitle: '定期法律咨询服务 - 您值得信赖的商业伙伴',
-      laborTitle: '劳动法',
-      laborSubtitle: '为企业提供劳动法问题的咨询和解决方案',
-      foreignerTitle: '外国投资',
-      foreignerSubtitle: '为在越南的外国投资者提供全面的法律支持',
-      evaluationTitle: '法律评估服务',
-      evaluationSubtitle: '专业法律评估、尽职调查和审计服务',
-    },
-    ja: {
-      postTitle: '法律ニュース',
-      postSubtitle: 'Youth & Partners法律事務所からの最新法律ニュース',
-      legalTitle: '企業法務',
-      legalSubtitle: '当社の法律ページは法的問題に関する最新情報を提供します',
-      consultationTitle: '定期法律相談',
-      consultationSubtitle: '定期法律相談サービス - 信頼できるビジネスパートナー',
-      laborTitle: '労働法',
-      laborSubtitle: '企業向けの労働法問題の相談と解決',
-      foreignerTitle: '外国投資',
-      foreignerSubtitle: 'ベトナムの外国投資家向けの包括的な法的サポート',
-      evaluationTitle: '法的評価サービス',
-      evaluationSubtitle: '専門的な法的評価、デューデリジェンス、監査サービス',
-    },
-    ko: {
-      postTitle: '법률 뉴스',
-      postSubtitle: 'Youth & Partners 법률사무소의 최신 법률 뉴스',
-      legalTitle: '기업 법률',
-      legalSubtitle: '저희 법률 페이지는 법적 문제에 관한 최신 정보를 제공합니다',
-      consultationTitle: '정기 법률 상담',
-      consultationSubtitle: '정기 법률 상담 서비스 - 신뢰할 수 있는 비즈니스 동반자',
-      laborTitle: '노동법',
-      laborSubtitle: '기업을 위한 노동법 문제 상담 및 해결',
-      foreignerTitle: '외국인 투자',
-      foreignerSubtitle: '베트남 외국인 투자자를 위한 종합적인 법률 지원',
-      evaluationTitle: '법률 평가 서비스',
-      evaluationSubtitle: '전문적인 법률 평가, 실사 및 감사 서비스',
-    },
-  },
-
-  // Blog category page titles
-  blogCategories: {
-    vi: {
-      tinMoi: 'Tin mới',
-      suKien: 'Sự kiện',
-      tinMoiSubtitle: 'Tin tức pháp luật mới nhất',
-      suKienSubtitle: 'Sự kiện và hoạt động của Youth & Partners',
-    },
-    en: {
-      tinMoi: 'Latest News',
-      suKien: 'Events',
-      tinMoiSubtitle: 'Latest legal news',
-      suKienSubtitle: 'Events and activities of Youth & Partners',
-    },
-    zh: {
-      tinMoi: '最新消息',
-      suKien: '活动',
-      tinMoiSubtitle: '最新法律新闻',
-      suKienSubtitle: 'Youth & Partners的活动',
-    },
-    ja: {
-      tinMoi: '最新ニュース',
-      suKien: 'イベント',
-      tinMoiSubtitle: '最新の法律ニュース',
-      suKienSubtitle: 'Youth & Partnersのイベントと活動',
-    },
-    ko: {
-      tinMoi: '최신 뉴스',
-      suKien: '이벤트',
-      tinMoiSubtitle: '최신 법률 뉴스',
-      suKienSubtitle: 'Youth & Partners의 이벤트 및 활동',
-    },
-  },
-
-  // Author page
-  author: {
-    vi: {
-      authorLabel: 'Tác giả',
-      postsBy: 'Bài viết của',
-    },
-    en: {
-      authorLabel: 'Author',
-      postsBy: 'Posts by',
-    },
-    zh: {
-      authorLabel: '作者',
-      postsBy: '文章作者',
-    },
-    ja: {
-      authorLabel: '著者',
-      postsBy: '投稿者',
-    },
-    ko: {
-      authorLabel: '저자',
-      postsBy: '작성자',
-    },
-  },
-
-  // Lawyer profile pages
-  lawyerProfile: {
-    vi: {
-      authorInfo: 'Thông tin tác giả',
-      contactAuthor: 'Liên hệ với tác giả',
-      experience: 'Kinh nghiệm',
-      education: 'Học vấn',
-      authorPosts: 'Bài viết của tác giả',
-      lawyer: 'Luật sư',
-      legalSpecialist: 'Chuyên viên pháp lý',
-      doctor: 'Tiến sĩ',
-    },
-    en: {
-      authorInfo: 'Author Information',
-      contactAuthor: 'Contact Author',
-      experience: 'Experience',
-      education: 'Education',
-      authorPosts: 'Author Posts',
-      lawyer: 'Lawyer',
-      legalSpecialist: 'Legal Specialist',
-      doctor: 'Dr.',
-    },
-    zh: {
-      authorInfo: '作者信息',
-      contactAuthor: '联系作者',
-      experience: '经验',
-      education: '学历',
-      authorPosts: '作者文章',
-      lawyer: '律师',
-      legalSpecialist: '法律专员',
-      doctor: '博士',
-    },
-    ja: {
-      authorInfo: '著者情報',
-      contactAuthor: '著者に連絡する',
-      experience: '経験',
-      education: '学歴',
-      authorPosts: '著者の記事',
-      lawyer: '弁護士',
-      legalSpecialist: '法務専門家',
-      doctor: '博士',
-    },
-    ko: {
-      authorInfo: '저자 정보',
-      contactAuthor: '저자에게 연락',
-      experience: '경력',
-      education: '학력',
-      authorPosts: '저자 게시물',
-      lawyer: '변호사',
-      legalSpecialist: '법률 전문가',
-      doctor: '박사',
-    },
-  },
-
-  // Additional services page translations
-  servicesExtra: {
-    vi: {
-      enterprise: 'Doanh nghiệp',
-      regularConsulting: 'Tư vấn thường xuyên',
-      intellectualProperty: 'Sở hữu trí tuệ',
-      laborEmploymentShort: 'Lao động việc làm',
-      enterpriseSupport: 'Dịch vụ bổ trợ doanh nghiệp',
-      superiorExpertise: 'Chuyên môn vượt trội',
-      negotiationStrategy: 'Chiến lược đàm phán hiệu quả',
-      dedicatedProtection: 'Tận tâm và bảo vệ quyền lợi khách hàng',
-      deepKnowledge: 'Kiến thức chuyên môn sâu rộng',
-      laborDisputeExp: 'Kinh nghiệm giải quyết tranh chấp lao động',
-      strategicConsulting: 'Tư vấn chiến lược và giải pháp tối ưu',
-      knowledgeExperience: 'Kiến thức chuyên môn và kinh nghiệm',
-      continuousSupport: 'Đồng hành và hỗ trợ liên tục',
-      comprehensiveSupportShort: 'Hỗ trợ toàn diện',
-      experiencedTeam: 'Đội ngũ chuyên gia giàu kinh nghiệm',
-      flexibleSolutions: 'Giải pháp linh hoạt và tùy chỉnh',
-      richExperience: 'Kinh nghiệm phong phú và đa dạng',
-      dedicatedTeam: 'Đội ngũ chuyên gia tận tâm và chuyên nghiệp',
-      customSolutions: 'Giải pháp tùy chỉnh và linh hoạt',
-      marketAnalysis: 'Tìm hiểu, Phân tích và Đánh giá Thị trường',
-      findPartners: 'Tìm Kiếm Đối tác Thích Hợp',
-      fdiProjectInfo: 'Thông Tin Dự Án Gọi Vốn Đầu Tư Nước Ngoài',
-      investmentSetup: 'Hỗ Trợ Thiết Lập Các Loại Hình Hoạt Động Đầu Tư',
-      investmentStructure: 'Cấu Trúc Đầu Tư',
-      investorRepresentation: 'Đại Diện Thay Mặt Nhà Đầu Tư',
-      branchOfficeSetup: 'Thực Hiện Dịch Vụ Lập Văn Phòng Đại Diện, Chi Nhánh',
-      featuredProjects: 'Một số dự án tư vấn đầu tư tiêu biểu của chúng tôi',
-      featuredProjectsSubtitle: 'Chúng tôi tự hào đã thực hiện thành công nhiều dự án tư vấn cho các doanh nghiệp và tổ chức lớn nhỏ, mang lại những giá trị thiết thực và giải pháp pháp lý hiệu quả.',
-      workWithUs: 'Cùng làm việc với Youth & Partners để thành công',
-      projectAvenue: 'Dự án AVENUE GARDEN',
-      projectEmbassy: 'Dự án EMBASSY GARDEN',
-      projectSwiss: 'Dự án SWISS – BELRESIDENCES UPPER EAST SAIGON',
-      description: 'Mô tả:',
-      ypRole: 'Vai trò của Y&P:',
-    },
-    en: {
-      enterprise: 'Enterprise',
-      regularConsulting: 'Regular Consulting',
-      intellectualProperty: 'Intellectual Property',
-      laborEmploymentShort: 'Labor & Employment',
-      enterpriseSupport: 'Business Support Services',
-      superiorExpertise: 'Superior Expertise',
-      negotiationStrategy: 'Effective Negotiation Strategy',
-      dedicatedProtection: 'Dedicated Client Rights Protection',
-      deepKnowledge: 'Deep Professional Knowledge',
-      laborDisputeExp: 'Labor Dispute Resolution Experience',
-      strategicConsulting: 'Strategic Consulting & Optimal Solutions',
-      knowledgeExperience: 'Professional Knowledge & Experience',
-      continuousSupport: 'Continuous Support & Assistance',
-      comprehensiveSupportShort: 'Comprehensive Support',
-      experiencedTeam: 'Experienced Expert Team',
-      flexibleSolutions: 'Flexible & Customized Solutions',
-      richExperience: 'Rich & Diverse Experience',
-      dedicatedTeam: 'Dedicated & Professional Expert Team',
-      customSolutions: 'Customized & Flexible Solutions',
-      marketAnalysis: 'Market Research, Analysis & Evaluation',
-      findPartners: 'Finding Suitable Partners',
-      fdiProjectInfo: 'Foreign Investment Project Information',
-      investmentSetup: 'Investment Activity Setup Support',
-      investmentStructure: 'Investment Structure',
-      investorRepresentation: 'Investor Representation',
-      branchOfficeSetup: 'Representative Office & Branch Setup Services',
-      featuredProjects: 'Our Featured Investment Consulting Projects',
-      featuredProjectsSubtitle: 'We are proud to have successfully completed numerous consulting projects for businesses and organizations of all sizes, delivering real value and effective legal solutions.',
-      workWithUs: 'Work with Youth & Partners for Success',
-      projectAvenue: 'AVENUE GARDEN Project',
-      projectEmbassy: 'EMBASSY GARDEN Project',
-      projectSwiss: 'SWISS – BELRESIDENCES UPPER EAST SAIGON Project',
-      description: 'Description:',
-      ypRole: 'Y&P Role:',
-    },
-    zh: {
-      enterprise: '企业',
-      regularConsulting: '定期咨询',
-      intellectualProperty: '知识产权',
-      laborEmploymentShort: '劳动就业',
-      enterpriseSupport: '企业支持服务',
-      superiorExpertise: '卓越专业知识',
-      negotiationStrategy: '高效谈判策略',
-      dedicatedProtection: '全心保护客户权益',
-      deepKnowledge: '深厚专业知识',
-      laborDisputeExp: '劳动争议解决经验',
-      strategicConsulting: '战略咨询与最佳解决方案',
-      knowledgeExperience: '专业知识与经验',
-      continuousSupport: '持续支持与协助',
-      comprehensiveSupportShort: '全面支持',
-      experiencedTeam: '经验丰富的专家团队',
-      flexibleSolutions: '灵活定制解决方案',
-      richExperience: '丰富多样的经验',
-      dedicatedTeam: '专业敬业的专家团队',
-      customSolutions: '定制灵活解决方案',
-      marketAnalysis: '市场研究、分析与评估',
-      findPartners: '寻找合适合作伙伴',
-      fdiProjectInfo: '外国投资项目信息',
-      investmentSetup: '投资活动设立支持',
-      investmentStructure: '投资结构',
-      investorRepresentation: '投资者代理',
-      branchOfficeSetup: '代表处和分公司设立服务',
-      featuredProjects: '我们的精选投资咨询项目',
-      featuredProjectsSubtitle: '我们自豪地为各类规模的企业和组织成功完成了众多咨询项目，带来了切实的价值和有效的法律解决方案。',
-      workWithUs: '与Youth & Partners合作共创成功',
-      projectAvenue: 'AVENUE GARDEN项目',
-      projectEmbassy: 'EMBASSY GARDEN项目',
-      projectSwiss: 'SWISS – BELRESIDENCES UPPER EAST SAIGON项目',
-      description: '描述：',
-      ypRole: 'Y&P角色：',
-    },
-    ja: {
-      enterprise: '企業',
-      regularConsulting: '定期コンサルティング',
-      intellectualProperty: '知的財産',
-      laborEmploymentShort: '労働・雇用',
-      enterpriseSupport: '企業支援サービス',
-      superiorExpertise: '卓越した専門知識',
-      negotiationStrategy: '効果的な交渉戦略',
-      dedicatedProtection: '顧客権利の献身的保護',
-      deepKnowledge: '深い専門知識',
-      laborDisputeExp: '労働紛争解決経験',
-      strategicConsulting: '戦略的コンサルティングと最適ソリューション',
-      knowledgeExperience: '専門知識と経験',
-      continuousSupport: '継続的サポートと支援',
-      comprehensiveSupportShort: '包括的サポート',
-      experiencedTeam: '経験豊富な専門家チーム',
-      flexibleSolutions: '柔軟でカスタマイズされたソリューション',
-      richExperience: '豊富で多様な経験',
-      dedicatedTeam: '献身的でプロフェッショナルな専門家チーム',
-      customSolutions: 'カスタマイズされた柔軟なソリューション',
-      marketAnalysis: '市場調査、分析、評価',
-      findPartners: '適切なパートナーの発見',
-      fdiProjectInfo: '外国投資プロジェクト情報',
-      investmentSetup: '投資活動設立サポート',
-      investmentStructure: '投資構造',
-      investorRepresentation: '投資家代理',
-      branchOfficeSetup: '駐在員事務所・支店設立サービス',
-      featuredProjects: '当社の代表的な投資コンサルティングプロジェクト',
-      featuredProjectsSubtitle: '私たちは、あらゆる規模の企業や組織に対して数多くのコンサルティングプロジェクトを成功裏に完了し、実質的な価値と効果的な法的ソリューションを提供してきたことを誇りに思います。',
-      workWithUs: 'Youth & Partnersと共に成功へ',
-      projectAvenue: 'AVENUE GARDENプロジェクト',
-      projectEmbassy: 'EMBASSY GARDENプロジェクト',
-      projectSwiss: 'SWISS – BELRESIDENCES UPPER EAST SAIGONプロジェクト',
-      description: '説明：',
-      ypRole: 'Y&Pの役割：',
-    },
-    ko: {
-      enterprise: '기업',
-      regularConsulting: '정기 컨설팅',
-      intellectualProperty: '지적재산권',
-      laborEmploymentShort: '노동 및 고용',
-      enterpriseSupport: '기업 지원 서비스',
-      superiorExpertise: '뛰어난 전문성',
-      negotiationStrategy: '효과적인 협상 전략',
-      dedicatedProtection: '헌신적인 고객 권리 보호',
-      deepKnowledge: '깊은 전문 지식',
-      laborDisputeExp: '노동 분쟁 해결 경험',
-      strategicConsulting: '전략적 컨설팅 및 최적 솔루션',
-      knowledgeExperience: '전문 지식과 경험',
-      continuousSupport: '지속적인 지원 및 도움',
-      comprehensiveSupportShort: '포괄적 지원',
-      experiencedTeam: '경험이 풍부한 전문가 팀',
-      flexibleSolutions: '유연하고 맞춤화된 솔루션',
-      richExperience: '풍부하고 다양한 경험',
-      dedicatedTeam: '헌신적이고 전문적인 전문가 팀',
-      customSolutions: '맞춤형 유연한 솔루션',
-      marketAnalysis: '시장 조사, 분석 및 평가',
-      findPartners: '적합한 파트너 찾기',
-      fdiProjectInfo: '외국인 투자 프로젝트 정보',
-      investmentSetup: '투자 활동 설립 지원',
-      investmentStructure: '투자 구조',
-      investorRepresentation: '투자자 대리',
-      branchOfficeSetup: '대표사무소 및 지사 설립 서비스',
-      featuredProjects: '저희의 대표적인 투자 컨설팅 프로젝트',
-      featuredProjectsSubtitle: '저희는 다양한 규모의 기업과 조직을 위해 수많은 컨설팅 프로젝트를 성공적으로 완료하여 실질적인 가치와 효과적인 법률 솔루션을 제공해 왔음을 자랑스럽게 생각합니다.',
-      workWithUs: 'Youth & Partners와 함께 성공하세요',
-      projectAvenue: 'AVENUE GARDEN 프로젝트',
-      projectEmbassy: 'EMBASSY GARDEN 프로젝트',
-      projectSwiss: 'SWISS – BELRESIDENCES UPPER EAST SAIGON 프로젝트',
-      description: '설명:',
-      ypRole: 'Y&P 역할:',
-    },
-  },
-
-  // Additional footer translations
-  footerExtra: {
-    vi: {
-      chatZalo: 'Chát Zalo với chúng tôi',
-      callNow: 'Gọi ngay 088 995 6888',
-      director: 'Giám đốc, người đại diện theo pháp luật:',
-      directorName: 'Luật sư Nguyễn Văn Thành',
-      notifiedMOIT: 'Đã thông báo Bộ Công Thương',
-      allRights: 'All rights reserved.',
-    },
-    en: {
-      chatZalo: 'Chat with us on Zalo',
-      callNow: 'Call now 088 995 6888',
-      director: 'Director, Legal Representative:',
-      directorName: 'Lawyer Nguyen Van Thanh',
-      notifiedMOIT: 'Registered with Ministry of Industry and Trade',
-      allRights: 'All rights reserved.',
-    },
-    zh: {
-      chatZalo: '通过Zalo与我们聊天',
-      callNow: '立即拨打 088 995 6888',
-      director: '董事、法定代表人：',
-      directorName: '律师 阮文胜',
-      notifiedMOIT: '已向工商部登记',
-      allRights: '版权所有。',
-    },
-    ja: {
-      chatZalo: 'Zaloでチャット',
-      callNow: '今すぐ電話 088 995 6888',
-      director: '取締役、法定代理人：',
-      directorName: '弁護士 グエン・ヴァン・タイン',
-      notifiedMOIT: '産業貿易省に届出済み',
-      allRights: '全著作権所有。',
-    },
-    ko: {
-      chatZalo: 'Zalo로 채팅하기',
-      callNow: '지금 전화 088 995 6888',
-      director: '이사, 법정대리인:',
-      directorName: '변호사 응우옌 반 타인',
-      notifiedMOIT: '산업통상부에 등록됨',
-      allRights: 'All rights reserved.',
-    },
-  },
-
-  // Common UI additional
-  commonExtra: {
-    vi: {
-      toggleMenu: 'Toggle Menu',
-      shortNameUpper: 'YOUTH & PARTNERS',
-      initials: 'YP',
-      likePartner: 'Như một người bạn đồng hành.',
-    },
-    en: {
-      toggleMenu: 'Toggle Menu',
-      shortNameUpper: 'YOUTH & PARTNERS',
-      initials: 'YP',
-      likePartner: 'Like a trusted partner.',
-    },
-    zh: {
-      toggleMenu: '切换菜单',
-      shortNameUpper: 'YOUTH & PARTNERS',
-      initials: 'YP',
-      likePartner: '如同可信赖的伙伴。',
-    },
-    ja: {
-      toggleMenu: 'メニュー切替',
-      shortNameUpper: 'YOUTH & PARTNERS',
-      initials: 'YP',
-      likePartner: '信頼できるパートナーとして。',
-    },
-    ko: {
-      toggleMenu: '메뉴 전환',
-      shortNameUpper: 'YOUTH & PARTNERS',
-      initials: 'YP',
-      likePartner: '신뢰할 수 있는 파트너처럼.',
-    },
-  },
-
-  // Contact page additional
-  contactExtra: {
-    vi: {
-      readyToHelpTitle: 'Chúng tôi luôn sẵn sàng hỗ trợ bạn!',
-      generalSupportDesc: 'Liên hệ với chúng tôi để được hỗ trợ về các vấn đề pháp lý chung, điều hướng trang web, thanh toán, truy cập các tài liệu pháp lý đã mua hoặc các câu hỏi về dịch vụ của chúng tôi.',
-      consultDeptDesc: 'Trò chuyện với chúng tôi để giải đáp các câu hỏi về dịch vụ tư vấn pháp lý, tùy chọn tư vấn cá nhân hóa, hoặc các yêu cầu liên quan đến các vụ việc cụ thể.',
-      techSupportDesc: 'Liên hệ với chúng tôi khi bạn gặp vấn đề khó khăn trong việc truy cập tài liệu, vấn đề khi trao đổi qua email hoặc các thách thức kỹ thuật khác liên quan đến việc sử dụng dịch vụ của chúng tôi.',
-    },
-    en: {
-      readyToHelpTitle: 'We are always ready to help you!',
-      generalSupportDesc: 'Contact us for support with general legal questions, website navigation, payments, accessing purchased legal documents, or questions about our services.',
-      consultDeptDesc: 'Chat with us to answer questions about legal consulting services, personalized consulting options, or requests related to specific cases.',
-      techSupportDesc: 'Contact us when you have difficulty accessing documents, issues with email communication, or other technical challenges related to using our services.',
-    },
-    zh: {
-      readyToHelpTitle: '我们随时准备为您提供帮助！',
-      generalSupportDesc: '联系我们以获得一般法律问题、网站导航、付款、访问已购买的法律文件或有关我们服务的问题的支持。',
-      consultDeptDesc: '与我们聊天以回答有关法律咨询服务、个性化咨询选项或与特定案例相关的请求的问题。',
-      techSupportDesc: '当您在访问文件、电子邮件通信问题或与使用我们服务相关的其他技术挑战时遇到困难，请联系我们。',
-    },
-    ja: {
-      readyToHelpTitle: '私たちはいつでもお手伝いする準備ができています！',
-      generalSupportDesc: '一般的な法的質問、ウェブサイトのナビゲーション、支払い、購入した法的文書へのアクセス、またはサービスに関する質問についてはお問い合わせください。',
-      consultDeptDesc: '法律相談サービス、個別相談オプション、または特定のケースに関連するリクエストについてはチャットでお問い合わせください。',
-      techSupportDesc: '文書へのアクセスに問題がある場合、メール通信の問題、またはサービスの使用に関連するその他の技術的な課題がある場合はお問い合わせください。',
-    },
-    ko: {
-      readyToHelpTitle: '저희는 항상 도움을 드릴 준비가 되어 있습니다!',
-      generalSupportDesc: '일반적인 법률 질문, 웹사이트 탐색, 결제, 구매한 법률 문서 접근 또는 서비스에 관한 질문에 대한 지원을 받으려면 문의하세요.',
-      consultDeptDesc: '법률 상담 서비스, 개인화된 상담 옵션 또는 특정 사례와 관련된 요청에 대한 질문에 답변하려면 채팅하세요.',
-      techSupportDesc: '문서 접근, 이메일 통신 문제 또는 서비스 사용과 관련된 기타 기술적 문제가 있을 때 연락하세요.',
     },
   },
 
@@ -6284,6 +5320,38 @@ export const translations = {
       tieuChuanRBASubtitle: 'RBA 표준 및 준법 요건',
     },
   },
-} as const;
+};
+
+/**
+ * Merge JSON translations with additional translations
+ * JSON takes precedence for overlapping keys (source of truth)
+ */
+function mergeTranslations() {
+  const merged: Record<string, Record<LocaleKey, unknown>> = { ...additionalTranslations };
+  
+  // Merge JSON translations, overwriting additional where they overlap
+  for (const [section, locales] of Object.entries(jsonTranslations)) {
+    if (!merged[section]) {
+      merged[section] = locales as Record<LocaleKey, unknown>;
+    } else {
+      // Deep merge each locale
+      for (const [locale, data] of Object.entries(locales)) {
+        if (!merged[section][locale as LocaleKey]) {
+          merged[section][locale as LocaleKey] = data;
+        } else {
+          // Merge objects, JSON takes precedence
+          merged[section][locale as LocaleKey] = {
+            ...(merged[section][locale as LocaleKey] as object),
+            ...(data as object),
+          };
+        }
+      }
+    }
+  }
+  
+  return merged;
+}
+
+export const translations = mergeTranslations();
 
 export default translations;

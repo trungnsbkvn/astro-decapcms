@@ -15,7 +15,7 @@
     "hotline": "핫라인",
     "email": "이메일",
     "headquarters": "본사",
-    "addressHanoi": "하노이: 국방학원 아파트 서쪽 타워 P316, 응이아도구, 하노이시.",
+    "addressHanoi": "하노이: 국방학원 아파트 동쪽 타워 P219, 응이아도구, 하노이시.",
     "addressBacNinh": "박닌: 박닌성 킨박구 도안트란니엡 거리 26번지.",
     "addressPhuTho": "푸토: 푸토성 빈푹구 응웬반린 거리 170번지."
   },
@@ -333,5 +333,114 @@
     "trackResponse": "응답 추적",
     "trackResponseDesc": "고객 지원팀의 응답을 받기 위해 이메일이나 전화를 모니터링하세요. 예상 시간 내에 응답을 받지 못하면 문제가 간과되지 않도록 다시 연락해 주세요.",
     "complete": "완료하겠습니다!"
+  },
+  "search": {
+    "placeholder": "기사 검색...",
+    "enterKeyword": "검색어를 입력하세요...",
+    "noResults": "검색 결과 없음",
+    "noData": "검색 데이터 없음",
+    "loadError": "검색 데이터를 불러올 수 없습니다. 다시 시도해 주세요.",
+    "loading": "로딩 중..."
+  },
+  "location": {
+    "hanoi": "하노이",
+    "phutho": "푸토",
+    "bacninh": "박닌",
+    "vinhtuong": "빈뜨엉 사무소",
+    "hanoiAddress": "P219, 이스트 타워, 국방아카데미 아파트, 응이아도 구, 하노이",
+    "phuthoAddress": "푸토성 빈푹구 응우옌반린 거리 170번지",
+    "bacninhAddress": "박닌성 킨박구 도안쩐응입 거리 26번지",
+    "vinhtuongAddress": "푸토성 빈흥사 센마을 오거리"
+  },
+  "meta": {
+    "title": "Youth & Partners 법률사무소 - 기업의 동반자",
+    "description": "Youth & Partners 법률사무소는 다음과 같은 분야에서 선두 법률사무소 중 하나입니다: 기업 정기 법률 상담 / 외주 법무 부서 서비스; 노동 분쟁 상담 및 해결; 일본어, 영어, 중국어, 한국어 변호사 서비스; 기업 감사, 평가 및 법률 평가 서비스."
+  },
+  "blogTypes": {
+    "postTitle": "법률 뉴스",
+    "postSubtitle": "Youth & Partners 법률사무소의 최신 법률 뉴스",
+    "legalTitle": "기업 법률",
+    "legalSubtitle": "저희 법률 페이지는 법적 문제에 관한 최신 정보를 제공합니다",
+    "consultationTitle": "정기 법률 상담",
+    "consultationSubtitle": "정기 법률 상담 서비스 - 신뢰할 수 있는 비즈니스 동반자",
+    "laborTitle": "노동법",
+    "laborSubtitle": "기업을 위한 노동법 문제 상담 및 해결",
+    "foreignerTitle": "외국인 투자",
+    "foreignerSubtitle": "베트남 외국인 투자자를 위한 종합적인 법률 지원",
+    "evaluationTitle": "법률 평가 서비스",
+    "evaluationSubtitle": "전문적인 법률 평가, 실사 및 감사 서비스"
+  },
+  "blogCategories": {
+    "tinMoi": "최신 뉴스",
+    "suKien": "이벤트",
+    "tinMoiSubtitle": "최신 법률 뉴스",
+    "suKienSubtitle": "Youth & Partners의 이벤트 및 활동"
+  },
+  "author": {
+    "authorLabel": "저자",
+    "postsBy": "작성자"
+  },
+  "lawyerProfile": {
+    "authorInfo": "저자 정보",
+    "contactAuthor": "저자에게 연락",
+    "experience": "경력",
+    "education": "학력",
+    "authorPosts": "저자 게시물",
+    "lawyer": "변호사",
+    "legalSpecialist": "법률 전문가",
+    "doctor": "박사"
+  },
+  "servicesExtra": {
+    "enterprise": "기업",
+    "regularConsulting": "정기 컨설팅",
+    "intellectualProperty": "지적재산권",
+    "laborEmploymentShort": "노동 및 고용",
+    "enterpriseSupport": "기업 지원 서비스",
+    "superiorExpertise": "뛰어난 전문성",
+    "negotiationStrategy": "효과적인 협상 전략",
+    "dedicatedProtection": "헌신적인 고객 권리 보호",
+    "deepKnowledge": "깊은 전문 지식",
+    "laborDisputeExp": "노동 분쟁 해결 경험",
+    "strategicConsulting": "전략적 컨설팅 및 최적 솔루션",
+    "knowledgeExperience": "전문 지식과 경험",
+    "continuousSupport": "지속적인 지원 및 도움",
+    "comprehensiveSupportShort": "포괄적 지원",
+    "experiencedTeam": "경험이 풍부한 전문가 팀",
+    "flexibleSolutions": "유연하고 맞춤화된 솔루션",
+    "richExperience": "풍부하고 다양한 경험",
+    "dedicatedTeam": "헌신적이고 전문적인 전문가 팀",
+    "customSolutions": "맞춤형 유연한 솔루션",
+    "marketAnalysis": "시장 조사, 분석 및 평가",
+    "findPartners": "적합한 파트너 찾기",
+    "fdiProjectInfo": "외국인 투자 프로젝트 정보",
+    "investmentSetup": "투자 활동 설립 지원",
+    "investmentStructure": "투자 구조",
+    "investorRepresentation": "투자자 대리",
+    "branchOfficeSetup": "대표사무소 및 지사 설립 서비스",
+    "featuredProjects": "저희의 대표적인 투자 컨설팅 프로젝트",
+    "featuredProjectsSubtitle": "저희는 다양한 규모의 기업과 조직을 위해 수많은 컨설팅 프로젝트를 성공적으로 완료하여 실질적인 가치와 효과적인 법률 솔루션을 제공해 왔음을 자랑스럽게 생각합니다.",
+    "workWithUs": "Youth & Partners와 함께 성공하세요",
+    "projectAvenue": "AVENUE GARDEN 프로젝트",
+    "projectEmbassy": "EMBASSY GARDEN 프로젝트",
+    "projectSwiss": "SWISS – BELRESIDENCES UPPER EAST SAIGON 프로젝트",
+    "description": "설명:",
+    "ypRole": "Y&P 역할:"
+  },
+  "footerExtra": {
+    "director": "이사, 법정대리인:",
+    "directorName": "변호사 응우옌 반 타인",
+    "allRights": "All rights reserved."
+  },
+  "commonExtra": {
+    "toggleMenu": "메뉴 전환",
+    "shortNameUpper": "YOUTH & PARTNERS",
+    "initials": "YP",
+    "likePartner": "신뢰할 수 있는 파트너처럼."
+  },
+  "contactExtra": {
+    "readyToHelpTitle": "저희는 항상 도움을 드릴 준비가 되어 있습니다!",
+    "generalSupportDesc": "일반적인 법률 질문, 웹사이트 탐색, 결제, 구매한 법률 문서 접근 또는 서비스에 관한 질문에 대한 지원을 받으려면 문의하세요.",
+    "consultDeptDesc": "법률 상담 서비스, 개인화된 상담 옵션 또는 특정 사례와 관련된 요청에 대한 질문에 답변하려면 채팅하세요.",
+    "techSupportDesc": "문서 접근, 이메일 통신 문제 또는 서비스 사용과 관련된 기타 기술적 문제가 있을 때 연락하세요."
   }
 }
