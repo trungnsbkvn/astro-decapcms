@@ -83,12 +83,12 @@ const {
                 <Fragment set:html={image} />
               ) : (
                 <Image
-                  class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+                  class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg aspect-square object-cover"
                   width={432}
                   height={432}
                   widths={[400, 432]}
                   sizes="(max-width: 768px) 400px, 432px"
-                  layout="cover"
+                  layout="constrained"
                   format="avif"
                   {...image}
                 />

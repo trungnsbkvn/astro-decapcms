@@ -2738,6 +2738,30 @@ const additionalTranslations = {
       tranThiBichLienEdu2Year: 'Năm 2016',
       tranThiBichLienPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Trần Thị Bích Liên về mọi khía cạnh pháp lý về Dân sự, Hình sự, Hành chính, Đất đai.',
 
+      // Nguyễn Thị Châu Anh
+      nguyenThiChauAnhBio: 'Nguyễn Thị Châu Anh là thực tập sinh tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm) từ năm 2025.<br /><br />Với nền tảng đào tạo chuyên ngành Luật tại Trường Đại học Hà Nội, Châu Anh chủ động trau dồi kiến thức pháp lý và kỹ năng hành nghề, đồng thời tích cực vận dụng lý thuyết vào thực tiễn công việc.',
+      nguyenThiChauAnhExp: '• Tháng 6/2025 – tháng 9/2025: Thực tập tại Tòa án nhân dân khu vực 7 – Bắc Ninh. Tham gia hỗ trợ các công việc nghiệp vụ tại Tòa án, tiếp cận quy trình tố tụng và thực tiễn xét xử, qua đó nâng cao hiểu biết pháp luật, tư duy pháp lý và kỹ năng làm việc trong môi trường chuyên nghiệp.<br /><br />• Từ tháng 12/2025 đến nay: Thực tập sinh pháp lý – Công ty Luật TNHH Youth & Partners (YP Law Firm). Tham gia hỗ trợ các hoạt động tư vấn pháp lý, soạn thảo hồ sơ, nghiên cứu quy định pháp luật và hỗ trợ luật sư trong quá trình làm việc với khách hàng.',
+      nguyenThiChauAnhEdu1: 'Cử nhân Luật',
+      nguyenThiChauAnhEdu1Org: 'Trường Đại học Hà Nội - Ngành Luật học',
+      nguyenThiChauAnhEdu1Year: 'Năm 2024',
+      nguyenThiChauAnhPostsInfo: 'Các bài viết chuyên sâu của Thực tập sinh pháp lý Nguyễn Thị Châu Anh về mọi khía cạnh pháp lý.',
+
+      // Nguyễn Thị Thùy Dương
+      nguyenThiThuyDuongBio: 'Nguyễn Thị Thùy Dương là thực tập sinh tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm) từ năm 2025.<br /><br />Với nền tảng kiến thức pháp lý từ ngành Luật Kinh tế, Trường Đại học Luật Hà Nội, Thùy Dương luôn nghiên cứu và ứng dụng kiến thức pháp luật vào thực tiễn giải quyết các vụ việc dân sự, tư vấn thường xuyên cho doanh nghiệp.',
+      nguyenThiThuyDuongExp: '• Trong quá trình học tập, đã tham gia nghiên cứu khoa học sinh viên, các phiên tòa giả định và cuộc thi hòa giải thương mại, qua đó từng bước rèn luyện kỹ năng nghiên cứu pháp lý, phân tích lập luận, soạn thảo văn bản và làm việc nhóm trong môi trường pháp lý chuyên nghiệp.<br /><br />• Hiện tại đang là thực tập sinh tại YP Law Firm, tích cực học hỏi và hỗ trợ các hoạt động tư vấn, và công việc pháp lý của Công ty.',
+      nguyenThiThuyDuongEdu1: 'Cử nhân Luật',
+      nguyenThiThuyDuongEdu1Org: 'Trường Đại học Luật Hà Nội - Ngành Luật Kinh tế',
+      nguyenThiThuyDuongEdu1Year: 'Năm 2024',
+      nguyenThiThuyDuongPostsInfo: 'Các bài viết chuyên sâu của Thực tập sinh pháp lý Nguyễn Thị Thùy Dương về mọi khía cạnh pháp lý về Dân sự, Doanh nghiệp.',
+
+      // Nguyễn Thùy Dương
+      nguyenThuyDuongBio: 'Nguyễn Thùy Dương là thực tập sinh tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm) từ năm 2025.<br /><br />Với nền tảng kiến thức pháp lý từ ngành Luật Kinh tế, Trường Đại học Thương Mại, Thùy Dương luôn nghiên cứu và ứng dụng kiến thức pháp luật vào thực tiễn giải quyết các vụ việc dân sự, tư vấn thường xuyên cho doanh nghiệp.',
+      nguyenThuyDuongExp: '<i>Lĩnh vực phụ trách:</i><br /><br />• Doanh nghiệp: Tư vấn pháp luật thường xuyên và hỗ trợ pháp lý cho doanh nghiệp trong các vấn đề pháp lý hàng ngày, tuân thủ pháp luật và hoạt động nội bộ.<br /><br />• Rà soát, phân tích văn bản quy phạm pháp luật, hợp đồng và tài liệu pháp lý liên quan đến hoạt động doanh nghiệp.<br /><br />• Hỗ trợ soạn thảo, kiểm tra các hợp đồng thương mại, văn bản nội bộ, giấy tờ pháp lý theo yêu cầu công ty và khách hàng.<br /><br />• Tham gia nghiên cứu và cập nhật pháp luật mới, tư vấn giải pháp pháp lý thực tiễn cho doanh nghiệp.<br /><br /><i>Kinh nghiệm làm việc:</i><br /><br />• T5/2023 - T8/2023: Nhân viên kinh doanh & Tư vấn khóa học Công ty cổ phần Đào tạo SEDU – Tư vấn khóa học và hỗ trợ quyền lợi của khách hàng.<br /><br />• Hiện tại đang là thực tập sinh tại YP Law Firm, tích cực học hỏi và hỗ trợ các hoạt động tư vấn, và công việc pháp lý của Công ty.',
+      nguyenThuyDuongEdu1: 'Cử nhân Luật',
+      nguyenThuyDuongEdu1Org: 'Trường Đại học Thương Mại - Ngành Luật Kinh tế',
+      nguyenThuyDuongEdu1Year: 'Năm 2024',
+      nguyenThuyDuongPostsInfo: 'Các bài viết chuyên sâu của Thực tập sinh pháp lý Nguyễn Thùy Dương về mọi khía cạnh pháp lý về Dân sự, Doanh nghiệp.',
+
       // Common fields for area of responsibility
       areaOfResponsibility: 'Lĩnh vực phụ trách:',
       civilLaw: 'Dân sự: Tư vấn về hợp đồng, giao dịch, thừa kế, hôn nhân gia đình, bồi thường thiệt hại...',
@@ -3125,6 +3149,30 @@ const additionalTranslations = {
       tranThiBichLienEdu2Org: 'Faculty of Law, Hanoi Law University',
       tranThiBichLienEdu2Year: '2016',
       tranThiBichLienPostsInfo: 'In-depth articles by Legal Specialist Tran Thi Bich Lien on all legal aspects of Civil, Criminal, Administrative, Land.',
+
+      // Nguyen Thi Chau Anh
+      nguyenThiChauAnhBio: 'Nguyen Thi Chau Anh is a legal intern at Youth & Partners Law Co., Ltd. (Y&P Law Firm) since 2025.<br /><br />With a foundation in Law from Hanoi University, Chau Anh proactively develops legal knowledge and professional skills while actively applying theory to practice.',
+      nguyenThiChauAnhExp: '• June 2025 – September 2025: Internship at People\'s Court of Region 7 – Bac Ninh. Participated in supporting court professional work, approaching litigation procedures and trial practices, thereby enhancing legal knowledge, legal thinking, and professional working skills.<br /><br />• From December 2025 to present: Legal Intern – Youth & Partners Law Co., Ltd. (YP Law Firm). Participating in supporting legal consulting activities, document drafting, legal research and assisting lawyers in working with clients.',
+      nguyenThiChauAnhEdu1: 'Bachelor of Law',
+      nguyenThiChauAnhEdu1Org: 'Hanoi University - Law Major',
+      nguyenThiChauAnhEdu1Year: '2024',
+      nguyenThiChauAnhPostsInfo: 'In-depth articles by Legal Intern Nguyen Thi Chau Anh on all legal aspects.',
+
+      // Nguyen Thi Thuy Duong
+      nguyenThiThuyDuongBio: 'Nguyen Thi Thuy Duong is a legal intern at Youth & Partners Law Co., Ltd. (Y&P Law Firm) since 2025.<br /><br />With legal knowledge foundation from Economic Law major at Hanoi Law University, Thuy Duong constantly researches and applies legal knowledge to practical resolution of civil cases and regular consulting for businesses.',
+      nguyenThiThuyDuongExp: '• During studies, participated in student scientific research, mock trials and commercial mediation competitions, thereby gradually developing legal research skills, argument analysis, document drafting and teamwork in professional legal environment.<br /><br />• Currently a legal intern at YP Law Firm, actively learning and supporting consulting activities and legal work of the Company.',
+      nguyenThiThuyDuongEdu1: 'Bachelor of Law',
+      nguyenThiThuyDuongEdu1Org: 'Hanoi Law University - Economic Law Major',
+      nguyenThiThuyDuongEdu1Year: '2024',
+      nguyenThiThuyDuongPostsInfo: 'In-depth articles by Legal Intern Nguyen Thi Thuy Duong on all legal aspects of Civil, Enterprise.',
+
+      // Nguyen Thuy Duong
+      nguyenThuyDuongBio: 'Nguyen Thuy Duong is a legal intern at Youth & Partners Law Co., Ltd. (Y&P Law Firm) since 2025.<br /><br />With legal knowledge foundation from Economic Law major at University of Commerce, Thuy Duong constantly researches and applies legal knowledge to practical resolution of civil cases and regular consulting for businesses.',
+      nguyenThuyDuongExp: '<i>Areas of responsibility:</i><br /><br />• Enterprise: Regular legal consulting and legal support for businesses in daily legal issues, legal compliance and internal operations.<br /><br />• Review, analyze legal documents, contracts and legal materials related to business operations.<br /><br />• Support drafting, reviewing commercial contracts, internal documents, legal papers as required by company and clients.<br /><br />• Participate in research and update new laws, consulting practical legal solutions for businesses.<br /><br /><i>Work experience:</i><br /><br />• May 2023 - August 2023: Sales & Course Consulting Staff at SEDU Training JSC – Course consulting and supporting customer benefits.<br /><br />• Currently a legal intern at YP Law Firm, actively learning and supporting consulting activities and legal work of the Company.',
+      nguyenThuyDuongEdu1: 'Bachelor of Law',
+      nguyenThuyDuongEdu1Org: 'University of Commerce - Economic Law Major',
+      nguyenThuyDuongEdu1Year: '2024',
+      nguyenThuyDuongPostsInfo: 'In-depth articles by Legal Intern Nguyen Thuy Duong on all legal aspects of Civil, Enterprise.',
 
       // Common fields for area of responsibility
       areaOfResponsibility: 'Areas of responsibility:',
@@ -3514,6 +3562,30 @@ const additionalTranslations = {
       tranThiBichLienEdu2Year: '2016年',
       tranThiBichLienPostsInfo: '法律专员陈氏碧莲关于民事、刑事、行政、土地各方面的深度文章。',
 
+      // 阮氏珠英
+      nguyenThiChauAnhBio: '阮氏珠英自2025年起在Youth & Partners律师事务所担任法律实习生。<br /><br />凭借河内大学法学专业的培训基础，珠英主动提升法律知识和执业技能，同时积极将理论应用于实践工作。',
+      nguyenThiChauAnhExp: '• 2025年6月-2025年9月：在北宁第7区人民法院实习。参与支持法院业务工作，接触诉讼程序和审判实践，从而增强法律知识、法律思维和专业工作技能。<br /><br />• 2025年12月至今：Youth & Partners律师事务所法律实习生。参与支持法律咨询活动、文件起草、法律研究并协助律师与客户合作。',
+      nguyenThiChauAnhEdu1: '法学学士',
+      nguyenThiChauAnhEdu1Org: '河内大学 - 法学专业',
+      nguyenThiChauAnhEdu1Year: '2024年',
+      nguyenThiChauAnhPostsInfo: '法律实习生阮氏珠英关于各方面法律问题的深度文章。',
+
+      // 阮氏翠阳
+      nguyenThiThuyDuongBio: '阮氏翠阳自2025年起在Youth & Partners律师事务所担任法律实习生。<br /><br />凭借河内法律大学经济法专业的法律知识基础，翠阳始终研究并将法律知识应用于民事案件的实际解决和企业常规咨询。',
+      nguyenThiThuyDuongExp: '• 学习期间，参与学生科研、模拟法庭和商业调解比赛，逐步培养法律研究技能、论证分析、文件起草和专业法律环境中的团队合作能力。<br /><br />• 目前是YP Law Firm的法律实习生，积极学习并支持公司的咨询活动和法律工作。',
+      nguyenThiThuyDuongEdu1: '法学学士',
+      nguyenThiThuyDuongEdu1Org: '河内法律大学 - 经济法专业',
+      nguyenThiThuyDuongEdu1Year: '2024年',
+      nguyenThiThuyDuongPostsInfo: '法律实习生阮氏翠阳关于民事、企业各方面法律问题的深度文章。',
+
+      // 阮翠阳
+      nguyenThuyDuongBio: '阮翠阳自2025年起在Youth & Partners律师事务所担任法律实习生。<br /><br />凭借商业大学经济法专业的法律知识基础，翠阳始终研究并将法律知识应用于民事案件的实际解决和企业常规咨询。',
+      nguyenThuyDuongExp: '<i>负责领域：</i><br /><br />• 企业：为企业提供日常法律问题、法律合规和内部运营的常规法律咨询和法律支持。<br /><br />• 审查、分析与企业运营相关的法律文件、合同和法律资料。<br /><br />• 支持起草、审查商业合同、内部文件、按公司和客户要求的法律文件。<br /><br />• 参与研究和更新新法律，为企业提供实用法律解决方案咨询。<br /><br /><i>工作经验：</i><br /><br />• 2023年5月-2023年8月：SEDU培训股份公司销售与课程咨询员工 – 课程咨询和客户权益支持。<br /><br />• 目前是YP Law Firm的法律实习生，积极学习并支持公司的咨询活动和法律工作。',
+      nguyenThuyDuongEdu1: '法学学士',
+      nguyenThuyDuongEdu1Org: '商业大学 - 经济法专业',
+      nguyenThuyDuongEdu1Year: '2024年',
+      nguyenThuyDuongPostsInfo: '法律实习生阮翠阳关于民事、企业各方面法律问题的深度文章。',
+
       // Common fields for area of responsibility
       areaOfResponsibility: '负责领域：',
       civilLaw: '民事：合同、交易、继承、家庭、损害赔偿咨询...',
@@ -3902,6 +3974,30 @@ const additionalTranslations = {
       tranThiBichLienEdu2Year: '2016年',
       tranThiBichLienPostsInfo: '法務スペシャリスト チャン・ティ・ビック・リエンによる民事、刑事、行政、土地に関するあらゆる法的側面についての詳細な記事。',
 
+      // グエン・ティ・チャウ・アン
+      nguyenThiChauAnhBio: 'グエン・ティ・チャウ・アンは2025年からYouth & Partners法律事務所の法務インターンです。<br /><br />ハノイ大学法学専攻の基盤を持ち、チャウ・アンは積極的に法律知識と実務スキルを磨き、理論を実践に活かしています。',
+      nguyenThiChauAnhExp: '• 2025年6月-2025年9月：バクニン第7地区人民裁判所でインターン。裁判所の業務支援に参加し、訴訟手続きと審理実務に触れ、法律知識、法的思考、専門的な業務スキルを向上。<br /><br />• 2025年12月から現在：Youth & Partners法律事務所法務インターン。法律相談活動、書類作成、法律調査の支援、弁護士のクライアント対応のサポートに参加。',
+      nguyenThiChauAnhEdu1: '法学学士',
+      nguyenThiChauAnhEdu1Org: 'ハノイ大学 - 法学専攻',
+      nguyenThiChauAnhEdu1Year: '2024年',
+      nguyenThiChauAnhPostsInfo: '法務インターン グエン・ティ・チャウ・アンによるあらゆる法的側面についての詳細な記事。',
+
+      // グエン・ティ・トゥイ・ズオン
+      nguyenThiThuyDuongBio: 'グエン・ティ・トゥイ・ズオンは2025年からYouth & Partners法律事務所の法務インターンです。<br /><br />ハノイ法科大学経済法専攻の法律知識基盤を持ち、トゥイ・ズオンは常に法律知識を研究し、民事案件の実際の解決と企業への定期コンサルティングに適用しています。',
+      nguyenThiThuyDuongExp: '• 学習期間中、学生科学研究、模擬裁判、商業調停コンペティションに参加し、法律調査スキル、議論分析、文書作成、専門的な法律環境でのチームワークを段階的に開発。<br /><br />• 現在YP Law Firmの法務インターンとして、会社のコンサルティング活動と法務業務を積極的に学習・サポート。',
+      nguyenThiThuyDuongEdu1: '法学学士',
+      nguyenThiThuyDuongEdu1Org: 'ハノイ法科大学 - 経済法専攻',
+      nguyenThiThuyDuongEdu1Year: '2024年',
+      nguyenThiThuyDuongPostsInfo: '法務インターン グエン・ティ・トゥイ・ズオンによる民事、企業に関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・トゥイ・ズオン
+      nguyenThuyDuongBio: 'グエン・トゥイ・ズオンは2025年からYouth & Partners法律事務所の法務インターンです。<br /><br />商業大学経済法専攻の法律知識基盤を持ち、トゥイ・ズオンは常に法律知識を研究し、民事案件の実際の解決と企業への定期コンサルティングに適用しています。',
+      nguyenThuyDuongExp: '<i>担当分野：</i><br /><br />• 企業：日常の法的問題、法令遵守、内部運営における企業への定期的な法律相談と法的サポート。<br /><br />• 企業活動に関連する法的文書、契約、法的資料のレビュー・分析。<br /><br />• 会社とクライアントの要件に応じた商業契約、内部文書、法的書類の作成・チェックのサポート。<br /><br />• 新法の研究・更新に参加し、企業への実践的な法的ソリューションのコンサルティング。<br /><br /><i>職務経験：</i><br /><br />• 2023年5月-2023年8月：SEDU Training JSCの営業・コース相談スタッフ – コース相談と顧客利益のサポート。<br /><br />• 現在YP Law Firmの法務インターンとして、会社のコンサルティング活動と法務業務を積極的に学習・サポート。',
+      nguyenThuyDuongEdu1: '法学学士',
+      nguyenThuyDuongEdu1Org: '商業大学 - 経済法専攻',
+      nguyenThuyDuongEdu1Year: '2024年',
+      nguyenThuyDuongPostsInfo: '法務インターン グエン・トゥイ・ズオンによる民事、企業に関するあらゆる法的側面についての詳細な記事。',
+
       // Common fields for area of responsibility
       areaOfResponsibility: '担当分野：',
       civilLaw: '民事：契約、取引、相続、家族、損害賠償の相談...',
@@ -4289,6 +4385,30 @@ const additionalTranslations = {
       tranThiBichLienEdu2Org: '하노이 법대 법학과',
       tranThiBichLienEdu2Year: '2016년',
       tranThiBichLienPostsInfo: '법률 전문가 짠 티 빅 리엔의 민사, 형사, 행정, 토지 관련 심층 기사.',
+
+      // 응우옌 티 쩌우 안
+      nguyenThiChauAnhBio: '응우옌 티 쩌우 안은 2025년부터 Youth & Partners 로펌의 법률 인턴입니다.<br /><br />하노이 대학교 법학 전공 교육 기반을 바탕으로, 쩌우 안은 적극적으로 법률 지식과 실무 기술을 연마하며 이론을 실무에 적용하고 있습니다.',
+      nguyenThiChauAnhExp: '• 2025년 6월-2025년 9월: 박닌 제7지역 인민법원 인턴. 법원 업무 지원에 참여하고, 소송 절차와 재판 실무를 접하여 법률 지식, 법적 사고력, 전문적인 업무 기술 향상.<br /><br />• 2025년 12월부터 현재: Youth & Partners 로펌 법률 인턴. 법률 자문 활동, 서류 작성, 법률 연구 지원 및 고객 대응 시 변호사 보조에 참여.',
+      nguyenThiChauAnhEdu1: '법학 학사',
+      nguyenThiChauAnhEdu1Org: '하노이 대학교 - 법학 전공',
+      nguyenThiChauAnhEdu1Year: '2024년',
+      nguyenThiChauAnhPostsInfo: '법률 인턴 응우옌 티 쩌우 안의 모든 법적 측면에 대한 심층 기사.',
+
+      // 응우옌 티 투이 즈엉
+      nguyenThiThuyDuongBio: '응우옌 티 투이 즈엉은 2025년부터 Youth & Partners 로펌의 법률 인턴입니다.<br /><br />하노이 법대 경제법 전공의 법률 지식 기반을 바탕으로, 투이 즈엉은 항상 법률 지식을 연구하고 민사 사건의 실제 해결과 기업 정기 자문에 적용하고 있습니다.',
+      nguyenThiThuyDuongExp: '• 학습 기간 동안 학생 과학 연구, 모의 재판, 상업 조정 대회에 참여하여 법률 연구 기술, 논증 분석, 문서 작성, 전문 법률 환경에서의 팀워크를 단계적으로 개발.<br /><br />• 현재 YP Law Firm의 법률 인턴으로서 회사의 자문 활동과 법무 업무를 적극적으로 학습하고 지원.',
+      nguyenThiThuyDuongEdu1: '법학 학사',
+      nguyenThiThuyDuongEdu1Org: '하노이 법대 - 경제법 전공',
+      nguyenThiThuyDuongEdu1Year: '2024년',
+      nguyenThiThuyDuongPostsInfo: '법률 인턴 응우옌 티 투이 즈엉의 민사, 기업 관련 심층 기사.',
+
+      // 응우옌 투이 즈엉
+      nguyenThuyDuongBio: '응우옌 투이 즈엉은 2025년부터 Youth & Partners 로펌의 법률 인턴입니다.<br /><br />상업대학교 경제법 전공의 법률 지식 기반을 바탕으로, 투이 즈엉은 항상 법률 지식을 연구하고 민사 사건의 실제 해결과 기업 정기 자문에 적용하고 있습니다.',
+      nguyenThuyDuongExp: '<i>담당 분야:</i><br /><br />• 기업: 일상 법적 문제, 법률 준수 및 내부 운영에 관한 기업 정기 법률 자문 및 법적 지원.<br /><br />• 기업 활동 관련 법률 문서, 계약서, 법적 자료 검토 및 분석.<br /><br />• 회사 및 고객 요구에 따른 상업 계약, 내부 문서, 법적 서류 작성 및 검토 지원.<br /><br />• 새로운 법률 연구 및 업데이트에 참여하고, 기업에 실용적인 법적 솔루션 자문.<br /><br /><i>업무 경력:</i><br /><br />• 2023년 5월-2023년 8월: SEDU Training JSC 영업 및 과정 상담 직원 – 과정 상담 및 고객 혜택 지원.<br /><br />• 현재 YP Law Firm의 법률 인턴으로서 회사의 자문 활동과 법무 업무를 적극적으로 학습하고 지원.',
+      nguyenThuyDuongEdu1: '법학 학사',
+      nguyenThuyDuongEdu1Org: '상업대학교 - 경제법 전공',
+      nguyenThuyDuongEdu1Year: '2024년',
+      nguyenThuyDuongPostsInfo: '법률 인턴 응우옌 투이 즈엉의 민사, 기업 관련 심층 기사.',
 
       // Common fields for area of responsibility
       areaOfResponsibility: '담당 분야:',

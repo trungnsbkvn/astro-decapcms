@@ -19,7 +19,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
-      - { label: 'Category', name: 'category', widget: 'select', options: ['Tin tức pháp lý', 'Bình luận pháp lý', 'Các vụ việc nổi bật', 'Hội thảo pháp lý', 'Văn bản pháp lý', 'Thông tin tuyển dụng', 'Sự kiện nội bộ', 'Luật sư Hà Nội', 'Luật sư Phú Thọ', 'Luật sư Bắc Ninh', 'Luật sư Bắc Giang', 'Luật sư Hải Phòng', 'Luật sư Hưng Yên', 'Luật sư Ninh Bình', 'Luật sư Tuyên Quang', 'Luật sư Thái Nguyên'] }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Tin tức pháp lý', 'Bình luận pháp lý', 'Các vụ việc nổi bật', 'Hội thảo pháp lý', 'Văn bản pháp lý', 'Thông tin tuyển dụng', 'Sự kiện nội bộ'] }
       - {
           label: 'Tags',
           name: 'tags',
