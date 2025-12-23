@@ -991,12 +991,25 @@ function init(): void {
   }
 }
 
-// Run as early as possible
+// Run on initial page load
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 } else {
   init();
 }
+
+// Also run on Astro client-side navigation (View Transitions / Prefetch)
+// This ensures translations are applied after navigating between pages
+document.addEventListener('astro:page-load', init);
+
+// Also listen for astro:after-swap which fires right after new DOM is swapped
+document.addEventListener('astro:after-swap', () => {
+  // Re-apply translations immediately after page swap
+  const savedLang = getSavedLang();
+  if (savedLang !== 'vi') {
+    document.documentElement.classList.add('i18n-loading');
+  }
+});
 </script>
 
 <!-- Hidden element for Google Translate -->

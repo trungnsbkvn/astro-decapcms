@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "pnpm run build"
+  command = "pnpm install --frozen-lockfile && pnpm run build"
   # SSR Mode: Content is bundled at build time, pages render on-demand
   # When content changes via Decap CMS:
   #   1. Decap commits to GitHub
@@ -15,6 +15,13 @@
   SHARP_IGNORE_GLOBAL_LIBVIPS = "1"
   # Disable Astro telemetry
   ASTRO_TELEMETRY_DISABLED = "1"
+  # Optimize pnpm for CI
+  PNPM_FLAGS = "--frozen-lockfile"
+  # Enable parallel builds
+  NPM_CONFIG_AUDIT = "false"
+  NPM_CONFIG_FUND = "false"
+  # Skip optional dependencies
+  NPM_CONFIG_OPTIONAL = "false"
 
 # Enable asset optimization (Netlify handles compression)
 [build.processing]
@@ -28,14 +35,16 @@
 [build.processing.html]
   pretty_urls = false
 
-# Cache Astro's processed images between builds for faster deploys
+# Cache Astro's processed images and pnpm store between builds for faster deploys
 [[plugins]]
   package = "netlify-plugin-cache"
   [plugins.inputs]
-    # Cache the Astro image cache directory
+    # Cache directories for faster subsequent builds
     paths = [
-      "node_modules/.astro",
-      ".astro"
+      "node_modules/.astro",    # Astro processed images
+      ".astro",                  # Astro build cache
+      "node_modules/.cache",    # General build cache
+      ".pnpm-store"              # pnpm dependency cache
     ]
 
 # Note: Redirects are automatically handled by @astrojs/netlify adapter

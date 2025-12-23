@@ -40,7 +40,19 @@ export default defineConfig({
     mdx(),
     icon({
       include: {
-        tabler: ['*'],
+        // OPTIMIZED: Only include icons actually used (was '*' = 5000+ icons)
+        // This significantly reduces build time and bundle size
+        tabler: [
+          'award', 'book', 'brand-facebook', 'brand-linkedin', 'brand-meta',
+          'brand-whatsapp', 'brand-x', 'brand-youtube', 'calendar-month', 'chart-arrows',
+          'check', 'chevron-down', 'chevron-left', 'chevron-right', 'clock', 'clock-24',
+          'download', 'globe', 'headset', 'heart', 'info-square', 'language', 'mail',
+          'mailbox', 'map-pin', 'message-circle', 'message-star', 'phone', 'phone-call',
+          'point-filled', 'report-search', 'rss', 'school', 'shield-checkered', 'sort-a-z',
+          'square-number-1', 'square-number-2', 'square-number-3', 'square-number-4',
+          'star', 'step-out', 'sun', 'template', 'trophy', 'user', 'user-check',
+          'world', 'x', 'moon',
+        ],
         'flat-color-icons': [
           'template',
           'gallery',
@@ -61,14 +73,15 @@ export default defineConfig({
     // For search, use a client-side solution or API-based search
     // pagefind(),
     
-    // MINIMAL compression - Netlify handles most optimization at CDN level
+    // MINIMAL compression - Netlify handles optimization at CDN level
+    // Disabled entirely for fastest builds - Netlify compresses assets automatically
     compress({
-      CSS: true,
-      HTML: false,  // SSR pages compress at runtime
+      CSS: false,   // Netlify handles CSS optimization
+      HTML: false,  // SSR pages compress at runtime by Netlify
       Image: false, // Netlify Image CDN handles this
-      JavaScript: true,
+      JavaScript: false, // Netlify compresses JS at CDN level
       SVG: false,   // Minor savings, skip for faster builds
-      Logger: 1,
+      Logger: 0,    // Disable logging for faster builds
     }),
 
     astrowind({
@@ -117,6 +130,8 @@ export default defineConfig({
         treeshake: {
           moduleSideEffects: false,
         },
+        // Skip metadata generation for faster builds
+        experimentalLogSideEffects: false,
       },
       // OPTIMIZATION: Use esbuild instead of terser for faster builds
       // esbuild is 10-100x faster than terser with similar results
