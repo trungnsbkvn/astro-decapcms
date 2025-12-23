@@ -369,16 +369,6 @@ export function getCategoryI18nKey(categorySlug: string): string | null {
     'mau-hop-dong-dich-vu': 'blog.mauHopDongDichVuTitle',
     'diem-manh-cua-youth-and-partners': 'blog.diemManhYPTitle',
     'phap-ly-tu-van-thuong-xuyen-khac': 'blog.phapLyTuVanKhacTitle',
-    // Lawyer by region
-    'luat-su-ha-noi': 'blog.luatSuHaNoiTitle',
-    'luat-su-bac-giang': 'blog.luatSuBacGiangTitle',
-    'luat-su-bac-ninh': 'blog.luatSuBacNinhTitle',
-    'luat-su-hai-phong': 'blog.luatSuHaiPhongTitle',
-    'luat-su-hung-yen': 'blog.luatSuHungYenTitle',
-    'luat-su-ninh-binh': 'blog.luatSuNinhBinhTitle',
-    'luat-su-phu-tho': 'blog.luatSuPhuThoTitle',
-    'luat-su-thai-nguyen': 'blog.luatSuThaiNguyenTitle',
-    'luat-su-tuyen-quang': 'blog.luatSuTuyenQuangTitle',
     // Lawyer by language
     'luat-su-tu-van-tieng-anh': 'blog.luatSuTiengAnhTitle',
     'luat-su-tu-van-tieng-nhat': 'blog.luatSuTiengNhatTitle',

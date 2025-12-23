@@ -249,42 +249,6 @@ export const headerData = {
           href: getPermalink('/lien-he'),
         },
         {
-          text: 'Luật sư Hà Nội',
-          href: getPermalink('luat-su-ha-noi', 'category'),
-        },
-        {
-          text: 'Luật sư Phú Thọ',
-          href: getPermalink('luat-su-phu-tho', 'category'),
-        },
-        {
-          text: 'Luật sư Bắc Ninh',
-          href: getPermalink('luat-su-bac-ninh', 'category'),
-        },
-        {
-          text: 'Luật sư Bắc Giang',
-          href: getPermalink('luat-su-bac-giang', 'category'),
-        },
-        {
-          text: 'Luật sư Hải Phòng',
-          href: getPermalink('luat-su-hai-phong', 'category'),
-        },
-        {
-          text: 'Luật sư Hưng Yên',
-          href: getPermalink('luat-su-hung-yen', 'category'),
-        },
-        {
-          text: 'Luật sư Ninh Bình',
-          href: getPermalink('luat-su-ninh-binh', 'category'),
-        },
-        {
-          text: 'Luật sư Tuyên Quang',
-          href: getPermalink('luat-su-tuyen-quang', 'category'),
-        },
-        {
-          text: 'Luật sư Thái Nguyên',
-          href: getPermalink('luat-su-thai-nguyen', 'category'),
-        },
-        {
           text: 'Thông tin tuyển dụng',
           href: getPermalink('thong-tin-tuyen-dung', 'category'),
         },
