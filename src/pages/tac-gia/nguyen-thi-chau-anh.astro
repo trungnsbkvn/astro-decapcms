@@ -10,9 +10,9 @@ import AuthorRelatedPosts from '~/components/blog/AuthorRelatedPosts.astro';
 import { getPermalink } from '~/utils/blog-permalinks';
 
 const metadata = {
-  title: 'Thực tập sinh pháp lý Nguyễn Thị Châu Anh',
+  title: 'Chuyên viên pháp lý Nguyễn Thị Châu Anh',
   description:
-    'Thông tin tác giả Thực tập sinh pháp lý Nguyễn Thị Châu Anh, thực tập sinh pháp lý tại Công ty Luật TNHH Youth & Partners.',
+    'Thông tin tác giả Chuyên viên pháp lý Nguyễn Thị Châu Anh, Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners.',
 };
 const author = 'Nguyễn Thị Châu Anh';
 const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'legal'];
@@ -21,7 +21,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
 <Layout metadata={metadata}>
   <Hero
     id="hero"
-    title={`<span data-i18n="lawyerProfile.legalIntern">Thực tập sinh pháp lý</span> <span class="notranslate" translate="no">Nguyễn Thị Châu Anh</span>`}
+    title={`<span data-i18n="lawyerProfile.legalIntern">Chuyên viên pháp lý</span> <span class="notranslate" translate="no">Nguyễn Thị Châu Anh</span>`}
     tagline="Thông tin tác giả"
     i18nTagline="lawyerProfile.authorInfo"
     actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
@@ -68,7 +68,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     ]}
     image={{
       src: '~/assets/images/team/Chuyên viên Nguyễn Thị Châu Anh.jpg',
-      alt: 'Thực tập sinh pháp lý Nguyễn Thị Châu Anh',
+      alt: 'Chuyên viên pháp lý Nguyễn Thị Châu Anh',
       loading: 'eager',
     }}
   >
@@ -76,7 +76,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
       <p class="notranslate" translate="no" data-i18n="lawyers.nguyenThiChauAnhExp">
         • Tháng 6/2025 – tháng 9/2025: Thực tập tại Tòa án nhân dân khu vực 7 – Bắc Ninh. Tham gia hỗ trợ các công việc nghiệp vụ tại Tòa án, tiếp cận quy trình tố tụng và thực tiễn xét xử, qua đó nâng cao hiểu biết pháp luật, tư duy pháp lý và kỹ năng làm việc trong môi trường chuyên nghiệp.<br /><br />
-        • Từ tháng 12/2025 đến nay: Thực tập sinh pháp lý – Công ty Luật TNHH Youth & Partners (YP Law Firm). Tham gia hỗ trợ các hoạt động tư vấn pháp lý, soạn thảo hồ sơ, nghiên cứu quy định pháp luật và hỗ trợ luật sư trong quá trình làm việc với khách hàng.
+        • Từ tháng 12/2025 đến nay: Chuyên viên pháp lý – Công ty Luật TNHH Youth & Partners (YP Law Firm). Tham gia hỗ trợ các hoạt động tư vấn pháp lý, soạn thảo hồ sơ, nghiên cứu quy định pháp luật và hỗ trợ luật sư trong quá trình làm việc với khách hàng.
       </p>
       <br />
     </Fragment>
@@ -107,7 +107,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     id="blog"
     title="Bài viết của tác giả"
     i18nTitle="lawyerProfile.authorPosts"
-    information={`Các bài viết chuyên sâu của Thực tập sinh pháp lý Nguyễn Thị Châu Anh về mọi khía cạnh pháp lý.`}
+    information={`Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thị Châu Anh về mọi khía cạnh pháp lý.`}
     i18nInformation="lawyers.nguyenThiChauAnhPostsInfo"
     author={author}
     types={types}

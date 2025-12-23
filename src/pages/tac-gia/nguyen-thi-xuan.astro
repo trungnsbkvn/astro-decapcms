@@ -10,9 +10,9 @@ import AuthorRelatedPosts from '~/components/blog/AuthorRelatedPosts.astro';
 import { getPermalink } from '~/utils/blog-permalinks';
 
 const metadata = {
-  title: 'Thực tập sinh pháp lý Nguyễn Thị Xuân',
+  title: 'Chuyên viên pháp lý Nguyễn Thị Xuân',
   description:
-    'Thông tin tác giả Thực tập sinh pháp lý Nguyễn Thị Xuân, thực tập sinh pháp lý tại Công ty Luật TNHH Youth & Partners.',
+    'Thông tin tác giả Chuyên viên pháp lý Nguyễn Thị Xuân, Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners.',
 };
 const author = 'Nguyễn Thị Xuân';
 const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'legal'];
@@ -21,7 +21,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
 <Layout metadata={metadata}>
   <Hero
     id="hero"
-    title={`<span data-i18n="lawyerProfile.legalIntern">Thực tập sinh pháp lý</span> <span class="notranslate" translate="no">Nguyễn Thị Xuân</span>`}
+    title={`<span data-i18n="lawyerProfile.legalIntern">Chuyên viên pháp lý</span> <span class="notranslate" translate="no">Nguyễn Thị Xuân</span>`}
     tagline="Thông tin tác giả"
     i18nTagline="lawyerProfile.authorInfo"
     actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
@@ -70,7 +70,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     ]}
     image={{
       src: '~/assets/images/team/Chuyên viên Nguyễn Thị Xuân.jpg',
-      alt: 'Thực tập sinh pháp lý Nguyễn Thị Xuân',
+      alt: 'Chuyên viên pháp lý Nguyễn Thị Xuân',
       loading: 'eager',
     }}
   >
@@ -114,7 +114,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
     id="blog"
     title="Bài viết của tác giả"
     i18nTitle="lawyerProfile.authorPosts"
-    information={`Các bài viết chuyên sâu của Thực tập sinh pháp lý Nguyễn Thị Xuân về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Giấy phép.`}
+    information={`Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thị Xuân về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Giấy phép.`}
     i18nInformation="lawyers.nguyenThiXuanPostsInfo"
     author={author}
     types={types}
