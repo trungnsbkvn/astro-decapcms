@@ -262,7 +262,9 @@
     "seniorAssociate": "Senior Associate",
     "associate": "Associate",
     "legalConsultant": "Legal Consultant",
-    "paralegal": "Paralegal"
+    "paralegal": "Paralegal",
+    "legalStaff": "Legal Staff",
+    "legalIntern": "Legal Intern"
   },
   "testimonials": {
     "title": "Client Testimonials",
@@ -388,6 +390,7 @@
     "authorPosts": "Author Posts",
     "lawyer": "Lawyer",
     "legalSpecialist": "Legal Specialist",
+    "legalIntern": "Legal Intern",
     "doctor": "Dr."
   },
   "servicesExtra": {

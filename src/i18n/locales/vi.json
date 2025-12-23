@@ -262,7 +262,9 @@
     "seniorAssociate": "Cộng sự cao cấp",
     "associate": "Cộng sự",
     "legalConsultant": "Chuyên viên tư vấn pháp lý",
-    "paralegal": "Trợ lý pháp lý"
+    "paralegal": "Trợ lý pháp lý",
+    "legalStaff": "Chuyên viên pháp lý",
+    "legalIntern": "Thực tập sinh pháp lý"
   },
   "testimonials": {
     "title": "Cảm nhận của khách hàng",
@@ -388,6 +390,7 @@
     "authorPosts": "Bài viết của tác giả",
     "lawyer": "Luật sư",
     "legalSpecialist": "Chuyên viên pháp lý",
+    "legalIntern": "Thực tập sinh pháp lý",
     "doctor": "Tiến sĩ"
   },
   "servicesExtra": {

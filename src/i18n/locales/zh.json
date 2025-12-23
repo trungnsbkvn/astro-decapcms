@@ -262,7 +262,9 @@
     "seniorAssociate": "高级助理",
     "associate": "助理",
     "legalConsultant": "法律顾问",
-    "paralegal": "律师助理"
+    "paralegal": "律师助理",
+    "legalStaff": "法律专员",
+    "legalIntern": "法律实习生"
   },
   "testimonials": {
     "title": "客户评价",
@@ -388,6 +390,7 @@
     "authorPosts": "作者文章",
     "lawyer": "律师",
     "legalSpecialist": "法律专员",
+    "legalIntern": "法律实习生",
     "doctor": "博士"
   },
   "servicesExtra": {

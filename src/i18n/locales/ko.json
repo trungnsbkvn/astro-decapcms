@@ -262,7 +262,9 @@
     "seniorAssociate": "시니어 어소시에이트",
     "associate": "어소시에이트",
     "legalConsultant": "법률 컨설턴트",
-    "paralegal": "패럴리갈"
+    "paralegal": "패러리걸",
+    "legalStaff": "법무 직원",
+    "legalIntern": "법률 인턴"
   },
   "testimonials": {
     "title": "고객 후기",
@@ -388,6 +390,7 @@
     "authorPosts": "저자 게시물",
     "lawyer": "변호사",
     "legalSpecialist": "법률 전문가",
+    "legalIntern": "법률 인턴",
     "doctor": "박사"
   },
   "servicesExtra": {

@@ -262,7 +262,9 @@
     "seniorAssociate": "シニアアソシエイト",
     "associate": "アソシエイト",
     "legalConsultant": "法務コンサルタント",
-    "paralegal": "パラリーガル"
+    "paralegal": "パラリーガル",
+    "legalStaff": "法務スタッフ",
+    "legalIntern": "法務インターン"
   },
   "testimonials": {
     "title": "お客様の声",
@@ -388,6 +390,7 @@
     "authorPosts": "著者の記事",
     "lawyer": "弁護士",
     "legalSpecialist": "法務専門家",
+    "legalIntern": "法務インターン",
     "doctor": "博士"
   },
   "servicesExtra": {
