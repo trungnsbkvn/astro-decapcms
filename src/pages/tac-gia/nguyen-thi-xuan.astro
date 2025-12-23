@@ -1,0 +1,126 @@
+---
+export const prerender = true;
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+
+import AuthorRelatedPosts from '~/components/blog/AuthorRelatedPosts.astro';
+import { getPermalink } from '~/utils/blog-permalinks';
+
+const metadata = {
+  title: 'Thực tập sinh pháp lý Nguyễn Thị Xuân',
+  description:
+    'Thông tin tác giả Thực tập sinh pháp lý Nguyễn Thị Xuân, thực tập sinh pháp lý tại Công ty Luật TNHH Youth & Partners.',
+};
+const author = 'Nguyễn Thị Xuân';
+const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'legal'];
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    id="hero"
+    title={`<span data-i18n="lawyerProfile.legalIntern">Thực tập sinh pháp lý</span> <span class="notranslate" translate="no">Nguyễn Thị Xuân</span>`}
+    tagline="Thông tin tác giả"
+    i18nTagline="lawyerProfile.authorInfo"
+    actions={[{ variant: 'primary', text: 'Liên hệ với tác giả', href: getPermalink('/lien-he#form'), 'data-i18n': 'lawyerProfile.contactAuthor' }]}
+  >
+    <Fragment slot="subtitle">
+      <span class="notranslate" translate="no" data-i18n="lawyers.nguyenThiXuanBio">
+      <br />
+      <i>Giới thiệu:</i><br /><br />
+      • Nguyễn Thị Xuân là thực tập sinh tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm) từ năm 2025.
+      <br /><br />
+      • Với nền tảng đào tạo chuyên ngành Luật tại Trường Đại học Luật Hà Nội, Xuân chủ động trau dồi kiến thức pháp lý và kỹ năng hành nghề, đồng thời tích cực vận dụng lý thuyết vào thực tiễn công việc.
+      </span>
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:phone-call',
+        callToAction: {
+          target: '_blank',
+          text: 'Hotline',
+          href: 'tel:0889956888',
+        },
+      },
+      {
+        icon: 'tabler:mailbox',
+        callToAction: {
+          target: '_blank',
+          text: 'Email',
+          href: 'mailto:info@luatsumienbac.vn',
+        },
+      },
+      {
+        icon: 'tabler:brand-meta',
+        callToAction: {
+          target: '_blank',
+          text: 'Facebook',
+          href: 'https://www.facebook.com/yplawfirm',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/team/Chuyên viên Nguyễn Thị Xuân.jpg',
+      alt: 'Thực tập sinh pháp lý Nguyễn Thị Xuân',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="lawyerProfile.experience">Kinh nghiệm</h2>
+      <p class="notranslate" translate="no" data-i18n="lawyers.nguyenThiXuanExp">
+        • Tháng 10/2023 – tháng 02/2024: Thực tập tại Công ty Luật Nguyên Phát, tư vấn pháp luật trong lĩnh vực hôn nhân và gia đình, từ đó nâng cao hiểu biết về pháp luật và kỹ năng làm việc trong môi trường chuyên nghiệp.
+        <br /><br />
+        • Tháng 04/2024 – tháng 05/2025: Nhân viên soạn thảo tại Văn phòng công chứng Nguyễn Huệ. Thực hiện rà soát giấy tờ pháp lý và soạn hợp đồng về mua bán xe, chuyển nhượng, thừa kế...; Hỗ trợ công chứng viên thực hiện ký ngoài.
+        <br /><br />
+        • Từ tháng 05/2025 - tháng 11/2025: Làm việc tại Công ty Cổ phần Domin: Kiểm duyệt các nội dung đăng tải lên mạng xã hội.
+        <br /><br />
+        • Hiện tại là thực tập sinh tại Công ty Luật TNHH Youth & Partners (YP Law Firm), học hỏi và đóng góp vào các hoạt động tư vấn và hỗ trợ pháp lý của công ty.
+      </p>
+      <br />
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="resume"
+    title="Học vấn"
+    i18nTitle="lawyerProfile.education"
+    items={[
+      {
+        title: `<span data-i18n="lawyers.nguyenThiXuanEdu1">Cử nhân Luật</span> <br /> <span class="font-normal" data-i18n="lawyers.nguyenThiXuanEdu1Org">Trường Đại học Luật Hà Nội - Ngành Luật Kinh tế</span> <br /> <span class="text-sm font-normal" data-i18n="lawyers.nguyenThiXuanEdu1Year">Năm 2024</span>`,
+        icon: 'tabler:school',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <AuthorRelatedPosts
+    id="blog"
+    title="Bài viết của tác giả"
+    i18nTitle="lawyerProfile.authorPosts"
+    information={`Các bài viết chuyên sâu của Thực tập sinh pháp lý Nguyễn Thị Xuân về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Giấy phép.`}
+    i18nInformation="lawyers.nguyenThiXuanPostsInfo"
+    author={author}
+    types={types}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </AuthorRelatedPosts>
+</Layout>

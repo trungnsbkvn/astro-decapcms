@@ -2762,6 +2762,22 @@ const additionalTranslations = {
       nguyenThuyDuongEdu1Year: 'Năm 2024',
       nguyenThuyDuongPostsInfo: 'Các bài viết chuyên sâu của Thực tập sinh pháp lý Nguyễn Thùy Dương về mọi khía cạnh pháp lý về Dân sự, Doanh nghiệp.',
 
+      // Nguyễn Thị Mai Linh
+      nguyenThiMaiLinhBio: '<br /><i>Giới thiệu:</i><br /><br />• Nguyễn Thị Mai Linh là thực tập sinh tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm) từ năm 2025.<br /><br />• Với nền tảng kiến thức chuyên ngành Luật Kinh tế – Trường Đại học Thương mại, Mai Linh luôn chủ động trau dồi kiến thức và kỹ năng thông qua các hoạt động học thuật, nghiên cứu khoa học và các chương trình mô phỏng thực tiễn nghề luật.',
+      nguyenThiMaiLinhExp: '• Trong quá trình học tập, Mai Linh đã tham gia nghiên cứu khoa học sinh viên, các phiên tòa giả định và cuộc thi hòa giải thương mại, qua đó từng bước rèn luyện kỹ năng nghiên cứu pháp lý, phân tích lập luận, soạn thảo văn bản và làm việc nhóm trong môi trường pháp lý chuyên nghiệp.<br /><br />• Hiện tại, Mai Linh đang là thực tập sinh tại YP Law Firm, tích cực học hỏi và hỗ trợ các hoạt động tư vấn, và công việc pháp lý của Công ty.',
+      nguyenThiMaiLinhEdu1: 'Cử nhân Luật',
+      nguyenThiMaiLinhEdu1Org: 'Trường Đại học Thương Mại - Ngành Luật Kinh tế',
+      nguyenThiMaiLinhEdu1Year: 'Năm 2024',
+      nguyenThiMaiLinhPostsInfo: 'Các bài viết chuyên sâu của Thực tập sinh pháp lý Nguyễn Thị Mai Linh về mọi khía cạnh pháp lý.',
+
+      // Nguyễn Thị Xuân
+      nguyenThiXuanBio: '<br /><i>Giới thiệu:</i><br /><br />• Nguyễn Thị Xuân là thực tập sinh tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm) từ năm 2025.<br /><br />• Với nền tảng đào tạo chuyên ngành Luật tại Trường Đại học Luật Hà Nội, Xuân chủ động trau dồi kiến thức pháp lý và kỹ năng hành nghề, đồng thời tích cực vận dụng lý thuyết vào thực tiễn công việc.',
+      nguyenThiXuanExp: '• Tháng 10/2023 – tháng 02/2024: Thực tập tại Công ty Luật Nguyên Phát, tư vấn pháp luật trong lĩnh vực hôn nhân và gia đình, từ đó nâng cao hiểu biết về pháp luật và kỹ năng làm việc trong môi trường chuyên nghiệp.<br /><br />• Tháng 04/2024 – tháng 05/2025: Nhân viên soạn thảo tại Văn phòng công chứng Nguyễn Huệ. Thực hiện rà soát giấy tờ pháp lý và soạn hợp đồng về mua bán xe, chuyển nhượng, thừa kế...; Hỗ trợ công chứng viên thực hiện ký ngoài.<br /><br />• Từ tháng 05/2025 - tháng 11/2025: Làm việc tại Công ty Cổ phần Domin: Kiểm duyệt các nội dung đăng tải lên mạng xã hội.<br /><br />• Hiện tại là thực tập sinh tại Công ty Luật TNHH Youth & Partners (YP Law Firm), học hỏi và đóng góp vào các hoạt động tư vấn và hỗ trợ pháp lý của công ty.',
+      nguyenThiXuanEdu1: 'Cử nhân Luật',
+      nguyenThiXuanEdu1Org: 'Trường Đại học Luật Hà Nội - Ngành Luật Kinh tế',
+      nguyenThiXuanEdu1Year: 'Năm 2024',
+      nguyenThiXuanPostsInfo: 'Các bài viết chuyên sâu của Thực tập sinh pháp lý Nguyễn Thị Xuân về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Giấy phép.',
+
       // Common fields for area of responsibility
       areaOfResponsibility: 'Lĩnh vực phụ trách:',
       civilLaw: 'Dân sự: Tư vấn về hợp đồng, giao dịch, thừa kế, hôn nhân gia đình, bồi thường thiệt hại...',
@@ -3173,6 +3189,22 @@ const additionalTranslations = {
       nguyenThuyDuongEdu1Org: 'University of Commerce - Economic Law Major',
       nguyenThuyDuongEdu1Year: '2024',
       nguyenThuyDuongPostsInfo: 'In-depth articles by Legal Intern Nguyen Thuy Duong on all legal aspects of Civil, Enterprise.',
+
+      // Nguyen Thi Mai Linh
+      nguyenThiMaiLinhBio: '<br /><i>Introduction:</i><br /><br />• Nguyen Thi Mai Linh is a legal intern at Youth & Partners Law Co., Ltd. (Y&P Law Firm) since 2025.<br /><br />• With a knowledge foundation in Economic Law from University of Commerce, Mai Linh proactively develops knowledge and skills through academic activities, scientific research and practical legal profession simulation programs.',
+      nguyenThiMaiLinhExp: '• During studies, Mai Linh participated in student scientific research, mock trials and commercial mediation competitions, thereby gradually developing legal research skills, argument analysis, document drafting and teamwork in professional legal environment.<br /><br />• Currently, Mai Linh is a legal intern at YP Law Firm, actively learning and supporting consulting activities and legal work of the Company.',
+      nguyenThiMaiLinhEdu1: 'Bachelor of Law',
+      nguyenThiMaiLinhEdu1Org: 'University of Commerce - Economic Law Major',
+      nguyenThiMaiLinhEdu1Year: '2024',
+      nguyenThiMaiLinhPostsInfo: 'In-depth articles by Legal Intern Nguyen Thi Mai Linh on all legal aspects.',
+
+      // Nguyen Thi Xuan
+      nguyenThiXuanBio: '<br /><i>Introduction:</i><br /><br />• Nguyen Thi Xuan is a legal intern at Youth & Partners Law Co., Ltd. (Y&P Law Firm) since 2025.<br /><br />• With training foundation in Law at Hanoi Law University, Xuan proactively develops legal knowledge and professional skills while actively applying theory to practical work.',
+      nguyenThiXuanExp: '• October 2023 – February 2024: Internship at Nguyen Phat Law Company, legal consulting in marriage and family field, thereby enhancing legal knowledge and professional working skills.<br /><br />• April 2024 – May 2025: Drafting staff at Nguyen Hue Notary Office. Reviewing legal documents and drafting contracts for vehicle sales, transfers, inheritance...; Supporting notary in external signing.<br /><br />• May 2025 - November 2025: Working at Domin Joint Stock Company: Moderating content posted on social media.<br /><br />• Currently a legal intern at Youth & Partners Law Co., Ltd. (YP Law Firm), learning and contributing to consulting activities and legal support of the company.',
+      nguyenThiXuanEdu1: 'Bachelor of Law',
+      nguyenThiXuanEdu1Org: 'Hanoi Law University - Economic Law Major',
+      nguyenThiXuanEdu1Year: '2024',
+      nguyenThiXuanPostsInfo: 'In-depth articles by Legal Intern Nguyen Thi Xuan on all legal aspects of Enterprise, Labor, Licenses.',
 
       // Common fields for area of responsibility
       areaOfResponsibility: 'Areas of responsibility:',
@@ -3586,6 +3618,22 @@ const additionalTranslations = {
       nguyenThuyDuongEdu1Year: '2024年',
       nguyenThuyDuongPostsInfo: '法律实习生阮翠阳关于民事、企业各方面法律问题的深度文章。',
 
+      // Nguyen Thi Mai Linh
+      nguyenThiMaiLinhBio: '<br /><i>介绍：</i><br /><br />• 阮氏梅灵自2025年起在Youth & Partners律师事务所（Y&P Law Firm）担任法律实习生。<br /><br />• 凭借商业大学经济法专业的知识基础，梅灵通过学术活动、科学研究和法律实践模拟项目积极发展知识和技能。',
+      nguyenThiMaiLinhExp: '• 在学习期间，梅灵参加了学生科学研究、模拟法庭和商业调解比赛，从而逐步发展法律研究技能、论证分析、文件起草和专业法律环境中的团队合作。<br /><br />• 目前，梅灵是YP Law Firm的法律实习生，积极学习并支持公司的咨询活动和法律工作。',
+      nguyenThiMaiLinhEdu1: '法学学士',
+      nguyenThiMaiLinhEdu1Org: '商业大学 - 经济法专业',
+      nguyenThiMaiLinhEdu1Year: '2024年',
+      nguyenThiMaiLinhPostsInfo: '法律实习生阮氏梅灵关于各方面法律问题的深度文章。',
+
+      // Nguyen Thi Xuan
+      nguyenThiXuanBio: '<br /><i>介绍：</i><br /><br />• 阮氏春自2025年起在Youth & Partners律师事务所（Y&P Law Firm）担任法律实习生。<br /><br />• 凭借河内法律大学法律专业的培训基础，春积极发展法律知识和专业技能，同时积极将理论应用于实际工作。',
+      nguyenThiXuanExp: '• 2023年10月 – 2024年2月：在原发律师事务所实习，在婚姻家庭领域提供法律咨询，从而提高法律知识和专业工作技能。<br /><br />• 2024年4月 – 2025年5月：在阮惠公证处担任起草人员。审查法律文件并起草车辆买卖、转让、继承等合同；支持公证员进行外部签名。<br /><br />• 2025年5月 - 2025年11月：在Domin股份公司工作：审核社交媒体上发布的内容。<br /><br />• 目前是Youth & Partners律师事务所（YP Law Firm）的法律实习生，学习并为公司的咨询活动和法律支持做出贡献。',
+      nguyenThiXuanEdu1: '法学学士',
+      nguyenThiXuanEdu1Org: '河内法律大学 - 经济法专业',
+      nguyenThiXuanEdu1Year: '2024年',
+      nguyenThiXuanPostsInfo: '法律实习生阮氏春关于企业、劳动、许可证各方面法律问题的深度文章。',
+
       // Common fields for area of responsibility
       areaOfResponsibility: '负责领域：',
       civilLaw: '民事：合同、交易、继承、家庭、损害赔偿咨询...',
@@ -3998,6 +4046,22 @@ const additionalTranslations = {
       nguyenThuyDuongEdu1Year: '2024年',
       nguyenThuyDuongPostsInfo: '法務インターン グエン・トゥイ・ズオンによる民事、企業に関するあらゆる法的側面についての詳細な記事。',
 
+      // Nguyen Thi Mai Linh
+      nguyenThiMaiLinhBio: '<br /><i>紹介：</i><br /><br />• グエン・ティ・マイ・リンは2025年からYouth & Partners法律事務所（Y&P Law Firm）の法務インターンです。<br /><br />• 商業大学経済法専攻の知識基盤を持ち、マイ・リンは学術活動、科学研究、法律実務シミュレーションプログラムを通じて積極的に知識とスキルを発展させています。',
+      nguyenThiMaiLinhExp: '• 学習期間中、マイ・リンは学生科学研究、模擬裁判、商業調停コンテストに参加し、法的研究スキル、議論分析、文書作成、専門的な法的環境でのチームワークを段階的に発展させました。<br /><br />• 現在、マイ・リンはYP Law Firmの法務インターンとして、会社のコンサルティング活動と法務業務を積極的に学習・サポートしています。',
+      nguyenThiMaiLinhEdu1: '法学学士',
+      nguyenThiMaiLinhEdu1Org: '商業大学 - 経済法専攻',
+      nguyenThiMaiLinhEdu1Year: '2024年',
+      nguyenThiMaiLinhPostsInfo: '法務インターン グエン・ティ・マイ・リンによるあらゆる法的側面についての詳細な記事。',
+
+      // Nguyen Thi Xuan
+      nguyenThiXuanBio: '<br /><i>紹介：</i><br /><br />• グエン・ティ・スアンは2025年からYouth & Partners法律事務所（Y&P Law Firm）の法務インターンです。<br /><br />• ハノイ法律大学法学専攻の研修基盤を持ち、スアンは積極的に法的知識と専門スキルを発展させ、理論を実務に適用しています。',
+      nguyenThiXuanExp: '• 2023年10月 – 2024年2月：グエン・ファット法律事務所でインターン、婚姻・家族分野で法律相談、法的知識と専門的な仕事のスキルを向上。<br /><br />• 2024年4月 – 2025年5月：グエン・フエ公証役場で作成スタッフ。法的書類の確認と車両売買、譲渡、相続などの契約書作成；公証人の外部署名をサポート。<br /><br />• 2025年5月 - 2025年11月：ドミン株式会社で勤務：ソーシャルメディアに投稿されたコンテンツの審査。<br /><br />• 現在、Youth & Partners法律事務所（YP Law Firm）の法務インターンとして、会社のコンサルティング活動と法的サポートの学習と貢献をしています。',
+      nguyenThiXuanEdu1: '法学学士',
+      nguyenThiXuanEdu1Org: 'ハノイ法律大学 - 経済法専攻',
+      nguyenThiXuanEdu1Year: '2024年',
+      nguyenThiXuanPostsInfo: '法務インターン グエン・ティ・スアンによる企業、労働、許可証に関するあらゆる法的側面についての詳細な記事。',
+
       // Common fields for area of responsibility
       areaOfResponsibility: '担当分野：',
       civilLaw: '民事：契約、取引、相続、家族、損害賠償の相談...',
@@ -4409,6 +4473,22 @@ const additionalTranslations = {
       nguyenThuyDuongEdu1Org: '상업대학교 - 경제법 전공',
       nguyenThuyDuongEdu1Year: '2024년',
       nguyenThuyDuongPostsInfo: '법률 인턴 응우옌 투이 즈엉의 민사, 기업 관련 심층 기사.',
+
+      // Nguyen Thi Mai Linh
+      nguyenThiMaiLinhBio: '<br /><i>소개:</i><br /><br />• 응우옌 티 마이 린은 2025년부터 Youth & Partners 법률사무소(Y&P Law Firm)의 법률 인턴입니다.<br /><br />• 상업대학교 경제법 전공의 지식 기반을 바탕으로 마이 린은 학술 활동, 과학 연구 및 법률 실무 시뮬레이션 프로그램을 통해 적극적으로 지식과 기술을 발전시키고 있습니다.',
+      nguyenThiMaiLinhExp: '• 학습 기간 동안 마이 린은 학생 과학 연구, 모의 재판 및 상업 중재 대회에 참가하여 법률 연구 기술, 논쟁 분석, 문서 작성 및 전문 법률 환경에서의 팀워크를 점진적으로 발전시켰습니다.<br /><br />• 현재 마이 린은 YP Law Firm의 법률 인턴으로서 회사의 컨설팅 활동과 법률 업무를 적극적으로 학습하고 지원하고 있습니다.',
+      nguyenThiMaiLinhEdu1: '법학 학사',
+      nguyenThiMaiLinhEdu1Org: '상업대학교 - 경제법 전공',
+      nguyenThiMaiLinhEdu1Year: '2024년',
+      nguyenThiMaiLinhPostsInfo: '법률 인턴 응우옌 티 마이 린의 모든 법적 측면에 관한 심층 기사.',
+
+      // Nguyen Thi Xuan
+      nguyenThiXuanBio: '<br /><i>소개:</i><br /><br />• 응우옌 티 쑤언은 2025년부터 Youth & Partners 법률사무소(Y&P Law Firm)의 법률 인턴입니다.<br /><br />• 하노이 법률대학교 법학 전공의 교육 기반을 바탕으로 쑤언은 적극적으로 법률 지식과 전문 기술을 발전시키며 이론을 실무에 적용하고 있습니다.',
+      nguyenThiXuanExp: '• 2023년 10월 – 2024년 2월: 응우옌팟 법률회사에서 인턴, 혼인 및 가족 분야에서 법률 상담, 법률 지식과 전문 업무 기술 향상.<br /><br />• 2024년 4월 – 2025년 5월: 응우옌훼 공증사무소에서 작성 직원. 법률 문서 검토 및 차량 매매, 양도, 상속 등 계약서 작성; 공증인의 외부 서명 지원.<br /><br />• 2025년 5월 - 2025년 11월: 도민 주식회사에서 근무: 소셜 미디어에 게시된 콘텐츠 검토.<br /><br />• 현재 Youth & Partners 법률사무소(YP Law Firm)의 법률 인턴으로서 회사의 컨설팅 활동과 법률 지원에 학습하고 기여하고 있습니다.',
+      nguyenThiXuanEdu1: '법학 학사',
+      nguyenThiXuanEdu1Org: '하노이 법률대학교 - 경제법 전공',
+      nguyenThiXuanEdu1Year: '2024년',
+      nguyenThiXuanPostsInfo: '법률 인턴 응우옌 티 쑤언의 기업, 노동, 허가 관련 심층 기사.',
 
       // Common fields for area of responsibility
       areaOfResponsibility: '담당 분야:',
