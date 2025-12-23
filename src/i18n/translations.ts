@@ -648,7 +648,7 @@ const additionalTranslations = {
       trackResponse: 'Track Response',
       trackResponseDesc: 'Monitor your email or phone for responses from our customer support team. If you do not receive a response within the expected time, please contact us again to ensure your issue is not overlooked.',
       weWillComplete: 'We will complete it!',
-      legalStaff: 'Legal Staff',
+      legalStaff: 'Legal Specialist',
       satisfiedClients: 'Satisfied Clients',
       casesWon: 'Cases Won',
       latestNews: 'Latest News',
