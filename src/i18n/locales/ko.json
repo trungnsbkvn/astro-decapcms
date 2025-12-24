@@ -445,5 +445,24 @@
     "generalSupportDesc": "일반적인 법률 질문, 웹사이트 탐색, 결제, 구매한 법률 문서 접근 또는 서비스에 관한 질문에 대한 지원을 받으려면 문의하세요.",
     "consultDeptDesc": "법률 상담 서비스, 개인화된 상담 옵션 또는 특정 사례와 관련된 요청에 대한 질문에 답변하려면 채팅하세요.",
     "techSupportDesc": "문서 접근, 이메일 통신 문제 또는 서비스 사용과 관련된 기타 기술적 문제가 있을 때 연락하세요."
+  },
+  "lawyers": {
+    "caoThiPhuongAnhBio": "<br />\n      <i>책임 분야:</i><br /><br />\n      • <strong>기업법:</strong> 일상적인 법률 문제, 규정 준수, 내부 운영에서 기업에 정기적인 법률 상담 및 법률 지원 제공.\n      <br /><br />\n      • <strong>내부 규정:</strong> 기업 운영과 관련된 법률 문서, 계약 및 법률 문서 검토 및 분석.\n      <br /><br />\n      • <strong>기업 절차:</strong> 회사 및 고객의 요구 사항에 따라 상업 계약, 내부 문서, 법률 문서의 작성 및 검토 지원.\n      <br /><br />\n      • <strong>정기 상담:</strong> 새로운 법률 연구 및 업데이트에 참여하고 기업을 위한 실용적인 법률 솔루션 제공.",
+    "caoThiPhuongAnhExp": "• 2024년 12월 – 2025년 6월: AIC 로펀에서 법률 인턴<br />\n• 2025년 7월 – 10월: 찬 틴 응이아 법률 회사에서 법률 인턴<br />\n• 2025년 11월 - 12월: 푸토성 쉘안호아구 인민위원회에서 법률 인턴<br />\n• 2025년 12월 ~ 현재: 법률 전문가 – Youth & Partners 로펀(YPLaw Firm)<br />\n법률 상담 활동 지원, 문서 작성, 법률 규정 연구 및 고객과의 업무에서 변호사 지원에 참여.",
+    "caoThiPhuongAnhExpertise": "• <strong>기업법:</strong> 일상적인 법률 문제, 법률 준수 및 내부 운영에서 기업을 위한 정기적인 법률 상담 및 법률 지원.<br /><br />\n• <strong>내부 규정:</strong> 기업 운영과 관련된 법률 문서, 계약 및 법률 문서 검토 및 분석.<br /><br />\n• <strong>기업 절차:</strong> 회사 및 고객의 요구 사항에 따라 상업 계약, 내부 문서, 법률 문서의 작성 및 검토 지원.<br /><br />\n• <strong>정기 상담:</strong> 새로운 법률 연구 및 업데이트에 참여하고 기업을 위한 실용적인 법률 솔루션 제공.",
+    "caoThiPhuongAnhEdu1": "법학 학사",
+    "caoThiPhuongAnhEdu1Org": "하노이 법과대학 - 경제법 전공",
+    "caoThiPhuongAnhEdu1Year": "2025년",
+    "caoThiPhuongAnhPostsInfo": "법률 전문가 까오 티 프엉 앙의 노동법, 기업법 및 투자의 모든 측면에 대한 심층 기사.",
+    "luuHuyenLinhBio": "<br />\n      <i>책임 분야:</i><br /><br />\n      • <strong>기업법:</strong> 일상적인 법률 문제, 규정 준수, 내부 운영에서 기업에 정기적인 법률 상담 및 법률 지원 제공.\n      <br /><br />\n      • <strong>내부 규정:</strong> 기업 운영과 관련된 법률 문서, 계약 및 법률 문서 검토 및 분석.\n      <br /><br />\n      • <strong>기업 절차:</strong> 회사 및 고객의 요구 사항에 따라 상업 계약, 내부 문서, 법률 문서의 작성 및 검토 지원.\n      <br /><br />\n      • <strong>정기 상담:</strong> 새로운 법률 연구 및 업데이트에 참여하고 기업을 위한 실용적인 법률 솔루션 제공.",
+    "luuHuyenLinhExp": "• 2022년 9월 – 2023년 5월: 칭팡 로펀에서 법률 인턴<br />\n• 2025년 9월 – 10월: 반바오 로펀에서 법률 인턴<br />\n• 2025년 11월 – 12월: CMC OpenAI 주식회사에서 법률 데이터 라벨링 직원<br />\n• 2025년 12월 ~ 현재: 법률 전문가 – Youth & Partners 로펀(YPLaw Firm)<br />\n법률 상담 활동 지원, 문서 작성, 법률 규정 연구 및 고객과의 업무에서 변호사 지원에 참여.",
+    "luuHuyenLinhExpertise": "• <strong>기업법:</strong> 일상적인 법률 문제, 법률 준수 및 내부 운영에서 기업을 위한 정기적인 법률 상담 및 법률 지원.<br /><br />\n• <strong>내부 규정:</strong> 기업 운영과 관련된 법률 문서, 계약 및 법률 문서 검토 및 분석.<br /><br />\n• <strong>기업 절차:</strong> 회사 및 고객의 요구 사항에 따라 상업 계약, 내부 문서, 법률 문서의 작성 및 검토 지원.<br /><br />\n• <strong>정기 상담:</strong> 새로운 법률 연구 및 업데이트에 참여하고 기업을 위한 실용적인 법률 솔루션 제공.",
+    "luuHuyenLinhEdu1": "법학 학사",
+    "luuHuyenLinhEdu1Org": "VNU 법과대학 - 베트남 국립대학교 하노이",
+    "luuHuyenLinhEdu1Year": "2024년",
+    "luuHuyenLinhEdu2": "졸업",
+    "luuHuyenLinhEdu2Org": "사법 아카데미",
+    "luuHuyenLinhEdu2Year": "2025년",
+    "luuHuyenLinhPostsInfo": "법률 전문가 루 후옌 린의 노동법, 기업법 및 가족법의 모든 측면에 대한 심층 기사."
   }
 }

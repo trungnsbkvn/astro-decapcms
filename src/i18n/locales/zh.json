@@ -445,5 +445,24 @@
     "generalSupportDesc": "联系我们以获得一般法律问题、网站导航、付款、访问已购买的法律文件或有关我们服务的问题的支持。",
     "consultDeptDesc": "与我们聊天以回答有关法律咨询服务、个性化咨询选项或与特定案例相关的请求的问题。",
     "techSupportDesc": "当您在访问文件、电子邮件通信问题或与使用我们服务相关的其他技术挑战时遇到困难，请联系我们。"
+  },
+  "lawyers": {
+    "caoThiPhuongAnhBio": "<br />\n      <i>负责领域：</i><br /><br />\n      • <strong>企业法：</strong> 为企业提供日常法律问题、合规和内部运营的定期法律咨询和法律支持。\n      <br /><br />\n      • <strong>内部规章：</strong> 审查和分析与企业运营相关的法律文件、合同和法律文件。\n      <br /><br />\n      • <strong>企业程序：</strong> 根据公司和客户的要求支持起草和审查商业合同、内部文件和法律文件。\n      <br /><br />\n      • <strong>定期咨询：</strong> 参与研究和更新新法律，为企业提供实用的法律解决方案。",
+    "caoThiPhuongAnhExp": "• 2024年12月 – 2025年6月：AIC律师事务所法律实习生<br />\n• 2025年7月 – 10月：Chan Tin Nghia律师事务所法律实习生<br />\n• 2025年11月 - 12月：富寿省宣和坊人民委员会法律实习生<br />\n• 2025年12月至今：法律专员 – Youth & Partners律师事务所（YPLaw Firm）<br />\n参与支持法律咨询活动、起草文件、研究法律法规以及协助律师与客户合作。",
+    "caoThiPhuongAnhExpertise": "• <strong>企业法：</strong> 为企业提供日常法律问题、法律合规和内部运营方面的定期法律咨询和法律支持。<br /><br />\n• <strong>内部规章：</strong> 审查和分析与企业运营相关的法律文件、合同和法律文件。<br /><br />\n• <strong>企业程序：</strong> 根据公司和客户的要求，支持起草和审查商业合同、内部文件和法律文件。<br /><br />\n• <strong>定期咨询：</strong> 参与研究和更新新法律，为企业提供实用的法律解决方案。",
+    "caoThiPhuongAnhEdu1": "法学学士",
+    "caoThiPhuongAnhEdu1Org": "河内法律大学 - 经济法专业",
+    "caoThiPhuongAnhEdu1Year": "2025年",
+    "caoThiPhuongAnhPostsInfo": "法律专员 Cao Thi Phuong Anh 关于劳动法、企业法和投资各个方面的深度文章。",
+    "luuHuyenLinhBio": "<br />\n      <i>负责领域：</i><br /><br />\n      • <strong>企业法：</strong> 为企业提供日常法律问题、合规和内部运营的定期法律咨询和法律支持。\n      <br /><br />\n      • <strong>内部规章：</strong> 审查和分析与企业运营相关的法律文件、合同和法律文件。\n      <br /><br />\n      • <strong>企业程序：</strong> 根据公司和客户的要求支持起草和审查商业合同、内部文件和法律文件。\n      <br /><br />\n      • <strong>定期咨询：</strong> 参与研究和更新新法律，为企业提供实用的法律解决方案。",
+    "luuHuyenLinhExp": "• 2022年9月 – 2023年5月：Chinh Phap律师事务所法律实习生<br />\n• 2025年9月 – 10月：Van Bao律师事务所法律实习生<br />\n• 2025年11月 – 12月：CMC OpenAI股份公司法律数据标注员<br />\n• 2025年12月至今：法律专员 – Youth & Partners律师事务所（YPLaw Firm）<br />\n参与支持法律咨询活动、起草文件、研究法律法规以及协助律师与客户合作。",
+    "luuHuyenLinhExpertise": "• <strong>企业法：</strong> 为企业提供日常法律问题、法律合规和内部运营方面的定期法律咨询和法律支持。<br /><br />\n• <strong>内部规章：</strong> 审查和分析与企业运营相关的法律文件、合同和法律文件。<br /><br />\n• <strong>企业程序：</strong> 根据公司和客户的要求，支持起草和审查商业合同、内部文件和法律文件。<br /><br />\n• <strong>定期咨询：</strong> 参与研究和更新新法律，为企业提供实用的法律解决方案。",
+    "luuHuyenLinhEdu1": "法学学士",
+    "luuHuyenLinhEdu1Org": "VNU法律大学 - 越南国立河内大学",
+    "luuHuyenLinhEdu1Year": "2024年",
+    "luuHuyenLinhEdu2": "毕业",
+    "luuHuyenLinhEdu2Org": "司法学院",
+    "luuHuyenLinhEdu2Year": "2025年",
+    "luuHuyenLinhPostsInfo": "法律专员 Luu Huyen Linh 关于劳动法、企业法和家庭法各个方面的深度文章。"
   }
 }
