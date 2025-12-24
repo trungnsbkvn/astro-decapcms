@@ -1,0 +1,644 @@
+---
+/**
+ * Dynamic Attorney Profile Page
+ * Beautiful design inspired by AttorneyCard component
+ * Supports 5 languages: vi, en, zh, ja, ko
+ */
+export const prerender = true;
+
+import type { GetStaticPaths } from 'astro';
+import Layout from '~/layouts/PageLayout.astro';
+import AuthorRelatedPosts from '~/components/blog/AuthorRelatedPosts.astro';
+import Image from '~/components/common/Image.astro';
+import { Icon } from 'astro-icon/components';
+import { getPermalink } from '~/utils/blog-permalinks';
+import { findImage } from '~/utils/images';
+import {
+  getAllAttorneys,
+  getAttorneySlug,
+  extractNamePrefix,
+  getPositionI18nKey,
+  type Attorney,
+} from '~/utils/attorneys';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const attorneys = await getAllAttorneys();
+  
+  return attorneys.map((attorney) => ({
+    params: { slug: getAttorneySlug(attorney) },
+    props: { attorney },
+  }));
+};
+
+interface Props {
+  attorney: Attorney;
+}
+
+const { attorney } = Astro.props;
+const { data } = attorney;
+
+// Extract name parts for i18n
+const nameParts = extractNamePrefix(data.name);
+const positionI18nKey = data.position ? getPositionI18nKey(data.position) : undefined;
+
+// Metadata
+const metadata = {
+  title: data.name,
+  description: data.shortBio || data.bio?.substring(0, 160) || `Thông tin về ${data.name} tại Youth & Partners Law Firm.`,
+};
+
+// Author name for related posts
+const author = data.name;
+const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'legal'];
+
+// Resolve image
+const resolvedImage = data.image ? await findImage(data.image) : null;
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section with Gradient Background - notranslate because we have 5-lang data in MD -->
+  <section class="relative overflow-hidden notranslate" translate="no">
+    <!-- Background Gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-10 left-20 w-32 h-32 border border-white/30 rounded-full"></div>
+        <div class="absolute top-40 right-40 w-20 h-20 border border-white/20 rounded-full"></div>
+        <div class="absolute bottom-20 left-1/4 w-24 h-24 border border-white/25 rounded-full"></div>
+        <div class="absolute bottom-40 right-1/3 w-16 h-16 bg-white/10 rounded-full"></div>
+        <div class="absolute top-1/2 left-10 w-12 h-12 border border-white/15 rounded-full"></div>
+      </div>
+    </div>
+    
+    <div class="relative max-w-6xl mx-auto px-4 py-16 md:py-24">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left: Profile Image -->
+        <div class="flex justify-center md:justify-end order-1 md:order-1">
+          <div class="relative">
+            {resolvedImage ? (
+              <div class="relative">
+                <div class="absolute -inset-4 bg-white/20 rounded-3xl blur-xl"></div>
+                <Image
+                  src={resolvedImage}
+                  alt={data.name}
+                  width={350}
+                  height={350}
+                  widths={[280, 350, 500]}
+                  aspectRatio="1:1"
+                  layout="constrained"
+                  format="webp"
+                  class="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl object-cover border-4 border-white shadow-2xl"
+                  loading="eager"
+                />
+                {data.featured && (
+                  <div class="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+                    <Icon name="tabler:star-filled" class="w-4 h-4" />
+                    <span data-i18n="common.featured">Nổi bật</span>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div class="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center border-4 border-white/50 shadow-2xl">
+                <span class="text-white text-7xl font-bold">{data.name.charAt(0)}</span>
+              </div>
+            )}
+          </div>
+        </div>
+        
+        <!-- Right: Info -->
+        <div class="text-center md:text-left order-2 md:order-2">
+          <p class="text-blue-200 text-sm uppercase tracking-widest mb-3" data-i18n="lawyerProfile.authorInfo">
+            Thông tin tác giả
+          </p>
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 notranslate" translate="no">
+            {nameParts.prefix ? (
+              <>
+                <span data-i18n={nameParts.i18nKey}>{nameParts.prefix}</span>{' '}
+                {nameParts.baseName}
+              </>
+            ) : data.name}
+          </h1>
+          {data.position && (
+            <p class="text-xl md:text-2xl text-blue-200 font-medium mb-6" data-i18n={positionI18nKey}>
+              {data.position}
+            </p>
+          )}
+          
+          <!-- Quick Stats -->
+          <div class="flex flex-wrap justify-center md:justify-start gap-6 mb-8">
+            {data.yearsExperience && (
+              <div class="text-center">
+                <div class="text-3xl font-bold text-white">{data.yearsExperience}+</div>
+                <div class="text-blue-200 text-sm" data-i18n="lawyerProfile.years">Năm kinh nghiệm</div>
+              </div>
+            )}
+            {data.barNumber && (
+              <div class="text-center">
+                <div class="text-lg font-bold text-white notranslate" translate="no">{data.barNumber}</div>
+                <div class="text-blue-200 text-sm" data-i18n="lawyerProfile.barNumber">Số thẻ luật sư</div>
+              </div>
+            )}
+          </div>
+          
+          <!-- Contact Buttons -->
+          <div class="flex flex-wrap justify-center md:justify-start gap-3">
+            {data.phone && (
+              <a
+                href={`tel:${data.phone.replace(/\s/g, '')}`}
+                class="inline-flex items-center gap-2 bg-white text-blue-700 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              >
+                <Icon name="tabler:phone-call" class="w-5 h-5" />
+                <span class="notranslate" translate="no">{data.phone}</span>
+              </a>
+            )}
+            {data.email && (
+              <a
+                href={`mailto:${data.email}`}
+                class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white border border-white/30 px-6 py-3 rounded-full font-semibold hover:bg-white/30 transition-all"
+              >
+                <Icon name="tabler:mail" class="w-5 h-5" />
+                <span data-i18n="common.email">Email</span>
+              </a>
+            )}
+            <a
+              href={getPermalink('/lien-he#form')}
+              class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:from-yellow-500 hover:to-orange-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            >
+              <Icon name="tabler:message-circle" class="w-5 h-5" />
+              <span data-i18n="lawyerProfile.contactAuthor">Liên hệ tư vấn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Wave Divider -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 120" class="w-full h-auto fill-white dark:fill-slate-900">
+        <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Main Content - notranslate because we have 5-lang data in MD -->
+  <section class="py-16 bg-white dark:bg-slate-900 notranslate" translate="no">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid lg:grid-cols-3 gap-12">
+        <!-- Left Column: Bio -->
+        <div class="lg:col-span-2 space-y-10">
+          <!-- Bio Section -->
+          <div class="bg-gradient-to-br from-gray-50 to-blue-50 dark:from-slate-800 dark:to-slate-800 rounded-2xl p-8 shadow-lg">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+                <Icon name="tabler:user" class="w-6 h-6 text-white" />
+              </div>
+              <h2 class="text-2xl font-bold text-gray-900 dark:text-white" data-i18n="lawyerProfile.about">
+                Giới thiệu
+              </h2>
+            </div>
+            
+            <div class="prose prose-lg dark:prose-invert max-w-none multilang-content">
+              <!-- Vietnamese (default) -->
+              <div data-lang="vi" class="text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+                {data.bio && data.bio.split('\n\n').map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </div>
+              
+              <!-- English -->
+              {data.bio_en && (
+                <div data-lang="en" class="hidden text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+                  {data.bio_en.split('\n\n').map((paragraph) => (
+                    <p>{paragraph}</p>
+                  ))}
+                </div>
+              )}
+              
+              <!-- Chinese -->
+              {data.bio_zh && (
+                <div data-lang="zh" class="hidden text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+                  {data.bio_zh.split('\n\n').map((paragraph) => (
+                    <p>{paragraph}</p>
+                  ))}
+                </div>
+              )}
+              
+              <!-- Japanese -->
+              {data.bio_ja && (
+                <div data-lang="ja" class="hidden text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+                  {data.bio_ja.split('\n\n').map((paragraph) => (
+                    <p>{paragraph}</p>
+                  ))}
+                </div>
+              )}
+              
+              <!-- Korean -->
+              {data.bio_ko && (
+                <div data-lang="ko" class="hidden text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+                  {data.bio_ko.split('\n\n').map((paragraph) => (
+                    <p>{paragraph}</p>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          <!-- Education Section -->
+          {data.education && data.education.length > 0 && (
+            <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+                  <Icon name="tabler:school" class="w-6 h-6 text-white" />
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white" data-i18n="lawyerProfile.education">
+                  Học vấn
+                </h2>
+              </div>
+              
+              <div class="space-y-6 multilang-content">
+                {data.education.map((edu, index) => (
+                  <div class="relative pl-8 pb-6 border-l-2 border-blue-200 dark:border-blue-800 last:pb-0">
+                    <div class="absolute -left-3 top-0 w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+                      <span class="text-white text-xs font-bold">{index + 1}</span>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-slate-700 rounded-xl p-4">
+                      <!-- Vietnamese (default) -->
+                      <div data-lang="vi">
+                        <h3 class="font-bold text-gray-900 dark:text-white notranslate" translate="no">{edu.degree}</h3>
+                        <p class="text-blue-600 dark:text-blue-400 notranslate" translate="no">{edu.institution}</p>
+                      </div>
+                      <!-- English -->
+                      {edu.degree_en && (
+                        <div data-lang="en" class="hidden">
+                          <h3 class="font-bold text-gray-900 dark:text-white">{edu.degree_en}</h3>
+                          <p class="text-blue-600 dark:text-blue-400">{edu.institution_en || edu.institution}</p>
+                        </div>
+                      )}
+                      <!-- Chinese -->
+                      {edu.degree_zh && (
+                        <div data-lang="zh" class="hidden">
+                          <h3 class="font-bold text-gray-900 dark:text-white">{edu.degree_zh}</h3>
+                          <p class="text-blue-600 dark:text-blue-400">{edu.institution_zh || edu.institution}</p>
+                        </div>
+                      )}
+                      <!-- Japanese -->
+                      {edu.degree_ja && (
+                        <div data-lang="ja" class="hidden">
+                          <h3 class="font-bold text-gray-900 dark:text-white">{edu.degree_ja}</h3>
+                          <p class="text-blue-600 dark:text-blue-400">{edu.institution_ja || edu.institution}</p>
+                        </div>
+                      )}
+                      <!-- Korean -->
+                      {edu.degree_ko && (
+                        <div data-lang="ko" class="hidden">
+                          <h3 class="font-bold text-gray-900 dark:text-white">{edu.degree_ko}</h3>
+                          <p class="text-blue-600 dark:text-blue-400">{edu.institution_ko || edu.institution}</p>
+                        </div>
+                      )}
+                      {edu.year && (
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                          <Icon name="tabler:calendar-event" class="w-4 h-4 inline mr-1" />
+                          {edu.year}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <!-- Right Column: Sidebar -->
+        <div class="space-y-6 multilang-content">
+          <!-- Professional Info Card -->
+          <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 sticky top-24">
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+              <Icon name="tabler:briefcase" class="w-5 h-5 text-blue-600" />
+              <span data-i18n="lawyerProfile.professionalInfo">Thông tin chuyên môn</span>
+            </h3>
+            
+            <div class="space-y-4">
+              {data.barNumber && (
+                <div class="flex items-start gap-3">
+                  <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                    <Icon name="tabler:id-badge-2" class="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="lawyerProfile.barNumber">Số thẻ luật sư</p>
+                    <p class="font-semibold text-gray-900 dark:text-white notranslate" translate="no">{data.barNumber}</p>
+                  </div>
+                </div>
+              )}
+              
+              {data.barAssociation && (
+                <div class="flex items-start gap-3">
+                  <div class="w-10 h-10 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center flex-shrink-0">
+                    <Icon name="tabler:building" class="w-5 h-5 text-indigo-600" />
+                  </div>
+                  <div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="lawyerProfile.barAssociation">Đoàn luật sư</p>
+                    <!-- Vietnamese (default) -->
+                    <p data-lang="vi" class="font-semibold text-gray-900 dark:text-white">{data.barAssociation}</p>
+                    <!-- English -->
+                    {data.barAssociation_en && <p data-lang="en" class="hidden font-semibold text-gray-900 dark:text-white">{data.barAssociation_en}</p>}
+                    <!-- Chinese -->
+                    {data.barAssociation_zh && <p data-lang="zh" class="hidden font-semibold text-gray-900 dark:text-white">{data.barAssociation_zh}</p>}
+                    <!-- Japanese -->
+                    {data.barAssociation_ja && <p data-lang="ja" class="hidden font-semibold text-gray-900 dark:text-white">{data.barAssociation_ja}</p>}
+                    <!-- Korean -->
+                    {data.barAssociation_ko && <p data-lang="ko" class="hidden font-semibold text-gray-900 dark:text-white">{data.barAssociation_ko}</p>}
+                  </div>
+                </div>
+              )}
+              
+              {data.yearsExperience && (
+                <div class="flex items-start gap-3">
+                  <div class="w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
+                    <Icon name="tabler:clock" class="w-5 h-5 text-green-600" />
+                  </div>
+                  <div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="lawyerProfile.experience">Kinh nghiệm</p>
+                    <p class="font-semibold text-gray-900 dark:text-white">{data.yearsExperience}+ <span data-i18n="lawyerProfile.years">năm</span></p>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <!-- Specializations -->
+            {data.specializations && data.specializations.length > 0 && (
+              <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                <h4 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3" data-i18n="lawyerProfile.specializations">
+                  Chuyên môn
+                </h4>
+                <!-- Vietnamese (default) -->
+                <div data-lang="vi" class="flex flex-wrap gap-2">
+                  {data.specializations.map((spec) => (
+                    <span class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium px-3 py-1.5 rounded-full border border-blue-200 dark:border-blue-700 notranslate" translate="no">
+                      {spec}
+                    </span>
+                  ))}
+                </div>
+                <!-- English -->
+                {data.specializations_en && (
+                  <div data-lang="en" class="hidden flex flex-wrap gap-2">
+                    {data.specializations_en.map((spec) => (
+                      <span class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium px-3 py-1.5 rounded-full border border-blue-200 dark:border-blue-700">
+                        {spec}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <!-- Chinese -->
+                {data.specializations_zh && (
+                  <div data-lang="zh" class="hidden flex flex-wrap gap-2">
+                    {data.specializations_zh.map((spec) => (
+                      <span class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium px-3 py-1.5 rounded-full border border-blue-200 dark:border-blue-700">
+                        {spec}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <!-- Japanese -->
+                {data.specializations_ja && (
+                  <div data-lang="ja" class="hidden flex flex-wrap gap-2">
+                    {data.specializations_ja.map((spec) => (
+                      <span class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium px-3 py-1.5 rounded-full border border-blue-200 dark:border-blue-700">
+                        {spec}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <!-- Korean -->
+                {data.specializations_ko && (
+                  <div data-lang="ko" class="hidden flex flex-wrap gap-2">
+                    {data.specializations_ko.map((spec) => (
+                      <span class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium px-3 py-1.5 rounded-full border border-blue-200 dark:border-blue-700">
+                        {spec}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            <!-- Credentials -->
+            {data.credentials && data.credentials.length > 0 && (
+              <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                <h4 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3" data-i18n="lawyerProfile.credentials">
+                  Chứng chỉ
+                </h4>
+                <!-- Vietnamese (default) -->
+                <div data-lang="vi" class="space-y-2">
+                  {data.credentials.map((cred) => (
+                    <div class="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                      <Icon name="tabler:rosette" class="w-4 h-4 text-amber-500 flex-shrink-0" />
+                      <span class="notranslate" translate="no">{cred}</span>
+                    </div>
+                  ))}
+                </div>
+                <!-- English -->
+                {data.credentials_en && (
+                  <div data-lang="en" class="hidden space-y-2">
+                    {data.credentials_en.map((cred) => (
+                      <div class="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                        <Icon name="tabler:rosette" class="w-4 h-4 text-amber-500 flex-shrink-0" />
+                        <span>{cred}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                <!-- Chinese -->
+                {data.credentials_zh && (
+                  <div data-lang="zh" class="hidden space-y-2">
+                    {data.credentials_zh.map((cred) => (
+                      <div class="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                        <Icon name="tabler:rosette" class="w-4 h-4 text-amber-500 flex-shrink-0" />
+                        <span>{cred}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                <!-- Japanese -->
+                {data.credentials_ja && (
+                  <div data-lang="ja" class="hidden space-y-2">
+                    {data.credentials_ja.map((cred) => (
+                      <div class="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                        <Icon name="tabler:rosette" class="w-4 h-4 text-amber-500 flex-shrink-0" />
+                        <span>{cred}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                <!-- Korean -->
+                {data.credentials_ko && (
+                  <div data-lang="ko" class="hidden space-y-2">
+                    {data.credentials_ko.map((cred) => (
+                      <div class="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                        <Icon name="tabler:rosette" class="w-4 h-4 text-amber-500 flex-shrink-0" />
+                        <span>{cred}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            <!-- Languages -->
+            {data.languages && data.languages.length > 0 && (
+              <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                <h4 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3" data-i18n="lawyerProfile.languages">
+                  Ngôn ngữ
+                </h4>
+                <!-- Vietnamese (default) -->
+                <div data-lang="vi" class="flex flex-wrap gap-2">
+                  {data.languages.map((lang) => (
+                    <span class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 text-green-700 dark:text-green-300 text-sm font-medium px-3 py-1.5 rounded-full border border-green-200 dark:border-green-700">
+                      <Icon name="tabler:language" class="w-4 h-4 inline mr-1" />
+                      {lang}
+                    </span>
+                  ))}
+                </div>
+                <!-- English -->
+                {data.languages_en && (
+                  <div data-lang="en" class="hidden flex flex-wrap gap-2">
+                    {data.languages_en.map((lang) => (
+                      <span class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 text-green-700 dark:text-green-300 text-sm font-medium px-3 py-1.5 rounded-full border border-green-200 dark:border-green-700">
+                        <Icon name="tabler:language" class="w-4 h-4 inline mr-1" />
+                        {lang}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <!-- Chinese -->
+                {data.languages_zh && (
+                  <div data-lang="zh" class="hidden flex flex-wrap gap-2">
+                    {data.languages_zh.map((lang) => (
+                      <span class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 text-green-700 dark:text-green-300 text-sm font-medium px-3 py-1.5 rounded-full border border-green-200 dark:border-green-700">
+                        <Icon name="tabler:language" class="w-4 h-4 inline mr-1" />
+                        {lang}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <!-- Japanese -->
+                {data.languages_ja && (
+                  <div data-lang="ja" class="hidden flex flex-wrap gap-2">
+                    {data.languages_ja.map((lang) => (
+                      <span class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 text-green-700 dark:text-green-300 text-sm font-medium px-3 py-1.5 rounded-full border border-green-200 dark:border-green-700">
+                        <Icon name="tabler:language" class="w-4 h-4 inline mr-1" />
+                        {lang}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <!-- Korean -->
+                {data.languages_ko && (
+                  <div data-lang="ko" class="hidden flex flex-wrap gap-2">
+                    {data.languages_ko.map((lang) => (
+                      <span class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 text-green-700 dark:text-green-300 text-sm font-medium px-3 py-1.5 rounded-full border border-green-200 dark:border-green-700">
+                        <Icon name="tabler:language" class="w-4 h-4 inline mr-1" />
+                        {lang}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            <!-- Social Links -->
+            {data.socialLinks && (data.socialLinks.facebook || data.socialLinks.zalo || data.socialLinks.linkedin) && (
+              <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                <h4 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3" data-i18n="lawyerProfile.connect">
+                  Kết nối
+                </h4>
+                <div class="flex gap-3">
+                  {data.socialLinks.facebook && (
+                    <a href={data.socialLinks.facebook} target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-blue-600 hover:bg-blue-700 flex items-center justify-center text-white transition-colors">
+                      <Icon name="tabler:brand-facebook" class="w-5 h-5" />
+                    </a>
+                  )}
+                  {data.socialLinks.zalo && (
+                    <a href={`https://zalo.me/${data.socialLinks.zalo}`} target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-blue-500 hover:bg-blue-600 flex items-center justify-center text-white transition-colors">
+                      <span class="text-xs font-bold">Zalo</span>
+                    </a>
+                  )}
+                  {data.socialLinks.linkedin && (
+                    <a href={data.socialLinks.linkedin} target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-blue-700 hover:bg-blue-800 flex items-center justify-center text-white transition-colors">
+                      <Icon name="tabler:brand-linkedin" class="w-5 h-5" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
+
+            <!-- CTA Button -->
+            <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <a
+                href={getPermalink('/lien-he#form')}
+                class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              >
+                <Icon name="tabler:message-circle" class="w-5 h-5" />
+                <span data-i18n="lawyerProfile.freeConsultation">Tư vấn miễn phí</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Posts Section -->
+  <AuthorRelatedPosts
+    id="blog"
+    title="Bài viết của tác giả"
+    i18nTitle="lawyerProfile.authorPosts"
+    information={`Các bài viết chuyên sâu của ${data.name} về mọi khía cạnh pháp lý.`}
+    author={author}
+    types={types}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-gradient-to-b from-gray-50 to-white dark:from-slate-800 dark:to-slate-900"></div>
+    </Fragment>
+  </AuthorRelatedPosts>
+</Layout>
+
+<script>
+  /**
+   * Language switcher for attorney profile multilingual content
+   * Content is pre-translated in MD files - NO Google Translate needed
+   * Just shows/hides the appropriate language version based on user preference
+   */
+  const LANG_KEY = 'site-language';
+  
+  // Map LanguageSelector codes to content data-lang values
+  const langMap: Record<string, string> = {
+    'zh-CN': 'zh',  // LanguageSelector uses zh-CN, content uses zh
+    'en': 'en',
+    'ja': 'ja',
+    'ko': 'ko',
+    'vi': 'vi',
+  };
+  
+  function showLanguageContent(lang: string) {
+    const contentLang = langMap[lang] || lang;
+    
+    // Only target multilingual content elements (not language selector buttons)
+    document.querySelectorAll('.multilang-content [data-lang]').forEach((el) => {
+      const elLang = el.getAttribute('data-lang');
+      if (elLang === contentLang) {
+        el.classList.remove('hidden');
+      } else {
+        el.classList.add('hidden');
+      }
+    });
+  }
+  
+  // Show correct language on page load
+  const savedLang = localStorage.getItem(LANG_KEY) || 'vi';
+  showLanguageContent(savedLang);
+  
+  // Handle Astro page transitions
+  document.addEventListener('astro:page-load', () => {
+    const lang = localStorage.getItem(LANG_KEY) || 'vi';
+    showLanguageContent(lang);
+  });

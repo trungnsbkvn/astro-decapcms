@@ -44,14 +44,15 @@ export default defineConfig({
         // This significantly reduces build time and bundle size
         tabler: [
           'award', 'book', 'brand-facebook', 'brand-linkedin', 'brand-meta',
-          'brand-whatsapp', 'brand-x', 'brand-youtube', 'calendar-month', 'chart-arrows',
-          'check', 'chevron-down', 'chevron-left', 'chevron-right', 'clock', 'clock-24',
-          'download', 'globe', 'headset', 'heart', 'info-square', 'language', 'mail',
-          'mailbox', 'map-pin', 'message-circle', 'message-star', 'phone', 'phone-call',
-          'point-filled', 'report-search', 'rss', 'school', 'shield-checkered', 'sort-a-z',
-          'square-number-1', 'square-number-2', 'square-number-3', 'square-number-4',
-          'star', 'step-out', 'sun', 'template', 'trophy', 'user', 'user-check',
-          'world', 'x', 'moon',
+          'brand-whatsapp', 'brand-x', 'brand-youtube', 'briefcase', 'building',
+          'calendar-event', 'calendar-month', 'chart-arrows', 'check', 'chevron-down',
+          'chevron-left', 'chevron-right', 'clock', 'clock-24', 'download', 'globe',
+          'headset', 'heart', 'id-badge-2', 'info-square', 'language', 'mail', 'mailbox',
+          'map-pin', 'message-circle', 'message-star', 'moon', 'phone', 'phone-call',
+          'point-filled', 'report-search', 'rosette', 'rss', 'school', 'shield-checkered',
+          'sort-a-z', 'square-number-1', 'square-number-2', 'square-number-3',
+          'square-number-4', 'star', 'star-filled', 'step-out', 'sun', 'template',
+          'trophy', 'user', 'user-check', 'world', 'x',
         ],
         'flat-color-icons': [
           'template',

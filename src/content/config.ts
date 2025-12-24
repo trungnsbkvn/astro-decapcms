@@ -159,6 +159,96 @@ const evaluationCollection = defineCollection({
   }),
 });
 
+// Attorney Collection - Multilingual lawyer profiles
+const attorneyCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    // Name fields (multilingual)
+    name: z.string(),
+    name_en: z.string().optional(),
+    name_zh: z.string().optional(),
+    name_ja: z.string().optional(),
+    name_ko: z.string().optional(),
+    
+    // Position and credentials
+    position: z.string().optional(),
+    credentials: z.array(z.string()).optional(),
+    credentials_en: z.array(z.string()).optional(),
+    credentials_zh: z.array(z.string()).optional(),
+    credentials_ja: z.array(z.string()).optional(),
+    credentials_ko: z.array(z.string()).optional(),
+    
+    // Bio fields (multilingual)
+    bio: z.string().optional(),
+    bio_en: z.string().optional(),
+    bio_zh: z.string().optional(),
+    bio_ja: z.string().optional(),
+    bio_ko: z.string().optional(),
+    shortBio: z.string().optional(),
+    shortBio_en: z.string().optional(),
+    shortBio_zh: z.string().optional(),
+    shortBio_ja: z.string().optional(),
+    shortBio_ko: z.string().optional(),
+    
+    // Contact and profile
+    image: z.string().optional(),
+    email: z.string().optional(),
+    phone: z.string().optional(),
+    
+    // Professional details
+    practiceAreas: z.array(z.string()).optional(),
+    locations: z.array(z.string()).optional(),
+    barNumber: z.string().optional(),
+    barAssociation: z.string().optional(),
+    barAssociation_en: z.string().optional(),
+    barAssociation_zh: z.string().optional(),
+    barAssociation_ja: z.string().optional(),
+    barAssociation_ko: z.string().optional(),
+    yearsExperience: z.number().optional(),
+    
+    // Education (multilingual)
+    education: z.array(z.object({
+      degree: z.string(),
+      degree_en: z.string().optional(),
+      degree_zh: z.string().optional(),
+      degree_ja: z.string().optional(),
+      degree_ko: z.string().optional(),
+      institution: z.string(),
+      institution_en: z.string().optional(),
+      institution_zh: z.string().optional(),
+      institution_ja: z.string().optional(),
+      institution_ko: z.string().optional(),
+      year: z.number().optional(),
+    })).optional(),
+    
+    // Social links
+    socialLinks: z.object({
+      facebook: z.string().optional(),
+      zalo: z.string().optional(),
+      linkedin: z.string().optional(),
+    }).optional(),
+    
+    // Specializations (multilingual)
+    specializations: z.array(z.string()).optional(),
+    specializations_en: z.array(z.string()).optional(),
+    specializations_zh: z.array(z.string()).optional(),
+    specializations_ja: z.array(z.string()).optional(),
+    specializations_ko: z.array(z.string()).optional(),
+    
+    // Languages spoken (multilingual)
+    languages: z.array(z.string()).optional(),
+    languages_en: z.array(z.string()).optional(),
+    languages_zh: z.array(z.string()).optional(),
+    languages_ja: z.array(z.string()).optional(),
+    languages_ko: z.array(z.string()).optional(),
+    
+    // Display options
+    featured: z.boolean().optional(),
+    order: z.number().optional(),
+    draft: z.boolean().optional(),
+  }),
+});
+
 export const collections = {
   post: postCollection,
   legal: legalCollection,
@@ -166,4 +256,5 @@ export const collections = {
   labor: laborCollection,
   foreigner: foreignerCollection,
   evaluation: evaluationCollection,
+  attorney: attorneyCollection,
 };

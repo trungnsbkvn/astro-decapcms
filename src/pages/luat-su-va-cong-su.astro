@@ -2,17 +2,23 @@
 export const prerender = true;
 
 import Layout from '~/layouts/PageLayout.astro';
-
 import Content from '~/components/widgets/Content.astro';
 import Partners from '~/components/widgets/Partners.astro';
-
-import { getPermalink } from '~/utils/blog-permalinks';
+import { getAllAttorneys, transformAttorneysToTeams } from '~/utils/attorneys';
 
 const metadata = {
   title: 'Luật sư và cộng sự',
   description:
     'Đội ngũ luật sư của Youth & Partners bao gồm các chuyên gia có nhiều năm kinh nghiệm trong nhiều lĩnh vực khác nhau như tư vấn pháp lý thường xuyên cho doanh nghiệp, giải quyết tranh chấp lao động, luật sư riêng tiếng Nhật, Anh, Trung, Hàn, và dịch vụ audit, đánh giá và thẩm định pháp lý cho doanh nghiệp.',
 };
+
+// Load all attorneys from content collection dynamically
+const attorneys = await getAllAttorneys();
+const teams = transformAttorneysToTeams(attorneys);
+
+// Get the first featured attorney for the hero image
+const featuredAttorney = attorneys.find(a => a.data.featured);
+const heroImage = featuredAttorney?.data.image || '~/assets/images/team/Luật sư Nguyễn Văn Thành.jpg';
 ---
 
 <Layout metadata={metadata}>
@@ -46,7 +52,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: '~/assets/images/team/Luật sư Nguyễn Văn Thành.jpg',
+      src: heroImage,
       alt: 'Colorful Image',
       loading: 'eager',
     }}
@@ -78,309 +84,6 @@ const metadata = {
     subtitle="Khách hàng hài lòng với dịch vụ pháp lý tại Youth & Partners, đánh giá cao sự tận tâm và chuyên nghiệp của đội ngũ luật sư trong việc giải quyết các vấn đề pháp lý phức tạp. Họ tin tưởng và sẵn lòng tiếp tục sử dụng dịch vụ của chúng tôi trong tương lai."
     i18nTitle="team.lawyersAndAssociates"
     i18nSubtitle="team.lawyersSubtitle"
-    teams={[
-      {
-        name: 'Nguyễn Văn Thành',
-        position: 'Luật sư điều hành',
-        i18nPosition: 'team.managingLawyer',
-        link: getPermalink('/tac-gia/luat-su-nguyen-van-thanh'),
-        image: {
-          src: '~/assets/images/team/Luật sư Nguyễn Văn Thành.jpg',
-          alt: 'Luật sư Nguyễn Văn Thành',
-        },
-      },
-      {
-        name: 'Đoàn Xuân Trường',
-        title: 'TS',
-        i18nMemberTitle: 'lawyerProfile.doctor',
-        position: 'Luật sư thành viên',
-        i18nPosition: 'team.partnerLawyer',
-        link: getPermalink('/tac-gia/tien-si-doan-xuan-truong'),
-        image: {
-          src: '~/assets/images/team/Tiến sĩ Đoàn Xuân Trường.jpg',
-          alt: 'Tiến sĩ Đoàn Xuân Trường',
-        },
-      },
-      {
-        name: 'Nguyễn Thị Hướng',
-        position: 'Luật sư thành viên',
-        i18nPosition: 'team.partnerLawyer',
-        link: getPermalink('/tac-gia/luat-su-nguyen-thi-huong'),
-        image: {
-          src: '~/assets/images/team/Luật sư Nguyễn Thị Hướng.jpg',
-          alt: 'Luật sư Nguyễn Thị Hướng',
-        },
-      },
-      {
-        name: 'Phạm Thị Huyền Quyên',
-        position: 'Luật sư thành viên',
-        i18nPosition: 'team.partnerLawyer',
-        link: getPermalink('/tac-gia/luat-su-pham-thi-huyen-quyen'),
-        image: {
-          src: '~/assets/images/team/Luật sư Phạm Thị Huyền Quyên.jpg',
-          alt: 'Luật sư Phạm Thị Huyền Quyên',
-        },
-      },
-      {
-        name: 'Văn Thị Thanh Hoa',
-        position: 'Luật sư thành viên',
-        i18nPosition: 'team.partnerLawyer',
-        link: getPermalink('/tac-gia/luat-su-van-thi-thanh-hoa'),
-        image: {
-          src: '~/assets/images/team/Luật sư Văn Thị Thanh Hoa.jpg',
-          alt: 'Luật sư Văn Thị Thanh Hoa',
-        },
-      },
-      {
-        name: 'Nguyễn Thu Nga',
-        position: 'Luật gia',
-        i18nPosition: 'team.partnerLawyer',
-        link: getPermalink('/tac-gia/luat-su-nguyen-thu-nga'),
-        image: {
-          src: '~/assets/images/team/Luật sư Nguyễn Thu Nga.jpg',
-          alt: 'Luật gia Nguyễn Thu Nga',
-        },
-      },
-      {
-        name: 'Nguyễn Thị Thơm',
-        position: 'Luật sư thành viên',
-        i18nPosition: 'team.partnerLawyer',
-        link: getPermalink('/tac-gia/luat-su-nguyen-thi-thom'),
-        image: {
-          src: '~/assets/images/team/Luật sư Nguyễn Thị Thơm.jpg',
-          alt: 'Luật sư Nguyễn Thị Thơm',
-        },
-      },  
-      {
-        name: 'Trần Chung Kiên',
-        position: 'Luật sư thành viên',
-        i18nPosition: 'team.partnerLawyer',
-        link: getPermalink('/tac-gia/luat-su-tran-chung-kien'),
-        image: {
-          src: '~/assets/images/team/Luật sư Trần Chung Kiên.jpg',
-          alt: 'Luật sư Trần Chung Kiên',
-        },
-      },
-      {
-        name: 'Nguyễn Hoàng Anh',
-        position: 'Luật sư thành viên',
-        i18nPosition: 'team.partnerLawyer',
-        link: getPermalink('/tac-gia/luat-su-nguyen-hoang-anh'),
-        image: {
-          src: '~/assets/images/team/Luật sư Nguyễn Hoàng Anh.jpg',
-          alt: 'Luật sư Nguyễn Hoàng Anh',
-        },
-      },
-      {
-        name: 'Nguyễn Hoàng Ngọc Lan',
-        position: 'Luật sư thành viên',
-        i18nPosition: 'team.partnerLawyer',
-        link: getPermalink('/tac-gia/luat-su-nguyen-hoang-ngoc-lan'),
-        image: {
-          src: '~/assets/images/team/Luật sư Nguyễn Hoàng Ngọc Lan.jpg',
-          alt: 'Luật sư Nguyễn Hoàng Ngọc Lan',
-        },
-      },
-      {
-        name: 'Mang Diệu Hiền',
-        position: 'Luật sư thành viên',
-        i18nPosition: 'team.partnerLawyer',
-        link: getPermalink('/tac-gia/luat-su-mang-dieu-hien'),
-        image: {
-          src: '~/assets/images/team/Luật sư Mang Diệu Hiền.jpg',
-          alt: 'Luật sư Mang Diệu Hiền',
-        },
-      },
-      {
-        name: 'Nguyễn Minh Anh',
-        position: 'Luật sư thành viên',
-        i18nPosition: 'team.partnerLawyer',
-        link: getPermalink('/tac-gia/luat-su-nguyen-minh-anh'),
-        image: {
-          src: '~/assets/images/team/Luật sư Nguyễn Minh Anh.jpg',
-          alt: 'Luật sư Nguyễn Minh Anh',
-        },
-      },
-      {
-        name: 'Đỗ Thị Lương',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/do-thi-luong'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Đỗ Thị Lương.jpg',
-          alt: 'Chuyên viên pháp lý Đỗ Thị Lương',
-        },
-      },
-      {
-        name: 'Nguyễn Thị Thu Trang',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/nguyen-thi-thu-trang'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Nguyễn Thị Thu Trang.jpg',
-          alt: 'Chuyên viên pháp lý Nguyễn Thị Thu Trang',
-        },
-      },
-      {
-        name: 'Nguyễn Thị Thùy Linh',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/nguyen-thi-thuy-linh'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Nguyễn Thị Thùy Linh.jpg',
-          alt: 'Chuyên viên pháp lý Nguyễn Thị Thùy Linh',
-        },
-      },
-      {
-        name: 'Nguyễn Thúy Hằng',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/nguyen-thuy-hang'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Nguyễn Thúy Hằng.jpg',
-          alt: 'Chuyên viên pháp lý Nguyễn Thúy Hằng',
-        },
-      },
-      {
-        name: 'Trần Thị Bích Liên',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/tran-thi-bich-lien'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Trần Thị Bích Liên.jpg',
-          alt: 'Chuyên viên pháp lý Trần Thị Bích Liên',
-        },
-      },
-      {
-        name: 'Bùi Đức Mạnh',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/bui-duc-manh'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Bùi Đức Mạnh.PNG',
-          alt: 'Chuyên viên pháp lý Bùi Đức Mạnh',
-        },
-      },
-      {
-        name: 'Nghiêm Minh Huyền',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/nghiem-minh-huyen'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Nghiêm Huyền.jpg',
-          alt: 'Chuyên viên pháp lý Nghiêm Minh Huyền',
-        },
-      },
-      {
-        name: 'Nguyễn Phùng Mai Ánh',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/nguyen-phung-mai-anh'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Mai Ánh.jpg',
-          alt: 'Chuyên viên pháp lý Nguyễn Phùng Mai Ánh',
-        },
-      },      
-      {
-        name: 'Nguyễn Hoàng Dũng',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/nguyen-hoang-dung'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Nguyễn Hoàng Dũng.png',
-          alt: 'Chuyên viên pháp lý Nguyễn Hoàng Dũng',
-        },
-      },
-      {
-        name: 'Nguyễn Phan Thục Chi',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/nguyen-phan-thuc-chi'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Nguyễn Phan Thục Chi.png',
-          alt: 'Chuyên viên pháp lý Nguyễn Phan Thục Chi',
-        },
-      },
-      {
-        name: 'Nguyễn Thị Quỳnh Giang',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/nguyen-thi-quynh-giang'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Nguyễn Thị Quỳnh Giang.JPG',
-          alt: 'Chuyên viên pháp lý Nguyễn Thị Quỳnh Giang',
-        },
-      },
-      {
-        name: 'Nguyễn Thị Châu Anh',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/nguyen-thi-chau-anh'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Nguyễn Thị Châu Anh.jpg',
-          alt: 'Chuyên viên pháp lý Nguyễn Thị Châu Anh',
-        },
-      },
-      {
-        name: 'Nguyễn Thị Thùy Dương',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/nguyen-thi-thuy-duong'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Nguyễn Thị Thùy Dương.jpg',
-          alt: 'Chuyên viên pháp lý Nguyễn Thị Thùy Dương',
-        },
-      },
-      {
-        name: 'Nguyễn Thùy Dương',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/nguyen-thuy-duong'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Nguyễn Thùy Dương.jpg',
-          alt: 'Chuyên viên pháp lý Nguyễn Thùy Dương',
-        },
-      },
-      {
-        name: 'Nguyễn Thị Mai Linh',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/nguyen-thi-mai-linh'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Nguyễn Thị Mai Linh.jpg',
-          alt: 'Chuyên viên pháp lý Nguyễn Thị Mai Linh',
-        },
-      },
-      {
-        name: 'Nguyễn Thị Xuân',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/nguyen-thi-xuan'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Nguyễn Thị Xuân.jpg',
-          alt: 'Chuyên viên pháp lý Nguyễn Thị Xuân',
-        },
-      },
-      {
-        name: 'Cao Thị Phương Anh',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/cao-thi-phuong-anh'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Cao Thị Phương Anh.jpg',
-          alt: 'Chuyên viên pháp lý Cao Thị Phương Anh',
-        },
-      },
-      {
-        name: 'Lưu Huyền Linh',
-        position: 'Chuyên viên pháp lý',
-        i18nPosition: 'team.legalStaff',
-        link: getPermalink('/tac-gia/luu-huyen-linh'),
-        image: {
-          src: '~/assets/images/team/Chuyên viên Lưu Huyền Linh.jpg',
-          alt: 'Chuyên viên pháp lý Lưu Huyền Linh',
-        },
-      },
-    ]}
+    teams={teams}
   />
 </Layout>

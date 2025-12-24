@@ -384,14 +384,26 @@
   },
   "lawyerProfile": {
     "authorInfo": "Thông tin tác giả",
-    "contactAuthor": "Liên hệ với tác giả",
+    "contactAuthor": "Liên hệ tư vấn",
     "experience": "Kinh nghiệm",
     "education": "Học vấn",
     "authorPosts": "Bài viết của tác giả",
     "lawyer": "Luật sư",
     "legalSpecialist": "Chuyên viên pháp lý",
     "legalIntern": "Thực tập sinh pháp lý",
-    "doctor": "Tiến sĩ"
+    "doctor": "Tiến sĩ",
+    "master": "Thạc sĩ",
+    "about": "Giới thiệu",
+    "years": "Năm kinh nghiệm",
+    "barNumber": "Số thẻ luật sư",
+    "barAssociation": "Đoàn luật sư",
+    "yearsExperience": "Năm kinh nghiệm",
+    "specializations": "Chuyên môn",
+    "credentials": "Chứng chỉ",
+    "languages": "Ngôn ngữ",
+    "connect": "Kết nối",
+    "professionalInfo": "Thông tin chuyên môn",
+    "freeConsultation": "Tư vấn miễn phí"
   },
   "servicesExtra": {
     "enterprise": "Doanh nghiệp",
