@@ -102,50 +102,93 @@
   order: 999;
   /* A high value to ensure it appears last */
 }
-.action_zalo {
-  position: fixed;
-  z-index: 9999;
-  right: 25px;
-  bottom: 157px;
+
+/* Toggle button - Gmail-like FAB */
+.action_toggle {
   width: 60px;
   height: 60px;
-  line-height: 55px;
-  font-size: 16px;
-  font-weight: 400;
-  text-align: center;
-  display: inline-block;
-  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0a7cff 0%, #0056b3 100%);
+  box-shadow: 0 4px 15px rgba(10, 124, 255, 0.4);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.action_toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(10, 124, 255, 0.5);
+}
+
+.action_toggle.active {
+  background: linear-gradient(135deg, #ff4757 0%, #c0392b 100%);
+  box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+}
+
+/* Action buttons container */
+.action_buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.8);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.action_buttons.expanded,
+.action_buttons.md\:expanded {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.action_zalo {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   background: #0a7cff;
   text-decoration: none;
-  opacity: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
-  .action_zalo img {
-      width: 64px;
-  }
+.action_zalo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(10, 124, 255, 0.5);
+}
 
-.action_call {
-  bottom: 88px !important;
-  right: 25px;
+.action_zalo img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
 }
 
 .action_call {
-  position: fixed;
-  z-index: 9999;
-  top: auto !important;
-  width: 60px;
-  height: 60px;
-  line-height: 64px;
-  font-size: 25px;
-  font-weight: 400;
-  text-align: center;
-  display: inline-block;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fff !important;
   border-radius: 50%;
-  background: #0a7cff;
+  background: #25d366;
   text-decoration: none;
-  opacity: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action_call:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
 }
 
   .phone_backtotop .fa {
