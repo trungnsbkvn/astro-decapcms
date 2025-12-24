@@ -26,11 +26,11 @@ const {
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} i18nTitle={i18nTitle} i18nSubtitle={i18nSubtitle} i18nTagline={i18nTagline} />
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
     {
       teams &&
         teams.map(({ name, title: memberTitle, position, image, link, i18nPosition, i18nMemberTitle }) => (
-          <div class="w-full max-w-[280px] h-auto intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+          <div class="w-full max-w-[280px] h-auto intersect-once motion-safe:intersect:animate-fade motion-safe:opacity-0 intersect-quarter">
             <div class="flex flex-col h-full p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600">
               <a class="relative block group" href={link ?? 'javascript:void(0)'}>
                 {image && (
