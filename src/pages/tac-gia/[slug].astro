@@ -111,9 +111,11 @@ const resolvedImage = data.image ? await findImage(data.image) : null;
         
         <!-- Right: Info -->
         <div class="text-center md:text-left order-2 md:order-2 multilang-content">
-          <p class="text-blue-200 text-sm uppercase tracking-widest mb-3" data-i18n="lawyerProfile.authorInfo">
-            Thông tin tác giả
-          </p>
+          {data.position && (
+            <p class="text-blue-200 text-sm uppercase tracking-widest mb-3" data-i18n={positionI18nKey}>
+              {data.position}
+            </p>
+          )}
           
           <!-- Multilingual Name -->
           <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
@@ -131,7 +133,7 @@ const resolvedImage = data.image ? await findImage(data.image) : null;
           
           <!-- Short Bio below name -->
           {data.shortBio && (
-            <p class="text-lg text-blue-100 mb-4 max-w-lg">
+            <p class="text-lg text-blue-100 mb-6 max-w-lg">
               <!-- Vietnamese (default) -->
               <span data-lang="vi">{data.shortBio}</span>
               <!-- English -->
@@ -142,12 +144,6 @@ const resolvedImage = data.image ? await findImage(data.image) : null;
               {data.shortBio_ja && <span data-lang="ja" class="hidden">{data.shortBio_ja}</span>}
               <!-- Korean -->
               {data.shortBio_ko && <span data-lang="ko" class="hidden">{data.shortBio_ko}</span>}
-            </p>
-          )}
-          
-          {data.position && (
-            <p class="text-xl md:text-2xl text-blue-200 font-medium mb-6" data-i18n={positionI18nKey}>
-              {data.position}
             </p>
           )}
           
@@ -163,6 +159,12 @@ const resolvedImage = data.image ? await findImage(data.image) : null;
               <div class="text-center">
                 <div class="text-lg font-bold text-white notranslate" translate="no">{data.barNumber}</div>
                 <div class="text-blue-200 text-sm" data-i18n="lawyerProfile.barNumber">Số thẻ luật sư</div>
+              </div>
+            )}
+            {data.credentials && data.credentials.length > 0 && (
+              <div class="text-center">
+                <div class="text-3xl font-bold text-white">{data.credentials.length}</div>
+                <div class="text-blue-200 text-sm" data-i18n="lawyerProfile.credentials">Chứng chỉ</div>
               </div>
             )}
           </div>
