@@ -7,6 +7,7 @@ import Pagination from '~/components/blog/Pagination.astro';
 import { blogListRobots, getPaginatedPosts } from '~/utils/blog';
 import { getRootPathForType } from '~/utils/blog-permalinks';
 import { getBlogTypeSEO, getKeywordsString } from '~/utils/blog-seo';
+import { getLegalBreadcrumbs } from '~/utils/breadcrumbs';
 
 // Pre-render at build time for better performance
 export const prerender = true;
@@ -36,9 +37,11 @@ const metadata = {
     type: 'article',
   },
 };
+
+const breadcrumbs = getLegalBreadcrumbs();
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} breadcrumbs={breadcrumbs}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <Headline subtitle={blogSEO.subtitle} i18nTitle="blog.legalTitle" i18nSubtitle="blog.legalSubtitle">
       {blogSEO.title}

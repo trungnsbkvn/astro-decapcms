@@ -12,6 +12,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
+import { getAboutBreadcrumbs } from '~/utils/breadcrumbs';
 
 import { YouTube } from 'astro-embed';
 
@@ -20,9 +21,11 @@ const metadata = {
   description:
     'Công ty Luật TNHH Youth and Partners là một trong những công ty luật hàng đầu trong các lĩnh vực: Tư vấn pháp lý thường xuyên cho doanh nghiệp/Dịch vụ Phòng pháp chế thuê ngoài; Tư vấn và giải quyết tranh chấp lao động; Dịch vụ Luật sư riêng tiếng Nhật, Anh, Trung, Hàn; Dịch vụ Audit, đánh giá và thẩm định pháp lý cho Doanh nghiệp, dịch vụ DD (Due diligence) riêng các lĩnh vực Lao động, nhân quyền, đạo đức kinh doanh, hệ thống quản lý, an toàn, sức khỏe, môi trường cho Doanh nghiệp.',
 };
+
+const breadcrumbs = getAboutBreadcrumbs();
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} breadcrumbs={breadcrumbs}>
   <!-- Hero Widget ******************* -->
 
   <Hero tagline="Về chúng tôi" i18nTagline="about.aboutUs">

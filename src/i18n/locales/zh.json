@@ -43,6 +43,27 @@
     "toggleTheme": "切换主题",
     "rssFeed": "RSS订阅"
   },
+  "breadcrumb": {
+    "home": "首页",
+    "about": "关于我们",
+    "services": "服务",
+    "legal": "法律",
+    "consultation": "常规咨询",
+    "labor": "劳动",
+    "investment": "外国投资",
+    "foreigner": "外国人",
+    "evaluation": "评估服务",
+    "news": "新闻",
+    "contact": "联系我们",
+    "lawyers": "律师和同事",
+    "authors": "作者",
+    "tags": "标签",
+    "category": "分类",
+    "article": "文章",
+    "search": "搜索",
+    "privacy": "隐私政策",
+    "terms": "使用条款"
+  },
   "about": {
     "history": "成立历史",
     "lawyers": "律师和同事",

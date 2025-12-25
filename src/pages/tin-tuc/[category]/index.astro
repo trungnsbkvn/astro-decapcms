@@ -9,6 +9,7 @@ import { blogCategoryRobots, getStaticPathsForCategoryIndex } from '~/utils/blog
 import { getRootPathForType } from '~/utils/blog-permalinks';
 import { getBlogTypeSEO, getCategorySEO, getCategoryDescription, getKeywordsString, getCategoryI18nKeys } from '~/utils/blog-seo';
 import { t } from '~/i18n';
+import { getNewsBreadcrumbs } from '~/utils/breadcrumbs';
 
 // Pre-render all category pages at build time
 export const prerender = true;
@@ -53,9 +54,14 @@ const metadata = {
     type: 'article',
   },
 };
+
+// Generate breadcrumbs - use category title without "Danh mục:" prefix
+const breadcrumbs = getNewsBreadcrumbs(
+  { name: categoryTitle as string, slug: categorySlug as string, i18nKey: i18nKeys?.title }
+);
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} breadcrumbs={breadcrumbs}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <Headline 
       subtitle={categorySubtitle}

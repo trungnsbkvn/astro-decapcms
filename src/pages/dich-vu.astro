@@ -9,15 +9,18 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import { getPermalink } from '~/utils/blog-permalinks';
+import { getServicesBreadcrumbs } from '~/utils/breadcrumbs';
 
 const metadata = {
   title: 'Dịch vụ pháp lý chuyên môn',
   description:
     'Các dịch vụ pháp lý của Y&P không chỉ dừng lại ở việc cung cấp các giải pháp pháp lý trên nền tảng học thuật mà Y&P còn cung cấp các giải pháp có vận dụng thực tiễn thiết thực nhằm hỗ trợ giải quyết mọi vướng mắc về pháp lý mà khách hàng gặp phải với hiệu quả cao nhất.',
 };
+
+const breadcrumbs = getServicesBreadcrumbs();
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} breadcrumbs={breadcrumbs}>
   <Hero
     id="hero"
     title="Dịch vụ pháp lý chuyên môn" i18nTitle="services.professionalLegal"

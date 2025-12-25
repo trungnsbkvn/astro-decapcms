@@ -43,6 +43,27 @@
     "toggleTheme": "Toggle Theme",
     "rssFeed": "RSS Feed"
   },
+  "breadcrumb": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "legal": "Legal",
+    "consultation": "Regular Consultation",
+    "labor": "Labor",
+    "investment": "Foreign Investment",
+    "foreigner": "Foreigners",
+    "evaluation": "Evaluation Services",
+    "news": "News",
+    "contact": "Contact",
+    "lawyers": "Lawyers & Associates",
+    "authors": "Authors",
+    "tags": "Tags",
+    "category": "Category",
+    "article": "Article",
+    "search": "Search",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
   "about": {
     "history": "Establishment History",
     "lawyers": "Lawyers and Associates",

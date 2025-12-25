@@ -43,6 +43,27 @@
     "toggleTheme": "Chuyển đổi chủ đề",
     "rssFeed": "RSS Feed"
   },
+  "breadcrumb": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "services": "Dịch vụ",
+    "legal": "Pháp lý",
+    "consultation": "Tư vấn thường xuyên",
+    "labor": "Lao động",
+    "investment": "Đầu tư nước ngoài",
+    "foreigner": "Người nước ngoài",
+    "evaluation": "Dịch vụ đánh giá",
+    "news": "Tin tức",
+    "contact": "Liên hệ",
+    "lawyers": "Luật sư và cộng sự",
+    "authors": "Tác giả",
+    "tags": "Thẻ",
+    "category": "Danh mục",
+    "article": "Bài viết",
+    "search": "Tìm kiếm",
+    "privacy": "Chính sách bảo mật",
+    "terms": "Điều khoản sử dụng"
+  },
   "about": {
     "history": "Lịch sử thành lập",
     "lawyers": "Luật sư và cộng sự",

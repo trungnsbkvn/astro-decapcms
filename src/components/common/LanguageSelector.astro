@@ -779,6 +779,9 @@ function translateElement(element: Element, lang: string, forceTranslate: boolea
     // Skip if parent is user-content or has data-i18n (handled separately)
     if (parent?.closest('.user-content, [data-user-content]')) continue;
     if (parent?.hasAttribute('data-i18n')) continue;
+    // Skip elements without notranslate class in breadcrumbs - they need Google Translate
+    // Only translate elements that have notranslate (our i18n handles those)
+    if (element.matches('nav[aria-label="Breadcrumb"]') && !parent?.classList.contains('notranslate')) continue;
     translateTextNode(node, lang);
   }
 }
@@ -872,21 +875,30 @@ function applyTranslations(lang: string): void {
   // Translate breadcrumbs
   document.querySelectorAll('nav[aria-label="Breadcrumb"]').forEach(el => translateElement(el, lang, true));
 
-  // Remove loading class
+  // i18n translations are fast - remove loading class immediately
+  // Google Translate will handle article titles separately (they don't have notranslate class)
   document.documentElement.classList.remove('i18n-loading');
 }
 
 function loadGoogleTranslate(targetLang: string): void {
   const win = window as any;
 
-  // Ensure notranslate elements have translate="no" - include all i18n processed elements
-  document.querySelectorAll('.notranslate, header, footer, nav, [data-i18n]').forEach(el => {
+  // Ensure notranslate elements have translate="no" - but NOT breadcrumbs (they contain article titles that need Google Translate)
+  document.querySelectorAll('.notranslate, header, footer, [data-i18n]').forEach(el => {
+    el.setAttribute('translate', 'no');
+    el.classList.add('notranslate');
+  });
+  
+  // For navigation, only mark those that are NOT breadcrumbs
+  document.querySelectorAll('nav:not([aria-label="Breadcrumb"])').forEach(el => {
     el.setAttribute('translate', 'no');
     el.classList.add('notranslate');
   });
 
   if (document.querySelector('script[src*="translate.google.com"]')) {
-    setTimeout(() => triggerTranslation(targetLang), 100);
+    setTimeout(() => {
+      triggerTranslation(targetLang);
+    }, 100);
     return;
   }
 
@@ -897,7 +909,7 @@ function loadGoogleTranslate(targetLang: string): void {
         includedLanguages: 'en,zh-CN,ja,ko',
         autoDisplay: false,
         layout: win.google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element_hidden');
+      }, 'google_translate_element');
 
       let attempts = 0;
       const tryTrigger = () => {
@@ -1034,6 +1046,3 @@ document.addEventListener('astro:after-swap', () => {
   }
 });
 </script>
-
-<!-- Hidden element for Google Translate -->
-<div id="google_translate_element_hidden" style="display:none!important;height:0!important;overflow:hidden!important;"></div>

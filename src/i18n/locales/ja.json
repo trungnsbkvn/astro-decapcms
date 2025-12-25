@@ -43,6 +43,27 @@
     "toggleTheme": "テーマ切替",
     "rssFeed": "RSSフィード"
   },
+  "breadcrumb": {
+    "home": "ホーム",
+    "about": "会社概要",
+    "services": "サービス",
+    "legal": "法律",
+    "consultation": "定期コンサルティング",
+    "labor": "労働",
+    "investment": "外国投資",
+    "foreigner": "外国人",
+    "evaluation": "評価サービス",
+    "news": "ニュース",
+    "contact": "お問い合わせ",
+    "lawyers": "弁護士とアソシエイト",
+    "authors": "著者",
+    "tags": "タグ",
+    "category": "カテゴリー",
+    "article": "記事",
+    "search": "検索",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約"
+  },
   "about": {
     "history": "設立の歴史",
     "lawyers": "弁護士とアソシエイト",

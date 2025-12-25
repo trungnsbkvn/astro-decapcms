@@ -10,7 +10,8 @@ import { getCanonical, getPermalink } from '~/utils/blog-permalinks';
 import { findPostBySlugWithContent, blogPostRobots } from '~/utils/blog';
 import { findImage } from '~/utils/images';
 import type { MetaData } from '~/types';
-import { getBlogTypeSEO } from '~/utils/blog-seo';
+import { getBlogTypeSEO, getCategoryI18nKeys } from '~/utils/blog-seo';
+import { getLegalBreadcrumbs } from '~/utils/breadcrumbs';
 
 // SSR: Render single post on-demand
 // Uses findPostBySlugWithContent which only renders 1 post (not all)
@@ -52,9 +53,16 @@ const metadata: MetaData = merge(
   },
   { ...(post?.metadata ? { ...post.metadata, canonical: post.metadata?.canonical || url } : {}) }
 ) as MetaData;
+
+// Generate breadcrumbs with category (i18n) and article title (translatable by Google)
+const categoryI18nKeys = post.category ? getCategoryI18nKeys(post.category.slug) : null;
+const breadcrumbs = getLegalBreadcrumbs(
+  post.category ? { name: post.category.title, slug: post.category.slug, i18nKey: categoryI18nKeys?.title } : undefined,
+  { title: post.title, slug: post.permalink }
+);
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} breadcrumbs={breadcrumbs}>
   <SinglePost type={TYPE} post={{ ...post, image: image }} url={url}>
     {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
   </SinglePost>

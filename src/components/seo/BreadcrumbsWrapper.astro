@@ -1,0 +1,54 @@
+---
+/**
+ * Breadcrumbs Wrapper Component
+ * A convenient wrapper that generates breadcrumbs based on current URL
+ * with proper container and spacing
+ */
+import Breadcrumbs from './Breadcrumbs.astro';
+import { generateBreadcrumbs } from '~/utils/breadcrumbs';
+import type { BreadcrumbItem } from './Breadcrumbs.astro';
+
+export interface Props {
+  /** Custom breadcrumb items (if not using auto-generation) */
+  items?: BreadcrumbItem[];
+  /** Page title for the last breadcrumb item */
+  pageTitle?: string;
+  /** Additional CSS classes for the container */
+  class?: string;
+  /** Whether to show the breadcrumbs container with background */
+  showBackground?: boolean;
+  /** Whether to show home icon */
+  showHomeIcon?: boolean;
+}
+
+const { 
+  items, 
+  pageTitle, 
+  class: className = '', 
+  showBackground = false,
+  showHomeIcon = true 
+} = Astro.props;
+
+// Get current pathname
+const pathname = Astro.url.pathname;
+
+// Generate breadcrumbs from pathname if items not provided
+const breadcrumbItems = items || generateBreadcrumbs(pathname, pageTitle);
+
+// Don't render if no items or only home item on homepage
+const shouldRender = breadcrumbItems.length > 0;
+---
+
+{shouldRender && (
+  <div 
+    class:list={[
+      'w-full',
+      showBackground ? 'bg-gray-50 dark:bg-slate-800/50 border-b border-gray-200 dark:border-slate-700' : '',
+      className
+    ]}
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+      <Breadcrumbs items={breadcrumbItems} showHomeIcon={showHomeIcon} />
+    </div>
+  </div>
+)}

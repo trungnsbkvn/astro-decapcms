@@ -43,6 +43,27 @@
     "toggleTheme": "테마 전환",
     "rssFeed": "RSS 피드"
   },
+  "breadcrumb": {
+    "home": "홈",
+    "about": "소개",
+    "services": "서비스",
+    "legal": "법률",
+    "consultation": "정기 상담",
+    "labor": "노동",
+    "investment": "외국인 투자",
+    "foreigner": "외국인",
+    "evaluation": "평가 서비스",
+    "news": "뉴스",
+    "contact": "문의",
+    "lawyers": "변호사 및 어소시에이트",
+    "authors": "저자",
+    "tags": "태그",
+    "category": "카테고리",
+    "article": "기사",
+    "search": "검색",
+    "privacy": "개인정보 처리방침",
+    "terms": "이용약관"
+  },
   "about": {
     "history": "설립 역사",
     "lawyers": "변호사 및 어소시에이트",

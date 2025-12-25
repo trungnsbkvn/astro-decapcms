@@ -3,8 +3,8 @@
  * Early Translation Script - Runs in <head> to prevent FOUC (Flash of Untranslated Content)
  * This script:
  * 1. Checks if user has selected a non-Vietnamese language
- * 2. Sets up Google Translate cookie early
- * 3. Loads Google Translate script to enable automatic translation
+ * 2. Adds i18n-loading class to hide content until translations are applied
+ * 3. Sets up Google Translate cookie (actual loading happens in LanguageSelector based on page content)
  */
 ---
 
@@ -23,7 +23,7 @@
     if (lang !== 'vi') {
       document.documentElement.classList.add('i18n-loading');
 
-      // Set cookie for Google Translate EARLY so it activates on page load
+      // Set cookie for Google Translate EARLY so it activates on page load (if needed)
       var gtLangs = {
         'en': 'en',
         'zh': 'zh-CN',
@@ -34,29 +34,10 @@
       if (gtLang) {
         document.cookie = 'googtrans=/vi/' + gtLang + '; path=/; max-age=31536000';
       }
-
-      // Initialize Google Translate callback only if not already set
-      if (!window.googleTranslateElementInit) {
-        window.googleTranslateElementInit = function() {
-          if (typeof google !== 'undefined' && google.translate) {
-            new google.translate.TranslateElement({
-              pageLanguage: 'vi',
-              includedLanguages: 'en,zh-CN,ja,ko,vi',
-              layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-              autoDisplay: false
-            }, 'google_translate_element');
-          }
-        };
-      }
-
-      // Load Google Translate script if not already loaded
-      if (!document.querySelector('script[src*="translate.google.com"]')) {
-        var script = document.createElement('script');
-        script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-        script.async = true;
-        script.type = 'text/javascript';
-        document.head.appendChild(script);
-      }
+      
+      // NOTE: Google Translate script loading is handled by LanguageSelector
+      // Only pages with .user-content will load Google Translate
+      // Pages without user content (static pages) only use our fast i18n system
     }
   }
 
@@ -69,17 +50,18 @@
 </script>
 
 <style is:global>
-  /* Hide all fixed UI content briefly during i18n translation to prevent flash */
+  /* Hide all translatable content briefly during i18n translation to prevent flash */
   html.i18n-loading header,
   html.i18n-loading footer,
   html.i18n-loading nav[aria-label="Breadcrumb"],
   html.i18n-loading .notranslate,
-  html.i18n-loading [translate="no"] {
+  html.i18n-loading [translate="no"],
+  html.i18n-loading [data-i18n] {
     opacity: 0;
   }
 
   /* Smooth fade-in after translation */
-  header, footer, nav[aria-label="Breadcrumb"], .notranslate, [translate="no"] {
+  header, footer, nav[aria-label="Breadcrumb"], .notranslate, [translate="no"], [data-i18n] {
     transition: opacity 0.15s ease-in;
   }
 
@@ -94,11 +76,13 @@
   html.translated-ltr nav[aria-label="Breadcrumb"],
   html.translated-ltr .notranslate,
   html.translated-ltr [translate="no"],
+  html.translated-ltr [data-i18n],
   html.translated-rtl header,
   html.translated-rtl footer,
   html.translated-rtl nav[aria-label="Breadcrumb"],
   html.translated-rtl .notranslate,
-  html.translated-rtl [translate="no"] {
+  html.translated-rtl [translate="no"],
+  html.translated-rtl [data-i18n] {
     opacity: 1;
   }
 </style>

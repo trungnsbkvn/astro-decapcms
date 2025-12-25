@@ -5,14 +5,17 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import { getContactBreadcrumbs } from '~/utils/breadcrumbs';
 
 const metadata = {
   title: 'Liên hệ',
   description: 'Liên hệ với chúng tôi để được hỗ trợ và tư vấn pháp lý.',
 };
+
+const breadcrumbs = getContactBreadcrumbs();
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} breadcrumbs={breadcrumbs}>
   <!-- HeroText Widget ******************* -->
 
   <HeroText tagline="Youth & Partners Lawfirm" title="Liên hệ với chúng tôi!" i18nTitle="contact.title" />

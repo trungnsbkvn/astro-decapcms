@@ -9,6 +9,7 @@ import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { getAllAttorneys, transformAttorneysToTeams } from '~/utils/attorneys';
 import { findImage } from '~/utils/images';
+import { getLawyersBreadcrumbs } from '~/utils/breadcrumbs';
 
 const metadata = {
   title: 'Luật sư và cộng sự',
@@ -29,9 +30,11 @@ const heroImage = await findImage(heroImagePath);
 const totalMembers = attorneys.length;
 const lawyerCount = attorneys.filter(a => a.data.credentials?.some(c => c.toLowerCase().includes('luật sư'))).length;
 const languageCount = 5; // Vietnamese, English, Chinese, Japanese, Korean
+
+const breadcrumbs = getLawyersBreadcrumbs();
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} breadcrumbs={breadcrumbs}>
   <!-- About Team Section with Description -->
   <Content
     id="about"
