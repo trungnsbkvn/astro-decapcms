@@ -206,7 +206,9 @@
     "posts": "bài viết",
     "prevPage": "Trang trước",
     "nextPage": "Trang sau",
-    "page": "Trang"
+    "page": "Trang",
+    "featured": "Nổi bật",
+    "featuredLawyer": "Luật sư nổi bật"
   },
   "forms": {
     "name": "Họ và tên",

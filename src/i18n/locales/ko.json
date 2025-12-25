@@ -206,7 +206,9 @@
     "posts": "게시물",
     "prevPage": "이전 페이지",
     "nextPage": "다음 페이지",
-    "page": "페이지"
+    "page": "페이지",
+    "featured": "추천",
+    "featuredLawyer": "추천 변호사"
   },
   "forms": {
     "name": "이름",

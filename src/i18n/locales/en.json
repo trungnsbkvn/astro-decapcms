@@ -206,7 +206,9 @@
     "posts": "posts",
     "prevPage": "Previous Page",
     "nextPage": "Next Page",
-    "page": "Page"
+    "page": "Page",
+    "featured": "Featured",
+    "featuredLawyer": "Featured Lawyer"
   },
   "forms": {
     "name": "Full Name",

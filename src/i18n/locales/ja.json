@@ -206,7 +206,9 @@
     "posts": "記事",
     "prevPage": "前のページ",
     "nextPage": "次のページ",
-    "page": "ページ"
+    "page": "ページ",
+    "featured": "注目",
+    "featuredLawyer": "注目の弁護士"
   },
   "forms": {
     "name": "氏名",
