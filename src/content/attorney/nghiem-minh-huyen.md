@@ -33,7 +33,7 @@ bio_ko: |
   
   그녀의 기사는 토지 사용권, 계약, 민사 및 형사 법률 문제와 관련된 법규 및 주요 정책을 분석, 종합 및 명확히 하는 데 중점을 둡니다.
 image: "~/assets/images/team/Chuyên viên Nghiêm Huyền.jpg"
-email: "info@luatsumienbac.vn"
+email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:
   - "dat-dai"
@@ -99,54 +99,125 @@ socialLinks:
 order: 19
 publishDate: 2024-01-01T00:00:00Z
 bodyContent_en: |
-  ## Areas of Expertise
+  ### Work Experience
 
-  Nghiêm Minh Huyền is responsible for the following areas:
+  She has established herself as a skilled legal content specialist.
 
-  - **Land Law:** Editing content on land law regulations, land use rights, planning, transfers, and related matters.
+  - **Youth & Partners Law Firm:** Legal Specialist & Editor - producing high-quality legal content on land, civil, and criminal matters
+  - **Content Expertise:** Analyzing, synthesizing, and clarifying legal regulations and policies for public understanding
+  - **Education:** Judicial Academy Graduate (2022), Bachelor of Law - Hanoi Law University (2020)
 
-  - **Civil Law:** Analyzing and synthesizing regulations on contracts, civil transactions, and marriage and family.
+  ### Expertise and Strengths
 
-  - **Criminal Law:** Editing content on criminal law regulations, rights and obligations of parties in criminal cases.
+  Her articles focus on analyzing and clarifying complex legal regulations related to land use rights, contracts, and civil/criminal legal matters. She excels at making legal concepts accessible to the general public through clear, well-researched content.
+
+  ### Areas of Expertise
+
+  1. **Land Law:** Content editing on land regulations, land use rights, planning, transfers, and related matters
+  2. **Civil Law:** Analysis and synthesis of regulations on contracts, civil transactions, marriage and family
+  3. **Criminal Law:** Content editing on criminal law regulations, rights and obligations of parties in criminal cases
+
+  ### Contact
+
+  - **Email:** contact@yplawfirm.vn
+  - **Phone:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_zh: |
-  ## 专业领域
+  ### 工作经历
 
-  严明玄负责以下领域：
+  她已确立自己作为熟练法律内容专家的地位。
 
-  - **土地法：** 编辑关于土地法规定、土地使用权、规划、转让及相关事项的内容。
+  - **Youth & Partners律师事务所：** 法律专员兼编辑 - 制作关于土地、民事和刑事事务的高质量法律内容
+  - **内容专业知识：** 分析、综合和阐明法规和政策以供公众理解
+  - **教育背景：** 司法学院毕业（2022年），河内法律大学法学学士（2020年）
 
-  - **民事法：** 分析和综合关于合同、民事交易以及婚姻家庭的规定。
+  ### 专业知识与优势
 
-  - **刑事法：** 编辑关于刑法规定、刑事案件当事人权利和义务的内容。
+  她的文章专注于分析和阐明与土地使用权、合同以及民事/刑事法律事项相关的复杂法规。她擅长通过清晰、研究充分的内容使法律概念对普通大众更易理解。
+
+  ### 专业领域
+
+  1. **土地法：** 关于土地法规、土地使用权、规划、转让及相关事项的内容编辑
+  2. **民事法：** 分析和综合关于合同、民事交易、婚姻家庭的规定
+  3. **刑事法：** 关于刑法规定、刑事案件当事人权利和义务的内容编辑
+
+  ### 联系方式
+
+  - **邮箱：** contact@yplawfirm.vn
+  - **电话：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ja: |
-  ## 専門分野
+  ### 職歴
 
-  ゲム・ミン・フエンは以下の分野を担当しています：
+  彼女は熟練した法務コンテンツスペシャリストとしての地位を確立しています。
 
-  - **土地法：** 土地法規制、土地使用権、計画、譲渡、関連事項に関するコンテンツの編集。
+  - **Youth & Partners法律事務所：** 法務スペシャリスト兼エディター - 土地、民事、刑事事項に関する高品質な法務コンテンツの制作
+  - **コンテンツ専門知識：** 一般への理解のための法規制と政策の分析、総合、明確化
+  - **学歴：** 司法アカデミー卒業（2022年）、ハノイ法科大学法学士（2020年）
 
-  - **民事法：** 契約、民事取引、婚姻家族に関する規制の分析と統合。
+  ### 専門知識と強み
 
-  - **刑事法：** 刑法規制、刑事事件における当事者の権利と義務に関するコンテンツの編集。
+  彼女の記事は、土地使用権、契約、民事・刑事法的問題に関する複雑な法規制の分析と明確化に焦点を当てています。明確で十分に調査されたコンテンツを通じて法的概念を一般の人々にわかりやすく伝えることに長けています。
+
+  ### 専門分野
+
+  1. **土地法：** 土地法規制、土地使用権、計画、譲渡、関連事項に関するコンテンツの編集
+  2. **民事法：** 契約、民事取引、婚姻家族に関する規制の分析と統合
+  3. **刑事法：** 刑法規制、刑事事件における当事者の権利と義務に関するコンテンツの編集
+
+  ### 連絡先
+
+  - **メール：** contact@yplawfirm.vn
+  - **電話：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ko: |
-  ## 전문 분야
 
-  응엠민후옌이 담당하는 분야:
+  ### 경력
 
-  - **토지법:** 토지법 규정, 토지 사용권, 계획, 양도 및 관련 사항에 대한 콘텐츠 편집.
+  그녀는 숙련된 법률 콘텐츠 전문가로서의 입지를 확립했습니다.
 
-  - **민사법:** 계약, 민사 거래, 결혼 및 가족에 관한 규정 분석 및 종합.
+  - **Youth & Partners 법률 회사:** 법무 전문가 겸 에디터 - 토지, 민사, 형사 문제에 대한 고품질 법률 콘텐츠 제작
+  - **콘텐츠 전문 지식:** 대중의 이해를 위한 법규 및 정책 분석, 종합, 명확화
+  - **학력:** 사법 아카데미 졸업 (2022년), 하노이 법과대학 법학사 (2020년)
 
-  - **형사법:** 형법 규정, 형사 사건 당사자의 권리와 의무에 대한 콘텐츠 편집.
+  ### 전문 지식 및 강점
+
+  그녀의 기사는 토지 사용권, 계약, 민사/형사 법률 문제와 관련된 복잡한 법규를 분석하고 명확히 하는 데 중점을 둡니다. 명확하고 충분히 연구된 콘텐츠를 통해 법률 개념을 일반 대중에게 쉽게 전달하는 데 능숙합니다.
+
+  ### 전문 분야
+
+  1. **토지법:** 토지법 규정, 토지 사용권, 계획, 양도 및 관련 사항에 대한 콘텐츠 편집
+  2. **민사법:** 계약, 민사 거래, 결혼 및 가족에 관한 규정 분석 및 종합
+  3. **형사법:** 형법 규정, 형사 사건 당사자의 권리와 의무에 대한 콘텐츠 편집
+
+  ### 연락처
+
+  - **이메일:** contact@yplawfirm.vn
+  - **전화:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 draft: false
 ---
 
-## Lĩnh vực chuyên môn
+### Kinh nghiệm làm việc
 
-Nghiêm Minh Huyền phụ trách các lĩnh vực:
+Cô đã khẳng định vị thế như một chuyên gia nội dung pháp lý giỏi.
 
-- **Đất đai:** Biên tập nội dung về các quy định pháp luật đất đai, quyền sử dụng đất, quy hoạch, chuyển nhượng và các vấn đề liên quan.
+- **Công ty Luật Youth & Partners:** Chuyên viên pháp lý kiêm Biên tập viên - sản xuất nội dung pháp lý chất lượng cao về đất đai, dân sự và hình sự
+- **Chuyên môn nội dung:** Phân tích, tổng hợp và làm rõ các quy định và chính sách pháp luật để công chúng dễ hiểu
+- **Đào tạo:** Tốt nghiệp Học viện Tư Pháp (2022), Cử nhân Luật - ĐH Luật Hà Nội (2020)
 
-- **Dân sự:** Phân tích, tổng hợp các quy định về hợp đồng, giao dịch dân sự, hôn nhân gia đình.
+### Chuyên môn và thế mạnh
 
-- **Hình sự:** Biên tập nội dung về các quy định pháp luật hình sự, quyền và nghĩa vụ của các bên trong vụ án hình sự.
+Các bài viết của cô tập trung phân tích và làm rõ các quy định pháp luật phức tạp liên quan đến quyền sử dụng đất, hợp đồng và các vấn đề pháp lý dân sự/hình sự. Cô có khả năng xuất sắc trong việc giúp công chúng dễ tiếp cận các khái niệm pháp lý thông qua nội dung rõ ràng, được nghiên cứu kỹ lưỡng.
+
+### Lĩnh vực chuyên môn
+
+1. **Đất đai:** Biên tập nội dung về quy định pháp luật đất đai, quyền sử dụng đất, quy hoạch, chuyển nhượng và các vấn đề liên quan
+2. **Dân sự:** Phân tích, tổng hợp các quy định về hợp đồng, giao dịch dân sự, hôn nhân gia đình
+3. **Hình sự:** Biên tập nội dung về các quy định pháp luật hình sự, quyền và nghĩa vụ của các bên trong vụ án hình sự
+
+### Liên hệ
+
+- **Email:** contact@yplawfirm.vn
+- **Điện thoại:** 088 995 6888
+- **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)

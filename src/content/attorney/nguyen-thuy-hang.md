@@ -43,7 +43,7 @@ shortBio_zh: "河内法律大学经济法学士(2024) | 合同及企业内部规
 shortBio_ja: "経済法学士 - ハノイ法科大学(2024) | 契約・企業内部規程経験"
 shortBio_ko: "경제법 학사 - 하노이 법과대학(2024) | 계약 및 기업 내부규정 경험"
 image: "~/assets/images/team/Chuyên viên Nguyễn Thúy Hằng.jpg"
-email: "info@luatsumienbac.vn"
+email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:
   - "doanh-nghiep"
@@ -98,79 +98,129 @@ socialLinks:
 order: 16
 publishDate: 2024-01-01T00:00:00Z
 bodyContent_en: |
-  ## Areas of Expertise
+  ### Work Experience
 
-  Nguyễn Thúy Hằng is responsible for the following areas:
+  Prior to joining Youth & Partners, Nguyễn Thúy Hằng gained practical experience at reputable legal institutions:
+  - Internship and work at Ha Thi Investment Consulting Company as legal staff
+  - Internship at Vinh Yen City People's Court as legal intern
+  - Performed tasks such as contract review, drafting common documents, developing internal regulations, and legal translation
 
-  - **Contracts:** Drafting and reviewing contracts including framework agreements, service contracts, and labor contracts.
+  ### Expertise and Strengths
 
-  - **Corporate Consultation:** Legal advice for corporate clients on labor, taxation, real estate, and business operations.
+  - Accurate contract drafting and review capabilities
+  - Effective corporate legal consulting skills
+  - Professional internal regulation development
+  - Experience in legal document drafting and translation
+  - Careful, meticulous work ethic and commitment to quality
 
-  - **Internal Regulations:** Participating in developing and reviewing internal forms such as democracy regulations, labor rules, and salary-bonus policies.
+  ### Areas of Expertise
 
-  ## Experience
+  - Corporate Law
+  - Labor Law
+  - Land Law
 
-  - Previously worked and interned at Ha Thi Investment Consulting Company, Vinh Yen City People's Court as legal staff and legal intern.
-  - Performed tasks such as contract review, drafting common documents, developing internal regulations, and legal translation.
+  ### Contact
+
+  For legal consultation, please contact Nguyễn Thúy Hằng via email: contact@yplawfirm.vn or phone: 088 995 6888.
 bodyContent_zh: |
-  ## 专业领域
+  ### 工作经验
 
-  阮翠恒负责以下领域：
+  在加入Youth & Partners之前，阮翠恒在知名法律机构获得了实践经验：
+  - 在河氏投资咨询公司担任法律人员的实习和工作
+  - 在永安市人民法院担任法律实习生
+  - 执行合同审查、常用文件起草、内部规章制定和法律翻译等工作
 
-  - **合同：** 起草和审查合同，包括框架协议、服务合同和劳动合同。
+  ### 专业能力与优势
 
-  - **企业咨询：** 为企业客户提供劳动、税务、房地产和商业运营方面的法律咨询。
+  - 精准的合同起草和审查能力
+  - 有效的企业法律咨询技能
+  - 专业的内部规章制定
+  - 法律文件起草和翻译经验
+  - 细心、细致的工作态度和对质量的承诺
 
-  - **内部规章：** 参与制定和审查民主规章、劳动规则和薪酬奖励政策等内部表格。
+  ### 专业领域
 
-  ## 经验
+  - 企业法
+  - 劳动法
+  - 土地法
 
-  - 曾在河氏投资咨询公司、永安市人民法院担任法律人员和法律实习生。
-  - 执行合同审查、常用文件起草、内部规章制定和法律翻译等工作。
+  ### 联系方式
+
+  如需法律咨询，请通过电子邮件联系阮翠恒：contact@yplawfirm.vn 或电话：088 995 6888。
 bodyContent_ja: |
-  ## 専門分野
+  ### 職務経歴
 
-  グエン・トゥイ・ハンは以下の分野を担当しています：
+  Youth & Partnersに入社する前、グエン・トゥイ・ハンは名門法律機関で実務経験を積みました：
+  - ハティ投資コンサルティング会社にて法務スタッフとしてインターンシップと勤務
+  - ヴィンイェン市人民裁判所にて法務インターン
+  - 契約レビュー、一般文書の起草、内部規程の策定、法的翻訳などの業務を実施
 
-  - **契約：** 基本契約、サービス契約、労働契約を含む契約の起草とレビュー。
+  ### 専門能力と強み
 
-  - **企業コンサルティング：** 企業クライアントへの労働、税務、不動産、事業運営に関する法的アドバイス。
+  - 正確な契約起草とレビュー能力
+  - 効果的な企業法務コンサルティングスキル
+  - プロフェッショナルな内部規程策定
+  - 法的文書起草と翻訳の経験
+  - 丁寧で緻密な仕事への姿勢と品質へのコミットメント
 
-  - **内部規程：** 民主規程、労働規則、給与・賞与規程などの内部フォームの策定とレビューへの参加。
+  ### 専門分野
 
-  ## 経験
+  - 企業法
+  - 労働法
+  - 土地法
 
-  - ハティ投資コンサルティング会社、ヴィンイェン市人民裁判所にて法務スタッフ、法務インターンとして勤務・インターン経験。
-  - 契約レビュー、一般文書の起草、内部規程の策定、法的翻訳などの業務を実施。
+  ### お問い合わせ
+
+  法的相談については、メール：contact@yplawfirm.vn または電話：088 995 6888 までグエン・トゥイ・ハンにご連絡ください。
 bodyContent_ko: |
-  ## 전문 분야
+  ### 경력 사항
 
-  응웬투이항이 담당하는 분야:
+  Youth & Partners에 합류하기 전, 응웬투이항은 명문 법률 기관에서 실무 경험을 쌓았습니다:
+  - 하티 투자 컨설팅 회사에서 법무 직원으로 인턴십과 근무
+  - 빈옌시 인민법원에서 법무 인턴
+  - 계약 검토, 일반 문서 작성, 내부 규정 개발, 법률 번역 등의 업무 수행
 
-  - **계약:** 기본 계약, 서비스 계약, 노동 계약을 포함한 계약 작성 및 검토.
+  ### 전문 역량 및 강점
 
-  - **기업 상담:** 기업 고객에 대한 노동, 세무, 부동산, 사업 운영에 관한 법률 자문.
+  - 정확한 계약 작성 및 검토 능력
+  - 효과적인 기업 법률 자문 기술
+  - 전문적인 내부 규정 개발
+  - 법률 문서 작성 및 번역 경험
+  - 신중하고 꼼꼼한 업무 태도와 품질에 대한 헌신
 
-  - **내부 규정:** 민주 규정, 노동 규칙, 급여-보너스 정책 등 내부 양식 개발 및 검토 참여.
+  ### 전문 분야
 
-  ## 경험
+  - 기업법
+  - 노동법
+  - 토지법
 
-  - 하티 투자 컨설팅 회사, 빈옌시 인민법원에서 법무 직원 및 법무 인턴으로 근무 및 인턴 경험.
-  - 계약 검토, 일반 문서 작성, 내부 규정 개발, 법률 번역 등의 업무 수행.
+  ### 연락처
+
+  법률 상담이 필요하시면 이메일: contact@yplawfirm.vn 또는 전화: 088 995 6888로 응웬투이항에게 연락해 주세요.
 draft: false
 ---
 
-## Lĩnh vực chuyên môn
+### Kinh nghiệm làm việc
 
-Nguyễn Thúy Hằng phụ trách các lĩnh vực:
+Trước khi gia nhập Youth & Partners, Nguyễn Thúy Hằng đã tích lũy kinh nghiệm thực tế tại các cơ quan pháp lý uy tín:
+- Thực tập và làm việc tại Công ty Tư vấn Đầu tư Hà Thị với vai trò nhân viên pháp lý
+- Thực tập tại Tòa án nhân dân thành phố Vĩnh Yên với vai trò thực tập sinh pháp lý
+- Thực hiện các công việc như rà soát hợp đồng, soạn thảo một số văn bản thông dụng, xây dựng quy định nội bộ và dịch thuật pháp lý
 
-- **Hợp đồng:** Soạn thảo và đánh giá các hợp đồng bao gồm hợp đồng nguyên tắc, hợp đồng dịch vụ, hợp đồng lao động.
+### Chuyên môn và thế mạnh
 
-- **Tư vấn Doanh nghiệp:** Tư vấn pháp lý cho khách hàng Doanh nghiệp về các lĩnh vực lao động, thuế, bất động sản, hoạt động kinh doanh.
+- Khả năng soạn thảo và đánh giá hợp đồng chính xác
+- Kỹ năng tư vấn pháp lý doanh nghiệp hiệu quả
+- Xây dựng quy chế nội bộ chuyên nghiệp
+- Kinh nghiệm trong soạn thảo và dịch thuật văn bản pháp lý
+- Tinh thần làm việc cẩn thận, tỉ mỉ và cam kết với chất lượng
 
-- **Quy chế nội bộ:** Tham gia xây dựng và đánh giá các biểu mẫu nội bộ như quy chế dân chủ, nội quy lao động, quy chế lương thưởng.
+### Lĩnh vực chuyên môn
 
-## Kinh nghiệm
+- Doanh nghiệp
+- Lao động
+- Đất đai
 
-- Từng làm việc và thực tập chuyên môn tại Công ty tư vấn Đầu tư Hà Thị, Tòa án nhân dân thành phố Vĩnh Yên với vai trò nhân viên pháp lý, thực tập sinh pháp lý.
-- Thực hiện các công việc như rà soát hợp đồng, soạn thảo một số văn bản thông dụng, xây dựng quy định nội bộ và dịch thuật pháp lý.
+### Liên hệ
+
+Để được tư vấn pháp lý, vui lòng liên hệ Nguyễn Thúy Hằng qua email: contact@yplawfirm.vn hoặc điện thoại: 088 995 6888.

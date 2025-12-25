@@ -109,54 +109,130 @@ languages_ja:
 languages_ko:
   - "베트남어"
 bodyContent_en: |
-  ## About Lawyer Phạm Thị Huyền Quyên
+  ### Work Experience
 
-  With many years of experience in Corporate Advisory and In-house Legal Counsel, Lawyer Quyên is a trusted partner of many enterprises.
+  Lawyer Quyên has accumulated extensive experience through her career:
+  - Multiple years of experience in corporate legal consulting
+  - In-house legal counsel for various enterprises
+  - Member Lawyer at Youth & Partners Law Firm
 
-  ## Areas of Responsibility
+  ### Expertise and Strengths
 
-  - **Corporate Law:** Comprehensive advice on corporate establishment, operations, and governance, financial management, protecting shareholder rights, contract drafting
-  - **Labor Law:** Consulting on labor contracts, employee rights, social insurance, benefits, resolving labor disputes
-  - **Investment:** Advising on investment matters, including domestic and foreign investment, enterprise development strategies, and legal issues related to investment, fundraising, share transfers, and investment risk management
+  - Comprehensive advice on corporate establishment, operations, and governance
+  - Strong capability in financial management and protecting shareholder rights
+  - Expertise in labor contracts, employee rights, social insurance, and benefits
+  - Strategic approach to investment planning and fundraising
+  - Professional skills in share transfers and investment risk management
+
+  ### Areas of Expertise
+
+  - Corporate Law
+  - Labor Law
+  - Investment
+
+  ### Contact
+
+  For legal consultation, please contact Lawyer Phạm Thị Huyền Quyên via email: contact@yplawfirm.vn or phone: 088 995 6888.
 bodyContent_zh: |
-  ## 关于范氏玄琴律师
+  ### 工作经验
 
-  凭借多年的企业咨询和内部法律顾问经验，范律师是许多企业的值得信赖的合作伙伴。
+  范律师在职业生涯中积累了丰富的经验：
+  - 多年企业法律咨询经验
+  - 为多家企业担任内部法律顾问
+  - Youth & Partners律师事务所成员律师
 
-  ## 负责领域
+  ### 专业能力与优势
 
-  - **企业法：** 关于企业设立、运营和治理、财务管理、保护股东权益、合同起草的全面咨询
-  - **劳动法：** 关于劳动合同、员工权利、社会保险、福利、解决劳动纠纷的咨询
-  - **投资：** 关于投资事务的咨询，包括国内外投资、企业发展战略以及与投资、筹资、股权转让和投资风险管理相关的法律问题
+  - 关于企业设立、运营和治理的全面咨询
+  - 财务管理和保护股东权益的强大能力
+  - 劳动合同、员工权利、社会保险和福利方面的专业知识
+  - 投资规划和筹资的战略方法
+  - 股权转让和投资风险管理的专业技能
+
+  ### 专业领域
+
+  - 企业法
+  - 劳动法
+  - 投资
+
+  ### 联系方式
+
+  如需法律咨询，请通过电子邮件联系范氏玄琴律师：contact@yplawfirm.vn 或电话：088 995 6888。
 bodyContent_ja: |
-  ## ファム・ティ・フエン・クエン弁護士について
+  ### 職務経歴
 
-  企業アドバイザリーおよびインハウス法務顧問として多年の経験を持つクエン弁護士は、多くの企業の信頼できるパートナーです。
+  クエン弁護士はキャリアを通じて豊富な経験を積みました：
+  - 複数年の企業法務コンサルティング経験
+  - 様々な企業のインハウス法務顧問
+  - Youth & Partners法律事務所のメンバー弁護士
 
-  ## 担当分野
+  ### 専門能力と強み
 
-  - **企業法：** 企業設立、運営、ガバナンス、財務管理、株主権の保護、契約起草に関する包括的なアドバイス
-  - **労働法：** 労働契約、従業員の権利、社会保険、福利厚生、労働紛争の解決に関するコンサルティング
-  - **投資：** 国内外投資、企業発展戦略、投資、資金調達、株式譲渡、投資リスク管理に関する法的問題を含む投資事項に関するアドバイス
+  - 企業設立、運営、ガバナンスに関する包括的なアドバイス
+  - 財務管理と株主権保護の強い能力
+  - 労働契約、従業員の権利、社会保険、福利厚生の専門知識
+  - 投資計画と資金調達への戦略的アプローチ
+  - 株式譲渡と投資リスク管理の専門スキル
+
+  ### 専門分野
+
+  - 企業法
+  - 労働法
+  - 投資
+
+  ### お問い合わせ
+
+  法的相談については、メール：contact@yplawfirm.vn または電話：088 995 6888 までファム・ティ・フエン・クエン弁護士にご連絡ください。
 bodyContent_ko: |
-  ## 팜티후옐퀀 변호사 소개
 
-  기업 자문 및 사내 법무 분야에서 다년간의 경험을 보유한 퀀 변호사는 많은 기업의 신뢰할 수 있는 파트너입니다.
+  ### 경력 사항
 
-  ## 담당 분야
+  퀀 변호사는 경력 전반에 걸쳐 풍부한 경험을 쌓았습니다:
+  - 다년간의 기업 법률 자문 경험
+  - 다양한 기업의 사내 법무 고문
+  - Youth & Partners 법률 회사 구성원 변호사
 
-  - **기업법:** 기업 설립, 운영 및 지배구조, 재무 관리, 주주 권리 보호, 계약 작성에 관한 포괄적인 자문
-  - **노동법:** 노동 계약, 직원 권리, 사회보험, 복리후생, 노동 분쟁 해결에 대한 상담
-  - **투자:** 국내외 투자, 기업 발전 전략, 투자, 자금 조달, 주식 양도 및 투자 위험 관리와 관련된 법률 문제를 포함한 투자 사안에 대한 자문
+  ### 전문 역량 및 강점
+
+  - 기업 설립, 운영 및 지배구조에 관한 포괄적인 자문
+  - 재무 관리 및 주주 권리 보호에 대한 강한 능력
+  - 노동 계약, 직원 권리, 사회보험, 복리후생에 대한 전문 지식
+  - 투자 계획 및 자금 조달에 대한 전략적 접근
+  - 주식 양도 및 투자 위험 관리 전문 기술
+
+  ### 전문 분야
+
+  - 기업법
+  - 노동법
+  - 투자
+
+  ### 연락처
+
+  법률 상담이 필요하시면 이메일: contact@yplawfirm.vn 또는 전화: 088 995 6888로 팜티후옐퀀 변호사에게 연락해 주세요.
 draft: false
 ---
 
-## Giới thiệu về Luật sư Phạm Thị Huyền Quyên
+### Kinh nghiệm làm việc
 
-Với nhiều năm kinh nghiệm trong lĩnh vực tư vấn Doanh nghiệp và pháp chế nội bộ, Luật sư Quyên là đối tác tin cậy của nhiều Doanh nghiệp.
+Luật sư Quyên đã tích lũy kinh nghiệm phong phú trong suốt sự nghiệp:
+- Nhiều năm kinh nghiệm trong tư vấn pháp lý doanh nghiệp
+- Pháp chế nội bộ cho nhiều doanh nghiệp
+- Luật sư thành viên tại Công ty Luật TNHH Youth & Partners
 
-## Lĩnh vực phụ trách
+### Chuyên môn và thế mạnh
 
-- **Doanh nghiệp:** Tư vấn toàn diện về thành lập, hoạt động và quản trị Doanh nghiệp, quản lý tài chính, bảo vệ quyền lợi cổ đông, soạn thảo hợp đồng
-- **Lao động:** Tư vấn về hợp đồng lao động, quyền lợi người lao động, bảo hiểm xã hội, các chế độ phúc lợi, giải quyết tranh chấp lao động
-- **Đầu tư:** Tư vấn các vấn đề liên quan đến Đầu tư, lập kế hoạch Đầu tư, huy động vốn, chuyển nhượng cổ phần và quản lý rủi ro Đầu tư
+- Tư vấn toàn diện về thành lập, hoạt động và quản trị Doanh nghiệp
+- Năng lực mạnh về quản lý tài chính và bảo vệ quyền lợi cổ đông
+- Chuyên môn về hợp đồng lao động, quyền lợi người lao động, bảo hiểm xã hội và các chế độ phúc lợi
+- Phương pháp chiến lược trong lập kế hoạch Đầu tư và huy động vốn
+- Kỹ năng chuyên nghiệp về chuyển nhượng cổ phần và quản lý rủi ro Đầu tư
+
+### Lĩnh vực chuyên môn
+
+- Doanh nghiệp
+- Lao động
+- Đầu tư
+
+### Liên hệ
+
+Để được tư vấn pháp lý, vui lòng liên hệ Luật sư Phạm Thị Huyền Quyên qua email: contact@yplawfirm.vn hoặc điện thoại: 088 995 6888.

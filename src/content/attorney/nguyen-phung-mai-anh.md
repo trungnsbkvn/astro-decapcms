@@ -33,7 +33,7 @@ shortBio_zh: "法律专员 - 编辑，专门从事民事法、土地法"
 shortBio_ja: "法務スペシャリスト - 編集者、民事法、土地法専門"
 shortBio_ko: "법무 전문가 - 편집자, 민사법, 토지법 전문"
 image: "~/assets/images/team/Chuyên viên Mai Ánh.jpg"
-email: "info@luatsumienbac.vn"
+email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:
   - "dan-su"
@@ -98,84 +98,130 @@ languages_ko:
 order: 20
 publishDate: 2024-01-01T00:00:00Z
 bodyContent_en: |
-  ## Areas of Expertise
+  ### Work Experience
 
-  Nguyễn Phùng Mai Ánh is responsible for the following areas:
+  She has built practical experience through internships at various legal and government organizations.
 
-  - **Civil Law:** Editing content on contracts, civil transactions, marriage and family.
+  - **Youth & Partners Law Firm:** Legal Specialist (2024 – present) - specializing in land procedures and legal consultation on land use rights, planning, transfers, and related matters
+  - **Việt Xuân Commune People's Committee:** Legal Intern (2023) - coordinating document authentication, land dispute mediation, data entry, and administrative document processing
+  - **24h Law Company:** Legal Intern (2021) - supporting lawyers in research and document drafting
+  - **Education:** Bachelor of Law from Faculty of Law, National Academy of Public Administration (2024)
 
-  - **Land Law:** Specialized in handling land procedures and legal consultation on land use rights, planning, transfers, and related matters.
+  ### Expertise and Strengths
 
-  - **Administrative Law:** Consulting and supporting administrative procedures.
+  She is highly regarded for her thorough legal research abilities, clear legal content editing, and practical experience in land procedures. Her strengths include legal writing, land law consultation, and administrative procedure support.
 
-  ## Experience
+  ### Areas of Expertise
 
-  - 2021: Internship at 24h Law Company, supporting lawyers in research and document drafting, reviewing legal papers and documents.
-  - 2023: Internship at Việt Xuân Commune People's Committee, coordinating with Justice-Civil Status Officials in document authentication, land dispute mediation, data entry, and administrative document processing.
-  - 2024: Legal Specialist at Youth & Partners Law Firm LLC, specializing in handling land procedures and legal consultation on land use rights, planning, transfers, and related matters.
+  1. **Civil Law:** Editing content on contracts, civil transactions, marriage and family matters
+  2. **Land Law:** Specialized in handling land procedures and legal consultation on land use rights, planning, transfers, and related matters
+  3. **Marriage & Family Law:** Consultation on divorce procedures, property division, child custody, and family legal matters
+
+  ### Contact
+
+  - **Email:** contact@yplawfirm.vn
+  - **Phone:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_zh: |
-  ## 专业领域
 
-  阮凤梅映负责以下领域：
+  ### 工作经历
 
-  - **民事法：** 编辑关于合同、民事交易、婚姻家庭的内容。
+  她通过在各种法律和政府组织的实习积累了实践经验。
 
-  - **土地法：** 专门处理土地程序和关于土地使用权、规划、转让及相关事项的法律咨询。
+  - **Youth & Partners律师事务所：** 法律专员（2024年至今）- 专门处理土地程序和关于土地使用权、规划、转让及相关事项的法律咨询
+  - **越春乡人民委员会：** 法律实习生（2023年）- 协调文件认证、土地纠纷调解、数据录入和行政文件处理
+  - **24h法律公司：** 法律实习生（2021年）- 支持律师进行研究和文件起草
+  - **教育背景：** 国家行政学院法学院法学学士（2024年）
 
-  - **行政法：** 咨询和支持行政程序。
+  ### 专业知识与优势
 
-  ## 经验
+  她以深入的法律研究能力、清晰的法律内容编辑和土地程序实践经验而备受赞誉。她的优势包括法律写作、土地法咨询和行政程序支持。
 
-  - 2021年：在24h法律公司实习，支持律师进行研究和文件起草，审查法律文件和文档。
-  - 2023年：在越春乡人民委员会实习，与司法-户籍官员协调进行文件认证、土地纠纷调解、数据录入和行政文件处理。
-  - 2024年：Youth & Partners律师事务所法律专员，专门处理土地程序和关于土地使用权、规划、转让及相关事项的法律咨询。
+  ### 专业领域
+
+  1. **民事法：** 编辑关于合同、民事交易、婚姻家庭事务的内容
+  2. **土地法：** 专门处理土地程序和关于土地使用权、规划、转让及相关事项的法律咨询
+  3. **婚姻家庭法：** 关于离婚程序、财产分割、子女抚养权和家庭法律事务的咨询
+
+  ### 联系方式
+
+  - **邮箱：** contact@yplawfirm.vn
+  - **电话：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ja: |
-  ## 専門分野
+  ### 職歴
 
-  グエン・フン・マイ・アインは以下の分野を担当しています：
+  彼女は様々な法律および政府組織でのインターンシップを通じて実践的な経験を積みました。
 
-  - **民事法：** 契約、民事取引、婚姻家族に関するコンテンツの編集。
+  - **Youth & Partners法律事務所：** 法務スペシャリスト（2024年〜現在）- 土地手続きの処理と土地使用権、計画、譲渡、関連事項に関する法的相談を専門
+  - **ベトスアン社人民委員会：** 法務インターン（2023年）- 文書認証、土地紛争調停、データ入力、行政文書処理の調整
+  - **24h法律会社：** 法務インターン（2021年）- 弁護士の研究と文書作成をサポート
+  - **学歴：** 国家行政学院法学部法学士（2024年）
 
-  - **土地法：** 土地手続きの処理と土地使用権、計画、譲渡、関連事項に関する法的相談を専門。
+  ### 専門知識と強み
 
-  - **行政法：** 行政手続きのコンサルティングとサポート。
+  彼女は徹底した法的調査能力、明確な法的コンテンツ編集、土地手続きの実践経験で高く評価されています。法的文書作成、土地法相談、行政手続きサポートが強みです。
 
-  ## 経験
+  ### 専門分野
 
-  - 2021年：24h法律会社にてインターンシップ、弁護士の研究と文書作成をサポート、法的書類と文書のレビュー。
-  - 2023年：ベトスアン社人民委員会にてインターンシップ、司法・戸籍担当官と連携して文書認証、土地紛争調停、データ入力、行政文書処理。
-  - 2024年：Youth & Partners法律事務所の法務スペシャリスト、土地手続きの処理と土地使用権、計画、譲渡、関連事項に関する法的相談を専門。
+  1. **民事法：** 契約、民事取引、婚姻家族事項に関するコンテンツの編集
+  2. **土地法：** 土地手続きの処理と土地使用権、計画、譲渡、関連事項に関する法的相談を専門
+  3. **婚姻家族法：** 離婚手続き、財産分割、子供の親権、家族法的問題に関する相談
+
+  ### 連絡先
+
+  - **メール：** contact@yplawfirm.vn
+  - **電話：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ko: |
-  ## 전문 분야
+  ### 경력
 
-  응웬풍마이안이 담당하는 분야:
+  그녀는 다양한 법률 및 정부 기관에서의 인턴십을 통해 실무 경험을 쌓았습니다.
 
-  - **민사법:** 계약, 민사 거래, 결혼 및 가족에 관한 콘텐츠 편집.
+  - **Youth & Partners 법률 회사:** 법무 전문가 (2024년 ~ 현재) - 토지 절차 처리 및 토지 사용권, 계획, 양도 및 관련 사항에 대한 법률 상담 전문
+  - **비엣쑤언 사 인민위원회:** 법무 인턴 (2023년) - 문서 인증, 토지 분쟁 조정, 데이터 입력 및 행정 문서 처리 조정
+  - **24h 법률 회사:** 법무 인턴 (2021년) - 변호사의 연구 및 문서 작성 지원
+  - **학력:** 국가행정학원 법학부 법학사 (2024년)
 
-  - **토지법:** 토지 절차 처리 및 토지 사용권, 계획, 양도 및 관련 사항에 대한 법률 상담 전문.
+  ### 전문 지식 및 강점
 
-  - **행정법:** 행정 절차 상담 및 지원.
+  그녀는 철저한 법률 연구 능력, 명확한 법적 콘텐츠 편집, 토지 절차 실무 경험으로 높이 평가받습니다. 법률 작성, 토지법 상담, 행정 절차 지원이 강점입니다.
 
-  ## 경험
+  ### 전문 분야
 
-  - 2021년: 24h 법률 회사 인턴십, 변호사의 연구 및 문서 작성 지원, 법률 서류 및 문서 검토.
-  - 2023년: 비엣쑤언 사 인민위원회 인턴십, 사법-호적 담당관과 협력하여 문서 인증, 토지 분쟁 조정, 데이터 입력 및 행정 문서 처리.
-  - 2024년: Youth & Partners 법률 회사 법무 전문가, 토지 절차 처리 및 토지 사용권, 계획, 양도 및 관련 사항에 대한 법률 상담 전문.
+  1. **민사법:** 계약, 민사 거래, 결혼 및 가족 사항에 관한 콘텐츠 편집
+  2. **토지법:** 토지 절차 처리 및 토지 사용권, 계획, 양도 및 관련 사항에 대한 법률 상담 전문
+  3. **가족법:** 이혼 절차, 재산 분할, 자녀 양육권 및 가족 법률 문제에 대한 상담
+
+  ### 연락처
+
+  - **이메일:** contact@yplawfirm.vn
+  - **전화:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 draft: false
 ---
 
-## Lĩnh vực chuyên môn
+### Kinh nghiệm làm việc
 
-Nguyễn Phùng Mai Ánh phụ trách các lĩnh vực:
+Cô đã tích lũy kinh nghiệm thực tiễn thông qua các đợt thực tập tại nhiều tổ chức pháp lý và cơ quan nhà nước.
 
-- **Dân sự:** Biên tập nội dung về hợp đồng, giao dịch dân sự, hôn nhân gia đình.
+- **Công ty Luật TNHH Youth & Partners:** Chuyên viên pháp lý (2024 – nay) - chuyên xử lý thủ tục Đất đai và tư vấn pháp lý về quyền sử dụng đất, quy hoạch, chuyển nhượng và các vấn đề liên quan
+- **Ủy ban nhân dân xã Việt Xuân:** TTS Pháp lý (2023) - phối hợp chứng thực giấy tờ, hòa giải tranh chấp Đất đai, nhập liệu và xử lý tài liệu Hành chính
+- **Công ty Luật 24h:** TTS Pháp lý (2021) - hỗ trợ luật sư nghiên cứu và soạn thảo hồ sơ
+- **Học vấn:** Cử nhân Luật - Khoa Luật, Học viện Hành chính Quốc Gia (2024)
 
-- **Đất đai:** Chuyên xử lý thủ tục Đất đai và tư vấn pháp lý về quyền sử dụng đất, quy hoạch, chuyển nhượng và các vấn đề liên quan.
+### Chuyên môn và thế mạnh
 
-- **Hành chính:** Tư vấn và hỗ trợ các thủ tục hành chính.
+Cô được đánh giá cao với khả năng nghiên cứu pháp luật sâu sắc, biên tập nội dung pháp lý rõ ràng và kinh nghiệm thực tiễn trong thủ tục đất đai. Thế mạnh của cô bao gồm viết bài pháp lý, tư vấn luật đất đai và hỗ trợ thủ tục hành chính.
 
-## Kinh nghiệm
+### Lĩnh vực chuyên môn
 
-- 2021: Thực tập tại Công ty Luật 24h, hỗ trợ luật sư nghiên cứu và soạn thảo hồ sơ, kiểm tra giấy tờ, tài liệu pháp lý.
-- 2023: Thực tập tại Ủy ban nhân dân xã Việt Xuân, phối hợp với Công chức Tư pháp – Hộ tịch thực hiện chứng thực giấy tờ, hòa giải tranh chấp Đất đai, nhập liệu và xử lý tài liệu Hành chính.
-- 2024: Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners, chuyên xử lý thủ tục Đất đai và tư vấn pháp lý về quyền sử dụng đất, quy hoạch, chuyển nhượng và các vấn đề liên quan.
+1. **Dân sự:** Biên tập nội dung về hợp đồng, giao dịch dân sự, hôn nhân gia đình
+2. **Đất đai:** Chuyên xử lý thủ tục Đất đai và tư vấn pháp lý về quyền sử dụng đất, quy hoạch, chuyển nhượng và các vấn đề liên quan
+3. **Hôn nhân & Gia đình:** Tư vấn về thủ tục ly hôn, phân chia tài sản, quyền nuôi con và các vấn đề pháp lý gia đình
+
+### Liên hệ
+
+- **Email:** contact@yplawfirm.vn
+- **Điện thoại:** 088 995 6888
+- **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)

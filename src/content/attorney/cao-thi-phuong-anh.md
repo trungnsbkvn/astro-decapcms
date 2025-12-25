@@ -37,7 +37,7 @@ bio_ko: |
   
   그녀는 기업법, 노동법, 투자 분야에서 폭넓은 전문 지식을 보유하고 있습니다.
 image: "~/assets/images/team/Chuyên viên Cao Thị Phương Anh.jpg"
-email: "info@luatsumienbac.vn"
+email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:
   - "doanh-nghiep"
@@ -112,104 +112,134 @@ languages_ko:
 order: 30
 publishDate: 2025-12-01T00:00:00Z
 bodyContent_en: |
-  ## Areas of Expertise
+  ### Work Experience
 
-  Cao Thị Phương Anh is responsible for the following areas:
+  She has built comprehensive experience through legal internships at various prestigious institutions.
 
-  - **Corporate Law:** Regular legal consultation and legal support for enterprises in daily legal matters, legal compliance, and internal operations.
+  - **Youth & Partners Law Firm:** Legal Specialist (Dec 2025 – present) - supporting legal consultation activities, document drafting, and legal research
+  - **Xuân Hòa Ward People's Committee, Phú Thọ Province:** Legal Intern (Nov 2025 – Dec 2025)
+  - **Chân Tín Nghĩa Law Firm LLC:** Legal Intern (Jul 2025 – Oct 2025)
+  - **AIC Law Office:** Legal Intern (Dec 2024 – Jun 2025)
+  - **Education:** Bachelor of Economic Law - Hanoi Law University (2025)
 
-  - **Internal Regulations:** Reviewing and analyzing legal documents, contracts, and legal materials related to business operations.
+  ### Expertise and Strengths
 
-  - **Corporate Procedures:** Supporting the drafting and reviewing of commercial contracts, internal documents, and legal papers as required by the company and clients.
+  She is highly regarded for her rapid legal research capabilities, practical advisory solutions, and exceptional multilingual communication skills. Her strengths include legal compliance expertise, contract drafting, and comprehensive corporate legal support.
 
-  - **Regular Consultation:** Participating in research and updating new laws, providing practical legal solutions for enterprises.
+  ### Areas of Expertise
 
-  ## Experience
+  1. **Corporate Law:** Regular legal consultation and support for enterprises in daily legal matters, legal compliance, and internal operations
+  2. **Labor Law:** Advising on labor contracts, employee rights, workplace regulations, and labor dispute resolution
+  3. **Investment:** Consulting on investment procedures, drafting investment documents, and supporting foreign investment projects
 
-  - Dec 2024 – Jun 2025: Legal Intern at AIC Law Office
-  - Jul 2025 – Oct 2025: Legal Intern at Chân Tín Nghĩa Law Firm LLC
-  - Nov 2025 - Dec 2025: Legal Intern at Xuân Hòa Ward People's Committee, Phú Thọ Province
-  - Dec 2025 to present: Legal Specialist at Youth & Partners Law Firm (YPLaw Firm)
-  Participating in supporting legal consultation activities, document drafting, legal regulation research, and assisting lawyers in working with clients.
+  ### Contact
+
+  - **Email:** contact@yplawfirm.vn
+  - **Phone:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_zh: |
-  ## 专业领域
+  ### 工作经历
 
-  高氏芳英负责以下领域：
+  她通过在多家知名机构的法律实习积累了全面的经验。
 
-  - **企业法：** 为企业日常法律事务、法律合规和内部运营提供常规法律咨询和法律支持。
+  - **Youth & Partners律师事务所：** 法律专员（2025年12月至今）- 支持法律咨询活动、文件起草和法律研究
+  - **富寿省春和坊人民委员会：** 法律实习生（2025年11月 – 2025年12月）
+  - **真信义律师事务所：** 法律实习生（2025年7月 – 2025年10月）
+  - **AIC律师事务所：** 法律实习生（2024年12月 – 2025年6月）
+  - **教育背景：** 河内法律大学经济法学士（2025年）
 
-  - **内部规章：** 审查和分析与企业运营相关的法律文件、合同和法律材料。
+  ### 专业知识与优势
 
-  - **企业程序：** 支持起草和审查公司和客户要求的商业合同、内部文件和法律文件。
+  她以快速的法律研究能力、实用的咨询解决方案和出色的多语言沟通技能而备受赞誉。她的优势包括法律合规专业知识、合同起草和全面的企业法律支持。
 
-  - **常规咨询：** 参与研究和更新新法律，为企业提供实用的法律解决方案。
+  ### 专业领域
 
-  ## 经验
+  1. **企业法：** 为企业日常法律事务、法律合规和内部运营提供常规法律咨询和支持
+  2. **劳动法：** 关于劳动合同、员工权利、工作场所规定和劳动争议解决的咨询
+  3. **投资：** 关于投资程序的咨询、投资文件起草和支持外国投资项目
 
-  - 2024年12月 – 2025年6月：AIC律师事务所法律实习生
-  - 2025年7月 – 2025年10月：真信义律师事务所法律实习生
-  - 2025年11月 - 2025年12月：富寿省春和坊人民委员会法律实习生
-  - 2025年12月至今：Youth & Partners律师事务所法律专员
-  参与支持法律咨询活动、文件起草、法律法规研究以及协助律师与客户合作。
+  ### 联系方式
+
+  - **邮箱：** contact@yplawfirm.vn
+  - **电话：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ja: |
-  ## 専門分野
+  ### 職歴
 
-  カオ・ティ・フオン・アインは以下の分野を担当しています：
+  彼女は様々な名門機関での法務インターンシップを通じて包括的な経験を積みました。
 
-  - **企業法：** 日常の法的問題、法令遵守、内部業務における企業への定期的な法的相談と法的支援。
+  - **Youth & Partners法律事務所：** 法務スペシャリスト（2025年12月〜現在）- 法的相談活動、文書作成、法的調査のサポート
+  - **フートー省スアンホア区人民委員会：** 法務インターン（2025年11月 – 2025年12月）
+  - **チャン・ティン・ギア法律事務所：** 法務インターン（2025年7月 – 2025年10月）
+  - **AIC法律事務所：** 法務インターン（2024年12月 – 2025年6月）
+  - **学歴：** ハノイ法科大学経済法学士（2025年）
 
-  - **内部規程：** 事業運営に関連する法的文書、契約、法的資料のレビューと分析。
+  ### 専門知識と強み
 
-  - **企業手続き：** 会社とクライアントが必要とする商業契約、内部文書、法的書類の起草とレビューのサポート。
+  彼女は迅速な法的調査能力、実践的なアドバイスソリューション、卓越した多言語コミュニケーションスキルで高く評価されています。法令遵守の専門知識、契約起草、包括的な企業法務サポートが強みです。
 
-  - **定期相談：** 新しい法律の研究と更新への参加、企業への実践的な法的ソリューションの提供。
+  ### 専門分野
 
-  ## 経験
+  1. **企業法：** 日常の法的問題、法令遵守、内部業務に関する企業への定期的な法的相談とサポート
+  2. **労働法：** 労働契約、従業員の権利、職場規則、労働紛争解決に関するアドバイス
+  3. **投資：** 投資手続きに関するコンサルティング、投資文書の起草、外国投資プロジェクトのサポート
 
-  - 2024年12月 – 2025年6月：AIC法律事務所にて法務インターン
-  - 2025年7月 – 2025年10月：チャン・ティン・ギア法律事務所にて法務インターン
-  - 2025年11月 - 2025年12月：フートー省スアンホア区人民委員会にて法務インターン
-  - 2025年12月から現在：Youth & Partners法律事務所の法務スペシャリスト
-  法的相談活動、文書作成、法規制研究のサポート、およびクライアントとの業務における弁護士の補助に参加。
+  ### 連絡先
+
+  - **メール：** contact@yplawfirm.vn
+  - **電話：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ko: |
-  ## 전문 분야
+  ### 경력
 
-  까오티프엉아잉이 담당하는 분야:
+  그녀는 다양한 명문 기관에서의 법무 인턴십을 통해 포괄적인 경험을 쌓았습니다.
 
-  - **기업법:** 일상 법률 문제, 법률 준수 및 내부 운영에 대한 기업을 위한 정기 법률 상담 및 법률 지원.
+  - **Youth & Partners 법률 회사:** 법무 전문가 (2025년 12월 ~ 현재) - 법률 상담 활동, 문서 작성, 법률 연구 지원
+  - **푸토성 쑤언호아 구 인민위원회:** 법무 인턴 (2025년 11월 – 2025년 12월)
+  - **쩐띤응이아 법률 회사:** 법무 인턴 (2025년 7월 – 2025년 10월)
+  - **AIC 법률 사무소:** 법무 인턴 (2024년 12월 – 2025년 6월)
+  - **학력:** 하노이 법과대학 경제법학사 (2025년)
 
-  - **내부 규정:** 사업 운영과 관련된 법률 문서, 계약 및 법률 자료의 검토 및 분석.
+  ### 전문 지식 및 강점
 
-  - **기업 절차:** 회사와 고객의 요구에 따른 상업 계약, 내부 문서 및 법률 서류의 작성 및 검토 지원.
+  그녀는 신속한 법률 연구 능력, 실용적인 자문 솔루션, 탁월한 다국어 의사소통 기술로 높이 평가받습니다. 법률 준수 전문 지식, 계약 작성, 포괄적인 기업 법률 지원이 강점입니다.
 
-  - **정기 상담:** 새로운 법률 연구 및 업데이트 참여, 기업을 위한 실용적인 법률 솔루션 제공.
+  ### 전문 분야
 
-  ## 경험
+  1. **기업법:** 일상 법률 문제, 법률 준수 및 내부 운영에 대한 기업을 위한 정기 법률 상담 및 지원
+  2. **노동법:** 노동 계약, 직원 권리, 직장 규정 및 노동 분쟁 해결에 대한 자문
+  3. **투자:** 투자 절차 컨설팅, 투자 문서 작성 및 외국인 투자 프로젝트 지원
 
-  - 2024년 12월 – 2025년 6월: AIC 법률 사무소 법무 인턴
-  - 2025년 7월 – 2025년 10월: 쩐띤응이아 법률 회사 법무 인턴
-  - 2025년 11월 - 2025년 12월: 푸토성 쑤언호아 구 인민위원회 법무 인턴
-  - 2025년 12월 ~ 현재: Youth & Partners 법률 회사 법무 전문가
-  법률 상담 활동, 문서 작성, 법률 규정 연구 지원 및 고객과의 업무에서 변호사 보조 참여.
+  ### 연락처
+
+  - **이메일:** contact@yplawfirm.vn
+  - **전화:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 draft: false
 ---
 
-## Lĩnh vực chuyên môn
+### Kinh nghiệm làm việc
 
-Cao Thị Phương Anh phụ trách các lĩnh vực:
+Cô đã tích lũy kinh nghiệm toàn diện thông qua các đợt thực tập pháp lý tại nhiều tổ chức uy tín.
 
-- **Doanh nghiệp:** Tư vấn pháp luật thường xuyên và hỗ trợ pháp lý cho doanh nghiệp trong các vấn đề pháp lý hàng ngày, tuân thủ pháp luật và hoạt động nội bộ.
+- **Công ty Luật TNHH Youth & Partners:** Chuyên viên pháp lý (12/2025 – nay) - hỗ trợ các hoạt động tư vấn pháp lý, soạn thảo hồ sơ và nghiên cứu pháp luật
+- **UBND phường Xuân Hòa, tỉnh Phú Thọ:** TTS Pháp lý (11/2025 – 12/2025)
+- **Công ty Luật TNHH Chân Tín Nghĩa:** TTS Pháp lý (7/2025 – 10/2025)
+- **Văn phòng Luật sư AIC:** TTS Pháp lý (12/2024 – 6/2025)
+- **Học vấn:** Cử nhân Luật Kinh tế - Trường Đại học Luật Hà Nội (2025)
 
-- **Quy chế nội bộ:** Rà soát, phân tích văn bản quy phạm pháp luật, hợp đồng và tài liệu pháp lý liên quan đến hoạt động doanh nghiệp.
+### Chuyên môn và thế mạnh
 
-- **Thủ tục Doanh nghiệp:** Hỗ trợ soạn thảo, kiểm tra các hợp đồng thương mại, văn bản nội bộ, giấy tờ pháp lý theo yêu cầu công ty và khách hàng.
+Cô được đánh giá cao với khả năng nghiên cứu pháp luật nhanh chóng, tư vấn giải pháp thực tiễn và kỹ năng giao tiếp đa ngôn ngữ xuất sắc. Thế mạnh của cô bao gồm chuyên môn về tuân thủ pháp luật, soạn thảo hợp đồng và hỗ trợ pháp lý doanh nghiệp toàn diện.
 
-- **Tư vấn thường xuyên** Tham gia nghiên cứu và cập nhật pháp luật mới, tư vấn giải pháp pháp lý thực tiễn cho doanh nghiệp.
+### Lĩnh vực chuyên môn
 
-## Kinh nghiệm
+1. **Doanh nghiệp:** Tư vấn pháp luật thường xuyên và hỗ trợ doanh nghiệp trong các vấn đề pháp lý hàng ngày, tuân thủ pháp luật và hoạt động nội bộ
+2. **Lao động:** Tư vấn về hợp đồng lao động, quyền lợi người lao động, quy định nơi làm việc và giải quyết tranh chấp lao động
+3. **Đầu tư:** Tư vấn về thủ tục đầu tư, soạn thảo hồ sơ đầu tư và hỗ trợ các dự án đầu tư nước ngoài
 
-- 12/2024 – 6/2025: TTS Pháp lý tại Văn phòng luật sư AIC
-- 7/2025 – 10/2025: TTS Pháp lý tại Công ty Luật TNHH Chân Tín Nghĩa
-- 11/2025 - 12/2025: TTS Pháp lý tại UBND phường Xuân Hòa, tỉnh Phú Thọ
-- 12/2025 đến nay: Chuyên viên pháp lý – Công ty Luật TNHH Youth & Partners (YPLaw Firm)
-Tham gia hỗ trợ các hoạt động tư vấn pháp lý, soạn thảo hồ sơ, nghiên cứu quy định pháp luật và hỗ trợ luật sư trong quá trình làm việc với khách hàng.
+### Liên hệ
+
+- **Email:** contact@yplawfirm.vn
+- **Điện thoại:** 088 995 6888
+- **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)

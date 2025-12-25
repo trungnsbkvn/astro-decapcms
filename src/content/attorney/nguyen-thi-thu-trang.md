@@ -35,7 +35,7 @@ bio_ko: |
   
   그녀는 기업 운영의 법률 준수 보장, 내부 양식 및 기업 규정 개발 및 조정 경험을 보유하고 있습니다.
 image: "~/assets/images/team/Chuyên viên Nguyễn Thị Thu Trang.jpg"
-email: "info@luatsumienbac.vn"
+email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:
   - "doanh-nghiep"
@@ -96,89 +96,134 @@ socialLinks:
 order: 14
 publishDate: 2024-01-01T00:00:00Z
 bodyContent_en: |
-  ## Areas of Expertise
+  ### Work Experience
 
-  Nguyễn Thị Thu Trang is responsible for the following areas:
+  Thu Trang has accumulated practical experience in corporate legal support:
+  - Drafting and reviewing bilingual contracts (English - Vietnamese) including framework agreements, service contracts, labor contracts, NDAs
+  - Legal consultation for corporate clients on labor, taxation, real estate, and business operations
+  - Drafting documents for adjustment and renewal of Investment Registration Certificates for foreign-invested enterprises
 
-  - **Contract Drafting:** Legal advice on labor, taxation, real estate, and foreign investment.
+  ### Expertise and Strengths
 
-  - **Corporate Compliance:** Ensuring legal compliance in corporate operations.
+  - Specialized in drafting bilingual contracts (English - Vietnamese)
+  - Strong knowledge in labor, taxation, real estate, and foreign investment
+  - Expertise in ensuring legal compliance in corporate operations
+  - Professional skills in developing and adjusting internal forms and corporate regulations
+  - Experienced in FDI investment procedures
 
-  - **Internal Regulations:** Developing and adjusting internal forms and corporate regulations.
+  ### Areas of Expertise
 
-  ## Experience
+  - Corporate Law
+  - Labor Law
+  - Investment
+  - Land Law
 
-  - Drafting and reviewing bilingual contracts (English - Vietnamese) including framework agreements, service contracts, labor contracts, NDAs.
-  - Legal consultation for corporate clients on labor, taxation, real estate, and business operations.
-  - Participating in developing and reviewing internal forms such as democracy regulations, labor rules, and salary-bonus policies.
-  - Drafting documents for adjustment and renewal of Investment Registration Certificates for foreign-invested enterprises.
+  ### Contact
+
+  For legal consultation, please contact Nguyễn Thị Thu Trang via email: contact@yplawfirm.vn or phone: 088 995 6888.
 bodyContent_zh: |
-  ## 专业领域
+  ### 工作经验
 
-  阮氏秋庄负责以下领域：
+  秋庄在企业法律支持方面积累了实践经验：
+  - 起草和审查双语合同（英语 - 越南语），包括框架协议、服务合同、劳动合同、保密协议
+  - 为企业客户提供劳动、税务、房地产和商业运营方面的法律咨询
+  - 为外商投资企业起草投资登记证书调整和换发文件
 
-  - **合同起草：** 关于劳动、税务、房地产和外国投资的法律咨询。
+  ### 专业能力与优势
 
-  - **企业合规：** 确保企业运营的法律合规。
+  - 专业的双语合同起草能力（英语 - 越南语）
+  - 在劳动、税务、房地产和外国投资方面的扎实知识
+  - 确保企业运营法律合规的专业能力
+  - 制定和调整内部表格和企业规章的专业技能
+  - 在FDI投资程序方面的丰富经验
 
-  - **内部规章：** 制定和调整内部表格和企业规章。
+  ### 专业领域
 
-  ## 经验
+  - 企业法
+  - 劳动法
+  - 投资
+  - 土地法
 
-  - 起草和审查双语合同（英语 - 越南语），包括框架协议、服务合同、劳动合同、保密协议。
-  - 为企业客户提供劳动、税务、房地产和商业运营方面的法律咨询。
-  - 参与制定和审查内部表格，如民主规章、劳动规则和薪酬奖励政策。
-  - 为外商投资企业起草投资登记证书调整和换发文件。
+  ### 联系方式
+
+  如需法律咨询，请通过电子邮件联系阮氏秋庄：contact@yplawfirm.vn 或电话：088 995 6888。
 bodyContent_ja: |
-  ## 専門分野
+  ### 職務経歴
 
-  グエン・ティ・トゥ・チャンは以下の分野を担当しています：
+  トゥ・チャンは企業法務支援の実務経験を積みました：
+  - 基本契約、サービス契約、労働契約、NDAを含むバイリンガル契約（英語 - ベトナム語）の起草とレビュー
+  - 企業クライアントへの労働、税務、不動産、事業運営に関する法的相談
+  - 外資系企業の投資登録証明書の調整と更新のための文書作成
 
-  - **契約起草：** 労働、税務、不動産、海外投資に関する法的アドバイス。
+  ### 専門能力と強み
 
-  - **企業コンプライアンス：** 企業活動における法令遵守の確保。
+  - バイリンガル契約起草の専門スキル（英語 - ベトナム語）
+  - 労働、税務、不動産、海外投資に関する強い知識
+  - 企業活動における法令遵守を確保する専門能力
+  - 内部フォームと企業規程の策定・調整の専門スキル
+  - FDI投資手続きの豊富な経験
 
-  - **内部規程：** 内部フォームおよび企業規程の策定と調整。
+  ### 専門分野
 
-  ## 経験
+  - 企業法
+  - 労働法
+  - 投資
+  - 土地法
 
-  - 基本契約、サービス契約、労働契約、NDAを含むバイリンガル契約（英語 - ベトナム語）の起草とレビュー。
-  - 企業クライアントへの労働、税務、不動産、事業運営に関する法的相談。
-  - 民主規程、労働規則、給与・賞与規程などの内部フォームの策定とレビューへの参加。
-  - 外資系企業の投資登録証明書の調整と更新のための文書作成。
+  ### お問い合わせ
+
+  法的相談については、メール：contact@yplawfirm.vn または電話：088 995 6888 までグエン・ティ・トゥ・チャンにご連絡ください。
 bodyContent_ko: |
-  ## 전문 분야
+  ### 경력 사항
 
-  응웬티투짱이 담당하는 분야:
+  투짱은 기업 법률 지원 분야에서 실무 경험을 쌓았습니다:
+  - 기본 계약, 서비스 계약, 노동 계약, NDA를 포함한 이중 언어 계약(영어 - 베트남어) 작성 및 검토
+  - 기업 고객에 대한 노동, 세무, 부동산, 사업 운영에 관한 법률 상담
+  - 외국인 투자 기업의 투자 등록 증명서 조정 및 갱신을 위한 문서 작성
 
-  - **계약 작성:** 노동, 세무, 부동산 및 외국인 투자에 대한 법률 자문.
+  ### 전문 역량 및 강점
 
-  - **기업 준수:** 기업 운영의 법률 준수 보장.
+  - 이중 언어 계약 작성 전문 기술(영어 - 베트남어)
+  - 노동, 세무, 부동산, 외국인 투자에 관한 강한 지식
+  - 기업 운영의 법률 준수를 보장하는 전문 능력
+  - 내부 양식 및 기업 규정 개발 및 조정 전문 기술
+  - FDI 투자 절차에 대한 풍부한 경험
 
-  - **내부 규정:** 내부 양식 및 기업 규정 개발 및 조정.
+  ### 전문 분야
 
-  ## 경험
+  - 기업법
+  - 노동법
+  - 투자
+  - 토지법
 
-  - 기본 계약, 서비스 계약, 노동 계약, NDA를 포함한 이중 언어 계약(영어 - 베트남어) 작성 및 검토.
-  - 기업 고객에 대한 노동, 세무, 부동산, 사업 운영에 관한 법률 상담.
-  - 민주 규정, 노동 규칙, 급여-보너스 정책 등 내부 양식 개발 및 검토 참여.
-  - 외국인 투자 기업의 투자 등록 증명서 조정 및 갱신을 위한 문서 작성.
+  ### 연락처
+
+  법률 상담이 필요하시면 이메일: contact@yplawfirm.vn 또는 전화: 088 995 6888로 응웬티투짱에게 연락해 주세요.
 draft: false
 ---
 
-## Lĩnh vực chuyên môn
+### Kinh nghiệm làm việc
 
-Nguyễn Thị Thu Trang phụ trách các lĩnh vực:
+Thu Trang đã tích lũy kinh nghiệm thực tế trong lĩnh vực hỗ trợ pháp lý doanh nghiệp:
+- Soạn thảo và đánh giá các hợp đồng song ngữ (Anh - Việt) bao gồm hợp đồng nguyên tắc, hợp đồng dịch vụ, hợp đồng lao động, NDA
+- Tư vấn pháp lý cho khách hàng Doanh nghiệp về các lĩnh vực lao động, thuế, bất động sản, hoạt động kinh doanh
+- Soạn thảo hồ sơ điều chỉnh và cấp đổi giấy chứng nhận Đầu tư cho Doanh nghiệp có vốn Đầu tư nước ngoài
 
-- **Soạn thảo hợp đồng:** Tư vấn pháp lý về lao động, thuế, bất động sản và Đầu tư nước ngoài.
+### Chuyên môn và thế mạnh
 
-- **Tuân thủ Doanh nghiệp:** Đảm bảo tuân thủ pháp luật trong các hoạt động Doanh nghiệp.
+- Chuyên soạn thảo hợp đồng song ngữ (Anh - Việt)
+- Kiến thức vững về lao động, thuế, bất động sản và Đầu tư nước ngoài
+- Năng lực đảm bảo tuân thủ pháp luật trong các hoạt động Doanh nghiệp
+- Kỹ năng chuyên nghiệp trong việc xây dựng và điều chỉnh các biểu mẫu và quy chế nội bộ Doanh nghiệp
+- Kinh nghiệm về thủ tục Đầu tư FDI
 
-- **Quy chế nội bộ:** Xây dựng và điều chỉnh các biểu mẫu và quy chế nội bộ Doanh nghiệp.
+### Lĩnh vực chuyên môn
 
-## Kinh nghiệm
+- Doanh nghiệp
+- Lao động
+- Đầu tư
+- Đất đai
 
-- Soạn thảo và đánh giá các hợp đồng song ngữ (Anh - Việt) bao gồm hợp đồng nguyên tắc, hợp đồng dịch vụ, hợp đồng lao động, NDA.
-- Tư vấn pháp lý cho khách hàng Doanh nghiệp về các lĩnh vực lao động, thuế, bất động sản, hoạt động kinh doanh.
-- Tham gia xây dựng và đánh giá các biểu mẫu nội bộ như quy chế dân chủ, nội quy lao động, quy chế lương thưởng.
-- Soạn thảo hồ sơ điều chỉnh và cấp đổi giấy chứng nhận Đầu tư cho Doanh nghiệp có vốn Đầu tư nước ngoài.
+### Liên hệ
+
+Để được tư vấn pháp lý, vui lòng liên hệ Nguyễn Thị Thu Trang qua email: contact@yplawfirm.vn hoặc điện thoại: 088 995 6888.

@@ -33,7 +33,7 @@ bio_ko: |
   
   하노이 법과대학에서의 탄탄한 법학 교육을 바탕으로, 쑤언은 적극적으로 법률 지식과 전문 기술을 연마하며 이론을 일상 업무에 적용하고 있습니다.
 image: "~/assets/images/team/Chuyên viên Nguyễn Thị Xuân.jpg"
-email: "info@luatsumienbac.vn"
+email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:
   - "doanh-nghiep"
@@ -103,96 +103,136 @@ languages_ko:
 order: 28
 publishDate: 2025-01-01T00:00:00Z
 bodyContent_en: |
-  ## Introduction
+  ### Work Experience
 
-  Nguyễn Thị Xuân is a Legal Specialist at YP Law Firm since 2025. With a solid legal education from Hanoi Law University, Xuân actively cultivates legal knowledge and professional skills while applying theory to practice.
+  Xuân has accumulated diverse practical experience:
+  - October 2023 – February 2024: Internship at Nguyen Phat Law Company, legal consultation in marriage and family
+  - April 2024 – May 2025: Drafting staff at Nguyen Hue Notary Office, reviewing legal documents and drafting contracts
+  - May 2025 – November 2025: Content moderation at Domin Joint Stock Company
+  - Currently: Legal Specialist at Youth & Partners Law Firm
 
-  ## Areas of Responsibility
+  ### Expertise and Strengths
 
-  - Corporate Law: Regular legal consultation and support for enterprises in daily legal matters, legal compliance, and internal operations.
-  - Reviewing and analyzing legal documents, contracts, and legal materials related to business operations.
-  - Supporting the drafting and reviewing of commercial contracts, internal documents, and legal papers as required by the company and clients.
-  - Participating in research and updating new laws, providing practical legal solutions for enterprises.
+  - Solid legal foundation in Economic Law from Hanoi Law University
+  - Practical experience in marriage and family law consultation
+  - Skills in legal document review and contract drafting
+  - Experience in notary procedures and off-site notarization support
+  - Strong analytical and research capabilities
 
-  ## Experience
+  ### Areas of Expertise
 
-  - October 2023 – February 2024: Internship at Nguyen Phat Law Company, legal consultation in marriage and family, thereby enhancing understanding of law and professional skills.
-  - April 2024 – May 2025: Drafting staff at Nguyen Hue Notary Office. Reviewing legal documents and drafting contracts for vehicle sales, transfers, inheritance...; Supporting notaries in off-site notarization.
-  - From May 2025 - November 2025: Working at Domin Joint Stock Company: Moderating content posted on social media.
-  - Currently a Legal Specialist at Youth & Partners Law Firm (YPLaw Firm), learning and contributing to the company's consultation and legal support activities.
+  - Corporate Law
+  - Labor Law
+  - Civil Law
+
+  ### Contact
+
+  For legal consultation, please contact Nguyễn Thị Xuân via email: contact@yplawfirm.vn or phone: 088 995 6888.
 bodyContent_zh: |
-  ## 介绍
+  ### 工作经验
 
-  阮氏春自2025年起担任YP律师事务所法律专员。凭借河内法律大学的扎实法律教育，春积极培养法律知识和专业技能，同时将理论应用于实践。
+  春积累了多样的实践经验：
+  - 2023年10月 – 2024年2月：Nguyen Phat法律公司实习，婚姻家庭法律咨询
+  - 2024年4月 – 2025年5月：Nguyen Hue公证处文书起草人员，法律文件审查和合同起草
+  - 2025年5月 – 2025年11月：Domin股份公司内容审核
+  - 目前：Youth & Partners律师事务所法律专员
 
-  ## 负责领域
+  ### 专业能力与优势
 
-  - 企业法：为企业日常法律事务、法律合规和内部运营提供常规法律咨询和支持。
-  - 审查和分析与企业运营相关的法律文件、合同和法律材料。
-  - 支持起草和审查公司和客户要求的商业合同、内部文件和法律文件。
-  - 参与研究和更新新法律，为企业提供实用的法律解决方案。
+  - 河内法律大学经济法专业的坚实法律基础
+  - 婚姻家庭法咨询的实践经验
+  - 法律文件审查和合同起草技能
+  - 公证程序和外出公证支持经验
+  - 强大的分析和研究能力
 
-  ## 经验
+  ### 专业领域
 
-  - 2023年10月 – 2024年2月：在Nguyen Phat法律公司实习，婚姻家庭法律咨询，从而增强对法律的理解和专业技能。
-  - 2024年4月 – 2025年5月：Nguyen Hue公证处文书起草人员。审查法律文件并起草车辆销售、转让、继承合同...；支持公证员进行外出公证。
-  - 2025年5月 - 2025年11月：在Domin股份公司工作：审核发布到社交媒体的内容。
-  - 目前是Youth & Partners律师事务所（YP律师事务所）的法律专员，学习并为公司的咨询和法律支持活动做出贡献。
+  - 企业法
+  - 劳动法
+  - 民事法
+
+  ### 联系方式
+
+  如需法律咨询，请通过电子邮件联系阮氏春：contact@yplawfirm.vn 或电话：088 995 6888。
 bodyContent_ja: |
-  ## 紹介
+  ### 職務経歴
 
-  グエン・ティ・スアンは、2025年からYP法律事務所の法務スペシャリストです。ハノイ法科大学での堅実な法学教育を基盤に、スアンは積極的に法律知識と専門スキルを磨き、理論を実務に活かしています。
+  スアンは多様な実務経験を積みました：
+  - 2023年10月 – 2024年2月：グエンファット法律会社にてインターンシップ、婚姻家族法のコンサルティング
+  - 2024年4月 – 2025年5月：グエンフエ公証人事務所にて文書起草スタッフ、法的文書のレビューと契約起草
+  - 2025年5月 – 2025年11月：ドミン株式会社にてコンテンツモデレーション
+  - 現在：Youth & Partners法律事務所の法務スペシャリスト
 
-  ## 担当分野
+  ### 専門能力と強み
 
-  - 企業法：日常の法的問題、法令遵守、内部業務における企業への定期的な法的相談とサポート。
-  - 事業運営に関連する法的文書、契約、法的資料のレビューと分析。
-  - 会社とクライアントが必要とする商業契約、内部文書、法的書類の起草とレビューのサポート。
-  - 新しい法律の研究と更新への参加、企業への実践的な法的ソリューションの提供。
+  - ハノイ法科大学の経済法における堅固な法律基盤
+  - 婚姻家族法コンサルティングの実務経験
+  - 法的文書レビューと契約起草のスキル
+  - 公証手続きと出張公証サポートの経験
+  - 優れた分析・研究能力
 
-  ## 経験
+  ### 専門分野
 
-  - 2023年10月 – 2024年2月：グエンファット法律会社にてインターンシップ、婚姻家族法のコンサルティング、法律理解と専門スキルの向上。
-  - 2024年4月 – 2025年5月：グエンフエ公証人事務所にて文書起草スタッフ。法的文書のレビューと車両売買、譲渡、相続などの契約起草...；公証人の出張公証をサポート。
-  - 2025年5月 - 2025年11月：ドミン株式会社にて勤務：ソーシャルメディアに投稿されるコンテンツのモデレーション。
-  - 現在Youth & Partners法律事務所（YP法律事務所）の法務スペシャリストとして、会社のコンサルティングと法的支援活動に学び、貢献しています。
+  - 企業法
+  - 労働法
+  - 民事法
+
+  ### お問い合わせ
+
+  法的相談については、メール：contact@yplawfirm.vn または電話：088 995 6888 までグエン・ティ・スアンにご連絡ください。
 bodyContent_ko: |
-  ## 소개
 
-  응웬티쑤언은 2025년부터 YP 법률 회사의 법무 전문가입니다. 하노이 법과대학에서의 탄탄한 법학 교육을 바탕으로, 쑤언은 적극적으로 법률 지식과 전문 기술을 연마하며 이론을 실무에 적용하고 있습니다.
+  ### 경력 사항
 
-  ## 담당 분야
+  쑤언은 다양한 실무 경험을 쌓았습니다:
+  - 2023년 10월 – 2024년 2월: 응웬팟 법률 회사 인턴십, 결혼 및 가족 법률 상담
+  - 2024년 4월 – 2025년 5월: 응웬후에 공증 사무소 문서 작성 직원, 법률 문서 검토 및 계약 작성
+  - 2025년 5월 – 2025년 11월: 도민 주식회사 콘텐츠 검수
+  - 현재: Youth & Partners 법률 회사 법무 전문가
 
-  - 기업법: 일상 법률 문제, 법률 준수 및 내부 운영에 대한 기업을 위한 정기 법률 상담 및 지원.
-  - 사업 운영과 관련된 법률 문서, 계약 및 법률 자료의 검토 및 분석.
-  - 회사와 고객의 요구에 따른 상업 계약, 내부 문서 및 법률 서류의 작성 및 검토 지원.
-  - 새로운 법률 연구 및 업데이트 참여, 기업을 위한 실용적인 법률 솔루션 제공.
+  ### 전문 역량 및 강점
 
-  ## 경험
+  - 하노이 법과대학 경제법 전공의 탄탄한 법률 기반
+  - 결혼 및 가족법 상담 실무 경험
+  - 법률 문서 검토 및 계약 작성 기술
+  - 공증 절차 및 외부 공증 지원 경험
+  - 뛰어난 분석 및 연구 능력
 
-  - 2023년 10월 – 2024년 2월: 응웬팟 법률 회사 인턴십, 결혼 및 가족 법률 상담, 법률 이해 및 전문 기술 향상.
-  - 2024년 4월 – 2025년 5월: 응웬후에 공증 사무소 문서 작성 직원. 법률 문서 검토 및 차량 판매, 양도, 상속 계약 작성...; 공증인의 외부 공증 지원.
-  - 2025년 5월 - 2025년 11월: 도민 주식회사 근무: 소셜 미디어에 게시되는 콘텐츠 검수.
-  - 현재 Youth & Partners 법률 회사(YP 법률 회사)의 법무 전문가로서 회사의 상담 및 법률 지원 활동에 배우고 기여하고 있습니다.
+  ### 전문 분야
+
+  - 기업법
+  - 노동법
+  - 민사법
+
+  ### 연락처
+
+  법률 상담이 필요하시면 이메일: contact@yplawfirm.vn 또는 전화: 088 995 6888로 응웬티쑤언에게 연락해 주세요.
 draft: false
 ---
 
-## Giới thiệu
+### Kinh nghiệm làm việc
 
-Nguyễn Thị Xuân là Chuyên viên pháp lý tại YP Law Firm từ 2025. Với nền tảng đào tạo chuyên ngành Luật tại Trường Đại học Hà Nội, Xuân chủ động trau dồi kiến thức pháp lý và kỹ năng hành nghề, đồng thời tích cực vận dụng lý thuyết vào thực tiễn công.
+Xuân đã tích lũy kinh nghiệm thực tế đa dạng:
+- Tháng 10/2023 – tháng 02/2024: Thực tập tại Công ty Luật Nguyên Phát, tư vấn pháp luật trong lĩnh vực hôn nhân và gia đình
+- Tháng 04/2024 – tháng 05/2025: Nhân viên soạn thảo tại Văn phòng công chứng Nguyễn Huệ, rà soát giấy tờ pháp lý và soạn hợp đồng
+- Từ tháng 05/2025 - tháng 11/2025: Kiểm duyệt nội dung tại Công ty Cổ phần Domin
+- Hiện tại: Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners
 
-## Lĩnh vực phụ trách
+### Chuyên môn và thế mạnh
 
-- Doanh nghiệp: Tư vấn pháp luật thường xuyên và hỗ trợ pháp lý cho doanh nghiệp trong các vấn đề pháp lý hàng ngày, tuân thủ pháp luật và hoạt động nội bộ. 
-- Rà soát, phân tích văn bản quy phạm pháp luật, hợp đồng và tài liệu pháp lý liên quan đến hoạt động doanh nghiệp. 
-- Hỗ trợ soạn thảo, kiểm tra các hợp đồng thương mại, văn bản nội bộ, giấy tờ pháp lý theo yêu cầu công ty và khách hàng. 
-- Tham gia nghiên cứu và cập nhật pháp luật mới, tư vấn giải pháp pháp lý thực tiễn cho doanh nghiệp. 
+- Nền tảng pháp lý vững chắc từ ngành Luật Kinh tế, Đại học Luật Hà Nội
+- Kinh nghiệm thực tế về tư vấn hôn nhân và gia đình
+- Kỹ năng rà soát văn bản pháp lý và soạn thảo hợp đồng
+- Kinh nghiệm về thủ tục công chứng và hỗ trợ ký ngoài
+- Khả năng phân tích và nghiên cứu tốt
 
+### Lĩnh vực chuyên môn
 
-## Kinh nghiệm
+- Doanh nghiệp
+- Lao động
+- Dân sự
 
-- Tháng 10/2023 – tháng 02/2024: Thực tập tại Công ty Luật Nguyên Phát, tư vấn pháp luật trong lĩnh vực hôn nhân và gia đình, từ đó nâng cao hiểu biết về pháp luật và kỹ năng làm việc trong môi trường chuyên nghiệp 
-- Tháng 04/2024 – tháng 05/2025: Nhân viên soạn thảo tại Văn phòng công chứng Nguyễn Huệ. Thực hiện rà soát giấy tờ pháp lý và soạn hợp đồng về mua bán xe, chuyển nhượng, thừa kế...; Hỗ trợ công chứng viên thực hiện ký ngoài.
-- Từ tháng 05/2025 - tháng 11/2025: Làm việc tại Công ty Cổ phần Domin: Kiểm duyệt các nội dung đăng tải lên mạng xã hội
-- Hiện tại là Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners (YPLaw Firm), học hỏi và đóng góp vào các hoạt động tư vấn và hỗ trợ pháp lý của công ty.
+### Liên hệ
+
+Để được tư vấn pháp lý, vui lòng liên hệ Nguyễn Thị Xuân qua email: contact@yplawfirm.vn hoặc điện thoại: 088 995 6888.
 

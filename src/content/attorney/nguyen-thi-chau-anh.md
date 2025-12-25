@@ -33,7 +33,7 @@ shortBio_zh: "企业、劳动和投资法律专员"
 shortBio_ja: "企業法、労働法、投資法専門の法務スペシャリスト"
 shortBio_ko: "기업법, 노동법, 투자법 전문 법무사"
 image: "~/assets/images/team/Chuyên viên Nguyễn Thị Châu Anh.jpg"
-email: "info@luatsumienbac.vn"
+email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:
   - "doanh-nghiep"
@@ -103,61 +103,125 @@ languages_ko:
 order: 24
 publishDate: 2025-01-01T00:00:00Z
 bodyContent_en: |
-  ## Introduction
+  ### Work Experience
 
-  Nguyễn Thị Châu Anh is a Legal Specialist at YP Law Firm since 2025. With a legal training foundation from Hanoi University, Châu Anh proactively cultivates legal knowledge and professional skills while actively applying theory to practice.
+  She has built foundational experience through internship at the judicial system and practical legal work.
 
-  ## Experience
+  - **Youth & Partners Law Firm:** Legal Specialist (Dec 2025 – present) - supporting legal consultation activities, document drafting, legal research, and assisting lawyers in client work
+  - **People's Court of District 7 – Bắc Ninh:** Internship (Jun 2025 – Sep 2025) - supported professional court work, learned litigation procedures and trial practices
+  - **Education:** Bachelor of Law from Hanoi University - Law Major (2025)
 
-  - June 2025 – September 2025: Internship at People's Court of District 7 – Bắc Ninh
-  Participated in supporting professional work at the Court, approached litigation procedures and trial practices, thereby enhancing legal understanding, legal thinking, and professional skills.
-  - From December 2025 to present: Legal Specialist at Youth & Partners Law Firm (YPLaw Firm)
-  Participating in supporting legal consultation activities, document drafting, legal regulation research, and assisting lawyers in working with clients.
+  ### Expertise and Strengths
+
+  She is recognized for her proactive learning attitude, strong foundation in legal theory, and practical experience from court internship. Her strengths include legal research, understanding of litigation procedures, and professional work ethic.
+
+  ### Areas of Expertise
+
+  1. **Corporate Law:** Regular legal consultation and support for enterprises in daily legal matters and compliance
+  2. **Labor Law:** Advising on labor contracts, employee rights, and labor disputes
+  3. **Civil Law:** Consultation on civil transactions, contracts, and related legal matters
+
+  ### Contact
+
+  - **Email:** contact@yplawfirm.vn
+  - **Phone:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_zh: |
-  ## 介绍
 
-  阮氏周英自2025年起担任YP律师事务所法律专员。凭借河内大学的法律培训基础，周英积极培养法律知识和专业技能，同时积极将理论应用于实践。
+  ### 工作经历
 
-  ## 经验
+  她通过司法系统实习和实际法律工作积累了基础经验。
 
-  - 2025年6月 – 2025年9月：北宁第七区人民法院实习
-  参与支持法院的专业工作，接触诉讼程序和审判实践，从而增强法律理解、法律思维和专业技能。
-  - 2025年12月至今：Youth & Partners律师事务所（YP律师事务所）法律专员
-  参与支持法律咨询活动、文件起草、法律法规研究以及协助律师与客户合作。
+  - **Youth & Partners律师事务所：** 法律专员（2025年12月至今）- 支持法律咨询活动、文件起草、法律研究，并协助律师与客户合作
+  - **北宁第七区人民法院：** 实习（2025年6月 – 2025年9月）- 支持法院专业工作，学习诉讼程序和审判实践
+  - **教育背景：** 河内大学法学专业法学学士（2025年）
+
+  ### 专业知识与优势
+
+  她以积极主动的学习态度、扎实的法律理论基础和法院实习的实践经验而著称。她的优势包括法律研究、对诉讼程序的理解和专业的工作态度。
+
+  ### 专业领域
+
+  1. **企业法：** 为企业日常法律事务和合规提供常规法律咨询和支持
+  2. **劳动法：** 关于劳动合同、员工权利和劳动纠纷的咨询
+  3. **民事法：** 关于民事交易、合同和相关法律事务的咨询
+
+  ### 联系方式
+
+  - **邮箱：** contact@yplawfirm.vn
+  - **电话：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ja: |
-  ## 紹介
+  ### 職歴
 
-  グエン・ティ・チャウ・アインは、2025年よりYP法律事務所の法務スペシャリストです。ハノイ大学の法律訓練を基盤に、チャウ・アインは積極的に法律知識と専門スキルを養い、理論を実務に応用しています。
+  彼女は司法制度でのインターンシップと実際の法務業務を通じて基礎的な経験を積みました。
 
-  ## 経験
+  - **Youth & Partners法律事務所：** 法務スペシャリスト（2025年12月〜現在）- 法的相談活動、文書作成、法的調査のサポート、クライアント業務における弁護士の補助
+  - **バクニン第7区人民裁判所：** インターンシップ（2025年6月 – 2025年9月）- 裁判所の専門業務をサポート、訴訟手続きと裁判実務を学習
+  - **学歴：** ハノイ大学法学専攻法学士（2025年）
 
-  - 2025年6月 – 2025年9月：バクニン第7区人民裁判所にてインターンシップ
-  裁判所での専門業務をサポートし、訴訟手続きと裁判実務に触れ、法律理解、法的思考、専門スキルを向上。
-  - 2025年12月から現在：Youth & Partners法律事務所（YP法律事務所）の法務スペシャリスト
-  法的相談活動、文書作成、法規制研究のサポート、およびクライアントとの業務における弁護士の補助に参加。
+  ### 専門知識と強み
+
+  彼女は積極的な学習姿勢、法律理論の確かな基盤、裁判所インターンシップでの実践経験で認められています。法的調査、訴訟手続きの理解、プロフェッショナルな仕事姿勢が強みです。
+
+  ### 専門分野
+
+  1. **企業法：** 日常の法的問題とコンプライアンスに関する企業への定期的な法的相談とサポート
+  2. **労働法：** 労働契約、従業員の権利、労働紛争に関するアドバイス
+  3. **民事法：** 民事取引、契約、関連する法的問題に関する相談
+
+  ### 連絡先
+
+  - **メール：** contact@yplawfirm.vn
+  - **電話：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ko: |
-  ## 소개
+  ### 경력
 
-  응웬티차우안은 2025년부터 YP 법률 회사의 법무 전문가입니다. 하노이대학교의 법률 교육 기반으로, 차우안은 적극적으로 법률 지식과 전문 기술을 함양하며 이론을 실무에 적용합니다.
+  그녀는 사법 시스템 인턴십과 실제 법률 업무를 통해 기초 경험을 쌓았습니다.
 
-  ## 경험
+  - **Youth & Partners 법률 회사:** 법무 전문가 (2025년 12월 ~ 현재) - 법률 상담 활동, 문서 작성, 법률 연구 지원 및 고객 업무에서 변호사 보조
+  - **박닌 제7지역 인민법원:** 인턴십 (2025년 6월 – 2025년 9월) - 법원 전문 업무 지원, 소송 절차 및 재판 관행 학습
+  - **학력:** 하노이대학교 법학 전공 법학사 (2025년)
 
-  - 2025년 6월 – 2025년 9월: 박닌 제7지역 인민법원 인턴십
-  법원에서 전문 업무 지원에 참여하고, 소송 절차와 재판 관행을 접하며 법률 이해, 법적 사고, 전문 기술을 향상.
-  - 2025년 12월 ~ 현재: Youth & Partners 법률 회사(YP 법률 회사) 법무 전문가
-  법률 상담 활동, 문서 작성, 법률 규정 연구 지원 및 고객과의 업무에서 변호사 보조 참여.
+  ### 전문 지식 및 강점
+
+  그녀는 적극적인 학습 태도, 탄탄한 법률 이론 기반, 법원 인턴십에서의 실무 경험으로 인정받습니다. 법률 연구, 소송 절차 이해, 전문적인 업무 태도가 강점입니다.
+
+  ### 전문 분야
+
+  1. **기업법:** 일상 법률 문제 및 준수에 대한 기업을 위한 정기 법률 상담 및 지원
+  2. **노동법:** 노동 계약, 직원 권리, 노동 분쟁에 대한 자문
+  3. **민사법:** 민사 거래, 계약 및 관련 법률 문제에 대한 상담
+
+  ### 연락처
+
+  - **이메일:** contact@yplawfirm.vn
+  - **전화:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 draft: false
 ---
 
-## Giới thiệu
+### Kinh nghiệm làm việc
 
-Nguyễn Thị Châu Anh là Chuyên viên pháp lý tại YP Law Firm từ 2025. Với nền tảng đào tạo chuyên ngành Luật tại Trường Đại học Hà Nội, Châu Anh chủ động trau dồi kiến thức pháp lý và kỹ năng hành nghề, đồng thời tích cực vận dụng lý thuyết vào thực tiễn công.
+Cô đã tích lũy kinh nghiệm cơ bản thông qua thực tập tại hệ thống tư pháp và công việc pháp lý thực tiễn.
 
-## Kinh nghiệm
+- **Công ty Luật TNHH Youth & Partners:** Chuyên viên pháp lý (12/2025 – nay) - hỗ trợ các hoạt động tư vấn pháp lý, soạn thảo hồ sơ, nghiên cứu pháp luật và hỗ trợ luật sư trong công việc với khách hàng
+- **Tòa án nhân dân khu vực 7 – Bắc Ninh:** Thực tập (6/2025 – 9/2025) - hỗ trợ công việc nghiệp vụ tại Tòa án, học tập quy trình tố tụng và thực tiễn xét xử
+- **Học vấn:** Cử nhân Luật - Trường Đại học Hà Nội, ngành Luật học (2025)
 
-- Tháng 6/2025 – tháng 9/2025
-Thực tập tại Tòa án nhân dân khu vực 7 – Bắc Ninh
-Tham gia hỗ trợ các công việc nghiệp vụ tại Tòa án, tiếp cận quy trình tố tụng và thực tiễn xét xử, qua đó nâng cao hiểu biết pháp luật, tư duy pháp lý và kỹ năng làm việc trong môi trường chuyên nghiệp.
-- Từ tháng 12/2025 đến nay
-Chuyên viên pháp lý – Công ty Luật TNHH Youth & Partners (YPLaw Firm)
-Tham gia hỗ trợ các hoạt động tư vấn pháp lý, soạn thảo hồ sơ, nghiên cứu quy định pháp luật và hỗ trợ luật sư trong quá trình làm việc với khách hàng.
+### Chuyên môn và thế mạnh
+
+Cô được ghi nhận với thái độ học tập chủ động, nền tảng lý luận pháp lý vững chắc và kinh nghiệm thực tế từ thực tập tại tòa án. Thế mạnh của cô bao gồm nghiên cứu pháp lý, hiểu biết về quy trình tố tụng và phong cách làm việc chuyên nghiệp.
+
+### Lĩnh vực chuyên môn
+
+1. **Doanh nghiệp:** Tư vấn pháp lý thường xuyên và hỗ trợ doanh nghiệp trong các vấn đề pháp lý hàng ngày và tuân thủ
+2. **Lao động:** Tư vấn về hợp đồng lao động, quyền lợi người lao động và tranh chấp lao động
+3. **Dân sự:** Tư vấn về giao dịch dân sự, hợp đồng và các vấn đề pháp lý liên quan
+
+### Liên hệ
+
+- **Email:** contact@yplawfirm.vn
+- **Điện thoại:** 088 995 6888
+- **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)

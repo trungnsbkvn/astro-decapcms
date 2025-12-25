@@ -148,74 +148,142 @@ languages_ko:
   - "베트남어"
   - "영어"
 bodyContent_en: |
-  ## About Lawyer Nguyễn Thị Hướng
+  ### Work Experience
 
-  Lawyer Nguyễn Thị Hướng is a member lawyer at Youth & Partners Law Firm with extensive professional experience. Graduating with a Bachelor's degree in International Law from the Diplomatic Academy of Vietnam and obtaining her Law Practice Certificate, Lawyer Hướng possesses a solid legal foundation combined with modern international legal thinking.
+  With diverse expertise spanning multiple legal fields, Lawyer Hướng has successfully resolved hundreds of complex legal cases for individual and corporate clients in Bắc Ninh Province and neighboring areas.
 
-  ## Areas of Expertise
+  - **Youth & Partners Law Firm:** Member Lawyer (present) - providing comprehensive legal services across civil, criminal, land, family, corporate, labor, and investment law
+  - **Education:** Law Practice Certificate from Ministry of Justice (2020), Bachelor of International Law from Diplomatic Academy of Vietnam (2017)
 
-  - **Civil Law:** Consulting on contracts, civil transactions, inheritance, damage compensation, and other related legal matters
-  - **Criminal Law:** Consulting and protecting the legitimate rights of victims, defending suspects and defendants in criminal proceedings
-  - **Land Law:** Consulting on transfers, land use right certificate changes, resolving land disputes
-  - **Marriage and Family:** Consulting on divorce, property division, child custody rights
-  - **Corporate Law:** Comprehensive legal advice on corporate establishment, operations, and governance
-  - **Labor Law:** Consulting on labor contracts, employee rights, labor disputes
-  - **Investment:** Advising on investment matters, investment planning, and capital management
+  ### Expertise and Strengths
+
+  Lawyer Hướng is recognized for her dedicated work ethic, sharp analytical skills, and ability to build effective legal strategies. Her strengths include comprehensive case analysis, courtroom representation, and delivering optimal results for clients in every case.
+
+  ### Areas of Expertise
+
+  1. **Civil Law:** Consulting on contracts, civil transactions, inheritance, damage compensation
+  2. **Criminal Law:** Consulting and protecting victims' rights, defending suspects and defendants in criminal proceedings
+  3. **Land Law:** Consulting on transfers, land use right certificate changes, resolving land disputes
+  4. **Marriage & Family:** Consulting on divorce, property division, child custody rights
+  5. **Corporate Law:** Comprehensive legal advice on corporate establishment, operations, and governance
+  6. **Labor Law:** Consulting on labor contracts, employee rights, labor disputes
+  7. **Investment:** Advising on domestic and foreign investment, corporate development strategies
+
+  ### Contact
+
+  - **Email:** contact@yplawfirm.vn
+  - **Phone:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_zh: |
-  ## 关于阮氏香律师
 
-  阮氏香律师是Youth & Partners律师事务所的成员律师，拥有丰富的专业经验。毕业于越南外交学院国际法专业并获得律师执业证书，阮律师具备扎实的法律基础和现代国际法思维。
+  ### 工作经历
 
-  ## 专业领域
+  凭借涵盖多个法律领域的多元专业知识，阮律师已成功为北宁省及周边地区的个人和企业客户解决数百起复杂法律案件。
 
-  - **民事法：** 关于合同、民事交易、继承、损害赔偿及其他相关法律事务的咨询
-  - **刑事法：** 咨询和保护受害者的合法权益，在刑事诉讼中为犯罪嫌疑人和被告辩护
-  - **土地法：** 关于转让、土地使用权证书变更、解决土地纠纷的咨询
-  - **婚姻和家庭：** 关于离婚、财产分割、子女抚养权的咨询
-  - **企业法：** 关于企业设立、运营和治理的全面法律咨询
-  - **劳动法：** 关于劳动合同、员工权利、劳动纠纷的咨询
-  - **投资：** 关于投资事务、投资规划和资本管理的咨询
+  - **Youth & Partners律师事务所：** 成员律师（现任）- 在民事、刑事、土地、家庭、企业、劳动和投资法领域提供全面的法律服务
+  - **教育背景：** 司法部律师执业证书（2020年），越南外交学院国际法学士（2017年）
+
+  ### 专业知识与优势
+
+  阮律师以敬业的工作态度、敏锐的分析能力和构建有效法律策略的能力而著称。她的优势包括全面的案件分析、法庭代理和为每位客户带来最优结果。
+
+  ### 专业领域
+
+  1. **民事法：** 关于合同、民事交易、继承、损害赔偿的咨询
+  2. **刑事法：** 咨询和保护受害者的权益，在刑事诉讼中为犯罪嫌疑人和被告辩护
+  3. **土地法：** 关于转让、土地使用权证书变更、解决土地纠纷的咨询
+  4. **婚姻家庭：** 关于离婚、财产分割、子女抚养权的咨询
+  5. **企业法：** 关于企业设立、运营和治理的全面法律咨询
+  6. **劳动法：** 关于劳动合同、员工权利、劳动纠纷的咨询
+  7. **投资：** 关于国内外投资、企业发展战略的咨询
+
+  ### 联系方式
+
+  - **邮箱：** contact@yplawfirm.vn
+  - **电话：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ja: |
-  ## グエン・ティ・フオン弁護士について
 
-  グエン・ティ・フオン弁護士は、Youth & Partners法律事務所のメンバー弁護士で、豊富な実務経験を持っています。ベトナム外交アカデミーで国際法の学士号を取得し、弁護士業務証明書を取得。確固たる法的基盤と現代的な国際法思考を兼ね備えています。
+  ### 職歴
 
-  ## 専門分野
+  複数の法律分野にわたる多様な専門知識を持ち、バクニン省および近隣地域の個人・企業クライアントの数百件の複雑な法的案件を成功裏に解決してきました。
 
-  - **民事法：** 契約、民事取引、相続、損害賠償、その他関連する法的事項に関するコンサルティング
-  - **刑事法：** 被害者の正当な権利の相談と保護、刑事訴訟における容疑者および被告人の弁護
-  - **土地法：** 譲渡、土地使用権証明書の変更、土地紛争の解決に関するコンサルティング
-  - **婚姻と家族：** 離婚、財産分割、子供の養育権に関するコンサルティング
-  - **企業法：** 企業設立、運営、ガバナンスに関する包括的な法的アドバイス
-  - **労働法：** 労働契約、従業員の権利、労働紛争に関するコンサルティング
-  - **投資：** 投資事項、投資計画、資本管理に関するアドバイス
+  - **Youth & Partners法律事務所：** メンバー弁護士（現在）- 民事、刑事、土地、家族、企業、労働、投資法において包括的な法的サービスを提供
+  - **学歴：** 司法省弁護士業務証明書（2020年）、ベトナム外交アカデミー国際法学士（2017年）
+
+  ### 専門知識と強み
+
+  フオン弁護士は、献身的な仕事姿勢、鋭い分析力、効果的な法的戦略を構築する能力で知られています。包括的な案件分析、法廷代理、すべての案件で依頼者に最適な結果をもたらすことが強みです。
+
+  ### 専門分野
+
+  1. **民事法：** 契約、民事取引、相続、損害賠償に関するコンサルティング
+  2. **刑事法：** 被害者の権利の相談と保護、刑事訴訟における容疑者および被告人の弁護
+  3. **土地法：** 譲渡、土地使用権証明書の変更、土地紛争の解決に関するコンサルティング
+  4. **婚姻家族：** 離婚、財産分割、子供の養育権に関するコンサルティング
+  5. **企業法：** 企業設立、運営、ガバナンスに関する包括的な法的アドバイス
+  6. **労働法：** 労働契約、従業員の権利、労働紛争に関するコンサルティング
+  7. **投資：** 国内外投資、企業発展戦略に関するアドバイス
+
+  ### 連絡先
+
+  - **メール：** contact@yplawfirm.vn
+  - **電話：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ko: |
-  ## 응웬티후엉 변호사 소개
 
-  응웬티후엉 변호사는 Youth & Partners 법률 회사의 구성원 변호사로 풍부한 전문 경험을 보유하고 있습니다. 베트남 외교아카데미에서 국제법 학사 학위를 취득하고 변호사 업무증명서를 획득하여 탄탄한 법률 기반과 현대적 국제법적 사고를 겸비하고 있습니다.
+  ### 경력
 
-  ## 전문 분야
+  여러 법률 분야에 걸친 다양한 전문 지식을 바탕으로 박닌성 및 인근 지역의 개인 및 기업 고객을 위해 수백 건의 복잡한 법률 사건을 성공적으로 해결했습니다.
 
-  - **민사법:** 계약, 민사 거래, 상속, 손해배상 및 기타 관련 법률 문제에 대한 상담
-  - **형사법:** 피해자의 정당한 권리 상담 및 보호, 형사 소송에서 피의자 및 피고인 변호
-  - **토지법:** 양도, 토지 사용권 증명서 변경, 토지 분쟁 해결에 대한 상담
-  - **결혼 및 가족:** 이혼, 재산 분할, 자녀 양육권에 대한 상담
-  - **기업법:** 기업 설립, 운영 및 지배구조에 관한 포괄적인 법률 자문
-  - **노동법:** 노동 계약, 직원 권리, 노동 분쟁에 대한 상담
-  - **투자:** 투자 사안, 투자 계획, 자본 관리에 대한 자문
+  - **Youth & Partners 법률 회사:** 구성원 변호사 (현재) - 민사, 형사, 토지, 가족, 기업, 노동, 투자법에서 포괄적인 법률 서비스 제공
+  - **학력:** 법무부 변호사 업무증명서 (2020년), 베트남 외교 아카데미 국제법학사 (2017년)
+
+  ### 전문 지식 및 강점
+
+  후엉 변호사는 헌신적인 업무 태도, 날카로운 분석력, 효과적인 법률 전략 수립 능력으로 인정받습니다. 포괄적인 사건 분석, 법정 대리, 모든 사건에서 고객에게 최적의 결과 제공이 강점입니다.
+
+  ### 전문 분야
+
+  1. **민사법:** 계약, 민사 거래, 상속, 손해배상에 대한 상담
+  2. **형사법:** 피해자의 권리 상담 및 보호, 형사 소송에서 피의자 및 피고인 변호
+  3. **토지법:** 양도, 토지 사용권 증명서 변경, 토지 분쟁 해결에 대한 상담
+  4. **결혼 가족:** 이혼, 재산 분할, 자녀 양육권에 대한 상담
+  5. **기업법:** 기업 설립, 운영 및 지배구조에 관한 포괄적인 법률 자문
+  6. **노동법:** 노동 계약, 직원 권리, 노동 분쟁에 대한 상담
+  7. **투자:** 국내외 투자, 기업 발전 전략에 대한 자문
+
+  ### 연락처
+
+  - **이메일:** contact@yplawfirm.vn
+  - **전화:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 draft: false
 ---
 
-## Giới thiệu về Luật sư Nguyễn Thị Hướng
+### Kinh nghiệm làm việc
 
-Luật sư Nguyễn Thị Hướng là luật sư thành viên tại Công ty Luật TNHH Youth & Partners.
+Với chuyên môn đa dạng bao gồm nhiều lĩnh vực pháp lý, Luật sư Hướng đã thành công giải quyết hàng trăm vụ việc pháp lý phức tạp cho khách hàng cá nhân và doanh nghiệp tại tỉnh Bắc Ninh và các tỉnh lân cận.
 
-## Lĩnh vực phụ trách
+- **Công ty Luật TNHH Youth & Partners:** Luật sư thành viên (hiện tại) - cung cấp dịch vụ pháp lý toàn diện trong các lĩnh vực dân sự, hình sự, đất đai, hôn nhân gia đình, doanh nghiệp, lao động và đầu tư
+- **Học vấn:** Chứng chỉ hành nghề Luật sư - Bộ Tư Pháp (2020), Cử nhân Luật Quốc Tế - Trường Học viện Ngoại Giao (2017)
 
-- **Dân sự:** Tư vấn về hợp đồng, giao dịch Dân sự, thừa kế, bồi thường thiệt hại
-- **Hôn nhân và gia đình:** Tư vấn về ly hôn, chia tài sản, quyền nuôi con
-- **Đất đai:** Tư vấn về giải quyết tranh chấp, chuyển nhượng, cấp đổi giấy chứng nhận quyền sử dụng đất
-- **Hình sự:** Tư vấn và bảo vệ quyền lợi hợp pháp của bị hại, bào chữa cho bị can, bị cáo
-- **Doanh nghiệp:** Tư vấn pháp lý về thành lập, hoạt động và quản lý Doanh nghiệp
-- **Lao động:** Tư vấn về hợp đồng lao động, tranh chấp lao động và quyền lợi người lao động
-- **Đầu tư:** Tư vấn về Đầu tư trong và ngoài nước, chiến lược phát triển Doanh nghiệp
+### Chuyên môn và thế mạnh
+
+Luật sư Hướng được biết đến với phong cách làm việc tận tâm, phân tích sắc bén và khả năng xây dựng chiến lược pháp lý hiệu quả. Thế mạnh của cô bao gồm phân tích vụ việc toàn diện, đại diện tại tòa án và mang lại kết quả tối ưu cho khách hàng trong mọi vụ việc.
+
+### Lĩnh vực chuyên môn
+
+1. **Dân sự:** Tư vấn về hợp đồng, giao dịch dân sự, thừa kế, bồi thường thiệt hại
+2. **Hình sự:** Tư vấn và bảo vệ quyền lợi hợp pháp của bị hại, bào chữa cho bị can, bị cáo trong tố tụng hình sự
+3. **Đất đai:** Tư vấn về chuyển nhượng, cấp đổi giấy chứng nhận quyền sử dụng đất, giải quyết tranh chấp đất đai
+4. **Hôn nhân & Gia đình:** Tư vấn về ly hôn, chia tài sản, quyền nuôi con
+5. **Doanh nghiệp:** Tư vấn pháp lý toàn diện về thành lập, hoạt động và quản trị doanh nghiệp
+6. **Lao động:** Tư vấn về hợp đồng lao động, quyền lợi người lao động, tranh chấp lao động
+7. **Đầu tư:** Tư vấn về đầu tư trong và ngoài nước, chiến lược phát triển doanh nghiệp
+
+### Liên hệ
+
+- **Email:** contact@yplawfirm.vn
+- **Điện thoại:** 088 995 6888
+- **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)

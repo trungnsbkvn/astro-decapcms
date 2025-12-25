@@ -110,84 +110,120 @@ yearsExperience: 5
 featured: false
 order: 10
 bodyContent_en: |
-  ## Introduction
+  ### Work Experience
 
-  Attorney Nguyễn Hoàng Ngọc Lan is a legal expert with deep expertise in the healthcare field.
+  With specialized knowledge in healthcare legal matters, Attorney Nguyễn Hoàng Ngọc Lan has successfully advised numerous medical institutions on compliance and licensing procedures.
 
-  ## Professional Experience
+  - **Youth & Partners Law Firm:** Associate Attorney (present) - providing specialized legal services for healthcare licensing and regulatory compliance
+  - **Education:** Law Practice Certificate from Ministry of Justice (2024), Master of Law from Hanoi Law University (2022), Graduated from Judicial Academy (2021), Bachelor of Law from Hanoi Law University (2020)
 
-  - Medical practice operating licenses
-  - Adjustment of medical practice operating licenses
-  - Medical practice certificates and other specialized licenses in the healthcare field
+  ### Expertise and Strengths
 
-  ## Achievements
+  She is highly regarded for her deep understanding of Vietnamese healthcare regulations, meticulous document preparation, and ability to navigate complex licensing procedures. Her strengths include healthcare compliance advisory, medical licensing, and regulatory representation.
 
-  - Successfully advised many hospitals, clinics, medical centers, and healthcare facilities
-  - Helped clients understand legal requirements, ensuring documentation meets all regulatory standards
-  - Represented clients in working with regulatory agencies, ensuring the licensing process is fast, transparent, and efficient
+  ### Areas of Expertise
+
+  1. **Corporate Law:** Business establishment and corporate governance for healthcare facilities, regulatory compliance
+  2. **Healthcare Law:** Medical practice operating licenses, license adjustments, medical practice certificates, and specialized healthcare permits
+  3. **Other Legal Services:** Comprehensive legal support for healthcare institutions, regulatory representation, and compliance advisory
+
+  ### Contact
+
+  - **Email:** contact@yplawfirm.vn
+  - **Phone:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_zh: |
-  ## 介绍
 
-  阮黄玉兰律师是一位在医疗保健领域拥有深厚专业知识的法律专家。
+  ### 工作经历
 
-  ## 专业经验
+  凭借医疗保健法律事务的专业知识，阮黄玉兰律师已成功为众多医疗机构提供合规和许可程序方面的咨询。
 
-  - 医疗执业许可证
-  - 医疗执业许可证调整
-  - 医疗执业证书及医疗保健领域的其他专业许可
+  - **Youth & Partners律师事务所：** 合伙人律师（现任）- 为医疗保健许可和法规合规提供专业法律服务
+  - **教育背景：** 司法部律师执业证书（2024年），河内法律大学法学硕士（2022年），司法学院毕业（2021年），河内法律大学法学学士（2020年）
 
-  ## 成就
+  ### 专业知识与优势
 
-  - 成功为多家医院、诊所、医疗中心和医疗保健机构提供咨询
-  - 帮助客户了解法律要求，确保文件符合所有监管标准
-  - 代表客户与监管机构合作，确保许可流程快速、透明、高效
+  她以对越南医疗保健法规的深入了解、细致的文件准备和驾驭复杂许可程序的能力而备受赞誉。她的优势包括医疗保健合规咨询、医疗许可和监管代理。
+
+  ### 专业领域
+
+  1. **企业法：** 医疗机构的企业设立和公司治理，法规合规
+  2. **医疗保健法：** 医疗执业许可证、许可证调整、医疗执业证书和专业医疗保健许可
+  3. **其他法律服务：** 为医疗保健机构提供全面的法律支持、监管代理和合规咨询
+
+  ### 联系方式
+
+  - **邮箱：** contact@yplawfirm.vn
+  - **电话：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ja: |
-  ## 紹介
+  ### 職歴
 
-  グエン・ホアン・ゴック・ラン弁護士は、医療分野で深い専門知識を持つ法律専門家です。
+  医療法務に関する専門知識を持ち、多くの医療機関にコンプライアンスと許可手続きについて成功裏にアドバイスしてきました。
 
-  ## 専門経験
+  - **Youth & Partners法律事務所：** アソシエイト弁護士（現在）- 医療許可と規制遵守に関する専門的な法的サービスを提供
+  - **学歴：** 司法省弁護士業務証明書（2024年）、ハノイ法科大学法学修士（2022年）、司法アカデミー卒業（2021年）、ハノイ法科大学法学士（2020年）
 
-  - 医療業務営業許可
-  - 医療業務営業許可の調整
-  - 医療業務証明書および医療分野のその他の専門許可
+  ### 専門知識と強み
 
-  ## 実績
+  彼女はベトナムの医療規制への深い理解、細心の文書準備、複雑な許可手続きをナビゲートする能力で高く評価されています。医療コンプライアンスアドバイザリー、医療ライセンス、規制代理が強みです。
 
-  - 多くの病院、診療所、医療センター、医療施設を成功裏にアドバイス
-  - 依頼者が法的要件を理解し、文書がすべての規制基準を満たすことを支援
-  - 規制当局との業務において依頼者を代理し、許可プロセスが迅速で透明性があり効率的であることを確保
+  ### 専門分野
+
+  1. **企業法：** 医療施設の企業設立とコーポレートガバナンス、規制遵守
+  2. **医療法：** 医療業務営業許可、許可調整、医療業務証明書、専門医療許可
+  3. **その他の法律サービス：** 医療機関への包括的な法的サポート、規制代理、コンプライアンスアドバイザリー
+
+  ### 連絡先
+
+  - **メール：** contact@yplawfirm.vn
+  - **電話：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ko: |
-  ## 소개
+  ### 경력
 
-  응웬호앙응옥란 변호사는 의료 분야에서 깊은 전문 지식을 갖춘 법률 전문가입니다.
+  의료 법률 문제에 대한 전문 지식을 바탕으로, 많은 의료 기관에 준수 및 면허 절차에 대해 성공적으로 자문해 왔습니다.
 
-  ## 전문 경험
+  - **Youth & Partners 법률 회사:** 동료 변호사 (현재) - 의료 면허 및 규제 준수에 대한 전문 법률 서비스 제공
+  - **학력:** 법무부 변호사 업무증명서 (2024년), 하노이 법과대학 법학석사 (2022년), 사법 아카데미 졸업 (2021년), 하노이 법과대학 법학사 (2020년)
 
-  - 의료 업무 영업 허가
-  - 의료 업무 영업 허가 조정
-  - 의료 업무 증명서 및 의료 분야의 기타 전문 허가
+  ### 전문 지식 및 강점
 
-  ## 성과
+  그녀는 베트남 의료 규정에 대한 깊은 이해, 세심한 문서 준비, 복잡한 면허 절차를 탐색하는 능력으로 높이 평가받습니다. 의료 준수 자문, 의료 면허, 규제 대리가 강점입니다.
 
-  - 많은 병원, 클리닉, 의료 센터 및 의료 시설을 성공적으로 자문
-  - 고객이 법적 요구사항을 이해하도록 돕고, 문서가 모든 규제 기준을 충족하도록 보장
-  - 규제 기관과의 업무에서 고객을 대리하여 허가 프로세스가 신속하고 투명하며 효율적이도록 보장
+  ### 전문 분야
+
+  1. **기업법:** 의료 시설의 기업 설립 및 기업 지배구조, 규제 준수
+  2. **의료법:** 의료 업무 영업 허가, 허가 조정, 의료 업무 증명서, 전문 의료 허가
+  3. **기타 법률 서비스:** 의료 기관을 위한 포괄적인 법률 지원, 규제 대리, 준수 자문
+
+  ### 연락처
+
+  - **이메일:** contact@yplawfirm.vn
+  - **전화:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 draft: false
 ---
 
-## Giới thiệu
+### Kinh nghiệm làm việc
 
-Luật sư Nguyễn Hoàng Ngọc Lan là một chuyên gia pháp lý có chuyên môn sâu trong lĩnh vực y tế.
+Với kiến thức chuyên sâu về các vấn đề pháp lý y tế, Luật sư Nguyễn Hoàng Ngọc Lan đã tư vấn thành công cho nhiều cơ sở y tế về tuân thủ và thủ tục cấp phép.
 
-## Kinh nghiệm chuyên môn
+- **Công ty Luật TNHH Youth & Partners:** Luật sư thành viên (hiện tại) - cung cấp dịch vụ pháp lý chuyên biệt cho giấy phép y tế và tuân thủ quy định
+- **Học vấn:** Chứng chỉ hành nghề Luật sư - Bộ Tư Pháp (2024), Thạc sĩ Luật - Đại học Luật Hà Nội (2022), Tốt nghiệp Học viện Tư Pháp (2021), Cử nhân Luật - Đại học Luật Hà Nội (2020)
 
-- Giấy phép hoạt động khám bệnh, chữa bệnh
-- Điều chỉnh giấy phép hoạt động khám bệnh, chữa bệnh
-- Giấy phép hành nghề y và các giấy phép chuyên ngành khác trong lĩnh vực y tế
+### Chuyên môn và thế mạnh
 
-## Thành tựu
+Cô được đánh giá cao với hiểu biết sâu về quy định y tế Việt Nam, chuẩn bị hồ sơ tỉ mỉ và khả năng xử lý các thủ tục cấp phép phức tạp. Thế mạnh của cô bao gồm tư vấn tuân thủ y tế, giấy phép hành nghề y và đại diện với cơ quan quản lý.
 
-- Tư vấn thành công cho nhiều bệnh viện, phòng khám, trung tâm y tế và các cơ sở chăm sóc sức khỏe
-- Hỗ trợ khách hàng hiểu rõ các yêu cầu pháp lý, đảm bảo hồ sơ và giấy tờ đáp ứng đầy đủ các tiêu chuẩn quy định
-- Đại diện khách hàng làm việc với các cơ quan quản lý, đảm bảo quy trình xin cấp phép diễn ra nhanh chóng, minh bạch và hiệu quả
+### Lĩnh vực chuyên môn
+
+1. **Doanh nghiệp:** Thành lập doanh nghiệp và quản trị doanh nghiệp cho các cơ sở y tế, tuân thủ quy định
+2. **Pháp lý Y tế:** Giấy phép hoạt động khám bệnh chữa bệnh, điều chỉnh giấy phép, giấy phép hành nghề y và các giấy phép chuyên ngành y tế
+3. **Pháp lý khác:** Hỗ trợ pháp lý toàn diện cho các cơ sở y tế, đại diện với cơ quan quản lý và tư vấn tuân thủ
+
+### Liên hệ
+
+- **Email:** contact@yplawfirm.vn
+- **Điện thoại:** 088 995 6888
+- **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)

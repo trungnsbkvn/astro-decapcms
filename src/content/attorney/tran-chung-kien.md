@@ -89,89 +89,131 @@ languages_ja:
 languages_ko:
   - "베트남어"
 bodyContent_en: |
-  ## About Lawyer Trần Chung Kiên
+  ### Work Experience
 
-  Lawyer Trần Chung Kiên is a member lawyer at Youth & Partners Law Firm.
+  He has built an impressive career spanning both prosecution and legal practice.
 
-  ## Areas of Responsibility
+  - **Youth & Partners Law Firm:** Member Lawyer (2022 – present) - handling complex civil, criminal, and administrative cases
+  - **People's Procuracy:** Civil Servant, Prosecutor (2015 – 2022) - examined and supervised hundreds of cases
+  - **Education:** Prosecutor Appointment (2021), Prosecution Training Certificate (2019), Bachelor of Law - Hanoi Law University (2015)
 
-  - **Civil Law:** Consulting and representing clients in cases involving contracts, civil transactions, inheritance, marriage and family, damage compensation, and other legal matters
-  - **Litigation Representation:** Representing clients in Civil, Criminal, and Administrative cases at various court levels
-  - **Criminal Law:** Consulting and protecting the legitimate rights of victims, defending suspects and defendants at all stages of criminal proceedings
-  - **Administrative Law:** Consulting on administrative procedures, resolving complaints and denunciations
+  ### Expertise and Strengths
 
-  ## Experience
+  His prosecutorial background gives him a unique advantage in anticipating and countering prosecution arguments. He is highly regarded for accurate case file analysis, effective defense strategy development, and maximizing legal protection for clients.
 
-  - **2015:** Graduated from the Faculty of Law, Hanoi Law University
-  - **2015 - 2022:** Civil Servant, Prosecutor at the People's Procuracy
-  - **2022 - present:** Member lawyer at Youth & Partners Law Firm
+  ### Areas of Expertise
+
+  1. **Civil Law:** Contract disputes, civil transactions, inheritance, marriage and family, damage compensation
+  2. **Criminal Law:** Defending suspects and defendants, protecting victims' rights at all stages of criminal proceedings
+  3. **Administrative Law:** Administrative procedures, complaints and denunciations resolution
+  4. **Litigation:** Representing clients at all court levels in civil, criminal, and administrative cases
+
+  ### Contact
+
+  - **Email:** contact@yplawfirm.vn
+  - **Phone:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_zh: |
-  ## 关于陈忠坚律师
 
-  陈忠坚律师是Youth & Partners律师事务所的成员律师。
+  ### 工作经历
 
-  ## 负责领域
+  他在检察和法律实践领域建立了令人印象深刻的职业生涯。
 
-  - **民事法：** 在涉及合同、民事交易、继承、婚姻家庭、损害赔偿及其他法律事务的案件中咨询和代理客户
-  - **诉讼代理：** 在各级法院的民事、刑事和行政案件中代理客户
-  - **刑事法：** 咨询和保护受害者的合法权益，在刑事诉讼各阶段为犯罪嫌疑人和被告辩护
-  - **行政法：** 关于行政程序、解决投诉和举报的咨询
+  - **Youth & Partners律师事务所：** 成员律师（2022年至今）- 处理复杂的民事、刑事和行政案件
+  - **人民检察院：** 公务员、检察员（2015年 – 2022年）- 审查和监督数百起案件
+  - **教育背景：** 检察员任命（2021年），检察培训证书（2019年），河内法律大学法学学士（2015年）
 
-  ## 经验
+  ### 专业知识与优势
 
-  - **2015年：** 毕业于河内法律大学法学院
-  - **2015年 - 2022年：** 人民检察院公务员、检察员
-  - **2022年至今：** Youth & Partners律师事务所成员律师
+  其检察背景使他在预判和应对控方论点方面具有独特优势。他以精准的案卷分析能力、有效的辩护策略构建和最大限度保护当事人合法权益而备受推崇。
+
+  ### 专业领域
+
+  1. **民事法：** 合同纠纷、民事交易、继承、婚姻家庭、损害赔偿
+  2. **刑事法：** 为嫌疑人和被告辩护，在刑事诉讼各阶段保护受害者权益
+  3. **行政法：** 行政程序、投诉和举报的解决
+  4. **诉讼：** 在各级法院代理民事、刑事和行政案件
+
+  ### 联系方式
+
+  - **邮箱：** contact@yplawfirm.vn
+  - **电话：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ja: |
-  ## チャン・チュン・キエン弁護士について
+  ### 職歴
 
-  チャン・チュン・キエン弁護士は、Youth & Partners法律事務所のメンバー弁護士です。
+  彼は検察と法律実務にわたる印象的なキャリアを築いています。
 
-  ## 担当分野
+  - **Youth & Partners法律事務所：** メンバー弁護士（2022年〜現在）- 複雑な民事、刑事、行政事件を処理
+  - **人民検察院：** 公務員、検察官（2015年 – 2022年）- 数百件の案件を審査・監督
+  - **学歴：** 検察官任命（2021年）、検察研修証明書（2019年）、ハノイ法科大学法学士（2015年）
 
-  - **民事法：** 契約、民事取引、相続、婚姻家族、損害賠償、その他の法的事項を含む案件において、クライアントのコンサルティングと代理
-  - **訴訟代理：** 各レベルの裁判所における民事、刑事、行政事件でのクライアント代理
-  - **刑事法：** 被害者の正当な権利の相談と保護、刑事訴訟のすべての段階における容疑者および被告人の弁護
-  - **行政法：** 行政手続き、苦情および告発の解決に関するコンサルティング
+  ### 専門知識と強み
 
-  ## 経験
+  検察官としての経歴により、検察側の主張を予測し対抗する独自の優位性を持っています。正確な事件記録分析、効果的な弁護戦略の構築、依頼者の法的保護の最大化で高い評価を得ています。
 
-  - **2015年：** ハノイ法科大学法学部卒業
-  - **2015年 - 2022年：** 人民検察院公務員、検察官
-  - **2022年から現在：** Youth & Partners法律事務所のメンバー弁護士
+  ### 専門分野
+
+  1. **民事法：** 契約紛争、民事取引、相続、婚姻家族、損害賠償
+  2. **刑事法：** 容疑者・被告人の弁護、刑事訴訟全段階での被害者の権利保護
+  3. **行政法：** 行政手続き、苦情・告発の解決
+  4. **訴訟：** 各裁判所レベルでの民事、刑事、行政事件の代理
+
+  ### 連絡先
+
+  - **メール：** contact@yplawfirm.vn
+  - **電話：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ko: |
-  ## 쩬쫑끼엔 변호사 소개
 
-  쩬쫑끼엔 변호사는 Youth & Partners 법률 회사의 구성원 변호사입니다.
+  ### 경력
 
-  ## 담당 분야
+  그는 검찰과 법률 실무에 걸쳐 인상적인 경력을 쌓았습니다.
 
-  - **민사법:** 계약, 민사 거래, 상속, 결혼 및 가족, 손해배상 및 기타 법률 문제와 관련된 사건에서 고객 상담 및 대리
-  - **소송 대리:** 각급 법원의 민사, 형사, 행정 사건에서 고객 대리
-  - **형사법:** 피해자의 정당한 권리 상담 및 보호, 형사 소송 모든 단계에서 피의자 및 피고인 변호
-  - **행정법:** 행정 절차, 민원 및 고발 해결에 관한 상담
+  - **Youth & Partners 법률 회사:** 구성원 변호사 (2022년 ~ 현재) - 복잡한 민사, 형사, 행정 사건 처리
+  - **인민검찰원:** 공무원, 검사 (2015년 – 2022년) - 수백 건의 사건 심사 및 감독
+  - **학력:** 검사 임명 (2021년), 검찰 교육 수료증 (2019년), 하노이 법과대학 법학사 (2015년)
 
-  ## 경험
+  ### 전문 지식 및 강점
 
-  - **2015년:** 하노이 법과대학 법학부 졸업
-  - **2015년 - 2022년:** 인민검찰원 공무원, 검사
-  - **2022년 ~ 현재:** Youth & Partners 법률 회사 구성원 변호사
+  검찰 경력은 검찰 측 주장을 예측하고 대응하는 데 독특한 이점을 제공합니다. 정확한 사건 기록 분석, 효과적인 변호 전략 수립, 의뢰인의 법적 보호 극대화로 높이 평가받습니다.
+
+  ### 전문 분야
+
+  1. **민사법:** 계약 분쟁, 민사 거래, 상속, 결혼 및 가족, 손해배상
+  2. **형사법:** 피의자·피고인 변호, 형사 소송 전 단계에서 피해자 권리 보호
+  3. **행정법:** 행정 절차, 민원 및 고발 해결
+  4. **소송:** 각급 법원에서 민사, 형사, 행정 사건 대리
+
+  ### 연락처
+
+  - **이메일:** contact@yplawfirm.vn
+  - **전화:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 draft: false
 ---
 
-## Giới thiệu về Luật sư Trần Chung Kiên
+### Kinh nghiệm làm việc
 
-Luật sư Trần Chung Kiên là luật sư thành viên tại Công ty Luật TNHH Youth & Partners.
+Ông đã xây dựng sự nghiệp ấn tượng trải dài cả lĩnh vực kiểm sát và thực hành pháp lý.
 
-## Lĩnh vực phụ trách
+- **Công ty Luật Youth & Partners:** Luật sư thành viên (2022 – nay) - xử lý các vụ việc dân sự, hình sự và hành chính phức tạp
+- **Viện Kiểm sát Nhân dân:** Công chức, Kiểm sát viên (2015 – 2022) - thẩm định và kiểm sát hàng trăm vụ án
+- **Đào tạo:** Bổ nhiệm Kiểm sát viên (2021), Chứng chỉ nghiệp vụ kiểm sát (2019), Cử nhân Luật - ĐH Luật Hà Nội (2015)
 
-- **Dân sự:** Tư vấn và đại diện khách hàng trong các vụ án về hợp đồng, giao dịch Dân sự, thừa kế, hôn nhân gia đình, bồi thường thiệt hại và các vấn đề pháp lý khác
-- **Đại diện trong và ngoài tố tụng:** Đại diện cho khách hàng trong các vụ án Dân sự, Hình sự và Hành chính tại các cấp tòa án
-- **Hình sự:** Tư vấn và bảo vệ quyền lợi hợp pháp của bị hại, bào chữa cho bị can, bị cáo trong các giai đoạn tố tụng Hình sự
-- **Hành chính:** Tư vấn về các thủ tục Hành chính, giải quyết khiếu nại, tố cáo
+### Chuyên môn và thế mạnh
 
-## Kinh nghiệm
+Kinh nghiệm từ ngành Kiểm sát giúp ông có lợi thế độc đáo trong việc dự đoán và đối phó với các luận điểm của cơ quan công tố. Ông được đánh giá cao với khả năng phân tích hồ sơ vụ án chính xác, xây dựng chiến lược bào chữa hiệu quả và bảo vệ tối đa quyền lợi hợp pháp cho thân chủ.
 
-- **2015:** Tốt nghiệp Khoa Luật học, Đại học Luật Hà Nội
-- **2015 - 2022:** Công chức, Kiểm sát viên ngành Kiểm sát nhân dân
-- **2022 - nay:** Luật sư thành viên tại Công ty Luật TNHH Youth & Partners
+### Lĩnh vực chuyên môn
+
+1. **Dân sự:** Tranh chấp hợp đồng, giao dịch dân sự, thừa kế, hôn nhân gia đình, bồi thường thiệt hại
+2. **Hình sự:** Bào chữa cho bị can/bị cáo, bảo vệ quyền lợi bị hại trong mọi giai đoạn tố tụng hình sự
+3. **Hành chính:** Thủ tục hành chính, giải quyết khiếu nại và tố cáo
+4. **Tố tụng:** Đại diện khách hàng tại các cấp tòa án trong các vụ án dân sự, hình sự và hành chính
+
+### Liên hệ
+
+- **Email:** contact@yplawfirm.vn
+- **Điện thoại:** 088 995 6888
+- **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)

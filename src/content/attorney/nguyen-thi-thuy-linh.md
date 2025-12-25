@@ -35,7 +35,7 @@ bio_ko: |
   
   15개 이상의 국내외 기업에 정기적인 자문을 제공하고, 이중 언어 계약을 작성하며, FDI 투자 절차를 처리한 경험이 있습니다.
 image: "~/assets/images/team/Chuyên viên Nguyễn Thị Thùy Linh.jpg"
-email: "info@luatsumienbac.vn"
+email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:
   - "doanh-nghiep"
@@ -102,101 +102,147 @@ socialLinks:
 order: 15
 publishDate: 2024-01-01T00:00:00Z
 bodyContent_en: |
-  ## Areas of Expertise
+  ### Work Experience
 
-  Nguyễn Thị Thùy Linh is responsible for the following areas:
+  Thùy Linh has accumulated extensive practical experience:
+  - Regular consultation for over 15 domestic and foreign enterprises in corporate, labor, investment, and real estate business
+  - Drafting and reviewing bilingual contracts (English - Vietnamese)
+  - Resolving marriage and family matters including divorce cases with foreign elements
+  - Drafting documents for FDI investment registration certificates
 
-  - **Corporate Law:** Drafting contracts, legal advice on labor, real estate, and foreign investment for domestic and foreign enterprises.
+  ### Expertise and Strengths
 
-  - **Internal Regulations:** Developing and adjusting internal forms and corporate regulations.
+  - Deep expertise in drafting bilingual contracts (English - Vietnamese)
+  - Strong capability in handling FDI investment procedures
+  - Experience in resolving international marriage and family matters
+  - Professional skills in developing internal corporate regulations
+  - Multi-disciplinary consultation across various legal fields
 
-  - **Corporate Procedures:** Drafting documents for establishment and changes in enterprise registration content.
+  ### Areas of Expertise
 
-  - **FDI Investment:** Drafting documents for adjustment and renewal of investment registration certificates for foreign-invested enterprises.
+  - Corporate Law
+  - Labor Law
+  - Investment
+  - Marriage & Family Law
+  - Land Law
 
-  - **Marriage and Family:** Resolving marriage and family matters including divorce cases with foreign elements.
+  ### Contact
 
-  ## Experience
-
-  - Resolving marriage and family matters including divorce cases with foreign elements.
-  - Regular consultation for over 15 domestic and foreign enterprises in corporate, labor, investment, and real estate business.
-  - Drafting and reviewing bilingual contracts (English - Vietnamese) including framework agreements, service contracts, labor contracts, NDAs.
-  - Developing and reviewing internal forms such as democracy regulations, labor rules, and salary-bonus policies of enterprises.
-  - Drafting documents for adjustment and renewal of investment registration certificates for foreign-invested enterprises.
-  - Drafting documents for establishment and changes in enterprise registration content.
+  For legal consultation, please contact Nguyễn Thị Thùy Linh via email: contact@yplawfirm.vn or phone: 088 995 6888.
 bodyContent_zh: |
-  ## 专业领域
+  ### 工作经验
 
-  阮氏垂灵负责以下领域：
+  垂灵积累了丰富的实践经验：
+  - 为15多家国内外企业在企业、劳动、投资和房地产业务方面提供常规咨询
+  - 起草和审查双语合同（英语 - 越南语）
+  - 解决婚姻家庭事务，包括涉及外国因素的离婚案件
+  - 为FDI投资登记证书起草文件
 
-  - **企业法：** 为国内外企业起草合同，提供劳动、房地产和外国投资方面的法律咨询。
+  ### 专业能力与优势
 
-  - **内部规章：** 制定和调整内部表格和企业规章。
+  - 双语合同起草的深厚专业知识（英语 - 越南语）
+  - 处理FDI投资程序的强大能力
+  - 解决国际婚姻家庭事务的经验
+  - 制定企业内部规章的专业技能
+  - 跨多个法律领域的多学科咨询
 
-  - **企业程序：** 起草企业设立和变更登记内容的文件。
+  ### 专业领域
 
-  - **FDI投资：** 为外商投资企业起草投资登记证书调整和换发文件。
+  - 企业法
+  - 劳动法
+  - 投资
+  - 婚姻家庭法
+  - 土地法
 
-  - **婚姻和家庭：** 解决婚姻家庭事务，包括涉及外国因素的离婚案件。
+  ### 联系方式
 
-  ## 经验
-
-  - 解决婚姻家庭事务，包括涉及外国因素的离婚案件。
-  - 为15多家国内外企业提供企业、劳动、投资和房地产业务方面的常规咨询。
-  - 起草和审查双语合同（英语 - 越南语），包括框架协议、服务合同、劳动合同、保密协议。
-  - 制定和审查企业的民主规章、劳动规则和薪酬奖励政策等内部表格。
-  - 为外商投资企业起草投资登记证书调整和换发文件。
-  - 起草企业设立和变更登记内容的文件。
+  如需法律咨询，请通过电子邮件联系阮氏垂灵：contact@yplawfirm.vn 或电话：088 995 6888。
 bodyContent_ja: |
-  ## 専門分野
+  ### 職務経歴
 
-  グエン・ティ・トゥイ・リンは以下の分野を担当しています：
+  トゥイ・リンは豊富な実務経験を積みました：
+  - 企業、労働、投資、不動産事業分野で15社以上の国内外企業への定期的なコンサルティング
+  - バイリンガル契約（英語 - ベトナム語）の起草とレビュー
+  - 外国要素を含む離婚事件を含む婚姻家族事項の解決
+  - FDI投資登録証明書の文書作成
 
-  - **企業法：** 国内外企業への契約起草、労働、不動産、海外投資に関する法的アドバイス。
+  ### 専門能力と強み
 
-  - **内部規程：** 内部フォームおよび企業規程の策定と調整。
+  - バイリンガル契約起草の深い専門知識（英語 - ベトナム語）
+  - FDI投資手続きを処理する強い能力
+  - 国際的な婚姻家族事項の解決経験
+  - 企業内部規程策定の専門スキル
+  - 複数の法的分野にわたる多分野コンサルティング
 
-  - **企業手続き：** 企業設立および登記内容変更のための文書作成。
+  ### 専門分野
 
-  - **FDI投資：** 外資系企業の投資登録証明書の調整と更新のための文書作成。
+  - 企業法
+  - 労働法
+  - 投資
+  - 婚姻家族法
+  - 土地法
 
-  - **婚姻と家族：** 外国要素を含む離婚事件を含む婚姻家族事項の解決。
+  ### お問い合わせ
 
-  ## 経験
-
-  - 外国要素を含む離婚事件を含む婚姻家族事項の解決。
-  - 企業、労働、投資、不動産事業分野で15社以上の国内外企業への定期的なコンサルティング。
-  - 基本契約、サービス契約、労働契約、NDAを含むバイリンガル契約（英語 - ベトナム語）の起草とレビュー。
-  - 企業の民主規程、労働規則、給与・賞与規程などの内部フォームの策定とレビュー。
-  - 外資系企業の投資登録証明書の調整と更新のための文書作成。
-  - 企業設立および登記内容変更のための文書作成。
+  法的相談については、メール：contact@yplawfirm.vn または電話：088 995 6888 までグエン・ティ・トゥイ・リンにご連絡ください。
 bodyContent_ko: |
-  ## 전문 분야
+  ### 경력 사항
 
-  응웬티투이린이 담당하는 분야:
+  투이린은 풍부한 실무 경험을 쌓았습니다:
+  - 기업, 노동, 투자, 부동산 사업 분야에서 15개 이상의 국내외 기업에 정기적인 자문
+  - 이중 언어 계약(영어 - 베트남어) 작성 및 검토
+  - 외국 요소가 포함된 이혼 사건을 포함한 결혼 및 가족 문제 해결
+  - FDI 투자 등록 증명서 문서 작성
 
-  - **기업법:** 국내외 기업을 위한 계약 작성, 노동, 부동산 및 외국인 투자에 대한 법률 자문.
+  ### 전문 역량 및 강점
 
-  - **내부 규정:** 내부 양식 및 기업 규정 개발 및 조정.
+  - 이중 언어 계약 작성에 대한 깊은 전문 지식(영어 - 베트남어)
+  - FDI 투자 절차 처리에 대한 강한 능력
+  - 국제 결혼 및 가족 문제 해결 경험
+  - 기업 내부 규정 개발 전문 기술
+  - 여러 법률 분야에 걸친 다학제적 자문
 
-  - **기업 절차:** 기업 설립 및 등록 내용 변경을 위한 문서 작성.
+  ### 전문 분야
 
-  - **FDI 투자:** 외국인 투자 기업의 투자 등록 증명서 조정 및 갱신을 위한 문서 작성.
+  - 기업법
+  - 노동법
+  - 투자
+  - 가족법
+  - 토지법
 
-  - **결혼 및 가족:** 외국 요소가 포함된 이혼 사건을 포함한 결혼 및 가족 문제 해결.
+  ### 연락처
 
-  ## 경험
-
-  - 외국 요소가 포함된 이혼 사건을 포함한 결혼 및 가족 문제 해결.
-  - 기업, 노동, 투자, 부동산 사업 분야에서 15개 이상의 국내외 기업에 정기적인 자문.
-  - 기본 계약, 서비스 계약, 노동 계약, NDA를 포함한 이중 언어 계약(영어 - 베트남어) 작성 및 검토.
-  - 기업의 민주 규정, 노동 규칙, 급여-보너스 정책 등 내부 양식 개발 및 검토.
-  - 외국인 투자 기업의 투자 등록 증명서 조정 및 갱신을 위한 문서 작성.
-  - 기업 설립 및 등록 내용 변경을 위한 문서 작성.
+  법률 상담이 필요하시면 이메일: contact@yplawfirm.vn 또는 전화: 088 995 6888로 응웬티투이린에게 연락해 주세요.
 draft: false
 ---
 
-## Lĩnh vực chuyên môn
+### Kinh nghiệm làm việc
+
+Thùy Linh đã tích lũy kinh nghiệm thực tế phong phú:
+- Tư vấn thường xuyên cho hơn 15 Doanh nghiệp trong và ngoài nước trong các lĩnh vực Doanh nghiệp, lao động, Đầu tư, kinh doanh bất động sản
+- Soạn thảo và đánh giá các hợp đồng song ngữ (Anh - Việt)
+- Giải quyết các vụ việc hôn nhân gia đình bao gồm cả các vụ việc ly hôn có yếu tố nước ngoài
+- Soạn thảo hồ sơ cho giấy chứng nhận đăng ký Đầu tư FDI
+
+### Chuyên môn và thế mạnh
+
+- Chuyên môn sâu về soạn thảo hợp đồng song ngữ (Anh - Việt)
+- Năng lực mạnh trong việc xử lý thủ tục Đầu tư FDI
+- Kinh nghiệm giải quyết các vấn đề hôn nhân gia đình quốc tế
+- Kỹ năng chuyên nghiệp trong việc xây dựng quy chế nội bộ doanh nghiệp
+- Tư vấn đa lĩnh vực trên nhiều mảng pháp lý
+
+### Lĩnh vực chuyên môn
+
+- Doanh nghiệp
+- Lao động
+- Đầu tư
+- Hôn nhân & Gia đình
+- Đất đai
+
+### Liên hệ
+
+Để được tư vấn pháp lý, vui lòng liên hệ Nguyễn Thị Thùy Linh qua email: contact@yplawfirm.vn hoặc điện thoại: 088 995 6888.
 
 Nguyễn Thị Thùy Linh phụ trách các lĩnh vực:
 

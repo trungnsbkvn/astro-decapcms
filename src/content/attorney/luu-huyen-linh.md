@@ -37,7 +37,7 @@ bio_ko: |
   
   그녀는 기업법, 노동법, 가족법 분야에서 폭넓은 전문 지식을 보유하고 있습니다.
 image: "~/assets/images/team/Chuyên viên Lưu Huyền Linh.jpg"
-email: "info@luatsumienbac.vn"
+email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:
   - "doanh-nghiep"
@@ -123,108 +123,134 @@ languages_ko:
 order: 29
 publishDate: 2025-12-01T00:00:00Z
 bodyContent_en: |
-  ## Areas of Expertise
+  ### Work Experience
 
-  Lưu Huyền Linh is responsible for the following areas:
+  She has built diverse experience through internships at reputable law firms and innovative tech companies.
 
-  - **Corporate Law:** Regular legal consultation and legal support for enterprises in daily legal matters, legal compliance, and internal operations.
+  - **Youth & Partners Law Firm:** Legal Specialist (Dec 2025 – present) - supporting legal consultation, document drafting, and legal research
+  - **CMC OpenAI:** Legal Data Labeling Staff (Nov 2025 – Dec 2025) - specialized legal data processing
+  - **Vạn Bảo Law Office:** Legal Intern (Sep 2025 – Oct 2025)
+  - **Chính Pháp Law Office:** Legal Intern (Sep 2022 – May 2023)
+  - **Education:** Bachelor of Law - VNU University of Law (2024), Judicial Academy (expected 2025)
 
-  - **Internal Regulations:** Reviewing and analyzing legal documents, contracts, and legal materials related to business operations.
+  ### Expertise and Strengths
 
-  - **Corporate Procedures:** Supporting the drafting and reviewing of commercial contracts, internal documents, and legal papers as required by the company and clients.
+  She is highly regarded for her thorough legal research abilities, sharp analytical thinking, and continuous learning spirit. Her strength lies in contract drafting, corporate internal regulations, and providing practical legal solutions for enterprises.
 
-  - **Regular Consultation:** Participating in research and updating new laws, providing practical legal solutions for enterprises.
+  ### Areas of Expertise
 
-  ## Experience
+  1. **Corporate Law:** Regular legal consultation and support for enterprises on daily legal matters, compliance, and internal operations
+  2. **Labor Law:** Advising on labor contracts, employee rights, and workplace regulations
+  3. **Marriage & Family:** Consultation on divorce procedures, property division, and child custody matters
 
-  - Sep 2022 – May 2023: Legal Intern at Chính Pháp Law Office
-  - Sep 2025 – Oct 2025: Legal Intern at Vạn Bảo Law Office
-  - Nov 2025 – Dec 2025: Legal Data Labeling Staff at CMC OpenAI Joint Stock Company
-  - Dec 2025 to present: Legal Specialist at Youth & Partners Law Firm (YPLaw Firm)
-  Participating in supporting legal consultation activities, document drafting, legal regulation research, and assisting lawyers in working with clients.
+  ### Contact
+
+  - **Email:** contact@yplawfirm.vn
+  - **Phone:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_zh: |
-  ## 专业领域
+  ### 工作经历
 
-  刘玄玲负责以下领域：
+  她通过在知名律师事务所和创新科技公司的实习积累了丰富的经验。
 
-  - **企业法：** 为企业日常法律事务、法律合规和内部运营提供常规法律咨询和法律支持。
+  - **Youth & Partners律师事务所：** 法律专员（2025年12月至今）- 支持法律咨询、文件起草和法律研究
+  - **CMC OpenAI：** 法律数据标注员（2025年11月 – 2025年12月）- 专业法律数据处理
+  - **万宝律师事务所：** 法律实习生（2025年9月 – 2025年10月）
+  - **正法律师事务所：** 法律实习生（2022年9月 – 2023年5月）
+  - **教育背景：** 越南国家大学法学院法学学士（2024年），司法学院（预计2025年）
 
-  - **内部规章：** 审查和分析与企业运营相关的法律文件、合同和法律材料。
+  ### 专业知识与优势
 
-  - **企业程序：** 支持起草和审查公司和客户要求的商业合同、内部文件和法律文件。
+  她以深入的法律研究能力、敏锐的分析思维和持续学习的精神而备受赞誉。她的优势在于合同起草、企业内部规章制度以及为企业提供实用的法律解决方案。
 
-  - **常规咨询：** 参与研究和更新新法律，为企业提供实用的法律解决方案。
+  ### 专业领域
 
-  ## 经验
+  1. **企业法：** 为企业日常法律事务、合规和内部运营提供常规法律咨询和支持
+  2. **劳动法：** 关于劳动合同、员工权利和工作场所规定的咨询
+  3. **婚姻家庭：** 关于离婚程序、财产分割和子女抚养权事项的咨询
 
-  - 2022年9月 – 2023年5月：正法律师事务所法律实习生
-  - 2025年9月 – 2025年10月：万宝律师事务所法律实习生
-  - 2025年11月 – 2025年12月：CMC OpenAI股份公司法律数据标注员
-  - 2025年12月至今：Youth & Partners律师事务所法律专员
-  参与支持法律咨询活动、文件起草、法律法规研究以及协助律师与客户合作。
+  ### 联系方式
+
+  - **邮箱：** contact@yplawfirm.vn
+  - **电话：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ja: |
-  ## 専門分野
+  ### 職歴
 
-  リュウ・フエン・リンは以下の分野を担当しています：
+  彼女は名門法律事務所や革新的なテクノロジー企業でのインターンシップを通じて多様な経験を積みました。
 
-  - **企業法：** 日常の法的問題、法令遵守、内部業務における企業への定期的な法的相談と法的支援。
+  - **Youth & Partners法律事務所：** 法務スペシャリスト（2025年12月〜現在）- 法的相談、文書作成、法的調査のサポート
+  - **CMC OpenAI：** 法的データラベリングスタッフ（2025年11月 – 2025年12月）- 専門的な法的データ処理
+  - **ヴァンバオ法律事務所：** 法務インターン（2025年9月 – 2025年10月）
+  - **チンファップ法律事務所：** 法務インターン（2022年9月 – 2023年5月）
+  - **学歴：** VNU法科大学法学士（2024年）、司法アカデミー（2025年見込み）
 
-  - **内部規程：** 事業運営に関連する法的文書、契約、法的資料のレビューと分析。
+  ### 専門知識と強み
 
-  - **企業手続き：** 会社とクライアントが必要とする商業契約、内部文書、法的書類の起草とレビューのサポート。
+  彼女は徹底した法的調査能力、鋭い分析思考、継続的な学習精神で高く評価されています。契約起草、企業内部規程、企業への実践的な法的ソリューションの提供が強みです。
 
-  - **定期相談：** 新しい法律の研究と更新への参加、企業への実践的な法的ソリューションの提供。
+  ### 専門分野
 
-  ## 経験
+  1. **企業法：** 日常の法的問題、コンプライアンス、内部業務に関する企業への定期的な法的相談とサポート
+  2. **労働法：** 労働契約、従業員の権利、職場規則に関するアドバイス
+  3. **婚姻家族：** 離婚手続き、財産分割、子供の親権問題に関する相談
 
-  - 2022年9月 – 2023年5月：チンファップ法律事務所にて法務インターン
-  - 2025年9月 – 2025年10月：ヴァンバオ法律事務所にて法務インターン
-  - 2025年11月 – 2025年12月：CMC OpenAI株式会社にて法的データラベリングスタッフ
-  - 2025年12月から現在：Youth & Partners法律事務所の法務スペシャリスト
-  法的相談活動、文書作成、法規制研究のサポート、およびクライアントとの業務における弁護士の補助に参加。
+  ### 連絡先
+
+  - **メール：** contact@yplawfirm.vn
+  - **電話：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ko: |
-  ## 전문 분야
+  ### 경력
 
-  류후엔린이 담당하는 분야:
+  그녀는 유명 법률 사무소와 혁신적인 기술 회사에서의 인턴십을 통해 다양한 경험을 쌓았습니다.
 
-  - **기업법:** 일상 법률 문제, 법률 준수 및 내부 운영에 대한 기업을 위한 정기 법률 상담 및 법률 지원.
+  - **Youth & Partners 법률 회사:** 법무 전문가 (2025년 12월 ~ 현재) - 법률 상담, 문서 작성, 법률 연구 지원
+  - **CMC OpenAI:** 법률 데이터 라벨링 직원 (2025년 11월 – 2025년 12월) - 전문 법률 데이터 처리
+  - **반바오 법률 사무소:** 법무 인턴 (2025년 9월 – 2025년 10월)
+  - **찐팝 법률 사무소:** 법무 인턴 (2022년 9월 – 2023년 5월)
+  - **학력:** VNU 법과대학 법학사 (2024년), 사법 아카데미 (2025년 예정)
 
-  - **내부 규정:** 사업 운영과 관련된 법률 문서, 계약 및 법률 자료의 검토 및 분석.
+  ### 전문 지식 및 강점
 
-  - **기업 절차:** 회사와 고객의 요구에 따른 상업 계약, 내부 문서 및 법률 서류의 작성 및 검토 지원.
+  그녀는 철저한 법률 연구 능력, 예리한 분석적 사고, 지속적인 학습 정신으로 높이 평가받습니다. 계약 작성, 기업 내부 규정, 기업을 위한 실용적인 법률 솔루션 제공이 강점입니다.
 
-  - **정기 상담:** 새로운 법률 연구 및 업데이트 참여, 기업을 위한 실용적인 법률 솔루션 제공.
+  ### 전문 분야
 
-  ## 경험
+  1. **기업법:** 일상 법률 문제, 컴플라이언스, 내부 운영에 대한 기업을 위한 정기 법률 상담 및 지원
+  2. **노동법:** 노동 계약, 직원 권리, 직장 규정에 관한 자문
+  3. **가족법:** 이혼 절차, 재산 분할, 자녀 양육권 문제에 관한 상담
 
-  - 2022년 9월 – 2023년 5월: 찐팝 법률 사무소 법무 인턴
-  - 2025년 9월 – 2025년 10월: 반바오 법률 사무소 법무 인턴
-  - 2025년 11월 – 2025년 12월: CMC OpenAI 주식회사 법률 데이터 라벨링 직원
-  - 2025년 12월 ~ 현재: Youth & Partners 법률 회사 법무 전문가
-  법률 상담 활동, 문서 작성, 법률 규정 연구 지원 및 고객과의 업무에서 변호사 보조 참여.
+  ### 연락처
+
+  - **이메일:** contact@yplawfirm.vn
+  - **전화:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 draft: false
 ---
 
-## Lĩnh vực chuyên môn
+### Kinh nghiệm làm việc
 
-Lưu Huyền Linh phụ trách các lĩnh vực:
+Cô đã tích lũy kinh nghiệm đa dạng thông qua thực tập tại các văn phòng luật uy tín và các công ty công nghệ sáng tạo.
 
-- **Doanh nghiệp:** Tư vấn pháp luật thường xuyên và hỗ trợ pháp lý cho doanh nghiệp trong các vấn đề pháp lý hàng ngày, tuân thủ pháp luật và hoạt động nội bộ.
+- **Công ty Luật Youth & Partners:** Chuyên viên pháp lý (T12/2025 – nay) - hỗ trợ tư vấn pháp lý, soạn thảo văn bản và nghiên cứu pháp luật
+- **CMC OpenAI:** Nhân viên gán nhãn dữ liệu pháp luật (T11/2025 – T12/2025) - xử lý dữ liệu pháp lý chuyên môn
+- **VP Luật sư Vạn Bảo:** Thực tập sinh pháp lý (T9/2025 – T10/2025)
+- **VP Luật sư Chính Pháp:** Thực tập sinh pháp lý (T9/2022 – T5/2023)
+- **Đào tạo:** Cử nhân Luật - ĐH Luật ĐHQGHN (2024), Học viện Tư Pháp (dự kiến 2025)
 
-- **Quy chế nội bộ:** Rà soát, phân tích văn bản quy phạm pháp luật, hợp đồng và tài liệu pháp lý liên quan đến hoạt động doanh nghiệp.
+### Chuyên môn và thế mạnh
 
-- **Thủ tục Doanh nghiệp:** Hỗ trợ soạn thảo, kiểm tra các hợp đồng thương mại, văn bản nội bộ, giấy tờ pháp lý theo yêu cầu công ty và khách hàng.
+Cô được đánh giá cao với khả năng nghiên cứu pháp luật kỹ lưỡng, tư duy phân tích sắc bén và tinh thần học hỏi không ngừng. Thế mạnh của cô nằm ở soạn thảo hợp đồng, quy chế nội bộ doanh nghiệp và cung cấp giải pháp pháp lý thực tiễn cho doanh nghiệp.
 
-- **Tư vấn thường xuyên** Tham gia nghiên cứu và cập nhật pháp luật mới, tư vấn giải pháp pháp lý thực tiễn cho doanh nghiệp.
+### Lĩnh vực chuyên môn
 
-## Kinh nghiệm
+1. **Doanh nghiệp:** Tư vấn pháp luật thường xuyên và hỗ trợ doanh nghiệp về các vấn đề pháp lý hàng ngày, tuân thủ và hoạt động nội bộ
+2. **Lao động:** Tư vấn về hợp đồng lao động, quyền lợi người lao động và quy định tại nơi làm việc
+3. **Hôn nhân & Gia đình:** Tư vấn về thủ tục ly hôn, phân chia tài sản và quyền nuôi con
 
-- T9/2022 – T5/2023: 
-Thực tập sinh pháp lý tại Văn phòng Luật sư Chính Pháp
-- T9/2025 – T10/2025: 
-Thực tập sinh pháp lý tại Văn phòng Luật sư Vạn Bảo
-- T11/2025 – T12/2025: 
-Nhân viên gán nhãn dữ liệu pháp luật tại Công ty Cổ phần CMC OpenAI
-- T12/2025 đến nay:
-Chuyên viên pháp lý – Công ty Luật TNHH Youth & Partners (YPLaw Firm)
-Tham gia hỗ trợ các hoạt động tư vấn pháp lý, soạn thảo hồ sơ, nghiên cứu quy định pháp luật và hỗ trợ luật sư trong quá trình làm việc với khách hàng.
+### Liên hệ
+
+- **Email:** contact@yplawfirm.vn
+- **Điện thoại:** 088 995 6888
+- **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)

@@ -43,7 +43,7 @@ shortBio_zh: "河内法律大学国际商法学士 | 司法学院 | 多领域法
 shortBio_ja: "国際商法学士 - ハノイ法科大学 | 司法アカデミー | 多分野法務経験"
 shortBio_ko: "국제상법 학사 - 하노이 법과대학 | 사법 아카데미 | 다분야 법률 경험"
 image: "~/assets/images/team/Chuyên viên Nguyễn Hoàng Dũng.png"
-email: "info@luatsumienbac.vn"
+email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:
   - "dan-su"
@@ -133,86 +133,135 @@ socialLinks:
 order: 21
 publishDate: 2024-01-01T00:00:00Z
 bodyContent_en: |
-  ## Areas of Expertise
+  ### Work Experience
 
-  Nguyễn Hoàng Dũng is responsible for the following areas:
+  He has gained valuable practical experience through diverse legal positions.
 
-  - **Civil Law:** Consulting on contracts, civil transactions, representing in inheritance disputes, handling damage compensation claims in civil transactions, and other related legal matters.
+  - **Youth & Partners Law Firm:** Legal Specialist (2025 – present) - multi-field legal consultation and support
+  - **Ha Nam Bar Association Legal Consultation Center:** Legal Staff (2024) - direct client consultation
+  - **Hong Bach & Associates Law Firm:** Legal Assistant (2023) - case research and document preparation
+  - **Education:** Judicial Academy Graduate (2025), Bachelor of Law - International Commercial Law, Hanoi Law University (2023)
 
-  - **Marriage and Family:** Consulting on documentation, divorce procedures, division of common property, child custody rights, and legal issues related to marriage and family.
+  ### Expertise and Strengths
 
-  - **Land Law:** Consulting on documentation, procedures, administrative processes related to land, participating in resolving land use right disputes.
+  He is highly regarded for his in-depth legal research capabilities, meticulous file handling, and accurate legal consultation. His continuous learning spirit and commitment to professional development make him increasingly valuable in the legal field.
 
-  - **Criminal Law:** Legal consultation, drafting documents to defend suspects and defendants, or protecting the rights and legitimate interests of victims and related parties in criminal cases.
+  ### Areas of Expertise
 
-  - **Administrative Law:** Consulting on documentation and procedures, representing clients in collecting evidence, participating in protecting clients' legitimate rights and interests in administrative complaints, denunciations, and cases.
+  1. **Civil Law:** Contract consultation, civil transactions, inheritance disputes, damage compensation claims
+  2. **Marriage & Family:** Divorce procedures, property division, child custody matters
+  3. **Land Law:** Land administrative procedures, land use right disputes
+  4. **Criminal Law:** Defense for suspects/defendants, protection of victims' rights
+
+  ### Contact
+
+  - **Email:** contact@yplawfirm.vn
+  - **Phone:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_zh: |
-  ## 专业领域
 
-  阮黄勇负责以下领域：
+  ### 工作经历
 
-  - **民事法：** 关于合同、民事交易的咨询，代表参与遗产继承纠纷，处理民事交易中的损害赔偿要求及其他相关法律事务。
+  他通过多元化的法律职位积累了宝贵的实践经验。
 
-  - **婚姻和家庭：** 关于文件、离婚程序、共同财产分割、子女抚养权以及与婚姻家庭相关的法律问题的咨询。
+  - **Youth & Partners律师事务所：** 法律专员（2025年至今）- 多领域法律咨询和支持
+  - **河南省律师协会法律咨询中心：** 法律职员（2024年）- 直接客户咨询
+  - **洪柏律师事务所：** 法律助理（2023年）- 案件研究和文件准备
+  - **教育背景：** 司法学院毕业（2025年），河内法律大学国际商法法学学士（2023年）
 
-  - **土地法：** 关于土地相关的文件、程序、行政流程的咨询，参与解决土地使用权纠纷。
+  ### 专业知识与优势
 
-  - **刑事法：** 法律咨询，起草文件为犯罪嫌疑人和被告辩护，或在刑事案件中保护受害者和相关方的权益。
+  他以深入的法律研究能力、细致的档案处理和精准的法律咨询而备受赞誉。持续学习的精神和专业发展的承诺使他在法律领域日益具有价值。
 
-  - **行政法：** 关于文件和程序的咨询，代表客户收集证据，参与保护客户在行政投诉、举报和案件中的合法权益。
+  ### 专业领域
+
+  1. **民事法：** 合同咨询、民事交易、遗产继承纠纷、损害赔偿请求
+  2. **婚姻家庭：** 离婚程序、财产分割、子女抚养权事务
+  3. **土地法：** 土地行政程序、土地使用权纠纷
+  4. **刑事法：** 为嫌疑人/被告辩护、保护受害者权益
+
+  ### 联系方式
+
+  - **邮箱：** contact@yplawfirm.vn
+  - **电话：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ja: |
-  ## 専門分野
+  ### 職歴
 
-  グエン・ホアン・ズンは以下の分野を担当しています：
+  彼は多様な法務ポジションを通じて貴重な実務経験を積みました。
 
-  - **民事法：** 契約、民事取引に関するコンサルティング、遺産相続紛争における代理、民事取引における損害賠償請求の処理、その他の関連法的事項。
+  - **Youth & Partners法律事務所：** 法務スペシャリスト（2025年〜現在）- 多分野の法的相談とサポート
+  - **ハナム省弁護士会法律相談センター：** 法務スタッフ（2024年）- 直接のクライアント相談
+  - **ホンバック法律事務所：** 法務アシスタント（2023年）- 案件調査と文書準備
+  - **学歴：** 司法アカデミー卒業（2025年）、ハノイ法科大学国際商法学士（2023年）
 
-  - **婚姻と家族：** 書類、離婚手続き、共有財産の分割、子供の養育権、婚姻と家族に関する法的問題についてのコンサルティング。
+  ### 専門知識と強み
 
-  - **土地法：** 土地に関する書類、手続き、行政プロセスについてのコンサルティング、土地使用権紛争の解決への参加。
+  彼は深い法的調査能力、緻密な書類処理、正確な法的相談で高く評価されています。継続的な学習精神と専門的成長へのコミットメントにより、法律分野でますます価値のある存在となっています。
 
-  - **刑事法：** 法的相談、容疑者および被告人を弁護するための文書作成、または刑事事件における被害者および関係者の権利と正当な利益の保護。
+  ### 専門分野
 
-  - **行政法：** 書類と手続きに関するコンサルティング、証拠収集における依頼者の代理、行政苦情、告発、事件における依頼者の正当な権利と利益の保護への参加。
+  1. **民事法：** 契約相談、民事取引、遺産相続紛争、損害賠償請求
+  2. **婚姻家族：** 離婚手続き、財産分割、子供の親権問題
+  3. **土地法：** 土地行政手続き、土地使用権紛争
+  4. **刑事法：** 容疑者/被告人の弁護、被害者の権利保護
+
+  ### 連絡先
+
+  - **メール：** contact@yplawfirm.vn
+  - **電話：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ko: |
-  ## 전문 분야
+  ### 경력
 
-  응웬호앙중이 담당하는 분야:
+  그는 다양한 법률 직책을 통해 귀중한 실무 경험을 쌓았습니다.
 
-  - **민사법:** 계약, 민사 거래에 관한 상담, 상속 분쟁 대리, 민사 거래에서의 손해배상 청구 처리 및 기타 관련 법률 문제.
+  - **Youth & Partners 법률 회사:** 법무 전문가 (2025년 ~ 현재) - 다분야 법률 상담 및 지원
+  - **하남성 변호사 협회 법률 상담 센터:** 법률 직원 (2024년) - 직접 고객 상담
+  - **홍박 법률 회사:** 법률 보조 (2023년) - 사건 연구 및 문서 준비
+  - **학력:** 사법 아카데미 졸업 (2025년), 하노이 법과대학 국제상법 법학사 (2023년)
 
-  - **결혼 및 가족:** 문서, 이혼 절차, 공동 재산 분할, 자녀 양육권 및 결혼과 가족 관련 법률 문제에 대한 상담.
+  ### 전문 지식 및 강점
 
-  - **토지법:** 토지 관련 문서, 절차, 행정 프로세스에 대한 상담, 토지 사용권 분쟁 해결 참여.
+  그는 심층적인 법률 연구 능력, 꼼꼼한 서류 처리, 정확한 법률 상담으로 높이 평가받습니다. 지속적인 학습 정신과 전문 발전에 대한 헌신으로 법률 분야에서 점점 더 가치 있는 존재가 되고 있습니다.
 
-  - **형사법:** 법률 상담, 피의자 및 피고인을 변호하기 위한 문서 작성, 또는 형사 사건에서 피해자 및 관련 당사자의 권리와 정당한 이익 보호.
+  ### 전문 분야
 
-  - **행정법:** 문서 및 절차에 관한 상담, 증거 수집에서 고객 대리, 행정 민원, 고발 및 사건에서 고객의 정당한 권리와 이익 보호 참여.
+  1. **민사법:** 계약 상담, 민사 거래, 상속 분쟁, 손해배상 청구
+  2. **가족법:** 이혼 절차, 재산 분할, 자녀 양육권 문제
+  3. **토지법:** 토지 행정 절차, 토지 사용권 분쟁
+  4. **형사법:** 피의자/피고인 변호, 피해자 권리 보호
+
+  ### 연락처
+
+  - **이메일:** contact@yplawfirm.vn
+  - **전화:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 draft: false
 ---
 
-## Lĩnh vực chuyên môn
+### Kinh nghiệm làm việc
 
-Nguyễn Hoàng Dũng phụ trách các lĩnh vực:
+Anh đã tích lũy kinh nghiệm thực tiễn quý báu thông qua các vị trí pháp lý đa dạng.
 
-- **Dân sự:** Tư vấn về hợp đồng, giao dịch Dân sự, đại diện tham gia giải quyết tranh chấp di sản thừa kế, yêu cầu bồi thường thiệt hại trong giao dịch dân sự và các vấn đề pháp lý liên quan khác.
+- **Công ty Luật Youth & Partners:** Chuyên viên pháp lý (2025 – nay) - tư vấn và hỗ trợ pháp lý đa lĩnh vực
+- **Trung tâm Tư vấn pháp luật Đoàn Luật sư tỉnh Hà Nam:** Nhân viên pháp lý (2024) - tư vấn trực tiếp khách hàng
+- **Công ty Luật TNHH Hồng Bách & Cộng sự:** Trợ lý pháp lý (2023) - nghiên cứu vụ việc và chuẩn bị hồ sơ
+- **Đào tạo:** Tốt nghiệp Học viện Tư Pháp (2025), Cử nhân Luật - Luật Thương mại Quốc tế, ĐH Luật Hà Nội (2023)
 
-- **Hôn nhân và gia đình:** Tư vấn về hồ sơ, trình tự thủ tục ly hôn, chia tài sản chung, quyền nuôi con, và các vấn đề pháp lý liên quan đến hôn nhân và gia đình.
+### Chuyên môn và thế mạnh
 
-- **Đất đai:** Tư vấn về hồ sơ, trình tự, thủ tục hành chính liên quan đến đất đai, tham gia giải quyết tranh chấp quyền sử dụng đất.
+Anh được đánh giá cao với khả năng nghiên cứu pháp lý chuyên sâu, xử lý hồ sơ tỉ mỉ và tư vấn pháp luật chính xác. Tinh thần học hỏi không ngừng và cam kết phát triển nghề nghiệp khiến anh ngày càng có giá trị trong lĩnh vực pháp lý.
 
-- **Hình sự:** Tư vấn pháp luật, soạn thảo văn bản nhằm bào chữa cho bị can, bị cáo, hoặc bảo vệ quyền và lợi ích hợp pháp cho bị hại, người liên quan trong vụ án hình sự.
+### Lĩnh vực chuyên môn
 
-- **Hành chính:** Tư vấn về hồ sơ, trình tự thủ tục, đại diện khách hàng thu thập tài liệu chứng cứ, tham gia bảo vệ quyền lợi ích hợp pháp của khách hàng trong khiếu nại, tố cáo và vụ án hành chính.
+1. **Dân sự:** Tư vấn hợp đồng, giao dịch dân sự, tranh chấp thừa kế, bồi thường thiệt hại
+2. **Hôn nhân & Gia đình:** Thủ tục ly hôn, phân chia tài sản, quyền nuôi con
+3. **Đất đai:** Thủ tục hành chính đất đai, tranh chấp quyền sử dụng đất
+4. **Hình sự:** Bào chữa cho bị can/bị cáo, bảo vệ quyền lợi bị hại
 
-- **Doanh nghiệp:** Tư vấn pháp lý về thành lập, hoạt động và quản lý Doanh nghiệp, soạn thảo hợp đồng kinh tế, hợp đồng hợp tác kinh doanh.
+### Liên hệ
 
-- **Lao động:** Tư vấn về các vấn đề liên quan đến lao động, hợp đồng lao động, tranh chấp lao động và quyền lợi của người lao động và người sử dụng lao động.
-
-- **Đầu tư:** Tư vấn, soạn thảo hồ sơ, đại diện làm việc với cơ quan nhà nước trong quá trình thực hiện dự án đầu tư.
-
-## Kinh nghiệm
-
-- Năm 2023: Làm việc tại Công ty Luật TNHH Hồng Bách và cộng sự.
-- Năm 2024: Làm việc tại Trung tâm tư vấn pháp luật Đoàn luật sư tỉnh Hà Nam.
-- Năm 2025: Làm việc tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm).
+- **Email:** contact@yplawfirm.vn
+- **Điện thoại:** 088 995 6888
+- **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)

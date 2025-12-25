@@ -109,54 +109,129 @@ languages_ja:
 languages_ko:
   - "베트남어"
 bodyContent_en: |
-  ## About Lawyer Nguyễn Thị Thơm
+  ### Work Experience
 
-  With many years of experience in corporate legal affairs, Lawyer Nguyễn Thị Thơm is a trusted expert.
+  Lawyer Thơm has accumulated extensive experience through work at various organizations:
+  - Worked at foreign-invested companies with deep understanding of FDI regulations
+  - Experienced at real estate investment and development companies
+  - Currently: Member Lawyer at Youth & Partners Law Firm, leading corporate legal consultation
 
-  ## Areas of Responsibility
+  ### Expertise and Strengths
 
-  - **Corporate Law:** Legal advice on establishment, operation, and management of enterprises, contract-related issues, business legal matters
-  - **Labor Law:** Consulting on labor-related issues, labor contracts, labor disputes, and employee rights
-  - **Investment:** Advising on investment matters, including domestic and foreign investment, enterprise development strategies, and legal issues related to real estate investment
+  - Deep knowledge in corporate legal compliance and internal governance
+  - Extensive experience in foreign-invested enterprises (FDI)
+  - Strong capability in developing sustainable growth strategies
+  - Professional contract drafting and review skills
+  - Strategic approach to minimize legal risks in business operations
+
+  ### Areas of Expertise
+
+  - Corporate Law
+  - Labor Law
+  - Investment
+
+  ### Contact
+
+  For legal consultation, please contact Lawyer Nguyễn Thị Thơm via email: contact@yplawfirm.vn or phone: 088 995 6888.
 bodyContent_zh: |
-  ## 关于阮氏涛律师
+  ### 工作经验
 
-  凭借多年企业法律事务经验，阮氏涛律师是一位值得信赖的专家。
+  阮律师通过在各组织的工作积累了丰富的经验：
+  - 在外资企业工作，深入了解FDI法规
+  - 在房地产投资开发公司有丰富经验
+  - 目前：Youth & Partners律师事务所成员律师，负责企业法律咨询
 
-  ## 负责领域
+  ### 专业能力与优势
 
-  - **企业法：** 关于企业设立、运营和管理的法律咨询，合同相关问题，商业法律事务
-  - **劳动法：** 关于劳动相关问题、劳动合同、劳动纠纷和员工权利的咨询
-  - **投资：** 关于投资事务的咨询，包括国内外投资、企业发展战略以及与房地产投资相关的法律问题
+  - 企业法律合规和内部治理的深厚知识
+  - 外资企业（FDI）丰富经验
+  - 制定可持续发展战略的强大能力
+  - 专业的合同起草和审查技能
+  - 在业务运营中降低法律风险的战略方法
+
+  ### 专业领域
+
+  - 企业法
+  - 劳动法
+  - 投资
+
+  ### 联系方式
+
+  如需法律咨询，请通过电子邮件联系阮氏涛律师：contact@yplawfirm.vn 或电话：088 995 6888。
 bodyContent_ja: |
-  ## グエン・ティ・トム弁護士について
+  ### 職務経歴
 
-  企業法務分野で多年の経験を持つグエン・ティ・トム弁護士は、信頼できる専門家です。
+  トム弁護士は様々な組織での勤務を通じて豊富な経験を積みました：
+  - FDI規制に深い理解を持つ外資系企業での勤務経験
+  - 不動産投資・開発会社での経験
+  - 現在：Youth & Partners法律事務所のメンバー弁護士、企業法務コンサルティングを担当
 
-  ## 担当分野
+  ### 専門能力と強み
 
-  - **企業法：** 企業の設立、運営、管理に関する法的アドバイス、契約関連事項、ビジネス法的事項
-  - **労働法：** 労働関連問題、労働契約、労働紛争、従業員の権利に関するコンサルティング
-  - **投資：** 国内外投資、企業発展戦略、不動産投資に関する法的問題を含む投資事項に関するアドバイス
+  - 企業法令遵守と内部ガバナンスに関する深い知識
+  - 外資系企業（FDI）での豊富な経験
+  - 持続可能な成長戦略を策定する強い能力
+  - プロフェッショナルな契約起草・レビュースキル
+  - 事業運営における法的リスクを最小化する戦略的アプローチ
+
+  ### 専門分野
+
+  - 企業法
+  - 労働法
+  - 投資
+
+  ### お問い合わせ
+
+  法的相談については、メール：contact@yplawfirm.vn または電話：088 995 6888 までグエン・ティ・トム弁護士にご連絡ください。
 bodyContent_ko: |
-  ## 응웬티톰 변호사 소개
+  ### 경력 사항
 
-  기업 법무 분야에서 다년간의 경험을 보유한 응웬티톰 변호사는 신뢰할 수 있는 전문가입니다.
+  톰 변호사는 다양한 조직에서의 근무를 통해 풍부한 경험을 쌓았습니다:
+  - FDI 규정에 대한 깊은 이해를 가진 외국인 투자 기업 근무 경험
+  - 부동산 투자 개발 회사 경험
+  - 현재: Youth & Partners 법률 회사 구성원 변호사, 기업 법률 자문 담당
 
-  ## 담당 분야
+  ### 전문 역량 및 강점
 
-  - **기업법:** 기업 설립, 운영 및 관리에 관한 법률 자문, 계약 관련 문제, 비즈니스 법률 문제
-  - **노동법:** 노동 관련 문제, 노동 계약, 노동 분쟁 및 직원 권리에 대한 상담
-  - **투자:** 국내외 투자, 기업 발전 전략, 부동산 투자 관련 법률 문제를 포함한 투자 사안에 대한 자문
+  - 기업 법률 준수 및 내부 지배구조에 관한 깊은 지식
+  - 외국인 투자 기업(FDI)에서의 풍부한 경험
+  - 지속 가능한 성장 전략 수립 능력
+  - 전문적인 계약 작성 및 검토 기술
+  - 사업 운영에서 법적 위험을 최소화하는 전략적 접근
+
+  ### 전문 분야
+
+  - 기업법
+  - 노동법
+  - 투자
+
+  ### 연락처
+
+  법률 상담이 필요하시면 이메일: contact@yplawfirm.vn 또는 전화: 088 995 6888로 응웬티톰 변호사에게 연락해 주세요.
 draft: false
 ---
 
-## Giới thiệu về Luật sư Nguyễn Thị Thơm
+### Kinh nghiệm làm việc
 
-Với nhiều năm kinh nghiệm trong lĩnh vực pháp chế Doanh nghiệp, Luật sư Nguyễn Thị Thơm là một chuyên gia đáng tin cậy.
+Luật sư Thơm đã tích lũy kinh nghiệm qua công việc tại nhiều tổ chức:
+- Làm việc tại các công ty có vốn Đầu tư nước ngoài với hiểu biết sâu về quy định FDI
+- Có kinh nghiệm tại các công ty Đầu tư và phát triển bất động sản
+- Hiện tại: Luật sư thành viên tại Công ty Luật TNHH Youth & Partners, phụ trách tư vấn pháp lý doanh nghiệp
 
-## Lĩnh vực phụ trách
+### Chuyên môn và thế mạnh
 
-- **Doanh nghiệp:** Tư vấn pháp lý về thành lập, hoạt động và quản lý Doanh nghiệp, các vấn đề liên quan đến hợp đồng, pháp lý kinh doanh
-- **Lao động:** Tư vấn về các vấn đề liên quan đến lao động, hợp đồng lao động, tranh chấp lao động và quyền lợi của người lao động
-- **Đầu tư:** Tư vấn về các vấn đề Đầu tư, bao gồm Đầu tư trong và ngoài nước, chiến lược phát triển Doanh nghiệp và các vấn đề pháp lý liên quan đến Đầu tư bất động sản
+- Kiến thức chuyên sâu về tuân thủ pháp lý doanh nghiệp và quản trị nội bộ
+- Kinh nghiệm dày dặn với doanh nghiệp có vốn đầu tư nước ngoài (FDI)
+- Năng lực mạnh trong việc xây dựng chiến lược phát triển bền vững
+- Kỹ năng soạn thảo và đánh giá hợp đồng chuyên nghiệp
+- Phương pháp chiến lược để giảm thiểu rủi ro pháp lý trong hoạt động kinh doanh
+
+### Lĩnh vực chuyên môn
+
+- Doanh nghiệp
+- Lao động
+- Đầu tư
+
+### Liên hệ
+
+Để được tư vấn pháp lý, vui lòng liên hệ Luật sư Nguyễn Thị Thơm qua email: contact@yplawfirm.vn hoặc điện thoại: 088 995 6888.

@@ -119,54 +119,124 @@ languages_ko:
   - "영어"
   - "일본어"
 bodyContent_en: |
-  ## About Jurist Nguyễn Thu Nga
+  ### Work Experience
 
-  Jurist Nga has many years of experience in the legal field, specializing in advising FDI enterprises.
+  She has built extensive expertise in serving foreign-invested enterprises.
 
-  ## Areas of Responsibility
+  - **Youth & Partners Law Firm:** Jurist - specializing in FDI corporate advisory
+  - **FDI Client Portfolio:** Years of experience advising Japanese and international enterprises on Vietnamese law
+  - **Education:** Japanese Law Training - Nagoya University at Hanoi (2016), Bachelor of Law - Hanoi Law University (2012)
 
-  - **Corporate Law:** Comprehensive legal advice on corporate establishment, operations, and governance, protecting shareholder rights
-  - **Labor Law:** Consulting on labor contracts, employee rights, labor disputes, social insurance
-  - **Investment:** Legal advice on domestic and foreign investment matters, investment procedures, capital transfers
+  ### Expertise and Strengths
+
+  With deep understanding of both Vietnamese and Japanese business practices, Jurist Nga provides comprehensive legal advice on corporate establishment, operations, governance, and cross-border investment matters. Her trilingual skills enable seamless communication with international clients.
+
+  ### Areas of Expertise
+
+  1. **Corporate Law:** Comprehensive legal advice on corporate establishment, operations, governance, and shareholder rights protection
+  2. **Labor Law:** Consulting on labor contracts, employee rights, labor disputes, social insurance
+  3. **Investment:** Legal advice on domestic and foreign investment matters, investment procedures, capital transfers
+
+  ### Contact
+
+  - **Email:** contact@yplawfirm.vn
+  - **Phone:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_zh: |
-  ## 关于法律专家阮秋娥
+  ### 工作经历
 
-  法律专家雅在法律领域拥有多年经验，专门为外商直接投资企业提供咨询。
+  她在服务外商投资企业方面积累了丰富的专业知识。
 
-  ## 负责领域
+  - **Youth & Partners律师事务所：** 法律专家 - 专注于外商直接投资企业咨询
+  - **外商直接投资客户组合：** 多年为日本和国际企业提供越南法律咨询的经验
+  - **教育背景：** 日本法律培训 - 名古屋大学河内分校（2016年），河内法律大学法学学士（2012年）
 
-  - **企业法：** 关于企业设立、运营和治理的全面法律咨询，保护股东权益
-  - **劳动法：** 关于劳动合同、员工权利、劳动纠纷、社会保险的咨询
-  - **投资：** 关于国内外投资事务、投资程序、资本转让的法律咨询
+  ### 专业知识与优势
+
+  凭借对越南和日本商业惯例的深入了解，阮法律专家提供关于企业设立、运营、治理和跨境投资事务的全面法律咨询。她的三语技能使与国际客户的沟通无缝衔接。
+
+  ### 专业领域
+
+  1. **企业法：** 关于企业设立、运营、治理和股东权益保护的全面法律咨询
+  2. **劳动法：** 关于劳动合同、员工权利、劳动纠纷、社会保险的咨询
+  3. **投资：** 关于国内外投资事务、投资程序、资本转让的法律咨询
+
+  ### 联系方式
+
+  - **邮箱：** contact@yplawfirm.vn
+  - **电话：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ja: |
-  ## 法律家グエン・トゥ・ガーについて
+  ### 職歴
 
-  法律家ガーは法律分野で多年の経験を持ち、FDI企業へのアドバイスを専門としています。
+  彼女は外資系企業へのサービスにおいて豊富な専門知識を築いてきました。
 
-  ## 担当分野
+  - **Youth & Partners法律事務所：** 法律家 - FDI企業アドバイザリー専門
+  - **FDIクライアントポートフォリオ：** 日本および国際企業へのベトナム法アドバイスで長年の経験
+  - **学歴：** 日本法研修 - 名古屋大学ハノイ校（2016年）、ハノイ法科大学法学士（2012年）
 
-  - **企業法：** 企業設立、運営、ガバナンスに関する包括的な法的アドバイス、株主権の保護
-  - **労働法：** 労働契約、従業員の権利、労働紛争、社会保険に関するコンサルティング
-  - **投資：** 国内外投資事項、投資手続き、資本譲渡に関する法的アドバイス
+  ### 専門知識と強み
+
+  ベトナムと日本のビジネス慣行に対する深い理解を持ち、企業設立、運営、ガバナンス、クロスボーダー投資事項に関する包括的な法的アドバイスを提供しています。3言語スキルにより、国際的なクライアントとのシームレスなコミュニケーションが可能です。
+
+  ### 専門分野
+
+  1. **企業法：** 企業設立、運営、ガバナンス、株主権保護に関する包括的な法的アドバイス
+  2. **労働法：** 労働契約、従業員の権利、労働紛争、社会保険に関するコンサルティング
+  3. **投資：** 国内外投資事項、投資手続き、資本譲渡に関する法的アドバイス
+
+  ### 連絡先
+
+  - **メール：** contact@yplawfirm.vn
+  - **電話：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ko: |
-  ## 법률가 응웬투응아 소개
+  ### 경력
 
-  법률가 응아는 법률 분야에서 다년간의 경험을 보유하고 있으며 FDI 기업 자문을 전문으로 합니다.
+  그녀는 외국인 투자 기업 서비스에서 광범위한 전문 지식을 쌓았습니다.
 
-  ## 담당 분야
+  - **Youth & Partners 법률 회사:** 법률가 - FDI 기업 자문 전문
+  - **FDI 고객 포트폴리오:** 일본 및 국제 기업에 베트남 법률 자문 제공 다년간 경험
+  - **학력:** 일본법 교육 - 나고야대학교 하노이캠퍼스 (2016년), 하노이 법과대학 법학사 (2012년)
 
-  - **기업법:** 기업 설립, 운영 및 지배구조에 관한 포괄적인 법률 자문, 주주 권리 보호
-  - **노동법:** 노동 계약, 직원 권리, 노동 분쟁, 사회보험에 대한 상담
-  - **투자:** 국내외 투자 사안, 투자 절차, 자본 양도에 대한 법률 자문
+  ### 전문 지식 및 강점
+
+  베트남과 일본 비즈니스 관행에 대한 깊은 이해를 바탕으로 기업 설립, 운영, 지배구조, 국경 간 투자 사안에 대한 포괄적인 법률 자문을 제공합니다. 3개 국어 능력으로 국제 고객과의 원활한 커뮤니케이션이 가능합니다.
+
+  ### 전문 분야
+
+  1. **기업법:** 기업 설립, 운영, 지배구조, 주주 권리 보호에 관한 포괄적인 법률 자문
+  2. **노동법:** 노동 계약, 직원 권리, 노동 분쟁, 사회보험에 대한 상담
+  3. **투자:** 국내외 투자 사안, 투자 절차, 자본 양도에 대한 법률 자문
+
+  ### 연락처
+
+  - **이메일:** contact@yplawfirm.vn
+  - **전화:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 draft: false
 ---
 
-## Giới thiệu về Luật sư Nguyễn Thu Nga
+### Kinh nghiệm làm việc
 
-Luật gia Nga có nhiều năm kinh nghiệm trong lĩnh vực pháp lý, chuyên tư vấn cho các doanh nghiệp FDI.
+Cô đã tích lũy kiến thức chuyên sâu trong việc phục vụ các doanh nghiệp có vốn đầu tư nước ngoài.
 
-## Lĩnh vực phụ trách
+- **Công ty Luật Youth & Partners:** Luật gia - chuyên tư vấn doanh nghiệp FDI
+- **Danh mục khách hàng FDI:** Nhiều năm kinh nghiệm tư vấn cho doanh nghiệp Nhật Bản và quốc tế về pháp luật Việt Nam
+- **Đào tạo:** Khóa đào tạo Pháp luật Nhật Bản - ĐH Nagoya tại Hà Nội (2016), Cử nhân Luật - ĐH Luật Hà Nội (2012)
 
-- **Doanh nghiệp:** Tư vấn toàn diện về các vấn đề pháp lý liên quan đến thành lập, hoạt động và quản trị Doanh nghiệp, bảo vệ quyền lợi của cổ đông
-- **Lao động:** Tư vấn về hợp đồng lao động, quyền lợi của người lao động, tranh chấp lao động, bảo hiểm xã hội
-- **Đầu tư:** Tư vấn pháp lý về các vấn đề Đầu tư trong và ngoài nước, thủ tục Đầu tư, chuyển nhượng vốn
+### Chuyên môn và thế mạnh
+
+Với sự am hiểu sâu sắc về cả thông lệ kinh doanh Việt Nam và Nhật Bản, Luật gia Nga tư vấn toàn diện về thành lập, hoạt động, quản trị doanh nghiệp và các vấn đề đầu tư xuyên biên giới. Kỹ năng ba ngôn ngữ giúp giao tiếp liền mạch với khách hàng quốc tế.
+
+### Lĩnh vực chuyên môn
+
+1. **Doanh nghiệp:** Tư vấn toàn diện về thành lập, hoạt động, quản trị doanh nghiệp và bảo vệ quyền lợi cổ đông
+2. **Lao động:** Tư vấn về hợp đồng lao động, quyền lợi người lao động, tranh chấp lao động, bảo hiểm xã hội
+3. **Đầu tư:** Tư vấn pháp lý về đầu tư trong và ngoài nước, thủ tục đầu tư, chuyển nhượng vốn
+
+### Liên hệ
+
+- **Email:** contact@yplawfirm.vn
+- **Điện thoại:** 088 995 6888
+- **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)

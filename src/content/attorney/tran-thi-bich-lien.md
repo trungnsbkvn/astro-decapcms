@@ -35,7 +35,7 @@ bio_ko: |
   
   그녀는 많은 토지 분쟁과 가족 문제를 직접 해결하는 데 참여하여 성공적으로 처리하며 고객의 정당한 권리를 보호해 왔습니다.
 image: "~/assets/images/team/Chuyên viên Trần Thị Bích Liên.jpg"
-email: "info@luatsumienbac.vn"
+email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:
   - "dan-su"
@@ -101,84 +101,129 @@ socialLinks:
 order: 17
 publishDate: 2024-01-01T00:00:00Z
 bodyContent_en: |
-  ## Areas of Expertise
+  ### Work Experience
 
-  Trần Thị Bích Liên is responsible for the following areas:
+  Bích Liên has accumulated extensive experience at Youth & Partners Law Firm:
+  - 2020 – 2024: Legal Specialist at Youth & Partners Law Firm LLC
+  - Directly participated and succeeded in resolving many land disputes and marriage & family cases
+  - Performed many complex Administrative and Land procedures for individuals and organizations
 
-  - **Civil Law:** Consulting on contracts, civil transactions, inheritance, marriage & family, damage compensation, and other related legal matters.
+  ### Expertise and Strengths
 
-  - **Land Law:** Comprehensive consultation on land procedures, including but not limited to issues of buying, selling, gifting, transferring property ownership, renewal, replacement, new issuance of land use right certificates, correction of land use rights, conversion of land use purposes, and resolving land disputes.
+  - In-depth knowledge of Land Law and land dispute resolution
+  - Strong capability in Civil Law including contracts, transactions, inheritance, and damage compensation
+  - Experience in Administrative Law procedures and complaint resolution
+  - Successfully protected clients' legitimate rights in numerous cases
+  - Professional and dedicated work ethic
 
-  - **Administrative Law:** Consulting on administrative procedures, resolving complaints, denunciations, and administrative-related legal matters.
+  ### Areas of Expertise
 
-  ## Experience
+  - Civil Law
+  - Land Law
+  - Marriage & Family Law
 
-  - From 2020 - 2024: Legal Specialist at Youth & Partners Law Firm LLC. During her time at the company, Ms. Trần Thị Bích Liên has accumulated extensive experience in Civil, Administrative, and Land law fields.
-  - Directly participated and succeeded in resolving many land disputes, marriage and family cases, protecting the legitimate rights of clients.
-  - Performed many complex Administrative and Land procedures, serving the needs of both individuals and organizations, contributing to improving efficiency and ensuring client rights.
+  ### Contact
+
+  For legal consultation, please contact Trần Thị Bích Liên via email: contact@yplawfirm.vn or phone: 088 995 6888.
 bodyContent_zh: |
-  ## 专业领域
+  ### 工作经验
 
-  陈氏碧莲负责以下领域：
+  碧莲在Youth & Partners律师事务所积累了丰富的经验：
+  - 2020年 – 2024年：Youth & Partners律师事务所法律专员
+  - 直接参与并成功解决了许多土地纠纷和婚姻家庭案件
+  - 为个人和组织执行了许多复杂的行政和土地程序
 
-  - **民事法：** 关于合同、民事交易、继承、婚姻家庭、损害赔偿及其他相关法律事务的咨询。
+  ### 专业能力与优势
 
-  - **土地法：** 关于土地程序的全面咨询，包括但不限于买卖、赠与、产权转让、土地使用权证书的换发、补发、新发、土地使用权更正、土地用途转换以及土地纠纷解决。
+  - 土地法和土地纠纷解决的深厚知识
+  - 民事法方面的强大能力，包括合同、交易、继承和损害赔偿
+  - 行政法程序和投诉解决经验
+  - 在众多案件中成功保护了客户的合法权益
+  - 专业和敬业的工作态度
 
-  - **行政法：** 关于行政程序、解决投诉、举报及行政相关法律事务的咨询。
+  ### 专业领域
 
-  ## 经验
+  - 民事法
+  - 土地法
+  - 婚姻家庭法
 
-  - 2020年 - 2024年：Youth & Partners律师事务所法律专员。在公司任职期间，陈氏碧莲女士在民事、行政和土地法领域积累了丰富的经验。
-  - 直接参与并成功解决了许多土地纠纷、婚姻家庭案件，保护了客户的合法权益。
-  - 执行了许多复杂的行政和土地程序，服务于个人和组织的需求，有助于提高效率并确保客户权益。
+  ### 联系方式
+
+  如需法律咨询，请通过电子邮件联系陈氏碧莲：contact@yplawfirm.vn 或电话：088 995 6888。
 bodyContent_ja: |
-  ## 専門分野
+  ### 職務経歴
 
-  チャン・ティ・ビック・リエンは以下の分野を担当しています：
+  ビック・リエンはYouth & Partners法律事務所で豊富な経験を積みました：
+  - 2020年 – 2024年：Youth & Partners法律事務所の法務スペシャリスト
+  - 多くの土地紛争や婚姻家族案件の解決に直接参加し、成功
+  - 個人と組織の両方のために多くの複雑な行政・土地手続きを実施
 
-  - **民事法：** 契約、民事取引、相続、婚姻家族、損害賠償、その他関連する法的事項に関するコンサルティング。
+  ### 専門能力と強み
 
-  - **土地法：** 売買、贈与、所有権移転、土地使用権証明書の更新・再発行・新規発行、土地使用権の訂正、土地利用目的の変更、土地紛争の解決を含む土地手続きに関する包括的なコンサルティング。
+  - 土地法と土地紛争解決に関する深い知識
+  - 契約、取引、相続、損害賠償を含む民事法の強い能力
+  - 行政法手続きと苦情解決の経験
+  - 多くの案件で依頼者の正当な権利を保護することに成功
+  - プロフェッショナルで献身的な仕事への姿勢
 
-  - **行政法：** 行政手続き、苦情・告発の解決、行政関連の法的事項に関するコンサルティング。
+  ### 専門分野
 
-  ## 経験
+  - 民事法
+  - 土地法
+  - 婚姻家族法
 
-  - 2020年 - 2024年：Youth & Partners法律事務所の法務スペシャリスト。在職中、チャン・ティ・ビック・リエン氏は民事、行政、土地法分野で豊富な経験を積みました。
-  - 多くの土地紛争、婚姻家族案件の解決に直接参加し、成功を収め、依頼者の正当な権利を守りました。
-  - 個人と組織の両方のニーズに応える多くの複雑な行政・土地手続きを実施し、効率向上と依頼者権利の確保に貢献しました。
+  ### お問い合わせ
+
+  法的相談については、メール：contact@yplawfirm.vn または電話：088 995 6888 までチャン・ティ・ビック・リエンにご連絡ください。
 bodyContent_ko: |
-  ## 전문 분야
+  ### 경력 사항
 
-  짠티빅리엔이 담당하는 분야:
+  빅리엔은 Youth & Partners 법률 회사에서 풍부한 경험을 쌓았습니다:
+  - 2020년 – 2024년: Youth & Partners 법률 회사 법무 전문가
+  - 많은 토지 분쟁과 결혼 및 가족 사건을 직접 해결하는 데 참여하여 성공
+  - 개인과 조직 모두를 위해 많은 복잡한 행정 및 토지 절차 수행
 
-  - **민사법:** 계약, 민사 거래, 상속, 결혼 및 가족, 손해배상 및 기타 관련 법률 문제에 대한 상담.
+  ### 전문 역량 및 강점
 
-  - **토지법:** 매매, 증여, 소유권 이전, 토지 사용권 증명서 갱신, 재발급, 신규 발급, 토지 사용권 정정, 토지 용도 변경, 토지 분쟁 해결을 포함한 토지 절차에 대한 포괄적인 상담.
+  - 토지법과 토지 분쟁 해결에 대한 깊은 지식
+  - 계약, 거래, 상속, 손해배상을 포함한 민사법의 강한 능력
+  - 행정법 절차와 민원 해결 경험
+  - 많은 사건에서 고객의 정당한 권리를 성공적으로 보호
+  - 전문적이고 헌신적인 업무 태도
 
-  - **행정법:** 행정 절차, 민원, 고발 해결 및 행정 관련 법률 문제에 대한 상담.
+  ### 전문 분야
 
-  ## 경험
+  - 민사법
+  - 토지법
+  - 가족법
 
-  - 2020년 - 2024년: Youth & Partners 법률 회사 법무 전문가. 회사 재직 기간 동안 짠티빅리엔 씨는 민사, 행정, 토지법 분야에서 풍부한 경험을 쌓았습니다.
-  - 많은 토지 분쟁, 결혼 및 가족 사건을 직접 해결하는 데 참여하여 성공적으로 처리하며 고객의 정당한 권리를 보호했습니다.
-  - 개인과 조직 모두의 요구를 충족하는 많은 복잡한 행정 및 토지 절차를 수행하여 효율성 향상과 고객 권리 보장에 기여했습니다.
+  ### 연락처
+
+  법률 상담이 필요하시면 이메일: contact@yplawfirm.vn 또는 전화: 088 995 6888로 짠티빅리엔에게 연락해 주세요.
 draft: false
 ---
 
-## Lĩnh vực chuyên môn
+### Kinh nghiệm làm việc
 
-Trần Thị Bích Liên phụ trách các lĩnh vực:
+Bích Liên đã tích lũy kinh nghiệm phong phú tại Công ty Luật TNHH Youth & Partners:
+- 2020 – 2024: Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners
+- Tham gia trực tiếp và thành công trong việc giải quyết nhiều vụ tranh chấp Đất đai, hôn nhân và gia đình
+- Thực hiện nhiều thủ tục Hành chính và Đất đai phức tạp cho cá nhân và tổ chức
 
-- **Dân sự:** Tư vấn về hợp đồng, giao dịch Dân sự, thừa kế, hôn nhân & gia đình, bồi thường thiệt hại, và các vấn đề pháp lý liên quan khác.
+### Chuyên môn và thế mạnh
 
-- **Đất đai:** Tư vấn toàn diện về các thủ tục Đất đai, bao gồm nhưng không giới hạn các vấn đề mua bán, tặng cho, sang tên đổi chủ bất động sản, cấp đổi, cấp lại, cấp mới giấy chứng nhận quyền sử dụng đất, đính chính quyền sử dụng đất, chuyển đổi mục đích sử dụng đất, và giải quyết tranh chấp Đất đai.
+- Kiến thức chuyên sâu về pháp luật Đất đai và giải quyết tranh chấp Đất đai
+- Năng lực mạnh về pháp luật Dân sự bao gồm hợp đồng, giao dịch, thừa kế và bồi thường thiệt hại
+- Kinh nghiệm về thủ tục Hành chính và giải quyết khiếu nại
+- Thành công trong việc bảo vệ quyền lợi hợp pháp của khách hàng trong nhiều vụ việc
+- Tinh thần làm việc chuyên nghiệp và tận tâm
 
-- **Hành chính:** Tư vấn về các thủ tục Hành chính, giải quyết khiếu nại, tố cáo và các vấn đề pháp lý liên quan đến Hành chính.
+### Lĩnh vực chuyên môn
 
-## Kinh nghiệm
+- Dân sự
+- Đất đai
+- Hôn nhân & Gia đình
 
-- Từ 2020 - 2024: Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners. Trong suốt thời gian công tác tại công ty, bà Trần Thị Bích Liên đã tích lũy được kinh nghiệm sâu rộng trong các lĩnh vực Dân sự, Hành chính, và Đất đai.
-- Tham gia trực tiếp và thành công trong việc giải quyết nhiều vụ tranh chấp Đất đai, hôn nhân và gia đình, bảo vệ quyền lợi hợp pháp của khách hàng.
-- Thực hiện nhiều thủ tục Hành chính và Đất đai phức tạp, phục vụ nhu cầu của cả cá nhân và tổ chức, góp phần nâng cao hiệu quả và bảo đảm quyền lợi cho khách hàng.
+### Liên hệ
+
+Để được tư vấn pháp lý, vui lòng liên hệ Trần Thị Bích Liên qua email: contact@yplawfirm.vn hoặc điện thoại: 088 995 6888.

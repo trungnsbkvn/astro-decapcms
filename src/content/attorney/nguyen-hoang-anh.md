@@ -122,84 +122,120 @@ yearsExperience: 10
 featured: false
 order: 9
 bodyContent_en: |
-  ## Introduction
+  ### Work Experience
 
-  Attorney Nguyễn Hoàng Anh is an experienced legal expert specializing in providing legal advisory and support services across multiple fields.
+  With extensive experience in the legal field, Attorney Nguyễn Hoàng Anh focuses on advising and processing applications related to sub-licenses, business registration, and regulatory compliance.
 
-  ## Professional Experience
+  - **Youth & Partners Law Firm:** Associate Attorney (present) - providing comprehensive legal services for corporate licensing and regulatory matters
+  - **Education:** Law Practice Certificate from Ministry of Justice (2022), Graduated from Judicial Academy (2021), Master of Law from Hanoi Law University (2018), Bachelor of Law from Hanoi Law University (2014)
 
-  - Business registration licenses, operating licenses for conditional business lines
-  - Environmental permits, construction permits, food safety, labor permits, and other specialized licenses
-  - Assisting enterprises in applying for new, renewing, or adjusting licenses according to legal regulations
+  ### Expertise and Strengths
 
-  ## Achievements
+  Attorney Nguyễn Hoàng Anh combines comprehensive legal knowledge with practical expertise in navigating complex licensing procedures. Her strengths include in-depth understanding of Vietnamese regulatory framework, efficient document preparation, and strong relationships with government agencies.
 
-  - Successfully advised many domestic and foreign enterprises, from startups to large-scale companies
-  - Represented clients in working with government agencies, ensuring fast, transparent, and efficient processes
-  - Provided comprehensive legal solutions tailored to the specific needs of each client
+  ### Areas of Expertise
+
+  1. **Corporate Law:** Business registration licenses, operating licenses for conditional business lines, company establishment and restructuring
+  2. **Labor Law:** Labor permits, work permits for foreign workers, employment compliance
+  3. **Investment:** Investment licenses, foreign investment procedures, project approvals, and regulatory compliance
+
+  ### Contact
+
+  - **Email:** contact@yplawfirm.vn
+  - **Phone:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_zh: |
-  ## 介绍
 
-  阮黄英律师是一位经验丰富的法律专家，专门为多个领域提供法律咨询和支持服务。
+  ### 工作经历
 
-  ## 专业经验
+  凭借法律领域的丰富经验，阮黄英律师专注于咨询和处理与子许可证、商业登记和法规合规相关的申请。
 
-  - 营业执照登记，有条件经营行业的营业执照
-  - 环境许可、建筑许可、食品安全、劳动许可和其他专业许可
-  - 协助企业根据法律规定申请新的、更新或调整许可证
+  - **Youth & Partners律师事务所：** 合伙人律师（现任）- 为企业许可和监管事务提供全面的法律服务
+  - **教育背景：** 司法部律师执业证书（2022年），司法学院毕业（2021年），河内法律大学法学硕士（2018年），河内法律大学法学学士（2014年）
 
-  ## 成就
+  ### 专业知识与优势
 
-  - 成功为国内外多家企业提供咨询，从初创企业到大型公司
-  - 代表客户与政府机构合作，确保流程快速、透明、高效
-  - 为每位客户的具体需求提供全面的法律解决方案
+  阮黄英律师将全面的法律知识与处理复杂许可程序的实践专业知识相结合。她的优势包括对越南监管框架的深入了解、高效的文件准备和与政府机构的良好关系。
+
+  ### 专业领域
+
+  1. **企业法：** 营业执照登记、有条件经营行业的营业执照、公司设立和重组
+  2. **劳动法：** 劳动许可证、外国工人工作许可证、就业合规
+  3. **投资：** 投资许可证、外国投资程序、项目审批和法规合规
+
+  ### 联系方式
+
+  - **邮箱：** contact@yplawfirm.vn
+  - **电话：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ja: |
-  ## 紹介
+  ### 職歴
 
-  グエン・ホアン・アン弁護士は、複数の分野で法的アドバイスとサポートサービスを提供することを専門とする経験豊富な法律専門家です。
+  法律分野での豊富な経験を持ち、子ライセンス、事業登録、規制遵守に関連する申請のアドバイスと処理に重点を置いています。
 
-  ## 専門経験
+  - **Youth & Partners法律事務所：** アソシエイト弁護士（現在）- 企業ライセンスと規制事項に関する包括的な法的サービスを提供
+  - **学歴：** 司法省弁護士業務証明書（2022年）、司法アカデミー卒業（2021年）、ハノイ法科大学法学修士（2018年）、ハノイ法科大学法学士（2014年）
 
-  - 事業登録許可、条件付き事業分野の営業許可
-  - 環境許可、建設許可、食品安全、労働許可、その他の専門許可
-  - 法的規制に従った新規申請、更新、またはライセンスの調整における企業支援
+  ### 専門知識と強み
 
-  ## 実績
+  グエン・ホアン・アン弁護士は、包括的な法律知識と複雑なライセンス手続きをナビゲートする実践的な専門知識を兼ね備えています。ベトナムの規制枠組みへの深い理解、効率的な文書準備、政府機関との強い関係が強みです。
 
-  - スタートアップから大企業まで、国内外の多くの企業を成功裏にアドバイス
-  - 政府機関との業務において依頼者を代理し、迅速で透明性があり効率的なプロセスを確保
-  - 各クライアントの具体的なニーズに合わせた包括的な法的ソリューションを提供
+  ### 専門分野
+
+  1. **企業法：** 事業登録許可、条件付き事業分野の営業許可、会社設立と再編
+  2. **労働法：** 労働許可、外国人労働者の就労許可、雇用コンプライアンス
+  3. **投資：** 投資許可、外国投資手続き、プロジェクト承認、規制遵守
+
+  ### 連絡先
+
+  - **メール：** contact@yplawfirm.vn
+  - **電話：** 088 995 6888
+  - **Facebook：** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 bodyContent_ko: |
-  ## 소개
+  ### 경력
 
-  응웬호앙아잉 변호사는 여러 분야에서 법률 자문 및 지원 서비스를 전문으로 제공하는 경험 많은 법률 전문가입니다.
+  법률 분야에서 풍부한 경험을 바탕으로 하위 면허, 사업 등록, 규정 준수와 관련된 신청 자문 및 처리에 중점을 두고 있습니다.
 
-  ## 전문 경험
+  - **Youth & Partners 법률 회사:** 동료 변호사 (현재) - 기업 면허 및 규제 문제에 대한 포괄적인 법률 서비스 제공
+  - **학력:** 법무부 변호사 업무증명서 (2022년), 사법 아카데미 졸업 (2021년), 하노이 법과대학 법학석사 (2018년), 하노이 법과대학 법학사 (2014년)
 
-  - 사업 등록 면허, 조건부 사업 분야의 영업 허가
-  - 환경 허가, 건축 허가, 식품 안전, 노동 허가 및 기타 전문 허가
-  - 법적 규정에 따른 신규, 갱신 또는 면허 조정에서 기업 지원
+  ### 전문 지식 및 강점
 
-  ## 성과
+  응웬호앙아잉 변호사는 포괄적인 법률 지식과 복잡한 면허 절차를 탐색하는 실무 전문 지식을 겸비하고 있습니다. 베트남 규제 프레임워크에 대한 깊은 이해, 효율적인 문서 준비, 정부 기관과의 강한 관계가 강점입니다.
 
-  - 스타트업부터 대기업까지 국내외 많은 기업을 성공적으로 자문
-  - 정부 기관과의 업무에서 고객을 대리하여 신속하고 투명하며 효율적인 프로세스 보장
-  - 각 고객의 구체적인 요구에 맞춘 포괄적인 법률 솔루션 제공
+  ### 전문 분야
+
+  1. **기업법:** 사업 등록 면허, 조건부 사업 분야의 영업 허가, 회사 설립 및 구조조정
+  2. **노동법:** 노동 허가, 외국인 근로자 취업 허가, 고용 준수
+  3. **투자:** 투자 면허, 외국인 투자 절차, 프로젝트 승인 및 규제 준수
+
+  ### 연락처
+
+  - **이메일:** contact@yplawfirm.vn
+  - **전화:** 088 995 6888
+  - **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
 draft: false
 ---
 
-## Giới thiệu
+### Kinh nghiệm làm việc
 
-Luật sư Nguyễn Hoàng Anh là một chuyên gia pháp lý giàu kinh nghiệm, chuyên cung cấp dịch vụ tư vấn và hỗ trợ pháp lý trong nhiều lĩnh vực.
+Với nhiều năm kinh nghiệm trong lĩnh vực pháp lý, Luật sư Nguyễn Hoàng Anh tập trung vào tư vấn và xử lý các hồ sơ liên quan đến giấy phép con, đăng ký kinh doanh và tuân thủ quy định.
 
-## Kinh nghiệm chuyên môn
+- **Công ty Luật TNHH Youth & Partners:** Luật sư thành viên (hiện tại) - cung cấp dịch vụ pháp lý toàn diện cho các vấn đề giấy phép và quy định doanh nghiệp
+- **Học vấn:** Chứng chỉ hành nghề Luật sư - Bộ Tư Pháp (2022), Tốt nghiệp Học viện Tư Pháp (2021), Thạc sĩ Luật - Đại học Luật Hà Nội (2018), Cử nhân Luật - Đại học Luật Hà Nội (2014)
 
-- Giấy phép đăng ký kinh doanh, giấy phép hoạt động cho các ngành nghề có điều kiện
-- Giấy phép môi trường, xây dựng, an toàn thực phẩm, lao động, và các loại giấy phép chuyên ngành khác
-- Hỗ trợ doanh nghiệp trong việc xin cấp mới, gia hạn, hoặc điều chỉnh các giấy phép theo quy định pháp luật
+### Chuyên môn và thế mạnh
 
-## Thành tựu
+Luật sư Nguyễn Hoàng Anh kết hợp kiến thức pháp lý toàn diện với chuyên môn thực tiễn trong xử lý các thủ tục giấy phép phức tạp. Thế mạnh của cô bao gồm hiểu biết sâu về khung pháp lý Việt Nam, chuẩn bị hồ sơ hiệu quả và mối quan hệ tốt với các cơ quan nhà nước.
 
-- Tư vấn thành công cho nhiều doanh nghiệp trong và ngoài nước, từ khởi nghiệp đến quy mô lớn
-- Đại diện khách hàng làm việc với các cơ quan nhà nước, đảm bảo quy trình nhanh chóng, minh bạch và hiệu quả
-- Cung cấp các giải pháp pháp lý toàn diện, phù hợp với nhu cầu cụ thể của từng khách hàng
+### Lĩnh vực chuyên môn
+
+1. **Doanh nghiệp:** Giấy phép đăng ký kinh doanh, giấy phép hoạt động cho các ngành nghề có điều kiện, thành lập và tái cơ cấu doanh nghiệp
+2. **Lao động:** Giấy phép lao động, giấy phép làm việc cho người lao động nước ngoài, tuân thủ quy định lao động
+3. **Đầu tư:** Giấy phép đầu tư, thủ tục đầu tư nước ngoài, phê duyệt dự án và tuân thủ quy định
+
+### Liên hệ
+
+- **Email:** contact@yplawfirm.vn
+- **Điện thoại:** 088 995 6888
+- **Facebook:** [Youth & Partners Law Firm](https://www.facebook.com/yplawfirm)
