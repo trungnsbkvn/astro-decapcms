@@ -108,6 +108,46 @@ languages_ja:
   - "ベトナム語"
 languages_ko:
   - "베트남어"
+bodyContent_en: |
+  ## About Lawyer Nguyễn Thị Thơm
+
+  With many years of experience in corporate legal affairs, Lawyer Nguyễn Thị Thơm is a trusted expert.
+
+  ## Areas of Responsibility
+
+  - **Corporate Law:** Legal advice on establishment, operation, and management of enterprises, contract-related issues, business legal matters
+  - **Labor Law:** Consulting on labor-related issues, labor contracts, labor disputes, and employee rights
+  - **Investment:** Advising on investment matters, including domestic and foreign investment, enterprise development strategies, and legal issues related to real estate investment
+bodyContent_zh: |
+  ## 关于阮氏涛律师
+
+  凭借多年企业法律事务经验，阮氏涛律师是一位值得信赖的专家。
+
+  ## 负责领域
+
+  - **企业法：** 关于企业设立、运营和管理的法律咨询，合同相关问题，商业法律事务
+  - **劳动法：** 关于劳动相关问题、劳动合同、劳动纠纷和员工权利的咨询
+  - **投资：** 关于投资事务的咨询，包括国内外投资、企业发展战略以及与房地产投资相关的法律问题
+bodyContent_ja: |
+  ## グエン・ティ・トム弁護士について
+
+  企業法務分野で多年の経験を持つグエン・ティ・トム弁護士は、信頼できる専門家です。
+
+  ## 担当分野
+
+  - **企業法：** 企業の設立、運営、管理に関する法的アドバイス、契約関連事項、ビジネス法的事項
+  - **労働法：** 労働関連問題、労働契約、労働紛争、従業員の権利に関するコンサルティング
+  - **投資：** 国内外投資、企業発展戦略、不動産投資に関する法的問題を含む投資事項に関するアドバイス
+bodyContent_ko: |
+  ## 응웬티톰 변호사 소개
+
+  기업 법무 분야에서 다년간의 경험을 보유한 응웬티톰 변호사는 신뢰할 수 있는 전문가입니다.
+
+  ## 담당 분야
+
+  - **기업법:** 기업 설립, 운영 및 관리에 관한 법률 자문, 계약 관련 문제, 비즈니스 법률 문제
+  - **노동법:** 노동 관련 문제, 노동 계약, 노동 분쟁 및 직원 권리에 대한 상담
+  - **투자:** 국내외 투자, 기업 발전 전략, 부동산 투자 관련 법률 문제를 포함한 투자 사안에 대한 자문
 draft: false
 ---
 

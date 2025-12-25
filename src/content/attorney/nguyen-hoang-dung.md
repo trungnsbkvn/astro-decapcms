@@ -132,6 +132,63 @@ socialLinks:
   zalo: "0889956888"
 order: 21
 publishDate: 2024-01-01T00:00:00Z
+bodyContent_en: |
+  ## Areas of Expertise
+
+  Nguyễn Hoàng Dũng is responsible for the following areas:
+
+  - **Civil Law:** Consulting on contracts, civil transactions, representing in inheritance disputes, handling damage compensation claims in civil transactions, and other related legal matters.
+
+  - **Marriage and Family:** Consulting on documentation, divorce procedures, division of common property, child custody rights, and legal issues related to marriage and family.
+
+  - **Land Law:** Consulting on documentation, procedures, administrative processes related to land, participating in resolving land use right disputes.
+
+  - **Criminal Law:** Legal consultation, drafting documents to defend suspects and defendants, or protecting the rights and legitimate interests of victims and related parties in criminal cases.
+
+  - **Administrative Law:** Consulting on documentation and procedures, representing clients in collecting evidence, participating in protecting clients' legitimate rights and interests in administrative complaints, denunciations, and cases.
+bodyContent_zh: |
+  ## 专业领域
+
+  阮黄勇负责以下领域：
+
+  - **民事法：** 关于合同、民事交易的咨询，代表参与遗产继承纠纷，处理民事交易中的损害赔偿要求及其他相关法律事务。
+
+  - **婚姻和家庭：** 关于文件、离婚程序、共同财产分割、子女抚养权以及与婚姻家庭相关的法律问题的咨询。
+
+  - **土地法：** 关于土地相关的文件、程序、行政流程的咨询，参与解决土地使用权纠纷。
+
+  - **刑事法：** 法律咨询，起草文件为犯罪嫌疑人和被告辩护，或在刑事案件中保护受害者和相关方的权益。
+
+  - **行政法：** 关于文件和程序的咨询，代表客户收集证据，参与保护客户在行政投诉、举报和案件中的合法权益。
+bodyContent_ja: |
+  ## 専門分野
+
+  グエン・ホアン・ズンは以下の分野を担当しています：
+
+  - **民事法：** 契約、民事取引に関するコンサルティング、遺産相続紛争における代理、民事取引における損害賠償請求の処理、その他の関連法的事項。
+
+  - **婚姻と家族：** 書類、離婚手続き、共有財産の分割、子供の養育権、婚姻と家族に関する法的問題についてのコンサルティング。
+
+  - **土地法：** 土地に関する書類、手続き、行政プロセスについてのコンサルティング、土地使用権紛争の解決への参加。
+
+  - **刑事法：** 法的相談、容疑者および被告人を弁護するための文書作成、または刑事事件における被害者および関係者の権利と正当な利益の保護。
+
+  - **行政法：** 書類と手続きに関するコンサルティング、証拠収集における依頼者の代理、行政苦情、告発、事件における依頼者の正当な権利と利益の保護への参加。
+bodyContent_ko: |
+  ## 전문 분야
+
+  응웬호앙중이 담당하는 분야:
+
+  - **민사법:** 계약, 민사 거래에 관한 상담, 상속 분쟁 대리, 민사 거래에서의 손해배상 청구 처리 및 기타 관련 법률 문제.
+
+  - **결혼 및 가족:** 문서, 이혼 절차, 공동 재산 분할, 자녀 양육권 및 결혼과 가족 관련 법률 문제에 대한 상담.
+
+  - **토지법:** 토지 관련 문서, 절차, 행정 프로세스에 대한 상담, 토지 사용권 분쟁 해결 참여.
+
+  - **형사법:** 법률 상담, 피의자 및 피고인을 변호하기 위한 문서 작성, 또는 형사 사건에서 피해자 및 관련 당사자의 권리와 정당한 이익 보호.
+
+  - **행정법:** 문서 및 절차에 관한 상담, 증거 수집에서 고객 대리, 행정 민원, 고발 및 사건에서 고객의 정당한 권리와 이익 보호 참여.
+draft: false
 ---
 
 ## Lĩnh vực chuyên môn

@@ -98,6 +98,47 @@ socialLinks:
   zalo: "0889956888"
 order: 19
 publishDate: 2024-01-01T00:00:00Z
+bodyContent_en: |
+  ## Areas of Expertise
+
+  Nghiêm Minh Huyền is responsible for the following areas:
+
+  - **Land Law:** Editing content on land law regulations, land use rights, planning, transfers, and related matters.
+
+  - **Civil Law:** Analyzing and synthesizing regulations on contracts, civil transactions, and marriage and family.
+
+  - **Criminal Law:** Editing content on criminal law regulations, rights and obligations of parties in criminal cases.
+bodyContent_zh: |
+  ## 专业领域
+
+  严明玄负责以下领域：
+
+  - **土地法：** 编辑关于土地法规定、土地使用权、规划、转让及相关事项的内容。
+
+  - **民事法：** 分析和综合关于合同、民事交易以及婚姻家庭的规定。
+
+  - **刑事法：** 编辑关于刑法规定、刑事案件当事人权利和义务的内容。
+bodyContent_ja: |
+  ## 専門分野
+
+  ゲム・ミン・フエンは以下の分野を担当しています：
+
+  - **土地法：** 土地法規制、土地使用権、計画、譲渡、関連事項に関するコンテンツの編集。
+
+  - **民事法：** 契約、民事取引、婚姻家族に関する規制の分析と統合。
+
+  - **刑事法：** 刑法規制、刑事事件における当事者の権利と義務に関するコンテンツの編集。
+bodyContent_ko: |
+  ## 전문 분야
+
+  응엠민후옌이 담당하는 분야:
+
+  - **토지법:** 토지법 규정, 토지 사용권, 계획, 양도 및 관련 사항에 대한 콘텐츠 편집.
+
+  - **민사법:** 계약, 민사 거래, 결혼 및 가족에 관한 규정 분석 및 종합.
+
+  - **형사법:** 형법 규정, 형사 사건 당사자의 권리와 의무에 대한 콘텐츠 편집.
+draft: false
 ---
 
 ## Lĩnh vực chuyên môn

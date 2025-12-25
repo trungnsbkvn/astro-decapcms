@@ -95,6 +95,75 @@ socialLinks:
   zalo: "0889956888"
 order: 14
 publishDate: 2024-01-01T00:00:00Z
+bodyContent_en: |
+  ## Areas of Expertise
+
+  Nguyễn Thị Thu Trang is responsible for the following areas:
+
+  - **Contract Drafting:** Legal advice on labor, taxation, real estate, and foreign investment.
+
+  - **Corporate Compliance:** Ensuring legal compliance in corporate operations.
+
+  - **Internal Regulations:** Developing and adjusting internal forms and corporate regulations.
+
+  ## Experience
+
+  - Drafting and reviewing bilingual contracts (English - Vietnamese) including framework agreements, service contracts, labor contracts, NDAs.
+  - Legal consultation for corporate clients on labor, taxation, real estate, and business operations.
+  - Participating in developing and reviewing internal forms such as democracy regulations, labor rules, and salary-bonus policies.
+  - Drafting documents for adjustment and renewal of Investment Registration Certificates for foreign-invested enterprises.
+bodyContent_zh: |
+  ## 专业领域
+
+  阮氏秋庄负责以下领域：
+
+  - **合同起草：** 关于劳动、税务、房地产和外国投资的法律咨询。
+
+  - **企业合规：** 确保企业运营的法律合规。
+
+  - **内部规章：** 制定和调整内部表格和企业规章。
+
+  ## 经验
+
+  - 起草和审查双语合同（英语 - 越南语），包括框架协议、服务合同、劳动合同、保密协议。
+  - 为企业客户提供劳动、税务、房地产和商业运营方面的法律咨询。
+  - 参与制定和审查内部表格，如民主规章、劳动规则和薪酬奖励政策。
+  - 为外商投资企业起草投资登记证书调整和换发文件。
+bodyContent_ja: |
+  ## 専門分野
+
+  グエン・ティ・トゥ・チャンは以下の分野を担当しています：
+
+  - **契約起草：** 労働、税務、不動産、海外投資に関する法的アドバイス。
+
+  - **企業コンプライアンス：** 企業活動における法令遵守の確保。
+
+  - **内部規程：** 内部フォームおよび企業規程の策定と調整。
+
+  ## 経験
+
+  - 基本契約、サービス契約、労働契約、NDAを含むバイリンガル契約（英語 - ベトナム語）の起草とレビュー。
+  - 企業クライアントへの労働、税務、不動産、事業運営に関する法的相談。
+  - 民主規程、労働規則、給与・賞与規程などの内部フォームの策定とレビューへの参加。
+  - 外資系企業の投資登録証明書の調整と更新のための文書作成。
+bodyContent_ko: |
+  ## 전문 분야
+
+  응웬티투짱이 담당하는 분야:
+
+  - **계약 작성:** 노동, 세무, 부동산 및 외국인 투자에 대한 법률 자문.
+
+  - **기업 준수:** 기업 운영의 법률 준수 보장.
+
+  - **내부 규정:** 내부 양식 및 기업 규정 개발 및 조정.
+
+  ## 경험
+
+  - 기본 계약, 서비스 계약, 노동 계약, NDA를 포함한 이중 언어 계약(영어 - 베트남어) 작성 및 검토.
+  - 기업 고객에 대한 노동, 세무, 부동산, 사업 운영에 관한 법률 상담.
+  - 민주 규정, 노동 규칙, 급여-보너스 정책 등 내부 양식 개발 및 검토 참여.
+  - 외국인 투자 기업의 투자 등록 증명서 조정 및 갱신을 위한 문서 작성.
+draft: false
 ---
 
 ## Lĩnh vực chuyên môn

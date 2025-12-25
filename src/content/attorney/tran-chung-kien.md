@@ -88,6 +88,74 @@ languages_ja:
   - "ベトナム語"
 languages_ko:
   - "베트남어"
+bodyContent_en: |
+  ## About Lawyer Trần Chung Kiên
+
+  Lawyer Trần Chung Kiên is a member lawyer at Youth & Partners Law Firm.
+
+  ## Areas of Responsibility
+
+  - **Civil Law:** Consulting and representing clients in cases involving contracts, civil transactions, inheritance, marriage and family, damage compensation, and other legal matters
+  - **Litigation Representation:** Representing clients in Civil, Criminal, and Administrative cases at various court levels
+  - **Criminal Law:** Consulting and protecting the legitimate rights of victims, defending suspects and defendants at all stages of criminal proceedings
+  - **Administrative Law:** Consulting on administrative procedures, resolving complaints and denunciations
+
+  ## Experience
+
+  - **2015:** Graduated from the Faculty of Law, Hanoi Law University
+  - **2015 - 2022:** Civil Servant, Prosecutor at the People's Procuracy
+  - **2022 - present:** Member lawyer at Youth & Partners Law Firm
+bodyContent_zh: |
+  ## 关于陈忠坚律师
+
+  陈忠坚律师是Youth & Partners律师事务所的成员律师。
+
+  ## 负责领域
+
+  - **民事法：** 在涉及合同、民事交易、继承、婚姻家庭、损害赔偿及其他法律事务的案件中咨询和代理客户
+  - **诉讼代理：** 在各级法院的民事、刑事和行政案件中代理客户
+  - **刑事法：** 咨询和保护受害者的合法权益，在刑事诉讼各阶段为犯罪嫌疑人和被告辩护
+  - **行政法：** 关于行政程序、解决投诉和举报的咨询
+
+  ## 经验
+
+  - **2015年：** 毕业于河内法律大学法学院
+  - **2015年 - 2022年：** 人民检察院公务员、检察员
+  - **2022年至今：** Youth & Partners律师事务所成员律师
+bodyContent_ja: |
+  ## チャン・チュン・キエン弁護士について
+
+  チャン・チュン・キエン弁護士は、Youth & Partners法律事務所のメンバー弁護士です。
+
+  ## 担当分野
+
+  - **民事法：** 契約、民事取引、相続、婚姻家族、損害賠償、その他の法的事項を含む案件において、クライアントのコンサルティングと代理
+  - **訴訟代理：** 各レベルの裁判所における民事、刑事、行政事件でのクライアント代理
+  - **刑事法：** 被害者の正当な権利の相談と保護、刑事訴訟のすべての段階における容疑者および被告人の弁護
+  - **行政法：** 行政手続き、苦情および告発の解決に関するコンサルティング
+
+  ## 経験
+
+  - **2015年：** ハノイ法科大学法学部卒業
+  - **2015年 - 2022年：** 人民検察院公務員、検察官
+  - **2022年から現在：** Youth & Partners法律事務所のメンバー弁護士
+bodyContent_ko: |
+  ## 쩬쫑끼엔 변호사 소개
+
+  쩬쫑끼엔 변호사는 Youth & Partners 법률 회사의 구성원 변호사입니다.
+
+  ## 담당 분야
+
+  - **민사법:** 계약, 민사 거래, 상속, 결혼 및 가족, 손해배상 및 기타 법률 문제와 관련된 사건에서 고객 상담 및 대리
+  - **소송 대리:** 각급 법원의 민사, 형사, 행정 사건에서 고객 대리
+  - **형사법:** 피해자의 정당한 권리 상담 및 보호, 형사 소송 모든 단계에서 피의자 및 피고인 변호
+  - **행정법:** 행정 절차, 민원 및 고발 해결에 관한 상담
+
+  ## 경험
+
+  - **2015년:** 하노이 법과대학 법학부 졸업
+  - **2015년 - 2022년:** 인민검찰원 공무원, 검사
+  - **2022년 ~ 현재:** Youth & Partners 법률 회사 구성원 변호사
 draft: false
 ---
 

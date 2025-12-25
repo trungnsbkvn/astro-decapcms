@@ -102,6 +102,79 @@ languages_ko:
   - "영어"
 order: 28
 publishDate: 2025-01-01T00:00:00Z
+bodyContent_en: |
+  ## Introduction
+
+  Nguyễn Thị Xuân is a Legal Specialist at YP Law Firm since 2025. With a solid legal education from Hanoi Law University, Xuân actively cultivates legal knowledge and professional skills while applying theory to practice.
+
+  ## Areas of Responsibility
+
+  - Corporate Law: Regular legal consultation and support for enterprises in daily legal matters, legal compliance, and internal operations.
+  - Reviewing and analyzing legal documents, contracts, and legal materials related to business operations.
+  - Supporting the drafting and reviewing of commercial contracts, internal documents, and legal papers as required by the company and clients.
+  - Participating in research and updating new laws, providing practical legal solutions for enterprises.
+
+  ## Experience
+
+  - October 2023 – February 2024: Internship at Nguyen Phat Law Company, legal consultation in marriage and family, thereby enhancing understanding of law and professional skills.
+  - April 2024 – May 2025: Drafting staff at Nguyen Hue Notary Office. Reviewing legal documents and drafting contracts for vehicle sales, transfers, inheritance...; Supporting notaries in off-site notarization.
+  - From May 2025 - November 2025: Working at Domin Joint Stock Company: Moderating content posted on social media.
+  - Currently a Legal Specialist at Youth & Partners Law Firm (YPLaw Firm), learning and contributing to the company's consultation and legal support activities.
+bodyContent_zh: |
+  ## 介绍
+
+  阮氏春自2025年起担任YP律师事务所法律专员。凭借河内法律大学的扎实法律教育，春积极培养法律知识和专业技能，同时将理论应用于实践。
+
+  ## 负责领域
+
+  - 企业法：为企业日常法律事务、法律合规和内部运营提供常规法律咨询和支持。
+  - 审查和分析与企业运营相关的法律文件、合同和法律材料。
+  - 支持起草和审查公司和客户要求的商业合同、内部文件和法律文件。
+  - 参与研究和更新新法律，为企业提供实用的法律解决方案。
+
+  ## 经验
+
+  - 2023年10月 – 2024年2月：在Nguyen Phat法律公司实习，婚姻家庭法律咨询，从而增强对法律的理解和专业技能。
+  - 2024年4月 – 2025年5月：Nguyen Hue公证处文书起草人员。审查法律文件并起草车辆销售、转让、继承合同...；支持公证员进行外出公证。
+  - 2025年5月 - 2025年11月：在Domin股份公司工作：审核发布到社交媒体的内容。
+  - 目前是Youth & Partners律师事务所（YP律师事务所）的法律专员，学习并为公司的咨询和法律支持活动做出贡献。
+bodyContent_ja: |
+  ## 紹介
+
+  グエン・ティ・スアンは、2025年からYP法律事務所の法務スペシャリストです。ハノイ法科大学での堅実な法学教育を基盤に、スアンは積極的に法律知識と専門スキルを磨き、理論を実務に活かしています。
+
+  ## 担当分野
+
+  - 企業法：日常の法的問題、法令遵守、内部業務における企業への定期的な法的相談とサポート。
+  - 事業運営に関連する法的文書、契約、法的資料のレビューと分析。
+  - 会社とクライアントが必要とする商業契約、内部文書、法的書類の起草とレビューのサポート。
+  - 新しい法律の研究と更新への参加、企業への実践的な法的ソリューションの提供。
+
+  ## 経験
+
+  - 2023年10月 – 2024年2月：グエンファット法律会社にてインターンシップ、婚姻家族法のコンサルティング、法律理解と専門スキルの向上。
+  - 2024年4月 – 2025年5月：グエンフエ公証人事務所にて文書起草スタッフ。法的文書のレビューと車両売買、譲渡、相続などの契約起草...；公証人の出張公証をサポート。
+  - 2025年5月 - 2025年11月：ドミン株式会社にて勤務：ソーシャルメディアに投稿されるコンテンツのモデレーション。
+  - 現在Youth & Partners法律事務所（YP法律事務所）の法務スペシャリストとして、会社のコンサルティングと法的支援活動に学び、貢献しています。
+bodyContent_ko: |
+  ## 소개
+
+  응웬티쑤언은 2025년부터 YP 법률 회사의 법무 전문가입니다. 하노이 법과대학에서의 탄탄한 법학 교육을 바탕으로, 쑤언은 적극적으로 법률 지식과 전문 기술을 연마하며 이론을 실무에 적용하고 있습니다.
+
+  ## 담당 분야
+
+  - 기업법: 일상 법률 문제, 법률 준수 및 내부 운영에 대한 기업을 위한 정기 법률 상담 및 지원.
+  - 사업 운영과 관련된 법률 문서, 계약 및 법률 자료의 검토 및 분석.
+  - 회사와 고객의 요구에 따른 상업 계약, 내부 문서 및 법률 서류의 작성 및 검토 지원.
+  - 새로운 법률 연구 및 업데이트 참여, 기업을 위한 실용적인 법률 솔루션 제공.
+
+  ## 경험
+
+  - 2023년 10월 – 2024년 2월: 응웬팟 법률 회사 인턴십, 결혼 및 가족 법률 상담, 법률 이해 및 전문 기술 향상.
+  - 2024년 4월 – 2025년 5월: 응웬후에 공증 사무소 문서 작성 직원. 법률 문서 검토 및 차량 판매, 양도, 상속 계약 작성...; 공증인의 외부 공증 지원.
+  - 2025년 5월 - 2025년 11월: 도민 주식회사 근무: 소셜 미디어에 게시되는 콘텐츠 검수.
+  - 현재 Youth & Partners 법률 회사(YP 법률 회사)의 법무 전문가로서 회사의 상담 및 법률 지원 활동에 배우고 기여하고 있습니다.
+draft: false
 ---
 
 ## Giới thiệu

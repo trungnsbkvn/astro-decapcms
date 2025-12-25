@@ -114,6 +114,66 @@ languages_ja:
   - "ベトナム語"
 languages_ko:
   - "베트남어"
+bodyContent_en: |
+  ## About Lawyer Văn Thị Thanh Hoa
+
+  Lawyer Văn Thị Thanh Hoa is a member lawyer at Youth & Partners Law Firm.
+
+  ## Areas of Responsibility
+
+  - **Civil Law:** Consulting on contracts, civil transactions, inheritance, damage compensation, and other related legal matters
+  - **Criminal Law:** Consulting and protecting the legitimate rights of victims, defending suspects and defendants in criminal proceedings
+  - **Land Law:** Consulting on transfers, land use right certificate changes, resolving land disputes
+  - **Marriage and Family:** Consulting on divorce, property division, child custody
+
+  ## Experience
+
+  With many years of experience, Lawyer Văn Thị Thanh Hoa has successfully resolved many complex legal cases in Civil, Criminal, Land, and Marriage and Family law.
+bodyContent_zh: |
+  ## 关于文氏清华律师
+
+  文氏清华律师是Youth & Partners律师事务所的成员律师。
+
+  ## 负责领域
+
+  - **民事法：** 关于合同、民事交易、继承、损害赔偿及其他相关法律事务的咨询
+  - **刑事法：** 咨询和保护受害者的合法权益，在刑事诉讼中为犯罪嫌疑人和被告辩护
+  - **土地法：** 关于转让、土地使用权证书变更、解决土地纠纷的咨询
+  - **婚姻和家庭：** 关于离婚、财产分割、子女抚养权的咨询
+
+  ## 经验
+
+  凭借多年经验，文氏清华律师已成功解决了民事、刑事、土地、婚姻家庭法领域的许多复杂法律案件。
+bodyContent_ja: |
+  ## ヴァン・ティ・タイン・ホア弁護士について
+
+  ヴァン・ティ・タイン・ホア弁護士はYouth & Partners法律事務所のメンバー弁護士です。
+
+  ## 担当分野
+
+  - **民事法：** 契約、民事取引、相続、損害賠償、その他関連する法的事項に関するコンサルティング
+  - **刑事法：** 被害者の正当な権利の相談と保護、刑事訴訟における容疑者および被告人の弁護
+  - **土地法：** 譲渡、土地使用権証明書の変更、土地紛争の解決に関するコンサルティング
+  - **婚姻と家族：** 離婚、財産分割、子供の養育権に関するコンサルティング
+
+  ## 経験
+
+  多年の経験により、ヴァン・ティ・タイン・ホア弁護士は民事、刑事、土地、婚姻家族法分野で多くの複雑な法的案件を成功裏に解決してきました。
+bodyContent_ko: |
+  ## 반티타인호아 변호사 소개
+
+  반티타인호아 변호사는 Youth & Partners 법률 회사의 구성원 변호사입니다.
+
+  ## 담당 분야
+
+  - **민사법:** 계약, 민사 거래, 상속, 손해배상 및 기타 관련 법률 문제에 대한 상담
+  - **형사법:** 피해자의 정당한 권리 상담 및 보호, 형사 소송에서 피의자 및 피고인 변호
+  - **토지법:** 양도, 토지 사용권 증명서 변경, 토지 분쟁 해결에 대한 상담
+  - **결혼 및 가족:** 이혼, 재산 분할, 자녀 양육권에 대한 상담
+
+  ## 경험
+
+  다년간의 경험으로 반티타인호아 변호사는 민사, 형사, 토지, 결혼 및 가족법 분야에서 많은 복잡한 법률 사건을 성공적으로 해결했습니다.
 draft: false
 ---
 

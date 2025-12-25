@@ -110,6 +110,71 @@ socialLinks:
 yearsExperience: 10
 featured: false
 order: 11
+bodyContent_en: |
+  ## Introduction
+
+  Attorney Mang Diệu Hiền is a reputable legal expert specializing in consulting and supporting the issuance of various sub-licenses.
+
+  ## Professional Experience
+
+  - Business licenses (business registration, operating licenses for conditional business lines)
+  - Construction permits, environmental permits, food safety, advertising, and other specialized licenses
+  - Assisting enterprises in applying for new, renewing, or adjusting sub-licenses according to legal regulations
+
+  ## Achievements
+
+  - Successfully advised hundreds of small and medium enterprises in completing legal procedures
+  - Represented clients in working with government agencies, saving time and costs
+  - Provided optimal legal solutions tailored to each specific case
+bodyContent_zh: |
+  ## 介绍
+
+  芒谬贤律师是一位声誉卓著的法律专家，专门从事各类子许可证的咨询和支持颁发工作。
+
+  ## 专业经验
+
+  - 营业执照（企业登记，有条件经营行业的营业执照）
+  - 建筑许可、环境许可、食品安全、广告和其他专业许可
+  - 协助企业根据法律规定申请新的、更新或调整子许可证
+
+  ## 成就
+
+  - 成功为数百家中小企业完成法律程序提供咨询
+  - 代表客户与政府机构合作，节省时间和成本
+  - 为每个具体案例提供最佳法律解决方案
+bodyContent_ja: |
+  ## 紹介
+
+  マン・ディエウ・ヒエン弁護士は、各種子ライセンスの発行に関するコンサルティングとサポートを専門とする評価の高い法律専門家です。
+
+  ## 専門経験
+
+  - 事業許可（事業登録、条件付き事業分野の営業許可）
+  - 建設許可、環境許可、食品安全、広告、その他の専門許可
+  - 法的規制に従った新規申請、更新、または子ライセンスの調整における企業支援
+
+  ## 実績
+
+  - 数百の中小企業の法的手続き完了を成功裏にアドバイス
+  - 政府機関との業務において依頼者を代理し、時間とコストを節約
+  - 各具体的なケースに合わせた最適な法的ソリューションを提供
+bodyContent_ko: |
+  ## 소개
+
+  망디에우히엔 변호사는 다양한 하위 면허 발급에 대한 컨설팅 및 지원을 전문으로 하는 평판이 좋은 법률 전문가입니다.
+
+  ## 전문 경험
+
+  - 사업자 등록증 (사업 등록, 조건부 사업 분야의 영업 허가)
+  - 건축 허가, 환경 허가, 식품 안전, 광고 및 기타 전문 허가
+  - 법적 규정에 따른 신규, 갱신 또는 하위 면허 조정에서 기업 지원
+
+  ## 성과
+
+  - 수백 개의 중소기업의 법적 절차 완료를 성공적으로 자문
+  - 정부 기관과의 업무에서 고객을 대리하여 시간과 비용 절감
+  - 각 구체적인 사례에 맞는 최적의 법률 솔루션 제공
+draft: false
 ---
 
 ## Giới thiệu

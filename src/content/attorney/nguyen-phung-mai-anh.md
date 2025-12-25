@@ -97,6 +97,71 @@ languages_ko:
   - "베트남어"
 order: 20
 publishDate: 2024-01-01T00:00:00Z
+bodyContent_en: |
+  ## Areas of Expertise
+
+  Nguyễn Phùng Mai Ánh is responsible for the following areas:
+
+  - **Civil Law:** Editing content on contracts, civil transactions, marriage and family.
+
+  - **Land Law:** Specialized in handling land procedures and legal consultation on land use rights, planning, transfers, and related matters.
+
+  - **Administrative Law:** Consulting and supporting administrative procedures.
+
+  ## Experience
+
+  - 2021: Internship at 24h Law Company, supporting lawyers in research and document drafting, reviewing legal papers and documents.
+  - 2023: Internship at Việt Xuân Commune People's Committee, coordinating with Justice-Civil Status Officials in document authentication, land dispute mediation, data entry, and administrative document processing.
+  - 2024: Legal Specialist at Youth & Partners Law Firm LLC, specializing in handling land procedures and legal consultation on land use rights, planning, transfers, and related matters.
+bodyContent_zh: |
+  ## 专业领域
+
+  阮凤梅映负责以下领域：
+
+  - **民事法：** 编辑关于合同、民事交易、婚姻家庭的内容。
+
+  - **土地法：** 专门处理土地程序和关于土地使用权、规划、转让及相关事项的法律咨询。
+
+  - **行政法：** 咨询和支持行政程序。
+
+  ## 经验
+
+  - 2021年：在24h法律公司实习，支持律师进行研究和文件起草，审查法律文件和文档。
+  - 2023年：在越春乡人民委员会实习，与司法-户籍官员协调进行文件认证、土地纠纷调解、数据录入和行政文件处理。
+  - 2024年：Youth & Partners律师事务所法律专员，专门处理土地程序和关于土地使用权、规划、转让及相关事项的法律咨询。
+bodyContent_ja: |
+  ## 専門分野
+
+  グエン・フン・マイ・アインは以下の分野を担当しています：
+
+  - **民事法：** 契約、民事取引、婚姻家族に関するコンテンツの編集。
+
+  - **土地法：** 土地手続きの処理と土地使用権、計画、譲渡、関連事項に関する法的相談を専門。
+
+  - **行政法：** 行政手続きのコンサルティングとサポート。
+
+  ## 経験
+
+  - 2021年：24h法律会社にてインターンシップ、弁護士の研究と文書作成をサポート、法的書類と文書のレビュー。
+  - 2023年：ベトスアン社人民委員会にてインターンシップ、司法・戸籍担当官と連携して文書認証、土地紛争調停、データ入力、行政文書処理。
+  - 2024年：Youth & Partners法律事務所の法務スペシャリスト、土地手続きの処理と土地使用権、計画、譲渡、関連事項に関する法的相談を専門。
+bodyContent_ko: |
+  ## 전문 분야
+
+  응웬풍마이안이 담당하는 분야:
+
+  - **민사법:** 계약, 민사 거래, 결혼 및 가족에 관한 콘텐츠 편집.
+
+  - **토지법:** 토지 절차 처리 및 토지 사용권, 계획, 양도 및 관련 사항에 대한 법률 상담 전문.
+
+  - **행정법:** 행정 절차 상담 및 지원.
+
+  ## 경험
+
+  - 2021년: 24h 법률 회사 인턴십, 변호사의 연구 및 문서 작성 지원, 법률 서류 및 문서 검토.
+  - 2023년: 비엣쑤언 사 인민위원회 인턴십, 사법-호적 담당관과 협력하여 문서 인증, 토지 분쟁 조정, 데이터 입력 및 행정 문서 처리.
+  - 2024년: Youth & Partners 법률 회사 법무 전문가, 토지 절차 처리 및 토지 사용권, 계획, 양도 및 관련 사항에 대한 법률 상담 전문.
+draft: false
 ---
 
 ## Lĩnh vực chuyên môn

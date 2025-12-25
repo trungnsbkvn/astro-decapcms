@@ -87,6 +87,63 @@ socialLinks:
   zalo: "0889956888"
 order: 22
 publishDate: 2024-01-01T00:00:00Z
+bodyContent_en: |
+  ## Areas of Expertise
+
+  Nguyễn Phan Thục Chi is responsible for the following areas:
+
+  - **Corporate Law:** Providing regular legal consultation for enterprises: reviewing various corporate contracts including framework agreements, goods sales contracts, labor contracts; drafting legal consulting reports in areas such as labor and commercial business.
+
+  - **Foreign Investment:** Supporting license matters related to foreign-invested projects, including issues related to enterprise establishment and adjustment of Investment Registration Certificates.
+
+  ## Experience
+
+  - Aug 2024 – Nov 2024: Intern at HR-Admin Department at TOTO Vietnam Co., Ltd. Branch in Vinh Phuc – supporting company charter review and research on social security and labor issues.
+  - Dec 2024 – May 2025: HR-Admin Department Staff at KITZ Corporation Vietnam Co., Ltd. – reviewing and checking contracts and researching issues related to social security, labor, and taxes; supporting exit procedures for Vietnamese employees going abroad for training (Taiwan, Japan).
+  - Currently Legal Specialist at Youth & Partners Law Firm LLC.
+bodyContent_zh: |
+  ## 专业领域
+
+  阮潘淑志负责以下领域：
+
+  - **企业法：** 为企业提供常规法律咨询：审查各种企业合同，包括框架协议、商品销售合同、劳动合同；起草劳动和商业等领域的法律咨询报告。
+
+  - **外国投资：** 支持与外商投资项目相关的许可事务，包括企业设立和投资登记证书调整相关事宜。
+
+  ## 经验
+
+  - 2024年8月 – 2024年11月：TOTO越南有限公司永福分公司人事行政部实习生 – 支持公司章程审查和社会保障及劳动问题研究。
+  - 2024年12月 – 2025年5月：KITZ Corporation越南有限公司人事行政部员工 – 审查和检查合同，研究社会保障、劳动和税务相关问题；支持越南员工出国培训的出境手续（台湾、日本）。
+  - 目前为Youth & Partners律师事务所法律专员。
+bodyContent_ja: |
+  ## 専門分野
+
+  グエン・ファン・トゥック・チーは以下の分野を担当しています：
+
+  - **企業法：** 企業への定期的な法的相談の提供：基本契約、商品販売契約、労働契約を含む各種企業契約のレビュー；労働や商業ビジネスなどの分野における法的コンサルティングレポートの起草。
+
+  - **海外投資：** 企業設立や投資登録証明書の調整に関する事項を含む、海外投資プロジェクトに関連するライセンス事項のサポート。
+
+  ## 経験
+
+  - 2024年8月 – 2024年11月：TOTOベトナム有限会社ヴィンフック支店人事総務部にてインターン – 会社定款レビューと社会保障・労働問題の調査をサポート。
+  - 2024年12月 – 2025年5月：KITZコーポレーションベトナム有限会社人事総務部スタッフ – 契約のレビューとチェック、社会保障、労働、税務関連問題の調査；ベトナム人従業員の海外研修（台湾、日本）のための出国手続きをサポート。
+  - 現在Youth & Partners法律事務所の法務スペシャリスト。
+bodyContent_ko: |
+  ## 전문 분야
+
+  응웬판툭치가 담당하는 분야:
+
+  - **기업법:** 기업을 위한 정기 법률 상담 제공: 기본 계약, 상품 판매 계약, 노동 계약을 포함한 다양한 기업 계약 검토; 노동 및 상업 비즈니스 등 분야의 법률 컨설팅 보고서 작성.
+
+  - **외국인 투자:** 기업 설립 및 투자 등록 증명서 조정 관련 사안을 포함한 외국인 투자 프로젝트 관련 면허 사안 지원.
+
+  ## 경험
+
+  - 2024년 8월 – 2024년 11월: TOTO 베트남 유한회사 빈푹 지점 인사총무부 인턴 – 회사 정관 검토 및 사회보장 및 노동 문제 연구 지원.
+  - 2024년 12월 – 2025년 5월: KITZ 코퍼레이션 베트남 유한회사 인사총무부 직원 – 계약 검토 및 확인, 사회보장, 노동, 세금 관련 문제 연구; 베트남 직원의 해외 교육(대만, 일본) 출국 절차 지원.
+  - 현재 Youth & Partners 법률 회사 법무 전문가.
+draft: false
 ---
 
 ## Lĩnh vực chuyên môn

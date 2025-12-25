@@ -147,6 +147,62 @@ languages_ja:
 languages_ko:
   - "베트남어"
   - "영어"
+bodyContent_en: |
+  ## About Lawyer Nguyễn Thị Hướng
+
+  Lawyer Nguyễn Thị Hướng is a member lawyer at Youth & Partners Law Firm with extensive professional experience. Graduating with a Bachelor's degree in International Law from the Diplomatic Academy of Vietnam and obtaining her Law Practice Certificate, Lawyer Hướng possesses a solid legal foundation combined with modern international legal thinking.
+
+  ## Areas of Expertise
+
+  - **Civil Law:** Consulting on contracts, civil transactions, inheritance, damage compensation, and other related legal matters
+  - **Criminal Law:** Consulting and protecting the legitimate rights of victims, defending suspects and defendants in criminal proceedings
+  - **Land Law:** Consulting on transfers, land use right certificate changes, resolving land disputes
+  - **Marriage and Family:** Consulting on divorce, property division, child custody rights
+  - **Corporate Law:** Comprehensive legal advice on corporate establishment, operations, and governance
+  - **Labor Law:** Consulting on labor contracts, employee rights, labor disputes
+  - **Investment:** Advising on investment matters, investment planning, and capital management
+bodyContent_zh: |
+  ## 关于阮氏香律师
+
+  阮氏香律师是Youth & Partners律师事务所的成员律师，拥有丰富的专业经验。毕业于越南外交学院国际法专业并获得律师执业证书，阮律师具备扎实的法律基础和现代国际法思维。
+
+  ## 专业领域
+
+  - **民事法：** 关于合同、民事交易、继承、损害赔偿及其他相关法律事务的咨询
+  - **刑事法：** 咨询和保护受害者的合法权益，在刑事诉讼中为犯罪嫌疑人和被告辩护
+  - **土地法：** 关于转让、土地使用权证书变更、解决土地纠纷的咨询
+  - **婚姻和家庭：** 关于离婚、财产分割、子女抚养权的咨询
+  - **企业法：** 关于企业设立、运营和治理的全面法律咨询
+  - **劳动法：** 关于劳动合同、员工权利、劳动纠纷的咨询
+  - **投资：** 关于投资事务、投资规划和资本管理的咨询
+bodyContent_ja: |
+  ## グエン・ティ・フオン弁護士について
+
+  グエン・ティ・フオン弁護士は、Youth & Partners法律事務所のメンバー弁護士で、豊富な実務経験を持っています。ベトナム外交アカデミーで国際法の学士号を取得し、弁護士業務証明書を取得。確固たる法的基盤と現代的な国際法思考を兼ね備えています。
+
+  ## 専門分野
+
+  - **民事法：** 契約、民事取引、相続、損害賠償、その他関連する法的事項に関するコンサルティング
+  - **刑事法：** 被害者の正当な権利の相談と保護、刑事訴訟における容疑者および被告人の弁護
+  - **土地法：** 譲渡、土地使用権証明書の変更、土地紛争の解決に関するコンサルティング
+  - **婚姻と家族：** 離婚、財産分割、子供の養育権に関するコンサルティング
+  - **企業法：** 企業設立、運営、ガバナンスに関する包括的な法的アドバイス
+  - **労働法：** 労働契約、従業員の権利、労働紛争に関するコンサルティング
+  - **投資：** 投資事項、投資計画、資本管理に関するアドバイス
+bodyContent_ko: |
+  ## 응웬티후엉 변호사 소개
+
+  응웬티후엉 변호사는 Youth & Partners 법률 회사의 구성원 변호사로 풍부한 전문 경험을 보유하고 있습니다. 베트남 외교아카데미에서 국제법 학사 학위를 취득하고 변호사 업무증명서를 획득하여 탄탄한 법률 기반과 현대적 국제법적 사고를 겸비하고 있습니다.
+
+  ## 전문 분야
+
+  - **민사법:** 계약, 민사 거래, 상속, 손해배상 및 기타 관련 법률 문제에 대한 상담
+  - **형사법:** 피해자의 정당한 권리 상담 및 보호, 형사 소송에서 피의자 및 피고인 변호
+  - **토지법:** 양도, 토지 사용권 증명서 변경, 토지 분쟁 해결에 대한 상담
+  - **결혼 및 가족:** 이혼, 재산 분할, 자녀 양육권에 대한 상담
+  - **기업법:** 기업 설립, 운영 및 지배구조에 관한 포괄적인 법률 자문
+  - **노동법:** 노동 계약, 직원 권리, 노동 분쟁에 대한 상담
+  - **투자:** 투자 사안, 투자 계획, 자본 관리에 대한 자문
 draft: false
 ---
 

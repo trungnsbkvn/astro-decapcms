@@ -111,6 +111,86 @@ languages_ko:
   - "일본어"
 order: 30
 publishDate: 2025-12-01T00:00:00Z
+bodyContent_en: |
+  ## Areas of Expertise
+
+  Cao Thị Phương Anh is responsible for the following areas:
+
+  - **Corporate Law:** Regular legal consultation and legal support for enterprises in daily legal matters, legal compliance, and internal operations.
+
+  - **Internal Regulations:** Reviewing and analyzing legal documents, contracts, and legal materials related to business operations.
+
+  - **Corporate Procedures:** Supporting the drafting and reviewing of commercial contracts, internal documents, and legal papers as required by the company and clients.
+
+  - **Regular Consultation:** Participating in research and updating new laws, providing practical legal solutions for enterprises.
+
+  ## Experience
+
+  - Dec 2024 – Jun 2025: Legal Intern at AIC Law Office
+  - Jul 2025 – Oct 2025: Legal Intern at Chân Tín Nghĩa Law Firm LLC
+  - Nov 2025 - Dec 2025: Legal Intern at Xuân Hòa Ward People's Committee, Phú Thọ Province
+  - Dec 2025 to present: Legal Specialist at Youth & Partners Law Firm (YPLaw Firm)
+  Participating in supporting legal consultation activities, document drafting, legal regulation research, and assisting lawyers in working with clients.
+bodyContent_zh: |
+  ## 专业领域
+
+  高氏芳英负责以下领域：
+
+  - **企业法：** 为企业日常法律事务、法律合规和内部运营提供常规法律咨询和法律支持。
+
+  - **内部规章：** 审查和分析与企业运营相关的法律文件、合同和法律材料。
+
+  - **企业程序：** 支持起草和审查公司和客户要求的商业合同、内部文件和法律文件。
+
+  - **常规咨询：** 参与研究和更新新法律，为企业提供实用的法律解决方案。
+
+  ## 经验
+
+  - 2024年12月 – 2025年6月：AIC律师事务所法律实习生
+  - 2025年7月 – 2025年10月：真信义律师事务所法律实习生
+  - 2025年11月 - 2025年12月：富寿省春和坊人民委员会法律实习生
+  - 2025年12月至今：Youth & Partners律师事务所法律专员
+  参与支持法律咨询活动、文件起草、法律法规研究以及协助律师与客户合作。
+bodyContent_ja: |
+  ## 専門分野
+
+  カオ・ティ・フオン・アインは以下の分野を担当しています：
+
+  - **企業法：** 日常の法的問題、法令遵守、内部業務における企業への定期的な法的相談と法的支援。
+
+  - **内部規程：** 事業運営に関連する法的文書、契約、法的資料のレビューと分析。
+
+  - **企業手続き：** 会社とクライアントが必要とする商業契約、内部文書、法的書類の起草とレビューのサポート。
+
+  - **定期相談：** 新しい法律の研究と更新への参加、企業への実践的な法的ソリューションの提供。
+
+  ## 経験
+
+  - 2024年12月 – 2025年6月：AIC法律事務所にて法務インターン
+  - 2025年7月 – 2025年10月：チャン・ティン・ギア法律事務所にて法務インターン
+  - 2025年11月 - 2025年12月：フートー省スアンホア区人民委員会にて法務インターン
+  - 2025年12月から現在：Youth & Partners法律事務所の法務スペシャリスト
+  法的相談活動、文書作成、法規制研究のサポート、およびクライアントとの業務における弁護士の補助に参加。
+bodyContent_ko: |
+  ## 전문 분야
+
+  까오티프엉아잉이 담당하는 분야:
+
+  - **기업법:** 일상 법률 문제, 법률 준수 및 내부 운영에 대한 기업을 위한 정기 법률 상담 및 법률 지원.
+
+  - **내부 규정:** 사업 운영과 관련된 법률 문서, 계약 및 법률 자료의 검토 및 분석.
+
+  - **기업 절차:** 회사와 고객의 요구에 따른 상업 계약, 내부 문서 및 법률 서류의 작성 및 검토 지원.
+
+  - **정기 상담:** 새로운 법률 연구 및 업데이트 참여, 기업을 위한 실용적인 법률 솔루션 제공.
+
+  ## 경험
+
+  - 2024년 12월 – 2025년 6월: AIC 법률 사무소 법무 인턴
+  - 2025년 7월 – 2025년 10월: 쩐띤응이아 법률 회사 법무 인턴
+  - 2025년 11월 - 2025년 12월: 푸토성 쑤언호아 구 인민위원회 법무 인턴
+  - 2025년 12월 ~ 현재: Youth & Partners 법률 회사 법무 전문가
+  법률 상담 활동, 문서 작성, 법률 규정 연구 지원 및 고객과의 업무에서 변호사 보조 참여.
 draft: false
 ---
 

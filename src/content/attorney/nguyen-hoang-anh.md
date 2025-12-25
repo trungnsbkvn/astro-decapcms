@@ -121,6 +121,71 @@ socialLinks:
 yearsExperience: 10
 featured: false
 order: 9
+bodyContent_en: |
+  ## Introduction
+
+  Attorney Nguyễn Hoàng Anh is an experienced legal expert specializing in providing legal advisory and support services across multiple fields.
+
+  ## Professional Experience
+
+  - Business registration licenses, operating licenses for conditional business lines
+  - Environmental permits, construction permits, food safety, labor permits, and other specialized licenses
+  - Assisting enterprises in applying for new, renewing, or adjusting licenses according to legal regulations
+
+  ## Achievements
+
+  - Successfully advised many domestic and foreign enterprises, from startups to large-scale companies
+  - Represented clients in working with government agencies, ensuring fast, transparent, and efficient processes
+  - Provided comprehensive legal solutions tailored to the specific needs of each client
+bodyContent_zh: |
+  ## 介绍
+
+  阮黄英律师是一位经验丰富的法律专家，专门为多个领域提供法律咨询和支持服务。
+
+  ## 专业经验
+
+  - 营业执照登记，有条件经营行业的营业执照
+  - 环境许可、建筑许可、食品安全、劳动许可和其他专业许可
+  - 协助企业根据法律规定申请新的、更新或调整许可证
+
+  ## 成就
+
+  - 成功为国内外多家企业提供咨询，从初创企业到大型公司
+  - 代表客户与政府机构合作，确保流程快速、透明、高效
+  - 为每位客户的具体需求提供全面的法律解决方案
+bodyContent_ja: |
+  ## 紹介
+
+  グエン・ホアン・アン弁護士は、複数の分野で法的アドバイスとサポートサービスを提供することを専門とする経験豊富な法律専門家です。
+
+  ## 専門経験
+
+  - 事業登録許可、条件付き事業分野の営業許可
+  - 環境許可、建設許可、食品安全、労働許可、その他の専門許可
+  - 法的規制に従った新規申請、更新、またはライセンスの調整における企業支援
+
+  ## 実績
+
+  - スタートアップから大企業まで、国内外の多くの企業を成功裏にアドバイス
+  - 政府機関との業務において依頼者を代理し、迅速で透明性があり効率的なプロセスを確保
+  - 各クライアントの具体的なニーズに合わせた包括的な法的ソリューションを提供
+bodyContent_ko: |
+  ## 소개
+
+  응웬호앙아잉 변호사는 여러 분야에서 법률 자문 및 지원 서비스를 전문으로 제공하는 경험 많은 법률 전문가입니다.
+
+  ## 전문 경험
+
+  - 사업 등록 면허, 조건부 사업 분야의 영업 허가
+  - 환경 허가, 건축 허가, 식품 안전, 노동 허가 및 기타 전문 허가
+  - 법적 규정에 따른 신규, 갱신 또는 면허 조정에서 기업 지원
+
+  ## 성과
+
+  - 스타트업부터 대기업까지 국내외 많은 기업을 성공적으로 자문
+  - 정부 기관과의 업무에서 고객을 대리하여 신속하고 투명하며 효율적인 프로세스 보장
+  - 각 고객의 구체적인 요구에 맞춘 포괄적인 법률 솔루션 제공
+draft: false
 ---
 
 ## Giới thiệu

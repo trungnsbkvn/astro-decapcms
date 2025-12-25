@@ -139,6 +139,30 @@ languages_ja:
 languages_ko:
   - "베트남어"
   - "영어"
+bodyContent_en: |
+  ## About Dr. Đoàn Xuân Trường
+
+  Dr. Đoàn Xuân Trường is a lecturer at Hanoi Law University and an associate lawyer at Youth & Partners.
+
+  Dr. Đoàn Xuân Trường has many years of experience in teaching, compliance guidance; handling numerous legal advisory cases for employees and businesses, and developing many independent reports on contemporary labor law topics.
+bodyContent_zh: |
+  ## 关于段春长博士
+
+  段春长博士是河内法律大学的讲师，也是Youth & Partners律师事务所的合伙人律师。
+
+  段春长博士拥有多年的教学和法律合规指导经验；为劳动者和企业处理了大量法律咨询案件，并就当代劳动法领域的主题编写了许多独立报告。
+bodyContent_ja: |
+  ## ドアン・スアン・チュオン博士について
+
+  ドアン・スアン・チュオン博士は、ハノイ法科大学の講師であり、Youth & Partnersのアソシエイト弁護士です。
+
+  ドアン・スアン・チュオン博士は多年の教育、法令遵守指導の経験を持ち、労働者や企業に対する多くの法的助言案件を処理し、現代労働法分野のテーマに関する多くの独立報告書を作成しています。
+bodyContent_ko: |
+  ## 단숌창 박사 소개
+
+  단숌창 박사는 하노이 법과대학의 강사이며 Youth & Partners의 동료 변호사입니다.
+
+  단숌창 박사는 다년간의 교육, 법률 준수 지도 경험을 보유하고 있으며, 근로자와 기업에 대한 많은 법률 자문 사례를 처리하고 현대 노동법 분야의 주제에 대한 많은 독립 보고서를 작성했습니다.
 draft: false
 ---
 

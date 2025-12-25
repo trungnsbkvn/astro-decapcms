@@ -140,6 +140,46 @@ languages_ja:
   - "ベトナム語"
 languages_ko:
   - "베트남어"
+bodyContent_en: |
+  ## About Lawyer Nguyễn Minh Anh
+
+  Lawyer Nguyễn Minh Anh is a legal expert with many years of experience in economic law, land law, and civil law.
+
+  ## Professional Experience
+
+  - Nov 2022 - Sep 2024: Deputy Head of Legal Compliance Department at Hoa Binh International Trade and Tourism Investment Company
+  - Jun 2019 - Nov 2022: Manager of Consultation Department at Viet Kim Law Firm LLC
+  - Jun 2017 - Jun 2019: Intern at Trong Hai & Associates Law Office
+bodyContent_zh: |
+  ## 关于阮明英律师
+
+  阮明英律师是一位在经济法、土地法和民事法领域拥有多年经验的法律专家。
+
+  ## 专业经验
+
+  - 2022年11月 - 2024年9月：和平国际贸易旅游投资公司法律合规部副主任
+  - 2019年6月 - 2022年11月：越金律师事务所咨询部经理
+  - 2017年6月 - 2019年6月：仲海律师事务所实习生
+bodyContent_ja: |
+  ## グエン・ミン・アイン弁護士について
+
+  グエン・ミン・アイン弁護士は、経済法、土地法、民事法分野で多年の経験を持つ法律専門家です。
+
+  ## 専門経験
+
+  - 2022年11月 - 2024年9月：ホアビン国際貿易観光投資会社法務コンプライアンス部副部長
+  - 2019年6月 - 2022年11月：ベトキム法律事務所コンサルティング部門マネージャー
+  - 2017年6月 - 2019年6月：チョンハイ＆アソシエイツ法律事務所インターン
+bodyContent_ko: |
+  ## 응웬민안 변호사 소개
+
+  응웬민안 변호사는 경제법, 토지법, 민사법 분야에서 다년간의 경험을 가진 법률 전문가입니다.
+
+  ## 전문 경험
+
+  - 2022년 11월 - 2024년 9월: 호아빈 국제 무역 관광 투자 회사 법률 준수부 부장
+  - 2019년 6월 - 2022년 11월: 베트킴 법률 회사 상담부 매니저
+  - 2017년 6월 - 2019년 6월: 쫑하이 & 어소시에이츠 법률 사무소 인턴
 draft: false
 ---
 

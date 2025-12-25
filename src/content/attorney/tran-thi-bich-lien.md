@@ -100,6 +100,71 @@ socialLinks:
   zalo: "0889956888"
 order: 17
 publishDate: 2024-01-01T00:00:00Z
+bodyContent_en: |
+  ## Areas of Expertise
+
+  Trần Thị Bích Liên is responsible for the following areas:
+
+  - **Civil Law:** Consulting on contracts, civil transactions, inheritance, marriage & family, damage compensation, and other related legal matters.
+
+  - **Land Law:** Comprehensive consultation on land procedures, including but not limited to issues of buying, selling, gifting, transferring property ownership, renewal, replacement, new issuance of land use right certificates, correction of land use rights, conversion of land use purposes, and resolving land disputes.
+
+  - **Administrative Law:** Consulting on administrative procedures, resolving complaints, denunciations, and administrative-related legal matters.
+
+  ## Experience
+
+  - From 2020 - 2024: Legal Specialist at Youth & Partners Law Firm LLC. During her time at the company, Ms. Trần Thị Bích Liên has accumulated extensive experience in Civil, Administrative, and Land law fields.
+  - Directly participated and succeeded in resolving many land disputes, marriage and family cases, protecting the legitimate rights of clients.
+  - Performed many complex Administrative and Land procedures, serving the needs of both individuals and organizations, contributing to improving efficiency and ensuring client rights.
+bodyContent_zh: |
+  ## 专业领域
+
+  陈氏碧莲负责以下领域：
+
+  - **民事法：** 关于合同、民事交易、继承、婚姻家庭、损害赔偿及其他相关法律事务的咨询。
+
+  - **土地法：** 关于土地程序的全面咨询，包括但不限于买卖、赠与、产权转让、土地使用权证书的换发、补发、新发、土地使用权更正、土地用途转换以及土地纠纷解决。
+
+  - **行政法：** 关于行政程序、解决投诉、举报及行政相关法律事务的咨询。
+
+  ## 经验
+
+  - 2020年 - 2024年：Youth & Partners律师事务所法律专员。在公司任职期间，陈氏碧莲女士在民事、行政和土地法领域积累了丰富的经验。
+  - 直接参与并成功解决了许多土地纠纷、婚姻家庭案件，保护了客户的合法权益。
+  - 执行了许多复杂的行政和土地程序，服务于个人和组织的需求，有助于提高效率并确保客户权益。
+bodyContent_ja: |
+  ## 専門分野
+
+  チャン・ティ・ビック・リエンは以下の分野を担当しています：
+
+  - **民事法：** 契約、民事取引、相続、婚姻家族、損害賠償、その他関連する法的事項に関するコンサルティング。
+
+  - **土地法：** 売買、贈与、所有権移転、土地使用権証明書の更新・再発行・新規発行、土地使用権の訂正、土地利用目的の変更、土地紛争の解決を含む土地手続きに関する包括的なコンサルティング。
+
+  - **行政法：** 行政手続き、苦情・告発の解決、行政関連の法的事項に関するコンサルティング。
+
+  ## 経験
+
+  - 2020年 - 2024年：Youth & Partners法律事務所の法務スペシャリスト。在職中、チャン・ティ・ビック・リエン氏は民事、行政、土地法分野で豊富な経験を積みました。
+  - 多くの土地紛争、婚姻家族案件の解決に直接参加し、成功を収め、依頼者の正当な権利を守りました。
+  - 個人と組織の両方のニーズに応える多くの複雑な行政・土地手続きを実施し、効率向上と依頼者権利の確保に貢献しました。
+bodyContent_ko: |
+  ## 전문 분야
+
+  짠티빅리엔이 담당하는 분야:
+
+  - **민사법:** 계약, 민사 거래, 상속, 결혼 및 가족, 손해배상 및 기타 관련 법률 문제에 대한 상담.
+
+  - **토지법:** 매매, 증여, 소유권 이전, 토지 사용권 증명서 갱신, 재발급, 신규 발급, 토지 사용권 정정, 토지 용도 변경, 토지 분쟁 해결을 포함한 토지 절차에 대한 포괄적인 상담.
+
+  - **행정법:** 행정 절차, 민원, 고발 해결 및 행정 관련 법률 문제에 대한 상담.
+
+  ## 경험
+
+  - 2020년 - 2024년: Youth & Partners 법률 회사 법무 전문가. 회사 재직 기간 동안 짠티빅리엔 씨는 민사, 행정, 토지법 분야에서 풍부한 경험을 쌓았습니다.
+  - 많은 토지 분쟁, 결혼 및 가족 사건을 직접 해결하는 데 참여하여 성공적으로 처리하며 고객의 정당한 권리를 보호했습니다.
+  - 개인과 조직 모두의 요구를 충족하는 많은 복잡한 행정 및 토지 절차를 수행하여 효율성 향상과 고객 권리 보장에 기여했습니다.
+draft: false
 ---
 
 ## Lĩnh vực chuyên môn

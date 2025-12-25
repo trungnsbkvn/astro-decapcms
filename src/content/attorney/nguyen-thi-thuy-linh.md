@@ -101,6 +101,99 @@ socialLinks:
   zalo: "0889956888"
 order: 15
 publishDate: 2024-01-01T00:00:00Z
+bodyContent_en: |
+  ## Areas of Expertise
+
+  Nguyễn Thị Thùy Linh is responsible for the following areas:
+
+  - **Corporate Law:** Drafting contracts, legal advice on labor, real estate, and foreign investment for domestic and foreign enterprises.
+
+  - **Internal Regulations:** Developing and adjusting internal forms and corporate regulations.
+
+  - **Corporate Procedures:** Drafting documents for establishment and changes in enterprise registration content.
+
+  - **FDI Investment:** Drafting documents for adjustment and renewal of investment registration certificates for foreign-invested enterprises.
+
+  - **Marriage and Family:** Resolving marriage and family matters including divorce cases with foreign elements.
+
+  ## Experience
+
+  - Resolving marriage and family matters including divorce cases with foreign elements.
+  - Regular consultation for over 15 domestic and foreign enterprises in corporate, labor, investment, and real estate business.
+  - Drafting and reviewing bilingual contracts (English - Vietnamese) including framework agreements, service contracts, labor contracts, NDAs.
+  - Developing and reviewing internal forms such as democracy regulations, labor rules, and salary-bonus policies of enterprises.
+  - Drafting documents for adjustment and renewal of investment registration certificates for foreign-invested enterprises.
+  - Drafting documents for establishment and changes in enterprise registration content.
+bodyContent_zh: |
+  ## 专业领域
+
+  阮氏垂灵负责以下领域：
+
+  - **企业法：** 为国内外企业起草合同，提供劳动、房地产和外国投资方面的法律咨询。
+
+  - **内部规章：** 制定和调整内部表格和企业规章。
+
+  - **企业程序：** 起草企业设立和变更登记内容的文件。
+
+  - **FDI投资：** 为外商投资企业起草投资登记证书调整和换发文件。
+
+  - **婚姻和家庭：** 解决婚姻家庭事务，包括涉及外国因素的离婚案件。
+
+  ## 经验
+
+  - 解决婚姻家庭事务，包括涉及外国因素的离婚案件。
+  - 为15多家国内外企业提供企业、劳动、投资和房地产业务方面的常规咨询。
+  - 起草和审查双语合同（英语 - 越南语），包括框架协议、服务合同、劳动合同、保密协议。
+  - 制定和审查企业的民主规章、劳动规则和薪酬奖励政策等内部表格。
+  - 为外商投资企业起草投资登记证书调整和换发文件。
+  - 起草企业设立和变更登记内容的文件。
+bodyContent_ja: |
+  ## 専門分野
+
+  グエン・ティ・トゥイ・リンは以下の分野を担当しています：
+
+  - **企業法：** 国内外企業への契約起草、労働、不動産、海外投資に関する法的アドバイス。
+
+  - **内部規程：** 内部フォームおよび企業規程の策定と調整。
+
+  - **企業手続き：** 企業設立および登記内容変更のための文書作成。
+
+  - **FDI投資：** 外資系企業の投資登録証明書の調整と更新のための文書作成。
+
+  - **婚姻と家族：** 外国要素を含む離婚事件を含む婚姻家族事項の解決。
+
+  ## 経験
+
+  - 外国要素を含む離婚事件を含む婚姻家族事項の解決。
+  - 企業、労働、投資、不動産事業分野で15社以上の国内外企業への定期的なコンサルティング。
+  - 基本契約、サービス契約、労働契約、NDAを含むバイリンガル契約（英語 - ベトナム語）の起草とレビュー。
+  - 企業の民主規程、労働規則、給与・賞与規程などの内部フォームの策定とレビュー。
+  - 外資系企業の投資登録証明書の調整と更新のための文書作成。
+  - 企業設立および登記内容変更のための文書作成。
+bodyContent_ko: |
+  ## 전문 분야
+
+  응웬티투이린이 담당하는 분야:
+
+  - **기업법:** 국내외 기업을 위한 계약 작성, 노동, 부동산 및 외국인 투자에 대한 법률 자문.
+
+  - **내부 규정:** 내부 양식 및 기업 규정 개발 및 조정.
+
+  - **기업 절차:** 기업 설립 및 등록 내용 변경을 위한 문서 작성.
+
+  - **FDI 투자:** 외국인 투자 기업의 투자 등록 증명서 조정 및 갱신을 위한 문서 작성.
+
+  - **결혼 및 가족:** 외국 요소가 포함된 이혼 사건을 포함한 결혼 및 가족 문제 해결.
+
+  ## 경험
+
+  - 외국 요소가 포함된 이혼 사건을 포함한 결혼 및 가족 문제 해결.
+  - 기업, 노동, 투자, 부동산 사업 분야에서 15개 이상의 국내외 기업에 정기적인 자문.
+  - 기본 계약, 서비스 계약, 노동 계약, NDA를 포함한 이중 언어 계약(영어 - 베트남어) 작성 및 검토.
+  - 기업의 민주 규정, 노동 규칙, 급여-보너스 정책 등 내부 양식 개발 및 검토.
+  - 외국인 투자 기업의 투자 등록 증명서 조정 및 갱신을 위한 문서 작성.
+  - 기업 설립 및 등록 내용 변경을 위한 문서 작성.
+draft: false
 ---
 
 ## Lĩnh vực chuyên môn

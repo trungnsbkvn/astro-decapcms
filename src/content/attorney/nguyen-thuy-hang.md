@@ -97,6 +97,67 @@ socialLinks:
   zalo: "0889956888"
 order: 16
 publishDate: 2024-01-01T00:00:00Z
+bodyContent_en: |
+  ## Areas of Expertise
+
+  Nguyễn Thúy Hằng is responsible for the following areas:
+
+  - **Contracts:** Drafting and reviewing contracts including framework agreements, service contracts, and labor contracts.
+
+  - **Corporate Consultation:** Legal advice for corporate clients on labor, taxation, real estate, and business operations.
+
+  - **Internal Regulations:** Participating in developing and reviewing internal forms such as democracy regulations, labor rules, and salary-bonus policies.
+
+  ## Experience
+
+  - Previously worked and interned at Ha Thi Investment Consulting Company, Vinh Yen City People's Court as legal staff and legal intern.
+  - Performed tasks such as contract review, drafting common documents, developing internal regulations, and legal translation.
+bodyContent_zh: |
+  ## 专业领域
+
+  阮翠恒负责以下领域：
+
+  - **合同：** 起草和审查合同，包括框架协议、服务合同和劳动合同。
+
+  - **企业咨询：** 为企业客户提供劳动、税务、房地产和商业运营方面的法律咨询。
+
+  - **内部规章：** 参与制定和审查民主规章、劳动规则和薪酬奖励政策等内部表格。
+
+  ## 经验
+
+  - 曾在河氏投资咨询公司、永安市人民法院担任法律人员和法律实习生。
+  - 执行合同审查、常用文件起草、内部规章制定和法律翻译等工作。
+bodyContent_ja: |
+  ## 専門分野
+
+  グエン・トゥイ・ハンは以下の分野を担当しています：
+
+  - **契約：** 基本契約、サービス契約、労働契約を含む契約の起草とレビュー。
+
+  - **企業コンサルティング：** 企業クライアントへの労働、税務、不動産、事業運営に関する法的アドバイス。
+
+  - **内部規程：** 民主規程、労働規則、給与・賞与規程などの内部フォームの策定とレビューへの参加。
+
+  ## 経験
+
+  - ハティ投資コンサルティング会社、ヴィンイェン市人民裁判所にて法務スタッフ、法務インターンとして勤務・インターン経験。
+  - 契約レビュー、一般文書の起草、内部規程の策定、法的翻訳などの業務を実施。
+bodyContent_ko: |
+  ## 전문 분야
+
+  응웬투이항이 담당하는 분야:
+
+  - **계약:** 기본 계약, 서비스 계약, 노동 계약을 포함한 계약 작성 및 검토.
+
+  - **기업 상담:** 기업 고객에 대한 노동, 세무, 부동산, 사업 운영에 관한 법률 자문.
+
+  - **내부 규정:** 민주 규정, 노동 규칙, 급여-보너스 정책 등 내부 양식 개발 및 검토 참여.
+
+  ## 경험
+
+  - 하티 투자 컨설팅 회사, 빈옌시 인민법원에서 법무 직원 및 법무 인턴으로 근무 및 인턴 경험.
+  - 계약 검토, 일반 문서 작성, 내부 규정 개발, 법률 번역 등의 업무 수행.
+draft: false
 ---
 
 ## Lĩnh vực chuyên môn

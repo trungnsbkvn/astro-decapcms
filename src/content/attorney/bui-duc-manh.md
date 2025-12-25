@@ -102,6 +102,75 @@ socialLinks:
   zalo: "0889956888"
 order: 18
 publishDate: 2024-01-01T00:00:00Z
+bodyContent_en: |
+  ## Areas of Expertise
+
+  Bùi Đức Mạnh is a legal expert with outstanding capabilities in the following fields:
+
+  - **Civil Law:** Professional consultant and drafter of civil contracts; legal representative in complex inheritance disputes; handling damage compensation claims with high success rates; protecting clients' rights in all civil transactions.
+
+  - **Land Law:** Deep understanding of Vietnamese land law; strategic advice on land administrative procedures, processes, and documentation; successful resolution of many land use right disputes; assisting clients with land use right certificate procedures.
+
+  - **Administrative Law:** Representing clients in administrative complaints and denunciations; building solid case files and effective evidence collection; participating in protecting clients' legitimate rights at competent authorities; advising on administrative cases with optimal legal strategies.
+
+  ## Professional Strengths
+
+  - Logical legal thinking and deep analytical capabilities
+  - Effective negotiation and dispute resolution skills
+  - Dedicated to clients, always prioritizing client interests
+  - Continuously updating the latest legal regulations
+bodyContent_zh: |
+  ## 专业领域
+
+  裴德孟是一位在以下领域具有出色能力的法律专家：
+
+  - **民事法：** 专业的民事合同咨询和起草；复杂遗产继承纠纷的法律代表；以高成功率处理损害赔偿要求；在所有民事交易中保护客户权益。
+
+  - **土地法：** 深入了解越南土地法；关于土地行政程序、流程和文件的战略建议；成功解决多起土地使用权纠纷；协助客户办理土地使用权证书手续。
+
+  - **行政法：** 在行政投诉和举报中代表客户；建立可靠的案件档案和有效的证据收集；参与在主管机关保护客户的合法权益；以最优法律策略为行政案件提供咨询。
+
+  ## 专业优势
+
+  - 逻辑法律思维和深入的分析能力
+  - 有效的谈判和争议解决技能
+  - 致力于客户，始终将客户利益放在首位
+  - 持续更新最新法律法规
+bodyContent_ja: |
+  ## 専門分野
+
+  ブイ・ドゥック・マインは、以下の分野で優れた能力を持つ法務専門家です：
+
+  - **民事法：** 民事契約の専門的なコンサルタントおよび起草者；複雑な遺産相続紛争における法的代理人；高い成功率での損害賠償請求の処理；すべての民事取引における依頼者の権利保護。
+
+  - **土地法：** ベトナム土地法への深い理解；土地行政手続き、プロセス、文書に関する戦略的アドバイス；多くの土地使用権紛争の成功裏の解決；土地使用権証明書手続きにおける依頼者支援。
+
+  - **行政法：** 行政苦情および告発における依頼者の代理；堅固な案件ファイルの構築と効果的な証拠収集；管轄当局における依頼者の正当な権利保護への参加；最適な法的戦略による行政事件のアドバイス。
+
+  ## 専門的強み
+
+  - 論理的な法的思考と深い分析能力
+  - 効果的な交渉と紛争解決スキル
+  - 依頼者に献身的で、常に依頼者の利益を優先
+  - 最新の法規制を継続的に更新
+bodyContent_ko: |
+  ## 전문 분야
+
+  부이득맹은 다음 분야에서 뛰어난 역량을 갖춘 법률 전문가입니다:
+
+  - **민사법:** 민사 계약의 전문 컨설턴트 및 작성자; 복잡한 상속 분쟁의 법적 대리인; 높은 성공률로 손해배상 청구 처리; 모든 민사 거래에서 고객 권리 보호.
+
+  - **토지법:** 베트남 토지법에 대한 깊은 이해; 토지 행정 절차, 프로세스 및 문서에 대한 전략적 조언; 많은 토지 사용권 분쟁의 성공적인 해결; 토지 사용권 증명서 절차에서 고객 지원.
+
+  - **행정법:** 행정 민원 및 고발에서 고객 대리; 견고한 사건 파일 구축 및 효과적인 증거 수집; 관할 당국에서 고객의 정당한 권리 보호 참여; 최적의 법적 전략으로 행정 사건 자문.
+
+  ## 전문적 강점
+
+  - 논리적 법적 사고와 깊은 분석 능력
+  - 효과적인 협상 및 분쟁 해결 기술
+  - 고객에게 헌신하며 항상 고객 이익을 우선시
+  - 최신 법률 규정을 지속적으로 업데이트
+draft: false
 ---
 
 ## Lĩnh vực chuyên môn

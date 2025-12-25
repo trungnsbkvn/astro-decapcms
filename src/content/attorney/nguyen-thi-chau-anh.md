@@ -102,6 +102,51 @@ languages_ko:
   - "영어"
 order: 24
 publishDate: 2025-01-01T00:00:00Z
+bodyContent_en: |
+  ## Introduction
+
+  Nguyễn Thị Châu Anh is a Legal Specialist at YP Law Firm since 2025. With a legal training foundation from Hanoi University, Châu Anh proactively cultivates legal knowledge and professional skills while actively applying theory to practice.
+
+  ## Experience
+
+  - June 2025 – September 2025: Internship at People's Court of District 7 – Bắc Ninh
+  Participated in supporting professional work at the Court, approached litigation procedures and trial practices, thereby enhancing legal understanding, legal thinking, and professional skills.
+  - From December 2025 to present: Legal Specialist at Youth & Partners Law Firm (YPLaw Firm)
+  Participating in supporting legal consultation activities, document drafting, legal regulation research, and assisting lawyers in working with clients.
+bodyContent_zh: |
+  ## 介绍
+
+  阮氏周英自2025年起担任YP律师事务所法律专员。凭借河内大学的法律培训基础，周英积极培养法律知识和专业技能，同时积极将理论应用于实践。
+
+  ## 经验
+
+  - 2025年6月 – 2025年9月：北宁第七区人民法院实习
+  参与支持法院的专业工作，接触诉讼程序和审判实践，从而增强法律理解、法律思维和专业技能。
+  - 2025年12月至今：Youth & Partners律师事务所（YP律师事务所）法律专员
+  参与支持法律咨询活动、文件起草、法律法规研究以及协助律师与客户合作。
+bodyContent_ja: |
+  ## 紹介
+
+  グエン・ティ・チャウ・アインは、2025年よりYP法律事務所の法務スペシャリストです。ハノイ大学の法律訓練を基盤に、チャウ・アインは積極的に法律知識と専門スキルを養い、理論を実務に応用しています。
+
+  ## 経験
+
+  - 2025年6月 – 2025年9月：バクニン第7区人民裁判所にてインターンシップ
+  裁判所での専門業務をサポートし、訴訟手続きと裁判実務に触れ、法律理解、法的思考、専門スキルを向上。
+  - 2025年12月から現在：Youth & Partners法律事務所（YP法律事務所）の法務スペシャリスト
+  法的相談活動、文書作成、法規制研究のサポート、およびクライアントとの業務における弁護士の補助に参加。
+bodyContent_ko: |
+  ## 소개
+
+  응웬티차우안은 2025년부터 YP 법률 회사의 법무 전문가입니다. 하노이대학교의 법률 교육 기반으로, 차우안은 적극적으로 법률 지식과 전문 기술을 함양하며 이론을 실무에 적용합니다.
+
+  ## 경험
+
+  - 2025년 6월 – 2025년 9월: 박닌 제7지역 인민법원 인턴십
+  법원에서 전문 업무 지원에 참여하고, 소송 절차와 재판 관행을 접하며 법률 이해, 법적 사고, 전문 기술을 향상.
+  - 2025년 12월 ~ 현재: Youth & Partners 법률 회사(YP 법률 회사) 법무 전문가
+  법률 상담 활동, 문서 작성, 법률 규정 연구 지원 및 고객과의 업무에서 변호사 보조 참여.
+draft: false
 ---
 
 ## Giới thiệu

@@ -118,6 +118,46 @@ languages_ko:
   - "베트남어"
   - "영어"
   - "일본어"
+bodyContent_en: |
+  ## About Jurist Nguyễn Thu Nga
+
+  Jurist Nga has many years of experience in the legal field, specializing in advising FDI enterprises.
+
+  ## Areas of Responsibility
+
+  - **Corporate Law:** Comprehensive legal advice on corporate establishment, operations, and governance, protecting shareholder rights
+  - **Labor Law:** Consulting on labor contracts, employee rights, labor disputes, social insurance
+  - **Investment:** Legal advice on domestic and foreign investment matters, investment procedures, capital transfers
+bodyContent_zh: |
+  ## 关于法律专家阮秋娥
+
+  法律专家雅在法律领域拥有多年经验，专门为外商直接投资企业提供咨询。
+
+  ## 负责领域
+
+  - **企业法：** 关于企业设立、运营和治理的全面法律咨询，保护股东权益
+  - **劳动法：** 关于劳动合同、员工权利、劳动纠纷、社会保险的咨询
+  - **投资：** 关于国内外投资事务、投资程序、资本转让的法律咨询
+bodyContent_ja: |
+  ## 法律家グエン・トゥ・ガーについて
+
+  法律家ガーは法律分野で多年の経験を持ち、FDI企業へのアドバイスを専門としています。
+
+  ## 担当分野
+
+  - **企業法：** 企業設立、運営、ガバナンスに関する包括的な法的アドバイス、株主権の保護
+  - **労働法：** 労働契約、従業員の権利、労働紛争、社会保険に関するコンサルティング
+  - **投資：** 国内外投資事項、投資手続き、資本譲渡に関する法的アドバイス
+bodyContent_ko: |
+  ## 법률가 응웬투응아 소개
+
+  법률가 응아는 법률 분야에서 다년간의 경험을 보유하고 있으며 FDI 기업 자문을 전문으로 합니다.
+
+  ## 담당 분야
+
+  - **기업법:** 기업 설립, 운영 및 지배구조에 관한 포괄적인 법률 자문, 주주 권리 보호
+  - **노동법:** 노동 계약, 직원 권리, 노동 분쟁, 사회보험에 대한 상담
+  - **투자:** 국내외 투자 사안, 투자 절차, 자본 양도에 대한 법률 자문
 draft: false
 ---
 

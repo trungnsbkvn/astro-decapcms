@@ -87,6 +87,43 @@ socialLinks:
   zalo: "0889956888"
 order: 23
 publishDate: 2024-01-01T00:00:00Z
+bodyContent_en: |
+  ## Introduction
+
+  Nguyễn Thị Quỳnh Giang is a Legal Specialist at YP Law Firm since 2025. With a legal foundation from a Bachelor's degree in Law from VNU University of Law, Vietnam National University Hanoi, Quỳnh Giang constantly strives to cultivate and apply knowledge and skills to practical work.
+
+  ## Experience
+
+  - June 2024 – January 2025: Internship at Nam Từ Liêm District People's Court, approaching litigation procedures and trial practices, thereby enhancing understanding of law and professional skills.
+  - Currently, Quỳnh Giang is a Legal Specialist at Youth & Partners Law Firm (YPLaw Firm), learning and contributing to the company's consultation and legal support activities.
+bodyContent_zh: |
+  ## 介绍
+
+  阮氏琼江自2025年起担任YP律师事务所法律专员。凭借越南国家大学河内法律大学法学学士学位的法律基础，琼江不断努力培养并将知识和技能应用于实际工作。
+
+  ## 经验
+
+  - 2024年6月 – 2025年1月：南慈廉区人民法院实习，接触诉讼程序和审判实践，从而增强对法律的理解和专业技能。
+  - 目前，琼江是Youth & Partners律师事务所（YP律师事务所）的法律专员，学习并为公司的咨询和法律支持活动做出贡献。
+bodyContent_ja: |
+  ## 紹介
+
+  グエン・ティ・クイン・ザンは、2025年よりYP法律事務所の法務スペシャリストです。ベトナム国家大学ハノイ校法科大学の法学士号を基盤に、クイン・ザンは常に知識とスキルを磨き、実務に応用することに努めています。
+
+  ## 経験
+
+  - 2024年6月 – 2025年1月：ナムトゥリエム区人民裁判所にてインターンシップ、訴訟手続きと裁判実務に触れ、法律の理解と専門スキルを向上。
+  - 現在、クイン・ザンはYouth & Partners法律事務所（YP法律事務所）の法務スペシャリストとして、会社のコンサルティングと法的支援活動に学び、貢献しています。
+bodyContent_ko: |
+  ## 소개
+
+  응웬티퀸장은 2025년부터 YP 법률 회사의 법무 전문가입니다. 베트남 국가대학교 하노이 법과대학 법학 학사 학위의 법률 기반을 바탕으로, 퀸장은 지속적으로 지식과 기술을 연마하고 실무에 적용하기 위해 노력합니다.
+
+  ## 경험
+
+  - 2024년 6월 – 2025년 1월: 남뜨리엠 구 인민법원 인턴십, 소송 절차와 재판 관행에 접근하여 법률 이해와 전문 기술 향상.
+  - 현재 퀸장은 Youth & Partners 법률 회사(YP 법률 회사)의 법무 전문가로서 회사의 상담 및 법률 지원 활동에 배우고 기여하고 있습니다.
+draft: false
 ---
 
 ## Giới thiệu

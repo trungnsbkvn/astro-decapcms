@@ -109,6 +109,71 @@ socialLinks:
 yearsExperience: 5
 featured: false
 order: 10
+bodyContent_en: |
+  ## Introduction
+
+  Attorney Nguyễn Hoàng Ngọc Lan is a legal expert with deep expertise in the healthcare field.
+
+  ## Professional Experience
+
+  - Medical practice operating licenses
+  - Adjustment of medical practice operating licenses
+  - Medical practice certificates and other specialized licenses in the healthcare field
+
+  ## Achievements
+
+  - Successfully advised many hospitals, clinics, medical centers, and healthcare facilities
+  - Helped clients understand legal requirements, ensuring documentation meets all regulatory standards
+  - Represented clients in working with regulatory agencies, ensuring the licensing process is fast, transparent, and efficient
+bodyContent_zh: |
+  ## 介绍
+
+  阮黄玉兰律师是一位在医疗保健领域拥有深厚专业知识的法律专家。
+
+  ## 专业经验
+
+  - 医疗执业许可证
+  - 医疗执业许可证调整
+  - 医疗执业证书及医疗保健领域的其他专业许可
+
+  ## 成就
+
+  - 成功为多家医院、诊所、医疗中心和医疗保健机构提供咨询
+  - 帮助客户了解法律要求，确保文件符合所有监管标准
+  - 代表客户与监管机构合作，确保许可流程快速、透明、高效
+bodyContent_ja: |
+  ## 紹介
+
+  グエン・ホアン・ゴック・ラン弁護士は、医療分野で深い専門知識を持つ法律専門家です。
+
+  ## 専門経験
+
+  - 医療業務営業許可
+  - 医療業務営業許可の調整
+  - 医療業務証明書および医療分野のその他の専門許可
+
+  ## 実績
+
+  - 多くの病院、診療所、医療センター、医療施設を成功裏にアドバイス
+  - 依頼者が法的要件を理解し、文書がすべての規制基準を満たすことを支援
+  - 規制当局との業務において依頼者を代理し、許可プロセスが迅速で透明性があり効率的であることを確保
+bodyContent_ko: |
+  ## 소개
+
+  응웬호앙응옥란 변호사는 의료 분야에서 깊은 전문 지식을 갖춘 법률 전문가입니다.
+
+  ## 전문 경험
+
+  - 의료 업무 영업 허가
+  - 의료 업무 영업 허가 조정
+  - 의료 업무 증명서 및 의료 분야의 기타 전문 허가
+
+  ## 성과
+
+  - 많은 병원, 클리닉, 의료 센터 및 의료 시설을 성공적으로 자문
+  - 고객이 법적 요구사항을 이해하도록 돕고, 문서가 모든 규제 기준을 충족하도록 보장
+  - 규제 기관과의 업무에서 고객을 대리하여 허가 프로세스가 신속하고 투명하며 효율적이도록 보장
+draft: false
 ---
 
 ## Giới thiệu
