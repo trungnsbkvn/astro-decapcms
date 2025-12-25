@@ -403,7 +403,9 @@
     "languages": "Ngôn ngữ",
     "connect": "Kết nối",
     "professionalInfo": "Thông tin chuyên môn",
-    "freeConsultation": "Tư vấn miễn phí"
+    "freeConsultation": "Tư vấn miễn phí",
+    "video": "Video giới thiệu",
+    "authorPostsDesc": "Các bài viết chuyên sâu về mọi khía cạnh pháp lý."
   },
   "servicesExtra": {
     "enterprise": "Doanh nghiệp",

@@ -11,6 +11,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import AuthorRelatedPosts from '~/components/blog/AuthorRelatedPosts.astro';
 import Image from '~/components/common/Image.astro';
 import { Icon } from 'astro-icon/components';
+import { YouTube } from 'astro-embed';
+import { marked } from 'marked';
 import { getPermalink } from '~/utils/blog-permalinks';
 import { findImage } from '~/utils/images';
 import {
@@ -36,6 +38,9 @@ interface Props {
 
 const { attorney } = Astro.props;
 const { data } = attorney;
+
+// Render the markdown body content
+const { Content } = await attorney.render();
 
 // Extract name parts for i18n
 const nameParts = extractNamePrefix(data.name);
@@ -265,6 +270,83 @@ const resolvedImage = data.image ? await findImage(data.image) : null;
             </div>
           </div>
 
+          <!-- YouTube Video Section -->
+          {data.youtubeId && (
+            <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+                  <Icon name="tabler:brand-youtube" class="w-6 h-6 text-white" />
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white" data-i18n="lawyerProfile.video">
+                  Video giới thiệu
+                </h2>
+              </div>
+              
+              <div class="multilang-content">
+                <YouTube
+                  id={data.youtubeId}
+                  title={data.youtubeTitle || data.name}
+                />
+                <style is:inline>
+                  lite-youtube {
+                    margin: 0 auto;
+                    max-width: 100%;
+                    border-radius: 1rem;
+                  }
+                </style>
+                {data.youtubeTitle && (
+                  <p class="mt-4 text-center text-gray-600 dark:text-gray-400 italic">
+                    <!-- Vietnamese (default) -->
+                    <span data-lang="vi">{data.youtubeTitle}</span>
+                    <!-- English -->
+                    {data.youtubeTitle_en && <span data-lang="en" class="hidden">{data.youtubeTitle_en}</span>}
+                    <!-- Chinese -->
+                    {data.youtubeTitle_zh && <span data-lang="zh" class="hidden">{data.youtubeTitle_zh}</span>}
+                    <!-- Japanese -->
+                    {data.youtubeTitle_ja && <span data-lang="ja" class="hidden">{data.youtubeTitle_ja}</span>}
+                    <!-- Korean -->
+                    {data.youtubeTitle_ko && <span data-lang="ko" class="hidden">{data.youtubeTitle_ko}</span>}
+                  </p>
+                )}
+              </div>
+            </div>
+          )}
+
+          <!-- Markdown Body Content Section -->
+          <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                <Icon name="tabler:file-text" class="w-6 h-6 text-white" />
+              </div>
+              <h2 class="text-2xl font-bold text-gray-900 dark:text-white" data-i18n="lawyerProfile.experience">
+                Kinh nghiệm
+              </h2>
+            </div>
+            
+            <div class="prose prose-lg dark:prose-invert max-w-none prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-strong:text-gray-900 dark:prose-strong:text-white prose-li:text-gray-700 dark:prose-li:text-gray-300 prose-table:w-full prose-th:bg-gray-100 dark:prose-th:bg-slate-700 prose-th:p-3 prose-td:p-3 prose-td:border prose-td:border-gray-200 dark:prose-td:border-gray-700 multilang-content">
+              <!-- Vietnamese (default) - rendered from markdown body -->
+              <div data-lang="vi">
+                <Content />
+              </div>
+              <!-- English -->
+              {data.bodyContent_en && (
+                <div data-lang="en" class="hidden" set:html={marked.parse(data.bodyContent_en)} />
+              )}
+              <!-- Chinese -->
+              {data.bodyContent_zh && (
+                <div data-lang="zh" class="hidden" set:html={marked.parse(data.bodyContent_zh)} />
+              )}
+              <!-- Japanese -->
+              {data.bodyContent_ja && (
+                <div data-lang="ja" class="hidden" set:html={marked.parse(data.bodyContent_ja)} />
+              )}
+              <!-- Korean -->
+              {data.bodyContent_ko && (
+                <div data-lang="ko" class="hidden" set:html={marked.parse(data.bodyContent_ko)} />
+              )}
+            </div>
+          </div>
+
           <!-- Education Section -->
           {data.education && data.education.length > 0 && (
             <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
@@ -278,10 +360,10 @@ const resolvedImage = data.image ? await findImage(data.image) : null;
               </div>
               
               <div class="space-y-6 multilang-content">
-                {data.education.map((edu, index) => (
+                {data.education.map((edu) => (
                   <div class="relative pl-8 pb-6 border-l-2 border-blue-200 dark:border-blue-800 last:pb-0">
                     <div class="absolute -left-3 top-0 w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
-                      <span class="text-white text-xs font-bold">{index + 1}</span>
+                      <Icon name="tabler:school" class="w-3.5 h-3.5 text-white" />
                     </div>
                     <div class="bg-gray-50 dark:bg-slate-700 rounded-xl p-4">
                       <!-- Vietnamese (default) -->
@@ -615,7 +697,8 @@ const resolvedImage = data.image ? await findImage(data.image) : null;
     id="blog"
     title="Bài viết của tác giả"
     i18nTitle="lawyerProfile.authorPosts"
-    information={`Các bài viết chuyên sâu của ${data.name} về mọi khía cạnh pháp lý.`}
+    information="Các bài viết chuyên sâu về mọi khía cạnh pháp lý."
+    i18nInformation="lawyerProfile.authorPostsDesc"
     author={author}
     types={types}
   >

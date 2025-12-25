@@ -403,7 +403,9 @@
     "languages": "언어",
     "connect": "연결",
     "professionalInfo": "전문 정보",
-    "freeConsultation": "무료 상담"
+    "freeConsultation": "무료 상담",
+    "video": "소개 영상",
+    "authorPostsDesc": "모든 법률 분야에 대한 심층 기사."
   },
   "servicesExtra": {
     "enterprise": "기업",

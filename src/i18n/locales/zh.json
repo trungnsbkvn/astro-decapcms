@@ -403,7 +403,9 @@
     "languages": "语言能力",
     "connect": "社交媒体",
     "professionalInfo": "专业信息",
-    "freeConsultation": "免费咨询"
+    "freeConsultation": "免费咨询",
+    "video": "视频介绍",
+    "authorPostsDesc": "关于各种法律问题的深度文章。"
   },
   "servicesExtra": {
     "enterprise": "企业",

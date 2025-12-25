@@ -246,6 +246,20 @@ const attorneyCollection = defineCollection({
     featured: z.boolean().optional(),
     order: z.number().optional(),
     draft: z.boolean().optional(),
+    
+    // Media
+    youtubeId: z.string().optional(),
+    youtubeTitle: z.string().optional(),
+    youtubeTitle_en: z.string().optional(),
+    youtubeTitle_zh: z.string().optional(),
+    youtubeTitle_ja: z.string().optional(),
+    youtubeTitle_ko: z.string().optional(),
+    
+    // Body content for other languages (Vietnamese is in the markdown body)
+    bodyContent_en: z.string().optional(),
+    bodyContent_zh: z.string().optional(),
+    bodyContent_ja: z.string().optional(),
+    bodyContent_ko: z.string().optional(),
   }),
 });
 

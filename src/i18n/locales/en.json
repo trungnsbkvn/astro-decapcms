@@ -403,7 +403,9 @@
     "languages": "Languages",
     "connect": "Connect",
     "professionalInfo": "Professional Information",
-    "freeConsultation": "Free Consultation"
+    "freeConsultation": "Free Consultation",
+    "video": "Introduction Video",
+    "authorPostsDesc": "In-depth articles on all legal aspects."
   },
   "servicesExtra": {
     "enterprise": "Enterprise",

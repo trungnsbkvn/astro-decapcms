@@ -403,7 +403,9 @@
     "languages": "言語",
     "connect": "つながる",
     "professionalInfo": "専門情報",
-    "freeConsultation": "無料相談"
+    "freeConsultation": "無料相談",
+    "video": "紹介動画",
+    "authorPostsDesc": "あらゆる法的側面に関する詳細な記事。"
   },
   "servicesExtra": {
     "enterprise": "企業",
