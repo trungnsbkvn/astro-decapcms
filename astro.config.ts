@@ -43,16 +43,17 @@ export default defineConfig({
         // OPTIMIZED: Only include icons actually used (was '*' = 5000+ icons)
         // This significantly reduces build time and bundle size
         tabler: [
-          'award', 'book', 'brand-facebook', 'brand-linkedin', 'brand-meta',
+          'arrow-right', 'award', 'book', 'brand-facebook', 'brand-linkedin', 'brand-meta',
           'brand-whatsapp', 'brand-x', 'brand-youtube', 'briefcase', 'building',
-          'calendar-event', 'calendar-month', 'chart-arrows', 'check', 'chevron-down',
+          'building-skyscraper', 'calendar', 'calendar-event', 'calendar-month',
+          'chart-arrows', 'check', 'checklist', 'chevron-down',
           'chevron-left', 'chevron-right', 'clock', 'clock-24', 'download', 'file-text',
-          'globe', 'headset', 'heart', 'id-badge-2', 'info-square', 'language', 'mail',
+          'gavel', 'globe', 'headset', 'heart', 'id-badge-2', 'info-square', 'language', 'mail',
           'mailbox', 'map-pin', 'message-circle', 'message-star', 'moon', 'phone',
           'phone-call', 'point-filled', 'report-search', 'rosette', 'rss', 'school',
           'shield-checkered', 'sort-a-z', 'square-number-1', 'square-number-2',
           'square-number-3', 'square-number-4', 'star', 'star-filled', 'step-out',
-          'sun', 'template', 'trophy', 'user', 'user-check', 'world', 'x',
+          'sun', 'template', 'trophy', 'user', 'user-check', 'users', 'world', 'x',
         ],
         'flat-color-icons': [
           'template',

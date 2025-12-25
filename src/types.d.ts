@@ -180,12 +180,17 @@ export interface Testimonial {
 
 export interface Team {
   name?: string;
+  name_en?: string;
+  name_zh?: string;
+  name_ja?: string;
+  name_ko?: string;
   title?: string;
   position?: string;
   i18nPosition?: string;
   i18nMemberTitle?: string;
   image?: string | unknown;
   link?: string;
+  featured?: boolean;
 }
 
 export interface Input {

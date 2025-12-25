@@ -132,7 +132,9 @@ export const positionI18nKeys: Record<string, string> = {
   'Luật sư tập sự': 'team.traineeLawyer',
   'Luật gia': 'team.jurist',
   'Chuyên viên pháp lý': 'team.legalStaff',
+  'Chuyên viên Pháp lý': 'team.legalStaff',
   'Thực tập sinh pháp lý': 'team.legalIntern',
+  'Thực tập sinh Pháp lý': 'team.legalIntern',
 };
 
 /**
@@ -183,6 +185,10 @@ export function transformAttorneysToTeams(attorneys: Attorney[]) {
     
     return {
       name: baseName,
+      name_en: attorney.data.name_en || baseName,
+      name_zh: attorney.data.name_zh || baseName,
+      name_ja: attorney.data.name_ja || baseName,
+      name_ko: attorney.data.name_ko || baseName,
       title: prefix || undefined,
       i18nMemberTitle: i18nKey || undefined,
       position: attorney.data.position || 'Luật sư',

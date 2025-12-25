@@ -3,6 +3,7 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 import Button from '~/components/ui/Button.astro';
 import Image from '~/components/common/Image.astro';
+import { Icon } from 'astro-icon/components';
 import type { Teams as Props } from '~/types';
 
 const {
@@ -23,25 +24,25 @@ const {
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} i18nTitle={i18nTitle} i18nSubtitle={i18nSubtitle} i18nTagline={i18nTagline} />
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
     {
       teams &&
-        teams.map(({ name, title: memberTitle, position, image, link, i18nPosition, i18nMemberTitle }) => (
-          <div class="w-full">
-            <div class="flex flex-col h-full p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600">
-              <a class="relative block group" href={link ?? 'javascript:void(0)'}>
+        teams.map(({ name, name_en, name_zh, name_ja, name_ko, title: memberTitle, position, image, link, i18nPosition, i18nMemberTitle, featured }) => (
+          <div class="w-full group">
+            <div class="flex flex-col h-full bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-xl dark:shadow-none dark:border dark:border-slate-700 overflow-hidden transition-all duration-300 hover:-translate-y-1">
+              <a class="relative block" href={link ?? 'javascript:void(0)'}>
                 {image && (
-                  <div class="aspect-square w-full overflow-hidden rounded border border-slate-200 dark:border-slate-600">
+                  <div class="aspect-[4/5] w-full overflow-hidden">
                     {typeof image === 'string' ? (
                       <Fragment set:html={image} />
                     ) : (
                       <Image
-                        class="w-full h-full object-cover"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         width={400}
-                        height={400}
+                        height={500}
                         widths={[400]}
                         layout="cover"
                         format="avif"
@@ -50,30 +51,47 @@ const {
                     )}
                   </div>
                 )}
-              </a>
-              <hr class="border-slate-200 dark:border-slate-600 my-4" />
-              <div class="flex items-center">
-                <div class="grow">
-                  {name && (
-                    <p class="text-base font-semibold">
-                      <a class="relative block group" href={link ?? 'javascript:void(0)'}>
-                        {memberTitle && (
-                          <span 
-                            class={i18nMemberTitle ? 'notranslate' : ''}
-                            {...(i18nMemberTitle ? { 'data-i18n': i18nMemberTitle, 'translate': 'no' } : {})}
-                          >{memberTitle}</span>
-                        )}
-                        {memberTitle && ' '}
-                        <span class="notranslate" translate="no">{name}</span>
-                      </a>
-                    </p>
-                  )}
-                  {position && (
-                    <p 
-                      class={`text-xs text-muted ${i18nPosition ? 'notranslate' : ''}`}
+                {featured && (
+                  <div class="absolute top-3 right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg flex items-center gap-1">
+                    <Icon name="tabler:star-filled" class="w-3 h-3" />
+                    <span data-i18n="common.featured">Nổi bật</span>
+                  </div>
+                )}
+                {position && (
+                  <div class="absolute bottom-3 left-3 bg-blue-600/90 backdrop-blur-sm text-white text-xs font-medium px-2 py-1 rounded-md shadow-lg">
+                    <span 
+                      class={i18nPosition ? 'notranslate' : ''}
                       {...(i18nPosition ? { 'data-i18n': i18nPosition, 'translate': 'no' } : {})}
-                    >{position}</p>
+                    >{position}</span>
+                  </div>
+                )}
+              </a>
+              <div class="p-4 flex-grow flex flex-col justify-between">
+                <div>
+                  {name && (
+                    <h3 class="text-base font-bold text-gray-900 dark:text-white mb-1 line-clamp-2">
+                      <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href={link ?? 'javascript:void(0)'}>
+                        <span 
+                          class="notranslate multilang-name" 
+                          translate="no"
+                          data-name-vi={name}
+                          data-name-en={name_en || name}
+                          data-name-zh={name_zh || name}
+                          data-name-ja={name_ja || name}
+                          data-name-ko={name_ko || name}
+                        >{name}</span>
+                      </a>
+                    </h3>
                   )}
+                </div>
+                <div class="mt-3 pt-3 border-t border-gray-100 dark:border-slate-700">
+                  <a 
+                    href={link ?? 'javascript:void(0)'} 
+                    class="inline-flex items-center gap-1 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                  >
+                    <span data-i18n="team.viewProfile">Xem hồ sơ</span>
+                    <Icon name="tabler:chevron-right" class="w-4 h-4" />
+                  </a>
                 </div>
               </div>
             </div>

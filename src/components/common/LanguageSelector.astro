@@ -469,6 +469,28 @@ const textToKeyMap: Record<string, string> = {
   'Cộng sự': 'team.associate',
   'Chuyên viên tư vấn pháp lý': 'team.legalConsultant',
   'Trợ lý pháp lý': 'team.paralegal',
+  'Đội ngũ chuyên gia': 'team.expertTeam',
+  'Xem đội ngũ': 'team.viewTeam',
+  'Đội ngũ của chúng tôi': 'team.ourTeam',
+  'Thành viên': 'team.members',
+  'Ngôn ngữ hỗ trợ': 'team.supportedLanguages',
+  'Năm kinh nghiệm': 'team.yearsExperience',
+  'Giới thiệu đội ngũ': 'team.aboutTeam',
+  'Chuyên môn đội ngũ': 'team.expertise',
+  'Tư vấn doanh nghiệp': 'team.corporateConsulting',
+  'Pháp luật lao động': 'team.laborLaw',
+  'Đầu tư nước ngoài': 'team.foreignInvestment',
+  'Audit & Due Diligence': 'team.auditDD',
+  'Tranh tụng': 'team.litigation',
+  'Hỗ trợ đa ngôn ngữ': 'team.multiLanguage',
+  'Gặp gỡ đội ngũ': 'team.meetTeam',
+  'Cần tư vấn pháp lý?': 'team.needLegalAdvice',
+  'Dịch vụ nổi bật': 'team.featuredServices',
+  'Pháp lý doanh nghiệp': 'team.legalServices',
+  'Dịch vụ đánh giá': 'team.evaluationServices',
+  'Xem hồ sơ': 'team.viewProfile',
+  'Liên hệ ngay': 'team.contactNow',
+  'Xem dịch vụ': 'team.viewServices',
   
   // Author pages - tac-gia/*.astro
   'Học vấn': 'post.education',
@@ -823,6 +845,16 @@ function applyTranslations(lang: string): void {
       if (translation) {
         el.setAttribute('placeholder', translation);
       }
+    }
+  });
+
+  // Translate multilingual name elements (e.g., attorney names)
+  // These use data-name-vi, data-name-en, data-name-zh, data-name-ja, data-name-ko
+  document.querySelectorAll('.multilang-name').forEach(el => {
+    const langKey = lang === 'zh-CN' ? 'zh' : lang;
+    const localizedName = el.getAttribute(`data-name-${langKey}`);
+    if (localizedName) {
+      el.textContent = localizedName;
     }
   });
 
