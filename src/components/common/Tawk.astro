@@ -116,25 +116,43 @@ import Image from '~/components/common/Image.astro';
   document.addEventListener('astro:after-swap', initFloatingButtons);
 </script>
 
-<!-- Tawk.to Chat Widget - Deferred loading for better performance -->
-<!-- Note: Tawk requires direct DOM access, not compatible with Partytown -->
+<!-- 
+  Tawk.to Chat Widget - Deferred Loading
+  Tawk requires main thread DOM access (creates iframe widget),
+  so we defer loading until after page is interactive
+-->
 <script is:inline>
-  // Load Tawk after page is interactive using requestIdleCallback
+  // Load Tawk after page is fully loaded to avoid blocking render
   function loadTawk() {
+    if (window.Tawk_API) return; // Already loaded
+    
     var Tawk_API = window.Tawk_API || {};
     var Tawk_LoadStart = new Date();
+    
     var s1 = document.createElement("script");
     s1.async = true;
     s1.src = 'https://embed.tawk.to/60e7f020d6e7610a49aa63d1/1fa50407q';
     s1.charset = 'UTF-8';
     s1.setAttribute('crossorigin', '*');
-    document.head.appendChild(s1);
+    document.body.appendChild(s1);
   }
   
-  // Defer loading until browser is idle, with 3s timeout fallback
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(loadTawk, { timeout: 3000 });
+  // Defer until page is idle
+  if (document.readyState === 'complete') {
+    // Page already loaded, use requestIdleCallback or setTimeout
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadTawk, { timeout: 4000 });
+    } else {
+      setTimeout(loadTawk, 2000);
+    }
   } else {
-    setTimeout(loadTawk, 2000);
+    // Wait for load event, then defer
+    window.addEventListener('load', function() {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadTawk, { timeout: 4000 });
+      } else {
+        setTimeout(loadTawk, 2000);
+      }
+    }, { once: true });
   }
 </script>

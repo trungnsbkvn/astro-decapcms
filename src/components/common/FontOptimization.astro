@@ -4,12 +4,18 @@
  * - Uses locally bundled @fontsource-variable/inter (no external requests!)
  * - Implements font-display: swap via CSS
  * - Critical font styles inlined for faster rendering
- * - Fonts are preloaded via @fontsource-variable/inter import
+ * - Font files are bundled by @fontsource-variable/inter with dynamic hashes
  */
 ---
 
 <!-- Critical font CSS - Inter is bundled via @fontsource-variable/inter in CustomStyles.astro -->
-<style>
+<style is:inline>
+  /* Force font-display: swap on all @font-face rules */
+  @font-face {
+    font-family: 'Inter Variable';
+    font-display: swap;
+  }
+  
   /* Critical font optimization */
   html {
     -webkit-font-smoothing: antialiased;

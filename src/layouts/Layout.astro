@@ -15,7 +15,6 @@ import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
 import Tawk from '~/components/common/Tawk.astro';
 import EarlyTranslationScript from '~/components/common/EarlyTranslationScript.astro';
-import GoogleTranslate from '~/components/common/GoogleTranslate.astro';
 import TranslationNotice from '~/components/common/TranslationNotice.astro';
 // import { ViewTransitions } from 'astro:transitions';
 
@@ -23,14 +22,16 @@ import type { MetaData as MetaDataType } from '~/types';
 
 export interface Props {
   metadata?: MetaDataType;
+  /** Disable Google Translate for this page (only use i18n) */
+  disableGoogleTranslate?: boolean;
 }
 
-const { metadata = {} } = Astro.props;
+const { metadata = {}, disableGoogleTranslate = false } = Astro.props;
 const { language, textDirection } = I18N;
 ---
 
 <!doctype html>
-<html lang={language} dir={textDirection} class="2xl:text-[18px]">
+<html lang={language} dir={textDirection} class="2xl:text-[18px]" data-no-google-translate={disableGoogleTranslate ? '' : undefined}>
 <head>
     <!-- Early Translation Script (must be first in head to prevent FOUC) -->
     <EarlyTranslationScript />
@@ -45,6 +46,9 @@ const { language, textDirection } = I18N;
     <ApplyColorMode />
     <FontOptimization />
     <CustomStyles />
+    
+    <!-- Critical CSS hint: Help browser prioritize CSS -->
+    <link rel="preconnect" href="/.netlify" crossorigin />
     
     <!-- External CSS (render-blocking but needed) -->
     <Favicons />
@@ -98,14 +102,7 @@ const { language, textDirection } = I18N;
     <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-md">Chuyển đến nội dung chính</a>
     
-    <!-- Google Translate Widget (hidden, used for translation) -->
-    <GoogleTranslate />
-    
-    <main id="main-content">
-      <slot />
-    </main>
-
-    </main>
+    <slot />
 
     <!-- Translation Notice (shows at bottom when Google Translate is active) -->
     <TranslationNotice autoDismissSeconds={3} />

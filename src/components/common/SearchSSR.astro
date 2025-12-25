@@ -46,9 +46,22 @@ import SearchIcon from '~/components/icons/SearchIcon.astro';
 </site-search>
 
 <script>
-  import { animate } from 'motion';
-  // @ts-ignore - Fuse.js loaded dynamically
-  import Fuse from 'fuse.js';
+  // Defer imports to avoid blocking initial render
+  let Fuse: typeof import('fuse.js').default;
+  let animate: typeof import('motion').animate;
+  
+  // Lazy load dependencies only when search is opened
+  async function loadDependencies() {
+    if (!Fuse) {
+      const [fuseModule, motionModule] = await Promise.all([
+        import('fuse.js'),
+        import('motion')
+      ]);
+      Fuse = fuseModule.default;
+      animate = motionModule.animate;
+    }
+    return { Fuse, animate };
+  }
 
   interface SearchItem {
     title: string;
@@ -60,7 +73,7 @@ import SearchIcon from '~/components/icons/SearchIcon.astro';
   }
 
   class SiteSearch extends HTMLElement {
-    private fuse: Fuse<SearchItem> | null = null;
+    private fuse: InstanceType<typeof import('fuse.js').default> | null = null;
     private searchData: SearchItem[] = [];
     private searchInput: HTMLInputElement | null = null;
     private resultsContainer: HTMLElement | null = null;
@@ -86,9 +99,12 @@ import SearchIcon from '~/components/icons/SearchIcon.astro';
         }
       };
 
-      const openModal = (event?: MouseEvent) => {
+      const openModal = async (event?: MouseEvent) => {
         dialog.showModal();
-        animate(
+        
+        // Load dependencies and animate
+        const { animate: animateFn } = await loadDependencies();
+        animateFn(
           'dialog',
           {
             clipPath: ['polygon(0 0, 100% 0, 100% -200%, -200% -200%)', 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)'],
@@ -150,8 +166,9 @@ import SearchIcon from '~/components/icons/SearchIcon.astro';
         const text = await response.text();
         this.searchData = text ? JSON.parse(text) : [];
 
-        // Initialize Fuse.js with Vietnamese-friendly options
-        this.fuse = new Fuse(this.searchData, {
+        // Initialize Fuse.js with Vietnamese-friendly options (lazy loaded)
+        const { Fuse: FuseClass } = await loadDependencies();
+        this.fuse = new FuseClass(this.searchData, {
           keys: [
             { name: 'title', weight: 0.4 },
             { name: 'excerpt', weight: 0.3 },

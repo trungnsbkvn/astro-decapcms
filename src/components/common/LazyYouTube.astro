@@ -62,10 +62,12 @@ const thumbnailUrl = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 
 <script>
   // Lazy load YouTube only when clicked or visible + scrolled
-  document.addEventListener('DOMContentLoaded', () => {
-    const containers = document.querySelectorAll<HTMLElement>('.lazy-youtube-container');
+  function initLazyYouTube() {
+    const containers = document.querySelectorAll<HTMLElement>('.lazy-youtube-container:not(.initialized)');
     
     containers.forEach(container => {
+      container.classList.add('initialized');
+      
       const loadYouTube = async () => {
         if (container.classList.contains('loaded')) return;
         
@@ -77,25 +79,44 @@ const thumbnailUrl = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
         // Mark as loaded immediately to prevent double-loading
         container.classList.add('loaded');
         
-        // Dynamically import lite-youtube-embed
         try {
-          // Create lite-youtube element
+          // Load lite-youtube-embed from CDN if not already loaded
+          if (!customElements.get('lite-youtube')) {
+            // Load CSS
+            const css = document.createElement('link');
+            css.rel = 'stylesheet';
+            css.href = 'https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.css';
+            document.head.appendChild(css);
+            
+            // Load JS
+            await new Promise<void>((resolve, reject) => {
+              const script = document.createElement('script');
+              script.src = 'https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.js';
+              script.onload = () => resolve();
+              script.onerror = () => reject(new Error('Failed to load lite-youtube'));
+              document.head.appendChild(script);
+            });
+            
+            // Wait for custom element to be defined
+            await customElements.whenDefined('lite-youtube');
+          }
+          
+          // Create lite-youtube element with jpg poster to avoid webp 404s
           const liteYT = document.createElement('lite-youtube');
           liteYT.setAttribute('videoid', id);
           liteYT.setAttribute('playlabel', `Play: ${title}`);
-          liteYT.style.cssText = 'margin: 0 auto; max-width: 100%; width: 100%;';
+          // Use jpg thumbnail to avoid webp 404 errors on older videos
+          liteYT.setAttribute('posterquality', 'hqdefault');
+          liteYT.setAttribute('params', 'rel=0');
+          liteYT.style.cssText = 'margin: 0 auto; max-width: 100%; width: 100%; background-image: none;';
+          
+          // Set poster manually with jpg to prevent webp fetch
+          const posterUrl = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+          liteYT.style.backgroundImage = `url('${posterUrl}')`;
           
           // Clear container and add the YouTube element
           container.innerHTML = '';
           container.appendChild(liteYT);
-          
-          // Load lite-youtube-embed script if not already loaded
-          if (!customElements.get('lite-youtube')) {
-            const script = document.createElement('script');
-            script.type = 'module';
-            script.src = '/_astro/YouTube.astro_astro_type_script_index_0_lang.CDJS5zRV.js';
-            document.head.appendChild(script);
-          }
         } catch (e) {
           console.error('Failed to load YouTube player:', e);
           // Fallback: redirect to YouTube
@@ -118,5 +139,13 @@ const thumbnailUrl = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
       
       observer.observe(container);
     });
-  });
+  }
+  
+  // Initialize on load and after Astro navigation
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLazyYouTube);
+  } else {
+    initLazyYouTube();
+  }
+  document.addEventListener('astro:after-swap', initLazyYouTube);
 </script>

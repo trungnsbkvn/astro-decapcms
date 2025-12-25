@@ -81,16 +81,10 @@ export default defineConfig({
     // For search, use a client-side solution or API-based search
     // pagefind(),
     
-    // MINIMAL compression - Netlify handles optimization at CDN level
-    // Disabled entirely for fastest builds - Netlify compresses assets automatically
-    compress({
-      CSS: false,   // Netlify handles CSS optimization
-      HTML: false,  // SSR pages compress at runtime by Netlify
-      Image: false, // Netlify Image CDN handles this
-      JavaScript: false, // Netlify compresses JS at CDN level
-      SVG: false,   // Minor savings, skip for faster builds
-      Logger: 0,    // Disable logging for faster builds
-    }),
+    // DISABLED: astro-compress is redundant - Netlify CDN handles compression
+    // Netlify automatically applies Brotli/gzip compression at the edge
+    // Removing this saves ~30-60 seconds of build time
+    // compress({ ... }),
 
     astrowind({
       config: './src/config.yaml',
@@ -126,8 +120,17 @@ export default defineConfig({
       // Consolidate chunks to reduce file count (helps with EMFILE)
       rollupOptions: {
         output: {
-          // Consolidate all node_modules into single vendor chunk
+          // Smart code splitting for better caching and reduced unused JS
           manualChunks: (id) => {
+            // Isolate astro-embed components to load only when needed
+            if (id.includes('astro-embed') || id.includes('lite-youtube') || id.includes('lite-vimeo')) {
+              return 'embed';
+            }
+            // Isolate search functionality (Fuse.js, motion)
+            if (id.includes('fuse.js') || id.includes('/motion/')) {
+              return 'search';
+            }
+            // Keep vendor chunk for other node_modules
             if (id.includes('node_modules')) {
               return 'vendor';
             }
@@ -138,8 +141,6 @@ export default defineConfig({
         treeshake: {
           moduleSideEffects: false,
         },
-        // Skip metadata generation for faster builds
-        experimentalLogSideEffects: false,
       },
       // OPTIMIZATION: Use esbuild instead of terser for faster builds
       // esbuild is 10-100x faster than terser with similar results
