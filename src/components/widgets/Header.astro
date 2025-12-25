@@ -77,7 +77,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       <a class="flex items-center" href={getHomePermalink()}>
         <Logo />
       </a>
-      <div class="flex items-center lg:hidden">
+      <div class="flex items-center xl:hidden gap-1">
+        <LanguageSelector compact={true} />
         <ToggleMenu />
       </div>
     </div>
