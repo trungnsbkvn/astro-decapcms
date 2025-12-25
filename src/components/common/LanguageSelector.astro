@@ -479,7 +479,7 @@ const textToKeyMap: Record<string, string> = {
   'Chuyên môn đội ngũ': 'team.expertise',
   'Tư vấn doanh nghiệp': 'team.corporateConsulting',
   'Pháp luật lao động': 'team.laborLaw',
-  'Đầu tư nước ngoài': 'team.foreignInvestment',
+  // note: 'Đầu tư nước ngoài' already defined as nav.investment
   'Audit & Due Diligence': 'team.auditDD',
   'Tranh tụng': 'team.litigation',
   'Hỗ trợ đa ngôn ngữ': 'team.multiLanguage',
@@ -487,9 +487,9 @@ const textToKeyMap: Record<string, string> = {
   'Cần tư vấn pháp lý?': 'team.needLegalAdvice',
   'Dịch vụ nổi bật': 'team.featuredServices',
   'Pháp lý doanh nghiệp': 'team.legalServices',
-  'Dịch vụ đánh giá': 'team.evaluationServices',
+  // note: 'Dịch vụ đánh giá' already defined as nav.evaluation
   'Xem hồ sơ': 'team.viewProfile',
-  'Liên hệ ngay': 'team.contactNow',
+  // note: 'Liên hệ ngay' already defined as homepage.contactNow
   'Xem dịch vụ': 'team.viewServices',
   
   // Author pages - tac-gia/*.astro
@@ -551,16 +551,14 @@ const textToKeyMap: Record<string, string> = {
   'Tin tức pháp luật': 'blogTypes.postTitle',
   'Cập nhật tin tức pháp luật mới nhất từ Công ty Luật Youth & Partners': 'blogTypes.postSubtitle',
   
-  // Legal (Pháp lý)
-  'Pháp lý doanh nghiệp': 'blogTypes.legalTitle',
+  // Legal (Pháp lý) - note: 'Pháp lý doanh nghiệp' already defined as team.legalServices
   'Trang pháp lý của chúng tôi cung cấp những thông tin cập nhật và mới nhất về các vấn đề pháp lý': 'blogTypes.legalSubtitle',
   
   // Consultation (Tư vấn thường xuyên)
   'Tư vấn pháp lý thường xuyên': 'blogTypes.consultationTitle',
   'Dịch vụ tư vấn pháp lý thường xuyên - Người bạn đồng hành đáng tin cậy của doanh nghiệp': 'blogTypes.consultationSubtitle',
   
-  // Labor (Lao động)
-  'Pháp luật lao động': 'blogTypes.laborTitle',
+  // Labor (Lao động) - note: 'Pháp luật lao động' already defined as team.laborLaw
   'Tư vấn và giải quyết các vấn đề pháp luật lao động cho doanh nghiệp': 'blogTypes.laborSubtitle',
   
   // Foreigner (Đầu tư nước ngoài) - note: 'Đầu tư nước ngoài' already defined as nav.investment
