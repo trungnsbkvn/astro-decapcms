@@ -14,7 +14,7 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import { getAboutBreadcrumbs } from '~/utils/breadcrumbs';
 
-import { YouTube } from 'astro-embed';
+import LazyYouTube from '~/components/common/LazyYouTube.astro';
 
 const metadata = {
   title: 'Về chúng tôi',
@@ -42,16 +42,10 @@ const breadcrumbs = getAboutBreadcrumbs();
     </Fragment>
 
     <Fragment slot="image">
-      <YouTube
+      <LazyYouTube
         id="WJUMziCmOP8"
         title="Y&P Lawfirm - Gương mặt tiêu biểu kỷ niệm 77 năm ngày Truyền thống Luật sư Việt Nam"
       />
-      <style is:inline>
-        lite-youtube {
-          margin: 0 auto;
-          max-width: 100%;
-        }
-      </style>
     </Fragment>
   </Hero>
 

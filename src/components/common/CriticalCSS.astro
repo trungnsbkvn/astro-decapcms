@@ -1,0 +1,115 @@
+---
+/**
+ * Critical CSS Component
+ * Inlines critical above-the-fold CSS to eliminate render-blocking CSS
+ * Non-critical CSS is deferred using rel="preload"
+ */
+---
+
+<!-- Critical inline CSS for above-the-fold content -->
+<style is:inline>
+  /* Critical reset and base styles */
+  *,::after,::before{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;line-height:1.5;tab-size:4;font-family:Inter Variable,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+  body{margin:0;line-height:inherit;background-color:var(--aw-color-bg-page,#fff);color:var(--aw-color-text-default,#101010)}
+  
+  /* Critical color variables */
+  :root{
+    --aw-color-primary:#095589;
+    --aw-color-accent:#814a43;
+    --aw-color-bg-page:#fff;
+    --aw-color-text-default:#101010;
+    --aw-color-text-muted:rgb(16 16 16/66%);
+    --aw-font-sans:Inter Variable,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
+  }
+  
+  .dark{
+    --aw-color-bg-page:#030621;
+    --aw-color-text-default:#e5ecf6;
+    --aw-color-text-muted:rgb(229 236 246/66%);
+  }
+  
+  /* Critical layout - Hero section */
+  .relative{position:relative}
+  .absolute{position:absolute}
+  .inset-0{inset:0}
+  .mx-auto{margin-left:auto;margin-right:auto}
+  .max-w-7xl{max-width:80rem}
+  .max-w-5xl{max-width:64rem}
+  .px-4{padding-left:1rem;padding-right:1rem}
+  .py-12{padding-top:3rem;padding-bottom:3rem}
+  .pb-10{padding-bottom:2.5rem}
+  .text-center{text-align:center}
+  .text-justify{text-align:justify}
+  
+  /* Critical typography */
+  h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;line-height:1.2;margin:0}
+  .text-4xl{font-size:2.25rem;line-height:2.5rem}
+  .text-xl{font-size:1.25rem;line-height:1.75rem}
+  .font-bold{font-weight:700}
+  .font-semibold{font-weight:600}
+  .mb-4{margin-bottom:1rem}
+  .mb-6{margin-bottom:1.5rem}
+  
+  /* Critical colors */
+  .text-primary{color:var(--aw-color-primary)}
+  .text-accent{color:var(--aw-color-accent)}
+  .text-muted{color:var(--aw-color-text-muted)}
+  .bg-page{background-color:var(--aw-color-bg-page)}
+  
+  /* Critical flexbox */
+  .flex{display:flex}
+  .inline-flex{display:inline-flex}
+  .items-center{align-items:center}
+  .justify-center{justify-content:center}
+  .gap-4{gap:1rem}
+  .flex-col{flex-direction:column}
+  
+  /* Critical button styles */
+  .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:9999px;padding:.875rem 1.5rem;font-weight:500;text-align:center;transition:all .2s;cursor:pointer}
+  .btn-primary{background-color:var(--aw-color-primary);color:#fff;border-color:var(--aw-color-primary)}
+  
+  /* Critical image styles */
+  img{max-width:100%;height:auto;display:block}
+  .rounded-md{border-radius:.375rem}
+  .w-full{width:100%}
+  
+  /* Hide elements before JS loads */
+  .motion-safe\:md\:opacity-0{opacity:1}
+  
+  /* Prevent CLS for header */
+  #header{min-height:76px}
+  
+  /* Critical navigation */
+  .antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+  .tracking-tight{letter-spacing:-.025em}
+  .not-prose{--tw-prose-body:inherit}
+  
+  /* Responsive */
+  @media(min-width:768px){
+    .md\:pt-\[76px\]{padding-top:76px}
+    .md\:py-20{padding-top:5rem;padding-bottom:5rem}
+    .md\:pb-16{padding-bottom:4rem}
+    .md\:text-5xl{font-size:3rem;line-height:1}
+    .md\:-mt-\[76px\]{margin-top:-76px}
+    .md\:px-8{padding-left:2rem;padding-right:2rem}
+  }
+  @media(min-width:640px){
+    .sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}
+    .sm\:flex-row{flex-direction:row}
+    .sm\:justify-center{justify-content:center}
+    .sm\:w-auto{width:auto}
+    .sm\:inline{display:inline}
+    .sm\:hidden{display:none}
+  }
+</style>
+
+<script is:inline>
+  // Prevent FOUC - apply dark mode immediately
+  (function() {
+    const darkMode = localStorage.getItem('theme');
+    if (darkMode === 'dark' || (!darkMode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>

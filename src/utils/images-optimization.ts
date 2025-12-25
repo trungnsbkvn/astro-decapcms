@@ -24,6 +24,7 @@ export interface ImageProps extends Omit<HTMLAttributes<'img'>, 'src'> {
   objectPosition?: string;
 
   format?: string;
+  quality?: number;
 }
 
 export type ImagesOptimizer = (
@@ -31,7 +32,8 @@ export type ImagesOptimizer = (
   breakpoints: number[],
   width?: number,
   height?: number,
-  format?: string
+  format?: string,
+  quality?: number
 ) => Promise<Array<{ src: string; width: number }>>;
 
 /* ******* */
@@ -228,7 +230,8 @@ export const astroAsseetsOptimizer: ImagesOptimizer = async (
   breakpoints,
   _width,
   _height,
-  format = undefined
+  format = undefined,
+  quality = 80
 ) => {
   if (!image) {
     return [];
@@ -238,7 +241,13 @@ export const astroAsseetsOptimizer: ImagesOptimizer = async (
     return await Promise.all(
       breakpoints.map(async (w: number) => {
         try {
-          const result = await getImage({ src: image, width: w, inferSize: true, ...(format ? { format: format } : {}) });
+          const result = await getImage({ 
+            src: image, 
+            width: w, 
+            inferSize: true, 
+            quality: quality,
+            ...(format ? { format: format } : {}) 
+          });
 
           return {
             src: result?.src,

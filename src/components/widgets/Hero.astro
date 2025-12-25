@@ -102,14 +102,15 @@ const {
               ) : (
                 <Image
                   class="mx-auto rounded-md w-full"
-                  widths={[400, 768, 1024]}
-                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, 1024px"
+                  widths={[400, 665, 768]}
+                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 665px, 665px"
                   loading="eager"
                   fetchpriority="high"
-                  layout="cover"
-                  width={1024}
-                  height={576}
+                  layout="constrained"
+                  width={665}
+                  height={315}
                   format="avif"
+                  quality={75}
                   {...image}
                 />
               )}

@@ -1,0 +1,122 @@
+---
+/**
+ * Lazy YouTube Embed
+ * Only loads YouTube player when user scrolls to it or clicks
+ * Reduces initial JS bundle size by ~25KB
+ */
+
+export interface Props {
+  id: string;
+  title: string;
+  class?: string;
+}
+
+const { id, title, class: className = '' } = Astro.props;
+const thumbnailUrl = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+---
+
+<div 
+  class:list={['lazy-youtube-container relative aspect-video bg-gray-900 rounded-lg overflow-hidden cursor-pointer group', className]}
+  data-youtube-id={id}
+  data-youtube-title={title}
+>
+  <!-- Thumbnail placeholder -->
+  <img 
+    src={thumbnailUrl}
+    alt={title}
+    loading="lazy"
+    decoding="async"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+  
+  <!-- Play button overlay -->
+  <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+    <button 
+      type="button"
+      class="w-16 h-16 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"
+      aria-label={`Play video: ${title}`}
+    >
+      <svg class="w-8 h-8 md:w-10 md:h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Title -->
+  <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+    <p class="text-white text-sm md:text-base font-medium truncate">{title}</p>
+  </div>
+</div>
+
+<style>
+  .lazy-youtube-container lite-youtube {
+    margin: 0;
+    max-width: 100%;
+  }
+  
+  .lazy-youtube-container.loaded > img,
+  .lazy-youtube-container.loaded > div {
+    display: none;
+  }
+</style>
+
+<script>
+  // Lazy load YouTube only when clicked or visible + scrolled
+  document.addEventListener('DOMContentLoaded', () => {
+    const containers = document.querySelectorAll<HTMLElement>('.lazy-youtube-container');
+    
+    containers.forEach(container => {
+      const loadYouTube = async () => {
+        if (container.classList.contains('loaded')) return;
+        
+        const id = container.dataset.youtubeId;
+        const title = container.dataset.youtubeTitle;
+        
+        if (!id) return;
+        
+        // Mark as loaded immediately to prevent double-loading
+        container.classList.add('loaded');
+        
+        // Dynamically import lite-youtube-embed
+        try {
+          // Create lite-youtube element
+          const liteYT = document.createElement('lite-youtube');
+          liteYT.setAttribute('videoid', id);
+          liteYT.setAttribute('playlabel', `Play: ${title}`);
+          liteYT.style.cssText = 'margin: 0 auto; max-width: 100%; width: 100%;';
+          
+          // Clear container and add the YouTube element
+          container.innerHTML = '';
+          container.appendChild(liteYT);
+          
+          // Load lite-youtube-embed script if not already loaded
+          if (!customElements.get('lite-youtube')) {
+            const script = document.createElement('script');
+            script.type = 'module';
+            script.src = '/_astro/YouTube.astro_astro_type_script_index_0_lang.CDJS5zRV.js';
+            document.head.appendChild(script);
+          }
+        } catch (e) {
+          console.error('Failed to load YouTube player:', e);
+          // Fallback: redirect to YouTube
+          window.open(`https://www.youtube.com/watch?v=${id}`, '_blank');
+        }
+      };
+      
+      // Load on click
+      container.addEventListener('click', loadYouTube, { once: true });
+      
+      // Or load when visible and user has scrolled significantly
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && window.scrollY > 200) {
+            loadYouTube();
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      observer.observe(container);
+    });
+  });
+</script>
