@@ -9,7 +9,7 @@ import SearchIcon from '~/components/icons/SearchIcon.astro';
 ---
 
 <site-search id="search" class="ms-auto notranslate" translate="no">
-  <button data-open-modal disabled class="flex items-center justify-center rounded-md gap-1">
+  <button data-open-modal disabled class="flex items-center justify-center rounded-md gap-1" aria-label="Open search">
     <SearchIcon />
   </button>
   <dialog
@@ -21,10 +21,12 @@ import SearchIcon from '~/components/icons/SearchIcon.astro';
         data-close-modal
         class="ms-auto cursor-pointer rounded-full bg-black text-white px-4 py-2 dark:bg-white dark:text-black"
         data-i18n="common.close"
+        aria-label="Close search"
       >
         Đóng
       </button>
       <div class="search-container dark:text-white">
+        <label for="search-input" class="sr-only">Search articles</label>
         <input
           type="search"
           id="search-input"

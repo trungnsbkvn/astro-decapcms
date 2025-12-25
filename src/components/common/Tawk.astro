@@ -116,27 +116,25 @@ import Image from '~/components/common/Image.astro';
   document.addEventListener('astro:after-swap', initFloatingButtons);
 </script>
 
-<!-- Defer Tawk script to improve rendering performance -->
-<script>
-  // Delay loading Tawk widget until after page is interactive
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        const script = document.createElement('script');
-        script.crossOrigin = 'anonymous';
-        script.async = true;
-        script.src = 'https://embed.tawk.to/60e7f020d6e7610a49aa63d1/1fa50407q';
-        document.body.appendChild(script);
-      }, 2000);
-    });
+<!-- Tawk.to Chat Widget - Deferred loading for better performance -->
+<!-- Note: Tawk requires direct DOM access, not compatible with Partytown -->
+<script is:inline>
+  // Load Tawk after page is interactive using requestIdleCallback
+  function loadTawk() {
+    var Tawk_API = window.Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+    var s1 = document.createElement("script");
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/60e7f020d6e7610a49aa63d1/1fa50407q';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    document.head.appendChild(s1);
+  }
+  
+  // Defer loading until browser is idle, with 3s timeout fallback
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadTawk, { timeout: 3000 });
   } else {
-    // DOM is already loaded, delay by 2 seconds
-    setTimeout(() => {
-      const script = document.createElement('script');
-      script.crossOrigin = 'anonymous';
-      script.async = true;
-      script.src = 'https://embed.tawk.to/60e7f020d6e7610a49aa63d1/1fa50407q';
-      document.body.appendChild(script);
-    }, 2000);
+    setTimeout(loadTawk, 2000);
   }
 </script>

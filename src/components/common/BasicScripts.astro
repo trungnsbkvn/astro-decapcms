@@ -31,11 +31,11 @@ import { UI } from 'astrowind:config';
   };
   initTheme();
 
-  function attachEvent(selector, event, fn) {
+  function attachEvent(selector, event, fn, options = false) {
     const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
     if (matches && matches.length) {
       matches.forEach((elem) => {
-        elem.addEventListener(event, (e) => fn(e, elem), false);
+        elem.addEventListener(event, (e) => fn(e, elem), options);
       });
     }
   }
@@ -137,7 +137,7 @@ import { UI } from 'astrowind:config';
         });
         ticking = true;
       }
-    });
+    }, { passive: true });
   };
   const onPageShow = function () {
     document.documentElement.classList.add('motion-safe:scroll-smooth');

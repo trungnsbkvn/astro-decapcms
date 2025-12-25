@@ -69,7 +69,13 @@ export default defineConfig({
       },
     }),
     partytown({
-      config: { forward: ['dataLayer.push'], debug: false },
+      config: { 
+        forward: [
+          'dataLayer.push',      // Google Analytics
+          'gtag',                // Google Tag
+        ], 
+        debug: false,
+      },
     }),
     // NOTE: Pagefind disabled for SSR mode - it requires pre-rendered pages
     // For search, use a client-side solution or API-based search

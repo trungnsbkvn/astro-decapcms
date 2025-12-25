@@ -157,7 +157,7 @@ const linkTextToI18nKey: Record<string, string> = {
                   aria-label={ariaLabel}
                   href={href}
                 >
-                  {icon && <Icon name={icon} class="w-5 h-5" />}
+                  {icon && <Icon name={icon} class="w-5 h-5" aria-hidden="true" />}
                   <Fragment set:html={text} />
                 </a>
               </li>

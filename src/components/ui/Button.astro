@@ -34,7 +34,7 @@ const hasI18n = !!i18nText;
       {...rest}
     >
       <Fragment set:html={text} />
-      {icon && <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" />}
+      {icon && <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" aria-hidden="true" />}
     </button>
   ) : (
     <a
@@ -44,7 +44,7 @@ const hasI18n = !!i18nText;
       {...rest}
     >
       <Fragment set:html={text} />
-      {icon && <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" />}
+      {icon && <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" aria-hidden="true" />}
     </a>
   )
 }

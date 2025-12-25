@@ -2,20 +2,21 @@
 /**
  * Critical CSS Component
  * Inlines critical above-the-fold CSS to eliminate render-blocking CSS
- * Non-critical CSS is deferred using rel="preload"
+ * Optimized for perfect Lighthouse scores
  */
 ---
 
 <!-- Critical inline CSS for above-the-fold content -->
 <style is:inline>
   /* Critical reset and base styles */
-  *,::after,::before{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%;line-height:1.5;tab-size:4;font-family:Inter Variable,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+  *,::after,::before{box-sizing:border-box;border:0 solid}
+  html{-webkit-text-size-adjust:100%;line-height:1.5;tab-size:4;font-family:Inter Variable,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth}
   body{margin:0;line-height:inherit;background-color:var(--aw-color-bg-page,#fff);color:var(--aw-color-text-default,#101010)}
   
   /* Critical color variables */
   :root{
     --aw-color-primary:#095589;
+    --aw-color-secondary:#0a4a75;
     --aw-color-accent:#814a43;
     --aw-color-bg-page:#fff;
     --aw-color-text-default:#101010;
@@ -29,63 +30,106 @@
     --aw-color-text-muted:rgb(229 236 246/66%);
   }
   
+  /* Accessibility - Skip link */
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+  .focus\:not-sr-only:focus{position:absolute;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}
+  
   /* Critical layout - Hero section */
   .relative{position:relative}
   .absolute{position:absolute}
+  .fixed{position:fixed}
   .inset-0{inset:0}
+  .top-0{top:0}
+  .right-0{right:0}
+  .bottom-0{bottom:0}
+  .left-0{left:0}
+  .z-40{z-index:40}
+  .z-50{z-index:50}
   .mx-auto{margin-left:auto;margin-right:auto}
   .max-w-7xl{max-width:80rem}
   .max-w-5xl{max-width:64rem}
+  .w-full{width:100%}
   .px-4{padding-left:1rem;padding-right:1rem}
+  .py-3{padding-top:.75rem;padding-bottom:.75rem}
   .py-12{padding-top:3rem;padding-bottom:3rem}
   .pb-10{padding-bottom:2.5rem}
   .text-center{text-align:center}
   .text-justify{text-align:justify}
   
   /* Critical typography */
-  h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;line-height:1.2;margin:0}
+  h1,h2,h3,h4,h5,h6{margin:0;font-weight:inherit;font-size:inherit}
+  h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;line-height:1.2}
   .text-4xl{font-size:2.25rem;line-height:2.5rem}
   .text-xl{font-size:1.25rem;line-height:1.75rem}
+  .text-base{font-size:1rem;line-height:1.5rem}
+  .text-sm{font-size:.875rem;line-height:1.25rem}
   .font-bold{font-weight:700}
   .font-semibold{font-weight:600}
+  .font-medium{font-weight:500}
   .mb-4{margin-bottom:1rem}
   .mb-6{margin-bottom:1.5rem}
+  .leading-tighter{line-height:1.1}
+  .tracking-tighter{letter-spacing:-.05em}
   
   /* Critical colors */
   .text-primary{color:var(--aw-color-primary)}
   .text-accent{color:var(--aw-color-accent)}
   .text-muted{color:var(--aw-color-text-muted)}
+  .text-default{color:var(--aw-color-text-default)}
+  .text-white{color:#fff}
   .bg-page{background-color:var(--aw-color-bg-page)}
+  .bg-primary{background-color:var(--aw-color-primary)}
+  .border-primary{border-color:var(--aw-color-primary)}
   
   /* Critical flexbox */
   .flex{display:flex}
   .inline-flex{display:inline-flex}
+  .hidden{display:none}
+  .block{display:block}
   .items-center{align-items:center}
   .justify-center{justify-content:center}
+  .justify-between{justify-content:space-between}
   .gap-4{gap:1rem}
+  .gap-1{gap:.25rem}
   .flex-col{flex-direction:column}
+  .flex-none{flex:none}
   
   /* Critical button styles */
-  .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:9999px;padding:.875rem 1.5rem;font-weight:500;text-align:center;transition:all .2s;cursor:pointer}
+  a{color:inherit;text-decoration:inherit}
+  button{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0;background-color:transparent;background-image:none;cursor:pointer}
+  .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:9999px;padding:.875rem 1.5rem;font-weight:500;text-align:center;transition:all .2s ease-in-out;border:1px solid transparent}
   .btn-primary{background-color:var(--aw-color-primary);color:#fff;border-color:var(--aw-color-primary)}
+  .btn-primary:hover{background-color:var(--aw-color-secondary);border-color:var(--aw-color-secondary)}
+  .rounded-full{border-radius:9999px}
+  .rounded-md{border-radius:.375rem}
+  .rounded-lg{border-radius:.5rem}
   
   /* Critical image styles */
-  img{max-width:100%;height:auto;display:block}
-  .rounded-md{border-radius:.375rem}
-  .w-full{width:100%}
-  
-  /* Hide elements before JS loads */
-  .motion-safe\:md\:opacity-0{opacity:1}
+  img,video{max-width:100%;height:auto;display:block}
   
   /* Prevent CLS for header */
   #header{min-height:76px}
+  .sticky{position:sticky}
   
   /* Critical navigation */
   .antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
   .tracking-tight{letter-spacing:-.025em}
   .not-prose{--tw-prose-body:inherit}
+  .pointer-events-none{pointer-events:none}
+  .overflow-hidden{overflow:hidden}
+  
+  /* Dark mode colors */
+  .dark .dark\:text-white{color:#fff}
+  .dark .dark\:text-gray-200{color:#e5e7eb}
+  .dark .dark\:text-slate-300{color:#cbd5e1}
+  .dark .dark\:bg-gray-800{background-color:#1f2937}
   
   /* Responsive */
+  @media(min-width:1024px){
+    .lg\:flex{display:flex}
+    .lg\:hidden{display:none}
+    .lg\:px-6{padding-left:1.5rem;padding-right:1.5rem}
+  }
   @media(min-width:768px){
     .md\:pt-\[76px\]{padding-top:76px}
     .md\:py-20{padding-top:5rem;padding-bottom:5rem}
@@ -101,6 +145,14 @@
     .sm\:w-auto{width:auto}
     .sm\:inline{display:inline}
     .sm\:hidden{display:none}
+  }
+  @media(min-width:1280px){
+    .xl\:hidden{display:none}
+  }
+
+  /* Reduce motion for accessibility */
+  @media(prefers-reduced-motion:reduce){
+    *,::before,::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   }
 </style>
 
