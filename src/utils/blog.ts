@@ -83,6 +83,7 @@ const getNormalizedPostLazy = async (post: CollectionEntry<'post'>): Promise<Pos
     metadata = {},
   } = data;
 
+  // Slug is calculated from title, not MDX filename
   const slug = cleanSlug(title);
   const publishDate = new Date(rawPublishDate);
   const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
@@ -132,7 +133,7 @@ const getNormalizedPostLazy = async (post: CollectionEntry<'post'>): Promise<Pos
  * Use this ONLY for single post pages where Content is needed
  */
 const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
-  const { id, slug: rawSlug = '', data } = post;
+  const { id, data } = post;
   const { Content, remarkPluginFrontmatter } = await post.render();
 
   const {
@@ -149,7 +150,8 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     metadata = {},
   } = data;
 
-  const slug = cleanSlug(title); // cleanSlug(rawSlug.split('/').pop());
+  // Slug is calculated from title, not MDX filename
+  const slug = cleanSlug(title);
   const publishDate = new Date(rawPublishDate);
   const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
 
