@@ -1,6 +1,7 @@
 ---
-// PERFORMANCE: Import CSS as a module to enable deferred loading
-import tailwindCssUrl from '~/assets/styles/tailwind.css?url';
+// PERFORMANCE: Standard CSS import - Astro handles bundling and optimization
+// Use build.inlineStylesheets: 'always' in astro.config.ts for best Lighthouse scores
+import '~/assets/styles/tailwind.css';
 
 import { I18N } from 'astrowind:config';
 
@@ -52,20 +53,8 @@ const { language, textDirection } = I18N;
     <FontOptimization />
     <CustomStyles />
     
-    <!-- PERFORMANCE: Defer non-critical CSS to eliminate render-blocking -->
-    <!-- Using print media trick: loads async, applies on load -->
-    <link 
-      rel="stylesheet" 
-      href={tailwindCssUrl}
-      media="print" 
-      onload="this.media='all';this.onload=null;"
-    />
-    <!-- Fallback for browsers without JS -->
-    <noscript>
-      <link rel="stylesheet" href={tailwindCssUrl} />
-    </noscript>
-    
-    <!-- External CSS (render-blocking but needed) -->
+    <!-- CSS is automatically bundled by Astro -->
+    <!-- With build.inlineStylesheets: 'always', all CSS is inlined (no render-blocking) -->
     <Favicons />
     
     <!-- SEO metadata -->
