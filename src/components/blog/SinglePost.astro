@@ -97,16 +97,16 @@ const ratingStructuredData = post.rating
         : 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'}
     >
       <div class="flex text-center justify-center flex-col sm:flex-row mx-auto mt-0 sm:items-center">
-        <p class="text-opacity-50 text-sm">
-          <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-          <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
+        <p class="text-opacity-50 text-sm leading-relaxed">
+          <Icon name="tabler:clock" class="w-4 h-4 inline-block align-middle -mt-0.5 dark:text-gray-400" />
+          <time datetime={String(post.publishDate)} class="align-middle">{getFormattedDate(post.publishDate)}</time>
           {
             post.author && (
               <>
                 &nbsp;{'·'}&nbsp;
-                <Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-                <span class="notranslate" translate="no" data-i18n="post.author">Tác giả:</span>
-                <a class="inline-block notranslate" translate="no" href={getAuthorPermalink(post.author)}>
+                <Icon name="tabler:user" class="w-4 h-4 inline-block align-middle -mt-0.5 dark:text-gray-400" />
+                <span class="notranslate align-middle" translate="no" data-i18n="post.author">Tác giả:</span>
+                <a class="align-middle notranslate" translate="no" href={getAuthorPermalink(post.author)}>
                   <b>{post.author}</b>
                 </a>
               </>
@@ -116,9 +116,9 @@ const ratingStructuredData = post.rating
             post.author != 'Luật sư Nguyễn Văn Thành' && (
               <>
                 &nbsp;{'·'}&nbsp;
-                <Icon name="tabler:user-check" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-                <span class="notranslate" translate="no" data-i18n="post.reviewedBy">Tham vấn bởi:</span>
-                <a class="inline-block" href={getAuthorPermalink('Luật sư Nguyễn Văn Thành')}>
+                <Icon name="tabler:user-check" class="w-4 h-4 inline-block align-middle -mt-0.5 dark:text-gray-400" />
+                <span class="notranslate align-middle" translate="no" data-i18n="post.reviewedBy">Tham vấn bởi:</span>
+                <a class="align-middle" href={getAuthorPermalink('Luật sư Nguyễn Văn Thành')}>
                   <b><span data-i18n="post.lawyerTitle">Luật sư</span> <span class="notranslate" translate="no">Nguyễn Văn Thành</span></b>
                 </a>
               </>
@@ -129,7 +129,7 @@ const ratingStructuredData = post.rating
               <>
                 &nbsp;{'·'}&nbsp;
                 <a 
-                  class="hover:underline inline-block notranslate" 
+                  class="hover:underline align-middle notranslate" 
                   translate="no"
                   href={getPermalink(post.category.slug, 'category', type)}
                   {...(categoryI18nKey ? { 'data-i18n': categoryI18nKey } : {})}
@@ -143,7 +143,7 @@ const ratingStructuredData = post.rating
             post.readingTime && (
               <>
                 &nbsp;{'·'}&nbsp;
-                <span>{post.readingTime}</span> <span class="notranslate" translate="no" data-i18n="post.readingTime">phút đọc</span>
+                <span class="align-middle">{post.readingTime}</span> <span class="notranslate align-middle" translate="no" data-i18n="post.readingTime">phút đọc</span>
               </>
             )
           }
