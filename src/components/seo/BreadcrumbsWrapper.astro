@@ -43,6 +43,7 @@ const shouldRender = breadcrumbItems.length > 0;
   <div 
     class:list={[
       'w-full',
+      'hidden sm:block', /* Hide on mobile (xs) screens to save space */
       showBackground ? 'bg-gray-50 dark:bg-slate-800/50 border-b border-gray-200 dark:border-slate-700' : '',
       className
     ]}
