@@ -1,10 +1,13 @@
 ---
 /**
- * Language Selector Component - Hybrid Translation System
- * - i18n for UI elements (menu, footer, breadcrumbs) - Professional translations
+ * Language Selector Component - Optimized Hybrid Translation System
+ * 
+ * PERFORMANCE OPTIMIZED:
+ * - Zero JavaScript payload for Vietnamese (default) users
+ * - Lazy-loads translation data only when user switches language
+ * - Uses localStorage for persistent language preference
+ * - i18n for UI elements (menu, footer, breadcrumbs)
  * - Google Translate ONLY for user content (posts, news, FAQ)
- * - Uses localStorage for consistent language preference
- * - Zero performance cost for Vietnamese (default) users
  */
 import { Icon } from 'astro-icon/components';
 
@@ -80,660 +83,128 @@ const languages = [
 </style>
 
 <script>
-import { translations } from '~/i18n/translations';
+/**
+ * Language Selector Script - Lazy Loading Architecture
+ * 
+ * Performance Strategy:
+ * 1. Vietnamese users: Zero translation overhead
+ * 2. Non-Vietnamese users: Fetch /api/i18n.json?lang=XX on first load
+ * 3. Cache translation data in sessionStorage for subsequent pages
+ */
 
 const LANG_KEY = 'site-language';
+const CACHE_KEY = 'i18n-cache';
+
 const langDisplayMap: Record<string, string> = {
-  'vi': 'VN', 
-  'en': 'EN', 
-  'zh-CN': 'CN', 
-  'ja': 'JP', 
-  'ko': 'KR'
+  'vi': 'VN', 'en': 'EN', 'zh-CN': 'CN', 'ja': 'JP', 'ko': 'KR'
 };
 
-// Map Vietnamese text to translation keys for i18n
-const textToKeyMap: Record<string, string> = {
-  // Company info
-  'Công ty Luật TNHH Youth & Partners': 'company.legalName',
-  'Công ty Luật TNHH': 'company.legalPrefix',
-  'Youth & Partners': 'company.name',
-  'Luật sư Nguyễn Văn Thành': 'company.directorName',
-  'Giám đốc, người đại diện theo pháp luật:': 'company.director',
-  'Hotline': 'company.hotline',
-  'Trụ sở': 'company.headquarters',
-  'Hà Nội: P219, Tháp Đông, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội.': 'company.addressHanoi',
-  'Bắc Ninh: Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc, tỉnh Bắc Ninh.': 'company.addressBacNinh',
-  'Phú Thọ: Số 170, đường Nguyễn Văn Linh, phường Vĩnh Phúc, tỉnh Phú Thọ.': 'company.addressPhuTho',
-  
-  // Navigation main
-  'Trang chủ': 'nav.home',
-  'Giới thiệu': 'nav.about',
-  'Dịch vụ': 'nav.services',
-  'Tin tức': 'nav.news',
-  'Liên hệ': 'nav.contact',
-  'Tìm kiếm': 'nav.search',
-  'Pháp lý': 'nav.legal',
-  'Tư vấn thường xuyên': 'nav.consultation',
-  'Lao động': 'nav.labor',
-  'Đầu tư nước ngoài': 'nav.investment',
-  'Dịch vụ đánh giá': 'nav.evaluation',
-  
-  // About section
-  'Lịch sử thành lập': 'about.history',
-  'Luật sư và cộng sự': 'about.lawyers',
-  'Luật sư và Cộng sự': 'about.lawyers',
-  'Giải thưởng pháp lý': 'about.awards',
-  'Cảm nhận khách hàng': 'about.testimonials',
-  'Tôn chỉ hoạt động': 'about.principles',
-  'Hồ sơ năng lực': 'about.capabilities',
-  'Tầm nhìn - sứ mệnh': 'about.vision',
-  'Tầm nhìn và sứ mệnh': 'about.visionAndMission',
-  'Sự kiện nội bộ': 'about.internalEvents',
-  'Bảo vệ dữ liệu cá nhân': 'about.dataProtection',
-  'Về chúng tôi': 'about.aboutUs',
-  // History timeline titles
-  'Kiện toàn tổ chức và phát triển dịch vụ': 'about.historyOrgDev',
-  'Bổ sung nhân lực và phát triển mở rộng quy mô dịch vụ': 'about.historyOrgDevSub',
-  'Mở rộng': 'about.historyExpand',
-  'Thêm 01 chi nhánh tại Hà Nội': 'about.historyExpandHanoi',
-  'Thêm 01 chi nhánh tại Bắc Ninh': 'about.historyExpandBacNinh',
-  'Thay đổi địa chỉ công ty': 'about.historyAddressChange',
-  'Thành lập công ty': 'about.historyEstablish',
-  '2024 - đến nay': 'about.timePeriod2024',
-  '2021 - 2023': 'about.timePeriod2021_2023',
-  '2020 - 2021': 'about.timePeriod2020_2021',
-  '2020 - 2024': 'about.timePeriod2020_2024',
-  '09/10/2019': 'about.establishDate',
-  // History timeline descriptions (first sentences for partial matching)
-  'Từ năm 2024 đến nay, Youth & Partners Law Firm đã tiến hành kiện toàn bộ máy tổ chức, bổ sung nhân lực và mở rộng quy mô dịch vụ để đáp ứng nhu cầu ngày càng cao của khách hàng.': 'about.historyOrgDevDesc',
-  'Trong giai đoạn 2021 – 2023, Youth & Partners tiếp tục mở rộng mạng lưới với chi nhánh mới tại thủ đô Hà Nội': 'about.historyExpandHanoiDesc',
-  'Trong giai đoạn 2020 – 2021, Công ty Luật TNHH Youth & Partners đã thực hiện chiến lược mở rộng mạng lưới để nâng cao chất lượng dịch vụ': 'about.historyExpandBacNinhDesc',
-  'Để đáp ứng nhu cầu phát triển, vào tháng 01 năm 2020': 'about.historyAddressChangeDesc',
-  'Vào ngày 09 tháng 10 năm 2019, Công ty Luật TNHH Youth & Partners chính thức được thành lập': 'about.historyEstablishDesc',
-  // Operating principles (Tôn chỉ hoạt động)
-  'Tôn chỉ hoạt động của chúng tôi': 'about.principlesTitle',
-  'Thời gian': 'about.time',
-  'Tận tâm': 'about.dedication',
-  'Tận lực': 'about.excellence',
-  // Stats
-  'Các con số biết nói': 'about.statsTitle',
-  'Văn phòng': 'about.offices',
-  'Chuyên viên pháp lý': 'about.legalExperts',
-  'Khách hàng hài lòng': 'about.satisfiedClients',
-  'Vụ thắng kiện': 'about.casesWon',
-  // Capability profile
-  'Hồ sơ năng lực của Youth & Partners': 'about.capabilityProfile',
-  'Hồ sơ năng lực tiếng Việt': 'about.profileVietnamese',
-  'Hồ sơ năng lực tiếng Anh': 'about.profileEnglish',
-  // Vision values
-  'Chính trực': 'about.integrity',
-  'Sáng tạo': 'about.creativity',
-  'Hợp tác': 'about.cooperation',
-  'Chất lượng': 'about.quality',
-  'Dịch vụ của Chúng tôi': 'about.ourServicesTitle',
-  
-  // Legal services menu
-  'Pháp lý thành lập Doanh nghiệp': 'legal.enterprise',
-  'Doanh nghiệp': 'legal.enterprise',
-  'Kinh doanh thương mại': 'legal.commercial',
-  'Hợp đồng dân sự, thương mại': 'legal.contract',
-  'Đất đai': 'legal.land',
-  'Hôn nhân gia đình': 'legal.marriage',
-  'Hôn nhân và gia đình': 'legal.marriage',
-  'Thừa kế, di chúc': 'legal.inheritance',
-  'Sở hữu trí tuệ': 'legal.intellectual',
-  'Giấy phép kinh doanh': 'legal.license',
-  'Giấy phép con': 'legal.subLicense',
-  'Dân sự': 'legal.civil',
-  'Hình sự': 'legal.criminal',
-  'Tranh tụng, tố tụng': 'legal.litigation',
-  'Pháp lý khác': 'legal.other',
-  
-  // Consultation services
-  'Tư vấn pháp luật thường xuyên': 'consultation.regular',
-  // Note: 'Tư vấn thường xuyên' uses nav.consultation key defined above
-  'Dịch vụ luật sư riêng': 'consultation.privateLawyer',
-  'Khái niệm Tư vấn thường xuyên': 'consultation.concept',
-  'Vì sao doanh nghiệp cần tư vấn thường xuyên': 'consultation.whyNeeded',
-  'Mẫu hợp đồng dịch vụ': 'consultation.contractTemplate',
-  'Phí dịch vụ tư vấn': 'consultation.serviceFee',
-  'Quy trình tư vấn': 'consultation.process',
-  'Điểm mạnh của Youth & Partners': 'consultation.strengths',
-  // Additional service items for bullet points
-  'Quản trị Doanh nghiệp và tuân thủ': 'services.governance',
-  'Dự án Đầu tư': 'services.investmentProject',
-  'Dịch vụ hỗ trợ Doanh nghiệp': 'services.businessSupport',
-  'M&A (Mua bán và sáp nhập)': 'services.maFull',
-  'Tranh tụng và giải quyết tranh chấp (Dân sự, Hình sự và Hành chính)': 'services.litigationFull',
-  // Note: 'Lao động và việc làm' uses services.laborEmployment key defined in services section
-  'Dịch vụ pháp lý về Đất đai': 'services.landServices',
-  'Pháp lý tư vấn thường xuyên khác': 'consultation.other',
-  
-  // Labor services menu
-  'Nội quy lao động - Thỏa ước': 'labor.regulations',
-  'Nội quy - Thỏa ước': 'labor.regulations',
-  'Thời giờ làm việc': 'labor.workingHours',
-  'Tiền lương & Phúc lợi': 'labor.salary',
-  'Lương & Phúc lợi': 'labor.salary',
-  'Hợp đồng lao động, đào tạo': 'labor.contracts',
-  'Chấm dứt hợp đồng': 'labor.termination',
-  'Xử lý kỷ luật': 'labor.discipline',
-  'Quấy rối tình dục': 'labor.harassment',
-  'Tranh chấp lao động': 'labor.disputes',
-  'Pháp luật lao động khác': 'labor.other',
-  'Pháp lý lao động khác': 'labor.other',
-  
-  // Investment services menu
-  'Thành lập mới dự án': 'investment.newProjects',
-  'Điều chỉnh dự án đầu tư': 'investment.projectAdjustment',
-  'Chuyển nhượng dự án': 'investment.transfer',
-  'Hiện diện thương mại': 'investment.presence',
-  'Luật sư tư vấn tiếng Anh': 'investment.englishLawyer',
-  'Luật sư tư vấn tiếng Nhật': 'investment.japaneseLawyer',
-  'Luật sư tư vấn tiếng Trung Quốc': 'investment.chineseLawyer',
-  'Giấy phép lao động': 'investment.workPermit',
-  'Pháp lý người nước ngoài': 'investment.foreignerLaw',
-  
-  // Evaluation services menu
-  'Khái niệm đánh giá': 'evaluation.concept',
-  'Lợi ích đánh giá': 'evaluation.benefits',
-  'Lợi ích của việc đánh giá': 'evaluation.benefits',
-  'Phí dịch vụ đánh giá': 'evaluation.pricing',
-  'Quy trình đánh giá': 'evaluation.process',
-  'Dịch vụ đánh giá cho doanh nghiệp': 'evaluation.business',
-  'Dịch vụ Đánh giá cho Doanh nghiệp': 'evaluation.business',
-  'Dịch vụ đánh giá trước kiểm toán': 'evaluation.preAudit',
-  'Dịch vụ đánh giá tiền trạm': 'evaluation.preAudit',
-  'Tiêu chuẩn xã hội': 'evaluation.standards',
-  'Các bộ tiêu chuẩn TNXH': 'evaluation.standards',
-  'Tiêu chuẩn RBA': 'evaluation.rba',
-  'Những sai sót thường gặp của DN': 'evaluation.mistakes',
-  'Các lỗi thường gặp của doanh nghiệp': 'evaluation.mistakes',
-  
-  // News categories
-  'Tin tức pháp lý': 'news.legal',
-  'Bình luận pháp lý': 'news.commentary',
-  'Các vụ việc nổi bật': 'news.highlights',
-  'Hội thảo pháp lý': 'news.seminars',
-  'Văn bản pháp lý': 'news.documents',
-  'Liên hệ tư vấn': 'news.contact',
-  'Thông tin tuyển dụng': 'news.recruitment',
-  'Tin tức - Liên hệ': 'news.newsAndContact',
-  'Đầu tư & Nước ngoài': 'nav.investmentAndForeign',
-  
-  // Footer sections
-  'Điều khoản chung': 'footer.terms',
-  'Chính sách Bảo vệ dữ liệu': 'footer.privacy',
-  'Chính sách bảo mật': 'footer.privacy',
-  'Điều khoản sử dụng': 'footer.terms',
-  'Dịch vụ của Y&P': 'footer.servicesYP',
-  'Đầu tư và Người nước ngoài': 'footer.investmentForeign',
-
-  // Common UI elements
-  'Đọc thêm': 'common.readMore',
-  'Xem thêm': 'common.readMore',
-  'Tìm hiểu thêm': 'common.learnMore',
-  'Liên hệ chúng tôi': 'common.contactUs',
-  'Nhận báo giá': 'common.getQuote',
-  'Gửi': 'common.submit',
-  'Hủy': 'common.cancel',
-  'Đóng': 'common.close',
-  'Đang tải...': 'common.loading',
-  'Lỗi': 'common.error',
-  'Thành công': 'common.success',
-  'Cảnh báo': 'common.warning',
-  'Thông tin': 'common.info',
-  'Tìm kiếm...': 'common.search',
-  'Không tìm thấy kết quả': 'common.noResults',
-  'Về đầu trang': 'common.backToTop',
-  'Chia sẻ': 'common.share',
-  'Share:': 'common.share',
-  'In': 'common.print',
-  'Tải xuống': 'common.download',
-  'Xem tất cả': 'common.viewAll',
-  'Trở về chuyên trang': 'common.backToPage',
-  'Bài viết liên quan': 'common.relatedPosts',
-  'Bài mới hơn': 'common.newerPosts',
-  'Bài cũ hơn': 'common.olderPosts',
-  'Mục lục': 'common.tableOfContents',
-  'Gửi thông tin': 'common.sendInfo',
-  'Liên hệ để được tư vấn': 'common.contactForConsult',
-  'Tổng cộng': 'common.totalPosts',
-  'bài viết': 'common.posts',
-  'Nổi bật': 'common.featured',
-  'Luật sư nổi bật': 'common.featuredLawyer',
-  
-  // Post/Blog labels
-  'Tác giả:': 'post.author',
-  'Tham vấn bởi:': 'post.reviewedBy',
-  'phút đọc': 'post.readingTime',
-  'Ngày đăng': 'post.publishDate',
-  'Cập nhật': 'post.updateDate',
-  'Danh mục': 'post.category',
-  'Thẻ': 'post.tags',
-  
-  // Contact page
-  'Liên hệ với chúng tôi!': 'contact.title',
-  'Hãy để lại thông tin bên dưới': 'contact.subtitle',
-  'Đội ngũ hỗ trợ của chúng tôi luôn sẵn lòng giúp đỡ bạn.': 'contact.description',
-  'Đội ngũ hỗ trợ của chúng tôi thường phản hồi trong vòng 24 giờ làm việc.': 'contact.responseTime',
-  'Hỗ trợ chung': 'contact.generalSupport',
-  'Liên hệ với chúng tôi để được hỗ trợ về các vấn đề pháp lý chung.': 'contact.generalDesc',
-  'Liên hệ bộ phận tư vấn': 'contact.consultDept',
-  'Trò chuyện với chúng tôi để giải đáp các câu hỏi về dịch vụ tư vấn pháp lý.': 'contact.consultDesc',
-  'Hỗ trợ kỹ thuật': 'contact.techSupport',
-  'Liên hệ với chúng tôi khi bạn gặp vấn đề kỹ thuật.': 'contact.techDesc',
-  'Chúng tôi luôn sẵn sàng hỗ trợ bạn!': 'contact.readyToHelp',
-  
-  // Forms
-  'Họ tên': 'forms.name',
-  'Họ và tên': 'forms.name',
-  'Số điện thoại': 'forms.phone',
-  'Nội dung tin nhắn': 'forms.message',
-  'Nội dung': 'forms.message',
-  'Tiêu đề': 'forms.subject',
-  'Công ty': 'forms.company',
-  'Chức vụ': 'forms.position',
-  'Bắt buộc': 'forms.required',
-  'Tùy chọn': 'forms.optional',
-  'Gửi tin nhắn': 'forms.sendMessage',
-  'Gửi yêu cầu': 'forms.sendMessage',
-  'Đang gửi...': 'forms.sending',
-  'Đã gửi thành công!': 'forms.sent',
-  
-  // Language selector
-  'Chọn ngôn ngữ': 'language.selectLanguage',
-  'Ngôn ngữ hiện tại': 'language.currentLanguage',
-  
-  // Error pages
-  'Không tìm thấy trang bạn yêu cầu': 'error.notFound',
-  'Xin lỗi, chúng tôi không thể tìm thấy trang này.': 'error.pageNotFound',
-  'Nhưng đừng lo, bạn có thể tìm thấy nhiều thông tin khác trên trang chủ của chúng tôi.': 'error.redirectMessage',
-  'Trở về trang chủ': 'error.backToHome',
-  
-  // About/Motto
-  'Phương châm hoạt động:': 'about.motto',
-  'Thời Gian – Tận Tâm – Tận Lực': 'about.mottoText',
-  
-  // Search
-  'Tìm kiếm bài viết...': 'search.placeholder',
-  'Nhập từ khóa để tìm kiếm...': 'search.enterKeyword',
-  
-  // Author pages
-  'Liên hệ với tác giả': 'contact.contactAuthor',
-
-  // Additional company references
-  'Email': 'forms.email',
-  'Y&P Law Firm': 'company.shortName',
-  
-  // Homepage sections - titles and labels (not duplicating nav, about, company entries)
-  'DỊCH VỤ CỦA CHÚNG TÔI': 'homepage.ourServices',
-  'Tư vấn pháp luật thường xuyên cho Doanh nghiệp': 'homepage.regularConsultation',
-  'Tư vấn pháp luật Lao động': 'homepage.laborLaw',
-  'Tư vấn Đầu tư nước ngoài': 'homepage.foreignInvestment',
-  'Dịch vụ Đánh giá Doanh nghiệp': 'homepage.evaluationService',
-  // Note: 'Tôn chỉ hoạt động của chúng tôi', 'Thời gian', 'Tận tâm', 'Tận lực' already in about section
-  // Note: 'Chuyên viên pháp lý', 'Khách hàng hài lòng', 'Vụ thắng kiện' already in about.stats section
-  'Hãy để chúng tôi trở thành người bạn đồng hành của bạn': 'homepage.beYourPartner',
-  'Theo dõi phản hồi': 'homepage.trackResponse',
-  'Chúng tôi sẽ hoàn thành!': 'homepage.weWillComplete',
-  'Tin mới nhất': 'homepage.latestNews',
-  'Cảm nhận của khách hàng': 'homepage.clientTestimonials',
-  'Đối tác và khách hàng của chúng tôi': 'homepage.ourPartners',
-  'Liên hệ để được tư vấn ngay': 'homepage.contactForConsultNow',
-  'Liên hệ ngay': 'homepage.contactNow',
-  'Theo dõi chúng tôi': 'homepage.followUs',
-  // Homepage descriptions
-  'là một trong những công ty luật hàng đầu trong các lĩnh vực: Tư vấn pháp lý thường xuyên cho doanh nghiệp/Dịch vụ Phòng pháp chế thuê ngoài; Tư vấn và giải quyết tranh chấp lao động; Dịch vụ Luật sư riêng tiếng Nhật, Anh, Trung, Hàn; Dịch vụ Audit, đánh giá và thẩm định pháp lý cho Doanh nghiệp, dịch vụ DD (Due diligence) riêng các lĩnh vực Lao động, nhân quyền, đạo đức kinh doanh, hệ thống quản lý, an toàn, sức khỏe, môi trường cho Doanh nghiệp.': 'homepage.heroSubtitle',
-  'Như một người bạn đồng hành.': 'homepage.likeAFriend',
-  'Công ty Luật chúng tôi luôn mong muốn mang đến cho quý khách hàng những dịch vụ chất lượng, nhanh chóng, chính xác và trọn vẹn.': 'homepage.servicesSubtitle',
-  'Chúng tôi hiểu rằng mỗi vụ việc pháp lý đều có những yêu cầu về thời gian và các yếu tố khắt khe. Vì vậy, đội ngũ luật sư của chúng tôi luôn nỗ lực tối đa để đảm bảo tiến trình công việc diễn ra nhanh chóng, hiệu quả, và giúp khách hàng đạt được kết quả mong muốn trong thời gian sớm nhất.': 'homepage.timeDesc',
-  'Mỗi luật sư tại Youth & Partners đều cam kết đặt trọn tâm huyết vào từng hồ sơ, luôn lắng nghe và thấu hiểu nhu cầu của khách hàng để đưa ra các giải pháp tối ưu và phù hợp nhất. Chúng tôi tin rằng sự tận tâm là yếu tố then chốt để xây dựng niềm tin và mối quan hệ lâu dài với khách hàng.': 'homepage.dedicationDesc',
-  'Chúng tôi không chỉ cung cấp dịch vụ pháp lý đơn thuần, mà luôn nỗ lực vượt qua mọi thử thách để bảo vệ quyền lợi hợp pháp của khách hàng. Với đội ngũ luật sư giàu kinh nghiệm và luôn sẵn sàng đối mặt với mọi tình huống, Youth & Partners Law Firm cam kết mang lại công bằng và sự thành công cho khách hàng, giúp họ vững bước trên con đường phát triển.': 'homepage.excellenceDesc',
-  // Service descriptions from Features component on homepage
-  'Với kinh nghiệm đa dạng trong nhiều lĩnh vực hoạt động của Doanh nghiệp, đặc biệt là các Doanh nghiệp sản xuất có vốn Đầu tư nước ngoài, trong những năm qua, chúng tôi tự hào là đơn vị cung cấp dịch vụ tư vấn pháp luật thường xuyên chất lượng cao cho nhiều Doanh nghiệp trong nước và nước ngoài có quy mô lớn tại Việt Nam như Samsung, Intel Vietnam, Viettel, FPT, TopCV, Cosmos, Rikkeisoft... cũng như nhiều Doanh nghiệp Hàn Quốc, Nhật Bản, Úc…  Đặc biệt, đến thời điểm hiện tại, Y&P là một trong rất ít những hãng luật có thể tư vấn sâu những vấn đề về trách nhiệm xã hội của Doanh nghiệp (CSR) hay cụ thể là Bộ Quy tắc RBA (Liên minh các Doanh nghiệp có trách nhiệm xã hội) hiện đang áp dụng cho rất nhiều Doanh nghiệp, đặc biệt là các Doanh nghiệp điện tử. Điều này làm cho chúng tôi trở thành đối tác tin cậy và phù hợp cho các Doanh nghiệp sản xuất đang phải tuân thủ theo Bộ Quy tắc này.': 'homepage.regularConsultationDesc',
-  'Với đặc thù đang là hãng luật đang tư vấn pháp lý thường xuyên cho hơn 20 Doanh nghiệp và liên tục tham gia vào quá trình tư vấn, giải quyết nhiều vụ việc/án lao động, Y&P Law Firm có thể tự tin đang là chuyên gia đầu ngành tại Việt Nam trong lĩnh vực này. Website của chúng tôi có chuyên trang luật lao động, phân tích sâu về nội quy, thỏa ước, hợp đồng lao động/đào tạo, lương & phúc lợi, thời giờ làm việc, chấm dứt hợp đồng, xử lý kỷ luật, quấy rối tình dục, NDA/NCA… Bên cạnh đó, chúng tôi thường xuyên tổ chức/phối hợp tổ chức các khóa đào tạo, workshop với hàng nghìn người tham dự với vai trò diễn giả để phổ cập kiến thức lao động cho cộng đồng. Ngoài ra, hằng năm chúng tôi cũng tổ chức riêng các khóa đào tạo về tổ chức trong sạch, chống quấy rối tình dục, bộ quy tắc RBA, nhấn mạnh các lĩnh vực tồn tại nhiều rủi ro tranh chấp trong Doanh nghiệp như giải quyết nghỉ việc, khiếu nại, tố cáo, xử lý kỷ luật. Đặc biệt với các Khách hàng tư vấn thường xuyên của Y&P Law Firm, chương trình đào tạo là miễn phí.': 'homepage.laborLawDesc',
-  'Kinh nghiệm tư vấn cho các dự án Đầu tư của Y&P Law Firm bao gồm tư vấn cho các Doanh nghiệp trong nước và nước ngoài trong suốt quá trình thực hiện tư vấn nhằm hỗ trợ khách hàng điều hướng sự giao thoa phức tạp của pháp luật Việt Nam và pháp luật nước ngoài. Chúng tôi cam kết hỗ trợ khách hàng thực hiện đầu tư theo đủ các hình thức đầu tư từ lúc bắt đầu kế hoạch đầu tư cho đến khi khi dự án đã đi vào hoạt động. M&A là một trong những nền móng chính trong của lĩnh vực hoạt động tư vấn đầu tư của Y&P Law Firm, chúng tôi tập trung vào mảng sáp nhập và mua bán.': 'homepage.foreignInvestmentDesc',
-  'Ngày nay, việc tuân thủ theo các quy định của pháp luật địa phương, đáp ứng các chuẩn mực của bộ tiêu chuẩn về trách nhiệm xã hội là vấn đề sống còn với Doanh nghiệp. Nhiều Doanh nghiệp đã phải trả giá bằng sự tồn vong của pháp nhân mình vì lơ là, coi nhẹ vấn đề tuân thủ pháp luật và các tiêu chuẩn trách nhiệm xã hội. Luật sư giám đốc điều hành của Y&P Law Firm là Lead Auditor (Kiểm toán viên/Đánh giá viên trưởng) của Tập đoàn Samsung trong các chiến dịch/chương trình Audit Vendor/Đánh giá nhà cung ứng. Theo đó, chúng tôi có đủ kinh nghiệm và tự tin cung cấp dịch vụ đánh giá Doanh nghiệp toàn diện, giúp khách hàng có cái nhìn sâu sắc về toàn bộ hoạt động kinh doanh và nhận diện được các yếu tố rủi ro tiềm ẩn của Doanh nghiệp. Dịch vụ của chúng tôi chỉ ra toàn diện các lỗi trong việc tuân thủ các khía cạnh pháp lý về lao động, đạo đức kinh doanh, hệ thống quản lý, an toàn, sức khỏe, môi trường, giấy phép, sở hữu trí tuệ, tài liệu quản trị nội bộ doanh nghiệp..': 'homepage.evaluationServiceDesc',
-  'Mô tả vấn đề của bạn và thu thập tài liệu liên quan. Liên hệ với chúng tôi qua Hotline, Zalo, WhatsApp, Facebook hoặc Email': 'homepage.contactDesc',
-  'Mô tả chi tiết vấn đề qua email hoặc điện thoại và đính kèm tài liệu liên quan': 'homepage.sendRequestDesc',
-  'Theo dõi email hoặc điện thoại của bạn để nhận phản hồi từ đội ngũ hỗ trợ khách hàng của chúng tôi. Nếu không nhận được phản hồi trong thời gian dự kiến, hãy liên hệ lại để đảm bảo vấn đề của bạn không bị bỏ sót.': 'homepage.trackResponseDesc',
-  'Trang tin tức của chúng tôi cung cấp những thông tin cập nhật và mới nhất về các vấn đề pháp lý, với bài viết từ các chuyên gia pháp lý hàng đầu, đảm bảo bạn luôn nắm bắt được những thay đổi quan trọng trong các lĩnh vực quan tâm.': 'homepage.newsInfo',
-  'Khách hàng hài lòng với dịch vụ pháp lý tại Youth & Partners, đánh giá cao sự tận tâm và chuyên nghiệp của đội ngũ luật sư trong việc giải quyết các vấn đề pháp lý phức tạp. Họ tin tưởng và sẵn lòng tiếp tục sử dụng dịch vụ của chúng tôi trong tương lai.': 'homepage.testimonialsSubtitle',
-  'Chúng tôi tự hào về mạng lưới đối tác và khách hàng rộng khắp, bao gồm các doanh nghiệp, tổ chức và cá nhân uy tín trong nhiều lĩnh vực khác nhau. Những đối tác hợp tác của chúng tôi gồm có các công ty luật hàng đầu, các tổ chức tư vấn chiến lược, và các công ty tài chính quốc tế. Chúng tôi làm việc chặt chẽ với họ để mang lại các giải pháp pháp lý tối ưu và chuyên nghiệp nhất.': 'homepage.partnersSubtitle',
-  'Chúng tôi luôn sẵn lòng lắng nghe và hỗ trợ bạn một cách tận tâm và chuyên nghiệp. Hãy để chúng tôi giúp bạn giải quyết mọi vấn đề pháp lý một cách nhanh chóng và hiệu quả!': 'homepage.ctaSubtitle',
-  
-  // Services page
-  'Dịch vụ pháp lý chuyên môn': 'services.professionalLegal',
-  'Liên hệ với chúng tôi': 'contact.contactUs',
-  
-  // About page additional (entries not duplicated from earlier about section)
-  'Địa chỉ văn phòng': 'about.officeAddress',
-  'Hãy đến thăm chúng tôi': 'about.visitUs',
-  // About page descriptions
-  'Với phương châm hoạt động: "Thời Gian – Tận Tâm – Tận Lực", chúng tôi luôn cam kết mang đến những dịch vụ pháp lý chất lượng, nhanh chóng, chính xác và toàn diện nhất. Tại Y&P Law Firm, chúng tôi tin rằng giá trị thực sự của một Doanh nghiệp, một tổ chức tư vấn pháp lý, được xây dựng trên nền tảng những giá trị cốt lõi. Các dịch vụ của chúng tôi không chỉ được thực hiện với chuyên môn vững vàng mà còn với cái tâm và tầm của đội ngũ luật sư giàu kinh nghiệm. Chúng tôi hiểu rằng sự hài lòng và tin tưởng của Quý khách hàng chính là thước đo quan trọng nhất cho sự thành công của chúng tôi.': 'about.heroSubtitle',
-  'Với nhiều năm kinh nghiệm hợp tác và cung cấp dịch vụ tư vấn pháp lý cho các Doanh nghiệp lớn, uy tín trong và ngoài nước, đặc biệt là các tập đoàn hàng đầu như Samsung, Viettel, FPT, cũng như các nhà cung cấp, đối tác của Samsung và nhiều Doanh nghiệp Hàn Quốc, Nhật Bản tại Việt Nam, Y&P Law Firm tự tin có thể đáp ứng mọi yêu cầu pháp lý phức tạp của Quý khách hàng, các Doanh nghiệp và các nhà Đầu tư tại Việt Nam.': 'about.heroSubtitle2',
-  'Chúng tôi cam kết đồng hành cùng Quý khách trên hành trình phát triển bền vững, giải quyết hiệu quả mọi vấn đề pháp lý, giúp Quý khách đạt được mục tiêu và gia tăng giá trị Doanh nghiệp.': 'about.heroSubtitle3',
-  'Chúng tôi tự hào về những thành tựu và giải thưởng pháp lý đã đạt được, minh chứng cho sự cam kết và uy tín trong ngành pháp luật': 'about.awardsSubtitle',
-  'Giải thưởng Luật sư Xuất sắc': 'about.excellentLawyerAward',
-  'Được trao tặng cho các luật sư của chúng tôi vì những đóng góp xuất sắc trong các vụ việc phức tạp.': 'about.excellentLawyerDesc',
-  'Giải thưởng Đổi mới Pháp lý': 'about.innovationAward',
-  'Tôn vinh những nỗ lực sáng tạo trong việc áp dụng công nghệ và các giải pháp pháp lý mới để nâng cao hiệu quả công việc.': 'about.innovationAwardDesc',
-  'Giải thưởng Đóng góp cho Cộng đồng': 'about.communityAward',
-  'Ghi nhận những hoạt động từ thiện và đóng góp tích cực cho cộng đồng và xã hội.': 'about.communityAwardDesc',
-  
-  // Services page - dich-vu.astro
-  'Dịch vụ pháp lý': 'services.legalServices',
-  'Giới thiệu dịch vụ': 'services.serviceIntro',
-  'Dự án đầu tư': 'services.investmentProject',
-  'M & A': 'services.ma',
-  'Tư vấn thường xuyên cho các doanh nghiệp': 'services.regularConsulting',
-  'Tranh tụng và giải quyết tranh chấp': 'services.litigation',
-  // Note: 'Lao động và việc làm' already defined in additional service items section
-  'Dịch vụ pháp lý về đất đai': 'services.landServices',
-  'Bảo vệ toàn diện': 'services.comprehensiveProtection',
-  'Kinh nghiệm và chuyên môn sâu rộng': 'services.deepExpertise',
-  'Giải quyết tranh chấp hiệu quả': 'services.disputeResolution',
-  'Tầm nhìn quốc tế': 'services.internationalVision',
-  'Kinh nghiệm vượt trội': 'services.superiorExperience',
-  'Hỗ trợ toàn diện và chiến lược': 'services.comprehensiveSupport',
-  'Chuyên môn sâu rộng': 'services.deepExpertise',
-  'Giải pháp toàn diện và hiệu quả': 'services.comprehensiveSupport',
-  'Tận tâm và uy tín': 'homepage.dedication',
-  // Services page descriptions
-  'Với đội ngũ Luật sư giàu kinh nghiệm thực chiến, kết hợp với sự am hiểu sâu sắc pháp luật và kiến thức xã hội Việt Nam, đến với chúng tôi khách hàng sẽ được tư vấn cách tiến hành kinh doanh và hoạt động tốt nhất, bao gồm đàm phán với các đối tác, thực hiện các chương trình tuân thủ và giải quyết những vấn đề pháp lý phức tạp của doanh nghiệp.': 'services.heroSubtitle',
-  'Tận dụng sự hiểu biết của mình về môi trường pháp lý và xã hội ngày càng phức tạp tại Việt Nam, chúng tôi đã tư vấn cho hàng trăm khách hàng doanh nghiệp vượt qua tình trạng khó khăn, giảm thiểu rủi ro pháp lý và làm việc hiệu quả với các cơ quan nhà nước.': 'services.heroSubtitle2',
-  'Y&P làm việc cùng với khách hàng để hiểu rõ hoạt động kinh doanh và các giải pháp thủ công nhằm giúp quý khách hàng đáp ứng các nhu cầu và thách thức kinh doanh tại Việt Nam và hơn thế nữa.': 'services.heroSubtitle3',
-  'Với phương châm hoạt động: "Thời Gian – Tận Tâm – Tận Lực", Y&P Lawfirm luôn mong muốn mang đến cho quý khách hàng những dịch vụ chất lượng, nhanh chóng, chính xác và trọn vẹn.': 'services.serviceIntroMotto',
-  'Chúng tôi luôn xác định, giá trị của một doanh nghiệp, một đơn vị tư vấn pháp lý phải bắt đầu từ những giá trị cốt lõi, các dịch vụ cần được thực hiện bởi cái tâm và cái tầm của các Luật sư.': 'services.serviceIntroValue',
-  'Các giá trị ấy chỉ có thể được đo bằng sự hài lòng, tin tưởng của tất cả các khách hàng/thân chủ.': 'services.serviceIntroMeasure',
-  'Chúng tôi có các luật sư và chuyên gia tư vấn pháp lý phụ trách các lĩnh vực sau:': 'services.legalServicesSubtitle',
-  'Cung cấp các giải pháp pháp lý toàn diện để hỗ trợ doanh nghiệp trong quá trình thành lập, hoạt động và phát triển.': 'services.enterpriseDesc',
-  'Cung cấp dịch vụ tư vấn pháp lý liên tục để đảm bảo doanh nghiệp hoạt động hiệu quả và tuân thủ các quy định pháp luật hiện hành.': 'services.regularConsultingDesc',
-  'Tư vấn và hỗ trợ bảo vệ quyền sở hữu trí tuệ, từ đăng ký bản quyền, bằng sáng chế đến giải quyết tranh chấp về sở hữu trí tuệ.': 'services.intellectualPropertyDesc',
-  'Quản trị doanh nghiệp và tuân thủ': 'services.governance',
-  'Giúp doanh nghiệp xây dựng hệ thống quản trị hiệu quả và tuân thủ các quy định pháp luật, giảm thiểu rủi ro pháp lý.': 'services.governanceDesc',
-  'Hỗ trợ các nhà đầu tư trong việc thực hiện các dự án đầu tư tại Việt Nam, từ việc xin giấy phép đến việc giải quyết các vấn đề pháp lý liên quan.': 'services.investmentProjectDesc',
-  'Dịch vụ hỗ trợ doanh nghiệp': 'services.businessSupport',
-  'Cung cấp các dịch vụ hỗ trợ doanh nghiệp, bao gồm tư vấn pháp lý, hỗ trợ quản lý, và giải quyết các vấn đề phát sinh trong quá trình kinh doanh.': 'services.businessSupportDesc',
-  'Mua bán và Sáp nhập (M&A)': 'services.maFull',
-  'Tư vấn và hỗ trợ các giao dịch mua bán và sáp nhập doanh nghiệp, đảm bảo các giao dịch được thực hiện một cách hiệu quả và tuân thủ pháp luật.': 'services.maDesc',
-  'Chúng tôi đại diện và hỗ trợ khách hàng trong các vụ kiện tụng và giải quyết tranh chấp, bảo vệ quyền lợi hợp pháp của khách hàng.': 'services.litigationDesc',
-  'Tư vấn và hỗ trợ doanh nghiệp và người lao động về các vấn đề liên quan đến hợp đồng lao động, quyền lợi nhân viên, và giải quyết tranh chấp lao động.': 'services.laborEmploymentDesc',
-  'Cung cấp các dịch vụ pháp lý liên quan đến đất đai, từ việc xin giấy chứng nhận quyền sử dụng đất đến giải quyết các tranh chấp liên quan đến đất đai.': 'services.landServicesDesc',
-  
-  // Team page - luat-su-va-cong-su.astro (note: some entries already defined above)
-  'Luật sư điều hành': 'team.managingLawyer',
-  'Luật sư thành viên': 'team.partnerLawyer',
-  'Cộng sự cao cấp': 'team.seniorAssociate',
-  'Cộng sự': 'team.associate',
-  'Chuyên viên tư vấn pháp lý': 'team.legalConsultant',
-  'Trợ lý pháp lý': 'team.paralegal',
-  'Đội ngũ chuyên gia': 'team.expertTeam',
-  'Xem đội ngũ': 'team.viewTeam',
-  'Đội ngũ của chúng tôi': 'team.ourTeam',
-  'Thành viên': 'team.members',
-  'Ngôn ngữ hỗ trợ': 'team.supportedLanguages',
-  'Năm kinh nghiệm': 'team.yearsExperience',
-  'Giới thiệu đội ngũ': 'team.aboutTeam',
-  'Chuyên môn đội ngũ': 'team.expertise',
-  'Tư vấn doanh nghiệp': 'team.corporateConsulting',
-  'Pháp luật lao động': 'team.laborLaw',
-  // note: 'Đầu tư nước ngoài' already defined as nav.investment
-  'Audit & Due Diligence': 'team.auditDD',
-  'Tranh tụng': 'team.litigation',
-  'Hỗ trợ đa ngôn ngữ': 'team.multiLanguage',
-  'Gặp gỡ đội ngũ': 'team.meetTeam',
-  'Cần tư vấn pháp lý?': 'team.needLegalAdvice',
-  'Dịch vụ nổi bật': 'team.featuredServices',
-  'Pháp lý doanh nghiệp': 'team.legalServices',
-  // note: 'Dịch vụ đánh giá' already defined as nav.evaluation
-  'Xem hồ sơ': 'team.viewProfile',
-  // note: 'Liên hệ ngay' already defined as homepage.contactNow
-  'Xem dịch vụ': 'team.viewServices',
-  
-  // Author pages - tac-gia/*.astro
-  'Học vấn': 'post.education',
-  'Bài viết của tác giả': 'post.authorPosts',
-  
-  // Testimonials job titles (common)
-  'Khách hàng': 'testimonials.customer',
-  'Manager': 'testimonials.manager',
-  'Head of HR': 'testimonials.headOfHR',
-  'Founder & CEO': 'testimonials.founderCEO',
-  
-  // About page - History section (note: most entries already defined in earlier about section)
-  
-  // About page - Vision/Mission section
-  'Tầm nhìn': 'about.visionTitle',
-  'Sứ mệnh': 'about.missionTitle',
-  
-  // About page - Core values
-  'Chúng tôi luôn hành động với sự trung thực và đạo đức nghề nghiệp, đặt lợi ích của khách hàng lên hàng đầu.': 'about.integrityDesc',
-  'Chúng tôi luôn tìm kiếm những giải pháp pháp lý sáng tạo và hiệu quả để đáp ứng nhu cầu đa dạng của khách hàng.': 'about.creativityDesc',
-  'Chúng tôi tin rằng sự hợp tác chặt chẽ giữa đội ngũ nhân viên và khách hàng là chìa khóa để đạt được thành công.': 'about.cooperationDesc',
-  'Chúng tôi không ngừng nâng cao chất lượng dịch vụ để đáp ứng và vượt qua kỳ vọng của khách hàng.': 'about.qualityDesc',
-  
-  // About page - Office locations
-  'Hà Nội': 'location.hanoi',
-  'Phú Thọ': 'location.phutho',
-  'Bắc Ninh': 'location.bacninh',
-  'VPDD Vĩnh Tường': 'location.vinhtuong',
-  'P219, Tháp Đông, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội': 'location.hanoiAddress',
-  'Số 170, đường Nguyễn Văn Linh, phường Vĩnh Phúc, tỉnh Phú Thọ': 'location.phuthoAddress',
-  'Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc, tỉnh Bắc Ninh': 'location.bacninhAddress',
-  'Ngã 5 thôn Sen, xã Vĩnh Hưng, tỉnh Phú Thọ': 'location.vinhtuongAddress',
-  
-  // Contact page (note: 'Trụ sở' already defined as company.headquarters)
-  'Điện thoại': 'contact.phone',
-  'Bằng việc gửi biểu mẫu liên hệ này, bạn xác nhận và đồng ý với việc thu thập thông tin cá nhân của bạn.': 'contact.disclaimer',
-  
-  // Services page - Features descriptions
-  'Dịch vụ Pháp lý': 'services.legalServicesTitle',
-  'Tư vấn Thường xuyên cho Doanh nghiệp': 'services.regularConsultingTitle',
-  'Tư vấn Lao động': 'services.laborConsultingTitle',
-  'Đầu tư và Người Nước Ngoài': 'services.investmentForeignTitle',
-  // Note: 'Dịch vụ Đánh giá Doanh nghiệp' already defined as homepage.evaluationService
-  'Đội ngũ luật sư giàu kinh nghiệm của chúng tôi luôn sẵn sàng giải quyết mọi vấn đề pháp lý phức tạp. Chúng tôi cung cấp các dịch vụ pháp lý toàn diện từ tranh chấp thương mại, quyền sở hữu trí tuệ đến các vấn đề dân sự và hình sự.': 'services.legalServicesDesc',
-  'Chúng tôi cung cấp dịch vụ tư vấn thường xuyên cho các doanh nghiệp, hỗ trợ bạn trong việc quản lý rủi ro pháp lý, tuân thủ quy định pháp luật và tối ưu hóa quy trình hoạt động.': 'services.regularConsultingDesc2',
-  'Chúng tôi tư vấn về các vấn đề lao động nhằm đảm bảo quyền lợi cho cả người sử dụng lao động và nhân viên. Dịch vụ của chúng tôi bao gồm tư vấn hợp đồng lao động, quyền lợi nhân viên, giải quyết tranh chấp và tối ưu hóa quy trình lao động.': 'services.laborConsultingDesc',
-  'Chúng tôi cung cấp các giải pháp pháp lý cho nhà đầu tư và người nước ngoài muốn kinh doanh hoặc sinh sống tại Việt Nam. Chúng tôi hỗ trợ từ việc thành lập doanh nghiệp, xin giấy phép lao động đến giải quyết các vấn đề pháp lý liên quan khác.': 'services.investmentForeignDesc',
-  'Chúng tôi cung cấp các giải pháp đánh giá doanh nghiệp toàn diện, giúp bạn hiểu rõ hơn về hiệu suất, tình hình tài chính và các yếu tố rủi ro của doanh nghiệp. Chúng tôi cam kết mang đến cho bạn những đánh giá chính xác và toàn diện nhất.': 'services.evaluationDesc',
-  
-  // Services subtitle
-  'Tại Youth & Partners Law Firm, chúng tôi tự hào cung cấp các dịch vụ pháp lý và tư vấn chuyên nghiệp, được thiết kế để đáp ứng nhu cầu đa dạng của khách hàng. Với đội ngũ luật sư giàu kinh nghiệm và chuyên môn sâu rộng, chúng tôi cam kết mang lại giải pháp tối ưu cho mọi vấn đề pháp lý bao gồm nhưng không giới hạn như:': 'services.featuresSubtitle',
-  
-  // Capability profile
-  'Tại đây, bạn sẽ tìm thấy những thông tin chi tiết về năng lực chuyên môn, các dịch vụ pháp lý mà chúng tôi cung cấp, và các thành tựu nổi bật của đội ngũ luật sư tại công ty': 'about.capabilityDesc',
-  
-  // Blog type pages - titles and subtitles (from blog-seo.ts)
-  // Post (Tin tức)
-  'Tin tức pháp luật': 'blogTypes.postTitle',
-  'Cập nhật tin tức pháp luật mới nhất từ Công ty Luật Youth & Partners': 'blogTypes.postSubtitle',
-  
-  // Legal (Pháp lý) - note: 'Pháp lý doanh nghiệp' already defined as team.legalServices
-  'Trang pháp lý của chúng tôi cung cấp những thông tin cập nhật và mới nhất về các vấn đề pháp lý': 'blogTypes.legalSubtitle',
-  
-  // Consultation (Tư vấn thường xuyên)
-  'Tư vấn pháp lý thường xuyên': 'blogTypes.consultationTitle',
-  'Dịch vụ tư vấn pháp lý thường xuyên - Người bạn đồng hành đáng tin cậy của doanh nghiệp': 'blogTypes.consultationSubtitle',
-  
-  // Labor (Lao động) - note: 'Pháp luật lao động' already defined as team.laborLaw
-  'Tư vấn và giải quyết các vấn đề pháp luật lao động cho doanh nghiệp': 'blogTypes.laborSubtitle',
-  
-  // Foreigner (Đầu tư nước ngoài) - note: 'Đầu tư nước ngoài' already defined as nav.investment
-  'Hỗ trợ pháp lý toàn diện cho nhà đầu tư nước ngoài tại Việt Nam': 'blogTypes.foreignerSubtitle',
-  
-  // Evaluation (Dịch vụ đánh giá)
-  'Dịch vụ đánh giá pháp lý': 'blogTypes.evaluationTitle',
-  'Dịch vụ đánh giá, thẩm định và audit pháp lý chuyên nghiệp': 'blogTypes.evaluationSubtitle',
-  
-  // Blog category pages - common patterns
-  'Tin mới': 'blogCategories.tinMoi',
-  'Sự kiện': 'blogCategories.suKien',
-  'Tin tức pháp luật mới nhất': 'blogCategories.tinMoiSubtitle',
-  'Sự kiện và hoạt động của Youth & Partners': 'blogCategories.suKienSubtitle',
-  
-  // Pagination and navigation
-  'Trang trước': 'common.prevPage',
-  'Trang sau': 'common.nextPage',
-  'Trang': 'common.page',
-  
-  // Tag pages
-  'Tag:': 'common.tagPrefix',
-  'Chủ đề:': 'common.topicPrefix',
-  'Các bài viết với tag': 'common.postsWithTag',
-  
-  // Author pages
-  'Tác giả': 'author.authorLabel',
-  'Bài viết của': 'author.postsBy',
-  
-  // Services page - additional section titles and features (avoiding duplicates already defined above)
-  // Note: 'Doanh nghiệp' already defined as legal.enterprise
-  // Note: 'Tư vấn thường xuyên' already defined as nav.consultation
-  // Note: 'Sở hữu trí tuệ' already defined as legal.intellectual
-  'Lao động việc làm': 'servicesExtra.laborEmploymentShort',
-  'Dịch vụ bổ trợ doanh nghiệp': 'servicesExtra.enterpriseSupport',
-  'Chuyên môn vượt trội': 'servicesExtra.superiorExpertise',
-  'Chiến lược đàm phán hiệu quả': 'servicesExtra.negotiationStrategy',
-  'Tận tâm và bảo vệ quyền lợi khách hàng': 'servicesExtra.dedicatedProtection',
-  'Kiến thức chuyên môn sâu rộng': 'servicesExtra.deepKnowledge',
-  'Kinh nghiệm giải quyết tranh chấp lao động': 'servicesExtra.laborDisputeExp',
-  'Tư vấn chiến lược và giải pháp tối ưu': 'servicesExtra.strategicConsulting',
-  'Kiến thức chuyên môn và kinh nghiệm': 'servicesExtra.knowledgeExperience',
-  'Đồng hành và hỗ trợ liên tục': 'servicesExtra.continuousSupport',
-  'Hỗ trợ toàn diện': 'servicesExtra.comprehensiveSupportShort',
-  'Đội ngũ chuyên gia giàu kinh nghiệm': 'servicesExtra.experiencedTeam',
-  'Giải pháp linh hoạt và tùy chỉnh': 'servicesExtra.flexibleSolutions',
-  'Kinh nghiệm phong phú và đa dạng': 'servicesExtra.richExperience',
-  'Đội ngũ chuyên gia tận tâm và chuyên nghiệp': 'servicesExtra.dedicatedTeam',
-  'Giải pháp tùy chỉnh và linh hoạt': 'servicesExtra.customSolutions',
-  'Tìm hiểu, Phân tích và Đánh giá Thị trường': 'servicesExtra.marketAnalysis',
-  'Tìm Kiếm Đối tác Thích Hợp': 'servicesExtra.findPartners',
-  'Thông Tin Dự Án Gọi Vốn Đầu Tư Nước Ngoài': 'servicesExtra.fdiProjectInfo',
-  'Hỗ Trợ Thiết Lập Các Loại Hình Hoạt Động Đầu Tư': 'servicesExtra.investmentSetup',
-  'Cấu Trúc Đầu Tư': 'servicesExtra.investmentStructure',
-  'Đại Diện Thay Mặt Nhà Đầu Tư': 'servicesExtra.investorRepresentation',
-  'Thực Hiện Dịch Vụ Lập Văn Phòng Đại Diện, Chi Nhánh': 'servicesExtra.branchOfficeSetup',
-  'Một số dự án tư vấn đầu tư tiêu biểu của chúng tôi': 'servicesExtra.featuredProjects',
-  'Cùng làm việc với Youth & Partners để thành công': 'servicesExtra.workWithUs',
-  'Dự án AVENUE GARDEN': 'servicesExtra.projectAvenue',
-  'Dự án EMBASSY GARDEN': 'servicesExtra.projectEmbassy',
-  'Dự án SWISS – BELRESIDENCES UPPER EAST SAIGON': 'servicesExtra.projectSwiss',
-  'Mô tả:': 'servicesExtra.description',
-  'Vai trò của Y&P:': 'servicesExtra.ypRole',
-  
-  // Contact page - additional (avoiding duplicates)
-  // Note: 'Chúng tôi luôn sẵn sàng hỗ trợ bạn!' already defined as contact.readyToHelp
-  'Liên hệ với chúng tôi để được hỗ trợ về các vấn đề pháp lý chung, điều hướng trang web, thanh toán, truy cập các tài liệu pháp lý đã mua hoặc các câu hỏi về dịch vụ của chúng tôi.': 'contactExtra.generalSupportDesc',
-  'Trò chuyện với chúng tôi để giải đáp các câu hỏi về dịch vụ tư vấn pháp lý, tùy chọn tư vấn cá nhân hóa, hoặc các yêu cầu liên quan đến các vụ việc cụ thể.': 'contactExtra.consultDeptDesc',
-  'Liên hệ với chúng tôi khi bạn gặp vấn đề khó khăn trong việc truy cập tài liệu, vấn đề khi trao đổi qua email hoặc các thách thức kỹ thuật khác liên quan đến việc sử dụng dịch vụ của chúng tôi.': 'contactExtra.techSupportDesc',
-  
-  // Footer additional (avoiding duplicates)
-  // Note: 'Giám đốc, người đại diện theo pháp luật:' already defined as company.director
-  // Note: 'Luật sư Nguyễn Văn Thành' already defined as company.directorName
-  'Chát Zalo với chúng tôi': 'footerExtra.chatZalo',
-  'Gọi ngay 088 995 6888': 'footerExtra.callNow',
-  'Đã thông báo Bộ Công Thương': 'footerExtra.notifiedMOIT',
-  'All rights reserved.': 'footerExtra.allRights',
-  
-  // Common UI additional (avoiding duplicates)
-  // Note: 'Như một người bạn đồng hành.' already defined as homepage.likeAFriend
-  'YOUTH & PARTNERS': 'commonExtra.shortNameUpper',
-  'YP': 'commonExtra.initials',
-  'Toggle Menu': 'commonExtra.toggleMenu',
+const gtToI18nMap: Record<string, string> = {
+  'zh-CN': 'zh', 'en': 'en', 'ja': 'ja', 'ko': 'ko', 'vi': 'vi'
 };
+
+// Translation data - loaded lazily
+let translationsCache: Record<string, Record<string, string>> | null = null;
+let textToKeyMapCache: Record<string, string> | null = null;
+let normalizedTextMap: Map<string, string> | null = null;
 
 function getSavedLang(): string {
-  try {
-    return localStorage.getItem(LANG_KEY) || 'vi';
-  } catch {
-    return 'vi';
-  }
+  try { return localStorage.getItem(LANG_KEY) || 'vi'; } catch { return 'vi'; }
 }
 
 function saveLang(lang: string): void {
-  try {
-    localStorage.setItem(LANG_KEY, lang);
-  } catch { /* ignore */ }
+  try { localStorage.setItem(LANG_KEY, lang); } catch {}
 }
 
 function setGTCookie(lang: string): void {
-  // Clear existing cookies on all domains
-  document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
-  document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + window.location.hostname;
-  document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.yplawfirm.vn';
-  
+  const domains = ['/', window.location.hostname, '.yplawfirm.vn'];
+  domains.forEach(d => {
+    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/` + (d !== '/' ? `; domain=${d}` : '');
+  });
   if (lang !== 'vi') {
-    const cookieValue = `/vi/${lang}`;
-    document.cookie = `googtrans=${cookieValue}; path=/; max-age=31536000`;
-    document.cookie = `googtrans=${cookieValue}; path=/; max-age=31536000; domain=${window.location.hostname}`;
-    document.cookie = `googtrans=${cookieValue}; path=/; max-age=31536000; domain=.yplawfirm.vn`;
+    const val = `/vi/${lang}`;
+    domains.forEach(d => {
+      document.cookie = `googtrans=${val}; path=/; max-age=31536000` + (d !== '/' ? `; domain=${d}` : '');
+    });
   }
 }
 
-// Map Google Translate codes to i18n codes
-// Google Translate uses 'zh-CN' but our translations use 'zh'
-const gtToI18nMap: Record<string, string> = {
-  'zh-CN': 'zh',
-  'en': 'en',
-  'ja': 'ja',
-  'ko': 'ko',
-  'vi': 'vi',
-};
-
-function getTranslation(lang: string, key: string): string | null {
-  // Convert Google Translate code to i18n code if needed
-  const i18nLang = gtToI18nMap[lang] || lang;
+async function loadI18nData(lang: string): Promise<boolean> {
+  if (lang === 'vi') return true;
   
-  // The translations object is structured as: translations[section][i18nLang][key]
-  const keys = key.split('.');
-  if (keys.length !== 2) return null;
+  // Check sessionStorage cache first
+  try {
+    const cached = sessionStorage.getItem(`${CACHE_KEY}-${lang}`);
+    if (cached) {
+      const data = JSON.parse(cached);
+      translationsCache = data.translations;
+      textToKeyMapCache = data.textToKeyMap;
+      buildNormalizedMap();
+      return true;
+    }
+  } catch {}
   
-  const [section, subKey] = keys;
-  const sectionData = (translations as any)[section];
-  if (!sectionData) return null;
-  
-  const langData = sectionData[i18nLang];
-  if (!langData) return null;
-  
-  // Use explicit undefined check to allow empty strings
-  const value = langData[subKey];
-  return value !== undefined ? value : null;
+  // Fetch from API
+  try {
+    const res = await fetch(`/api/i18n.json?lang=${encodeURIComponent(lang)}`);
+    if (!res.ok) return false;
+    
+    const data = await res.json();
+    translationsCache = data.translations;
+    textToKeyMapCache = data.textToKeyMap;
+    buildNormalizedMap();
+    
+    // Cache in sessionStorage
+    try {
+      sessionStorage.setItem(`${CACHE_KEY}-${lang}`, JSON.stringify(data));
+    } catch {}
+    
+    return true;
+  } catch (e) {
+    console.warn('Failed to load i18n data:', e);
+    return false;
+  }
 }
 
-// Normalize text for comparison (remove extra whitespace, line breaks)
+function buildNormalizedMap(): void {
+  if (!textToKeyMapCache) return;
+  normalizedTextMap = new Map();
+  for (const [text, key] of Object.entries(textToKeyMapCache)) {
+    normalizedTextMap.set(normalizeText(text), key);
+  }
+}
+
 function normalizeText(text: string): string {
   return text.replace(/\s+/g, ' ').trim();
 }
 
-// Create normalized map for partial matching
-const normalizedTextMap: Map<string, string> = new Map();
-Object.entries(textToKeyMap).forEach(([text, key]) => {
-  normalizedTextMap.set(normalizeText(text), key);
-});
+function getTranslation(_lang: string, key: string): string | null {
+  if (!translationsCache) return null;
+  // API already returns flattened translations for the requested language
+  const [section, subKey] = key.split('.');
+  if (!section || !subKey) return null;
+  const sectionData = translationsCache[section];
+  if (!sectionData) return null;
+  const value = sectionData[subKey];
+  return value !== undefined ? value : null;
+}
 
 function translateTextNode(node: Text, lang: string): boolean {
+  if (!textToKeyMapCache || !normalizedTextMap) return false;
   const text = node.textContent?.trim();
   if (!text) return false;
 
-  // Strip leading bullets and special characters for matching
   const cleanText = text.replace(/^[•·\-\*\u2022\u2023\u25E6\u2043\u2219]\s*/, '').trim();
-
-  // Try exact match first
-  let key = textToKeyMap[text] || textToKeyMap[cleanText];
+  let key = textToKeyMapCache[text] || textToKeyMapCache[cleanText];
   
-  // If no exact match, try normalized match
   if (!key) {
     const normalizedText = normalizeText(text);
     const normalizedCleanText = normalizeText(cleanText);
     key = normalizedTextMap.get(normalizedText) || normalizedTextMap.get(normalizedCleanText) || '';
     
-    // If still no match, try partial match for longer texts (>50 chars)
     if (!key && text.length > 50) {
-      for (const [mapText, mapKey] of Object.entries(textToKeyMap)) {
+      for (const [mapText, mapKey] of Object.entries(textToKeyMapCache)) {
         const normalizedMapText = normalizeText(mapText);
-        // Check if the text starts with the same content (for truncated matches)
         if (normalizedText.startsWith(normalizedMapText.substring(0, 50)) ||
             normalizedMapText.startsWith(normalizedText.substring(0, 50))) {
           key = mapKey;
@@ -746,7 +217,6 @@ function translateTextNode(node: Text, lang: string): boolean {
   if (key) {
     const translation = getTranslation(lang, key);
     if (translation && node.textContent) {
-      // Preserve leading bullet if original had one
       const leadingBullet = text.match(/^[•·\-\*\u2022\u2023\u25E6\u2043\u2219]\s*/);
       node.textContent = leadingBullet ? leadingBullet[0] + translation : translation;
       return true;
@@ -755,30 +225,15 @@ function translateTextNode(node: Text, lang: string): boolean {
   return false;
 }
 
-function translateElement(element: Element, lang: string, forceTranslate: boolean = false): void {
-  // Skip user-content (handled by Google Translate)
-  if (element.classList.contains('user-content') || element.hasAttribute('data-user-content')) {
-    return;
-  }
-
-  // If forceTranslate is false, skip text-matching entirely
-  // Only data-i18n attributes will be used (handled by applyTranslations)
-  if (!forceTranslate) {
-    return;
-  }
-
-  // When forceTranslate is true (for header/footer), we DO translate even notranslate elements
-  // because notranslate is for Google Translate, not our i18n system
-
+function translateElement(element: Element, lang: string): void {
+  if (element.classList.contains('user-content') || element.hasAttribute('data-user-content')) return;
+  
   const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
   while (walker.nextNode()) {
     const node = walker.currentNode as Text;
     const parent = node.parentElement;
-    // Skip if parent is user-content or has data-i18n (handled separately)
     if (parent?.closest('.user-content, [data-user-content]')) continue;
     if (parent?.hasAttribute('data-i18n')) continue;
-    // Skip elements without notranslate class in breadcrumbs - they need Google Translate
-    // Only translate elements that have notranslate (our i18n handles those)
     if (element.matches('nav[aria-label="Breadcrumb"]') && !parent?.classList.contains('notranslate')) continue;
     translateTextNode(node, lang);
   }
@@ -790,113 +245,85 @@ function applyTranslations(lang: string): void {
     return;
   }
 
-  // First, translate all elements with data-i18n attributes (highest priority)
-  const i18nElements = document.querySelectorAll('[data-i18n]');
-  
-  i18nElements.forEach(el => {
+  // Translate data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (key) {
-      const translation = getTranslation(lang, key);
-      // Use != null to allow empty strings (e.g., companyPrefix in English should be empty)
-      if (translation != null) {
-        // Check if the element has icons (SVG) that should be preserved
-        const hasIcons = el.querySelector('svg, img, .icon');
-        // Check if translation contains HTML tags
-        const translationHasHtml = /<[^>]+>/.test(translation);
-        // Check for styled spans that wrap text (common pattern: <span class="font-medium">Text</span>)
-        const styledTextSpan = el.querySelector('span[class]');
-        
-        if (hasIcons) {
-          // Element has icons - only update text nodes, preserve icons
-          let replaced = false;
-          const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-          while (walker.nextNode()) {
-            const node = walker.currentNode as Text;
-            if (!replaced && node.textContent?.trim()) {
-              node.textContent = translation;
-              replaced = true;
-            } else if (replaced && node.textContent?.trim()) {
-              node.textContent = '';
-            }
-          }
-        } else if (translationHasHtml) {
-          // Translation contains HTML - use innerHTML directly
-          el.innerHTML = translation;
-        } else if (styledTextSpan && !styledTextSpan.querySelector('*')) {
-          // Element has a styled span containing only text - update the span's content
-          styledTextSpan.textContent = translation;
-        } else {
-          // Safe to replace innerHTML (plain text or simple structure)
-          const hasNewlines = translation.includes('\n');
-          if (hasNewlines) {
-            el.innerHTML = translation.replace(/\n\n/g, '<br /><br />').replace(/\n/g, '<br />');
-          } else {
-            el.innerHTML = translation;
-          }
+    if (!key) return;
+    const translation = getTranslation(lang, key);
+    if (translation == null) return;
+    
+    const hasIcons = el.querySelector('svg, img, .icon');
+    const translationHasHtml = /<[^>]+>/.test(translation);
+    const styledTextSpan = el.querySelector('span[class]');
+    
+    if (hasIcons) {
+      let replaced = false;
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      while (walker.nextNode()) {
+        const node = walker.currentNode as Text;
+        if (!replaced && node.textContent?.trim()) {
+          node.textContent = translation;
+          replaced = true;
+        } else if (replaced && node.textContent?.trim()) {
+          node.textContent = '';
         }
       }
+    } else if (translationHasHtml) {
+      el.innerHTML = translation;
+    } else if (styledTextSpan && !styledTextSpan.querySelector('*')) {
+      styledTextSpan.textContent = translation;
+    } else {
+      el.innerHTML = translation.includes('\n') 
+        ? translation.replace(/\n\n/g, '<br /><br />').replace(/\n/g, '<br />') 
+        : translation;
     }
   });
 
-  // Translate placeholder attributes
+  // Translate placeholders
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
     if (key) {
       const translation = getTranslation(lang, key);
-      if (translation) {
-        el.setAttribute('placeholder', translation);
-      }
+      if (translation) el.setAttribute('placeholder', translation);
     }
   });
 
-  // Translate multilingual name elements (e.g., attorney names)
-  // These use data-name-vi, data-name-en, data-name-zh, data-name-ja, data-name-ko
+  // Translate multilingual names
   document.querySelectorAll('.multilang-name').forEach(el => {
     const langKey = lang === 'zh-CN' ? 'zh' : lang;
     const localizedName = el.getAttribute(`data-name-${langKey}`);
-    if (localizedName) {
-      el.textContent = localizedName;
-    }
+    if (localizedName) el.textContent = localizedName;
   });
 
-  // Translate header (using text-matching for navigation links)
+  // Translate header, footer, nav
   const header = document.querySelector('header');
-  if (header) translateElement(header, lang, true);
-
-  // Translate footer (using text-matching)
+  if (header) translateElement(header, lang);
+  
   const footer = document.querySelector('footer');
-  if (footer) translateElement(footer, lang, true);
+  if (footer) translateElement(footer, lang);
+  
+  document.querySelectorAll('nav').forEach(el => translateElement(el, lang));
+  document.querySelectorAll('nav[aria-label="Breadcrumb"]').forEach(el => translateElement(el, lang));
 
-  // Translate navigation (using text-matching)
-  document.querySelectorAll('nav').forEach(el => translateElement(el, lang, true));
-
-  // Translate breadcrumbs
-  document.querySelectorAll('nav[aria-label="Breadcrumb"]').forEach(el => translateElement(el, lang, true));
-
-  // i18n translations are fast - remove loading class immediately
-  // Google Translate will handle article titles separately (they don't have notranslate class)
   document.documentElement.classList.remove('i18n-loading');
 }
 
 function loadGoogleTranslate(targetLang: string): void {
   const win = window as any;
 
-  // Ensure notranslate elements have translate="no" - but NOT breadcrumbs (they contain article titles that need Google Translate)
+  // Mark notranslate elements
   document.querySelectorAll('.notranslate, header, footer, [data-i18n]').forEach(el => {
     el.setAttribute('translate', 'no');
     el.classList.add('notranslate');
   });
   
-  // For navigation, only mark those that are NOT breadcrumbs
   document.querySelectorAll('nav:not([aria-label="Breadcrumb"])').forEach(el => {
     el.setAttribute('translate', 'no');
     el.classList.add('notranslate');
   });
 
   if (document.querySelector('script[src*="translate.google.com"]')) {
-    setTimeout(() => {
-      triggerTranslation(targetLang);
-    }, 100);
+    setTimeout(() => triggerTranslation(targetLang), 100);
     return;
   }
 
@@ -913,11 +340,7 @@ function loadGoogleTranslate(targetLang: string): void {
       const tryTrigger = () => {
         attempts++;
         if (attempts < 10) {
-          try {
-            triggerTranslation(targetLang);
-          } catch (e) {
-            // Ignore Google Translate internal errors
-          }
+          try { triggerTranslation(targetLang); } catch {}
           setTimeout(tryTrigger, 500);
         }
       };
@@ -951,33 +374,22 @@ function initDropdown(): void {
     const options = selector.querySelectorAll('.lang-option');
     const currentCode = selector.querySelector('.current-lang-code');
 
-    // Update display
-    if (currentCode) {
-      currentCode.textContent = langDisplayMap[savedLang] || 'VN';
-    }
+    if (currentCode) currentCode.textContent = langDisplayMap[savedLang] || 'VN';
 
-    // Mark active option
     options.forEach(opt => {
       opt.classList.remove('active');
-      if ((opt as HTMLElement).dataset.gtCode === savedLang) {
-        opt.classList.add('active');
-      }
+      if ((opt as HTMLElement).dataset.gtCode === savedLang) opt.classList.add('active');
     });
 
-    // Toggle dropdown
     toggle?.addEventListener('click', (e) => {
       e.stopPropagation();
       selector.classList.toggle('open');
     });
 
-    // Close on outside click
     document.addEventListener('click', (e) => {
-      if (!selector.contains(e.target as Node)) {
-        selector.classList.remove('open');
-      }
+      if (!selector.contains(e.target as Node)) selector.classList.remove('open');
     });
 
-    // Language selection
     options.forEach(option => {
       option.addEventListener('click', () => {
         const gtCode = (option as HTMLElement).dataset.gtCode || 'vi';
@@ -990,58 +402,59 @@ function initDropdown(): void {
   });
 }
 
-function init(): void {
+async function init(): Promise<void> {
   const savedLang = getSavedLang();
   const hasUserContent = document.querySelector('.user-content, [data-user-content]');
 
-  // Apply i18n translations first (before adding translate="no" attributes)
+  // Vietnamese users: minimal work
+  if (savedLang === 'vi') {
+    initDropdown();
+    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+    return;
+  }
+
+  // Non-Vietnamese: load i18n data first
+  document.documentElement.classList.add('i18n-loading');
+  await loadI18nData(savedLang);
+  
+  // Apply i18n translations
   applyTranslations(savedLang);
 
-  // If no user content, mark entire page as notranslate to prevent Google Translate issues
+  // Mark page as notranslate if no user content
   if (!hasUserContent) {
     document.documentElement.classList.add('notranslate');
     document.documentElement.setAttribute('translate', 'no');
   }
 
-  // Add translate="no" to all notranslate elements AFTER i18n translation
-  document.querySelectorAll('.notranslate').forEach(el => {
-    el.setAttribute('translate', 'no');
-  });
+  // Add translate="no" to notranslate elements
+  document.querySelectorAll('.notranslate').forEach(el => el.setAttribute('translate', 'no'));
   document.querySelector('header')?.setAttribute('translate', 'no');
   document.querySelector('footer')?.setAttribute('translate', 'no');
 
-  // Initialize dropdown
   initDropdown();
 
-  // Load Google Translate ONLY if there's user content on the page that needs translation
-  if (savedLang !== 'vi' && hasUserContent) {
+  // Load Google Translate for user content
+  if (hasUserContent) {
     setGTCookie(savedLang);
     setTimeout(() => loadGoogleTranslate(savedLang), 100);
   } else {
-    // Clear Google Translate cookie when not needed to prevent auto-translation
     document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
-    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + window.location.hostname;
+    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname}`;
     document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.yplawfirm.vn';
   }
 }
 
-// Run on initial page load
+// Run on page load
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
+  document.addEventListener('DOMContentLoaded', () => init());
 } else {
   init();
 }
 
-// Also run on Astro client-side navigation (View Transitions / Prefetch)
-// This ensures translations are applied after navigating between pages
-document.addEventListener('astro:page-load', init);
-
-// Also listen for astro:after-swap which fires right after new DOM is swapped
+// Astro navigation events
+document.addEventListener('astro:page-load', () => init());
 document.addEventListener('astro:after-swap', () => {
-  // Re-apply translations immediately after page swap
   const savedLang = getSavedLang();
-  if (savedLang !== 'vi') {
-    document.documentElement.classList.add('i18n-loading');
-  }
+  if (savedLang !== 'vi') document.documentElement.classList.add('i18n-loading');
 });
 </script>
