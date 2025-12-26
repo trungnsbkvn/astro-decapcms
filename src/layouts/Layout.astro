@@ -1,5 +1,6 @@
 ---
-import '~/assets/styles/tailwind.css';
+// PERFORMANCE: Import CSS as a module to enable deferred loading
+import tailwindCssUrl from '~/assets/styles/tailwind.css?url';
 
 import { I18N } from 'astrowind:config';
 
@@ -39,6 +40,10 @@ const { language, textDirection } = I18N;
     <!-- Critical: Meta tags first for parser -->
     <CommonMeta />
     
+    <!-- PERFORMANCE: Preconnect to critical origins early -->
+    <link rel="preconnect" href="/.netlify" crossorigin />
+    <link rel="dns-prefetch" href="/.netlify" />
+    
     <!-- Critical CSS inlined to prevent render-blocking -->
     <CriticalCSS />
     
@@ -47,8 +52,18 @@ const { language, textDirection } = I18N;
     <FontOptimization />
     <CustomStyles />
     
-    <!-- Critical CSS hint: Help browser prioritize CSS -->
-    <link rel="preconnect" href="/.netlify" crossorigin />
+    <!-- PERFORMANCE: Defer non-critical CSS to eliminate render-blocking -->
+    <!-- Using print media trick: loads async, applies on load -->
+    <link 
+      rel="stylesheet" 
+      href={tailwindCssUrl}
+      media="print" 
+      onload="this.media='all';this.onload=null;"
+    />
+    <!-- Fallback for browsers without JS -->
+    <noscript>
+      <link rel="stylesheet" href={tailwindCssUrl} />
+    </noscript>
     
     <!-- External CSS (render-blocking but needed) -->
     <Favicons />

@@ -130,12 +130,19 @@ export default defineConfig({
             if (id.includes('fuse.js') || id.includes('/motion/')) {
               return 'search';
             }
+            // PERFORMANCE: Isolate fontsource fonts to separate chunk
+            if (id.includes('fontsource') || id.includes('@fontsource')) {
+              return 'fonts';
+            }
             // Keep vendor chunk for other node_modules
             if (id.includes('node_modules')) {
               return 'vendor';
             }
             return null;
           },
+          // PERFORMANCE: Optimize chunk naming for better caching
+          chunkFileNames: '_astro/[name].[hash].js',
+          assetFileNames: '_astro/[name].[hash][extname]',
         },
         // Reduce bundle analysis overhead
         treeshake: {
@@ -147,12 +154,16 @@ export default defineConfig({
       minify: 'esbuild',
       // CSS code splitting - helps reduce critical CSS
       cssCodeSplit: true,
+      // PERFORMANCE: Inline small CSS files to reduce requests
+      assetsInlineLimit: 4096,
       // Reduce chunk size warnings
       chunkSizeWarningLimit: 1500,
       // No source maps in production
       sourcemap: false,
       // Target modern browsers for smaller bundles
       target: 'es2020',
+      // PERFORMANCE: Enable CSS minification
+      cssMinify: true,
     },
     // Build performance optimizations
     ssr: {
