@@ -67,6 +67,20 @@
   padding: 0 5px;
 }
 
+/* Actions container (search/theme) when mobile menu is expanded */
+#header.expanded nav + div {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+  z-index: 50;
+  background: inherit;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
 .dropdown:focus .dropdown-menu,
 .dropdown:focus-within .dropdown-menu,
 .dropdown:hover .dropdown-menu {
