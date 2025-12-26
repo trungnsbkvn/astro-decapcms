@@ -28,7 +28,9 @@ export const textToKeyMap: Record<string, string> = {
   'Tư vấn thường xuyên': 'nav.consultation',
   'Lao động': 'nav.labor',
   'Đầu tư nước ngoài': 'nav.investment',
+  'Đầu tư & Nước ngoài': 'nav.investmentAndForeign',
   'Dịch vụ đánh giá': 'nav.evaluation',
+  'Tin tức - Liên hệ': 'news.newsAndContact',
   
   // About section
   'Lịch sử thành lập': 'about.history',
@@ -43,6 +45,84 @@ export const textToKeyMap: Record<string, string> = {
   'Sự kiện nội bộ': 'about.internalEvents',
   'Bảo vệ dữ liệu cá nhân': 'about.dataProtection',
   'Về chúng tôi': 'about.aboutUs',
+  
+  // Legal services menu
+  'Pháp lý thành lập Doanh nghiệp': 'legal.enterprise',
+  'Doanh nghiệp': 'legal.enterprise',
+  'Kinh doanh thương mại': 'legal.commercial',
+  'Hợp đồng dân sự, thương mại': 'legal.contract',
+  'Đất đai': 'legal.land',
+  'Hôn nhân gia đình': 'legal.marriage',
+  'Hôn nhân và gia đình': 'legal.marriage',
+  'Thừa kế, di chúc': 'legal.inheritance',
+  'Sở hữu trí tuệ': 'legal.intellectual',
+  'Giấy phép kinh doanh': 'legal.license',
+  'Giấy phép con': 'legal.subLicense',
+  'Dân sự': 'legal.civil',
+  'Hình sự': 'legal.criminal',
+  'Tranh tụng, tố tụng': 'legal.litigation',
+  'Pháp lý khác': 'legal.other',
+  
+  // Consultation services menu
+  'Tư vấn pháp luật thường xuyên': 'consultation.regular',
+  'Dịch vụ luật sư riêng': 'consultation.privateLawyer',
+  'Khái niệm Tư vấn thường xuyên': 'consultation.concept',
+  'Vì sao doanh nghiệp cần tư vấn thường xuyên': 'consultation.whyNeeded',
+  'Mẫu hợp đồng dịch vụ': 'consultation.contractTemplate',
+  'Phí dịch vụ tư vấn': 'consultation.serviceFee',
+  'Quy trình tư vấn': 'consultation.process',
+  'Điểm mạnh của Youth & Partners': 'consultation.strengths',
+  'Pháp lý tư vấn thường xuyên khác': 'consultation.other',
+  
+  // Labor services menu
+  'Nội quy lao động - Thỏa ước': 'labor.regulations',
+  'Nội quy - Thỏa ước': 'labor.regulations',
+  'Thời giờ làm việc': 'labor.workingHours',
+  'Tiền lương & Phúc lợi': 'labor.salary',
+  'Lương & Phúc lợi': 'labor.salary',
+  'Hợp đồng lao động, đào tạo': 'labor.contracts',
+  'Chấm dứt hợp đồng': 'labor.termination',
+  'Xử lý kỷ luật': 'labor.discipline',
+  'Quấy rối tình dục': 'labor.harassment',
+  'Tranh chấp lao động': 'labor.disputes',
+  'Pháp luật lao động khác': 'labor.other',
+  'Pháp lý lao động khác': 'labor.other',
+  
+  // Investment services menu
+  'Thành lập mới dự án': 'investment.newProjects',
+  'Điều chỉnh dự án đầu tư': 'investment.projectAdjustment',
+  'Chuyển nhượng dự án': 'investment.transfer',
+  'Hiện diện thương mại': 'investment.presence',
+  'Luật sư tư vấn tiếng Anh': 'investment.englishLawyer',
+  'Luật sư tư vấn tiếng Nhật': 'investment.japaneseLawyer',
+  'Luật sư tư vấn tiếng Trung Quốc': 'investment.chineseLawyer',
+  'Giấy phép lao động': 'investment.workPermit',
+  'Pháp lý người nước ngoài': 'investment.foreignerLaw',
+  
+  // Evaluation services menu
+  'Khái niệm đánh giá': 'evaluation.concept',
+  'Lợi ích đánh giá': 'evaluation.benefits',
+  'Lợi ích của việc đánh giá': 'evaluation.benefits',
+  'Phí dịch vụ đánh giá': 'evaluation.pricing',
+  'Quy trình đánh giá': 'evaluation.process',
+  'Dịch vụ đánh giá cho doanh nghiệp': 'evaluation.business',
+  'Dịch vụ Đánh giá cho Doanh nghiệp': 'evaluation.business',
+  'Dịch vụ đánh giá trước kiểm toán': 'evaluation.preAudit',
+  'Dịch vụ đánh giá tiền trạm': 'evaluation.preAudit',
+  'Tiêu chuẩn xã hội': 'evaluation.standards',
+  'Các bộ tiêu chuẩn TNXH': 'evaluation.standards',
+  'Tiêu chuẩn RBA': 'evaluation.rba',
+  'Những sai sót thường gặp của DN': 'evaluation.mistakes',
+  'Các lỗi thường gặp của doanh nghiệp': 'evaluation.mistakes',
+  
+  // News categories
+  'Tin tức pháp lý': 'news.legal',
+  'Bình luận pháp lý': 'news.commentary',
+  'Các vụ việc nổi bật': 'news.highlights',
+  'Hội thảo pháp lý': 'news.seminars',
+  'Văn bản pháp lý': 'news.documents',
+  'Liên hệ tư vấn': 'news.contact',
+  'Thông tin tuyển dụng': 'news.recruitment',
   
   // Common UI elements
   'Đọc thêm': 'common.readMore',
@@ -78,22 +158,40 @@ export const textToKeyMap: Record<string, string> = {
   'Nổi bật': 'common.featured',
   'Luật sư nổi bật': 'common.featuredLawyer',
   
-  // Legal services
-  'Pháp lý thành lập Doanh nghiệp': 'legal.enterprise',
-  'Doanh nghiệp': 'legal.enterprise',
-  'Kinh doanh thương mại': 'legal.commercial',
-  'Hợp đồng dân sự, thương mại': 'legal.contract',
-  'Đất đai': 'legal.land',
-  'Hôn nhân gia đình': 'legal.marriage',
-  'Hôn nhân và gia đình': 'legal.marriage',
-  'Thừa kế, di chúc': 'legal.inheritance',
-  'Sở hữu trí tuệ': 'legal.intellectual',
-  'Giấy phép kinh doanh': 'legal.license',
-  'Giấy phép con': 'legal.subLicense',
-  'Dân sự': 'legal.civil',
-  'Hình sự': 'legal.criminal',
-  'Tranh tụng, tố tụng': 'legal.litigation',
-  'Pháp lý khác': 'legal.other',
+  // Post/Blog labels
+  'Tác giả:': 'post.author',
+  'Tham vấn bởi:': 'post.reviewedBy',
+  'phút đọc': 'post.readingTime',
+  'Ngày đăng': 'post.publishDate',
+  'Cập nhật': 'post.updateDate',
+  'Danh mục': 'post.category',
+  'Thẻ': 'post.tags',
+  
+  // Contact page
+  'Liên hệ với chúng tôi!': 'contact.title',
+  'Hãy để lại thông tin bên dưới': 'contact.subtitle',
+  'Đội ngũ hỗ trợ của chúng tôi luôn sẵn lòng giúp đỡ bạn.': 'contact.description',
+  'Hỗ trợ chung': 'contact.generalSupport',
+  'Liên hệ bộ phận tư vấn': 'contact.consultDept',
+  'Hỗ trợ kỹ thuật': 'contact.techSupport',
+  'Chúng tôi luôn sẵn sàng hỗ trợ bạn!': 'contact.readyToHelp',
+  
+  // Forms
+  'Họ tên': 'forms.name',
+  'Họ và tên': 'forms.name',
+  'Email': 'forms.email',
+  'Số điện thoại': 'forms.phone',
+  'Nội dung tin nhắn': 'forms.message',
+  'Nội dung': 'forms.message',
+  'Tiêu đề': 'forms.subject',
+  'Công ty': 'forms.company',
+  'Chức vụ': 'forms.position',
+  'Bắt buộc': 'forms.required',
+  'Tùy chọn': 'forms.optional',
+  'Gửi tin nhắn': 'forms.sendMessage',
+  'Gửi yêu cầu': 'forms.sendMessage',
+  'Đang gửi...': 'forms.sending',
+  'Đã gửi thành công!': 'forms.sent',
   
   // Footer sections
   'Điều khoản chung': 'footer.terms',
@@ -102,17 +200,12 @@ export const textToKeyMap: Record<string, string> = {
   'Điều khoản sử dụng': 'footer.terms',
   'Dịch vụ của Y&P': 'footer.servicesYP',
   'Đầu tư và Người nước ngoài': 'footer.investmentForeign',
+  
+  // Error pages
+  'Không tìm thấy trang bạn yêu cầu': 'error.notFound',
+  'Trở về trang chủ': 'error.backToHome',
+  
+  // Search
+  'Tìm kiếm bài viết...': 'search.placeholder',
+  'Nhập từ khóa để tìm kiếm...': 'search.enterKeyword',
 };
-
-// Create normalized map for partial matching (lazy loaded)
-let _normalizedTextMap: Map<string, string> | null = null;
-
-export function getNormalizedTextMap(): Map<string, string> {
-  if (!_normalizedTextMap) {
-    _normalizedTextMap = new Map();
-    Object.entries(textToKeyMap).forEach(([text, key]) => {
-      _normalizedTextMap!.set(text.replace(/\s+/g, ' ').trim(), key);
-    });
-  }
-  return _normalizedTextMap;
-}

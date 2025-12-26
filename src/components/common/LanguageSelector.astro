@@ -93,7 +93,7 @@ const languages = [
  */
 
 const LANG_KEY = 'site-language';
-const CACHE_KEY = 'i18n-cache';
+const CACHE_KEY = 'i18n-cache-v2'; // Bump version to invalidate old cache
 
 const langDisplayMap: Record<string, string> = {
   'vi': 'VN', 'en': 'EN', 'zh-CN': 'CN', 'ja': 'JP', 'ko': 'KR'
@@ -137,19 +137,31 @@ async function loadI18nData(lang: string): Promise<boolean> {
     const cached = sessionStorage.getItem(`${CACHE_KEY}-${lang}`);
     if (cached) {
       const data = JSON.parse(cached);
-      translationsCache = data.translations;
-      textToKeyMapCache = data.textToKeyMap;
-      buildNormalizedMap();
-      return true;
+      if (data.translations && Object.keys(data.translations).length > 0) {
+        translationsCache = data.translations;
+        textToKeyMapCache = data.textToKeyMap;
+        buildNormalizedMap();
+        return true;
+      }
     }
   } catch {}
   
   // Fetch from API
   try {
     const res = await fetch(`/api/i18n.json?lang=${encodeURIComponent(lang)}`);
-    if (!res.ok) return false;
+    if (!res.ok) {
+      console.warn('i18n API returned non-OK status:', res.status);
+      return false;
+    }
     
     const data = await res.json();
+    
+    // Validate response has actual data
+    if (!data.translations || Object.keys(data.translations).length === 0) {
+      console.warn('i18n API returned empty translations');
+      return false;
+    }
+    
     translationsCache = data.translations;
     textToKeyMapCache = data.textToKeyMap;
     buildNormalizedMap();
@@ -415,10 +427,14 @@ async function init(): Promise<void> {
 
   // Non-Vietnamese: load i18n data first
   document.documentElement.classList.add('i18n-loading');
-  await loadI18nData(savedLang);
+  const dataLoaded = await loadI18nData(savedLang);
   
-  // Apply i18n translations
-  applyTranslations(savedLang);
+  // Only apply translations if data loaded successfully
+  if (dataLoaded && translationsCache && textToKeyMapCache) {
+    applyTranslations(savedLang);
+  } else {
+    console.warn('i18n data not available, translations may be incomplete');
+  }
 
   // Mark page as notranslate if no user content
   if (!hasUserContent) {
