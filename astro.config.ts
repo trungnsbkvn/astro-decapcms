@@ -21,12 +21,14 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  // SERVER MODE with Edge Functions: SSR by default, opt-in to static with `export const prerender = true`
-  // Edge Functions provide: better cold starts, global distribution, no function bundling issues
+  // SERVER MODE: SSR by default, opt-in to static with `export const prerender = true`
   // Static pages (prerender: true) are generated at build time for best performance
   output: 'server',
   adapter: netlify({
-    edgeMiddleware: true, // Use Edge Functions for SSR (bypass Node chunks, better cold starts)
+    // Edge Functions disabled - 50ms CPU limit too restrictive for MDX rendering
+    // Using Serverless Functions instead (10s timeout, 1024MB memory)
+    // With CDN caching (stale-while-revalidate), cold starts rarely affect users
+    edgeMiddleware: false,
     cacheOnDemandPages: true, // Cache SSR pages up to 1 year (integrates with Cache-Control)
     // Optimize bundle for large sites
     imageCDN: true, // Use Netlify Image CDN for on-demand image optimization
