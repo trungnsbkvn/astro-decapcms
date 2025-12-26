@@ -507,7 +507,14 @@
     "projectEmbassy": "EMBASSY GARDEN项目",
     "projectSwiss": "SWISS – BELRESIDENCES UPPER EAST SAIGON项目",
     "description": "描述：",
-    "ypRole": "Y&P角色："
+    "ypRole": "Y&P角色：",
+    "avenueDesc": "该项目占地2公顷以上，位于河内市西柱都市功能区。这是一个开创性项目，为该地区带来了新的生活标准。",
+    "avenueRole": "Y&P律师事务所是投资方从项目准备阶段到运营阶段、项目实施及项目所有法律问题的全面顾问。",
+    "embassyDesc": "该项目占地3.5公顷，位于西湖西都市区，总投资超过2万亿越南盾。Embassy Garden别墅系统提供现代设计、舒适空间和美丽的自然景观，有望成为寻求市内优质生活空间客户的理想居所。",
+    "embassyRole": "Y&P律师事务所是越南资产发展股份公司（VAD）在项目运营管理、投资方与别墅业主之间转让方面的顾问。",
+    "swissDesc": "Swiss Belresidences Upper East Saigon是守德市首个品牌公寓项目，由Hasco集团开发。项目位于守德市盛美利坊同文公街800号。",
+    "swissRole": "Y&P律师事务所是投资方从项目准备阶段到运营阶段、项目实施及项目所有法律问题的全面顾问。",
+    "learnMore": "了解更多"
   },
   "footerExtra": {
     "director": "董事、法定代表人：",

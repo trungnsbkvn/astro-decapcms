@@ -507,7 +507,14 @@
     "projectEmbassy": "EMBASSY GARDEN Project",
     "projectSwiss": "SWISS – BELRESIDENCES UPPER EAST SAIGON Project",
     "description": "Description:",
-    "ypRole": "Y&P Role:"
+    "ypRole": "Y&P Role:",
+    "avenueDesc": "The project covers over 2 hectares in the Tay Tuu urban functional zone, Hanoi. This is a pioneering project that brings a new living standard to the area.",
+    "avenueRole": "Y&P Lawfirm serves as a comprehensive consultant for the Investor from the project preparation phase to the operation phase, project implementation, and all legal issues arising in the Project.",
+    "embassyDesc": "The project covers 3.5 hectares in the Tay Ho Tay Urban Area with a total investment of over VND 2,000 billion. The Embassy Garden villa system offers modern design, comfortable spaces, and beautiful natural landscapes, promising to be an ideal residence for customers seeking excellent living spaces in the inner city.",
+    "embassyRole": "Y&P Lawfirm is a consultant for Vietnam Asset Development JSC (VAD) in project operations and management, transfers between the investor and villa owners in the Project.",
+    "swissDesc": "Swiss Belresidences Upper East Saigon is the first branded apartment project in Thu Duc City, developed by Hasco Group. The project is located at 800 Dong Van Cong, Thanh My Loi Ward, Thu Duc City.",
+    "swissRole": "Y&P Lawfirm serves as a comprehensive consultant for the Investor from the project preparation phase to the operation phase, project implementation, and all legal issues arising in the Project.",
+    "learnMore": "Learn more"
   },
   "footerExtra": {
     "director": "Director, Legal Representative:",

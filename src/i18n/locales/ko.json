@@ -507,7 +507,14 @@
     "projectEmbassy": "EMBASSY GARDEN 프로젝트",
     "projectSwiss": "SWISS – BELRESIDENCES UPPER EAST SAIGON 프로젝트",
     "description": "설명:",
-    "ypRole": "Y&P 역할:"
+    "ypRole": "Y&P 역할:",
+    "avenueDesc": "이 프로젝트는 하노이시 타이뚜 도시 기능 구역의 2헥타르 이상을 차지합니다. 이 지역에 새로운 생활 수준을 가져다 주는 선구적인 프로젝트입니다.",
+    "avenueRole": "Y&P 법률사무소는 프로젝트 준비 단계부터 운영 단계, 프로젝트 실행 및 프로젝트에서 발생하는 모든 법적 문제에 대해 투자자의 종합적인 컨설턴트 역할을 합니다.",
+    "embassyDesc": "이 프로젝트는 타이호타이 도시 지역의 3.5헥타르를 차지하며 총 투자액은 2조 동 이상입니다. Embassy Garden 빌라 시스템은 현대적인 디자인, 편안한 공간, 아름다운 자연 경관을 제공하여 도심에서 훌륭한 생활 공간을 찾는 고객에게 이상적인 거주지가 될 것을 약속합니다.",
+    "embassyRole": "Y&P 법률사무소는 베트남 자산 개발 주식회사(VAD)의 프로젝트 운영 관리, 투자자와 빌라 소유자 간의 이전 관련 컨설턴트입니다.",
+    "swissDesc": "Swiss Belresidences Upper East Saigon은 Hasco 그룹이 개발한 투득시 최초의 브랜드 아파트 프로젝트입니다. 프로젝트는 투득시 탄미로이구 동반꽁 800번지에 위치해 있습니다.",
+    "swissRole": "Y&P 법률사무소는 프로젝트 준비 단계부터 운영 단계, 프로젝트 실행 및 프로젝트에서 발생하는 모든 법적 문제에 대해 투자자의 종합적인 컨설턴트 역할을 합니다.",
+    "learnMore": "더 알아보기"
   },
   "footerExtra": {
     "director": "이사, 법정대리인:",
