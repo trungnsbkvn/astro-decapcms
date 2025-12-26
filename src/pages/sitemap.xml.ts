@@ -4,6 +4,7 @@
  * This endpoint generates a complete sitemap including SSR single post pages
  */
 import { SITE } from 'astrowind:config';
+import { getCollection } from 'astro:content';
 import { fetchPostsFromAllTypes, findAllPostsByAuthorAndTypes } from '~/utils/blog';
 import { getRootPathForType, BLOG_TYPES } from '~/utils/blog-permalinks';
 import { AUTHORS } from '~/utils/authors';
@@ -21,18 +22,30 @@ const escapeXml = (str: string): string => {
     .replace(/'/g, '&apos;');
 };
 
+// Helper to clean slug from title/name
+function cleanSlug(text: string): string {
+  return text
+    .toString()
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[đĐ]/g, 'd')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
+}
+
 export const GET = async () => {
   const siteUrl = (SITE.site || import.meta.env.SITE || 'https://yplawfirm.vn').replace(/\/$/, '');
   
   const urls: string[] = [];
 
-  // Static pages
+  // Static pages - Core site pages
   const staticPages = [
     { path: '', priority: '1.0', changefreq: 'daily' },
     { path: 'gioi-thieu', priority: '0.8', changefreq: 'monthly' },
     { path: 'dich-vu', priority: '0.8', changefreq: 'monthly' },
     { path: 'lien-he', priority: '0.7', changefreq: 'monthly' },
-    { path: 'luat-su-va-cong-su', priority: '0.7', changefreq: 'monthly' },
+    { path: 'luat-su-va-cong-su', priority: '0.8', changefreq: 'weekly' },
     { path: 'privacy', priority: '0.3', changefreq: 'yearly' },
     { path: 'terms', priority: '0.3', changefreq: 'yearly' },
   ];
@@ -47,7 +60,7 @@ export const GET = async () => {
   </url>`);
   }
 
-  // Blog listing pages
+  // Blog listing pages (index pages for each content type)
   const blogTypes = [
     { path: 'tin-tuc', priority: '0.8' },
     { path: 'phap-ly', priority: '0.8' },
@@ -66,12 +79,12 @@ export const GET = async () => {
   </url>`);
   }
 
-  // All blog posts (SSR pages)
+  // All blog posts (SSR pages) from all content types
   const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'legal'];
   const posts = await fetchPostsFromAllTypes(types);
 
   for (const post of posts) {
-    const rootPath = getRootPathForType(post.type);
+    const rootPath = getRootPathForType(post.type || 'post');
     const loc = `${siteUrl}${rootPath}/${post.permalink}`;
     const lastmod = formatDate(post.updateDate || post.publishDate);
     urls.push(`  <url>
@@ -82,34 +95,11 @@ export const GET = async () => {
   </url>`);
   }
 
-  // Author profile pages
-  const authorSlugs = [
-    'bui-duc-manh',
-    'do-thi-luong',
-    'luat-su-mang-dieu-hien',
-    'luat-su-nguyen-hoang-anh',
-    'luat-su-nguyen-hoang-ngoc-lan',
-    'luat-su-nguyen-minh-anh',
-    'luat-su-nguyen-thi-huong',
-    'luat-su-nguyen-thi-thom',
-    'luat-su-nguyen-thu-nga',
-    'luat-su-nguyen-van-thanh',
-    'luat-su-pham-thi-huyen-quyen',
-    'luat-su-tran-chung-kien',
-    'luat-su-van-thi-thanh-hoa',
-    'nghiem-minh-huyen',
-    'nguyen-hoang-dung',
-    'nguyen-phan-thuc-chi',
-    'nguyen-phung-mai-anh',
-    'nguyen-thi-quynh-giang',
-    'nguyen-thi-thu-trang',
-    'nguyen-thi-thuy-linh',
-    'nguyen-thuy-hang',
-    'tien-si-doan-xuan-truong',
-    'tran-thi-bich-lien',
-  ];
-
-  for (const slug of authorSlugs) {
+  // Attorney profile pages - dynamically from collection
+  const attorneys = await getCollection('attorney').catch(() => []);
+  for (const attorney of attorneys) {
+    if (attorney.data.draft) continue;
+    const slug = cleanSlug(attorney.data.name);
     urls.push(`  <url>
     <loc>${escapeXml(`${siteUrl}/tac-gia/${slug}`)}</loc>
     <lastmod>${formatDate(new Date())}</lastmod>
@@ -146,6 +136,35 @@ export const GET = async () => {
   for (const [tagSlug] of tagsMap) {
     urls.push(`  <url>
     <loc>${escapeXml(`${siteUrl}/tag/${tagSlug}`)}</loc>
+    <lastmod>${formatDate(new Date())}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>`);
+  }
+
+  // Category pages - collect all unique categories from posts
+  const categoriesMap = new Map<string, { slug: string; title: string; type: string }>();
+  for (const post of posts) {
+    const postType = post.type || 'post';
+    if (post.category?.slug && !categoriesMap.has(`${postType}-${post.category.slug}`)) {
+      categoriesMap.set(`${postType}-${post.category.slug}`, { ...post.category, type: postType });
+    }
+  }
+
+  // Root paths for category URLs
+  const categoryRootPaths: Record<string, string> = {
+    post: '/tin-tuc',
+    legal: '/phap-ly',
+    labor: '/lao-dong',
+    consultation: '/tu-van-thuong-xuyen',
+    foreigner: '/dau-tu-nuoc-ngoai',
+    evaluation: '/dich-vu-danh-gia',
+  };
+
+  for (const [, category] of categoriesMap) {
+    const rootPath = categoryRootPaths[category.type] || '/tin-tuc';
+    urls.push(`  <url>
+    <loc>${escapeXml(`${siteUrl}${rootPath}/${category.slug}`)}</loc>
     <lastmod>${formatDate(new Date())}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
