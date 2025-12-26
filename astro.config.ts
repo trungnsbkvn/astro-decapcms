@@ -21,14 +21,12 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  // SERVER MODE: SSR by default, opt-in to static with `export const prerender = true`
+  // SERVER MODE with Edge Functions: SSR by default, opt-in to static with `export const prerender = true`
+  // Edge Functions provide: better cold starts, global distribution, no chunk bundling issues
   // Static pages (prerender: true) are generated at build time for best performance
   output: 'server',
   adapter: netlify({
-    // Edge Functions disabled - 50ms CPU limit too restrictive for MDX rendering
-    // Using Serverless Functions instead (10s timeout, 1024MB memory)
-    // With CDN caching (stale-while-revalidate), cold starts rarely affect users
-    edgeMiddleware: false,
+    edgeMiddleware: true, // Use Edge Functions for SSR (bypasses Serverless chunk resolution issues)
     cacheOnDemandPages: true, // Cache SSR pages up to 1 year (integrates with Cache-Control)
     // Optimize bundle for large sites
     imageCDN: true, // Use Netlify Image CDN for on-demand image optimization
@@ -119,7 +117,7 @@ export default defineConfig({
     },
     // Build optimization
     build: {
-      // Consolidate chunks to reduce file count (helps with EMFILE)
+      // Consolidate chunks to reduce file count (works with Edge Functions)
       rollupOptions: {
         output: {
           // Smart code splitting for better caching and reduced unused JS
@@ -132,19 +130,12 @@ export default defineConfig({
             if (id.includes('fuse.js') || id.includes('/motion/')) {
               return 'search';
             }
-            // PERFORMANCE: Isolate fontsource fonts to separate chunk
-            if (id.includes('fontsource') || id.includes('@fontsource')) {
-              return 'fonts';
-            }
             // Keep vendor chunk for other node_modules
             if (id.includes('node_modules')) {
               return 'vendor';
             }
             return null;
           },
-          // PERFORMANCE: Optimize chunk naming for better caching
-          chunkFileNames: '_astro/[name].[hash].js',
-          assetFileNames: '_astro/[name].[hash][extname]',
         },
         // Reduce bundle analysis overhead
         treeshake: {
