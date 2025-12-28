@@ -398,6 +398,46 @@ const additionalTranslations = {
       legalExperts: '法律专家',
       satisfiedClients: '满意客户',
       casesWon: '胜诉案件',
+      // Vision/Mission descriptions
+      visionSubtitle: '<b>愿景</b> Youth & Partners致力于成为越南领先的律师事务所之一，是客户寻求法律解决方案时始终信赖的伙伴。我们不断创新，提升服务质量，培养经验丰富、尽职尽责的律师团队，以满足客户日益增长的需求。凭借热忱、专业和卓越的适应能力，我们立志成为法律领域卓越的象征，为客户和社会带来可持续的价值。<br /><br /><b>使命</b> Youth & Partners律所承诺陪伴客户保护其权益并有效及时地实现法律目标。秉承"时效-专心-全力"的理念，我们始终将客户利益放在首位，以最高的责任感解决各种复杂的法律问题。我们的使命不仅限于提供法律服务，还致力于成为值得信赖的合作伙伴，帮助客户和合作伙伴克服所有法律挑战，从而为企业和社会的可持续发展做出贡献。',
+      // Core values descriptions
+      integrityDesc: '我们始终以诚实和职业道德行事，将客户利益放在首位。',
+      creativityDesc: '我们始终寻求创造性和有效的法律解决方案，以满足客户的多样化需求。',
+      cooperationDesc: '我们相信团队与客户之间的紧密合作是成功的关键。',
+      qualityDesc: '我们不断提高服务质量，以满足并超越客户的期望。',
+      // Services descriptions
+      ourServicesSubtitle: '在Youth & Partners律所，我们自豪地提供专业的法律服务和咨询，旨在满足客户的多样化需求。凭借经验丰富的律师团队和广泛的专业知识，我们承诺为所有法律问题提供最优解决方案，包括但不限于：',
+      legalService: '法律服务',
+      legalServiceDesc: '我们经验丰富的律师团队随时准备解决各种复杂的法律问题。我们提供全面的法律服务，从商业争议、知识产权到民事和刑事案件。',
+      regularConsultService: '企业常规咨询服务',
+      regularConsultServiceDesc: '我们为企业提供常规咨询服务，帮助您管理法律风险、遵守法律法规并优化运营流程。',
+      laborConsultService: '劳动咨询服务',
+      laborConsultServiceDesc: '我们就劳动问题提供咨询，以确保雇主和员工的权益。我们的服务包括劳动合同咨询、员工福利、争议解决和劳动流程优化。',
+      investmentService: '投资与外国人服务',
+      investmentServiceDesc: '我们为希望在越南经商或生活的投资者和外国人提供法律解决方案。我们从成立企业、申请工作许可证到解决其他相关法律问题提供全方位支持。',
+      evaluationServiceTitle: '企业评估服务',
+      evaluationServiceDesc: '我们提供全面的企业评估解决方案，帮助您更好地了解企业的绩效、财务状况和风险因素。我们承诺为您提供最准确、最全面的评估。',
+      // Capability profile
+      capabilitySubtitle: '在这里，您将找到有关我们专业能力、我们提供的法律服务以及律师团队杰出成就的详细信息',
+      // Office addresses
+      hanoiOffice: '河内',
+      hanoiAddress: '河内市义都坊国防学院公寓东塔P219',
+      phuThoOffice: '富寿',
+      phuThoAddress: '富寿省永福坊阮文灵街170号',
+      bacNinhOffice: '北宁',
+      bacNinhAddress: '北宁省京北坊段陈业街26号',
+      vinhTuongOffice: '永祥代表处',
+      vinhTuongAddress: '富寿省永兴社仙村五岔路口',
+      // Customers section
+      ourCustomers: '我们的客户',
+      ourCustomersSubtitle: '我们以广泛的合作伙伴和客户网络为荣，包括各行业有声望的企业、组织和个人。我们的合作伙伴包括领先的律师事务所、战略咨询机构和国际金融公司。我们与他们紧密合作，提供最优质、最专业的法律解决方案。',
+      // Contact section
+      contactNowTitle: '立即联系咨询',
+      contactNowSubtitle: '您所有的问题都能得到解答',
+      chatWithExpert: '与专家交流',
+      startChat: '开始聊天',
+      leaveMessage: '留言',
+      viewMore: '查看更多',
     },
     ja: {
       history: '設立履歴',
