@@ -97,6 +97,21 @@ socialLinks:
   facebook: "https://www.facebook.com/yplawfirm"
   zalo: "0889956888"
 order: 19
+languages:
+  - "Tiếng Việt"
+  - "Tiếng Trung"
+languages_en:
+  - "Vietnamese"
+  - "Chinese"
+languages_zh:
+  - "越南语"
+  - "中文"
+languages_ja:
+  - "ベトナム語"
+  - "中国語"
+languages_ko:
+  - "베트남어"
+  - "중국어"
 publishDate: 2024-01-01T00:00:00Z
 bodyContent_en: |
   ### Work Experience
