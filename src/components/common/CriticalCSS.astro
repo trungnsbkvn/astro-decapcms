@@ -18,6 +18,11 @@
   ul,ol,menu{list-style:none;margin:0;padding:0}
   li{display:block}
   
+  /* Restore list styles for prose content (blog posts, attorney profiles, etc.) */
+  .prose ul{list-style-type:disc;padding-left:1.625em;margin-top:1.25em;margin-bottom:1.25em}
+  .prose ol{list-style-type:decimal;padding-left:1.625em;margin-top:1.25em;margin-bottom:1.25em}
+  .prose li{display:list-item;margin-top:.5em;margin-bottom:.5em}
+  
   /* PERFORMANCE: Enable smooth scroll only after load to prevent LCP delay */
   html.loaded{scroll-behavior:smooth}
   

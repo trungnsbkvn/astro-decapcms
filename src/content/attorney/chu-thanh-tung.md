@@ -121,9 +121,7 @@ bodyContent_en: |
   He has accumulated legal experience in various fields at the following organizations:
 
   - **Youth & Partners Law Firm:** Legal Specialist (Dec 2025 - present)
-  - **Vuong Nguyen Associates Law Firm (currently TAD Law Firm):**
-    - Legal Intern (Apr 2024 - Apr 2025)
-    - Legal Assistant (May 2025 - Sep 2025)
+  - **Vuong Nguyen Associates Law Firm (currently TAD Law Firm):** Legal Intern (Apr 2024 - Apr 2025), Legal Assistant (May 2025 - Sep 2025)
   - **THB LAW Firm:** Legal Assistant (Nov 2025 - Dec 2025)
 
   ### Areas of Expertise
@@ -154,9 +152,7 @@ bodyContent_zh: |
   他在以下单位积累了多领域的法律经验：
 
   - **Youth & Partners律师事务所：** 法律专员（2025年12月至今）
-  - **王阮律师事务所（现TAD律师事务所）：**
-    - 法律实习生（2024年4月 - 2025年4月）
-    - 法律助理（2025年5月 - 2025年9月）
+  - **王阮律师事务所（现TAD律师事务所）：** 法律实习生（2024年4月 - 2025年4月），法律助理（2025年5月 - 2025年9月）
   - **THB LAW律师事务所：** 法律助理（2025年11月 - 2025年12月）
 
   ### 专业领域
@@ -187,9 +183,7 @@ bodyContent_ja: |
   以下の組織で多分野の法務経験を積んできました：
 
   - **Youth & Partners法律事務所：** 法務スペシャリスト（2025年12月〜現在）
-  - **ヴォンウェン・アソシエイツ法律事務所（現TAD法律事務所）：**
-    - 法務インターン（2024年4月〜2025年4月）
-    - 法務アシスタント（2025年5月〜2025年9月）
+  - **ヴォンウェン・アソシエイツ法律事務所（現TAD法律事務所）：** 法務インターン（2024年4月〜2025年4月）、法務アシスタント（2025年5月〜2025年9月）
   - **THB LAW法律事務所：** 法務アシスタント（2025年11月〜2025年12月）
 
   ### 専門分野
@@ -220,9 +214,7 @@ bodyContent_ko: |
   다음 조직에서 다양한 분야의 법률 경험을 쌓았습니다:
 
   - **Youth & Partners 법률 회사:** 법무 전문가 (2025년 12월 - 현재)
-  - **붕응웬 어소시에이츠 법률 회사 (현 TAD 법률 회사):**
-    - 법무 인턴 (2024년 4월 - 2025년 4월)
-    - 법무 보조 (2025년 5월 - 2025년 9월)
+  - **붕응웬 어소시에이츠 법률 회사 (현 TAD 법률 회사):** 법무 인턴 (2024년 4월 - 2025년 4월), 법무 보조 (2025년 5월 - 2025년 9월)
   - **THB LAW 법률 회사:** 법무 보조 (2025년 11월 - 2025년 12월)
 
   ### 전문 분야
@@ -254,9 +246,7 @@ bodyContent_ko: |
 Anh đã tích lũy được những kinh nghiệm pháp lý trong đa dạng các lĩnh vực tại các đơn vị sau:
 
 - **Công ty Luật Youth & Partners:** Chuyên viên pháp lý (T12/2025 - đến nay)
-- **Công ty Luật TNHH Vương Nguyễn Associates (Hiện là Công ty Luật TNHH TAD):**
-  - Thực tập sinh Pháp lý (T4/2024 - T4/2025)
-  - Trợ lý Luật sư (T5/2025 - T9/2025)
+- **Công ty Luật TNHH Vương Nguyễn Associates (Hiện là Công ty Luật TNHH TAD):** Thực tập sinh Pháp lý (T4/2024 - T4/2025), Trợ lý Luật sư (T5/2025 - T9/2025)
 - **Công ty Luật TNHH THB LAW:** Trợ lý Luật sư (T11/2025 - T12/2025)
 
 ## Lĩnh vực chuyên môn
