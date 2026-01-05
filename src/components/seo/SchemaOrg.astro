@@ -1,7 +1,8 @@
 ---
 /**
  * SchemaOrg Component for JSON-LD structured data
- * Generates schema.org structured data for SEO
+ * Used specifically for BreadcrumbList schema
+ * Note: Organization schema is handled by SchemaMarkup.astro in Metadata
  */
 
 export interface BreadcrumbSchemaItem {
@@ -10,7 +11,7 @@ export interface BreadcrumbSchemaItem {
 }
 
 export interface Props {
-  type: 'BreadcrumbList' | 'Organization' | 'Article' | 'FAQ' | 'Service';
+  type: 'BreadcrumbList';
   data?: {
     items?: BreadcrumbSchemaItem[];
     [key: string]: unknown;
