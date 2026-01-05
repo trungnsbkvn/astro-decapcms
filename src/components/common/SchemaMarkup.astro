@@ -2,7 +2,11 @@
 /**
  * Comprehensive Schema.org Structured Data Markup
  * Provides JSON-LD for better SEO and rich results
+ * 
+ * Uses centralized company data from ~/data/company.ts
  */
+
+import { COMPANY, BRANCHES, SUB_ORGANIZATION, getOpeningHoursSchema, getSameAsArray } from '~/data/company';
 
 export interface BreadcrumbItem {
   name: string;
@@ -21,216 +25,137 @@ export interface Props {
 
 const { type = 'organization', data = {} } = Astro.props;
 
-// Base schema data
+// Generate department schema from BRANCHES
+const departmentSchema = BRANCHES.map(branch => ({
+  '@type': 'LegalService',
+  name: branch.name,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: branch.address.street,
+    addressLocality: branch.address.locality,
+    addressRegion: branch.address.region,
+    addressCountry: branch.address.country,
+  },
+  telephone: branch.phone,
+  openingHoursSpecification: getOpeningHoursSchema(),
+}));
+
+// Generate areaServed schema from SUB_ORGANIZATION
+const subOrgAreaServed = SUB_ORGANIZATION.areaServed.map((area, index) => ({
+  '@type': index === 0 ? 'AdministrativeArea' : 'State',
+  name: area,
+}));
+
+// Base schema data using centralized company info
 const baseData = {
   organization: {
     '@context': 'https://schema.org',
     '@type': 'LegalService',
-    '@id': 'https://yplawfirm.vn/#organization',
-    name: 'Công ty Luật TNHH Youth & Partners',
-    legalName: 'CÔNG TY LUẬT TNHH YOUTH AND PARTNERS',
-    alternateName: ['Youth & Partners Law Firm', 'Y&P Law Firm', 'Luật Youth & Partners', 'YP Law Firm'],
+    '@id': `${COMPANY.url}/#organization`,
+    name: COMPANY.name,
+    legalName: COMPANY.legalName,
+    alternateName: COMPANY.alternateName,
     description: 'Công ty Luật TNHH Youth & Partners là một trong những công ty luật hàng đầu trong các lĩnh vực: Tư vấn pháp lý thường xuyên cho doanh nghiệp, Tư vấn và giải quyết tranh chấp lao động, Dịch vụ Luật sư riêng tiếng Nhật, Anh, Trung, Hàn.',
-    url: 'https://yplawfirm.vn',
+    url: COMPANY.url,
     logo: {
       '@type': 'ImageObject',
-      '@id': 'https://yplawfirm.vn/#logo',
-      url: 'https://yplawfirm.vn/assets/images/logo-square.jpg',
-      contentUrl: 'https://yplawfirm.vn/assets/images/logo-square.jpg',
-      width: 512,
-      height: 512,
-      caption: 'Youth & Partners Law Firm Logo',
+      '@id': `${COMPANY.url}/#logo`,
+      url: COMPANY.logo,
+      contentUrl: COMPANY.logo,
+      width: COMPANY.logoWidth,
+      height: COMPANY.logoHeight,
+      caption: `${COMPANY.shortName} Logo`,
     },
     image: {
       '@type': 'ImageObject',
-      '@id': 'https://yplawfirm.vn/#image',
-      url: 'https://yplawfirm.vn/assets/images/logo-square.jpg',
-      contentUrl: 'https://yplawfirm.vn/assets/images/logo-square.jpg',
-      width: 512,
-      height: 512,
+      '@id': `${COMPANY.url}/#image`,
+      url: COMPANY.logo,
+      contentUrl: COMPANY.logo,
+      width: COMPANY.logoWidth,
+      height: COMPANY.logoHeight,
     },
-    sameAs: [
-      'https://www.facebook.com/yplawfirm',
-      'https://www.linkedin.com/company/yplawfirm',
-      'https://www.youtube.com/@YPLawFirmOfficial',
-    ],
-    knowsLanguage: ['vi', 'en', 'ja', 'zh', 'ko'],
+    sameAs: getSameAsArray(),
+    knowsLanguage: [...COMPANY.languages],
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
-      telephone: '+84-88-995-6888',
-      email: 'contact@yplawfirm.vn',
+      telephone: COMPANY.phone,
+      email: COMPANY.email,
       areaServed: 'VN',
-      availableLanguage: ['vi', 'en', 'ja', 'zh', 'ko'],
+      availableLanguage: [...COMPANY.languages],
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'P219, Tháp Đông, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô',
-      addressLocality: 'Phường Nghĩa Đô',
-      addressRegion: 'Hà Nội',
-      addressCountry: 'VN',
-      postalCode: '100000',
+      streetAddress: COMPANY.address.street,
+      addressLocality: COMPANY.address.locality,
+      addressRegion: COMPANY.address.region,
+      addressCountry: COMPANY.address.country,
+      postalCode: COMPANY.address.postalCode,
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 21.0478,
-      longitude: 105.8007,
+      latitude: COMPANY.geo.latitude,
+      longitude: COMPANY.geo.longitude,
     },
     founder: {
       '@type': 'Person',
-      name: 'Luật sư Nguyễn Văn Thành',
+      name: COMPANY.founder,
     },
-    foundingDate: '2019',
+    foundingDate: COMPANY.foundingDate,
     areaServed: {
       '@type': 'Country',
       name: 'Vietnam',
     },
-    priceRange: '$',
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '08:00',
-        closes: '17:30',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Saturday'],
-        opens: '08:00',
-        closes: '12:00',
-      },
-    ],
+    priceRange: COMPANY.priceRange,
+    openingHoursSpecification: getOpeningHoursSchema(),
     // Chi nhánh Bắc Ninh & Phú Thọ
-    department: [
-      {
-        '@type': 'LegalService',
-        name: 'Y&P Law Firm - Chi nhánh Bắc Ninh',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc',
-          addressLocality: 'Phường Kinh Bắc',
-          addressRegion: 'Bắc Ninh',
-          addressCountry: 'VN',
-        },
-        telephone: '+84-88-995-6888',
-        openingHoursSpecification: [
-          {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-            opens: '08:00',
-            closes: '17:30',
-          },
-          {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Saturday'],
-            opens: '08:00',
-            closes: '12:00',
-          },
-        ],
-      },
-      {
-        '@type': 'LegalService',
-        name: 'Y&P Law Firm - Chi nhánh Phú Thọ',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'Số 170, đường Nguyễn Văn Linh, phường Vĩnh Phúc',
-          addressLocality: 'Phường Vĩnh Phúc',
-          addressRegion: 'Phú Thọ',
-          addressCountry: 'VN',
-        },
-        telephone: '+84-88-995-6888',
-        openingHoursSpecification: [
-          {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-            opens: '08:00',
-            closes: '17:30',
-          },
-          {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Saturday'],
-            opens: '08:00',
-            closes: '12:00',
-          },
-        ],
-      },
-    ],
+    department: departmentSchema,
     // Tổ chức con - Luật Sư Miền Bắc (luatsumienbac.vn)
     subOrganization: {
       '@type': 'LegalService',
-      '@id': 'https://luatsumienbac.vn/#organization',
-      name: 'Luật Sư Miền Bắc',
-      legalName: 'Luật Sư Miền Bắc - Chi nhánh Công ty Luật TNHH Youth & Partners',
-      alternateName: ['Luật Sư Miền Bắc', 'LSMB', 'Northern Lawyers Vietnam'],
-      url: 'https://luatsumienbac.vn',
-      description: 'Chi nhánh miền Bắc của Công ty Luật TNHH Youth & Partners - Cung cấp dịch vụ tư vấn pháp luật, giải quyết tranh chấp, đại diện pháp lý chuyên nghiệp tại 15 tỉnh thành phía Bắc Việt Nam.',
-      telephone: '+84-88-995-6888',
-      email: 'contact@luatsumienbac.vn',
-      knowsLanguage: ['vi', 'en', 'ja', 'zh', 'ko'],
+      '@id': `${SUB_ORGANIZATION.url}/#organization`,
+      name: SUB_ORGANIZATION.name,
+      legalName: SUB_ORGANIZATION.legalName,
+      alternateName: SUB_ORGANIZATION.alternateName,
+      url: SUB_ORGANIZATION.url,
+      description: SUB_ORGANIZATION.description,
+      telephone: SUB_ORGANIZATION.phone,
+      email: SUB_ORGANIZATION.email,
+      knowsLanguage: [...SUB_ORGANIZATION.languages],
       parentOrganization: {
         '@type': 'LegalService',
-        '@id': 'https://yplawfirm.vn/#organization',
-        name: 'Công ty Luật TNHH Youth & Partners',
-        url: 'https://yplawfirm.vn',
+        '@id': `${COMPANY.url}/#organization`,
+        name: COMPANY.name,
+        url: COMPANY.url,
       },
-      areaServed: [
-        { '@type': 'AdministrativeArea', name: 'Miền Bắc Việt Nam' },
-        { '@type': 'State', name: 'Hà Nội' },
-        { '@type': 'State', name: 'Hải Phòng' },
-        { '@type': 'State', name: 'Bắc Ninh' },
-        { '@type': 'State', name: 'Hưng Yên' },
-        { '@type': 'State', name: 'Ninh Bình' },
-        { '@type': 'State', name: 'Phú Thọ' },
-        { '@type': 'State', name: 'Tuyên Quang' },
-        { '@type': 'State', name: 'Lào Cai' },
-        { '@type': 'State', name: 'Lai Châu' },
-        { '@type': 'State', name: 'Điện Biên' },
-        { '@type': 'State', name: 'Lạng Sơn' },
-        { '@type': 'State', name: 'Cao Bằng' },
-        { '@type': 'State', name: 'Sơn La' },
-        { '@type': 'State', name: 'Thái Nguyên' },
-        { '@type': 'State', name: 'Quảng Ninh' },
-      ],
+      areaServed: subOrgAreaServed,
     },
   },
 
   localbusiness: {
     '@context': 'https://schema.org',
     '@type': 'LegalService',
-    '@id': 'https://yplawfirm.vn/#localbusiness',
-    name: 'Công ty Luật TNHH Youth & Partners',
-    image: 'https://yplawfirm.vn/assets/images/logo-square.jpg',
+    '@id': `${COMPANY.url}/#localbusiness`,
+    name: COMPANY.name,
+    image: COMPANY.logo,
     description: 'Công ty luật cung cấp các dịch vụ pháp lý chuyên nghiệp tại Hà Nội, Việt Nam.',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'P219, Tháp Đông, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô',
-      addressLocality: 'Quận Cầu Giấy',
-      addressRegion: 'Hà Nội',
-      addressCountry: 'VN',
-      postalCode: '100000',
+      streetAddress: COMPANY.address.street,
+      addressLocality: COMPANY.address.locality,
+      addressRegion: COMPANY.address.region,
+      addressCountry: COMPANY.address.country,
+      postalCode: COMPANY.address.postalCode,
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 21.0478,
-      longitude: 105.8007,
+      latitude: COMPANY.geo.latitude,
+      longitude: COMPANY.geo.longitude,
     },
-    telephone: '+84-88-995-6888',
-    email: 'contact@yplawfirm.vn',
-    priceRange: '$',
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '08:00',
-        closes: '17:30',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Saturday'],
-        opens: '08:00',
-        closes: '12:00',
-      },
-    ],
+    telephone: COMPANY.phone,
+    email: COMPANY.email,
+    priceRange: COMPANY.priceRange,
+    openingHoursSpecification: getOpeningHoursSchema(),
   },
 
   service: {
@@ -241,8 +166,8 @@ const baseData = {
     serviceType: 'Legal Consultation',
     provider: {
       '@type': 'LegalService',
-      name: 'Youth & Partners Law Firm',
-      url: 'https://yplawfirm.vn',
+      name: COMPANY.shortName,
+      url: COMPANY.url,
     },
     areaServed: 'VN',
     ...(data.rating && {
@@ -260,23 +185,23 @@ const baseData = {
     '@type': 'Article',
     headline: data.title || '',
     description: data.excerpt || '',
-    image: data.image || 'https://yplawfirm.vn/assets/images/logo-square.jpg',
+    image: data.image || COMPANY.logo,
     datePublished: data.publishDate || new Date().toISOString(),
     ...(data.updateDate && { dateModified: data.updateDate }),
     author: {
       '@type': 'Person',
       name: data.author || 'Youth & Partners',
-      url: data.authorUrl || 'https://yplawfirm.vn',
+      url: data.authorUrl || COMPANY.url,
     },
     publisher: {
       '@type': 'LegalService',
-      '@id': 'https://yplawfirm.vn/#organization',
-      name: 'Công ty Luật TNHH Youth & Partners',
+      '@id': `${COMPANY.url}/#organization`,
+      name: COMPANY.name,
       logo: {
         '@type': 'ImageObject',
-        url: 'https://yplawfirm.vn/assets/images/logo-square.jpg',
-        width: 512,
-        height: 512,
+        url: COMPANY.logo,
+        width: COMPANY.logoWidth,
+        height: COMPANY.logoHeight,
       },
     },
     ...(data.readingTime && {
@@ -317,15 +242,15 @@ const baseData = {
     image: data.image || '',
     worksFor: {
       '@type': 'LegalService',
-      '@id': 'https://yplawfirm.vn/#organization',
-      name: 'Công ty Luật TNHH Youth & Partners',
-      url: 'https://yplawfirm.vn',
+      '@id': `${COMPANY.url}/#organization`,
+      name: COMPANY.name,
+      url: COMPANY.url,
     },
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Consultation',
-      telephone: '+84-88-995-6888',
-      email: 'contact@yplawfirm.vn',
+      telephone: COMPANY.phone,
+      email: COMPANY.email,
     },
     ...(data.areaOfPractice && {
       knowsAbout: data.areaOfPractice,

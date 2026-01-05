@@ -1,4 +1,5 @@
 import { getPermalink, getAsset } from './utils/blog-permalinks';
+import { COMPANY } from '~/data/company';
 
 export const headerData = {
   links: [
@@ -329,17 +330,16 @@ export const footerData = {
     { text: 'Chính sách Bảo vệ dữ liệu', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/yplawfirm' },
-    { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/c/YPLawFirmOfficial' },
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/vinhphuclawyers' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: COMPANY.social.facebook },
+    { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: COMPANY.social.youtube },
     {
       ariaLabel: 'Linkedin',
       icon: 'tabler:brand-linkedin',
-      href: 'https://www.linkedin.com/company/yplawfirm',
+      href: COMPANY.social.linkedin,
     },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
   ],
   footNote: `
-    Copyright © <a class="text-blue-600 underline dark:text-muted" href="https://yplawfirm.vn/"> Youth & Partners Law Firm</a> · All rights reserved.
+    Copyright © <a class="text-blue-600 underline dark:text-muted" href="${COMPANY.url}"> Youth & Partners Law Firm</a> · All rights reserved.
   `,
 };

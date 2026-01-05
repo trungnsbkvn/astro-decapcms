@@ -10,6 +10,7 @@ import { getCanonical } from '~/utils/blog-permalinks';
 
 import { adaptOpenGraphImages } from '~/utils/images';
 import SchemaMarkup from '~/components/common/SchemaMarkup.astro';
+import { COMPANY } from '~/data/company';
 
 export interface Props extends MetaData {
   dontUseTitleTemplate?: boolean;
@@ -77,17 +78,17 @@ const seoProps: AstroSeoProps = merge(
 <meta name="language" content="vi" />
 <meta http-equiv="content-language" content="vi" />
 <!-- SEO: Author/Publisher -->
-<meta name="author" content="Youth & Partners Law Firm" />
-<meta name="publisher" content="Công ty Luật TNHH Youth & Partners" />
+<meta name="author" content={COMPANY.shortName} />
+<meta name="publisher" content={COMPANY.name} />
 <!-- SEO: Geo tags for local SEO -->
 <meta name="geo.region" content="VN-HN" />
-<meta name="geo.placename" content="Hà Nội, Việt Nam" />
-<meta name="geo.position" content="21.0478;105.8007" />
-<meta name="ICBM" content="21.0478, 105.8007" />
+<meta name="geo.placename" content={`${COMPANY.address.region}, Việt Nam`} />
+<meta name="geo.position" content={`${COMPANY.geo.latitude};${COMPANY.geo.longitude}`} />
+<meta name="ICBM" content={`${COMPANY.geo.latitude}, ${COMPANY.geo.longitude}`} />
 <!-- SEO: Business verification -->
-<meta name="business:contact_data:street_address" content="P219, Tháp Đông, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô" />
-<meta name="business:contact_data:locality" content="Hà Nội" />
+<meta name="business:contact_data:street_address" content={COMPANY.address.street} />
+<meta name="business:contact_data:locality" content={COMPANY.address.region} />
 <meta name="business:contact_data:country_name" content="Vietnam" />
-<meta name="business:contact_data:phone_number" content="+84889956888" />
-<meta name="business:contact_data:email" content="contact@yplawfirm.vn" />
+<meta name="business:contact_data:phone_number" content={COMPANY.phone} />
+<meta name="business:contact_data:email" content={COMPANY.email} />
 <SchemaMarkup type={schemaType} data={schemaData} />

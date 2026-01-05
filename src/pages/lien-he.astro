@@ -6,6 +6,7 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import { getContactBreadcrumbs } from '~/utils/breadcrumbs';
+import { COMPANY } from '~/data/company';
 
 const metadata = {
   title: 'Liên hệ',
@@ -88,19 +89,19 @@ const breadcrumbs = getContactBreadcrumbs();
       },
       {
         title: 'Điện thoại',
-        description: '088 995 6888',
+        description: COMPANY.phoneDisplay,
         icon: 'tabler:headset',
         i18nTitle: 'company.hotline',
       },
       {
         title: 'Email',
-        description: 'contact@yplawfirm.vn',
+        description: COMPANY.email,
         icon: 'tabler:mail',
         i18nTitle: 'company.email',
       },
       {
         title: 'Trụ sở',
-        description: 'P219, Tháp Đông, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội',
+        description: COMPANY.address.full,
         icon: 'tabler:map-pin',
         i18nTitle: 'company.headquarters',
         i18nDescription: 'company.addressHanoi',
