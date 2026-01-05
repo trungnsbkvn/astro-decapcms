@@ -13,9 +13,11 @@ export const COMPANY = {
   
   // URLs
   url: 'https://yplawfirm.vn',
-  logo: 'https://yplawfirm.vn/assets/images/logo-square.jpg',
-  logoWidth: 512,
-  logoHeight: 512,
+  // Logo in public/images/ - served as static file, not processed by Astro
+  // Using 411x411 JPG for optimal file size while meeting Schema.org requirements (min 112x112)
+  logo: 'https://yplawfirm.vn/images/logo-square.jpg',
+  logoWidth: 411,
+  logoHeight: 411,
   
   // Contact
   phone: '+84-88-995-6888',
