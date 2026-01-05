@@ -55,6 +55,7 @@ export const COMPANY = {
   foundingDate: '2019',
   founder: 'Luật sư Nguyễn Văn Thành',
   priceRange: '$',
+  license: '19.02.0037/TP/ĐKHĐ', // Giấy đăng ký hoạt động
   
   // Languages supported
   languages: ['vi', 'en', 'ja', 'zh', 'ko'] as const,
