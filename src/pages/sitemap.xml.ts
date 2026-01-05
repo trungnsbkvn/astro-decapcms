@@ -39,6 +39,10 @@ export const GET = async () => {
   
   const urls: string[] = [];
 
+  // Fetch all posts first (needed for pagination calculation)
+  const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'legal'];
+  const posts = await fetchPostsFromAllTypes(types);
+
   // Static pages - Core site pages
   const staticPages = [
     { path: '', priority: '1.0', changefreq: 'daily' },
@@ -60,29 +64,43 @@ export const GET = async () => {
   </url>`);
   }
 
-  // Blog listing pages (index pages for each content type)
-  const blogTypes = [
-    { path: 'tin-tuc', priority: '0.8' },
-    { path: 'phap-ly', priority: '0.8' },
-    { path: 'lao-dong', priority: '0.8' },
-    { path: 'tu-van-thuong-xuyen', priority: '0.8' },
-    { path: 'dau-tu-nuoc-ngoai', priority: '0.8' },
-    { path: 'dich-vu-danh-gia', priority: '0.8' },
+  // Blog listing pages (index pages for each content type) + pagination
+  const blogTypesConfig = [
+    { path: 'tin-tuc', priority: '0.8', type: 'post' },
+    { path: 'phap-ly', priority: '0.8', type: 'legal' },
+    { path: 'lao-dong', priority: '0.8', type: 'labor' },
+    { path: 'tu-van-thuong-xuyen', priority: '0.8', type: 'consultation' },
+    { path: 'dau-tu-nuoc-ngoai', priority: '0.8', type: 'foreigner' },
+    { path: 'dich-vu-danh-gia', priority: '0.8', type: 'evaluation' },
   ];
 
-  for (const { path, priority } of blogTypes) {
+  const POSTS_PER_PAGE = 12; // Should match config
+
+  for (const { path, priority, type } of blogTypesConfig) {
+    // Index page
     urls.push(`  <url>
     <loc>${escapeXml(`${siteUrl}/${path}`)}</loc>
     <lastmod>${formatDate(new Date())}</lastmod>
     <changefreq>daily</changefreq>
     <priority>${priority}</priority>
   </url>`);
+
+    // Count posts for this type to calculate pagination
+    const typePosts = posts.filter(p => p.type === type);
+    const totalPages = Math.ceil(typePosts.length / POSTS_PER_PAGE);
+    
+    // Add pagination pages (page 2, 3, etc.)
+    for (let page = 2; page <= totalPages; page++) {
+      urls.push(`  <url>
+    <loc>${escapeXml(`${siteUrl}/${path}/${page}`)}</loc>
+    <lastmod>${formatDate(new Date())}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>`);
+    }
   }
 
-  // All blog posts (SSR pages) from all content types
-  const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'legal'];
-  const posts = await fetchPostsFromAllTypes(types);
-
+  // All blog posts (SSR pages) - already fetched above
   for (const post of posts) {
     const rootPath = getRootPathForType(post.type || 'post');
     const loc = `${siteUrl}${rootPath}/${post.permalink}`;
