@@ -47,6 +47,8 @@ export const COMPANY = {
     facebook: 'https://www.facebook.com/yplawfirm',
     linkedin: 'https://www.linkedin.com/company/yplawfirm',
     youtube: 'https://www.youtube.com/@YPLawFirmOfficial',
+    x: 'https://x.com/yplawfirm',
+    onlineGovVn: 'http://online.gov.vn/Home/WebDetails/138300',
   },
   
   // Business Info
