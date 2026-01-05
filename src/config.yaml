@@ -18,9 +18,9 @@ metadata:
   openGraph:
     site_name: Công ty Luật TNHH Youth & Partners
     images:
-      - url: '~/assets/images/youth and partners/logo-square.jpg'
-        width: 1200
-        height: 628
+      - url: '~/assets/images/youth and partners/Youth and Partners.jpg'
+        width: 1500
+        height: 711
     type: website
   twitter:
     handle: '@yplawfirm'
