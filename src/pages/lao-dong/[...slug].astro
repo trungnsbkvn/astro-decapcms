@@ -5,6 +5,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import SinglePost from '~/components/blog/SinglePost.astro';
 import ToBlogLink from '~/components/blog/ToBlogLink.astro';
 import RelatedPosts from '~/components/blog/RelatedPosts.astro';
+import MarkdownImage from '~/components/common/MarkdownImage.astro';
 
 import { getCanonical, getPermalink } from '~/utils/blog-permalinks';
 import { findPostBySlugWithContent, blogPostRobots } from '~/utils/blog';
@@ -20,6 +21,7 @@ export const prerender = false;
 
 const TYPE = 'labor';
 const blogSEO = getBlogTypeSEO(TYPE);
+const mdxComponents = { img: MarkdownImage };
 
 const { slug } = Astro.params;
 
@@ -64,7 +66,7 @@ const breadcrumbs = getLaborBreadcrumbs(
 
 <Layout metadata={metadata} breadcrumbs={breadcrumbs}>
   <SinglePost type={TYPE} post={{ ...post, image: image }} url={url}>
-    {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
+    {post.Content ? <post.Content components={mdxComponents} /> : <Fragment set:html={post.content || ''} />}
   </SinglePost>
   <ToBlogLink type={TYPE} />
   <RelatedPosts type={TYPE} post={post} />

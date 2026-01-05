@@ -1,0 +1,56 @@
+---
+import Image from '~/components/common/Image.astro';
+import { findImage } from '~/utils/images';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  src?: string;
+  alt?: string;
+  title?: string;
+}
+
+const { src, alt, title } = Astro.props as Props;
+
+const resolved = await findImage(src);
+const imageSource = resolved ?? src;
+const metadata = typeof resolved === 'object' && resolved && 'src' in resolved ? (resolved as ImageMetadata) : undefined;
+
+const baseAlt = (alt || title || '').trim();
+const derivedAlt = baseAlt || 'Image';
+
+const intrinsicWidth = metadata?.width;
+const intrinsicHeight = metadata?.height;
+const aspectRatio = intrinsicWidth && intrinsicHeight ? intrinsicHeight / intrinsicWidth : 9 / 16;
+const maxTargetWidth = intrinsicWidth ? Math.min(intrinsicWidth, 1280) : 1280;
+
+const preferredWidths = [480, 720, 880, 1024, 1280];
+let widths = preferredWidths.filter((value) => value <= maxTargetWidth);
+if (!widths.length) {
+  widths = [maxTargetWidth];
+}
+if (!widths.includes(maxTargetWidth)) {
+  widths = [...widths, maxTargetWidth];
+}
+widths = [...new Set(widths)].sort((a, b) => a - b);
+
+const width = maxTargetWidth;
+const height = Math.round(width * aspectRatio);
+const caption = title && title !== baseAlt ? title : '';
+const sizes = '(max-width: 768px) 100vw, 880px';
+---
+
+<figure class="my-8">
+  <Image
+    src={imageSource}
+    alt={derivedAlt}
+    width={width}
+    height={height}
+    widths={widths}
+    sizes={sizes}
+    layout="responsive"
+    class="w-full h-auto rounded-md shadow-lg bg-gray-50 dark:bg-slate-800/40"
+    loading="lazy"
+    decoding="async"
+  />
+  {caption && <figcaption class="mt-3 text-center text-sm text-slate-500 dark:text-slate-400">{caption}</figcaption>}
+</figure>
