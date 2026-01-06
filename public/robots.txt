@@ -2,16 +2,12 @@ User-agent: *
 Disallow: /admin/
 Disallow: /email-success
 
-# Allow all search engines
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-# Crawl delay for bots to prevent server overload
-User-agent: *
 Crawl-delay: 1
 
-# Sitemap location
 Sitemap: https://yplawfirm.vn/sitemap.xml
