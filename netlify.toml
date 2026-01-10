@@ -20,8 +20,6 @@
   # Enable parallel builds
   NPM_CONFIG_AUDIT = "false"
   NPM_CONFIG_FUND = "false"
-  # Skip optional dependencies
-  NPM_CONFIG_OPTIONAL = "false"
   # Increase Node.js memory limit for large builds
   NODE_OPTIONS = "--max-old-space-size=4096"
 
