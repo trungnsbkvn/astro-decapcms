@@ -12,9 +12,10 @@ import { findImage } from '~/utils/images';
 import { getLawyersBreadcrumbs } from '~/utils/breadcrumbs';
 
 const metadata = {
-  title: 'Luật sư và cộng sự',
+  title: 'Luật sư và cộng sự - Hỗ trợ 5 ngôn ngữ | Youth & Partners',
   description:
-    'Đội ngũ luật sư của Youth & Partners bao gồm các chuyên gia có nhiều năm kinh nghiệm trong nhiều lĩnh vực khác nhau như tư vấn pháp lý thường xuyên cho doanh nghiệp, giải quyết tranh chấp lao động, luật sư riêng tiếng Nhật, Anh, Trung, Hàn, và dịch vụ audit, đánh giá và thẩm định pháp lý cho doanh nghiệp.',
+    'Đội ngũ luật sư của Youth & Partners bao gồm các chuyên gia có nhiều năm kinh nghiệm. Hỗ trợ 5 ngôn ngữ: Tiếng Việt, English, 日本語, 中文, 한국어. Tư vấn pháp lý thường xuyên, tranh chấp lao động, đầu tư nước ngoài, audit và đánh giá pháp lý cho doanh nghiệp.',
+  keywords: 'luật sư đa ngôn ngữ, luật sư tiếng Nhật, luật sư tiếng Anh, luật sư tiếng Trung, luật sư tiếng Hàn, tư vấn pháp lý đa ngôn ngữ, multilingual lawyer Vietnam',
 };
 
 // Load all attorneys from content collection dynamically
@@ -35,6 +36,20 @@ const breadcrumbs = getLawyersBreadcrumbs();
 ---
 
 <Layout metadata={metadata} breadcrumbs={breadcrumbs}>
+  <!-- Main H1 Title for SEO -->
+  <div class="px-4 py-8 mx-auto max-w-7xl">
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-center dark:text-white notranslate" translate="no" data-i18n="team.pageTitle">
+      Luật sư và cộng sự - Hỗ trợ 5 ngôn ngữ
+    </h1>
+    <p class="text-xl text-center text-muted mt-4 dark:text-slate-300">
+      <span class="notranslate" translate="no">🇻🇳 Tiếng Việt</span> • 
+      <span class="notranslate" translate="no">🇺🇸 English</span> • 
+      <span class="notranslate" translate="no">🇯🇵 日本語</span> • 
+      <span class="notranslate" translate="no">🇨🇳 中文</span> • 
+      <span class="notranslate" translate="no">🇰🇷 한국어</span>
+    </p>
+  </div>
+
   <!-- About Team Section with Description -->
   <Content
     id="about"

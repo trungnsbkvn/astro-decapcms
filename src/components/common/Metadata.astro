@@ -74,9 +74,16 @@ const seoProps: AstroSeoProps = merge(
 
 <AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site) }} />
 {keywords && <meta name="keywords" content={keywords} />}
+
 <!-- SEO: Language and locale hints -->
 <meta name="language" content="vi" />
 <meta http-equiv="content-language" content="vi" />
+
+<!-- SEO: Hreflang tags - Vietnamese is the primary/only indexed language -->
+<!-- Other languages are handled client-side via i18n/Google Translate for UX only -->
+<link rel="alternate" hreflang="vi" href={canonical} />
+<link rel="alternate" hreflang="x-default" href={canonical} />
+
 <!-- SEO: Author/Publisher -->
 <meta name="author" content={COMPANY.shortName} />
 <meta name="publisher" content={COMPANY.name} />
