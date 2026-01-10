@@ -19,7 +19,7 @@ export interface FAQItem {
 }
 
 export interface Props {
-  type?: 'organization' | 'localbusiness' | 'service' | 'article' | 'breadcrumb' | 'faq' | 'attorney';
+  type?: 'website' | 'organization' | 'localbusiness' | 'service' | 'article' | 'breadcrumb' | 'faq' | 'attorney';
   data?: Record<string, string | number | boolean | BreadcrumbItem[] | FAQItem[] | undefined>;
 }
 
@@ -48,6 +48,30 @@ const subOrgAreaServed = SUB_ORGANIZATION.areaServed.map((area, index) => ({
 
 // Base schema data using centralized company info
 const baseData = {
+  website: {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${COMPANY.url}/#website`,
+    name: COMPANY.name,
+    alternateName: COMPANY.alternateName,
+    url: COMPANY.url,
+    description: 'Công ty Luật TNHH Youth & Partners là một trong những công ty luật hàng đầu trong các lĩnh vực: Tư vấn pháp lý thường xuyên cho doanh nghiệp, Tư vấn và giải quyết tranh chấp lao động, Dịch vụ Luật sư riêng tiếng Nhật, Anh, Trung, Hàn.',
+    inLanguage: 'vi-VN',
+    publisher: {
+      '@type': 'LegalService',
+      '@id': `${COMPANY.url}/#organization`,
+      name: COMPANY.name,
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${COMPANY.url}/tin-tuc?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  },
+
   organization: {
     '@context': 'https://schema.org',
     '@type': 'LegalService',
