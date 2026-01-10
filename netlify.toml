@@ -22,6 +22,8 @@
   NPM_CONFIG_FUND = "false"
   # Skip optional dependencies
   NPM_CONFIG_OPTIONAL = "false"
+  # Increase Node.js memory limit for large builds
+  NODE_OPTIONS = "--max-old-space-size=4096"
 
 # Enable asset optimization (Netlify handles compression)
 [build.processing]
