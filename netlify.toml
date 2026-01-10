@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "pnpm install --frozen-lockfile && pnpm run build"
+  command = "pnpm install && pnpm run build"
   # SSR Mode: Content is bundled at build time, pages render on-demand
   # When content changes via Decap CMS:
   #   1. Decap commits to GitHub
