@@ -33,8 +33,8 @@ export default defineConfig({
   },
   adapter: netlify({
     edgeMiddleware: true, // Use Edge Functions for SSR (bypasses Serverless chunk resolution issues)
-    cacheOnDemandPages: true, // Cache SSR pages up to 1 year (integrates with Cache-Control)
-    // Optimize bundle for large sites
+    // NOTE: Removed cacheOnDemandPages to avoid legacy On-demand Builders
+    // Caching is handled via Netlify-CDN-Cache-Control headers in netlify.toml with `durable` flag
     imageCDN: true, // Use Netlify Image CDN for on-demand image optimization
   }),
 
