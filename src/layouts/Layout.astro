@@ -42,7 +42,12 @@ const { language, textDirection } = I18N;
     <!-- Critical: Meta tags first for parser -->
     <CommonMeta />
     
-    <!-- PERFORMANCE: Preconnect to critical origins early -->
+    <!-- PERFORMANCE: Preconnect to Google Fonts (must be very early!) -->
+    <!-- Google Fonts CDN has servers in Singapore/Hong Kong - fast for Vietnam -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- PERFORMANCE: Preconnect to Netlify for SSR pages -->
     <link rel="preconnect" href="/.netlify" crossorigin />
     <link rel="dns-prefetch" href="/.netlify" />
     

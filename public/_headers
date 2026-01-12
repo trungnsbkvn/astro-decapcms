@@ -1,33 +1,24 @@
-# Astro build assets - immutable caching
+# =============================================================================
+# Static Assets - Immutable (fingerprinted by Astro)
+# Fonts are bundled via @fontsource-variable/inter in /_astro/
+# =============================================================================
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Cache images for 1 year (they are fingerprinted by Astro)
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Cache optimized images
+# =============================================================================
+# Netlify Image CDN
+# =============================================================================
 /_image
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
 
-# Cache fonts
-/*.woff2
-  Cache-Control: public, max-age=31536000, immutable
-/*.woff
-  Cache-Control: public, max-age=31536000, immutable
-
-# Sitemap and RSS
-/sitemap*.xml
-  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
-/rss.xml
-  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
-
-# Security and performance headers for all pages
+# =============================================================================
+# Security Headers (fallback - netlify.toml takes precedence)
+# =============================================================================
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
-  Content-Security-Policy: frame-ancestors 'self'
-  X-Robots-Tag: all

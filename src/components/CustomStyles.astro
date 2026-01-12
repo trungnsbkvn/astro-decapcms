@@ -1,11 +1,11 @@
 ---
-// PERFORMANCE: Import font with ?url to get build-time hashed URL for preloading
-import interLatinUrl from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
-import interVieUrl from '@fontsource-variable/inter/files/inter-vietnamese-wght-normal.woff2?url';
+/**
+ * PERFORMANCE: Google Fonts with preconnect for faster loading in Vietnam
+ * Google Fonts CDN has servers in Singapore/Hong Kong - much closer than Netlify
+ * Using font-display: swap via CSS &display=swap parameter
+ */
 
-// This import registers the font CSS
-import '@fontsource-variable/inter';
-
+// Font list for reference:
 // 'DM Sans'
 // Nunito
 // Dosis
@@ -24,21 +24,25 @@ import '@fontsource-variable/inter';
 // Urbanist
 ---
 
-<!-- PERFORMANCE: Preload critical fonts with dynamic build-time URLs -->
-<link rel="preload" href={interLatinUrl} as="font" type="font/woff2" crossorigin="anonymous" />
-<link rel="preload" href={interVieUrl} as="font" type="font/woff2" crossorigin="anonymous" />
+<!-- PERFORMANCE: Preconnect to Google Fonts (must be early in <head>) -->
+<!-- These eliminate DNS lookup + TCP + TLS handshake time -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<!-- Google Fonts: Inter with Vietnamese subset -->
+<!-- display=swap ensures text is visible immediately with fallback font -->
+<link 
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap&subset=latin,vietnamese"
+/>
 
 <style is:inline>
-  /* Ensure fonts use font-display: swap to prevent render blocking */
-  @font-face {
-    font-family: 'Inter Variable';
-    font-display: swap;
-  }
+  /* Font-display: swap is handled by Google Fonts URL parameter */
   
   :root {
-    --aw-font-sans: 'Inter Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --aw-font-serif: 'Inter Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --aw-font-heading: 'Inter Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --aw-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --aw-font-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --aw-font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
     --aw-color-primary: rgb(1 97 239);
     --aw-color-secondary: rgb(1 84 207);

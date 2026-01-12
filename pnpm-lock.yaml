@@ -17,9 +17,6 @@ importers:
       '@astrolib/seo':
         specifier: ^1.0.0-beta.8
         version: 1.0.0-beta.8(astro@5.16.4(@netlify/blobs@10.4.3)(@types/node@24.10.2)(jiti@1.21.7)(lightningcss@1.27.0)(rollup@4.53.3)(terser@5.34.1)(typescript@5.9.3)(yaml@2.8.2))
-      '@fontsource-variable/inter':
-        specifier: ^5.1.0
-        version: 5.2.8
       ajv:
         specifier: 8.17.1
         version: 8.17.1
@@ -803,9 +800,6 @@ packages:
 
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
-
-  '@fontsource-variable/inter@5.2.8':
-    resolution: {integrity: sha512-kOfP2D+ykbcX/P3IFnokOhVRNoTozo5/JxhAIVYLpea/UBmCQ/YWPBfWIDuBImXX/15KH+eKh4xpEUyS2sQQGQ==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -7279,8 +7273,6 @@ snapshots:
       '@floating-ui/utils': 0.2.10
 
   '@floating-ui/utils@0.2.10': {}
-
-  '@fontsource-variable/inter@5.2.8': {}
 
   '@humanfs/core@0.19.1': {}
 
