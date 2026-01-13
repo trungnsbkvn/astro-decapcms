@@ -89,13 +89,14 @@ export const GET = async () => {
     const typePosts = posts.filter(p => p.type === type);
     const totalPages = Math.ceil(typePosts.length / POSTS_PER_PAGE);
     
-    // Add pagination pages (page 2, 3, etc.)
+    // Add pagination pages (page 2, 3, etc.) - included for crawl discovery
+    // noindex is set in page metadata, but sitemap helps Google find all posts
     for (let page = 2; page <= totalPages; page++) {
       urls.push(`  <url>
     <loc>${escapeXml(`${siteUrl}/${path}/${page}`)}</loc>
     <lastmod>${formatDate(new Date())}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.3</priority>
   </url>`);
     }
   }
@@ -139,26 +140,8 @@ export const GET = async () => {
     }
   }
 
-  // Tag pages - collect all unique tags from posts
-  const tagsMap = new Map<string, { slug: string; title: string }>();
-  for (const post of posts) {
-    if (Array.isArray(post.tags)) {
-      for (const tag of post.tags) {
-        if (tag?.slug && !tagsMap.has(tag.slug)) {
-          tagsMap.set(tag.slug, tag);
-        }
-      }
-    }
-  }
-
-  for (const [tagSlug] of tagsMap) {
-    urls.push(`  <url>
-    <loc>${escapeXml(`${siteUrl}/tag/${tagSlug}`)}</loc>
-    <lastmod>${formatDate(new Date())}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>`);
-  }
+  // Tag pages - NOT included in sitemap (index: false in config)
+  // Tags are noindex, so they shouldn't be in sitemap to avoid mixed signals to search engines
 
   // Category pages - collect all unique categories from posts
   const categoriesMap = new Map<string, { slug: string; title: string; type: string }>();

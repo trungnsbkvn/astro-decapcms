@@ -1,6 +1,7 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /email-success
+Disallow: /~partytown/
 
 User-agent: Googlebot
 Allow: /

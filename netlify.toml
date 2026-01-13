@@ -1,8 +1,21 @@
 [build]
   publish = "dist"
-  command = "pnpm install && pnpm run build"
+  command = "bun install && bun run build"
   # Hybrid Mode: List pages pre-rendered, individual posts SSR on-demand
   # Benefits: Fast builds (~2-3 min), instant content updates, no EMFILE errors
+
+# Skip Netlify's asset processing - Astro already handles minification/bundling
+# This saves ~10-20 seconds per build
+[build.processing]
+  skip_processing = true
+[build.processing.css]
+  bundle = false
+  minify = false
+[build.processing.js]
+  bundle = false
+  minify = false
+[build.processing.html]
+  pretty_urls = false
 
 [build.environment]
   NODE_VERSION = "20"
@@ -10,20 +23,10 @@
   SHARP_IGNORE_GLOBAL_LIBVIPS = "1"
   # Disable Astro telemetry
   ASTRO_TELEMETRY_DISABLED = "1"
-  # Optimize pnpm for CI
-  PNPM_FLAGS = "--frozen-lockfile"
-  # Disable unnecessary npm operations
-  NPM_CONFIG_AUDIT = "false"
-  NPM_CONFIG_FUND = "false"
   # Increase Node.js memory limit for large builds
   NODE_OPTIONS = "--max-old-space-size=4096"
 
-# DISABLED: Astro already minifies/bundles - Netlify processing is redundant
-# This saves ~10-20s build time
-[build.processing]
-  skip_processing = true
-
-# Cache Astro's processed images and pnpm store between builds for faster deploys
+# Cache Astro's processed images and bun cache between builds for faster deploys
 [[plugins]]
   package = "netlify-plugin-cache"
   [plugins.inputs]
@@ -32,7 +35,7 @@
       "node_modules/.astro",    # Astro processed images
       ".astro",                  # Astro build cache
       "node_modules/.cache",    # General build cache
-      ".pnpm-store"              # pnpm dependency cache
+      ".bun"                     # bun dependency cache
     ]
 
 # Note: Redirects are automatically handled by @astrojs/netlify adapter
