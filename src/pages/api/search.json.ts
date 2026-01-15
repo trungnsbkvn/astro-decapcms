@@ -8,7 +8,7 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
 // Enable SSR for this API endpoint (Hybrid mode)
-export const prerender = false;
+export const prerender = true;
 
 // Helper to clean slug from title
 function cleanSlug(text: string): string {
@@ -39,7 +39,7 @@ const TYPE_LABELS: Record<string, string> = {
   legal: 'Pháp lý',
   labor: 'Lao động',
   consultation: 'Tư vấn',
-  foreigner: 'Đầu tư NN',
+  foreigner: 'Đầu tư nước ngoài',
   evaluation: 'Đánh giá',
   attorney: 'Luật sư',
   page: 'Trang',

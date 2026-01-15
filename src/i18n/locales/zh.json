@@ -80,12 +80,15 @@
     "aboutUs": "关于我们",
     "motto": "经营理念：",
     "mottoText": "时间 – 专心 – 全力",
+    "visionTitle": "愿景",
+    "missionTitle": "使命",
     "statsTitle": "会说话的数字",
     "offices": "办公室",
     "officeAddress": "办公地址",
     "visitUs": "欢迎来访",
     "capabilityProfile": "Youth & Partners 能力概况",
     "capabilitySubtitle": "营业执照号：19.02.0037/TP/ĐKHĐ。在这里，您可以找到关于我们专业能力、提供的法律服务以及律师团队杰出成就的详细信息",
+    "capabilityDesc": "在这里，您可以找到关于专业能力的详细信息。",
     "profileVietnamese": "能力概况（越南语）",
     "profileEnglish": "能力概况（英语）",
     "integrity": "正直",
@@ -342,6 +345,7 @@
     "backToHome": "返回首页"
   },
   "team": {
+    "pageTitle": "律师和同事 - 支持5种语言",
     "managingLawyer": "执行律师",
     "partnerLawyer": "合伙律师",
     "seniorAssociate": "高级助理",

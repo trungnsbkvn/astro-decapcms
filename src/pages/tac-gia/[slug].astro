@@ -15,6 +15,7 @@ import { YouTube } from 'astro-embed';
 import { marked } from 'marked';
 import { getPermalink } from '~/utils/blog-permalinks';
 import { findImage } from '~/utils/images';
+import VideoSchema from '~/components/seo/VideoSchema.astro';
 import {
   getAllAttorneys,
   getAttorneySlug,
@@ -22,6 +23,7 @@ import {
   getPositionI18nKey,
   type Attorney,
 } from '~/utils/attorneys';
+import { getAuthorBreadcrumbs } from '~/utils/breadcrumbs';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const attorneys = await getAllAttorneys();
@@ -67,6 +69,31 @@ const metadata = {
   description: data.shortBio || data.bio?.substring(0, 160) || `Thông tin về ${data.name} tại Youth & Partners Law Firm.`,
 };
 
+// Breadcrumbs with multilingual name support
+const breadcrumbs = [
+  {
+    label: 'Trang chủ',
+    href: '/',
+    labelI18n: 'breadcrumb.home',
+  },
+  {
+    label: 'Tác giả',
+    href: '/tac-gia',
+    labelI18n: 'breadcrumb.authors',
+  },
+  {
+    label: data.name,
+    href: `/tac-gia/${getAttorneySlug(attorney)}`,
+    current: true,
+    labelMultilang: {
+      en: data.name_en,
+      zh: data.name_zh,
+      ja: data.name_ja,
+      ko: data.name_ko,
+    },
+  },
+];
+
 // Author name for related posts
 const author = data.name;
 const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'legal'];
@@ -75,7 +102,7 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
 const resolvedImage = data.image ? await findImage(data.image) : null;
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} breadcrumbs={breadcrumbs}>
   <!-- Hero Section with Gradient Background - notranslate because we have 5-lang data in MD -->
   <section class="relative overflow-hidden notranslate" translate="no">
     <!-- Background Gradient -->
@@ -289,20 +316,31 @@ const resolvedImage = data.image ? await findImage(data.image) : null;
 
           <!-- YouTube Video Section -->
           {data.youtubeId && (
-            <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
-                  <Icon name="tabler:brand-youtube" class="w-6 h-6 text-white" />
+            <>
+              <VideoSchema
+                name={data.youtubeTitle || data.name}
+                description={`Video introduction of ${data.name}, ${data.position || 'Attorney'} at Youth & Partners Law Firm`}
+                thumbnailUrl={`https://i.ytimg.com/vi/${data.youtubeId}/maxresdefault.jpg`}
+                uploadDate={new Date().toISOString()}
+                duration="PT5M"
+                contentUrl={`https://www.youtube.com/watch?v=${data.youtubeId}`}
+                embedUrl={`https://www.youtube.com/embed/${data.youtubeId}`}
+              />
+              <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+                    <Icon name="tabler:brand-youtube" class="w-6 h-6 text-white" />
+                  </div>
+                  <h2 class="text-2xl font-bold text-gray-900 dark:text-white" data-i18n="lawyerProfile.video">
+                    Video giới thiệu
+                  </h2>
                 </div>
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white" data-i18n="lawyerProfile.video">
-                  Video giới thiệu
-                </h2>
-              </div>
               
               <div class="multilang-content">
                 <YouTube
                   id={data.youtubeId}
                   title={data.youtubeTitle || data.name}
+                  params="rel=0&modestbranding=1"
                 />
                 <style is:inline>
                   lite-youtube {
@@ -327,6 +365,7 @@ const resolvedImage = data.image ? await findImage(data.image) : null;
                 )}
               </div>
             </div>
+            </>
           )}
 
           <!-- Markdown Body Content Section -->

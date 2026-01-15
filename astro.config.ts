@@ -2,7 +2,6 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 import { defineConfig, sharpImageService } from 'astro/config';
-import netlify from '@astrojs/netlify';
 
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
@@ -21,22 +20,16 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  // SERVER MODE with Edge Functions: SSR by default, opt-in to static with `export const prerender = true`
-  // Edge Functions provide: better cold starts, global distribution, no chunk bundling issues
-  // Static pages (prerender: true) are generated at build time for best performance
-  output: 'server',
+  // STATIC SITE GENERATION: All pages pre-rendered at build time
+  // Provides best performance, security, and SEO
+  output: 'static',
   
   // PERFORMANCE: Inline ALL CSS to eliminate render-blocking requests
   // This prevents FOUC and achieves 100 Lighthouse performance score
   build: {
     inlineStylesheets: 'always',
   },
-  adapter: netlify({
-    edgeMiddleware: true, // Use Edge Functions for SSR (bypasses Serverless chunk resolution issues)
-    // NOTE: Removed cacheOnDemandPages to avoid legacy On-demand Builders
-    // Caching is handled via Netlify-CDN-Cache-Control headers in netlify.toml with `durable` flag
-    imageCDN: true, // Use Netlify Image CDN for on-demand image optimization
-  }),
+  // No adapter needed for static generation - outputs plain HTML/CSS/JS files
 
   integrations: [
     tailwind({

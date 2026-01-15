@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "prebuild": "npm run sprite:all",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
@@ -19,7 +20,14 @@
     "check:prettier": "prettier --check .",
     "fix": "bun run fix:eslint && bun run fix:prettier",
     "fix:eslint": "eslint --fix .",
-    "fix:prettier": "prettier -w ."
+    "fix:prettier": "prettier -w .",
+    "sprite:testimonials": "node scripts/generate-testimonials-sprite.js",
+    "sprite:logos": "node scripts/generate-logo-sprite.js",
+    "sprite:all": "npm run sprite:testimonials && npm run sprite:logos",
+    "find:unused-images": "node scripts/find-unused-images.js",
+    "find:duplicate-images": "node scripts/find-duplicate-images.js",
+    "i18n:compare": "node scripts/compare-locales.js",
+    "i18n:sync": "node scripts/sync-translations.js"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.14",

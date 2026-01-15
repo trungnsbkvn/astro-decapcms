@@ -5,12 +5,17 @@ import type { Brands as Props } from '~/types';
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+
+// Import logo sprite data
+import logoSprite from '/public/assets/sprites/logos-sprite.json';
+
 const {
   title = '',
   subtitle = '',
   tagline = '',
   icons = [],
   images = [],
+  useSprite = true, // Enable sprite by default
   
   i18nTitle,
   i18nSubtitle,
@@ -21,6 +26,17 @@ const {
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+
+// Helper function to get sprite position from image filename
+function getSpritePosition(src: string) {
+  // Extract filename without extension
+  const filename = src.split('/').pop()?.replace(/\.(png|jpg|jpeg|webp|avif)$/i, '');
+  if (!filename) return null;
+  
+  // Try to find in sprite data
+  const slug = filename.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return logoSprite.images[slug] || null;
+}
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
@@ -30,14 +46,50 @@ const {
     {icons && icons.map((icon) => <Icon name={icon} class="py-3 lg:py-5 w-12 h-auto mx-auto sm:mx-0 text-gray-500" />)}
     {
       images &&
-        images.map(
-          (image) =>
-            image.src && (
+        images.map((image) => {
+          if (!image.src) return null;
+          
+          const spritePos = useSprite ? getSpritePosition(image.src) : null;
+          
+          if (spritePos && useSprite) {
+            // Use sprite
+            return (
               <div class="flex justify-center col-span-1 my-2 lg:my-4 py-1 px-3 rounded-md dark:bg-gray-200">
-                <Image src={image.src} alt={image.alt || ''} class="max-h-12" width={120} height={48} layout="fixed" format="webp" loading="lazy" />
+                <div
+                  class="logo-sprite"
+                  style={`
+                    width: ${logoSprite.imageWidth}px;
+                    height: ${logoSprite.imageHeight}px;
+                    background-image: url(${logoSprite.sprite});
+                    background-position: -${spritePos.x}px -${spritePos.y}px;
+                    background-repeat: no-repeat;
+                    background-size: ${logoSprite.width}px ${logoSprite.height}px;
+                  `}
+                  role="img"
+                  aria-label={image.alt || spritePos.original}
+                  title={image.alt || spritePos.original}
+                />
               </div>
-            )
-        )
+            );
+          } else {
+            // Fallback to regular image
+            return (
+              <div class="flex justify-center col-span-1 my-2 lg:my-4 py-1 px-3 rounded-md dark:bg-gray-200">
+                <Image 
+                  src={image.src} 
+                  alt={image.alt || ''} 
+                  class="max-h-12" 
+                  width={120} 
+                  height={48} 
+                  layout="fixed" 
+                  format="webp" 
+                  loading="lazy" 
+                />
+              </div>
+            );
+          }
+        })
     }
   </div>
 </WidgetWrapper>
+

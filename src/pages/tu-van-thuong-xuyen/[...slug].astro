@@ -1,6 +1,6 @@
 ---
 import merge from 'lodash.merge';
-import type { ImageMetadata } from 'astro';
+import type { ImageMetadata, GetStaticPaths } from 'astro';
 import Layout from '~/layouts/PageLayout.astro';
 import SinglePost from '~/components/blog/SinglePost.astro';
 import ToBlogLink from '~/components/blog/ToBlogLink.astro';
@@ -8,25 +8,24 @@ import RelatedPosts from '~/components/blog/RelatedPosts.astro';
 import MarkdownImage from '~/components/common/MarkdownImage.astro';
 
 import { getCanonical, getPermalink } from '~/utils/blog-permalinks';
-import { findPostBySlugWithContent, blogPostRobots } from '~/utils/blog';
+import { blogPostRobots, getStaticPathsForSinglePost } from '~/utils/blog';
 import { findImage } from '~/utils/images';
 import type { MetaData } from '~/types';
 import { getBlogTypeSEO, getCategoryI18nKeys } from '~/utils/blog-seo';
 import { getConsultationBreadcrumbs } from '~/utils/breadcrumbs';
 
-// SSR: Render single post on-demand
-// Uses findPostBySlugWithContent which only renders 1 post (not all)
-// This prevents EMFILE errors on Netlify
-export const prerender = false;
+// Static: Pre-render all posts at build time
+export const prerender = true;
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return await getStaticPathsForSinglePost('consultation');
+};
 
 const TYPE = 'consultation';
 const blogSEO = getBlogTypeSEO(TYPE);
 const mdxComponents = { img: MarkdownImage };
 
-const { slug } = Astro.params;
-
-// Find and render ONLY this single post's content
-const post = await findPostBySlugWithContent(TYPE, slug || '');
+const { post } = Astro.props;
 
 if (!post) {
   return Astro.redirect('/404');

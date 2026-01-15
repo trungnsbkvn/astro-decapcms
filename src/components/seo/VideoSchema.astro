@@ -1,0 +1,69 @@
+---
+/**
+ * VideoSchema Component
+ * Generates Schema.org VideoObject structured data
+ * 
+ * Usage:
+ * ---
+ * import VideoSchema from '~/components/seo/VideoSchema.astro';
+ * 
+ * const video = {
+ *   name: 'Hướng dẫn thành lập doanh nghiệp',
+ *   description: 'Video chi tiết về quy trình...',
+ *   thumbnailUrl: '/images/video-thumb.jpg',
+ *   uploadDate: '2024-01-15',
+ *   duration: 'PT10M30S', // ISO 8601 duration
+ *   contentUrl: 'https://youtube.com/watch?v=...',
+ *   embedUrl: 'https://youtube.com/embed/...'
+ * };
+ * ---
+ * <VideoSchema {...video} />
+ */
+
+export interface Props {
+  name: string;
+  description: string;
+  thumbnailUrl: string | string[]; // Can be array of URLs
+  uploadDate: string; // ISO date
+  duration?: string; // ISO 8601 duration (e.g., 'PT10M30S')
+  contentUrl?: string; // Direct video URL
+  embedUrl?: string; // Embed player URL
+  transcript?: string;
+}
+
+const { 
+  name, 
+  description, 
+  thumbnailUrl, 
+  uploadDate, 
+  duration,
+  contentUrl,
+  embedUrl,
+  transcript
+} = Astro.props;
+
+const siteUrl = import.meta.env.SITE || 'https://yplawfirm.vn';
+
+// Ensure URLs are absolute
+const makAbsolute = (url: string) => 
+  url.startsWith('http') ? url : `${siteUrl}${url}`;
+
+const thumbnails = Array.isArray(thumbnailUrl) 
+  ? thumbnailUrl.map(makAbsolute)
+  : [makAbsolute(thumbnailUrl)];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name,
+  description,
+  thumbnailUrl: thumbnails,
+  uploadDate,
+  ...(duration ? { duration } : {}),
+  ...(contentUrl ? { contentUrl } : {}),
+  ...(embedUrl ? { embedUrl } : {}),
+  ...(transcript ? { transcript } : {}),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

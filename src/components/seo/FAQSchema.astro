@@ -1,0 +1,49 @@
+---
+/**
+ * FAQSchema Component
+ * Generates Schema.org FAQPage structured data
+ * 
+ * Usage:
+ * ---
+ * import FAQSchema from '~/components/seo/FAQSchema.astro';
+ * 
+ * const faqs = [
+ *   { question: 'Làm thế nào để...?', answer: 'Bạn có thể...' },
+ *   { question: 'Khi nào...?', answer: 'Thời điểm tốt nhất là...' },
+ * ];
+ * ---
+ * <FAQSchema {faqs} />
+ */
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface Props {
+  faqs: FAQItem[];
+}
+
+const { faqs } = Astro.props;
+
+if (!faqs || faqs.length === 0) {
+  console.warn('FAQSchema: No FAQ items provided');
+}
+
+const schema = faqs && faqs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+} : null;
+---
+
+{schema && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}

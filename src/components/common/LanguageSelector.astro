@@ -146,9 +146,9 @@ async function loadI18nData(lang: string): Promise<boolean> {
     }
   } catch {}
   
-  // Fetch from API
+  // Fetch from API - updated for static site with dynamic paths
   try {
-    const res = await fetch(`/api/i18n.json?lang=${encodeURIComponent(lang)}`);
+    const res = await fetch(`/api/i18n/${encodeURIComponent(lang)}.json`);
     if (!res.ok) {
       console.warn('i18n API returned non-OK status:', res.status);
       return false;

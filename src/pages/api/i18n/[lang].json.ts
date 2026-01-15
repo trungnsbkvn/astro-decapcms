@@ -1,16 +1,27 @@
 /**
- * i18n API Endpoint
- * Serves translation data on-demand to avoid loading all languages on every page
- * Only loaded when user switches to non-Vietnamese language
+ * i18n API Endpoint - STATIC SITE COMPATIBLE
+ * 
+ * For static sites with prerender=true, we need to generate static paths
+ * for each language since query parameters don't work at build time.
+ * 
+ * Generates: /api/i18n/en.json, /api/i18n/zh.json, etc.
  */
 import type { APIRoute } from 'astro';
 import { translations } from '~/i18n/translations';
 import { textToKeyMap } from '~/i18n/textToKeyMap';
 
-export const prerender = false;
+export const prerender = true;
 
-export const GET: APIRoute = async ({ url }) => {
-  const lang = url.searchParams.get('lang');
+// Generate static paths for each language
+export function getStaticPaths() {
+  const languages = ['en', 'zh', 'zh-CN', 'ja', 'ko', 'vi'];
+  return languages.map(lang => ({
+    params: { lang }
+  }));
+}
+
+export const GET: APIRoute = async ({ params }) => {
+  const lang = params.lang;
   
   if (!lang || lang === 'vi') {
     // No translation data needed for Vietnamese

@@ -14,7 +14,8 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import { getAboutBreadcrumbs } from '~/utils/breadcrumbs';
 
-import LazyYouTube from '~/components/common/LazyYouTube.astro';
+import YouTubePlayer from '~/components/common/YouTubePlayer.astro';
+import VideoSchema from '~/components/seo/VideoSchema.astro';
 
 const metadata = {
   title: 'Về chúng tôi - Công ty Luật Youth & Partners',
@@ -27,6 +28,16 @@ const breadcrumbs = getAboutBreadcrumbs();
 ---
 
 <Layout metadata={metadata} breadcrumbs={breadcrumbs}>
+  <VideoSchema
+    name="Y&P Lawfirm - Gương mặt tiêu biểu kỷ niệm 77 năm ngày Truyền thống Luật sư Việt Nam"
+    description="Youth & Partners Law Firm - Representative Face Commemorating 77 Years of Vietnam Lawyer Tradition Day"
+    thumbnailUrl="https://i.ytimg.com/vi/WJUMziCmOP8/maxresdefault.jpg"
+    uploadDate="2023-10-09T00:00:00Z"
+    duration="PT3M"
+    contentUrl="https://www.youtube.com/watch?v=WJUMziCmOP8"
+    embedUrl="https://www.youtube.com/embed/WJUMziCmOP8"
+  />
+  
   <!-- Hero Widget ******************* -->
 
   <Hero tagline="Về chúng tôi" i18nTagline="about.aboutUs">
@@ -43,9 +54,11 @@ const breadcrumbs = getAboutBreadcrumbs();
     </Fragment>
 
     <Fragment slot="image">
-      <LazyYouTube
+      <YouTubePlayer
         id="WJUMziCmOP8"
         title="Y&P Lawfirm - Gương mặt tiêu biểu kỷ niệm 77 năm ngày Truyền thống Luật sư Việt Nam"
+        aspectRatio="16/9"
+        class="shadow-2xl rounded-lg"
       />
     </Fragment>
   </Hero>

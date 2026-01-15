@@ -1,5 +1,6 @@
 ---
-import { blogTagRobots, getPaginatedPostsByTag } from '~/utils/blog';
+import type { GetStaticPaths } from 'astro';
+import { blogTagRobots, getStaticPathsForTagPages } from '~/utils/blog';
 import { getRootPathForType } from '~/utils/blog-permalinks';
 
 import Layout from '~/layouts/PageLayout.astro';
@@ -7,19 +8,17 @@ import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
 
-// Enable SSR for this dynamic route (Hybrid mode)
-export const prerender = false;
+// Static: Pre-render all tag pages at build time
+export const prerender = true;
 
-// SSR: Pages render on-demand via Netlify Edge Functions
+export const getStaticPaths: GetStaticPaths = async () => {
+  return await getStaticPathsForTagPages();
+};
+
 const { tag: tagSlug, page: pageParam } = Astro.params;
+const { posts, totalPages, tag } = Astro.props;
 
 const currentPage = pageParam ? parseInt(pageParam, 10) || 1 : 1;
-
-const { posts, totalPages, tag } = await getPaginatedPostsByTag(tagSlug || '', currentPage);
-
-if (!tag || posts.length === 0) {
-  return Astro.redirect('/404');
-}
 
 const tagPosts = posts.map((post) => ({
   ...post,

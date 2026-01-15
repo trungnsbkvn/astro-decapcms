@@ -23,6 +23,13 @@ export interface BreadcrumbItem {
   current?: boolean;
   /** i18n key for translation (e.g., 'nav.home', 'breadcrumb.services'). If set, item uses notranslate */
   labelI18n?: string;
+  /** Multilingual labels for different languages (optional) */
+  labelMultilang?: {
+    en?: string;
+    zh?: string;
+    ja?: string;
+    ko?: string;
+  };
 }
 
 export interface Props {
@@ -97,21 +104,27 @@ const schemaItems = items.map(item => ({
         {item.current ? (
           /* Current page - not a link. Use notranslate only if it has i18n key */
           /* Article titles (no labelI18n) get more space and no truncation to allow Google Translate */
+          /* Items with labelMultilang use multilang-name class for client-side translation */
           <span 
-            class={`font-medium text-gray-900 dark:text-white ${item.labelI18n ? 'truncate max-w-[200px] sm:max-w-[300px] notranslate' : ''}`}
+            class={`font-medium text-gray-900 dark:text-white ${item.labelI18n ? 'truncate max-w-[200px] sm:max-w-[300px] notranslate' : ''} ${item.labelMultilang ? 'multilang-name' : ''}`}
             itemprop="name"
             aria-current="page"
             data-i18n={item.labelI18n || undefined}
             translate={item.labelI18n ? 'no' : undefined}
             title={displayLabel}
+            data-name-en={item.labelMultilang?.en}
+            data-name-zh={item.labelMultilang?.zh}
+            data-name-ja={item.labelMultilang?.ja}
+            data-name-ko={item.labelMultilang?.ko}
           >
             {displayLabel}
           </span>
         ) : (
           /* Link to other pages. Use notranslate only if it has i18n key */
+          /* Items with labelMultilang use multilang-name class for client-side translation */
           <a 
             href={item.href}
-            class={`inline-flex items-center gap-1 text-gray-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-blue-400 transition-colors duration-200 hover:underline underline-offset-2 ${item.labelI18n ? 'notranslate' : ''}`}
+            class={`inline-flex items-center gap-1 text-gray-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-blue-400 transition-colors duration-200 hover:underline underline-offset-2 ${item.labelI18n ? 'notranslate' : ''} ${item.labelMultilang ? 'multilang-name' : ''}`}
             itemprop="item"
             translate={item.labelI18n ? 'no' : undefined}
           >
@@ -131,6 +144,10 @@ const schemaItems = items.map(item => ({
               data-i18n={item.labelI18n || undefined}
               class="truncate max-w-[150px] sm:max-w-[200px]"
               title={displayLabel}
+              data-name-en={item.labelMultilang?.en}
+              data-name-zh={item.labelMultilang?.zh}
+              data-name-ja={item.labelMultilang?.ja}
+              data-name-ko={item.labelMultilang?.ko}
             >
               {displayLabel}
             </span>

@@ -80,12 +80,15 @@
     "aboutUs": "私たちについて",
     "motto": "経営理念：",
     "mottoText": "時間 – 誠心 – 全力",
+    "visionTitle": "ビジョン",
+    "missionTitle": "ミッション",
     "statsTitle": "数字が語る実績",
     "offices": "オフィス",
     "officeAddress": "オフィス所在地",
     "visitUs": "ご訪問ください",
     "capabilityProfile": "Youth & Partners 能力概要",
     "capabilitySubtitle": "事業登録証番号：19.02.0037/TP/ĐKHĐ。こちらでは、当事務所の専門能力、提供する法律サービス、弁護士チームの優れた実績についての詳細情報をご覧いただけます",
+    "capabilityDesc": "こちらでは、専門能力に関する詳細情報をご覧いただけます。",
     "profileVietnamese": "能力概要（ベトナム語）",
     "profileEnglish": "能力概要（英語）",
     "integrity": "誠実",
@@ -342,6 +345,7 @@
     "backToHome": "ホームに戻る"
   },
   "team": {
+    "pageTitle": "弁護士とアソシエイト - 5言語対応",
     "managingLawyer": "代表弁護士",
     "partnerLawyer": "パートナー弁護士",
     "seniorAssociate": "シニアアソシエイト",

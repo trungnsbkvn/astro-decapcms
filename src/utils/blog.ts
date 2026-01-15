@@ -791,9 +791,59 @@ export const getStaticPathsForSinglePost = async (type: string): Promise<Array<{
   params: { slug: string };
   props: { post: Post };
 }>> => {
-  const allPosts = await fetchPosts(type);
+  const allPosts = await load(type);
   return allPosts.map((post) => ({
     params: { slug: post.permalink },
-    props: { post },
+    props: { post: { ...post, type } },
   }));
+};
+
+/** Get static paths for tag pages with pagination */
+export const getStaticPathsForTagPages = async (): Promise<Array<{
+  params: { tag: string; page?: string };
+  props: { posts: Post[]; totalPages: number; tag: any };
+}>> => {
+  const posts = await fetchPostsFromAllTypes(BLOG_TYPES);
+  const postsPerPage = APP_BLOG?.postsPerPage || 12;
+  
+  // Group posts by tag
+  const tagMap = new Map<string, { posts: Post[]; tag: any }>();
+  posts.forEach((post) => {
+    if (Array.isArray(post.tags)) {
+      post.tags.forEach((tag) => {
+        if (!tagMap.has(tag.slug)) {
+          tagMap.set(tag.slug, { posts: [], tag });
+        }
+        tagMap.get(tag.slug)!.posts.push(post);
+      });
+    }
+  });
+  
+  // Generate paths with pagination
+  const paths: Array<{ params: { tag: string; page?: string }; props: { posts: Post[]; totalPages: number; tag: any } }> = [];
+  
+  tagMap.forEach(({ posts: tagPosts, tag }, tagSlug) => {
+    const totalPages = Math.ceil(tagPosts.length / postsPerPage);
+    
+    // Generate paths for each page
+    for (let page = 1; page <= totalPages; page++) {
+      const start = (page - 1) * postsPerPage;
+      const end = start + postsPerPage;
+      const pagePosts = tagPosts.slice(start, end);
+      
+      paths.push({
+        params: { 
+          tag: tagSlug,
+          page: page === 1 ? undefined : page.toString()
+        },
+        props: {
+          posts: pagePosts,
+          totalPages,
+          tag
+        }
+      });
+    }
+  });
+  
+  return paths;
 };

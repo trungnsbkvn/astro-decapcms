@@ -1,0 +1,155 @@
+{
+  "sprite": "/assets/sprites/logos-sprite.webp",
+  "width": 1024,
+  "height": 224,
+  "imageWidth": 120,
+  "imageHeight": 48,
+  "padding": 4,
+  "images": {
+    "arcadyan-logo": {
+      "x": 4,
+      "y": 4,
+      "original": "Arcadyan-Logo"
+    },
+    "bhflex-logo": {
+      "x": 132,
+      "y": 4,
+      "original": "BHflex-Logo"
+    },
+    "blueway-logo": {
+      "x": 260,
+      "y": 4,
+      "original": "Blueway-Logo"
+    },
+    "boulder-logo": {
+      "x": 388,
+      "y": 4,
+      "original": "Boulder-Logo"
+    },
+    "boyd-corporation-logo": {
+      "x": 516,
+      "y": 4,
+      "original": "Boyd_Corporation_logo"
+    },
+    "cosmos-logo": {
+      "x": 644,
+      "y": 4,
+      "original": "Cosmos-Logo"
+    },
+    "cresyn-logo": {
+      "x": 772,
+      "y": 4,
+      "original": "Cresyn-Logo"
+    },
+    "desay-logo": {
+      "x": 900,
+      "y": 4,
+      "original": "Desay-Logo"
+    },
+    "digitalx-logo": {
+      "x": 4,
+      "y": 60,
+      "original": "DigitalX-Logo"
+    },
+    "fpt-logo": {
+      "x": 132,
+      "y": 60,
+      "original": "FPT-Logo"
+    },
+    "hr-partner-logo": {
+      "x": 260,
+      "y": 60,
+      "original": "HR Partner-Logo"
+    },
+    "hoa-binh-logo": {
+      "x": 388,
+      "y": 60,
+      "original": "Hòa Bình-Logo"
+    },
+    "intel-vietnam-logo": {
+      "x": 516,
+      "y": 60,
+      "original": "Intel_Vietnam-Logo"
+    },
+    "kl-technologies-logo": {
+      "x": 644,
+      "y": 60,
+      "original": "KL Technologies-Logo"
+    },
+    "kowa-logo": {
+      "x": 772,
+      "y": 60,
+      "original": "Kowa-Logo"
+    },
+    "logo-rong-viet": {
+      "x": 900,
+      "y": 60,
+      "original": "LOGO-rong-viet"
+    },
+    "nsm-logo": {
+      "x": 4,
+      "y": 116,
+      "original": "NSM-Logo"
+    },
+    "powerlogics-logo": {
+      "x": 132,
+      "y": 116,
+      "original": "PowerLogics-Logo"
+    },
+    "rikkei-logo": {
+      "x": 260,
+      "y": 116,
+      "original": "Rikkei-Logo"
+    },
+    "rorze-logo": {
+      "x": 388,
+      "y": 116,
+      "original": "Rorze-Logo"
+    },
+    "sm-tech-logo": {
+      "x": 516,
+      "y": 116,
+      "original": "SM Tech-Logo"
+    },
+    "samsung-logo": {
+      "x": 644,
+      "y": 116,
+      "original": "Samsung-Logo"
+    },
+    "shinsung-logo": {
+      "x": 772,
+      "y": 116,
+      "original": "Shinsung-Logo"
+    },
+    "top-engineering-logo": {
+      "x": 900,
+      "y": 116,
+      "original": "Top Engineering-Logo"
+    },
+    "topcv-logo": {
+      "x": 4,
+      "y": 172,
+      "original": "TopCV-Logo"
+    },
+    "viettel-logo": {
+      "x": 132,
+      "y": 172,
+      "original": "Viettel-Logo"
+    },
+    "vinatop-logo": {
+      "x": 260,
+      "y": 172,
+      "original": "VinaTop-Logo"
+    },
+    "wesmart-logo": {
+      "x": 388,
+      "y": 172,
+      "original": "WeSMART-Logo"
+    },
+    "yadea-logo": {
+      "x": 516,
+      "y": 172,
+      "original": "Yadea-Logo"
+    }
+  }
+}

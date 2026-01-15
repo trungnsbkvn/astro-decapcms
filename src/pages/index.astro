@@ -13,6 +13,8 @@ import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Brands from '~/components/widgets/Brands.astro';
+import ReviewsSchema from '~/components/seo/ReviewsSchema.astro';
+import HowToSchema from '~/components/seo/HowToSchema.astro';
 
 const metadata = {
   title: 'Công ty Luật TNHH Youth & Partners - Người bạn đồng hành của Doanh nghiệp',
@@ -220,6 +222,51 @@ const lastestCategories = {
   />
 
   <!-- Testimonials Widget *********** -->
+
+  <ReviewsSchema
+    itemName="Youth & Partners Law Firm"
+    itemType="LocalBusiness"
+    ratingValue={5}
+    reviewCount={6}
+    reviews={[
+      {
+        author: "Ms. Linh",
+        rating: 5,
+        reviewBody: "Working with Y&P is very reassuring with detailed consultations, not only on the requested topics but also related content if any, to give the company a more comprehensive view and make more accurate decisions. The consulting lawyer's attitude is gentle, listening and very accommodating to customers.",
+        datePublished: "2024-01-15",
+      },
+      {
+        author: "Ms. Huyền Nguyễn",
+        rating: 5,
+        reviewBody: "Professionalism and dedication: Professional consulting services, lawyers provide dedicated support, effective in handling disputes, compliance and legal documents. Response speed: Fast, flexible.",
+        datePublished: "2024-02-10",
+      },
+      {
+        author: "Ms. Hồng",
+        rating: 5,
+        reviewBody: "Rong Viet Company would like to thank our colleagues at Youth & Partners for helping us shoulder some of the work at the company, especially at times when our company needs to focus highly on legal matters.",
+        datePublished: "2024-03-05",
+      },
+      {
+        author: "Trung Dao",
+        rating: 5,
+        reviewBody: "Amazing services and good spirit",
+        datePublished: "2024-04-12",
+      },
+      {
+        author: "Hoa Truong",
+        rating: 5,
+        reviewBody: "A great address for legal advice and support. I am very satisfied with the working methods and support from the staff here.",
+        datePublished: "2024-05-20",
+      },
+      {
+        author: "Nguyễn Hải Trung",
+        rating: 5,
+        reviewBody: "Professional team of lawyers with extensive expertise, professional work handling, breakthrough thinking in consulting plans for clients.",
+        datePublished: "2024-06-08",
+      },
+    ]}
+  />
 
   <Testimonials
     id="cam-nhan-khach-hang"
@@ -463,7 +510,32 @@ Một nơi xứng đáng để gửi gắm niềm tin.`,
   />
 
   <!-- Steps2 Widget ****************** -->
-
+  <HowToSchema
+    name="Làm thế nào để nhận dịch vụ pháp lý từ Youth & Partners"
+    description="Quy trình 4 bước để nhận tư vấn và hỗ trợ pháp lý từ đội ngũ luật sư của Youth & Partners Law Firm"
+    steps={[
+      {
+        name: 'Liên hệ với chúng tôi',
+        text: 'Mô tả vấn đề của bạn và thu thập tài liệu liên quan. Liên hệ với chúng tôi qua Hotline, Zalo, WhatsApp, Facebook hoặc Email.',
+        url: 'https://yplawfirm.vn/lien-he',
+      },
+      {
+        name: 'Gửi yêu cầu chi tiết',
+        text: 'Mô tả chi tiết vấn đề qua email hoặc điện thoại và đính kèm tài liệu liên quan để chúng tôi hiểu rõ tình huống của bạn.',
+        url: 'https://yplawfirm.vn/lien-he',
+      },
+      {
+        name: 'Theo dõi phản hồi',
+        text: 'Theo dõi email hoặc điện thoại của bạn để nhận phản hồi từ đội ngũ hỗ trợ khách hàng của chúng tôi trong thời gian dự kiến.',
+        url: 'https://yplawfirm.vn/lien-he',
+      },
+      {
+        name: 'Nhận giải pháp',
+        text: 'Đội ngũ luật sư của chúng tôi sẽ phân tích vấn đề và đưa ra giải pháp pháp lý phù hợp, hỗ trợ bạn đạt được kết quả tốt nhất.',
+        url: 'https://yplawfirm.vn/',
+      },
+    ]}
+  />
   <Steps2
     title="Liên hệ để được tư vấn ngay"
     subtitle="Chúng tôi luôn sẵn lòng lắng nghe và hỗ trợ bạn một cách tận tâm và chuyên nghiệp. Hãy để chúng tôi giúp bạn giải quyết mọi vấn đề pháp lý một cách nhanh chóng và hiệu quả!"
