@@ -1,8 +1,8 @@
 {
-  "scannedAt": "2026-01-14T16:25:33.323Z",
+  "scannedAt": "2026-01-15T05:10:25.239Z",
   "totalImages": 2573,
-  "usedImages": 892,
-  "unusedImages": 1681,
+  "usedImages": 893,
+  "unusedImages": 1680,
   "unusedImagesList": [
     {
       "path": "src/assets/images/10-van-phong-luat-su-bac-ninh-uy-tin.png",
@@ -8403,13 +8403,8 @@
       "path": "public/images/luat-su-nguyen-van-thanh-samsung-sdiv.png",
       "size": 1096119,
       "sizeKB": "1070.43"
-    },
-    {
-      "path": "public/assets/sprites/logos-sprite.webp",
-      "size": 67432,
-      "sizeKB": "65.85"
     }
   ],
-  "totalSizeBytes": 1555518760,
-  "totalSizeMB": "1483.46"
+  "totalSizeBytes": 1555451328,
+  "totalSizeMB": "1483.39"
 }

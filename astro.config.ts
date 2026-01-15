@@ -92,9 +92,17 @@ export default defineConfig({
 
   image: {
     domains: ['cdn.pixabay.com'],
-    // Use Sharp for image optimization
-    // Works for prerendered pages; on-demand pages use Netlify Image CDN
-    service: sharpImageService(),
+    // Use Astro's built-in Sharp service with optimized settings for Netlify
+    // Sharp automatically:
+    // - Converts images to webp/avif (best compression/quality ratio)
+    // - Resizes images based on requested width
+    // - Caches results to avoid re-processing during builds
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        limitInputPixels: false, // Allow large images without pixel limit error
+      },
+    },
   },
 
   markdown: {
@@ -136,9 +144,24 @@ export default defineConfig({
             return null;
           },
         },
-        // Reduce bundle analysis overhead
+        // Optimize treeshake - suppress warnings for known safe unused imports
         treeshake: {
-          moduleSideEffects: false,
+          moduleSideEffects: (id, external) => {
+            // Astro internal helpers may have unused exports - this is safe
+            if (id.includes('@astrojs/internal-helpers')) {
+              return false;
+            }
+            return 'no-external';
+          },
+        },
+        // Silence known harmless warnings
+        onwarn(warning, warn) {
+          // Suppress unused export warnings from Astro internals
+          if (warning.code === 'UNUSED_EXTERNAL_IMPORT' && 
+              warning.exporter?.includes('@astrojs/internal-helpers')) {
+            return;
+          }
+          warn(warning);
         },
       },
       // OPTIMIZATION: Use esbuild instead of terser for faster builds

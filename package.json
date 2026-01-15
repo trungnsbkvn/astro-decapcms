@@ -12,6 +12,8 @@
     "start": "astro dev",
     "prebuild": "npm run sprite:all",
     "build": "astro build",
+    "build:smart": "node scripts/smart-build.js",
+    "build:netlify": "node scripts/smart-build.js",
     "preview": "astro preview",
     "astro": "astro",
     "check": "bun run check:astro && bun run check:eslint && bun run check:prettier",

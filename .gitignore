@@ -23,3 +23,7 @@ pnpm-debug.log*
 
 .astro
 .netlify
+# Smart build cache (cached on Netlify, not in git)
+.build-cache/
+# Image cleanup backups (local only)
+.image-backup/

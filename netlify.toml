@@ -1,8 +1,8 @@
 [build]
   publish = "dist"
-  command = "bun install && bun run build"
-  # Hybrid Mode: List pages pre-rendered, individual posts SSR on-demand
-  # Benefits: Fast builds (~2-3 min), instant content updates, no EMFILE errors
+  command = "bun install && bun run build:netlify"
+  # Static Mode: All pages pre-rendered at build time
+  # Benefits: Fastest runtime performance, predictable builds, no server needed
 
 # Skip Netlify's asset processing - Astro already handles minification/bundling
 # This saves ~10-20 seconds per build
@@ -35,7 +35,8 @@
       "node_modules/.astro",    # Astro processed images
       ".astro",                  # Astro build cache
       "node_modules/.cache",    # General build cache
-      ".bun"                     # bun dependency cache
+      ".bun",                    # bun dependency cache
+      ".build-cache"            # Smart build cache (hashes + images)
     ]
 
 # Note: Redirects are automatically handled by @astrojs/netlify adapter
