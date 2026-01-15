@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "prebuild": "npm run sprite:all",
+    "postinstall": "npx partytown copylib public/~partytown",
+    "prebuild": "npm run sprite:all && npx partytown copylib public/~partytown",
     "build": "astro build",
     "build:smart": "node scripts/smart-build.js",
     "build:netlify": "node scripts/smart-build.js",

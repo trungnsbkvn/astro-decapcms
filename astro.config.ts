@@ -67,13 +67,11 @@ export default defineConfig({
         ],
       },
     }),
+    // Partytown: Run analytics scripts in web worker to improve performance
+    // See: https://partytown.builder.io/
     partytown({
       config: { 
-        forward: [
-          'dataLayer.push',      // Google Analytics
-          'gtag',                // Google Tag
-        ], 
-        debug: false,
+        forward: ['dataLayer.push'], // Forward Google Analytics calls to worker
       },
     }),
     // NOTE: Pagefind disabled for SSR mode - it requires pre-rendered pages

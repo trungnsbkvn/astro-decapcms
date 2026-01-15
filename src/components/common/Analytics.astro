@@ -1,13 +1,14 @@
 ---
-import { GoogleAnalytics } from '@astrolib/analytics';
-import { ANALYTICS } from 'astrowind:config';
+// Google Analytics with Partytown
+const GA_ID = 'G-HB9LNKY6F2';
 ---
 
-{
-  ANALYTICS?.vendors?.googleAnalytics?.id ? (
-    <GoogleAnalytics
-      id={String(ANALYTICS.vendors.googleAnalytics.id)}
-      partytown={ANALYTICS?.vendors?.googleAnalytics?.partytown}
-    />
-  ) : null
-}
+<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} type="text/partytown"></script>
+<script is:inline type="text/partytown" define:vars={{ GA_ID }}>
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () {
+    dataLayer.push(arguments);
+  };
+  window.gtag('js', new Date());
+  window.gtag('config', GA_ID);
+</script>
