@@ -84,26 +84,19 @@ const languages = [
 
 <script>
 /**
- * Language Selector Script - Lazy Loading Architecture
+ * Language Selector Script - Optimized for Vietnamese (default) users
  * 
  * Performance Strategy:
- * 1. Vietnamese users: Zero translation overhead
- * 2. Non-Vietnamese users: Fetch /api/i18n.json?lang=XX on first load
- * 3. Cache translation data in sessionStorage for subsequent pages
+ * 1. Vietnamese users: Dropdown only, NO translation logic loaded
+ * 2. Non-Vietnamese users: Lazy load i18n data on demand
+ * 3. Cache translation data in sessionStorage
  */
 
 const LANG_KEY = 'site-language';
-const CACHE_KEY = 'i18n-cache-v2'; // Bump version to invalidate old cache
+const CACHE_KEY = 'i18n-cache-v3';
+const langDisplayMap: Record<string, string> = { 'vi': 'VN', 'en': 'EN', 'zh-CN': 'CN', 'ja': 'JP', 'ko': 'KR' };
 
-const langDisplayMap: Record<string, string> = {
-  'vi': 'VN', 'en': 'EN', 'zh-CN': 'CN', 'ja': 'JP', 'ko': 'KR'
-};
-
-const gtToI18nMap: Record<string, string> = {
-  'zh-CN': 'zh', 'en': 'en', 'ja': 'ja', 'ko': 'ko', 'vi': 'vi'
-};
-
-// Translation data - loaded lazily
+// Lazy-loaded translation data (only for non-Vietnamese)
 let translationsCache: Record<string, Record<string, string>> | null = null;
 let textToKeyMapCache: Record<string, string> | null = null;
 let normalizedTextMap: Map<string, string> | null = null;
@@ -116,16 +109,18 @@ function saveLang(lang: string): void {
   try { localStorage.setItem(LANG_KEY, lang); } catch {}
 }
 
-function setGTCookie(lang: string): void {
-  const domains = ['/', window.location.hostname, '.yplawfirm.vn'];
-  domains.forEach(d => {
-    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/` + (d !== '/' ? `; domain=${d}` : '');
+function clearGTCookie(): void {
+  const paths = ['/', window.location.hostname, '.yplawfirm.vn'];
+  paths.forEach(p => {
+    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/` + (p !== '/' ? `; domain=${p}` : '');
   });
+}
+
+function setGTCookie(lang: string): void {
+  clearGTCookie();
   if (lang !== 'vi') {
     const val = `/vi/${lang}`;
-    domains.forEach(d => {
-      document.cookie = `googtrans=${val}; path=/; max-age=31536000` + (d !== '/' ? `; domain=${d}` : '');
-    });
+    ['/'].forEach(p => { document.cookie = `googtrans=${val}; path=${p}; max-age=31536000`; });
   }
 }
 
@@ -252,10 +247,7 @@ function translateElement(element: Element, lang: string): void {
 }
 
 function applyTranslations(lang: string): void {
-  if (lang === 'vi') {
-    document.documentElement.classList.remove('i18n-loading');
-    return;
-  }
+  if (lang === 'vi' || !translationsCache) return;
 
   // Translate data-i18n elements
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -315,9 +307,6 @@ function applyTranslations(lang: string): void {
   if (footer) translateElement(footer, lang);
   
   document.querySelectorAll('nav').forEach(el => translateElement(el, lang));
-  document.querySelectorAll('nav[aria-label="Breadcrumb"]').forEach(el => translateElement(el, lang));
-
-  document.documentElement.classList.remove('i18n-loading');
 }
 
 function loadGoogleTranslate(targetLang: string): void {
@@ -377,34 +366,24 @@ function triggerTranslation(targetLang: string): void {
   }
 }
 
+// Dropdown initialization - runs for ALL users (minimal)
 function initDropdown(): void {
   const savedLang = getSavedLang();
-  const selectors = document.querySelectorAll('[data-language-selector]');
-
-  selectors.forEach(selector => {
+  document.querySelectorAll('[data-language-selector]').forEach(selector => {
     const toggle = selector.querySelector('.lang-toggle');
     const options = selector.querySelectorAll('.lang-option');
     const currentCode = selector.querySelector('.current-lang-code');
 
     if (currentCode) currentCode.textContent = langDisplayMap[savedLang] || 'VN';
-
     options.forEach(opt => {
-      opt.classList.remove('active');
-      if ((opt as HTMLElement).dataset.gtCode === savedLang) opt.classList.add('active');
+      opt.classList.toggle('active', (opt as HTMLElement).dataset.gtCode === savedLang);
     });
 
-    toggle?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      selector.classList.toggle('open');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!selector.contains(e.target as Node)) selector.classList.remove('open');
-    });
-
-    options.forEach(option => {
-      option.addEventListener('click', () => {
-        const gtCode = (option as HTMLElement).dataset.gtCode || 'vi';
+    toggle?.addEventListener('click', (e) => { e.stopPropagation(); selector.classList.toggle('open'); });
+    document.addEventListener('click', (e) => { if (!selector.contains(e.target as Node)) selector.classList.remove('open'); });
+    options.forEach(opt => {
+      opt.addEventListener('click', () => {
+        const gtCode = (opt as HTMLElement).dataset.gtCode || 'vi';
         saveLang(gtCode);
         setGTCookie(gtCode);
         selector.classList.remove('open');
@@ -416,61 +395,49 @@ function initDropdown(): void {
 
 async function init(): Promise<void> {
   const savedLang = getSavedLang();
-  const hasUserContent = document.querySelector('.user-content, [data-user-content]');
 
-  // Vietnamese users: minimal work
+  // Vietnamese users: dropdown only, clear any stale cookies, DONE
   if (savedLang === 'vi') {
     initDropdown();
-    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+    clearGTCookie();
+    document.documentElement.classList.remove('i18n-loading');
     return;
   }
 
-  // Non-Vietnamese: load i18n data first
-  document.documentElement.classList.add('i18n-loading');
+  // Non-Vietnamese: full translation flow
+  const hasUserContent = document.querySelector('.user-content, [data-user-content]');
   const dataLoaded = await loadI18nData(savedLang);
   
-  // Only apply translations if data loaded successfully
-  if (dataLoaded && translationsCache && textToKeyMapCache) {
-    applyTranslations(savedLang);
-  } else {
-    console.warn('i18n data not available, translations may be incomplete');
-  }
+  if (dataLoaded) applyTranslations(savedLang);
+  
+  // Mark notranslate elements
+  document.querySelectorAll('.notranslate, header, footer, nav:not([aria-label="Breadcrumb"]), [data-i18n]').forEach(el => {
+    el.setAttribute('translate', 'no');
+  });
 
-  // Mark page as notranslate if no user content
   if (!hasUserContent) {
     document.documentElement.classList.add('notranslate');
     document.documentElement.setAttribute('translate', 'no');
-  }
-
-  // Add translate="no" to notranslate elements
-  document.querySelectorAll('.notranslate').forEach(el => el.setAttribute('translate', 'no'));
-  document.querySelector('header')?.setAttribute('translate', 'no');
-  document.querySelector('footer')?.setAttribute('translate', 'no');
-
-  initDropdown();
-
-  // Load Google Translate for user content
-  if (hasUserContent) {
+    clearGTCookie();
+  } else {
     setGTCookie(savedLang);
     setTimeout(() => loadGoogleTranslate(savedLang), 100);
-  } else {
-    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
-    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname}`;
-    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.yplawfirm.vn';
   }
+
+  initDropdown();
+  document.documentElement.classList.remove('i18n-loading');
 }
 
-// Run on page load
+// Run on page load - use microtask for faster execution
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => init());
+  document.addEventListener('DOMContentLoaded', init, { once: true });
 } else {
-  init();
+  queueMicrotask(init);
 }
 
-// Astro navigation events
-document.addEventListener('astro:page-load', () => init());
+// Astro View Transitions support
+document.addEventListener('astro:page-load', init);
 document.addEventListener('astro:after-swap', () => {
-  const savedLang = getSavedLang();
-  if (savedLang !== 'vi') document.documentElement.classList.add('i18n-loading');
+  if (getSavedLang() !== 'vi') document.documentElement.classList.add('i18n-loading');
 });
 </script>

@@ -19,13 +19,14 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
 
 const CONFIG = {
-  inputDir: path.join(rootDir, 'public/assets/profiles'),
+  inputDir: path.join(rootDir, 'src/assets/images/customers'),
   outputDir: path.join(rootDir, 'public/assets/sprites'),
-  imageSize: 64,        // Size per image in sprite (64x64px)
+  avatarSize: 90,       // Size per avatar in sprite (90px for 2x retina at 45px display)
   columns: 10,          // Grid layout: 10 columns
   format: 'webp',       // WebP for best compression
   quality: 85,          // Quality: 85 is good balance
-  background: { r: 255, g: 255, b: 255, alpha: 0 }, // Transparent background
+  background: { r: 255, g: 255, b: 255, alpha: 1 }, // White background
+  circular: true,       // Create circular avatars
 };
 
 /**
@@ -93,26 +94,47 @@ async function generateSprite() {
   // Calculate sprite dimensions
   const totalImages = files.length;
   const rows = Math.ceil(totalImages / CONFIG.columns);
-  const spriteWidth = CONFIG.columns * CONFIG.imageSize;
-  const spriteHeight = rows * CONFIG.imageSize;
+  const size = CONFIG.avatarSize;
+  const spriteWidth = Math.min(totalImages, CONFIG.columns) * size;
+  const spriteHeight = rows * size;
   
   console.log(`📐 Sprite dimensions: ${spriteWidth}x${spriteHeight}px`);
+  console.log(`📐 Avatar size: ${size}px (display at ${size/2}px for retina)`);
   console.log(`📊 Grid: ${CONFIG.columns} columns × ${rows} rows\n`);
+  
+  // Create circular mask for avatars
+  const circleMask = Buffer.from(
+    `<svg width="${size}" height="${size}">
+      <circle cx="${size/2}" cy="${size/2}" r="${size/2}" fill="white"/>
+    </svg>`
+  );
   
   // Process each image and create composite array
   const compositeImages = await Promise.all(
     files.map(async (file, index) => {
-      const x = (index % CONFIG.columns) * CONFIG.imageSize;
-      const y = Math.floor(index / CONFIG.columns) * CONFIG.imageSize;
+      const x = (index % CONFIG.columns) * size;
+      const y = Math.floor(index / CONFIG.columns) * size;
       
       try {
-        const buffer = await sharp(path.join(CONFIG.inputDir, file))
-          .resize(CONFIG.imageSize, CONFIG.imageSize, { 
+        // 1. Resize to square, crop to center
+        const resized = await sharp(path.join(CONFIG.inputDir, file))
+          .resize(size, size, { 
             fit: 'cover',
-            position: 'center'
+            position: 'attention' // Focus on most interesting part
           })
+          .png()
           .toBuffer();
         
+        // 2. Apply circular mask if enabled
+        let buffer = resized;
+        if (CONFIG.circular) {
+          buffer = await sharp(resized)
+            .composite([{ input: circleMask, blend: 'dest-in' }])
+            .png()
+            .toBuffer();
+        }
+        
+        console.log(`  ✓ ${file} → position ${index}`);
         return { input: buffer, top: y, left: x };
       } catch (error) {
         console.warn(`⚠️  Failed to process ${file}:`, error.message);
@@ -152,14 +174,14 @@ async function generateSprite() {
     sprite: `/assets/sprites/${spriteFilename}`,
     width: spriteWidth,
     height: spriteHeight,
-    imageSize: CONFIG.imageSize,
-    images: Object.fromEntries(
+    avatarSize: size,
+    avatars: Object.fromEntries(
       files.map((file, index) => {
         const name = path.basename(file, path.extname(file));
         const slug = slugify(name);
-        const x = (index % CONFIG.columns) * CONFIG.imageSize;
-        const y = Math.floor(index / CONFIG.columns) * CONFIG.imageSize;
-        return [slug, { x, y, original: name }];
+        const x = (index % CONFIG.columns) * size;
+        const y = Math.floor(index / CONFIG.columns) * size;
+        return [slug, { x, y, size, original: name }];
       })
     )
   };

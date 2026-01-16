@@ -26,7 +26,7 @@ const CONFIG = {
   columns: 8,           // Grid layout: 8 columns
   format: 'webp',       // WebP for best compression
   quality: 90,          // Higher quality for logos (text clarity)
-  background: { r: 255, g: 255, b: 255, alpha: 0 }, // Transparent background
+  background: { r: 255, g: 255, b: 255, alpha: 1 }, // White background (fixes JPG black bg issue)
   padding: 4,           // Padding around each logo
 };
 
@@ -125,7 +125,7 @@ async function generateSprite() {
         const buffer = await sharp(inputPath)
           .resize(CONFIG.imageWidth, CONFIG.imageHeight, { 
             fit: 'contain',
-            background: { r: 255, g: 255, b: 255, alpha: 0 }
+            background: CONFIG.background
           })
           .toBuffer();
         
