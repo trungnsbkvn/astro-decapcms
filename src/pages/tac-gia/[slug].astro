@@ -174,10 +174,10 @@ const resolvedImage = data.image ? await findImage(data.image) : null;
           </h1>
           
           <!-- Short Bio below name -->
-          {data.shortBio && (
+          {(data.shortBio || data.shortBio_en) && (
             <p class="text-lg text-blue-100 mb-6 max-w-lg">
               <!-- Vietnamese (default) -->
-              <span data-lang="vi">{data.shortBio}</span>
+              {data.shortBio && <span data-lang="vi">{data.shortBio}</span>}
               <!-- English -->
               {data.shortBio_en && <span data-lang="en" class="hidden">{data.shortBio_en}</span>}
               <!-- Chinese -->

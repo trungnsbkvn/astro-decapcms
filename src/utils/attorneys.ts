@@ -130,6 +130,7 @@ export const positionI18nKeys: Record<string, string> = {
   'Luật sư cộng sự': 'team.partnerLawyer',
   'Luật sư cao cấp': 'team.seniorLawyer',
   'Luật sư tập sự': 'team.traineeLawyer',
+  'Luật sư': 'team.lawyer',
   'Luật gia': 'team.jurist',
   'Chuyên viên pháp lý': 'team.legalStaff',
   'Chuyên viên Pháp lý': 'team.legalStaff',
