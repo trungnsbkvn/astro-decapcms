@@ -45,7 +45,7 @@ export async function getAttorneyBySlug(slug: string): Promise<Attorney | undefi
 export async function getAttorneyByNameSlug(nameSlug: string): Promise<Attorney | undefined> {
   const attorneys = await getCollection('attorney');
   return attorneys.find(a => {
-    const generatedSlug = slugify(a.data.name);
+    const generatedSlug = slugify(a.data.name, { custom: { '&': '' } });
     return generatedSlug === nameSlug;
   });
 }
@@ -54,7 +54,7 @@ export async function getAttorneyByNameSlug(nameSlug: string): Promise<Attorney 
  * Generate URL slug from attorney name
  */
 export function getAttorneySlug(attorney: Attorney): string {
-  return slugify(attorney.data.name);
+  return slugify(attorney.data.name, { custom: { '&': '' } });
 }
 
 /**

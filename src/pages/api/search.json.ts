@@ -6,20 +6,14 @@
 
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
+import slugify from 'limax';
 
 // Enable SSR for this API endpoint (Hybrid mode)
 export const prerender = true;
 
-// Helper to clean slug from title
+// Helper to clean slug from title - must match blog-permalinks.ts
 function cleanSlug(text: string): string {
-  return text
-    .toString()
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[đĐ]/g, 'd')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)+/g, '');
+  return slugify(text, { custom: { '&': '' } });
 }
 
 // Root paths for each blog type

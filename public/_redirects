@@ -1,4 +1,14 @@
 # =============================================================================
+# 301 Redirects: Y&P URL fixes (y-and-p -> yp)
+# =============================================================================
+
+/tin-tuc/tong-dai-tu-van-luat-doanh-nghiep-toan-quoc-luat-y-and-p	/tin-tuc/tong-dai-tu-van-luat-doanh-nghiep-toan-quoc-luat-yp	301
+/tin-tuc/luat-su-y-and-p-tham-gia-dong-gop-y-kien-cho-du-thao-luat-kinh-doanh-bao-hiem	/tin-tuc/luat-su-yp-tham-gia-dong-gop-y-kien-cho-du-thao-luat-kinh-doanh-bao-hiem	301
+/phap-ly/tu-van-phap-luat-doanh-nghiep-dich-vu-luat-su-tai-y-and-p	/phap-ly/tu-van-phap-luat-doanh-nghiep-dich-vu-luat-su-tai-yp	301
+/phap-ly/dich-vu-ly-hon-tan-tam-chu-dao-nhanh-chong-cua-y-and-p-lawfirm	/phap-ly/dich-vu-ly-hon-tan-tam-chu-dao-nhanh-chong-cua-yp-lawfirm	301
+/tu-van-thuong-xuyen/dich-vu-tu-van-phap-luat-thuong-xuyen-uy-tin-tu-y-and-p-law-firm	/tu-van-thuong-xuyen/dich-vu-tu-van-phap-luat-thuong-xuyen-uy-tin-tu-yp-law-firm	301
+
+# =============================================================================
 # 301 Redirects: yplawfirm.vn -> luatsumienbac.vn
 # =============================================================================
 

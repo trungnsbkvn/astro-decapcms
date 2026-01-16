@@ -58,5 +58,5 @@ const trimSlash = (s: string) => trim(trim(s, '/'));
 const cleanSlug = (text = '') =>
   trimSlash(text)
     .split('/')
-    .map((slug) => slugify(slug))
+    .map((slug) => slugify(slug, { custom: { '&': '' } }))
     .join('/');

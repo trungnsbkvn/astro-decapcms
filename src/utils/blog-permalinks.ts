@@ -32,7 +32,7 @@ const BASE_PATHNAME = SITE.base || '/';
 export const cleanSlug = (text = '') =>
   trimSlash(text)
     .split('/')
-    .map((slug) => slugify(slug))
+    .map((slug) => slugify(slug, { custom: { '&': '' } }))
     .join('/');
 
 export const BLOG_ROOTPATH = cleanSlug(APP_BLOG?.rootPath);

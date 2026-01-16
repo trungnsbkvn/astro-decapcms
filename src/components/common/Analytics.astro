@@ -1,13 +1,13 @@
 ---
-import GA from '~/components/common/GA.astro';
+import { GoogleAnalytics } from '@astrolib/analytics';
 import { ANALYTICS } from 'astrowind:config';
 ---
 
 {
   ANALYTICS?.vendors?.googleAnalytics?.id ? (
-    <GA
+    <GoogleAnalytics
       id={String(ANALYTICS.vendors.googleAnalytics.id)}
-      partytown={ANALYTICS?.vendors?.googleAnalytics?.partytown ?? true}
+      partytown={ANALYTICS?.vendors?.googleAnalytics?.partytown}
     />
   ) : null
 }
