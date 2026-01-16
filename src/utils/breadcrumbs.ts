@@ -347,12 +347,13 @@ export function getAuthorBreadcrumbs(authorName?: string, authorSlug?: string): 
 
 /**
  * Generate breadcrumbs for Tag pages
+ * Links to /tag index page as the parent
  */
 export function getTagBreadcrumbs(tagName?: string, tagSlug?: string): BreadcrumbItem[] {
   const items: BreadcrumbItem[] = [
     getHomeBreadcrumb(),
     {
-      label: 'Thẻ',
+      label: 'Thẻ bài viết',
       href: '/tag',
       current: !tagName,
       labelI18n: 'breadcrumb.tags',
