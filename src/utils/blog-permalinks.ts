@@ -29,11 +29,13 @@ const createPath = (...params: string[]) => {
 
 const BASE_PATHNAME = SITE.base || '/';
 
-export const cleanSlug = (text = '') =>
-  trimSlash(text)
-    .split('/')
-    .map((slug) => slugify(slug, { custom: { '&': '' } }))
-    .join('/');
+/** Clean and slugify text for URLs. Handles special chars like "/" in titles (e.g., "L/C" → "l-c") */
+export const cleanSlug = (text = '') => {
+  // Replace "/" with "-" BEFORE splitting to handle cases like "L/C" in titles
+  // This prevents "L/C" from being interpreted as path separators
+  const sanitized = trimSlash(text).replace(/\//g, '-');
+  return slugify(sanitized, { custom: { '&': '' } });
+};
 
 export const BLOG_ROOTPATH = cleanSlug(APP_BLOG?.rootPath);
 export const BLOG_BASE = cleanSlug(APP_BLOG?.list?.pathname);

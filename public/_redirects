@@ -9,6 +9,12 @@
 /tu-van-thuong-xuyen/dich-vu-tu-van-phap-luat-thuong-xuyen-uy-tin-tu-y-and-p-law-firm	/tu-van-thuong-xuyen/dich-vu-tu-van-phap-luat-thuong-xuyen-uy-tin-tu-yp-law-firm	301
 
 # =============================================================================
+# 301 Redirects: L/C slug fix (l/c -> l-c)
+# =============================================================================
+
+/phap-ly/thu-tin-dung-l/c-va-vai-tro-cua-thu-tin-dung-l/c	/phap-ly/thu-tin-dung-l-c-va-vai-tro-cua-thu-tin-dung-l-c	301
+
+# =============================================================================
 # 301 Redirects: yplawfirm.vn -> luatsumienbac.vn
 # =============================================================================
 
