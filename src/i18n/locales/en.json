@@ -588,6 +588,18 @@
     "directorName": "Lawyer Nguyen Van Thanh",
     "allRights": "All rights reserved."
   },
+  "tags": {
+    "pageTitle": "Article Tags",
+    "pageSubtitle": "Explore topics from articles",
+    "totalTags": "Topics",
+    "totalPosts": "Articles",
+    "mostPopular": "Most Popular",
+    "avgPerTag": "Avg per tag",
+    "popularTags": "Popular Tags",
+    "allTags": "All Tags",
+    "alphabeticalList": "Alphabetical List",
+    "articles": "articles"
+  },
   "commonExtra": {
     "toggleMenu": "Toggle Menu",
     "shortNameUpper": "YOUTH & PARTNERS",

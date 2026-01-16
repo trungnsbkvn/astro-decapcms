@@ -589,6 +589,18 @@
     "directorName": "律师 阮文胜",
     "allRights": "版权所有。"
   },
+  "tags": {
+    "pageTitle": "文章标签",
+    "pageSubtitle": "探索各类文章主题",
+    "totalTags": "主题",
+    "totalPosts": "文章",
+    "mostPopular": "最受欢迎",
+    "avgPerTag": "平均每标签",
+    "popularTags": "热门标签",
+    "allTags": "全部标签",
+    "alphabeticalList": "按字母排序",
+    "articles": "篇文章"
+  },
   "commonExtra": {
     "toggleMenu": "切换菜单",
     "shortNameUpper": "YOUTH & PARTNERS",

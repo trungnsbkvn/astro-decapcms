@@ -589,6 +589,18 @@
     "directorName": "弁護士 グエン・ヴァン・タイン",
     "allRights": "全著作権所有。"
   },
+  "tags": {
+    "pageTitle": "記事タグ",
+    "pageSubtitle": "記事からトピックを探索",
+    "totalTags": "トピック",
+    "totalPosts": "記事",
+    "mostPopular": "人気",
+    "avgPerTag": "タグ平均",
+    "popularTags": "人気のタグ",
+    "allTags": "すべてのタグ",
+    "alphabeticalList": "アルファベット順",
+    "articles": "件の記事"
+  },
   "commonExtra": {
     "toggleMenu": "メニュー切替",
     "shortNameUpper": "YOUTH & PARTNERS",

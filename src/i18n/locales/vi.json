@@ -588,6 +588,18 @@
     "directorName": "Luật sư Nguyễn Văn Thành",
     "allRights": "All rights reserved."
   },
+  "tags": {
+    "pageTitle": "Thẻ bài viết",
+    "pageSubtitle": "Khám phá các chủ đề từ các bài viết",
+    "totalTags": "Chủ đề",
+    "totalPosts": "Bài viết",
+    "mostPopular": "Phổ biến nhất",
+    "avgPerTag": "TB bài/thẻ",
+    "popularTags": "Thẻ phổ biến",
+    "allTags": "Tất cả thẻ",
+    "alphabeticalList": "Danh sách theo bảng chữ cái",
+    "articles": "bài viết"
+  },
   "commonExtra": {
     "toggleMenu": "Toggle Menu",
     "shortNameUpper": "YOUTH & PARTNERS",

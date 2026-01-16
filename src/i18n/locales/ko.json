@@ -589,6 +589,18 @@
     "directorName": "변호사 응우옌 반 타인",
     "allRights": "All rights reserved."
   },
+  "tags": {
+    "pageTitle": "기사 태그",
+    "pageSubtitle": "기사에서 주제 탐색",
+    "totalTags": "주제",
+    "totalPosts": "기사",
+    "mostPopular": "인기",
+    "avgPerTag": "태그당 평균",
+    "popularTags": "인기 태그",
+    "allTags": "전체 태그",
+    "alphabeticalList": "알파벳순 목록",
+    "articles": "개의 기사"
+  },
   "commonExtra": {
     "toggleMenu": "메뉴 전환",
     "shortNameUpper": "YOUTH & PARTNERS",
