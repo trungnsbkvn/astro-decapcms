@@ -320,7 +320,7 @@ const resolvedImage = data.image ? await findImage(data.image) : null;
               <VideoSchema
                 name={data.youtubeTitle || data.name}
                 description={`Video introduction of ${data.name}, ${data.position || 'Attorney'} at Youth & Partners Law Firm`}
-                thumbnailUrl={`https://i.ytimg.com/vi/${data.youtubeId}/maxresdefault.jpg`}
+                thumbnailUrl={`https://i.ytimg.com/vi/${data.youtubeId}/hqdefault.jpg`}
                 uploadDate={new Date().toISOString()}
                 duration="PT5M"
                 contentUrl={`https://www.youtube.com/watch?v=${data.youtubeId}`}

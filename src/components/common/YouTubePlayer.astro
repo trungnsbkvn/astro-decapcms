@@ -52,7 +52,8 @@ if (loop) {
 }
 
 const embedUrl = `https://www.youtube.com/embed/${id}?${params.toString()}`;
-const thumbnailUrl = `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
+// Use hqdefault (480x360) - always available for all YouTube videos
+const thumbnailUrl = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 
 // Aspect ratio mapping
 const aspectRatioClass = {

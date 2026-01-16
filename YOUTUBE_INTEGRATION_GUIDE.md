@@ -446,7 +446,7 @@ import VideoSchema from '~/components/seo/VideoSchema.astro';
 <VideoSchema 
   name="Video Title"
   description="Video description"
-  thumbnailUrl={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`}
+  thumbnailUrl={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
   uploadDate="2024-01-15"
   duration="PT10M30S"
   embedUrl={`https://www.youtube.com/embed/${videoId}`}
