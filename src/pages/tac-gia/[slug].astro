@@ -63,12 +63,6 @@ const yearsExperience = calculateYearsExperience();
 const nameParts = extractNamePrefix(data.name);
 const positionI18nKey = data.position ? getPositionI18nKey(data.position) : undefined;
 
-// Metadata
-const metadata = {
-  title: data.name,
-  description: data.shortBio || data.bio?.substring(0, 160) || `Thông tin về ${data.name} tại Youth & Partners Law Firm.`,
-};
-
 // Breadcrumbs with multilingual name support
 const breadcrumbs = [
   {
@@ -100,6 +94,26 @@ const types = ['post', 'consultation', 'evaluation', 'foreigner', 'labor', 'lega
 
 // Resolve image
 const resolvedImage = data.image ? await findImage(data.image) : null;
+
+// Get image URL for SEO (og:image, twitter:image)
+const getImageUrl = (img: typeof resolvedImage): string | undefined => {
+  if (!img) return undefined;
+  if (typeof img === 'string') return img;
+  // ImageMetadata has src property
+  if ('src' in img && typeof img.src === 'string') return img.src;
+  return undefined;
+};
+const seoImageUrl = getImageUrl(resolvedImage);
+
+// Metadata with SEO image
+const metadata = {
+  title: data.name,
+  description: data.shortBio || data.bio?.substring(0, 160) || `Thông tin về ${data.name} tại Youth & Partners Law Firm.`,
+  openGraph: seoImageUrl ? {
+    images: [{ url: seoImageUrl }],
+    type: 'profile',
+  } : undefined,
+};
 ---
 
 <Layout metadata={metadata} breadcrumbs={breadcrumbs}>
