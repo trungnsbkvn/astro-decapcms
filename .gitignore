@@ -27,3 +27,7 @@ pnpm-debug.log*
 .build-cache/
 # Image cleanup backups (local only)
 .image-backup/
+
+# Script-generated reports (regenerable)
+*-report.json
+sitemap-check.xml

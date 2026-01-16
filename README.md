@@ -144,11 +144,34 @@ All commands are run from the root of the project, from a terminal:
 | :------------------ | :------------------------------------------------- |
 | `npm install`       | Installs dependencies                              |
 | `npm run dev`       | Starts local dev server at `localhost:3000`        |
-| `npm run build`     | Build your production site to `./dist/`            |
+| `npm run build`     | Smart build with caching                           |
+| `npm run build:full`| Full build with sprite generation                  |
+| `npm run build:force`| Force rebuild (ignore cache)                      |
 | `npm run preview`   | Preview your build locally, before deploying       |
 | `npm run check`     | Check your project for errors                      |
 | `npm run fix`       | Run Eslint and format codes with Prettier          |
 | `npm run astro ...` | Run CLI commands like `astro add`, `astro preview` |
+
+### Optimization & Maintenance (Run Locally)
+
+| Command | Action |
+|---------|--------|
+| `bun run sprite:all` | Generate CSS sprites (commit after running) |
+| `bun run find:unused-images` | Find unused images in project |
+| `bun run find:duplicate-images` | Find duplicate images |
+| `bun run i18n:compare` | Compare translation keys |
+| `bun run i18n:sync` | Sync translation keys across locales |
+
+> **Note:** Sprite generation is done locally and committed to git. Builds use smart caching to skip unchanged files.
+
+<br>
+
+### Documentation
+
+- **[Build Guide](docs/BUILD_GUIDE.md)** - Build optimization, caching, and performance
+- **[I18N Content Guide](docs/I18N_CONTENT_MARKUP_GUIDE.md)** - Translation markup for content
+- **[YouTube Integration](docs/YOUTUBE_INTEGRATION_GUIDE.md)** - Video embedding guide
+- **[Scripts README](scripts/README.md)** - Maintenance and optimization scripts
 
 <br>
 

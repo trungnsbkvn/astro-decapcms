@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "bun install && bun run build:netlify"
+  command = "bun install && bun run build"
   # Static Mode: All pages pre-rendered at build time
   # Benefits: Fastest runtime performance, predictable builds, no server needed
 

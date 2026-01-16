@@ -486,8 +486,8 @@ async function main() {
   const buildStart = Date.now();
   
   try {
-    // Run the actual build
-    execSync('bun run build', {
+    // Run the actual build (call astro directly to avoid recursion)
+    execSync('npx astro build', {
       cwd: ROOT_DIR,
       stdio: 'inherit',
       env: { ...process.env, FORCE_COLOR: '1' },
