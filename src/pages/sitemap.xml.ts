@@ -3,11 +3,12 @@
  * @astrojs/sitemap only includes prerendered pages
  * This endpoint generates a complete sitemap including SSR single post pages
  */
-import { SITE } from 'astrowind:config';
+import { SITE, APP_BLOG, APP_LEGAL, APP_LABOR, APP_CONSULTATION, APP_FOREIGNER, APP_EVALUATION } from 'astrowind:config';
 import { getCollection } from 'astro:content';
-import { fetchPostsFromAllTypes, findAllPostsByAuthorAndTypes } from '~/utils/blog';
+import { fetchPostsFromAllTypes, findAllPostsByAuthorAndTypes, getPaginatedPostsByAuthor } from '~/utils/blog';
 import { getRootPathForType, BLOG_TYPES } from '~/utils/blog-permalinks';
 import { AUTHORS } from '~/utils/authors';
+import { getAttorneySlug } from '~/utils/attorneys';
 
 export const prerender = true;
 
@@ -22,17 +23,25 @@ const escapeXml = (str: string): string => {
     .replace(/'/g, '&apos;');
 };
 
-// Helper to clean slug from title/name
-function cleanSlug(text: string): string {
-  return text
-    .toString()
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[đĐ]/g, 'd')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)+/g, '');
-}
+/** Get postsPerPage config by blog type */
+const getPostsPerPageByType = (type: string): number => {
+  switch (type) {
+    case 'post':
+      return APP_BLOG?.postsPerPage || 12;
+    case 'legal':
+      return APP_LEGAL?.postsPerPage || 12;
+    case 'labor':
+      return APP_LABOR?.postsPerPage || 12;
+    case 'consultation':
+      return APP_CONSULTATION?.postsPerPage || 12;
+    case 'foreigner':
+      return APP_FOREIGNER?.postsPerPage || 12;
+    case 'evaluation':
+      return APP_EVALUATION?.postsPerPage || 12;
+    default:
+      return APP_BLOG?.postsPerPage || 12;
+  }
+};
 
 export const GET = async () => {
   const siteUrl = (SITE.site || import.meta.env.SITE || 'https://yplawfirm.vn').replace(/\/$/, '');
@@ -74,9 +83,9 @@ export const GET = async () => {
     { path: 'dich-vu-danh-gia', priority: '0.8', type: 'evaluation' },
   ];
 
-  const POSTS_PER_PAGE = 12; // Should match config
-
   for (const { path, priority, type } of blogTypesConfig) {
+    const postsPerPage = getPostsPerPageByType(type);
+    
     // Index page
     urls.push(`  <url>
     <loc>${escapeXml(`${siteUrl}/${path}`)}</loc>
@@ -87,7 +96,7 @@ export const GET = async () => {
 
     // Count posts for this type to calculate pagination
     const typePosts = posts.filter(p => p.type === type);
-    const totalPages = Math.ceil(typePosts.length / POSTS_PER_PAGE);
+    const totalPages = Math.ceil(typePosts.length / postsPerPage);
     
     // Add pagination pages (page 2, 3, etc.) - included for crawl discovery
     // noindex is set in page metadata, but sitemap helps Google find all posts
@@ -118,7 +127,7 @@ export const GET = async () => {
   const attorneys = await getCollection('attorney').catch(() => []);
   for (const attorney of attorneys) {
     if (attorney.data.draft) continue;
-    const slug = cleanSlug(attorney.data.name);
+    const slug = getAttorneySlug(attorney);
     urls.push(`  <url>
     <loc>${escapeXml(`${siteUrl}/tac-gia/${slug}`)}</loc>
     <lastmod>${formatDate(new Date())}</lastmod>
@@ -127,28 +136,47 @@ export const GET = async () => {
   </url>`);
   }
 
-  // Author posts pages (only for authors with posts)
+  // Author posts pages (only for authors with posts) + pagination
+  const AUTHOR_POSTS_PER_PAGE = 12;
   for (const [slug, authorInfo] of Object.entries(AUTHORS)) {
-    const authorPosts = await findAllPostsByAuthorAndTypes(authorInfo.name, BLOG_TYPES);
-    if (authorPosts.length > 0) {
+    const { totalPages, total } = await getPaginatedPostsByAuthor(authorInfo.name, BLOG_TYPES, 1, AUTHOR_POSTS_PER_PAGE);
+    
+    if (total > 0) {
+      // Index page
       urls.push(`  <url>
     <loc>${escapeXml(`${siteUrl}/tac-gia/${slug}/bai-viet`)}</loc>
     <lastmod>${formatDate(new Date())}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>`);
+      
+      // Pagination pages (page 2+)
+      for (let page = 2; page <= totalPages; page++) {
+        urls.push(`  <url>
+    <loc>${escapeXml(`${siteUrl}/tac-gia/${slug}/bai-viet/${page}`)}</loc>
+    <lastmod>${formatDate(new Date())}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.3</priority>
+  </url>`);
+      }
     }
   }
 
   // Tag pages - NOT included in sitemap (index: false in config)
   // Tags are noindex, so they shouldn't be in sitemap to avoid mixed signals to search engines
 
-  // Category pages - collect all unique categories from posts
-  const categoriesMap = new Map<string, { slug: string; title: string; type: string }>();
+  // Category pages - collect all unique categories from posts with post counts
+  const categoriesMap = new Map<string, { slug: string; title: string; type: string; postCount: number }>();
   for (const post of posts) {
     const postType = post.type || 'post';
-    if (post.category?.slug && !categoriesMap.has(`${postType}-${post.category.slug}`)) {
-      categoriesMap.set(`${postType}-${post.category.slug}`, { ...post.category, type: postType });
+    const key = `${postType}-${post.category?.slug}`;
+    if (post.category?.slug) {
+      if (categoriesMap.has(key)) {
+        const existing = categoriesMap.get(key)!;
+        existing.postCount++;
+      } else {
+        categoriesMap.set(key, { ...post.category, type: postType, postCount: 1 });
+      }
     }
   }
 
@@ -164,12 +192,26 @@ export const GET = async () => {
 
   for (const [, category] of categoriesMap) {
     const rootPath = categoryRootPaths[category.type] || '/tin-tuc';
+    const postsPerPage = getPostsPerPageByType(category.type);
+    const totalPages = Math.ceil(category.postCount / postsPerPage);
+    
+    // Category index page
     urls.push(`  <url>
     <loc>${escapeXml(`${siteUrl}${rootPath}/${category.slug}`)}</loc>
     <lastmod>${formatDate(new Date())}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>`);
+    
+    // Category pagination pages (page 2+)
+    for (let page = 2; page <= totalPages; page++) {
+      urls.push(`  <url>
+    <loc>${escapeXml(`${siteUrl}${rootPath}/${category.slug}/${page}`)}</loc>
+    <lastmod>${formatDate(new Date())}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.3</priority>
+  </url>`);
+    }
   }
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
