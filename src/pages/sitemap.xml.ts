@@ -162,8 +162,21 @@ export const GET = async () => {
     }
   }
 
-  // Tag pages - NOT included in sitemap (index: false in config)
-  // Tags are noindex, so they shouldn't be in sitemap to avoid mixed signals to search engines
+  // Tag index page - important landing page listing all tags
+  // This is a unique aggregation page that should be indexed
+  urls.push(`  <url>
+    <loc>${escapeXml(`${siteUrl}/tag`)}</loc>
+    <lastmod>${formatDate(new Date())}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>`);
+
+  // Individual tag pages (/tag/[tag]) are NOT included in sitemap because:
+  // 1. They have index:false in config (noindex meta tag)
+  // 2. Including noindex pages in sitemap sends mixed signals to Google
+  // 3. The posts they link to are already indexed via canonical URLs
+  // Reference: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
+  // "Include the URLs in your sitemap that you want to see in Google's search results"
 
   // Category pages - collect all unique categories from posts with post counts
   const categoriesMap = new Map<string, { slug: string; title: string; type: string; postCount: number }>();
