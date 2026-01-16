@@ -1,88 +1,71 @@
 ---
 /**
- * Early Translation Script - Runs in <head> to prevent FOUC (Flash of Untranslated Content)
- * This script:
- * 1. Checks if user has selected a non-Vietnamese language
- * 2. Adds i18n-loading class to hide content until translations are applied
- * 3. Sets up Google Translate cookie (actual loading happens in LanguageSelector based on page content)
+ * Early Translation Script - Optimized for Vietnamese (default) users
+ * 
+ * DESIGN PRINCIPLE: 
+ * - Vietnamese users (majority): ZERO JavaScript execution, no localStorage access
+ * - Non-Vietnamese users: Minimal FOUC prevention
+ * 
+ * This script ONLY adds i18n-loading class for non-Vietnamese users.
+ * LanguageSelector.astro handles all translation logic.
  */
 ---
 
 <script is:inline>
 (function() {
-  function setupTranslation() {
-    var LANG_KEY = 'site-language';
-    var lang;
-    try {
-      lang = localStorage.getItem(LANG_KEY) || 'vi';
-    } catch(e) {
-      lang = 'vi';
-    }
-
-    // If non-Vietnamese, set up translation
-    if (lang !== 'vi') {
-      document.documentElement.classList.add('i18n-loading');
-
-      // Set cookie for Google Translate EARLY so it activates on page load (if needed)
-      var gtLangs = {
-        'en': 'en',
-        'zh': 'zh-CN',
-        'ja': 'ja',
-        'ko': 'ko'
-      };
-      var gtLang = gtLangs[lang];
-      if (gtLang) {
-        document.cookie = 'googtrans=/vi/' + gtLang + '; path=/; max-age=31536000';
-      }
-      
-      // NOTE: Google Translate script loading is handled by LanguageSelector
-      // Only pages with .user-content will load Google Translate
-      // Pages without user content (static pages) only use our fast i18n system
-    }
-  }
-
-  // Run on initial page load
-  setupTranslation();
-
-  // Also run after Astro page transitions (client-side navigation)
-  document.addEventListener('astro:after-swap', setupTranslation);
+  // Early exit for Vietnamese users - no JS execution overhead
+  // The try-catch is the only unavoidable check
+  var savedLang;
+  try { savedLang = localStorage.getItem('site-language'); } catch(e) { return; }
+  
+  // Vietnamese (default) or no saved preference: do nothing
+  if (!savedLang || savedLang === 'vi') return;
+  
+  // Non-Vietnamese users only: add loading class for FOUC prevention
+  document.documentElement.classList.add('i18n-loading');
 })();
 </script>
 
 <style is:global>
-  /* Hide all translatable content briefly during i18n translation to prevent flash */
+  /* FOUC prevention: Only affects non-Vietnamese users with i18n-loading class */
   html.i18n-loading header,
   html.i18n-loading footer,
   html.i18n-loading nav[aria-label="Breadcrumb"],
   html.i18n-loading .notranslate,
-  html.i18n-loading [translate="no"],
-  html.i18n-loading [data-i18n] {
+  html.i18n-loading [translate="no"] {
     opacity: 0;
   }
 
-  /* Smooth fade-in after translation */
-  header, footer, nav[aria-label="Breadcrumb"], .notranslate, [translate="no"], [data-i18n] {
+  /* Smooth fade-in transition */
+  header, footer, nav[aria-label="Breadcrumb"], .notranslate, [translate="no"] {
     transition: opacity 0.15s ease-in;
   }
 
-  /* Remove loading class when translation is complete */
-  html.translated-ltr,
-  html.translated-rtl {
-    transition: none !important;
+  /* Hide Google Translate UI elements */
+  .goog-te-banner-frame,
+  .skiptranslate,
+  #goog-gt-tt,
+  .goog-te-balloon-frame,
+  div#goog-gt-,
+  .goog-text-highlight,
+  #google_translate_element_hidden,
+  body > .skiptranslate,
+  .goog-te-spinner-pos {
+    display: none !important;
+    height: 0 !important;
+    visibility: hidden !important;
   }
 
-  html.translated-ltr header,
-  html.translated-ltr footer,
-  html.translated-ltr nav[aria-label="Breadcrumb"],
-  html.translated-ltr .notranslate,
-  html.translated-ltr [translate="no"],
-  html.translated-ltr [data-i18n],
-  html.translated-rtl header,
-  html.translated-rtl footer,
-  html.translated-rtl nav[aria-label="Breadcrumb"],
-  html.translated-rtl .notranslate,
-  html.translated-rtl [translate="no"],
-  html.translated-rtl [data-i18n] {
-    opacity: 1;
+  /* Prevent Google Translate from shifting page */
+  body,
+  html.translated-ltr body,
+  html.translated-rtl body {
+    top: 0 !important;
+  }
+
+  /* Keep notranslate elements with original font */
+  .notranslate,
+  [translate="no"] {
+    font-family: inherit !important;
   }
 </style>
