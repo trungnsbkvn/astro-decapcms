@@ -321,15 +321,16 @@ export function getEvaluationBreadcrumbs(
 
 /**
  * Generate breadcrumbs for Author pages
+ * Links to /luat-su-va-cong-su as the parent (there's no /tac-gia index page)
  */
 export function getAuthorBreadcrumbs(authorName?: string, authorSlug?: string): BreadcrumbItem[] {
   const items: BreadcrumbItem[] = [
     getHomeBreadcrumb(),
     {
-      label: 'Tác giả',
-      href: '/tac-gia',
+      label: 'Luật sư và cộng sự',
+      href: '/luat-su-va-cong-su',
       current: !authorName,
-      labelI18n: 'breadcrumb.authors',
+      labelI18n: 'breadcrumb.lawyers',
     },
   ];
 
