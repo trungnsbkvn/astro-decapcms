@@ -9,10 +9,16 @@
 /tu-van-thuong-xuyen/dich-vu-tu-van-phap-luat-thuong-xuyen-uy-tin-tu-y-and-p-law-firm	/tu-van-thuong-xuyen/dich-vu-tu-van-phap-luat-thuong-xuyen-uy-tin-tu-yp-law-firm	301
 
 # =============================================================================
-# 301 Redirects: L/C slug fix (l/c -> l-c)
+# 301 Redirects: Slash in titles fix (dates like 1/7/2014, L/C, 13/2023/NĐ-CP)
 # =============================================================================
 
+# L/C posts
 /phap-ly/thu-tin-dung-l/c-va-vai-tro-cua-thu-tin-dung-l/c	/phap-ly/thu-tin-dung-l-c-va-vai-tro-cua-thu-tin-dung-l-c	301
+
+# Date format posts (1/7/2014, 01/7/2014, 13/2023/NĐ-CP)
+/phap-ly/dat-khong-giay-to-truoc-1/7/2014-duoc-cap-so-do-theo-luat-dat-dai-2024	/phap-ly/dat-khong-giay-to-truoc-1-7-2014-duoc-cap-so-do-theo-luat-dat-dai-2024	301
+/phap-ly/cap-so-do-cho-dat-vi-pham-truoc-01/7/2014-nhung-dieu-can-biet	/phap-ly/cap-so-do-cho-dat-vi-pham-truoc-01-7-2014-nhung-dieu-can-biet	301
+/phap-ly/ca-nhan-co-quyen-gi-doi-du-lieu-ca-nhan-cua-minh-theo-nghi-dinh-13/2023/nd-cp	/phap-ly/ca-nhan-co-quyen-gi-doi-du-lieu-ca-nhan-cua-minh-theo-nghi-dinh-13-2023-nd-cp	301
 
 # =============================================================================
 # 301 Redirects: yplawfirm.vn -> luatsumienbac.vn
