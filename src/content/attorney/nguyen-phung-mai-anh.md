@@ -32,7 +32,7 @@ shortBio_en: "Legal Specialist - Editor, specializing in Civil Law, Land Law"
 shortBio_zh: "法律专员 - 编辑，专门从事民事法、土地法"
 shortBio_ja: "法務スペシャリスト - 編集者、民事法、土地法専門"
 shortBio_ko: "법무 전문가 - 편집자, 민사법, 토지법 전문"
-image: "~/assets/images/team/Chuyên viên Mai Ánh.jpg"
+image: "~/assets/images/team/chuyen-vien-mai-anh.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

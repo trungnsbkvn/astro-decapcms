@@ -32,7 +32,7 @@ shortBio_en: "Legal Specialist in Corporate Law and FDI Investment"
 shortBio_zh: "企业法和外商直接投资法律专员"
 shortBio_ja: "企業法・FDI投資専門の法務スペシャリスト"
 shortBio_ko: "기업법 및 FDI 투자 전문 법무사"
-image: "~/assets/images/team/Chuyên viên Nguyễn Phan Thục Chi.png"
+image: "~/assets/images/team/chuyen-vien-nguyen-phan-thuc-chi.png"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

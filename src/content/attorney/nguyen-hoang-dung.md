@@ -42,7 +42,7 @@ shortBio_en: "International Commercial Law - Hanoi Law University | Judicial Aca
 shortBio_zh: "河内法律大学国际商法学士 | 司法学院 | 多领域法律经验"
 shortBio_ja: "国際商法学士 - ハノイ法科大学 | 司法アカデミー | 多分野法務経験"
 shortBio_ko: "국제상법 학사 - 하노이 법과대학 | 사법 아카데미 | 다분야 법률 경험"
-image: "~/assets/images/team/Chuyên viên Nguyễn Hoàng Dũng.png"
+image: "~/assets/images/team/chuyen-vien-nguyen-hoang-dung.png"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

@@ -42,7 +42,7 @@ bio_ko: |
   민사, 형사, 토지, 가족, 기업, 노동, 투자법에 걸친 다양한 전문 지식을 바탕으로 박닌성 및 인근 지역의 개인 및 기업 고객을 위해 수백 건의 복잡한 법률 사건을 성공적으로 해결했습니다.
   
   후엉 변호사는 헌신적인 업무 태도, 날카로운 분석력, 효과적인 법률 전략 수립 능력으로 인정받으며 모든 사건에서 고객에게 최적의 결과를 제공합니다.
-image: "~/assets/images/team/Luật sư Nguyễn Thị Hướng.jpg"
+image: "~/assets/images/team/luat-su-nguyen-thi-huong.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

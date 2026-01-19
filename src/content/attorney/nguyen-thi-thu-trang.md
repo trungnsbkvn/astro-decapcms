@@ -34,7 +34,7 @@ bio_ko: |
   응웬티투짱은 Youth & Partners 법률 회사(Y&P 법률 회사)의 법무 전문가로, 계약 작성, 노동, 세무, 부동산 및 외국인 투자에 대한 법률 자문을 전문으로 합니다.
   
   그녀는 기업 운영의 법률 준수 보장, 내부 양식 및 기업 규정 개발 및 조정 경험을 보유하고 있습니다.
-image: "~/assets/images/team/Chuyên viên Nguyễn Thị Thu Trang.jpg"
+image: "~/assets/images/team/chuyen-vien-nguyen-thi-thu-trang.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

@@ -34,7 +34,7 @@ bio_ko: |
   도티르엉은 Youth & Partners 법률 회사(Y&P 법률 회사)의 법무 전문가로, 기업법, 지식재산권, 투자법을 전문으로 합니다.
   
   기업법에 대한 깊은 지식을 바탕으로 기업 설립, 기업 지배구조, 지식재산권 보호, 투자 절차에 대한 자문을 제공합니다.
-image: "~/assets/images/team/Chuyên viên Đỗ Thị Lương.jpg"
+image: "~/assets/images/team/chuyen-vien-do-thi-luong.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

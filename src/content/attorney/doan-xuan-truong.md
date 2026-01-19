@@ -33,7 +33,7 @@ bio_ko: |
   단숌창 박사는 현재 하노이 법과대학의 강사이며 Youth & Partners의 동료 변호사입니다.
   
   단숨창 박사는 다년간의 교육, 법률 준수 지도 경험을 보유하고 있으며, 근로자와 기업에 대한 많은 법률 자문 사례를 처리하고 현대 노동법 분야의 주제에 대한 많은 독립 보고서를 작성했습니다.
-image: "~/assets/images/team/Tiến sĩ Đoàn Xuân Trường.jpg"
+image: "~/assets/images/team/tien-si-doan-xuan-truong.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

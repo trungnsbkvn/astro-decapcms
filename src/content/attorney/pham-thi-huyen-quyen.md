@@ -32,7 +32,7 @@ bio_ko: |
   기업 자문 및 사내 법무 분야에서 다년간의 경험을 보유한 팜티후옐퀀 변호사는 많은 기업의 신뢰할 수 있는 파트너가 되었습니다.
   
   그녀는 기업이 지속 가능한 성장 전략을 수립하고 실행하며, 사업 운영 전반에 걸쳐 법적 규정을 준수하도록 돕고 있습니다.
-image: "~/assets/images/team/Luật sư Phạm Thị Huyền Quyên.jpg"
+image: "~/assets/images/team/luat-su-pham-thi-huyen-quyen.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

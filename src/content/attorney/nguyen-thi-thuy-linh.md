@@ -34,7 +34,7 @@ bio_ko: |
   응웬티투이린은 Youth & Partners 법률 회사(Y&P 법률 회사)의 법무 전문가로, 기업법, 노동법, 외국인 투자, 가족법에 대한 깊은 전문 지식을 보유하고 있습니다.
   
   15개 이상의 국내외 기업에 정기적인 자문을 제공하고, 이중 언어 계약을 작성하며, FDI 투자 절차를 처리한 경험이 있습니다.
-image: "~/assets/images/team/Chuyên viên Nguyễn Thị Thùy Linh.jpg"
+image: "~/assets/images/team/chuyen-vien-nguyen-thi-thuy-linh.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

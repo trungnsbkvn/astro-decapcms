@@ -42,7 +42,7 @@ shortBio_en: "Economic Law - Hanoi Law University (2024) | Contract & Corporate 
 shortBio_zh: "河内法律大学经济法学士(2024) | 合同及企业内部规章经验"
 shortBio_ja: "経済法学士 - ハノイ法科大学(2024) | 契約・企業内部規程経験"
 shortBio_ko: "경제법 학사 - 하노이 법과대학(2024) | 계약 및 기업 내부규정 경험"
-image: "~/assets/images/team/Chuyên viên Nguyễn Thúy Hằng.jpg"
+image: "~/assets/images/team/chuyen-vien-nguyen-thuy-hang.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

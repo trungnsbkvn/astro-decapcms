@@ -34,7 +34,7 @@ bio_ko: |
   짠티빅리엔은 Youth & Partners 법률 회사(Y&P 법률 회사)의 법무 전문가로, 민사법, 행정법, 토지법 분야에서 풍부한 경험을 보유하고 있습니다.
   
   그녀는 많은 토지 분쟁과 가족 문제를 직접 해결하는 데 참여하여 성공적으로 처리하며 고객의 정당한 권리를 보호해 왔습니다.
-image: "~/assets/images/team/Chuyên viên Trần Thị Bích Liên.jpg"
+image: "~/assets/images/team/chuyen-vien-tran-thi-bich-lien.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

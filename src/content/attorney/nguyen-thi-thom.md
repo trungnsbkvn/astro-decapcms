@@ -32,7 +32,7 @@ shortBio_en: "Seasoned Expert | Specializing in Corporate, Labor, Investment"
 shortBio_zh: "多年经验，专门从事企业、劳动、投资"
 shortBio_ja: "多年の経験、企業法、労働法、投資法専門"
 shortBio_ko: "다년간의 경험, 기업법, 노동법, 투자법 전문"
-image: "~/assets/images/team/Luật sư Nguyễn Thị Thơm.jpg"
+image: "~/assets/images/team/luat-su-nguyen-thi-thom.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

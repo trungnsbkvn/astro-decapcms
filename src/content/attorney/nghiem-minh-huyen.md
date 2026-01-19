@@ -32,7 +32,7 @@ bio_ko: |
   응엠민후옌은 Youth & Partners 법률 회사(Y&P 법률 회사)의 법무 전문가로, 토지법, 민사법, 형사법을 전문으로 하는 법률 콘텐츠 에디터로 활동하고 있습니다.
   
   그녀의 기사는 토지 사용권, 계약, 민사 및 형사 법률 문제와 관련된 법규 및 주요 정책을 분석, 종합 및 명확히 하는 데 중점을 둡니다.
-image: "~/assets/images/team/Chuyên viên Nghiêm Huyền.jpg"
+image: "~/assets/images/team/chuyen-vien-nghiem-huyen.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

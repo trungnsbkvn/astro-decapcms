@@ -32,7 +32,7 @@ shortBio_en: "Legal Specialist in Corporate Law, Labor Law, and Investment"
 shortBio_zh: "企业、劳动和投资法律专员"
 shortBio_ja: "企業法、労働法、投資法専門の法務スペシャリスト"
 shortBio_ko: "기업법, 노동법, 투자법 전문 법무사"
-image: "~/assets/images/team/Chuyên viên Nguyễn Thùy Dương.jpg"
+image: "~/assets/images/team/chuyen-vien-nguyen-thuy-duong.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

@@ -33,7 +33,7 @@ bio_ko: |
   응웬호앙아잉 변호사는 여러 분야, 특히 하위 면허 절차에 대한 법률 자문 및 지원 서비스를 전문으로 하는 경험 많은 법률 전문가입니다. 뛰어난 교육 배경과 탄탄한 실무 경험을 바탕으로, 응웬호앙아잉 변호사는 많은 개인과 기업이 복잡한 법적 절차를 완료하고 베트남 법률을 완전히 준수하도록 도왔습니다.
   
   응웬호앙아잍 변호사는 법률 분야에서 다년간의 경험을 보유하고 있으며, 하위 면허와 관련된 신청 자문 및 처리에 중점을 두고 있습니다.
-image: "~/assets/images/team/Luật sư Nguyễn Hoàng Anh.jpg"
+image: "~/assets/images/team/luat-su-nguyen-hoang-anh.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

@@ -32,7 +32,7 @@ shortBio_en: "Extensive experience, specializing in Economic Law, Land Law, Civi
 shortBio_zh: "多年经验，专门从事经济法、土地法、民事法"
 shortBio_ja: "多年の経験、経済法、土地法、民事法専門"
 shortBio_ko: "다년간의 경험, 경제법, 토지법, 민사법 전문"
-image: "~/assets/images/team/Luật sư Nguyễn Minh Anh.jpg"
+image: "~/assets/images/team/luat-su-nguyen-minh-anh.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

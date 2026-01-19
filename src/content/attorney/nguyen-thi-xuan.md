@@ -32,7 +32,7 @@ bio_ko: |
   응웬티쑤언은 2025년부터 Youth & Partners 법률 회사(Y&P 법률 회사)의 법무 전문가로 활동하고 있습니다.
   
   하노이 법과대학에서의 탄탄한 법학 교육을 바탕으로, 쑤언은 적극적으로 법률 지식과 전문 기술을 연마하며 이론을 일상 업무에 적용하고 있습니다.
-image: "~/assets/images/team/Chuyên viên Nguyễn Thị Xuân.jpg"
+image: "~/assets/images/team/chuyen-vien-nguyen-thi-xuan.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

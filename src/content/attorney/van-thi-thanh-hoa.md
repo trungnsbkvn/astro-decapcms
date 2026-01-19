@@ -32,7 +32,7 @@ bio_ko: |
   반티타인호아 변호사는 Youth & Partners 법률 회사의 구성원 변호사로 다년간의 경험을 보유하고 있습니다. 그녀는 민사, 형사, 토지, 가족법 분야에서 많은 복잡한 법률 사건을 성공적으로 해결했습니다.
   
   뛰어난 법률 자문 능력과 최적의 사건 해결 전략으로 알려져 있으며, 고객이 원하는 결과를 달성하도록 돕고 있습니다.
-image: "~/assets/images/team/Luật sư Văn Thị Thanh Hoa.jpg"
+image: "~/assets/images/team/luat-su-van-thi-thanh-hoa.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

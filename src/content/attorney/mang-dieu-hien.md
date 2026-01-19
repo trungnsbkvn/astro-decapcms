@@ -33,7 +33,7 @@ shortBio_en: "Sub-license Expert, extensive experience"
 shortBio_zh: "子许可证专家,多年经验"
 shortBio_ja: "子ライセンス専門家、多年の経験"
 shortBio_ko: "하위 면허 전문가, 다년간의 경험"
-image: "~/assets/images/team/Luật sư Mang Diệu Hiền.jpg"
+image: "~/assets/images/team/luat-su-mang-dieu-hien.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

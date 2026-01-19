@@ -52,7 +52,7 @@ shortBio_en: "Legal Specialist | Bachelor of Law - Hanoi Law University | Vmoot 
 shortBio_zh: "法律专员 | 河内法律大学法学学士 | 2023年Vmoot全国冠军"
 shortBio_ja: "法務スペシャリスト | ハノイ法科大学法学士 | 2023年Vmoot全国チャンピオン"
 shortBio_ko: "법무 전문가 | 하노이 법과대학 법학사 | 2023 Vmoot 전국 챔피언"
-image: "~/assets/images/team/Chuyên viên Chu Thanh Tùng.jpg"
+image: "~/assets/images/team/chuyen-vien-chu-thanh-tung.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

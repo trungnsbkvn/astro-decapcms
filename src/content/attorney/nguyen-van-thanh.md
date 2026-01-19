@@ -34,7 +34,7 @@ bio_ko: |
   응우엔반타인 변호사는 Youth & Partners 법률 회사의 대표 변호사로, 14년 이상의 경험을 바탕으로 기업이 직면한 복잡한 법률 문제에 대한 실용적인 해결책을 연구하고 제공하고 있습니다. 그는 또한 삼성SDI 베트남의 총괄 법률 고문을 맡고 있습니다.
   
   타인 변호사는 책임있는 비즈니스 연합(RBA)의 경영 시스템, 노동, 인권, 비즈니스 윤리에 대한 수석 감사자 자격을 보유한 베트남의 몇 안되는 변호사 중 한 명입니다.
-image: "~/assets/images/team/Luật sư Nguyễn Văn Thành.jpg"
+image: "~/assets/images/team/luat-su-nguyen-van-thanh.jpg"
 email: "ceo@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

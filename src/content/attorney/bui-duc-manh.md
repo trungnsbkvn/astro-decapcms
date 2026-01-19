@@ -42,7 +42,7 @@ bio_ko: |
   사법 아카데미와 타이응우옌 경제 및 경영대학에서 전문 교육을 받은 그는 엄격한 이론적 기반과 실질적인 문제 해결 능력의 완벽한 조합을 고객에게 제공합니다. 민사 계약, 상속 분쟁, 손해배상, 복잡한 토지 행정 절차와 관련된 수백 건의 사례 상담에 직접 참여해 왔습니다.
   
   전문적이고 헌신적인 업무 스타일과 예리한 법률 분석 능력으로 부이득맹은 항상 고객의 정당한 권리와 이익을 최대한 보호하는 것을 목표로 합니다.
-image: "~/assets/images/team/Chuyên viên Bùi Đức Mạnh.PNG"
+image: "~/assets/images/team/chuyen-vien-bui-duc-manh.png"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

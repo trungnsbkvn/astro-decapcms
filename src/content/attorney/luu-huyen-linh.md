@@ -36,7 +36,7 @@ bio_ko: |
   류후엔린은 Youth & Partners 법률 회사(Y&P 법률 회사)의 법무 전문가로, 유명 법률 기관에서 근무한 경험이 있습니다.
   
   그녀는 기업법, 노동법, 가족법 분야에서 폭넓은 전문 지식을 보유하고 있습니다.
-image: "~/assets/images/team/Chuyên viên Lưu Huyền Linh.jpg"
+image: "~/assets/images/team/chuyen-vien-luu-huyen-linh.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

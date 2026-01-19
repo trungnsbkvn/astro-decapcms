@@ -24,7 +24,7 @@ const teams = transformAttorneysToTeams(attorneys);
 
 // Get the first featured attorney for the hero image
 const featuredAttorney = attorneys.find(a => a.data.featured);
-const heroImagePath = featuredAttorney?.data.image || '~/assets/images/team/Luật sư Nguyễn Văn Thành.jpg';
+const heroImagePath = featuredAttorney?.data.image || '~/assets/images/team/luat-su-nguyen-van-thanh.jpg';
 const heroImage = await findImage(heroImagePath);
 
 // Calculate team statistics

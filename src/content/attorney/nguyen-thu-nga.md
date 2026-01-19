@@ -32,7 +32,7 @@ shortBio_en: "Many years of experience, specializing in FDI consulting"
 shortBio_zh: "多年经验，专门从事外商直接投资咨询"
 shortBio_ja: "労働法・外資系企業法務専門家"
 shortBio_ko: "다년간의 경험, FDI 자문 전문"
-image: "~/assets/images/team/Luật sư Nguyễn Thu Nga.jpg"
+image: "~/assets/images/team/luat-su-nguyen-thu-nga.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

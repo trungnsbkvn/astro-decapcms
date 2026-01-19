@@ -23,7 +23,7 @@ shortBio_en: "Healthcare Legal Expert, Medical Practice Licenses"
 shortBio_zh: "医疗保健法律专家，医疗执业许可证"
 shortBio_ja: "医療法務専門家、医療業務許可"
 shortBio_ko: "의료 법률 전문가, 의료 업무 면허"
-image: "~/assets/images/team/Luật sư Nguyễn Hoàng Ngọc Lan.jpg"
+image: "~/assets/images/team/luat-su-nguyen-hoang-ngoc-lan.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:

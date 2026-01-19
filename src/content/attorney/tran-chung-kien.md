@@ -43,7 +43,7 @@ shortBio_en: "Former Prosecutor (2015-2022) | Hanoi Law University | Expert in C
 shortBio_zh: "前检察员(2015-2022) | 河内法律大学学士 | 民事、刑事、行政法专家"
 shortBio_ja: "元検察官(2015-2022) | ハノイ法科大学卒 | 民事・刑事・行政法専門"
 shortBio_ko: "전 검사(2015-2022) | 하노이 법과대학 학사 | 민사, 형사, 행정법 전문가"
-image: "~/assets/images/team/Luật sư Trần Chung Kiên.jpg"
+image: "~/assets/images/team/luat-su-tran-chung-kien.jpg"
 email: "contact@yplawfirm.vn"
 phone: "088 995 6888"
 practiceAreas:
