@@ -1,6 +1,14 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import type { HTMLAttributes, ImageMetadata } from 'astro/types';
 
+/** YouTube video info extracted from content */
+export interface YouTubeVideo {
+  id: string;
+  embedUrl: string;
+  watchUrl: string;
+  thumbnailUrl: string;
+}
+
 export interface Post {
   /** A unique ID number that identifies a post. */
   id: string;
@@ -49,6 +57,9 @@ export interface Post {
 
   /** Content type: post, legal, labor, consultation, foreigner, evaluation */
   type?: string;
+
+  /** YouTube videos embedded in the content (for VideoSchema SEO) */
+  videos?: YouTubeVideo[];
 }
 
 export interface Taxonomy {

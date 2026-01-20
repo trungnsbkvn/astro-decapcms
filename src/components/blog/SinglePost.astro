@@ -5,6 +5,7 @@ import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
 import TableOfContents from '~/components/widgets/TableOfContents.astro';
+import VideoSchema from '~/components/seo/VideoSchema.astro';
 
 import { getPermalink } from '~/utils/blog-permalinks';
 import { getFormattedDate, getAuthorPermalink } from '~/utils/utils';
@@ -247,6 +248,18 @@ const ratingStructuredData = post.rating
 <!-- Article structured data for better SEO -->
 <script type="application/ld+json" set:html={JSON.stringify(articleStructuredData)} />
 {ratingStructuredData && <script type="application/ld+json" set:html={JSON.stringify(ratingStructuredData)} />}
+
+<!-- VideoObject structured data for YouTube videos embedded in content -->
+{post.videos && post.videos.length > 0 && post.videos.map((video) => (
+  <VideoSchema
+    name={post.title}
+    description={post.excerpt || `Video embedded in article: ${post.title}`}
+    thumbnailUrl={video.thumbnailUrl}
+    uploadDate={post.publishDate?.toISOString() || new Date().toISOString()}
+    contentUrl={video.watchUrl}
+    embedUrl={video.embedUrl}
+  />
+))}
 
 <script>
   const fnObserver = () => {

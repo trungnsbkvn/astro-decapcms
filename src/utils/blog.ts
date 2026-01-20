@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import type { Post } from '~/types';
 import { APP_BLOG, APP_LEGAL, APP_CONSULTATION, APP_LABOR, APP_FOREIGNER, APP_EVALUATION } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE, BLOG_TYPES } from './blog-permalinks';
+import { extractYouTubeVideosFromContent } from './youtube';
 
 /** Get postsPerPage config by blog type */
 const getPostsPerPageByType = (type: string): number => {
@@ -133,7 +134,7 @@ const getNormalizedPostLazy = async (post: CollectionEntry<'post'>): Promise<Pos
  * Use this ONLY for single post pages where Content is needed
  */
 const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
-  const { id, data } = post;
+  const { id, data, body } = post;
   const { Content, remarkPluginFrontmatter } = await post.render();
 
   const {
@@ -167,6 +168,9 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     title: tag,
   }));
 
+  // Extract YouTube videos from raw MDX content for VideoSchema SEO
+  const videos = extractYouTubeVideosFromContent(body || '');
+
   return {
     id: id,
     slug: slug,
@@ -193,6 +197,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 
     readingTime: remarkPluginFrontmatter?.readingTime,
     headings: remarkPluginFrontmatter?.headings,
+    videos: videos.length > 0 ? videos : undefined,
   };
 };
 
@@ -622,11 +627,15 @@ export const findPostBySlugWithContent = async (type: string, slug: string): Pro
   // Render only this single post's content
   const { Content, remarkPluginFrontmatter } = await rawPost.render();
   
+  // Extract YouTube videos from raw MDX content for VideoSchema SEO
+  const videos = extractYouTubeVideosFromContent(rawPost.body || '');
+  
   return {
     ...postMeta,
     Content,
     readingTime: remarkPluginFrontmatter?.readingTime,
     headings: remarkPluginFrontmatter?.headings,
+    videos: videos.length > 0 ? videos : undefined,
   };
 };
 
