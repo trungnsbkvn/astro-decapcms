@@ -1,6 +1,6 @@
 # =============================================================================
-# Trailing slash removal: Handled by Cloudflare Redirect Rules (faster at edge)
-# Rule: URI ends with "/" → 301 to same URL without trailing slash
+# Trailing slash removal: Handled by Netlify redirects in netlify.toml
+# Rule: "/" → 301 to same URL without trailing slash
 # =============================================================================
 
 # =============================================================================
