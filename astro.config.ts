@@ -23,10 +23,6 @@ export default defineConfig({
   // STATIC SITE GENERATION: All pages pre-rendered at build time
   // Provides best performance, security, and SEO
   output: 'static',
-
-  // URL CONSISTENCY: Always use URLs without trailing slashes
-  // e.g., /about instead of /about/
-  trailingSlash: 'never',
   
   // PERFORMANCE: Inline ALL CSS to eliminate render-blocking requests
   // This prevents FOUC and achieves 100 Lighthouse performance score

@@ -43,16 +43,6 @@
 # The adapter generates the necessary _redirects file
 # CDN cache is automatically invalidated on each deploy by Netlify
 
-# =============================================================================
-# Trailing Slash Removal: 301 redirect URLs with trailing slash to without
-# This runs at the edge for fast redirects before hitting origin
-# =============================================================================
-[[redirects]]
-  from = "/*/"
-  to = "/:splat"
-  status = 301
-  force = true
-
 # Cache static assets indefinitely (hash-busted by Astro)
 [[headers]]
   for = "/_astro/*"
