@@ -1,7 +1,7 @@
 # =============================================================================
-# Trailing slash removal: Handled by Astro (trailingSlash: 'never' in config)
-# Generates URLs without trailing slashes at build time
+# Trailing slash removal: 301 redirect /url/ to /url
 # =============================================================================
+/:path/ /:path 301
 
 # =============================================================================
 # 301 Redirects: Y&P URL fixes (y-and-p -> yp)
