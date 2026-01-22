@@ -1,7 +1,8 @@
 # =============================================================================
 # Trailing slash removal: 301 redirect /url/ to /url
+# Note: Netlify syntax - asterisk captures path, :splat references it
 # =============================================================================
-/:path/ /:path 301
+/*/  /:splat  301
 
 # =============================================================================
 # 301 Redirects: Y&P URL fixes (y-and-p -> yp)
