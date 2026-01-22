@@ -1,0 +1,73 @@
+---
+/**
+ * HowToSchema Component
+ * Generates Schema.org HowTo structured data for step-by-step guides
+ * 
+ * Usage:
+ * ---
+ * import HowToSchema from '~/components/seo/HowToSchema.astro';
+ * 
+ * const howTo = {
+ *   name: 'Cách đăng ký công ty TNHH',
+ *   description: 'Hướng dẫn chi tiết các bước đăng ký...',
+ *   totalTime: 'P7D', // ISO 8601 duration (7 days)
+ *   steps: [
+ *     { name: 'Bước 1', text: 'Chuẩn bị hồ sơ...', image: '/images/step1.jpg' },
+ *     { name: 'Bước 2', text: 'Nộp hồ sơ...' },
+ *   ]
+ * };
+ * ---
+ * <HowToSchema {...howTo} />
+ */
+
+export interface HowToStep {
+  name: string;
+  text: string;
+  image?: string;
+  url?: string;
+}
+
+export interface Props {
+  name: string;
+  description: string;
+  steps: HowToStep[];
+  totalTime?: string; // ISO 8601 duration (e.g., 'PT30M', 'P7D')
+  estimatedCost?: {
+    currency: string;
+    value: number;
+  };
+}
+
+const { name, description, steps, totalTime, estimatedCost } = Astro.props;
+
+if (!steps || steps.length === 0) {
+  console.warn('HowToSchema: No steps provided');
+}
+
+const siteUrl = import.meta.env.SITE || 'https://yplawfirm.vn';
+
+const schema = steps && steps.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name,
+  description,
+  ...(totalTime ? { totalTime } : {}),
+  ...(estimatedCost ? { estimatedCost: { '@type': 'MonetaryAmount', ...estimatedCost } } : {}),
+  step: steps.map((step, index) => ({
+    '@type': 'HowToStep',
+    position: index + 1,
+    name: step.name,
+    text: step.text,
+    ...(step.image ? { 
+      image: step.image.startsWith('http') ? step.image : `${siteUrl}${step.image}` 
+    } : {}),
+    ...(step.url ? { 
+      url: step.url.startsWith('http') ? step.url : `${siteUrl}${step.url}` 
+    } : {}),
+  })),
+} : null;
+---
+
+{schema && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}

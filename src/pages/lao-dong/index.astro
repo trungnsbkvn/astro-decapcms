@@ -1,0 +1,52 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import BlogList from '~/components/blog/List.astro';
+import Headline from '~/components/blog/Headline.astro';
+import Pagination from '~/components/blog/Pagination.astro';
+
+import { blogListRobots, getPaginatedPosts } from '~/utils/blog';
+import { getRootPathForType } from '~/utils/blog-permalinks';
+import { getBlogTypeSEO, getKeywordsString } from '~/utils/blog-seo';
+import { getLaborBreadcrumbs } from '~/utils/breadcrumbs';
+
+// Pre-render at build time for better performance
+export const prerender = true;
+
+const TYPE = 'labor';
+const blogSEO = getBlogTypeSEO(TYPE);
+
+// SSR: No prerender - pages render on-demand
+const { posts, totalPages } = await getPaginatedPosts(TYPE, 1);
+
+const typePosts = posts.map((post) => ({
+  ...post,
+  permalink: `${getRootPathForType(post.type)}/${post.permalink}`,
+}));
+
+const nextUrl = totalPages > 1 ? '/lao-dong/2' : undefined;
+
+const metadata = {
+  title: blogSEO.title,
+  description: blogSEO.description,
+  keywords: getKeywordsString(blogSEO.keywords),
+  robots: {
+    index: blogListRobots?.index,
+    follow: blogListRobots?.follow,
+  },
+  openGraph: {
+    type: 'article',
+  },
+};
+
+const breadcrumbs = getLaborBreadcrumbs();
+---
+
+<Layout metadata={metadata} breadcrumbs={breadcrumbs}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <Headline subtitle={blogSEO.subtitle} i18nTitle="blog.laborTitle" i18nSubtitle="blog.laborSubtitle">
+      {blogSEO.title}
+    </Headline>
+    <BlogList posts={typePosts} />
+    <Pagination prevUrl={undefined} nextUrl={nextUrl} />
+  </section>
+</Layout>

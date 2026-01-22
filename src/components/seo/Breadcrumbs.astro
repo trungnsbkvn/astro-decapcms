@@ -1,0 +1,166 @@
+---
+/**
+ * Breadcrumbs Component with Schema.org markup
+ * Optimized for SEO, accessibility, and i18n support for 5 languages (vi, en, zh, ja, ko)
+ * 
+ * Features:
+ * - Schema.org BreadcrumbList structured data
+ * - Full i18n support with data-i18n attributes
+ * - Dark mode compatible
+ * - Accessible with ARIA labels
+ * - Items with labelI18n use notranslate (translated by our i18n system)
+ * - Items without labelI18n (like article titles) can be translated by Google Translate
+ */
+import SchemaOrg from './SchemaOrg.astro';
+import { t } from '~/i18n';
+
+export interface BreadcrumbItem {
+  /** Display label for the breadcrumb */
+  label: string;
+  /** URL path for the breadcrumb link */
+  href: string;
+  /** Whether this is the current page (last item) */
+  current?: boolean;
+  /** i18n key for translation (e.g., 'nav.home', 'breadcrumb.services'). If set, item uses notranslate */
+  labelI18n?: string;
+  /** Multilingual labels for different languages (optional) */
+  labelMultilang?: {
+    en?: string;
+    zh?: string;
+    ja?: string;
+    ko?: string;
+  };
+}
+
+export interface Props {
+  /** Array of breadcrumb items */
+  items: BreadcrumbItem[];
+  /** Additional CSS classes */
+  class?: string;
+  /** Whether to show the home icon */
+  showHomeIcon?: boolean;
+}
+
+const { items, class: className = '', showHomeIcon = true } = Astro.props;
+
+// Generate full URLs for Schema.org
+const siteUrl = import.meta.env.SITE || 'https://yplawfirm.vn';
+
+// Ensure URLs are properly formatted
+const formatUrl = (href: string): string => {
+  if (href.startsWith('http')) return href;
+  // Remove trailing slash for consistency except for root
+  const cleanHref = href === '/' ? '/' : href.replace(/\/$/, '');
+  return `${siteUrl}${cleanHref}`;
+};
+
+// Helper to get display label - use i18n translation if available
+const getDisplayLabel = (item: BreadcrumbItem): string => {
+  if (item.labelI18n) {
+    // Use Vietnamese as default for initial render, client-side JS will update for other languages
+    return t(item.labelI18n, 'vi') || item.label;
+  }
+  return item.label;
+};
+
+const schemaItems = items.map(item => ({
+  name: getDisplayLabel(item),
+  url: formatUrl(item.href),
+}));
+---
+
+<nav 
+  aria-label="Breadcrumb" 
+  class={`text-sm ${className}`} 
+  data-breadcrumb
+>
+  <ol 
+    class="flex flex-wrap items-center gap-1.5 text-gray-600 dark:text-slate-300" 
+    itemscope 
+    itemtype="https://schema.org/BreadcrumbList"
+  >
+    {items.map((item, index) => {
+      const displayLabel = getDisplayLabel(item);
+      return (
+      <li 
+        class="flex items-center gap-1.5"
+        itemprop="itemListElement" 
+        itemscope 
+        itemtype="https://schema.org/ListItem"
+      >
+        {/* Separator for non-first items */}
+        {index > 0 && (
+          <svg 
+            class="w-3 h-3 text-gray-400 dark:text-slate-500 flex-shrink-0" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        )}
+        
+        {item.current ? (
+          /* Current page - not a link. Use notranslate only if it has i18n key */
+          /* Article titles (no labelI18n) get more space and no truncation to allow Google Translate */
+          /* Items with labelMultilang use multilang-name class for client-side translation */
+          <span 
+            class={`font-medium text-gray-900 dark:text-white ${item.labelI18n ? 'truncate max-w-[200px] sm:max-w-[300px] notranslate' : ''} ${item.labelMultilang ? 'multilang-name' : ''}`}
+            itemprop="name"
+            aria-current="page"
+            data-i18n={item.labelI18n || undefined}
+            translate={item.labelI18n ? 'no' : undefined}
+            title={displayLabel}
+            data-name-en={item.labelMultilang?.en}
+            data-name-zh={item.labelMultilang?.zh}
+            data-name-ja={item.labelMultilang?.ja}
+            data-name-ko={item.labelMultilang?.ko}
+          >
+            {displayLabel}
+          </span>
+        ) : (
+          /* Link to other pages. Use notranslate only if it has i18n key */
+          /* Items with labelMultilang use multilang-name class for client-side translation */
+          <a 
+            href={item.href}
+            class={`inline-flex items-center gap-1 text-gray-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-blue-400 transition-colors duration-200 hover:underline underline-offset-2 ${item.labelI18n ? 'notranslate' : ''} ${item.labelMultilang ? 'multilang-name' : ''}`}
+            itemprop="item"
+            translate={item.labelI18n ? 'no' : undefined}
+          >
+            {/* Home icon for first item */}
+            {index === 0 && showHomeIcon && (
+              <svg 
+                class="w-4 h-4 flex-shrink-0" 
+                fill="currentColor" 
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+              >
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+              </svg>
+            )}
+            <span 
+              itemprop="name" 
+              data-i18n={item.labelI18n || undefined}
+              class="truncate max-w-[150px] sm:max-w-[200px]"
+              title={displayLabel}
+              data-name-en={item.labelMultilang?.en}
+              data-name-zh={item.labelMultilang?.zh}
+              data-name-ja={item.labelMultilang?.ja}
+              data-name-ko={item.labelMultilang?.ko}
+            >
+              {displayLabel}
+            </span>
+          </a>
+        )}
+        <meta itemprop="position" content={String(index + 1)} />
+      </li>
+    )})}
+  </ol>
+</nav>
+
+<!-- Schema.org JSON-LD for Breadcrumbs -->
+<SchemaOrg 
+  type="BreadcrumbList"
+  data={{ items: schemaItems }}
+/>

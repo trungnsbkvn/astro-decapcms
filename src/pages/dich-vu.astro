@@ -1,0 +1,728 @@
+---
+export const prerender = true;
+
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import { getPermalink } from '~/utils/blog-permalinks';
+import { getServicesBreadcrumbs } from '~/utils/breadcrumbs';
+
+const metadata = {
+  title: 'Dịch vụ pháp lý chuyên môn | Youth & Partners',
+  description:
+    'Các dịch vụ pháp lý của Y&P không chỉ dừng lại ở việc cung cấp các giải pháp pháp lý trên nền tảng học thuật mà Y&P còn cung cấp các giải pháp có vận dụng thực tiễn thiết thực nhằm hỗ trợ giải quyết mọi vướng mắc về pháp lý mà khách hàng gặp phải với hiệu quả cao nhất.',
+  keywords: 'dịch vụ pháp lý, tư vấn pháp lý doanh nghiệp, luật lao động, đầu tư nước ngoài, phòng pháp chế thuê ngoài, due diligence, RBA audit, ESG compliance, M&A legal services, tranh tụng doanh nghiệp',
+};
+
+const breadcrumbs = getServicesBreadcrumbs();
+---
+
+<Layout metadata={metadata} breadcrumbs={breadcrumbs}>
+  <Hero
+    id="hero"
+    title="Dịch vụ pháp lý chuyên môn" i18nTitle="services.professionalLegal"
+    tagline="Youth & Partners"
+    actions={[{ variant: 'primary', text: 'Liên hệ với chúng tôi', href: getPermalink('/lien-he#form'), i18nText: 'services.contactUs' }]}
+  >
+    <Fragment slot="subtitle">
+      <span class="notranslate" translate="no" data-i18n="services.heroSubtitle">Với đội ngũ Luật sư giàu kinh nghiệm thực chiến, kết hợp với sự am hiểu sâu sắc pháp luật và kiến thức xã hội Việt Nam, đến với chúng tôi khách hàng sẽ được tư vấn cách tiến hành kinh doanh và hoạt động tốt nhất, bao gồm đàm phán với các đối tác, thực hiện các chương trình tuân thủ và giải quyết những vấn đề pháp lý phức tạp của doanh nghiệp.</span>
+      <br /><br />
+      <span class="notranslate" translate="no" data-i18n="services.heroSubtitle2">Tận dụng sự hiểu biết của mình về môi trường pháp lý và xã hội ngày càng phức tạp tại Việt Nam, chúng tôi đã tư vấn cho hàng trăm khách hàng doanh nghiệp vượt qua tình trạng khó khăn, giảm thiểu rủi ro pháp lý và làm việc hiệu quả với các cơ quan nhà nước.</span>
+      <br /><br />
+      <span class="notranslate" translate="no" data-i18n="services.heroSubtitle3">Y&P làm việc cùng với khách hàng để hiểu rõ hoạt động kinh doanh và các giải pháp thủ công nhằm giúp quý khách hàng đáp ứng các nhu cầu và thách thức kinh doanh tại Việt Nam và hơn thế nữa.</span>
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:phone-call',
+        callToAction: {
+          target: '_blank',
+          text: 'Hotline',
+          href: 'tel:0889956888',
+        },
+      },
+      {
+        icon: 'tabler:mailbox',
+        callToAction: {
+          target: '_blank',
+          text: 'Email',
+          href: 'mailto:ceo@yplawfirm.vn',
+        },
+      },
+      {
+        icon: 'tabler:brand-meta',
+        callToAction: {
+          target: '_blank',
+          text: 'Facebook',
+          href: 'https://www.facebook.com/yplawfirm',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/team/luat-su-nguyen-van-thanh.jpg',
+      alt: 'Colorful Image',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="services.serviceIntro">Giới thiệu dịch vụ</h2>
+      <p class="notranslate" translate="no" data-i18n="services.serviceIntroMotto">Với phương châm hoạt động: "Thời Gian – Tận Tâm – Tận Lực", Y&P Lawfirm luôn mong muốn mang đến cho quý khách
+        hàng những dịch vụ chất lượng, nhanh chóng, chính xác và trọn vẹn.
+      </p>
+     <br />
+      <p class="notranslate" translate="no" data-i18n="services.serviceIntroValue">Chúng tôi luôn xác định, giá trị của một doanh nghiệp, một đơn vị tư vấn pháp lý phải bắt đầu từ những giá trị
+        cốt lõi, các dịch vụ cần được thực hiện bởi cái tâm và cái tầm của các Luật sư.
+      </p>
+     <br />
+      <p class="notranslate" translate="no" data-i18n="services.serviceIntroMeasure">Các giá trị ấy chỉ có thể được đo bằng sự hài lòng, tin tưởng của tất cả các khách hàng/thân chủ.</p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features3
+    title="Dịch vụ pháp lý"
+    subtitle="Chúng tôi có các luật sư và chuyên gia tư vấn pháp lý phụ trách các lĩnh vực sau:"
+    i18nTitle="services.legalServices"
+    i18nSubtitle="services.legalServicesSubtitle"
+    columns={2}
+    defaultIcon="tabler:point-filled"
+    items={[
+      {
+        title: 'Doanh nghiệp',
+        description:
+          'Cung cấp các giải pháp pháp lý toàn diện để hỗ trợ doanh nghiệp trong quá trình thành lập, hoạt động và phát triển.',
+        i18nTitle: 'services.enterprise',
+        i18nDescription: 'services.enterpriseDesc',
+      },
+      {
+        title: 'Tư vấn thường xuyên',
+        description:
+          'Cung cấp dịch vụ tư vấn pháp lý liên tục để đảm bảo doanh nghiệp hoạt động hiệu quả và tuân thủ các quy định pháp luật hiện hành.',
+        i18nTitle: 'nav.consultation',
+        i18nDescription: 'services.regularConsultingDesc',
+      },
+      {
+        title: 'Sở hữu trí tuệ',
+        description:
+          'Tư vấn và hỗ trợ bảo vệ quyền sở hữu trí tuệ, từ đăng ký bản quyền, bằng sáng chế đến giải quyết tranh chấp về sở hữu trí tuệ.',
+        i18nTitle: 'services.intellectualProperty',
+        i18nDescription: 'services.intellectualPropertyDesc',
+      },
+      {
+        title: 'Quản trị doanh nghiệp và tuân thủ',
+        description:
+          'Giúp doanh nghiệp xây dựng hệ thống quản trị hiệu quả và tuân thủ các quy định pháp luật, giảm thiểu rủi ro pháp lý.',
+        i18nTitle: 'services.governance',
+        i18nDescription: 'services.governanceDesc',
+      },
+      {
+        title: 'Dự án đầu tư',
+        description:
+          'Hỗ trợ các nhà đầu tư trong việc thực hiện các dự án đầu tư tại Việt Nam, từ việc xin giấy phép đến việc giải quyết các vấn đề pháp lý liên quan.',
+        i18nTitle: 'services.investmentProject',
+        i18nDescription: 'services.investmentProjectDesc',
+      },
+      {
+        title: 'Dịch vụ hỗ trợ doanh nghiệp',
+        description:
+          'Cung cấp các dịch vụ hỗ trợ doanh nghiệp, bao gồm tư vấn pháp lý, hỗ trợ quản lý, và giải quyết các vấn đề phát sinh trong quá trình kinh doanh.',
+        i18nTitle: 'services.businessSupport',
+        i18nDescription: 'services.businessSupportDesc',
+      },
+      {
+        title: 'Mua bán và Sáp nhập (M&A)',
+        description:
+          'Tư vấn và hỗ trợ các giao dịch mua bán và sáp nhập doanh nghiệp, đảm bảo các giao dịch được thực hiện một cách hiệu quả và tuân thủ pháp luật.',
+        i18nTitle: 'services.maFull',
+        i18nDescription: 'services.maDesc',
+      },
+      {
+        title: 'Tranh tụng và giải quyết tranh chấp',
+        description:
+          'Chúng tôi đại diện và hỗ trợ khách hàng trong các vụ kiện tụng và giải quyết tranh chấp, bảo vệ quyền lợi hợp pháp của khách hàng.',
+        i18nTitle: 'services.litigation',
+        i18nDescription: 'services.litigationDesc',
+      },
+      {
+        title: 'Lao động việc làm',
+        description:
+          'Tư vấn và hỗ trợ doanh nghiệp và người lao động về các vấn đề liên quan đến hợp đồng lao động, quyền lợi nhân viên, và giải quyết tranh chấp lao động.',
+        i18nTitle: 'services.laborEmployment',
+        i18nDescription: 'services.laborEmploymentDesc',
+      },
+      {
+        title: 'Dịch vụ pháp lý về đất đai',
+        description:
+          'Cung cấp các dịch vụ pháp lý liên quan đến đất đai, từ việc xin giấy chứng nhận quyền sử dụng đất đến giải quyết các tranh chấp liên quan đến đất đai.',
+        i18nTitle: 'services.landServices',
+        i18nDescription: 'services.landServicesDesc',
+      },
+    ]}
+  />
+
+  <Steps2
+    title="Doanh nghiệp"
+    subtitle="Phòng Doanh nghiệp của chúng tôi là nơi tụ tập kiến thức chuyên sâu từ đa dạng các lĩnh vực hành nghề, nhằm mang đến cho khách hàng những dịch vụ toàn diện về thủ tục đăng ký kinh doanh và thành lập doanh nghiệp. Chúng tôi cam kết hỗ trợ khách hàng tại mọi giai đoạn của vòng đời kinh doanh, bao gồm từ quá trình ban đầu của việc thành lập doanh nghiệp, qua các giai đoạn phát triển, cho đến khi mở rộng hoạt động và kinh doanh.\n\nĐội ngũ chuyên gia của chúng tôi sẵn sàng áp dụng kiến thức sâu rộng để đáp ứng mọi nhu cầu và yêu cầu của khách hàng. Tận dụng sự hiểu biết đa chiều về nhiều lĩnh vực, chúng tôi tạo ra một hệ sinh thái dịch vụ linh hoạt và chuyên nghiệp, giúp doanh nghiệp không chỉ tồn tại mà còn phát triển bền vững trong môi trường kinh doanh ngày càng đa dạng và thách thức."
+    i18nTitle="services.enterpriseTitle"
+    i18nSubtitle="services.enterpriseSubtitle"
+    callToAction={{
+      text: 'Xem thêm',
+      href: '/phap-ly/doanh-nghiep',
+      i18nText: 'services.viewMore',
+    }}
+    items={[
+      {
+        title: 'Chuyên môn sâu rộng',
+        description:
+          'Đội ngũ luật sư của chúng tôi có kiến thức chuyên môn sâu rộng và kinh nghiệm phong phú trong lĩnh vực pháp lý doanh nghiệp. Chúng tôi hiểu rõ các quy định pháp luật và thực tiễn kinh doanh, giúp doanh nghiệp bạn tối ưu hóa quy trình hoạt động và tuân thủ pháp luật.',
+        i18nTitle: 'services.enterpriseItem1Title',
+        i18nDescription: 'services.enterpriseItem1Desc',
+      },
+      {
+        title: 'Giải pháp toàn diện và hiệu quả',
+        description:
+          'Chúng tôi cung cấp các giải pháp pháp lý toàn diện, từ tư vấn thành lập doanh nghiệp, quản lý rủi ro pháp lý đến hỗ trợ các giao dịch mua bán và sáp nhập. Mục tiêu của chúng tôi là mang lại những giải pháp hiệu quả, tiết kiệm thời gian và chi phí cho khách hàng.',
+        i18nTitle: 'services.enterpriseItem2Title',
+        i18nDescription: 'services.enterpriseItem2Desc',
+      },
+      {
+        title: 'Tận tâm và uy tín',
+        description:
+          'Chúng tôi luôn đặt lợi ích của khách hàng lên hàng đầu, làm việc với sự tận tâm và uy tín cao nhất. Sự thành công của khách hàng chính là thước đo sự thành công của chúng tôi. Chúng tôi cam kết đồng hành và hỗ trợ doanh nghiệp bạn trong mọi giai đoạn phát triển.',
+        i18nTitle: 'services.enterpriseItem3Title',
+        i18nDescription: 'services.enterpriseItem3Desc',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps2>
+
+  <Steps2
+    title="Sở hữu trí tuệ"
+    subtitle="Chúng tôi hiểu rõ và đánh giá cao tầm quan trọng về sở hữu trí tuệ (IP) đối với sự thành công của doanh nghiệp. Với sự chuyên sâu trong lĩnh vực này, chúng tôi cung cấp dịch vụ tư vấn toàn diện về mọi khía cạnh liên quan đến sở hữu trí tuệ, từ những giai đoạn đầu tới những thời kỳ quan trọng trong vòng đời của nó. Đội ngũ chuyên gia của chúng tôi có nhiều kinh nghiệm trong việc tư vấn cho các bên liên quan về sở hữu trí tuệ, đặc biệt là trong việc xây dựng chiến lược sáng tạo, bảo vệ, thương mại hóa và thực thi quyền sở hữu trí tuệ.\n\n Chúng tôi đã thành công trong việc hợp tác với nhiều chủ sở hữu thương hiệu và quyền sở hữu trí tuệ nổi tiếng cả trong và ngoài nước, phục vụ đa dạng ngành công nghiệp. Sự chuyên nghiệp và tận tâm của chúng tôi là đảm bảo rằng quyền sở hữu trí tuệ của khách hàng được bảo vệ và phát triển hiệu quả trong môi trường kinh doanh ngày càng cạnh tranh."
+    i18nTitle="services.ipTitle"
+    i18nSubtitle="services.ipSubtitle"
+    isReversed={true}
+    callToAction={{
+      text: 'Xem thêm',
+      href: '/phap-ly/so-huu-tri-tue',
+      i18nText: 'services.viewMore',
+    }}
+    items={[
+      {
+        title: 'Bảo vệ toàn diện',
+        description:
+          'Chúng tôi cung cấp các dịch vụ bảo vệ quyền sở hữu trí tuệ toàn diện, từ đăng ký bản quyền, nhãn hiệu, bằng sáng chế đến bảo hộ quyền tác giả. Đội ngũ luật sư của chúng tôi đảm bảo rằng tài sản trí tuệ của bạn được bảo vệ tối đa trước mọi nguy cơ xâm phạm.',
+        icon: 'tabler:shield-checkered',
+        i18nTitle: 'services.ipItem1Title',
+        i18nDescription: 'services.ipItem1Desc',
+      },
+      {
+        title: 'Kinh nghiệm và chuyên môn sâu rộng',
+        description:
+          'Với nhiều năm kinh nghiệm trong lĩnh vực sở hữu trí tuệ, chúng tôi tự hào có đội ngũ luật sư chuyên nghiệp và am hiểu sâu sắc về luật sở hữu trí tuệ. Chúng tôi luôn cập nhật các quy định pháp luật mới nhất và sử dụng kiến thức chuyên môn để đưa ra những giải pháp tối ưu cho khách hàng.',
+        icon: 'tabler:book',
+        i18nTitle: 'services.ipItem2Title',
+        i18nDescription: 'services.ipItem2Desc',
+      },
+      {
+        title: 'Giải quyết tranh chấp hiệu quả',
+        description:
+          'Chúng tôi không chỉ hỗ trợ bạn trong việc bảo vệ quyền sở hữu trí tuệ mà còn giúp bạn giải quyết các tranh chấp liên quan một cách hiệu quả. Với kỹ năng đàm phán và kinh nghiệm xử lý các vụ kiện tụng, chúng tôi đảm bảo quyền lợi của bạn luôn được bảo vệ và tối ưu hóa trong mọi tình huống.',
+        icon: 'tabler:trophy',
+        i18nTitle: 'services.ipItem3Title',
+        i18nDescription: 'services.ipItem3Desc',
+      },
+    ]}
+  />
+
+  <Steps2
+    title="Dự án đầu tư"
+    subtitle="Kinh nghiệm tư vấn cho các dự án đầu tư của Y&P Lawfirm bao gồm tư vấn cho các doanh nghiệp trong nước và nước ngoài và tư nhân, trong suốt quá trình thực hiện tư vấn nhằm hỗ trợ khách hàng điều hướng sự giao thoa phức tạp của pháp luật Việt Nam.\n\nChúng tôi cam kết hỗ trợ khách hàng từ lúc bắt đầu kế hoạch đầu tư và ngay cả khi dự án đã đi vào hoạt động.\n\nTừ khâu lên kế hoạch đầu tư đến việc thiết lập và duy trì hoạt động dự án, chúng tôi cam kết đồng hành với khách hàng mỗi bước đường để đảm bảo sự thành công và bền vững của dự án đầu tư."
+    i18nTitle="services.investmentTitle"
+    i18nSubtitle="services.investmentSubtitle"
+    callToAction={{
+      text: 'Xem thêm',
+      href: '/dau-tu-nuoc-ngoai',
+      i18nText: 'services.viewMore',
+    }}
+    items={[
+      {
+        title: 'Tìm hiểu, Phân tích và Đánh giá Thị trường',
+        description:
+          '- Xác định và đánh giá các cơ hội và thách thức trên thị trường.\n- Phân tích thông tin thị trường để đưa ra quyết định chiến lược.',
+        i18nTitle: 'services.investmentItem1Title',
+        i18nDescription: 'services.investmentItem1Desc',
+      },
+      {
+        title: 'Tìm Kiếm Đối tác Thích Hợp',
+        description: 'Hỗ trợ khách hàng trong quá trình tìm kiếm và lựa chọn đối tác phù hợp.',
+        i18nTitle: 'services.investmentItem2Title',
+        i18nDescription: 'services.investmentItem2Desc',
+      },
+      {
+        title: 'Thông Tin Dự Án Gọi Vốn Đầu Tư Nước Ngoài',
+        description:
+          'Cung cấp thông tin cập nhật về các dự án đầu tư nước ngoài từ các cơ quan chức năng của Nhà nước Việt Nam.',
+        i18nTitle: 'services.investmentItem3Title',
+        i18nDescription: 'services.investmentItem3Desc',
+      },
+      {
+        title: 'Hỗ Trợ Thiết Lập Các Loại Hình Hoạt Động Đầu Tư',
+        description: 'Tư vấn giúp khách hàng xây dựng các loại hình hoạt động đầu tư tại Việt Nam.',
+        i18nTitle: 'services.investmentItem4Title',
+        i18nDescription: 'services.investmentItem4Desc',
+      },
+      {
+        title: 'Cấu Trúc Đầu Tư',
+        description:
+          'Tư vấn về cấu trúc đầu tư phù hợp nhất cho từng loại dự án, bao gồm cả các hình thức gián tiếp và trực tiếp.',
+        i18nTitle: 'services.investmentItem5Title',
+        i18nDescription: 'services.investmentItem5Desc',
+      },
+      {
+        title: 'Đại Diện Thay Mặt Nhà Đầu Tư',
+        description: 'Liên lạc và đàm phán với các cơ quan chức năng để triển khai dự án.',
+        i18nTitle: 'services.investmentItem6Title',
+        i18nDescription: 'services.investmentItem6Desc',
+      },
+      {
+        title: 'Thực Hiện Dịch Vụ Lập Văn Phòng Đại Diện, Chi Nhánh',
+        description:
+          'Hỗ trợ trong quá trình lập văn phòng đại diện và chi nhánh của doanh nghiệp nước ngoài tại Việt Nam.',
+        i18nTitle: 'services.investmentItem7Title',
+        i18nDescription: 'services.investmentItem7Desc',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps2>
+
+  <Steps2
+    title="M & A"
+    subtitle="M&A và Tư vấn Doanh nghiệp là một trong những nền móng chính trong của lĩnh vực hoạt động pháp lý của YP Law, chúng tôi tập trung vào mảng sáp nhập và mua bán, đầu tư trực tiếp từ nước ngoài và Tư vấn Doanh nghiệp. Chúng tôi đã giúp đỡ khách hàng triển khai các giao dịch có cấu trúc sáng tạo và vượt qua các thách thức từ quy định pháp luật hiện hành phức tạp và không ngừng biến đổi.\n\n Ngoài sự chuyên môn về pháp luật, chúng tôi có hiểu biết sâu trong nhiều lĩnh vực, bao gồm sản xuất, hóa chất, tiêu dùng, logistics, bán lẻ, giáo dục, khoáng sản. Chúng tôi hiểu rõ sự phức tạp khi mua và vận hành một doanh nghiệp lớn, bao gồm mọi thứ liên quan đến vấn đề liên quan đến đất đai, tài sản, môi trường, ngoại hối… nhờ đó đưa ra được các tư vấn pháp lý giá trị cho khách hàng phù hợp với nhu cầu kinh doanh của họ."
+    i18nTitle="services.maTitle"
+    i18nSubtitle="services.maSubtitle"
+    isReversed={true}
+    callToAction={{
+      text: 'Xem thêm',
+      href: '/phap-ly/',
+      i18nText: 'services.viewMore',
+    }}
+    items={[
+      {
+        title: 'Tầm nhìn quốc tế',
+        description:
+          'Là một công ty luật tại Việt Nam có tầm nhìn quốc tế, chúng tôi kết hợp kiến thức địa phương với góc nhìn quốc tế. Chúng tôi liên tục được các khách hàng cũ là doanh nghiệp nước ngoài giới thiệu cho đối tác của họ khi cần được tư vấn về luật pháp Việt Nam. Khách hàng của chúng tôi bao gồm cả khách hàng trong nước và quốc tế. Chúng tôi tự hào lớn khi hỗ trợ khách hàng của chúng tôi trong việc thành lập, vận hành và mở rộng hoạt động kinh doanh tại Việt Nam.',
+        icon: 'tabler:world',
+        i18nTitle: 'services.maItem1Title',
+        i18nDescription: 'services.maItem1Desc',
+      },
+      {
+        title: 'Kinh nghiệm vượt trội',
+        description:
+          'Chúng tôi thường xuyên được yêu cầu phối hợp cùng các Công ty kế toán và Ngân hàng để đưa ra tư vấn tổng thể cho Khách hàng liên quan đến hoạt động M&A. Để hỗ trợ hoạt động M&A, chúng tôi đưa cho khách hàng của mình các tư vấn liên quan:',
+        icon: 'tabler:book',
+        i18nTitle: 'services.maItem2Title',
+        i18nDescription: 'services.maItem2Desc',
+      },
+      {
+        title: 'Hỗ trợ toàn diện và chiến lược',
+        description:
+          'Chúng tôi cung cấp sự hỗ trợ toàn diện từ khâu chuẩn bị, thẩm định, đàm phán đến hậu kỳ sau giao dịch. Đồng thời, chúng tôi tư vấn chiến lược giúp khách hàng hiểu rõ về thị trường, định hướng và tối ưu hóa cơ hội kinh doanh từ các giao dịch M&A.',
+        icon: 'tabler:sort-a-z',
+        i18nTitle: 'services.maItem3Title',
+        i18nDescription: 'services.maItem3Desc',
+      },
+    ]}
+  />
+
+  <Steps2
+    title="Tư vấn thường xuyên cho các doanh nghiệp"
+    i18nTitle="services.consultingTitle"
+    subtitle="Trong những năm qua, chúng tôi tự hào là đơn vị cung cấp dịch vụ pháp lý chất lượng cao cho nhiều  doanh nghiệp trong nước và nước ngoài có quy mô lớn tại Việt Nam như Samsung, TOPCV, Arcadyan, Cosmos, Viettel, FPT,... cũng như nhiều Doanh nghiệp Hàn Quốc, Nhật Bản, Úc… \n\nChúng tôi có kinh nghiệm đa dạng và cụ thể từng lĩnh vực hoạt động của từng doanh nghiệp, nổi trội là các doanh nghiệp sản xuất có vốn đầu tư nước ngoài. \n\nĐặc biệt, đến thời điểm hiện tại, Y&P là một trong những hãng luật hiếm hoi có thể tư vấn sâu những vấn đề về trách nhiệm xã hội của Doanh nghiệp (CSR) hay cụ thể là bộ quy tắc RBA hiện đang áp dụng cho rất nhiều Doanh nghiệp. Điều này làm cho chúng tôi trở thành đối tác lựa chọn đáng tin cậy cho các doanh nghiệp sản xuất đang phải tuân thủ theo các quy tắc này. Y&P Lawfirm rất hân hạnh được hỗ trợ và đồng hành cùng các khách hàng, đặc biệt là trong việc thực hiện các yêu cầu của bộ Quy tắc RBA này."
+    i18nSubtitle="services.consultingSubtitle"
+    callToAction={{
+      text: 'Xem thêm',
+      href: '/tu-van-thuong-xuyen',
+      i18nText: 'services.viewMore',
+    }}
+    items={[
+      {
+        title: 'Kinh nghiệm phong phú và đa dạng',
+        description:
+          'Chúng tôi tự hào đã tư vấn thành công cho nhiều doanh nghiệp hàng đầu, cả trong nước và quốc tế. Sự phong phú và đa dạng trong kinh nghiệm của chúng tôi giúp chúng tôi hiểu rõ và đáp ứng nhu cầu pháp lý của từng khách hàng một cách chính xác và hiệu quả nhất.',
+        i18nTitle: 'services.consultingItem1Title',
+        i18nDescription: 'services.consultingItem1Desc',
+      },
+      {
+        title: 'Đội ngũ chuyên gia tận tâm và chuyên nghiệp',
+        description:
+          'Đội ngũ luật sư của chúng tôi không chỉ có kiến thức chuyên sâu về pháp luật mà còn có khả năng tư duy chiến lược và sáng tạo trong việc giải quyết các vấn đề pháp lý phức tạp. Chúng tôi luôn đặt lợi ích của khách hàng lên hàng đầu, làm việc hết mình để đảm bảo sự thành công và phát triển bền vững của doanh nghiệp.',
+        i18nTitle: 'services.consultingItem2Title',
+        i18nDescription: 'services.consultingItem2Desc',
+      },
+      {
+        title: 'Giải pháp tùy chỉnh và linh hoạt',
+        description:
+          'Chúng tôi cung cấp các giải pháp pháp lý được tùy chỉnh theo nhu cầu cụ thể của từng doanh nghiệp. Sự linh hoạt trong dịch vụ của chúng tôi giúp các doanh nghiệp không chỉ tuân thủ quy định pháp luật mà còn tối ưu hóa quy trình hoạt động và quản lý rủi ro một cách hiệu quả.',
+        i18nTitle: 'services.consultingItem3Title',
+        i18nDescription: 'services.consultingItem3Desc',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps2>
+
+  <Steps2
+    title="Quản trị doanh nghiệp và tuân thủ"
+    i18nTitle="services.governanceTitle"
+    subtitle="Y&P Lawfirm có thể cung cấp cho khách hàng những tư vấn toàn diện về quản trị doanh nghiệp cũng như việc tuân thủ pháp luật mà qua đó giảm bớt hoặc phòng tránh được những rủi ro về trách nhiệm dân sự, hình sự, phạt hành chính hoặc các rủi ro khác có khả năng ảnh hưởng bất lợi tới doanh nghiệp, bảo đảm danh tiếng và hình ảnh của tổ chức và cá nhân được bảo vệ.\n\nY&P Lawfirm thiết kế và điều chỉnh các chương trình tuân thủ pháp luật để đáp ứng những yêu cầu kinh doanh của từng khách hàng, có tính đến cấu trúc tổ chức và quản lý, văn hóa và nhu cầu hiện có của doanh nghiệp. Chúng tôi theo một cách tiếp cận theo nhóm với chi phí hiệu quả trong việc phát triển và cập nhật cho chương trình tuân thủ pháp luật của khách hàng. Những luật sư tuân thủ của chúng tôi có kinh nghiệm trong những lĩnh vực như lao động, môi trường, thuế, sở hữu trí tuệ đồng thời tư vấn cho khách hàng về việc quản lý những tranh chấp nội bộ và với bên ngoài, kiện tụng và những rủi ro về mặt pháp lý khác."
+    i18nSubtitle="services.governanceSubtitle"
+    isReversed={true}
+    callToAction={{
+      text: 'Xem thêm',
+      href: '/phap-ly/',
+      i18nText: 'services.viewMore',
+    }}
+    items={[
+      {
+        title: 'Kiến thức chuyên môn và kinh nghiệm',
+        description:
+          'Đội ngũ luật sư và chuyên gia của chúng tôi có kiến thức sâu rộng và kinh nghiệm phong phú trong lĩnh vực quản trị doanh nghiệp và tuân thủ. Chúng tôi luôn cập nhật các quy định pháp luật mới nhất và sử dụng kiến thức chuyên môn để đưa ra những giải pháp tối ưu cho khách hàng.',
+        icon: 'tabler:shield-checkered',
+        i18nTitle: 'services.governanceItem1Title',
+        i18nDescription: 'services.governanceItem1Desc',
+      },
+      {
+        title: 'Giải pháp toàn diện và hiệu quả',
+        description:
+          'Chúng tôi cung cấp các giải pháp quản trị doanh nghiệp toàn diện, giúp doanh nghiệp xây dựng hệ thống quản lý hiệu quả và tuân thủ các quy định pháp luật. Mục tiêu của chúng tôi là mang lại những giải pháp hiệu quả, tiết kiệm thời gian và chi phí cho khách hàng.',
+        icon: 'tabler:book',
+        i18nTitle: 'services.governanceItem2Title',
+        i18nDescription: 'services.governanceItem2Desc',
+      },
+      {
+        title: 'Đồng hành và hỗ trợ liên tục',
+        description:
+          'Chúng tôi cam kết đồng hành cùng doanh nghiệp trong suốt quá trình hoạt động, từ khâu thành lập đến phát triển và mở rộng. Chúng tôi luôn sẵn sàng hỗ trợ và tư vấn, đảm bảo doanh nghiệp luôn tuân thủ pháp luật và giảm thiểu rủi ro pháp lý.\n Chúng tôi hợp tác chặt chẽ với ban giám đốc, cố vấn chung và giám đốc tuân thủ để hiểu rõ hơn nhu cầu kinh doanh và phát triển chương trình tuân thủ phù hợp với hồ sơ, thời gian biểu và ngân sách của công ty.',
+        icon: 'tabler:trophy',
+        i18nTitle: 'services.governanceItem3Title',
+        i18nDescription: 'services.governanceItem3Desc',
+      },
+    ]}
+  />
+
+  <Steps2
+    title="Dịch vụ bổ trợ doanh nghiệp"
+    i18nTitle="services.supportTitle"
+    subtitle="Nhằm “xây dựng vòng tròn” hỗ trợ khách hàng một cách toàn diện nhất, Chúng tôi đã nỗ lực hoàn thiện và đáp ứng cung cấp dịch vụ đa dạng đến từng khách hàng với các hoạt động dịch vụ như:\n\n - Cung cấp phiên dịch (Tiếng Anh, Trung, Hàn), dịch thuật và công chứng dịch tài liệu;\n- Cung cấp chuyên gia, cố vấn pháp lý; Thư ký pháp lý (cho các phiên họp của doanh nghiệp);\n-  Xin cấp giấy phép đào tạo Ngoại ngữ, Tin học, dạy nghề;\n- Tư vấn & xin đăng ký Sàn giao dịch Bất động sản;\n- Xin cấp chứng chỉ hành nghề Thiết kế xây dựng; Chứng chỉ hành nghề y dược tư nhân;\n- Tư vấn xin visa, giấy phép lao động, thẻ tạm trú cho nhà đầu tư và lao động nước ngoài."
+    i18nSubtitle="services.supportSubtitle"
+    callToAction={{
+      text: 'Xem thêm',
+      href: '/phap-ly/',
+      i18nText: 'services.viewMore',
+    }}
+    items={[
+      {
+        title: 'Hỗ trợ toàn diện',
+        description:
+          'Chúng tôi cung cấp các dịch vụ hỗ trợ doanh nghiệp toàn diện, bao gồm tư vấn pháp lý, quản lý rủi ro và hỗ trợ quản lý tài chính. Chúng tôi đảm bảo mọi khía cạnh của doanh nghiệp bạn được bảo vệ và phát triển bền vững.',
+        i18nTitle: 'services.supportItem1Title',
+        i18nDescription: 'services.supportItem1Desc',
+      },
+      {
+        title: 'Đội ngũ chuyên gia giàu kinh nghiệm',
+        description:
+          'Đội ngũ chuyên gia của chúng tôi có kiến thức chuyên môn sâu rộng và kinh nghiệm phong phú trong nhiều lĩnh vực. Chúng tôi luôn sẵn sàng đưa ra những giải pháp tối ưu, giúp doanh nghiệp bạn hoạt động hiệu quả và đạt được các mục tiêu kinh doanh.',
+        i18nTitle: 'services.supportItem2Title',
+        i18nDescription: 'services.supportItem2Desc',
+      },
+      {
+        title: 'Giải pháp linh hoạt và tùy chỉnh',
+        description:
+          'Chúng tôi hiểu rằng mỗi doanh nghiệp có những nhu cầu và thách thức riêng biệt. Do đó, chúng tôi cung cấp các giải pháp linh hoạt và tùy chỉnh phù hợp với từng doanh nghiệp, đảm bảo bạn nhận được sự hỗ trợ tốt nhất, phù hợp nhất với tình hình cụ thể của bạn.',
+        i18nTitle: 'services.supportItem3Title',
+        i18nDescription: 'services.supportItem3Desc',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps2>
+
+  <Steps2
+    title="Dịch vụ pháp lý về đất đai"
+    subtitle="Đất đai hầu như có liên quan tới tất cả các lĩnh vực của đời sống xã hôi, từ di chúc thừa kế, mua bán chuyển nhượng, đầu tư xây dựng cho đến cả hôn nhân gia đình.\n\nTất cả các lĩnh vực, đâu đó đều có hình bóng của pháp luật đất đai qua các thời kỳ. Công ty Luật TNHH Youth & Partners tự tin là đơn vị tư vấn chuyên sâu trong lĩnh vực này."
+    i18nTitle="services.landTitle"
+    i18nSubtitle="services.landSubtitle"
+    isReversed={true}
+    callToAction={{
+      text: 'Xem thêm',
+      href: '/phap-ly/dat-dai',
+      i18nText: 'services.viewMore',
+    }}
+    items={[
+      {
+        title: 'Giải quyết tranh chấp',
+        description: 'Cử luật sư tham gia giải quyết tranh chấp đất đai trong và ngoài Tòa án;',
+        i18nTitle: 'services.landItem1Title',
+        i18nDescription: 'services.landItem1Desc',
+      },
+      {
+        title: 'Soạn thảo đơn từ',
+        description: 'Soạn thảo Đơn đề nghị, khiếu nại liên quan đến đất đai, tranh chấp đất đai;',
+        i18nTitle: 'services.landItem2Title',
+        i18nDescription: 'services.landItem2Desc',
+      },
+      {
+        title: 'Dịch vụ pháp lý đất đai',
+        description:
+          'Thực hiện các dịch vụ pháp lý liên quan đến đất đai như: Chuyển nhượng, sang tên, kê khai cấp lần đầu, di chúc, thừa kế, khai nhận di sản thừa kế, thỏa thuận phân chia di sản thừa kế',
+        i18nTitle: 'services.landItem3Title',
+        i18nDescription: 'services.landItem3Desc',
+      },
+    ]}
+  />
+
+  <Steps2
+    title="Tranh tụng và giải quyết tranh chấp"
+    subtitle="Bên cạnh công tác tư vấn cho khách hàng liên quan đến các lĩnh vực trên, với vị trí là một đơn vị có đội ngũ luật sư có chuyên môn và kinh nghiệm, chúng tôi sẽ trực tiếp bảo vệ quyền và lợi ích hợp pháp cho khách hàng tại các cơ quan tiến hành tố tụng. Điều này bao gồm những hoạt động như:\n\n- Cử luật sư tham gia tranh tụng tại Tòa án;\n- Cử luật sư tham gia các vụ án giải quyết tại cơ quan Trọng tài;\n- Luật sư đại diện theo ủy quyền tham gia tố tụng hoặc ủy quyền ngoài tố tụng;\n- Soạn thảo hồ sơ, đơn và các tài liệu khác liên quan đến tố cáo, đề nghị, khiếu nại, trả lời khiếu nại và giải quyết tranh chấp trong mọi lĩnh vực."
+    i18nTitle="services.litigationTitle"
+    i18nSubtitle="services.litigationSubtitle"
+    callToAction={{
+      text: 'Xem thêm',
+      href: '/lao-dong',
+      i18nText: 'services.viewMore',
+    }}
+    items={[
+      {
+        title: 'Chuyên môn vượt trội',
+        description:
+          'Đội ngũ luật sư của chúng tôi có kiến thức chuyên sâu và kinh nghiệm phong phú trong lĩnh vực tranh tụng và giải quyết tranh chấp. Chúng tôi đã thành công trong việc đại diện cho khách hàng ở nhiều vụ án phức tạp và quy mô lớn.',
+        i18nTitle: 'services.litigationItem1Title',
+        i18nDescription: 'services.litigationItem1Desc',
+      },
+      {
+        title: 'Chiến lược đàm phán hiệu quả',
+        description:
+          'Chúng tôi không chỉ có kỹ năng tranh tụng xuất sắc mà còn giỏi trong việc đàm phán và giải quyết tranh chấp một cách hòa bình. Chúng tôi luôn tìm kiếm các giải pháp tối ưu nhất, giúp khách hàng tiết kiệm thời gian và chi phí.',
+        i18nTitle: 'services.litigationItem2Title',
+        i18nDescription: 'services.litigationItem2Desc',
+      },
+      {
+        title: 'Tận tâm và bảo vệ quyền lợi khách hàng',
+        description:
+          'Chúng tôi cam kết bảo vệ quyền lợi hợp pháp của khách hàng đến cùng. Sự tận tâm và kiên định của chúng tôi trong mỗi vụ án đảm bảo rằng khách hàng luôn nhận được sự hỗ trợ pháp lý tốt nhất.',
+        i18nTitle: 'services.litigationItem3Title',
+        i18nDescription: 'services.litigationItem3Desc',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps2>
+
+  <Steps2
+    title="Lao động và việc làm"
+    subtitle="Nhận thấy pháp luật lao động là lĩnh vực vô cùng rộng và có tác động to lớn tới mọi mặt của đời sống xã hội, các Luật sư của Y&P Law Firm thường xuyên cập nhật kiến thức chuyên môn, theo đó chúng tôi am hiểu sâu sắc về pháp luật lao động. Ngoài ra, việc thường xuyên tham gia thực tế vào quá trình tư vấn, tranh tụng nhiều vụ việc/án lao động cũng đã giúp chúng tôi ngày càng có nhiều kinh nghiệm quý báu liên quan tới lĩnh vực này.\n\nChúng tôi tư vấn về tất cả các khía cạnh của luật lao động, bao gồm nhưng không giới hạn các lĩnh vực về tiêu chuẩn lao động, điều kiện lao động, hợp đồng lao động, chế độ phúc lợi, thời giờ làm việc, nghỉ ngơi, sắp xếp, cơ cấu lại nhân sự, chấm dứt hợp đồng, xử lý kỷ luật lao động, điều chuyển lao động, hòa giải, giải quyết tranh chấp lao động, giấy phép lao động cho nhân viên nước ngoài làm việc tại Việt Nam, đặc biệt là trong quá trình tái cơ cấu doanh nghiệp quy mô lớn như trong quá trình sáp nhập và mua lại. "
+    i18nTitle="services.laborTitle"
+    i18nSubtitle="services.laborSubtitle"
+    isReversed={true}
+    callToAction={{
+      text: 'Xem thêm',
+      href: '/phap-ly/',
+      i18nText: 'services.viewMore',
+    }}
+    items={[
+      {
+        title: 'Kiến thức chuyên môn sâu rộng',
+        description:
+          'Đội ngũ luật sư của chúng tôi có kiến thức chuyên sâu và cập nhật liên tục về các quy định pháp luật lao động. Chúng tôi giúp doanh nghiệp xây dựng và duy trì một môi trường làm việc tuân thủ và công bằng, đảm bảo quyền lợi của người lao động.',
+        icon: 'tabler:shield-checkered',
+        i18nTitle: 'services.laborItem1Title',
+        i18nDescription: 'services.laborItem1Desc',
+      },
+      {
+        title: 'Kinh nghiệm giải quyết tranh chấp lao động',
+        description:
+          'Chúng tôi đã hỗ trợ nhiều doanh nghiệp và người lao động giải quyết thành công các tranh chấp lao động, từ các vụ tranh chấp hợp đồng, quyền lợi nhân viên cho đến các vụ sa thải không hợp lý. Chúng tôi luôn tìm ra giải pháp nhanh chóng và hiệu quả.',
+        icon: 'tabler:book',
+        i18nTitle: 'services.laborItem2Title',
+        i18nDescription: 'services.laborItem2Desc',
+      },
+      {
+        title: 'Tư vấn chiến lược và giải pháp tối ưu',
+        description:
+          'Chúng tôi cung cấp các giải pháp tư vấn chiến lược giúp doanh nghiệp không chỉ tuân thủ pháp luật lao động mà còn tối ưu hóa quy trình quản lý nhân sự. Các dịch vụ của chúng tôi bao gồm tư vấn về hợp đồng lao động, quyền lợi nhân viên, các chính sách và thủ tục lao động, giúp doanh nghiệp duy trì sự ổn định và phát triển bền vững.',
+        icon: 'tabler:trophy',
+        i18nTitle: 'services.laborItem3Title',
+        i18nDescription: 'services.laborItem3Desc',
+      },
+    ]}
+  />
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="projects-use-case"
+    title="Một số dự án tư vấn đầu tư tiêu biểu của chúng tôi"
+    subtitle="Chúng tôi tự hào đã thực hiện thành công nhiều dự án tư vấn cho các doanh nghiệp và tổ chức lớn nhỏ, mang lại những giá trị thiết thực và giải pháp pháp lý hiệu quả."
+    i18nTitle="servicesExtra.featuredProjects"
+    i18nSubtitle="servicesExtra.featuredProjectsSubtitle"
+    isReversed
+    items={[
+      {
+        title: 'Mô tả:',
+        description:
+          'Dự án có quy mô hơn 2 ha tại khu chức năng đô thị Tây Tựu, thành phố Hà Nội. Đây là một dự án tiên phong, mang lại một tiêu chuẩn sống mới cho khu vực.',
+        i18nTitle: 'servicesExtra.description',
+        i18nDescription: 'servicesExtra.avenueDesc',
+      },
+      {
+        title: 'Vai trò của Y&P:',
+        description:
+          'Y&P Lawfirm là nhà tư vấn toàn diện cho Chủ đầu tư từ giai đoạn chuẩn bị dự án đến giai đoạn vận hành, triển khai dự án và toàn bộ các vấn đề pháp lý phát sinh tại Dự án.',
+        i18nTitle: 'servicesExtra.ypRole',
+        i18nDescription: 'servicesExtra.avenueRole',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/projects/avenue garden.png',
+      alt: 'Dự án AVENUE GARDEN',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Tìm hiểu thêm',
+      icon: 'tabler:chevron-right',
+      href: '/lien-he#form',
+      i18nText: 'servicesExtra.learnMore',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="servicesExtra.projectAvenue">Dự án AVENUE GARDEN</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Mô tả:',
+        description:
+          'Dự án có quy mô 3,5 ha tại KĐT Tây Hồ Tây với tổng vốn đầu tư trên 2000 tỷ đồng. Hệ thống biệt thự Embassy Garden mang đến thiết kế hiện đại, không gian tiện nghi cùng hệ thống cảnh quan thiên nhiên tuyệt đẹp hứa hẹn là chốn an cư  lý tưởng cho đông đảo khách hàng đang tìm kiếm không gian sống tuyệt vời tại nội đô.',
+        i18nTitle: 'servicesExtra.description',
+        i18nDescription: 'servicesExtra.embassyDesc',
+      },
+      {
+        title: 'Vai trò của Y&P:',
+        description: `Y&P Lawfirm là nhà tư vấn cho CTCP Phát triển tài sản Việt Nam (VAD) trong các hoạt động vận hành dự án và quản lý, chuyển giao giữa chủ đầu tư với các chủ sở hữu biệt thự tại Dự án.`,
+        i18nTitle: 'servicesExtra.ypRole',
+        i18nDescription: 'servicesExtra.embassyRole',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/projects/embassy garden.png',
+      alt: 'Dự án EMBASSY GARDEN',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Tìm hiểu thêm',
+      icon: 'tabler:chevron-right',
+      href: '/lien-he#form',
+      i18nText: 'servicesExtra.learnMore',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="servicesExtra.projectEmbassy">Dự án EMBASSY GARDEN</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Mô tả:',
+        description: `Swiss Belresidences Upper East Saigon là dự án căn hộ hàng hiệu đầu tiên tại thành phố Thủ Đức do tập đoàn Hasco Group làm chủ đầu tư. Vị trí dự án Swiss Belresidences Upper East Saigon toạ lạc tại số 800 Đồng Văn Cống, phường Thạnh Mỹ Lợi, Thành phố Thủ Đức.`,
+        i18nTitle: 'servicesExtra.description',
+        i18nDescription: 'servicesExtra.swissDesc',
+      },
+      {
+        title: 'Vai trò của Y&P:',
+        description: `Y&P Lawfirm là nhà tư vấn toàn diện cho Chủ đầu tư từ giai đoạn chuẩn bị dự án đến giai đoạn vận hành, triển khai dự án và toàn bộ các vấn đề pháp lý phát sinh tại Dự án.`,
+        i18nTitle: 'servicesExtra.ypRole',
+        i18nDescription: 'servicesExtra.swissRole',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/projects/Swiss Belresidences Upper East Saigon.png',
+      alt: 'Swiss Belresidences Upper East Saigon',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Tìm hiểu thêm',
+      icon: 'tabler:chevron-right',
+      href: '/lien-he#form',
+      i18nText: 'servicesExtra.learnMore',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="servicesExtra.projectSwiss">Dự án SWISS – BELRESIDENCES UPPER EAST SAIGON</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Cùng làm việc với Youth & Partners để thành công"
+    subtitle="Với đội ngũ luật sư giàu kinh nghiệm và tận tâm, chúng tôi cam kết mang lại những giải pháp pháp lý hiệu quả và tối ưu nhất. Cho dù bạn đang bắt đầu một dự án mới, đối mặt với những thách thức pháp lý phức tạp hay cần tư vấn chiến lược dài hạn, chúng tôi sẽ luôn ở đây để hỗ trợ bạn từng bước. Hãy chọn Youth & Partners để đảm bảo sự thành công và bền vững cho các dự án của bạn."
+    i18nTitle="services.ctaTitle"
+    i18nSubtitle="services.ctaSubtitle"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Liên hệ với chúng tôi',
+        href: '/lien-he#form',
+        i18nText: 'services.contactUs',
+      },
+    ]}
+  />
+</Layout>

@@ -1,0 +1,5462 @@
+/**
+ * Comprehensive i18n translations for all UI elements
+ * 
+ * ARCHITECTURE:
+ * - JSON files (locales/*.json) are the SOURCE OF TRUTH for common UI translations
+ * - This file imports JSON and adds additional blog/service-specific translations
+ * - To add new translations: add to JSON files first, they will be auto-merged
+ */
+
+// Import JSON locale files as source of truth
+import viJson from './locales/vi.json';
+import enJson from './locales/en.json';
+import zhJson from './locales/zh.json';
+import jaJson from './locales/ja.json';
+import koJson from './locales/ko.json';
+
+// Type for locale data
+type LocaleData = typeof viJson;
+type SectionKey = keyof LocaleData;
+type LocaleKey = 'vi' | 'en' | 'zh' | 'ja' | 'ko';
+
+// All JSON locales
+const jsonLocales = { vi: viJson, en: enJson, zh: zhJson, ja: jaJson, ko: koJson };
+
+/**
+ * Transform JSON structure { vi: { nav: {...} } } to { nav: { vi: {...} } }
+ */
+function transformJsonToSectionBased(): Record<string, Record<LocaleKey, unknown>> {
+  const result: Record<string, Record<LocaleKey, unknown>> = {};
+  const sections = Object.keys(viJson) as SectionKey[];
+  
+  for (const section of sections) {
+    result[section] = {} as Record<LocaleKey, unknown>;
+    for (const [locale, data] of Object.entries(jsonLocales)) {
+      const localeData = data as LocaleData;
+      if (localeData[section]) {
+        result[section][locale as LocaleKey] = localeData[section];
+      }
+    }
+  }
+  return result;
+}
+
+// Get base translations from JSON
+const jsonTranslations = transformJsonToSectionBased();
+
+// Additional translations not yet in JSON (blog-specific, extended content)
+// NOTE: Sections that exist in JSON files are automatically imported and merged.
+// Only add sections here that:
+// 1. Don't exist in JSON at all (e.g., blog, author, blogCategories)
+// 2. Have extended keys beyond what's in JSON
+const additionalTranslations = {
+  // Extended About section (JSON has basic keys, this adds extended content)
+  about: {
+    vi: {
+      history: 'Lịch sử thành lập',
+      lawyers: 'Luật sư và cộng sự',
+      awards: 'Giải thưởng pháp lý',
+      testimonials: 'Cảm nhận khách hàng',
+      principles: 'Tôn chỉ hoạt động',
+      capabilities: 'Hồ sơ năng lực',
+      vision: 'Tầm nhìn - sứ mệnh',
+      visionAndMission: 'Tầm nhìn và sứ mệnh',
+      events: 'Sự kiện nội bộ',
+      internalEvents: 'Sự kiện nội bộ',
+      privacy: 'Bảo vệ dữ liệu cá nhân',
+      dataProtection: 'Bảo vệ dữ liệu cá nhân',
+      aboutUs: 'Về chúng tôi',
+      motto: 'Phương châm hoạt động:',
+      mottoText: 'Thời Gian – Tận Tâm – Tận Lực',
+      statsTitle: 'Các con số biết nói',
+      offices: 'Văn phòng',
+      officeAddress: 'Địa chỉ văn phòng',
+      visitUs: 'Hãy đến thăm chúng tôi',
+      capabilityProfile: 'Hồ sơ năng lực của Youth & Partners',
+      profileVietnamese: 'Hồ sơ năng lực tiếng Việt',
+      profileEnglish: 'Hồ sơ năng lực tiếng Anh',
+      integrity: 'Chính trực',
+      creativity: 'Sáng tạo',
+      cooperation: 'Hợp tác',
+      quality: 'Chất lượng',
+      ourServicesTitle: 'Dịch vụ của Chúng tôi',
+      // About page descriptions
+      heroSubtitle: 'Với phương châm hoạt động: "Thời Gian – Tận Tâm – Tận Lực", chúng tôi luôn cam kết mang đến những dịch vụ pháp lý chất lượng, nhanh chóng, chính xác và toàn diện nhất. Tại Y&P Law Firm, chúng tôi tin rằng giá trị thực sự của một Doanh nghiệp, một tổ chức tư vấn pháp lý, được xây dựng trên nền tảng những giá trị cốt lõi. Các dịch vụ của chúng tôi không chỉ được thực hiện với chuyên môn vững vàng mà còn với cái tâm và tầm của đội ngũ luật sư giàu kinh nghiệm. Chúng tôi hiểu rằng sự hài lòng và tin tưởng của Quý khách hàng chính là thước đo quan trọng nhất cho sự thành công của chúng tôi.',
+      heroSubtitle2: 'Với nhiều năm kinh nghiệm hợp tác và cung cấp dịch vụ tư vấn pháp lý cho các Doanh nghiệp lớn, uy tín trong và ngoài nước, đặc biệt là các tập đoàn hàng đầu như Samsung, Viettel, FPT, cũng như các nhà cung cấp, đối tác của Samsung và nhiều Doanh nghiệp Hàn Quốc, Nhật Bản tại Việt Nam, Y&P Law Firm tự tin có thể đáp ứng mọi yêu cầu pháp lý phức tạp của Quý khách hàng, các Doanh nghiệp và các nhà Đầu tư tại Việt Nam.',
+      heroSubtitle3: 'Chúng tôi cam kết đồng hành cùng Quý khách trên hành trình phát triển bền vững, giải quyết hiệu quả mọi vấn đề pháp lý, giúp Quý khách đạt được mục tiêu và gia tăng giá trị Doanh nghiệp.',
+      awardsSubtitle: 'Chúng tôi tự hào về những thành tựu và giải thưởng pháp lý đã đạt được, minh chứng cho sự cam kết và uy tín trong ngành pháp luật',
+      excellentLawyerAward: 'Giải thưởng Luật sư Xuất sắc',
+      excellentLawyerDesc: 'Được trao tặng cho các luật sư của chúng tôi vì những đóng góp xuất sắc trong các vụ việc phức tạp.',
+      innovationAward: 'Giải thưởng Đổi mới Pháp lý',
+      innovationAwardDesc: 'Tôn vinh những nỗ lực sáng tạo trong việc áp dụng công nghệ và các giải pháp pháp lý mới để nâng cao hiệu quả công việc.',
+      communityAward: 'Giải thưởng Đóng góp cho Cộng đồng',
+      communityAwardDesc: 'Ghi nhận những hoạt động từ thiện và đóng góp tích cực cho cộng đồng và xã hội.',
+      // History timeline titles
+      historyOrgDev: 'Kiện toàn tổ chức và phát triển dịch vụ',
+      historyOrgDevSub: 'Bổ sung nhân lực và phát triển mở rộng quy mô dịch vụ',
+      historyExpand: 'Mở rộng',
+      historyExpandHanoi: 'Thêm 01 chi nhánh tại Hà Nội',
+      historyExpandBacNinh: 'Thêm 01 chi nhánh tại Bắc Ninh',
+      historyAddressChange: 'Thay đổi địa chỉ công ty',
+      historyEstablish: 'Thành lập công ty',
+      historyYP: 'Youth & Partners',
+      // Time periods
+      timePeriod2024: '2024 - đến nay',
+      timePeriod2021_2023: '2021 - 2023',
+      timePeriod2020_2021: '2020 - 2021',
+      timePeriod2020_2024: '2020 - 2024',
+      establishDate: '09/10/2019',
+      // History timeline full HTML titles (used by i18n system)
+      historyTitle1: 'Kiện toàn tổ chức và phát triển dịch vụ <br /> <span class="font-normal">Bổ sung nhân lực và phát triển mở rộng quy mô dịch vụ</span> <br /> <span class="text-sm font-normal">2024 - đến nay</span>',
+      historyTitle2: 'Mở rộng <br /> <span class="font-normal">Thêm 01 chi nhánh tại Hà Nội</span> <br /> <span class="text-sm font-normal">2021 - 2023</span>',
+      historyTitle3: 'Mở rộng <br /> <span class="font-normal">Thêm 01 chi nhánh tại Bắc Ninh</span> <br /> <span class="text-sm font-normal">2020 - 2021</span>',
+      historyTitle4: 'Mở rộng <br /> <span class="font-normal">Thay đổi địa chỉ công ty</span> <br /> <span class="text-sm font-normal">2020 - 2024</span>',
+      historyTitle5: 'Thành lập công ty <br /> <span class="font-normal">Youth & Partners</span> <br /> <span class="text-sm font-normal">09/10/2019</span>',
+      // History timeline descriptions
+      historyDesc1: `Từ năm 2024 đến nay, Youth & Partners Law Firm đã tiến hành kiện toàn bộ máy tổ chức, bổ sung nhân lực và mở rộng quy mô dịch vụ để đáp ứng nhu cầu ngày càng cao của khách hàng. Công ty tập trung vào việc cung cấp các giải pháp toàn diện và dịch vụ tư vấn pháp lý chuyên sâu trong nhiều lĩnh vực, bao gồm nhưng không giới hạn như:
+        <br />•	Doanh nghiệp
+        <br />•	Tư vấn thường xuyên
+        <br />•	Sở hữu trí tuệ
+        <br />•	Quản trị Doanh nghiệp và tuân thủ
+        <br />•	Dự án Đầu tư
+        <br />•	Dịch vụ hỗ trợ Doanh nghiệp
+        <br />•	M&A (Mua bán và sáp nhập)
+        <br />•	Tranh tụng và giải quyết tranh chấp (Dân sự, Hình sự và Hành chính)
+        <br />•	Lao động và việc làm
+        <br />•	Dịch vụ pháp lý về Đất đai`,
+      historyDesc2: 'Trong giai đoạn 2021 – 2023, Youth & Partners tiếp tục mở rộng mạng lưới với chi nhánh mới tại thủ đô Hà Nội, được đặt tại P219, Tháp Đông, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội. Đây là bước đi quan trọng trong việc củng cố sự hiện diện và mở rộng thị trường tại khu vực miền Bắc, đặc biệt là tại Hà Nội - trung tâm kinh tế lớn của cả nước.',
+      historyDesc3: 'Trong giai đoạn 2020 – 2021, Công ty Luật TNHH Youth & Partners đã thực hiện chiến lược mở rộng mạng lưới để nâng cao chất lượng dịch vụ và đáp ứng tốt hơn nhu cầu của khách hàng tại các khu vực trọng điểm. Cụ thể, công ty đã khai trương Văn phòng giao dịch tại Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc, tỉnh Bắc Ninh, qua đó mở rộng phạm vi hoạt động và gia tăng sự hiện diện tại thị trường khu vực.',
+      historyDesc4: 'Để đáp ứng nhu cầu phát triển, vào tháng 01 năm 2020, sau nửa năm hoạt động, công ty đã chuyển trụ sở đến Số 170 Nguyễn Văn Linh, phường Liên Bảo, thành phố Vĩnh Yên, tỉnh Vĩnh Phúc Đây cũng là địa chỉ trụ sở hiện tại của công ty. Cùng với bước chuyển quan trọng này, quy mô công ty cũng đã được mở rộng đáng kể, số lượng nhân sự tăng gấp ba lần so với ban đầu, đánh dấu một bước tiến vững chắc trong quá trình phát triển của Y&P Law Firm.',
+      historyDesc5: 'Vào ngày 09 tháng 10 năm 2019, Công ty Luật TNHH Youth & Partners chính thức được thành lập tại số 67, đường Phạm Hồng Thái, Liên Bảo, Vĩnh Yên, Vĩnh Phúc.',
+      historyOrgDevDesc: 'Từ năm 2024 đến nay, Youth & Partners Law Firm đã tiến hành kiện toàn bộ máy tổ chức, bổ sung nhân lực và mở rộng quy mô dịch vụ để đáp ứng nhu cầu ngày càng cao của khách hàng.',
+      historyExpandHanoiDesc: 'Trong giai đoạn 2021 – 2023, Youth & Partners tiếp tục mở rộng mạng lưới với chi nhánh mới tại thủ đô Hà Nội.',
+      historyExpandBacNinhDesc: 'Trong giai đoạn 2020 – 2021, Công ty Luật TNHH Youth & Partners đã thực hiện chiến lược mở rộng mạng lưới để nâng cao chất lượng dịch vụ.',
+      historyAddressChangeDesc: 'Để đáp ứng nhu cầu phát triển, vào tháng 01 năm 2020, công ty đã chuyển trụ sở đến địa chỉ mới.',
+      historyEstablishDesc: 'Vào ngày 09 tháng 10 năm 2019, Công ty Luật TNHH Youth & Partners chính thức được thành lập.',
+      // Operating principles
+      principlesTitle: 'Tôn chỉ hoạt động của chúng tôi',
+      time: 'Thời gian',
+      timeDesc: 'Chúng tôi hiểu rằng mỗi vụ việc pháp lý đều có những yêu cầu về thời gian và các yếu tố khắt khe. Vì vậy, đội ngũ luật sư của chúng tôi luôn nỗ lực tối đa để đảm bảo tiến trình công việc diễn ra nhanh chóng, hiệu quả, và giúp khách hàng đạt được kết quả mong muốn trong thời gian sớm nhất.',
+      dedication: 'Tận tâm',
+      dedicationDesc: 'Mỗi luật sư tại Youth & Partners đều cam kết đặt trọn tâm huyết vào từng hồ sơ, luôn lắng nghe và thấu hiểu nhu cầu của khách hàng để đưa ra các giải pháp tối ưu và phù hợp nhất. Chúng tôi tin rằng sự tận tâm là yếu tố then chốt để xây dựng niềm tin và mối quan hệ lâu dài với khách hàng.',
+      excellence: 'Tận lực',
+      excellenceDesc: 'Chúng tôi không chỉ cung cấp dịch vụ pháp lý đơn thuần, mà luôn nỗ lực vượt qua mọi thử thách để bảo vệ quyền lợi hợp pháp của khách hàng. Với đội ngũ luật sư giàu kinh nghiệm và luôn sẵn sàng đối mặt với mọi tình huống, Youth & Partners Law Firm cam kết mang lại công bằng và sự thành công cho khách hàng, giúp họ vững bước trên con đường phát triển.',
+      // Stats
+      legalExperts: 'Chuyên viên pháp lý',
+      satisfiedClients: 'Khách hàng hài lòng',
+      casesWon: 'Vụ thắng kiện',
+      // Vision/Mission descriptions
+      visionSubtitle: '<b>Tầm nhìn</b> Youth & Partners hướng tới mục tiêu trở thành một trong những công ty luật hàng đầu tại Việt Nam, nơi khách hàng luôn đặt trọn niềm tin khi tìm kiếm các giải pháp pháp lý. Chúng tôi không ngừng đổi mới, nâng cao chất lượng dịch vụ và phát triển đội ngũ luật sư giàu kinh nghiệm, tận tâm để đáp ứng nhu cầu ngày càng cao của khách hàng. Với sự nhiệt huyết, chuyên nghiệp và khả năng thích ứng vượt trội, chúng tôi đặt tham vọng trở thành biểu tượng của sự xuất sắc trong lĩnh vực pháp lý, mang lại giá trị bền vững cho khách hàng và xã hội. <br /><br /> <b>Sứ mệnh</b> Công ty Luật TNHH Youth & Partners cam kết đồng hành cùng khách hàng trong hành trình bảo vệ quyền lợi và thực hiện các mục tiêu pháp lý một cách hiệu quả và kịp thời. Với phương châm "Thời gian, Tận tâm, Tận lực", chúng tôi luôn đặt lợi ích của khách hàng lên hàng đầu, làm việc với tinh thần trách nhiệm cao nhất để giải quyết các vấn đề pháp lý đa dạng và phức tạp. Sứ mệnh của chúng tôi không chỉ giới hạn ở việc cung cấp dịch vụ pháp lý mà còn hướng tới việc trở thành đối tác tin cậy, hỗ trợ khách hàng và đối tác vượt qua mọi thách thức pháp lý, từ đó góp phần vào sự phát triển bền vững của Doanh nghiệp và cộng đồng. Với tinh thần trách nhiệm, nhiệt huyết và sự tận tâm, Youth & Partners Law Firm không ngừng phấn đấu để mỗi giải pháp pháp lý mà chúng tôi cung cấp đều mang lại giá trị thiết thực và thành công cho khách hàng.',
+      // Core values descriptions
+      integrityDesc: 'Chúng tôi luôn hành động với sự trung thực và đạo đức nghề nghiệp, đặt lợi ích của khách hàng lên hàng đầu.',
+      creativityDesc: 'Chúng tôi luôn tìm kiếm những giải pháp pháp lý sáng tạo và hiệu quả để đáp ứng nhu cầu đa dạng của khách hàng.',
+      cooperationDesc: 'Chúng tôi tin rằng sự hợp tác chặt chẽ giữa đội ngũ nhân viên và khách hàng là chìa khóa để đạt được thành công.',
+      qualityDesc: 'Chúng tôi không ngừng nâng cao chất lượng dịch vụ để đáp ứng và vượt qua kỳ vọng của khách hàng.',
+      // Services descriptions
+      ourServicesSubtitle: 'Tại Youth & Partners Law Firm, chúng tôi tự hào cung cấp các dịch vụ pháp lý và tư vấn chuyên nghiệp, được thiết kế để đáp ứng nhu cầu đa dạng của khách hàng. Với đội ngũ luật sư giàu kinh nghiệm và chuyên môn sâu rộng, chúng tôi cam kết mang lại giải pháp tối ưu cho mọi vấn đề pháp lý bao gồm nhưng không giới hạn như:',
+      legalService: 'Dịch vụ Pháp lý',
+      legalServiceDesc: 'Đội ngũ luật sư giàu kinh nghiệm của chúng tôi luôn sẵn sàng giải quyết mọi vấn đề pháp lý phức tạp. Chúng tôi cung cấp các dịch vụ pháp lý toàn diện từ tranh chấp thương mại, quyền sở hữu trí tuệ đến các vấn đề dân sự và hình sự.',
+      regularConsultService: 'Tư vấn Thường xuyên cho Doanh nghiệp',
+      regularConsultServiceDesc: 'Chúng tôi cung cấp dịch vụ tư vấn thường xuyên cho các doanh nghiệp, hỗ trợ bạn trong việc quản lý rủi ro pháp lý, tuân thủ quy định pháp luật và tối ưu hóa quy trình hoạt động.',
+      laborConsultService: 'Tư vấn Lao động',
+      laborConsultServiceDesc: 'Chúng tôi tư vấn về các vấn đề lao động nhằm đảm bảo quyền lợi cho cả người sử dụng lao động và nhân viên. Dịch vụ của chúng tôi bao gồm tư vấn hợp đồng lao động, quyền lợi nhân viên, giải quyết tranh chấp và tối ưu hóa quy trình lao động.',
+      investmentService: 'Đầu tư và Người Nước Ngoài',
+      investmentServiceDesc: 'Chúng tôi cung cấp các giải pháp pháp lý cho nhà đầu tư và người nước ngoài muốn kinh doanh hoặc sinh sống tại Việt Nam. Chúng tôi hỗ trợ từ việc thành lập doanh nghiệp, xin giấy phép lao động đến giải quyết các vấn đề pháp lý liên quan khác.',
+      evaluationServiceTitle: 'Dịch vụ Đánh giá Doanh nghiệp',
+      evaluationServiceDesc: 'Chúng tôi cung cấp các giải pháp đánh giá doanh nghiệp toàn diện, giúp bạn hiểu rõ hơn về hiệu suất, tình hình tài chính và các yếu tố rủi ro của doanh nghiệp. Chúng tôi cam kết mang đến cho bạn những đánh giá chính xác và toàn diện nhất.',
+      // Capability profile
+      capabilitySubtitle: 'Tại đây, bạn sẽ tìm thấy những thông tin chi tiết về năng lực chuyên môn, các dịch vụ pháp lý mà chúng tôi cung cấp, và các thành tựu nổi bật của đội ngũ luật sư tại công ty',
+      // Office addresses
+      hanoiOffice: 'Hà Nội',
+      hanoiAddress: 'P219, Tháp Đông, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội',
+      phuThoOffice: 'Phú Thọ',
+      phuThoAddress: 'Số 170, đường Nguyễn Văn Linh, phường Vĩnh Phúc, tỉnh Phú Thọ',
+      bacNinhOffice: 'Bắc Ninh',
+      bacNinhAddress: 'Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc, tỉnh Bắc Ninh',
+      vinhTuongOffice: 'VPDD Vĩnh Tường',
+      vinhTuongAddress: 'Ngã 5 thôn Sen, xã Vĩnh Hưng, tỉnh Phú Thọ',
+      // Customers section
+      ourCustomers: 'Khách hàng của chúng tôi',
+      ourCustomersSubtitle: 'Chúng tôi tự hào về mạng lưới đối tác và khách hàng rộng khắp, bao gồm các doanh nghiệp, tổ chức và cá nhân uy tín trong nhiều lĩnh vực khác nhau. Những đối tác hợp tác của chúng tôi gồm có các công ty luật hàng đầu, các tổ chức tư vấn chiến lược, và các công ty tài chính quốc tế. Chúng tôi làm việc chặt chẽ với họ để mang lại các giải pháp pháp lý tối ưu và chuyên nghiệp nhất.',
+      // Contact section
+      contactNowTitle: 'Liên hệ để được tư vấn ngay',
+      contactNowSubtitle: 'Tất cả các vấn đề bạn đang thắc mắc',
+      chatWithExpert: 'Chat với chuyên viên',
+      startChat: 'Bắt đầu chat',
+      leaveMessage: 'Hãy để lại lời nhắn',
+      viewMore: 'Xem thêm',
+    },
+    en: {
+      history: 'Establishment History',
+      lawyers: 'Lawyers and Associates',
+      awards: 'Legal Awards',
+      testimonials: 'Client Testimonials',
+      principles: 'Operating Principles',
+      capabilities: 'Capability Profile',
+      vision: 'Vision - Mission',
+      visionAndMission: 'Vision and Mission',
+      events: 'Internal Events',
+      internalEvents: 'Internal Events',
+      privacy: 'Data Privacy Protection',
+      dataProtection: 'Data Privacy Protection',
+      aboutUs: 'About Us',
+      motto: 'Operating Philosophy:',
+      mottoText: 'Timeliness – Dedication – Excellence',
+      statsTitle: 'Numbers That Speak',
+      offices: 'Offices',
+      officeAddress: 'Office Addresses',
+      visitUs: 'Visit Us',
+      capabilityProfile: 'Youth & Partners Capability Profile',
+      profileVietnamese: 'Capability Profile (Vietnamese)',
+      profileEnglish: 'Capability Profile (English)',
+      integrity: 'Integrity',
+      creativity: 'Creativity',
+      cooperation: 'Cooperation',
+      quality: 'Quality',
+      ourServicesTitle: 'Our Services',
+      heroSubtitle: 'With our operating philosophy: "Timeliness – Dedication – Excellence", we are always committed to providing quality, fast, accurate and comprehensive legal services. At Y&P Law Firm, we believe that the true value of a business and legal consulting organization is built on core values. Our services are not only delivered with solid expertise but also with the heart and vision of our experienced team of lawyers. We understand that client satisfaction and trust is the most important measure of our success.',
+      heroSubtitle2: 'With many years of experience collaborating and providing legal consulting services for large, reputable domestic and international enterprises, especially leading corporations such as Samsung, Viettel, FPT, as well as suppliers, partners of Samsung and many Korean and Japanese enterprises in Vietnam, Y&P Law Firm is confident it can meet all complex legal requirements of our clients, businesses and investors in Vietnam.',
+      heroSubtitle3: 'We are committed to accompanying you on your journey of sustainable development, effectively resolving all legal issues, helping you achieve your goals and increase your business value.',
+      awardsSubtitle: 'We are proud of our achievements and legal awards, demonstrating our commitment and credibility in the legal industry',
+      excellentLawyerAward: 'Excellent Lawyer Award',
+      excellentLawyerDesc: 'Awarded to our lawyers for outstanding contributions in complex cases.',
+      innovationAward: 'Legal Innovation Award',
+      innovationAwardDesc: 'Honoring creative efforts in applying technology and new legal solutions to improve work efficiency.',
+      communityAward: 'Community Contribution Award',
+      communityAwardDesc: 'Recognizing charitable activities and positive contributions to the community and society.',
+      // History timeline titles
+      historyOrgDev: 'Organizational Development and Service Expansion',
+      historyOrgDevSub: 'Adding personnel and expanding service scale',
+      historyExpand: 'Expansion',
+      historyExpandHanoi: 'Added 01 branch in Hanoi',
+      historyExpandBacNinh: 'Added 01 branch in Bac Ninh',
+      historyAddressChange: 'Company address change',
+      historyEstablish: 'Company establishment',
+      historyYP: 'Youth & Partners',
+      // Time periods
+      timePeriod2024: '2024 - present',
+      timePeriod2021_2023: '2021 - 2023',
+      timePeriod2020_2021: '2020 - 2021',
+      timePeriod2020_2024: '2020 - 2024',
+      establishDate: 'Oct 09, 2019',
+      // History timeline full HTML titles (used by i18n system)
+      historyTitle1: 'Organization & Service Development <br /> <span class="font-normal">Adding personnel and expanding service scale</span> <br /> <span class="text-sm font-normal">2024 - present</span>',
+      historyTitle2: 'Expansion <br /> <span class="font-normal">Added 01 branch in Hanoi</span> <br /> <span class="text-sm font-normal">2021 - 2023</span>',
+      historyTitle3: 'Expansion <br /> <span class="font-normal">Added 01 branch in Bac Ninh</span> <br /> <span class="text-sm font-normal">2020 - 2021</span>',
+      historyTitle4: 'Expansion <br /> <span class="font-normal">Company address change</span> <br /> <span class="text-sm font-normal">2020 - 2024</span>',
+      historyTitle5: 'Company Establishment <br /> <span class="font-normal">Youth & Partners</span> <br /> <span class="text-sm font-normal">Oct 09, 2019</span>',
+      // History timeline descriptions
+      historyDesc1: `From 2024 to present, Youth & Partners Law Firm has restructured its organization, added personnel and expanded service scale to meet the increasing demands of clients. The company focuses on providing comprehensive solutions and in-depth legal consulting services in many areas, including but not limited to:
+        <br />• Enterprise
+        <br />• Regular Consulting
+        <br />• Intellectual Property
+        <br />• Corporate Governance and Compliance
+        <br />• Investment Projects
+        <br />• Business Support Services
+        <br />• M&A (Mergers and Acquisitions)
+        <br />• Litigation and Dispute Resolution (Civil, Criminal and Administrative)
+        <br />• Labor and Employment
+        <br />• Real Estate Legal Services`,
+      historyDesc2: 'During 2021-2023, Youth & Partners continued to expand its network with a new branch in Hanoi capital, located at P219, East Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi City. This is an important step in consolidating our presence and expanding the market in the Northern region, especially in Hanoi - the major economic center of the country.',
+      historyDesc3: 'During 2020-2021, Youth & Partners Law Firm implemented a network expansion strategy to improve service quality and better meet customer needs in key areas. Specifically, the company opened a Transaction Office at 26 Doan Tran Nghiep, Kinh Bac Ward, Bac Ninh Province, thereby expanding the scope of operations and increasing presence in the regional market.',
+      historyDesc4: 'To meet development needs, in January 2020, after six months of operation, the company relocated its headquarters to 170 Nguyen Van Linh, Lien Bao Ward, Vinh Yen City, Vinh Phuc Province. This is also the current headquarters of the company. Along with this important transition, the company scale has also been significantly expanded, with personnel tripling compared to the beginning, marking a solid step forward in the development of Y&P Law Firm.',
+      historyDesc5: 'On October 09, 2019, Youth & Partners Law Firm was officially established at 67 Pham Hong Thai Street, Lien Bao, Vinh Yen, Vinh Phuc.',
+      historyOrgDevDesc: 'From 2024 to present, Youth & Partners Law Firm has restructured its organization, added personnel and expanded service scale to meet the increasing demands of clients.',
+      historyExpandHanoiDesc: 'During 2021-2023, Youth & Partners continued to expand its network with a new branch in Hanoi capital.',
+      historyExpandBacNinhDesc: 'During 2020-2021, Youth & Partners Law Firm implemented a network expansion strategy to improve service quality.',
+      historyAddressChangeDesc: 'To meet development needs, in January 2020, the company relocated its headquarters to a new address.',
+      historyEstablishDesc: 'On October 09, 2019, Youth & Partners Law Firm was officially established.',
+      // Operating principles
+      principlesTitle: 'Our Operating Principles',
+      time: 'Timeliness',
+      timeDesc: 'We understand that every legal case has time requirements and stringent factors. Therefore, our team of lawyers always strives to ensure the work process runs quickly, efficiently, and helps clients achieve desired results in the shortest time.',
+      dedication: 'Dedication',
+      dedicationDesc: 'Every lawyer at Youth & Partners is committed to putting their heart into each case, always listening and understanding client needs to provide the most optimal and suitable solutions. We believe that dedication is the key factor to building trust and long-term relationships with clients.',
+      excellence: 'Excellence',
+      excellenceDesc: 'We not only provide simple legal services, but always strive to overcome all challenges to protect the legitimate rights of our clients. With an experienced team of lawyers who are always ready to face any situation, Youth & Partners Law Firm is committed to bringing justice and success to clients, helping them move forward on their development path.',
+      // Stats
+      legalExperts: 'Legal Experts',
+      satisfiedClients: 'Satisfied Clients',
+      casesWon: 'Cases Won',
+      // Vision/Mission descriptions
+      visionSubtitle: '<b>Vision</b> Youth & Partners aims to become one of the leading law firms in Vietnam, where clients always place their full trust when seeking legal solutions. We continuously innovate, improve service quality, and develop a team of experienced, dedicated lawyers to meet the ever-increasing demands of our clients. With enthusiasm, professionalism, and exceptional adaptability, we aspire to become a symbol of excellence in the legal field, bringing sustainable value to clients and society. <br /><br /> <b>Mission</b> Youth & Partners Law Firm is committed to accompanying clients on their journey to protect their rights and achieve legal goals effectively and promptly. With the motto "Timeliness, Dedication, Excellence", we always put our clients\' interests first, working with the highest sense of responsibility to resolve diverse and complex legal issues. Our mission is not limited to providing legal services but also aims to become a trusted partner, supporting clients and partners to overcome all legal challenges, thereby contributing to the sustainable development of businesses and the community.',
+      // Core values descriptions
+      integrityDesc: 'We always act with honesty and professional ethics, putting clients\' interests first.',
+      creativityDesc: 'We always seek creative and effective legal solutions to meet the diverse needs of our clients.',
+      cooperationDesc: 'We believe that close cooperation between our team and clients is the key to success.',
+      qualityDesc: 'We continuously improve service quality to meet and exceed client expectations.',
+      // Services descriptions
+      ourServicesSubtitle: 'At Youth & Partners Law Firm, we are proud to provide professional legal services and consulting, designed to meet the diverse needs of our clients. With a team of experienced lawyers and extensive expertise, we are committed to providing optimal solutions for all legal issues including but not limited to:',
+      legalService: 'Legal Services',
+      legalServiceDesc: 'Our experienced team of lawyers is always ready to resolve all complex legal issues. We provide comprehensive legal services from commercial disputes, intellectual property rights to civil and criminal matters.',
+      regularConsultService: 'Regular Business Consultation',
+      regularConsultServiceDesc: 'We provide regular consulting services for businesses, supporting you in managing legal risks, complying with legal regulations, and optimizing operational processes.',
+      laborConsultService: 'Labor Consultation',
+      laborConsultServiceDesc: 'We advise on labor issues to ensure the rights of both employers and employees. Our services include labor contract consulting, employee benefits, dispute resolution, and labor process optimization.',
+      investmentService: 'Investment and Foreigners',
+      investmentServiceDesc: 'We provide legal solutions for investors and foreigners who want to do business or live in Vietnam. We support from establishing businesses, applying for work permits to resolving other related legal issues.',
+      evaluationServiceTitle: 'Business Evaluation Service',
+      evaluationServiceDesc: 'We provide comprehensive business evaluation solutions, helping you better understand the performance, financial situation, and risk factors of your business. We are committed to providing you with the most accurate and comprehensive assessments.',
+      // Capability profile
+      capabilitySubtitle: 'Here you will find detailed information about our professional capabilities, legal services we provide, and outstanding achievements of our team of lawyers',
+      // Office addresses
+      hanoiOffice: 'Hanoi',
+      hanoiAddress: 'P219, East Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi City',
+      phuThoOffice: 'Phu Tho',
+      phuThoAddress: '170 Nguyen Van Linh Street, Vinh Phuc Ward, Phu Tho Province',
+      bacNinhOffice: 'Bac Ninh',
+      bacNinhAddress: '26 Doan Tran Nghiep, Kinh Bac Ward, Bac Ninh Province',
+      vinhTuongOffice: 'Vinh Tuong Rep. Office',
+      vinhTuongAddress: '5-way Intersection Sen Village, Vinh Hung Commune, Phu Tho Province',
+      // Customers section
+      ourCustomers: 'Our Customers',
+      ourCustomersSubtitle: 'We are proud of our extensive network of partners and customers, including reputable businesses, organizations, and individuals in many different fields. Our partners include leading law firms, strategic consulting organizations, and international financial companies. We work closely with them to provide optimal and professional legal solutions.',
+      // Contact section
+      contactNowTitle: 'Contact Us for Immediate Consultation',
+      contactNowSubtitle: 'All your questions answered',
+      chatWithExpert: 'Chat with Expert',
+      startChat: 'Start Chat',
+      leaveMessage: 'Leave a Message',
+      viewMore: 'View More',
+    },
+    zh: {
+      history: '成立历史',
+      lawyers: '律师与合伙人',
+      awards: '法律奖项',
+      testimonials: '客户评价',
+      principles: '运营宗旨',
+      capabilities: '能力概况',
+      vision: '愿景 - 使命',
+      visionAndMission: '愿景与使命',
+      events: '内部活动',
+      internalEvents: '内部活动',
+      privacy: '数据隐私保护',
+      dataProtection: '数据隐私保护',
+      aboutUs: '关于我们',
+      motto: '经营理念：',
+      mottoText: '时间 – 专心 – 全力',
+      statsTitle: '会说话的数字',
+      offices: '办公室',
+      officeAddress: '办公地址',
+      visitUs: '欢迎来访',
+      capabilityProfile: 'Youth & Partners 能力概况',
+      profileVietnamese: '能力概况（越南语）',
+      profileEnglish: '能力概况（英语）',
+      integrity: '正直',
+      creativity: '创新',
+      cooperation: '合作',
+      quality: '质量',
+      ourServicesTitle: '我们的服务',
+      heroSubtitle: '以"时间-专心-全力"为经营理念，我们始终致力于提供优质、快速、准确和全面的法律服务。在Y&P律所，我们相信企业和法律咨询组织的真正价值建立在核心价值观之上。我们的服务不仅以扎实的专业知识提供，还融入了经验丰富的律师团队的心和眼光。我们深知客户的满意和信任是衡量我们成功的最重要标准。',
+      heroSubtitle2: '凭借多年与国内外大型知名企业合作提供法律咨询服务的经验，特别是三星、Viettel、FPT等领先集团，以及三星的供应商、合作伙伴和众多在越南的韩国、日本企业，Y&P律所有信心满足客户、企业和投资者在越南的所有复杂法律需求。',
+      heroSubtitle3: '我们承诺陪伴您走上可持续发展之路，有效解决所有法律问题，帮助您实现目标并增加企业价值。',
+      awardsSubtitle: '我们为所取得的成就和法律奖项感到自豪，这证明了我们在法律行业的承诺和信誉',
+      excellentLawyerAward: '优秀律师奖',
+      excellentLawyerDesc: '授予在复杂案件中做出杰出贡献的律师。',
+      innovationAward: '法律创新奖',
+      innovationAwardDesc: '表彰在应用技术和新法律解决方案以提高工作效率方面的创新努力。',
+      communityAward: '社区贡献奖',
+      communityAwardDesc: '表彰慈善活动和对社区和社会的积极贡献。',
+      // History timeline titles
+      historyOrgDev: '组织发展和服务扩展',
+      historyOrgDevSub: '增加人员并扩大服务规模',
+      historyExpand: '扩展',
+      historyExpandHanoi: '在河内新增01个分支',
+      historyExpandBacNinh: '在北宁新增01个分支',
+      historyAddressChange: '公司地址变更',
+      historyEstablish: '公司成立',
+      historyYP: 'Youth & Partners',
+      timePeriod2024: '2024年至今',
+      timePeriod2021_2023: '2021 - 2023',
+      timePeriod2020_2021: '2020 - 2021',
+      timePeriod2020_2024: '2020 - 2024',
+      establishDate: '2019年10月09日',
+      // History timeline full HTML titles
+      historyTitle1: '组织发展和服务扩展 <br /> <span class="font-normal">增加人员并扩大服务规模</span> <br /> <span class="text-sm font-normal">2024年至今</span>',
+      historyTitle2: '扩展 <br /> <span class="font-normal">在河内新增01个分支</span> <br /> <span class="text-sm font-normal">2021 - 2023</span>',
+      historyTitle3: '扩展 <br /> <span class="font-normal">在北宁新增01个分支</span> <br /> <span class="text-sm font-normal">2020 - 2021</span>',
+      historyTitle4: '扩展 <br /> <span class="font-normal">公司地址变更</span> <br /> <span class="text-sm font-normal">2020 - 2024</span>',
+      historyTitle5: '公司成立 <br /> <span class="font-normal">Youth & Partners</span> <br /> <span class="text-sm font-normal">2019年10月09日</span>',
+      // History timeline descriptions
+      historyDesc1: '从2024年至今，Youth & Partners律所已进行组织整顿，增加人员并扩大服务规模，以满足客户日益增长的需求。公司专注于提供全面解决方案和深入的法律咨询服务，包括但不限于：<br />• 企业<br />• 常规咨询<br />• 知识产权<br />• 公司治理与合规<br />• 投资项目<br />• 企业支持服务<br />• 并购（M&A）<br />• 诉讼和争议解决（民事、刑事和行政）<br />• 劳动与就业<br />• 房地产法律服务',
+      historyDesc2: '2021-2023年间，Youth & Partners继续扩展网络，在河内首都开设新分支，位于河内市义都区国防学院公寓东塔P219。这是巩固北方市场存在和扩展的重要一步，特别是在河内——全国主要经济中心。',
+      historyDesc3: '2020-2021年间，Youth & Partners律所实施网络扩展战略以提高服务质量并更好地满足重点地区客户需求。具体而言，公司在北宁省京北区段陈业街26号开设交易办事处，从而扩大运营范围并增加在区域市场的存在。',
+      historyDesc4: '为满足发展需求，2020年1月，运营半年后，公司将总部迁至永福省永安市连宝区阮文灵路170号。这也是公司目前的总部地址。随着这一重要转变，公司规模也显著扩大，人员比最初增加了三倍，标志着Y&P律所发展的坚实一步。',
+      historyDesc5: '2019年10月09日，Youth & Partners律所正式成立于永福省永安市连宝区范鸿泰街67号。',
+      historyOrgDevDesc: '从2024年至今，Youth & Partners律所已进行组织整顿，增加人员并扩大服务规模，以满足客户日益增长的需求。',
+      historyExpandHanoiDesc: '2021-2023年间，Youth & Partners继续扩展网络，在河内首都开设新分支。',
+      historyExpandBacNinhDesc: '2020-2021年间，Youth & Partners律所实施网络扩展战略以提高服务质量。',
+      historyAddressChangeDesc: '为满足发展需求，2020年1月，公司将总部迁至新地址。',
+      historyEstablishDesc: '2019年10月09日，Youth & Partners律所正式成立。',
+      principlesTitle: '我们的运营宗旨',
+      time: '时间',
+      timeDesc: '我们深知每个法律案件都有时间要求和严格因素。因此，我们的律师团队始终努力确保工作流程快速高效地进行，帮助客户在最短时间内实现预期结果。',
+      dedication: '专心',
+      dedicationDesc: 'Youth & Partners的每位律师都承诺全心投入每个案件，始终倾听并理解客户需求，提供最优化和最合适的解决方案。我们相信专心是建立客户信任和长期关系的关键因素。',
+      excellence: '全力',
+      excellenceDesc: '我们不仅提供简单的法律服务，还始终努力克服所有挑战以保护客户的合法权益。凭借经验丰富且随时准备应对任何情况的律师团队，Youth & Partners律所承诺为客户带来公正和成功，帮助他们在发展道路上稳步前进。',
+      legalExperts: '法律专家',
+      satisfiedClients: '满意客户',
+      casesWon: '胜诉案件',
+      // Vision/Mission descriptions
+      visionSubtitle: '<b>愿景</b> Youth & Partners致力于成为越南领先的律师事务所之一，是客户寻求法律解决方案时始终信赖的伙伴。我们不断创新，提升服务质量，培养经验丰富、尽职尽责的律师团队，以满足客户日益增长的需求。凭借热忱、专业和卓越的适应能力，我们立志成为法律领域卓越的象征，为客户和社会带来可持续的价值。<br /><br /><b>使命</b> Youth & Partners律所承诺陪伴客户保护其权益并有效及时地实现法律目标。秉承"时效-专心-全力"的理念，我们始终将客户利益放在首位，以最高的责任感解决各种复杂的法律问题。我们的使命不仅限于提供法律服务，还致力于成为值得信赖的合作伙伴，帮助客户和合作伙伴克服所有法律挑战，从而为企业和社会的可持续发展做出贡献。',
+      // Core values descriptions
+      integrityDesc: '我们始终以诚实和职业道德行事，将客户利益放在首位。',
+      creativityDesc: '我们始终寻求创造性和有效的法律解决方案，以满足客户的多样化需求。',
+      cooperationDesc: '我们相信团队与客户之间的紧密合作是成功的关键。',
+      qualityDesc: '我们不断提高服务质量，以满足并超越客户的期望。',
+      // Services descriptions
+      ourServicesSubtitle: '在Youth & Partners律所，我们自豪地提供专业的法律服务和咨询，旨在满足客户的多样化需求。凭借经验丰富的律师团队和广泛的专业知识，我们承诺为所有法律问题提供最优解决方案，包括但不限于：',
+      legalService: '法律服务',
+      legalServiceDesc: '我们经验丰富的律师团队随时准备解决各种复杂的法律问题。我们提供全面的法律服务，从商业争议、知识产权到民事和刑事案件。',
+      regularConsultService: '企业常规咨询服务',
+      regularConsultServiceDesc: '我们为企业提供常规咨询服务，帮助您管理法律风险、遵守法律法规并优化运营流程。',
+      laborConsultService: '劳动咨询服务',
+      laborConsultServiceDesc: '我们就劳动问题提供咨询，以确保雇主和员工的权益。我们的服务包括劳动合同咨询、员工福利、争议解决和劳动流程优化。',
+      investmentService: '投资与外国人服务',
+      investmentServiceDesc: '我们为希望在越南经商或生活的投资者和外国人提供法律解决方案。我们从成立企业、申请工作许可证到解决其他相关法律问题提供全方位支持。',
+      evaluationServiceTitle: '企业评估服务',
+      evaluationServiceDesc: '我们提供全面的企业评估解决方案，帮助您更好地了解企业的绩效、财务状况和风险因素。我们承诺为您提供最准确、最全面的评估。',
+      // Capability profile
+      capabilitySubtitle: '在这里，您将找到有关我们专业能力、我们提供的法律服务以及律师团队杰出成就的详细信息',
+      // Office addresses
+      hanoiOffice: '河内',
+      hanoiAddress: '河内市义都坊国防学院公寓东塔P219',
+      phuThoOffice: '富寿',
+      phuThoAddress: '富寿省永福坊阮文灵街170号',
+      bacNinhOffice: '北宁',
+      bacNinhAddress: '北宁省京北坊段陈业街26号',
+      vinhTuongOffice: '永祥代表处',
+      vinhTuongAddress: '富寿省永兴社仙村五岔路口',
+      // Customers section
+      ourCustomers: '我们的客户',
+      ourCustomersSubtitle: '我们以广泛的合作伙伴和客户网络为荣，包括各行业有声望的企业、组织和个人。我们的合作伙伴包括领先的律师事务所、战略咨询机构和国际金融公司。我们与他们紧密合作，提供最优质、最专业的法律解决方案。',
+      // Contact section
+      contactNowTitle: '立即联系咨询',
+      contactNowSubtitle: '您所有的问题都能得到解答',
+      chatWithExpert: '与专家交流',
+      startChat: '开始聊天',
+      leaveMessage: '留言',
+      viewMore: '查看更多',
+    },
+    ja: {
+      history: '設立履歴',
+      lawyers: '弁護士およびパートナー',
+      awards: '法律賞',
+      testimonials: 'クライアントの声',
+      principles: '運営理念',
+      capabilities: '能力プロフィール',
+      vision: 'ビジョン - ミッション',
+      visionAndMission: 'ビジョンとミッション',
+      events: '内部イベント',
+      internalEvents: '内部イベント',
+      privacy: 'データプライバシー保護',
+      dataProtection: 'データプライバシー保護',
+      aboutUs: '私たちについて',
+      motto: '経営理念：',
+      mottoText: '時間 – 誠心 – 全力',
+      statsTitle: '数字が語る実績',
+      offices: 'オフィス',
+      officeAddress: 'オフィス所在地',
+      visitUs: 'ご訪問ください',
+      capabilityProfile: 'Youth & Partners 能力概要',
+      profileVietnamese: '能力概要（ベトナム語）',
+      profileEnglish: '能力概要（英語）',
+      integrity: '誠実',
+      creativity: '創造性',
+      cooperation: '協力',
+      quality: '品質',
+      ourServicesTitle: '私たちのサービス',
+      heroSubtitle: '「時間・誠心・全力」という経営理念のもと、私たちは常に質の高い、迅速で、正確かつ包括的な法律サービスを提供することをお約束します。Y&P法律事務所では、企業と法律コンサルティング組織の真の価値は核心的な価値観の上に築かれると信じています。私たちのサービスは、確かな専門知識だけでなく、経験豊富な弁護士チームの心とビジョンで提供されます。お客様の満足と信頼こそが私たちの成功の最も重要な尺度であると理解しています。',
+      heroSubtitle2: '国内外の大手企業への法律コンサルティングサービスの提供において長年の経験を持ち、特にサムスン、ビエテル、FPTなどの大手企業、およびサムスンのサプライヤー、パートナー、ベトナムの多くの韓国・日本企業との協力経験を活かし、Y&P法律事務所はベトナムにおけるお客様、企業、投資家のあらゆる複雑な法的要件に対応できると確信しています。',
+      heroSubtitle3: '持続可能な発展の旅にお客様と共に歩み、すべての法的問題を効果的に解決し、目標の達成とビジネス価値の向上をお手伝いすることをお約束します。',
+      awardsSubtitle: '私たちは達成した法律賞を誇りに思っており、法律業界における私たちのコミットメントと信頼性を証明しています',
+      excellentLawyerAward: '優秀弁護士賞',
+      excellentLawyerDesc: '複雑な案件での卓越した貢献に対して弁護士に授与されます。',
+      innovationAward: '法律イノベーション賞',
+      innovationAwardDesc: '業務効率を向上させるための技術と新しい法的ソリューションの適用における創造的な努力を称えます。',
+      communityAward: 'コミュニティ貢献賞',
+      communityAwardDesc: '慈善活動とコミュニティおよび社会への積極的な貢献を認識します。',
+      // History timeline titles
+      historyOrgDev: '組織開発とサービス拡大',
+      historyOrgDevSub: '人員を追加しサービス規模を拡大',
+      historyExpand: '拡張',
+      historyExpandHanoi: 'ハノイに01支店を追加',
+      historyExpandBacNinh: 'バクニンに01支店を追加',
+      historyAddressChange: '会社住所変更',
+      historyEstablish: '会社設立',
+      historyYP: 'Youth & Partners',
+      timePeriod2024: '2024年〜現在',
+      timePeriod2021_2023: '2021年〜2023年',
+      timePeriod2020_2021: '2020年〜2021年',
+      timePeriod2020_2024: '2020年〜2024年',
+      establishDate: '2019年10月09日',
+      // History timeline full HTML titles
+      historyTitle1: '組織開発とサービス拡大 <br /> <span class="font-normal">人員を追加しサービス規模を拡大</span> <br /> <span class="text-sm font-normal">2024年〜現在</span>',
+      historyTitle2: '拡張 <br /> <span class="font-normal">ハノイに01支店を追加</span> <br /> <span class="text-sm font-normal">2021年〜2023年</span>',
+      historyTitle3: '拡張 <br /> <span class="font-normal">バクニンに01支店を追加</span> <br /> <span class="text-sm font-normal">2020年〜2021年</span>',
+      historyTitle4: '拡張 <br /> <span class="font-normal">会社住所変更</span> <br /> <span class="text-sm font-normal">2020年〜2024年</span>',
+      historyTitle5: '会社設立 <br /> <span class="font-normal">Youth & Partners</span> <br /> <span class="text-sm font-normal">2019年10月09日</span>',
+      // History timeline descriptions
+      historyDesc1: '2024年から現在まで、Youth & Partners法律事務所は組織を整備し、人員を追加してサービス規模を拡大し、お客様の高まるニーズに応えています。会社は以下を含むがこれに限定されない多くの分野で包括的なソリューションと専門的な法律コンサルティングサービスの提供に注力しています：<br />• 企業<br />• 定期コンサルティング<br />• 知的財産<br />• コーポレートガバナンスとコンプライアンス<br />• 投資プロジェクト<br />• ビジネスサポートサービス<br />• M&A（合併・買収）<br />• 訴訟と紛争解決（民事、刑事、行政）<br />• 労働と雇用<br />• 不動産法律サービス',
+      historyDesc2: '2021年から2023年の間、Youth & Partnersはハノイ首都に新しい支店を開設し、ネットワークを拡大しました。支店はハノイ市ギア・ド区国防学院アパート東棟P219に位置しています。これは特にベトナムの主要経済中心地であるハノイにおいて、北部地域での存在感を強化し市場を拡大するための重要な一歩です。',
+      historyDesc3: '2020年から2021年の間、Youth & Partners法律事務所はサービス品質向上と重点地域のお客様のニーズにより良く対応するためネットワーク拡大戦略を実施しました。具体的には、バクニン省キンバク区ドアン・チャン・ギエップ26番地に取引オフィスを開設し、事業範囲を拡大し地域市場での存在感を高めました。',
+      historyDesc4: '発展ニーズに応えるため、2020年1月、半年の運営後、ビンフック省ビンイエン市リエンバオ区グエン・ヴァン・リン170番地に本社を移転しました。これは会社の現在の本社所在地でもあります。この重要な転換に伴い、会社の規模も大幅に拡大し、人員は当初の3倍に増加し、Y&P法律事務所の発展における着実な一歩を示しています。',
+      historyDesc5: '2019年10月09日、Youth & Partners法律事務所がビンフック省ビンイエン市リエンバオ区ファム・ホン・タイ通り67番地に正式に設立されました。',
+      historyOrgDevDesc: '2024年から現在まで、Youth & Partners法律事務所は組織を整備し、人員を追加してサービス規模を拡大し、お客様の高まるニーズに応えています。',
+      historyExpandHanoiDesc: '2021年から2023年の間、Youth & Partnersはハノイ首都に新しい支店を開設し、ネットワークを拡大しました。',
+      historyExpandBacNinhDesc: '2020年から2021年の間、Youth & Partners法律事務所はサービス品質向上のためネットワーク拡大戦略を実施しました。',
+      historyAddressChangeDesc: '発展ニーズに応えるため、2020年1月に本社を新住所に移転しました。',
+      historyEstablishDesc: '2019年10月09日、Youth & Partners法律事務所が正式に設立されました。',
+      principlesTitle: '私たちの運営理念',
+      time: '時間',
+      timeDesc: '私たちは、すべての法的案件には時間要件と厳格な要素があることを理解しています。したがって、私たちの弁護士チームは常に、業務プロセスが迅速かつ効率的に進行し、お客様が最短時間で望む結果を達成できるよう最大限の努力をしています。',
+      dedication: '誠心',
+      dedicationDesc: 'Youth & Partnersの各弁護士は、すべての案件に心を込めて取り組み、常にお客様のニーズに耳を傾け理解し、最適で適切なソリューションを提供することを約束します。私たちは、誠心がお客様との信頼と長期的な関係を築く鍵であると信じています。',
+      excellence: '全力',
+      excellenceDesc: '私たちは単純な法律サービスを提供するだけでなく、お客様の正当な権利を守るためにあらゆる課題を克服する努力を常に続けています。あらゆる状況に対応する準備ができている経験豊富な弁護士チームを持つYouth & Partners法律事務所は、お客様に公正と成功をもたらし、発展の道を着実に歩めるようお手伝いすることを約束します。',
+      legalExperts: '法律専門家',
+      satisfiedClients: '満足した顧客',
+      casesWon: '勝訴案件',
+    },
+    ko: {
+      history: '설립 역사',
+      lawyers: '변호사 및 동업자',
+      awards: '법률 상',
+      testimonials: '고객 후기',
+      principles: '운영 원칙',
+      capabilities: '능력 프로필',
+      vision: '비전 - 사명',
+      visionAndMission: '비전과 사명',
+      events: '내부 이벤트',
+      internalEvents: '내부 이벤트',
+      privacy: '데이터 개인정보 보호',
+      dataProtection: '데이터 개인정보 보호',
+      aboutUs: '회사 소개',
+      motto: '경영 철학:',
+      mottoText: '시간 – 정성 – 최선',
+      statsTitle: '숫자로 보는 실적',
+      offices: '사무소',
+      officeAddress: '사무소 주소',
+      visitUs: '방문해 주세요',
+      capabilityProfile: 'Youth & Partners 역량 프로필',
+      profileVietnamese: '역량 프로필 (베트남어)',
+      profileEnglish: '역량 프로필 (영어)',
+      integrity: '정직',
+      creativity: '창의성',
+      cooperation: '협력',
+      quality: '품질',
+      ourServicesTitle: '우리의 서비스',
+      heroSubtitle: '"시간-정성-최선"이라는 경영 철학으로 저희는 항상 질 높고, 신속하며, 정확하고 포괄적인 법률 서비스를 제공하기 위해 노력합니다. Y&P 법률사무소에서 저희는 기업과 법률 컨설팅 조직의 진정한 가치가 핵심 가치에 기반한다고 믿습니다. 저희 서비스는 탄탄한 전문 지식뿐만 아니라 경험이 풍부한 변호사 팀의 마음과 비전으로 제공됩니다. 고객의 만족과 신뢰가 저희 성공의 가장 중요한 척도임을 이해합니다.',
+      heroSubtitle2: '국내외 대기업에 대한 법률 컨설팅 서비스 제공에 있어 다년간의 경험을 바탕으로, 특히 삼성, Viettel, FPT와 같은 선도 기업 및 삼성의 공급업체, 파트너, 베트남 내 많은 한국 및 일본 기업과의 협력 경험을 활용하여 Y&P 법률사무소는 베트남에서 고객, 기업 및 투자자의 모든 복잡한 법적 요구 사항을 충족할 수 있다고 확신합니다.',
+      heroSubtitle3: '지속 가능한 발전의 여정에서 고객과 함께하며, 모든 법적 문제를 효과적으로 해결하고, 목표 달성과 비즈니스 가치 증대를 도와드리겠습니다.',
+      awardsSubtitle: '저희는 달성한 법률 상에 자부심을 가지고 있으며, 이는 법률 업계에서 저희의 헌신과 신뢰성을 증명합니다',
+      excellentLawyerAward: '우수 변호사 상',
+      excellentLawyerDesc: '복잡한 사건에서 뛰어난 공헌을 한 변호사에게 수여됩니다.',
+      innovationAward: '법률 혁신 상',
+      innovationAwardDesc: '업무 효율성을 높이기 위한 기술과 새로운 법률 솔루션 적용에 대한 창의적 노력을 기립니다.',
+      communityAward: '커뮤니티 공헌 상',
+      communityAwardDesc: '자선 활동과 커뮤니티 및 사회에 대한 긍정적인 기여를 인정합니다.',
+      // History timeline titles
+      historyOrgDev: '조직 개발 및 서비스 확장',
+      historyOrgDevSub: '인력 추가 및 서비스 규모 확대',
+      historyExpand: '확장',
+      historyExpandHanoi: '하노이에 01개 지점 추가',
+      historyExpandBacNinh: '박닌에 01개 지점 추가',
+      historyAddressChange: '회사 주소 변경',
+      historyEstablish: '회사 설립',
+      historyYP: 'Youth & Partners',
+      timePeriod2024: '2024년 ~ 현재',
+      timePeriod2021_2023: '2021년 ~ 2023년',
+      timePeriod2020_2021: '2020년 ~ 2021년',
+      timePeriod2020_2024: '2020년 ~ 2024년',
+      establishDate: '2019년 10월 09일',
+      // History timeline full HTML titles
+      historyTitle1: '조직 개발 및 서비스 확장 <br /> <span class="font-normal">인력 추가 및 서비스 규모 확대</span> <br /> <span class="text-sm font-normal">2024년 ~ 현재</span>',
+      historyTitle2: '확장 <br /> <span class="font-normal">하노이에 01개 지점 추가</span> <br /> <span class="text-sm font-normal">2021년 ~ 2023년</span>',
+      historyTitle3: '확장 <br /> <span class="font-normal">박닌에 01개 지점 추가</span> <br /> <span class="text-sm font-normal">2020년 ~ 2021년</span>',
+      historyTitle4: '확장 <br /> <span class="font-normal">회사 주소 변경</span> <br /> <span class="text-sm font-normal">2020년 ~ 2024년</span>',
+      historyTitle5: '회사 설립 <br /> <span class="font-normal">Youth & Partners</span> <br /> <span class="text-sm font-normal">2019년 10월 09일</span>',
+      // History timeline descriptions
+      historyDesc1: '2024년부터 현재까지 Youth & Partners 법률사무소는 조직을 정비하고 인력을 추가하여 서비스 규모를 확대하여 고객의 증가하는 요구에 부응하고 있습니다. 회사는 다음을 포함하되 이에 국한되지 않는 많은 분야에서 포괄적인 솔루션과 심층 법률 컨설팅 서비스 제공에 집중하고 있습니다:<br />• 기업<br />• 정기 컨설팅<br />• 지적재산<br />• 기업 거버넌스 및 규정 준수<br />• 투자 프로젝트<br />• 비즈니스 지원 서비스<br />• M&A (인수합병)<br />• 소송 및 분쟁 해결 (민사, 형사, 행정)<br />• 노동 및 고용<br />• 부동산 법률 서비스',
+      historyDesc2: '2021년부터 2023년까지 Youth & Partners는 하노이 수도에 새로운 지점을 열어 네트워크를 확장했습니다. 지점은 하노이시 응히아도구 국방학원 아파트 동타워 P219에 위치해 있습니다. 이는 특히 베트남의 주요 경제 중심지인 하노이에서 북부 지역의 존재감을 강화하고 시장을 확장하는 중요한 단계입니다.',
+      historyDesc3: '2020년부터 2021년까지 Youth & Partners 법률사무소는 서비스 품질 향상과 주요 지역 고객의 요구를 더 잘 충족시키기 위한 네트워크 확장 전략을 실시했습니다. 구체적으로 박닌성 킨박구 도안찬응이엡 26번지에 거래 사무소를 개설하여 운영 범위를 확대하고 지역 시장에서의 존재감을 높였습니다.',
+      historyDesc4: '발전 요구에 부응하기 위해 2020년 1월, 6개월간의 운영 후 빈푹성 빈옌시 리엔바오구 응우옌반린 170번지로 본사를 이전했습니다. 이곳은 현재 회사 본사 주소이기도 합니다. 이 중요한 전환과 함께 회사 규모도 크게 확대되어 인력이 초기 대비 3배로 증가하여 Y&P 법률사무소의 발전에 있어 확고한 한 걸음을 보여주었습니다.',
+      historyDesc5: '2019년 10월 09일, Youth & Partners 법률사무소가 빈푹성 빈옌시 리엔바오 팜홍타이 67번지에 공식적으로 설립되었습니다.',
+      historyOrgDevDesc: '2024년부터 현재까지 Youth & Partners 법률사무소는 조직을 정비하고 인력을 추가하여 서비스 규모를 확대하여 고객의 증가하는 요구에 부응하고 있습니다.',
+      historyExpandHanoiDesc: '2021년부터 2023년까지 Youth & Partners는 하노이 수도에 새로운 지점을 열어 네트워크를 확장했습니다.',
+      historyExpandBacNinhDesc: '2020년부터 2021년까지 Youth & Partners 법률사무소는 서비스 품질 향상을 위한 네트워크 확장 전략을 실시했습니다.',
+      historyAddressChangeDesc: '발전 요구에 부응하기 위해 2020년 1월 본사를 새 주소로 이전했습니다.',
+      historyEstablishDesc: '2019년 10월 09일 Youth & Partners 법률사무소가 공식적으로 설립되었습니다.',
+      principlesTitle: '우리의 운영 원칙',
+      time: '시간',
+      timeDesc: '저희는 모든 법적 사건에 시간 요구 사항과 엄격한 요소가 있다는 것을 이해합니다. 따라서 저희 변호사 팀은 항상 업무 프로세스가 빠르고 효율적으로 진행되어 고객이 가장 짧은 시간 내에 원하는 결과를 달성할 수 있도록 최대한 노력합니다.',
+      dedication: '정성',
+      dedicationDesc: 'Youth & Partners의 각 변호사는 모든 사건에 진심을 다하며, 항상 고객의 요구를 경청하고 이해하여 가장 최적화되고 적합한 솔루션을 제공하기로 약속합니다. 저희는 정성이 고객과의 신뢰와 장기적인 관계를 구축하는 핵심 요소라고 믿습니다.',
+      excellence: '최선',
+      excellenceDesc: '저희는 단순한 법률 서비스를 제공하는 것이 아니라, 고객의 정당한 권리를 보호하기 위해 모든 도전을 극복하려고 항상 노력합니다. 어떤 상황에도 대응할 준비가 된 경험이 풍부한 변호사 팀을 갖춘 Youth & Partners 법률사무소는 고객에게 정의와 성공을 가져다주고 발전의 길을 확고히 걸어갈 수 있도록 돕겠다고 약속합니다.',
+      legalExperts: '법률 전문가',
+      satisfiedClients: '만족한 고객',
+      casesWon: '승소 사건',
+    },
+  },
+
+  // Homepage content
+  homepage: {
+    vi: {
+      // Hero section
+      companyPrefix: 'Công ty Luật TNHH',
+      companySuffix: '',
+      companyTitle: 'Công ty Luật TNHH',
+      heroSubtitle: 'là một trong những công ty luật hàng đầu trong các lĩnh vực: Tư vấn pháp lý thường xuyên cho doanh nghiệp/Dịch vụ Phòng pháp chế thuê ngoài; Tư vấn và giải quyết tranh chấp lao động; Dịch vụ Luật sư riêng tiếng Nhật, Anh, Trung, Hàn; Dịch vụ Audit, đánh giá và thẩm định pháp lý cho Doanh nghiệp, dịch vụ DD (Due diligence) riêng các lĩnh vực Lao động, nhân quyền, đạo đức kinh doanh, hệ thống quản lý, an toàn, sức khỏe, môi trường cho Doanh nghiệp.',
+      likeAFriend: 'Như một người bạn đồng hành.',
+      // Services section
+      ourServices: 'DỊCH VỤ CỦA CHÚNG TÔI',
+      servicesSubtitle: 'Công ty Luật chúng tôi luôn mong muốn mang đến cho quý khách hàng những dịch vụ chất lượng, nhanh chóng, chính xác và trọn vẹn.',
+      regularConsultation: 'Tư vấn pháp luật thường xuyên cho Doanh nghiệp',
+      regularConsultationDesc: 'Với kinh nghiệm đa dạng trong nhiều lĩnh vực hoạt động của Doanh nghiệp, đặc biệt là các Doanh nghiệp sản xuất có vốn Đầu tư nước ngoài, trong những năm qua, chúng tôi tự hào là đơn vị cung cấp dịch vụ tư vấn pháp luật thường xuyên chất lượng cao cho nhiều Doanh nghiệp trong nước và nước ngoài có quy mô lớn tại Việt Nam như Samsung, Intel Vietnam, Viettel, FPT, TopCV, Cosmos, Rikkeisoft... cũng như nhiều Doanh nghiệp Hàn Quốc, Nhật Bản, Úc… Đặc biệt, đến thời điểm hiện tại, Y&P là một trong rất ít những hãng luật có thể tư vấn sâu những vấn đề về trách nhiệm xã hội của Doanh nghiệp (CSR) hay cụ thể là Bộ Quy tắc RBA (Liên minh các Doanh nghiệp có trách nhiệm xã hội) hiện đang áp dụng cho rất nhiều Doanh nghiệp, đặc biệt là các Doanh nghiệp điện tử. Điều này làm cho chúng tôi trở thành đối tác tin cậy và phù hợp cho các Doanh nghiệp sản xuất đang phải tuân thủ theo Bộ Quy tắc này.',
+      laborLaw: 'Tư vấn pháp luật Lao động',
+      laborLawDesc: 'Với đặc thù đang là hãng luật đang tư vấn pháp lý thường xuyên cho hơn 20 Doanh nghiệp và liên tục tham gia vào quá trình tư vấn, giải quyết nhiều vụ việc/án lao động, Y&P Law Firm có thể tự tin đang là chuyên gia đầu ngành tại Việt Nam trong lĩnh vực này. Website của chúng tôi có chuyên trang luật lao động, phân tích sâu về nội quy, thỏa ước, hợp đồng lao động/đào tạo, lương & phúc lợi, thời giờ làm việc, chấm dứt hợp đồng, xử lý kỷ luật, quấy rối tình dục, NDA/NCA… Bên cạnh đó, chúng tôi thường xuyên tổ chức/phối hợp tổ chức các khóa đào tạo, workshop với hàng nghìn người tham dự với vai trò diễn giả để phổ cập kiến thức lao động cho cộng đồng.',
+      foreignInvestment: 'Tư vấn Đầu tư nước ngoài',
+      foreignInvestmentDesc: 'Kinh nghiệm tư vấn cho các dự án Đầu tư của Y&P Law Firm bao gồm tư vấn cho các Doanh nghiệp trong nước và nước ngoài trong suốt quá trình thực hiện tư vấn nhằm hỗ trợ khách hàng điều hướng sự giao thoa phức tạp của pháp luật Việt Nam và pháp luật nước ngoài. Chúng tôi cam kết hỗ trợ khách hàng thực hiện đầu tư theo đủ các hình thức đầu tư từ lúc bắt đầu kế hoạch đầu tư cho đến khi dự án đã đi vào hoạt động. M&A là một trong những nền móng chính trong của lĩnh vực hoạt động tư vấn đầu tư của Y&P Law Firm, chúng tôi tập trung vào mảng sáp nhập và mua bán.',
+      evaluationService: 'Dịch vụ Đánh giá Doanh nghiệp',
+      evaluationServiceDesc: 'Ngày nay, việc tuân thủ theo các quy định của pháp luật địa phương, đáp ứng các chuẩn mực của bộ tiêu chuẩn về trách nhiệm xã hội là vấn đề sống còn với Doanh nghiệp. Nhiều Doanh nghiệp đã phải trả giá bằng sự tồn vong của pháp nhân mình vì lơ là, coi nhẹ vấn đề tuân thủ pháp luật và các tiêu chuẩn trách nhiệm xã hội. Luật sư giám đốc điều hành của Y&P Law Firm là Lead Auditor (Kiểm toán viên/Đánh giá viên trưởng) của Tập đoàn Samsung trong các chiến dịch/chương trình Audit Vendor/Đánh giá nhà cung ứng.',
+      // Operating principles
+      operatingPrinciples: 'Tôn chỉ hoạt động của chúng tôi',
+      time: 'Thời gian',
+      timeDesc: 'Chúng tôi hiểu rằng mỗi vụ việc pháp lý đều có những yêu cầu về thời gian và các yếu tố khắt khe. Vì vậy, đội ngũ luật sư của chúng tôi luôn nỗ lực tối đa để đảm bảo tiến trình công việc diễn ra nhanh chóng, hiệu quả, và giúp khách hàng đạt được kết quả mong muốn trong thời gian sớm nhất.',
+      dedication: 'Tận tâm',
+      dedicationDesc: 'Mỗi luật sư tại Youth & Partners đều cam kết đặt trọn tâm huyết vào từng hồ sơ, luôn lắng nghe và thấu hiểu nhu cầu của khách hàng để đưa ra các giải pháp tối ưu và phù hợp nhất. Chúng tôi tin rằng sự tận tâm là yếu tố then chốt để xây dựng niềm tin và mối quan hệ lâu dài với khách hàng.',
+      excellence: 'Tận lực',
+      excellenceDesc: 'Chúng tôi không chỉ cung cấp dịch vụ pháp lý đơn thuần, mà luôn nỗ lực vượt qua mọi thử thách để bảo vệ quyền lợi hợp pháp của khách hàng. Với đội ngũ luật sư giàu kinh nghiệm và luôn sẵn sàng đối mặt với mọi tình huống, Youth & Partners Law Firm cam kết mang lại công bằng và sự thành công cho khách hàng, giúp họ vững bước trên con đường phát triển.',
+      // Steps section
+      beYourPartner: 'Hãy để chúng tôi trở thành người bạn đồng hành của bạn',
+      contact: 'Liên hệ',
+      contactDesc: 'Mô tả vấn đề của bạn và thu thập tài liệu liên quan. Liên hệ với chúng tôi qua Hotline, Zalo, WhatsApp, Facebook hoặc Email',
+      sendRequest: 'Gửi yêu cầu',
+      sendRequestDesc: 'Mô tả chi tiết vấn đề qua email hoặc điện thoại và đính kèm tài liệu liên quan',
+      trackResponse: 'Theo dõi phản hồi',
+      trackResponseDesc: 'Theo dõi email hoặc điện thoại của bạn để nhận phản hồi từ đội ngũ hỗ trợ khách hàng của chúng tôi. Nếu không nhận được phản hồi trong thời gian dự kiến, hãy liên hệ lại để đảm bảo vấn đề của bạn không bị bỏ sót.',
+      weWillComplete: 'Chúng tôi sẽ hoàn thành!',
+      // Stats
+      legalStaff: 'Chuyên viên pháp lý',
+      satisfiedClients: 'Khách hàng hài lòng',
+      casesWon: 'Vụ thắng kiện',
+      // News
+      latestNews: 'Tin mới nhất',
+      newsInfo: 'Trang tin tức của chúng tôi cung cấp những thông tin cập nhật và mới nhất về các vấn đề pháp lý, với bài viết từ các chuyên gia pháp lý hàng đầu, đảm bảo bạn luôn nắm bắt được những thay đổi quan trọng trong các lĩnh vực quan tâm.',
+      // Testimonials
+      clientTestimonials: 'Cảm nhận của khách hàng',
+      testimonialsSubtitle: 'Khách hàng hài lòng với dịch vụ pháp lý tại Youth & Partners, đánh giá cao sự tận tâm và chuyên nghiệp của đội ngũ luật sư trong việc giải quyết các vấn đề pháp lý phức tạp. Họ tin tưởng và sẵn lòng tiếp tục sử dụng dịch vụ của chúng tôi trong tương lai.',
+      // Partners
+      ourPartners: 'Đối tác và khách hàng của chúng tôi',
+      partnersSubtitle: 'Chúng tôi tự hào về mạng lưới đối tác và khách hàng rộng khắp, bao gồm các doanh nghiệp, tổ chức và cá nhân uy tín trong nhiều lĩnh vực khác nhau. Những đối tác hợp tác của chúng tôi gồm có các công ty luật hàng đầu, các tổ chức tư vấn chiến lược, và các công ty tài chính quốc tế. Chúng tôi làm việc chặt chẽ với họ để mang lại các giải pháp pháp lý tối ưu và chuyên nghiệp nhất.',
+      // CTA
+      contactForConsultNow: 'Liên hệ để được tư vấn ngay',
+      ctaSubtitle: 'Chúng tôi luôn sẵn lòng lắng nghe và hỗ trợ bạn một cách tận tâm và chuyên nghiệp. Hãy để chúng tôi giúp bạn giải quyết mọi vấn đề pháp lý một cách nhanh chóng và hiệu quả!',
+      contactNow: 'Liên hệ ngay',
+      followUs: 'Theo dõi chúng tôi',
+    },
+    en: {
+      companyPrefix: '',
+      companySuffix: 'Law Firm',
+      companyTitle: 'Law Firm',
+      heroSubtitle: 'is one of the leading law firms in Vietnam, specializing in: Regular legal consultation for enterprises/Outsourced Legal Department services; Labor dispute consultation and resolution; Personal lawyer services in Japanese, English, Chinese, Korean; Legal audit, evaluation and due diligence services for enterprises, DD (Due diligence) services in Labor, Human Rights, Business Ethics, Management Systems, Safety, Health, and Environment for enterprises.',
+      likeAFriend: 'Like a trusted companion.',
+      ourServices: 'OUR SERVICES',
+      servicesSubtitle: 'Our law firm always strives to provide clients with quality, fast, accurate and complete services.',
+      regularConsultation: 'Regular Legal Consultation for Enterprises',
+      regularConsultationDesc: 'With diverse experience in many areas of enterprise operations, especially foreign-invested manufacturing enterprises, over the years we are proud to be a provider of high-quality regular legal consultation services for many large domestic and foreign enterprises in Vietnam such as Samsung, Intel Vietnam, Viettel, FPT, TopCV, Cosmos, Rikkeisoft... as well as many Korean, Japanese, Australian enterprises.\n\nNotably, Y&P is one of the very few law firms that can provide deep consultation on Corporate Social Responsibility (CSR) issues or specifically the RBA Code (Responsible Business Alliance) currently applied to many enterprises, especially electronics enterprises. This makes us a reliable and suitable partner for manufacturing enterprises that must comply with this Code.',
+      laborLaw: 'Labor Law Consultation',
+      laborLawDesc: 'As a law firm providing regular legal consultation to over 20 enterprises and continuously participating in consulting and resolving many labor cases/disputes, Y&P Law Firm confidently stands as a leading expert in Vietnam in this field. Our website features a dedicated labor law section with in-depth analysis of regulations, collective agreements, labor/training contracts, wages & benefits, working hours, contract termination, disciplinary procedures, sexual harassment, NDA/NCA.\n\nAdditionally, we regularly organize/co-organize training courses and workshops with thousands of attendees as speakers to disseminate labor knowledge to the community. We also organize annual training courses on clean organization, anti-sexual harassment, RBA code of conduct, emphasizing areas with high dispute risks in enterprises such as resignation handling, complaints, whistleblowing, and disciplinary actions. Training programs are free for regular consulting clients of Y&P Law Firm.',
+      foreignInvestment: 'Foreign Investment Consultation',
+      foreignInvestmentDesc: 'Y&P Law Firm\'s experience in advising investment projects includes consulting domestic and foreign enterprises throughout the consulting process to help clients navigate the complex intersection of Vietnamese and foreign laws. We are committed to supporting clients in implementing investments in all forms from the start of investment planning until projects become operational.\n\nM&A is one of the main foundations of Y&P Law Firm\'s investment consulting practice, focusing on mergers and acquisitions. With strong expertise in investment incentive policies, taxation and finance in FDI activities, we have helped clients execute thousands of complex structured transactions and overcome many challenges from current legal regulations to constantly changing geopolitical situations.',
+      evaluationService: 'Enterprise Evaluation Services',
+      evaluationServiceDesc: 'Today, compliance with local legal regulations and meeting social responsibility standards is a matter of survival for enterprises. Many enterprises have paid the price with their legal entity\'s existence due to neglecting compliance with laws and social responsibility standards.\n\nY&P Law Firm\'s Managing Director is a Lead Auditor of Samsung Corporation in Vendor Audit campaigns/programs. Accordingly, we have sufficient experience and confidence to provide comprehensive enterprise evaluation services, helping clients gain deep insights into their entire business operations and identify potential risk factors. Our services comprehensively identify errors in compliance with legal aspects of labor, business ethics, management systems, safety, health, environment, licenses, intellectual property, and internal corporate governance documents.',
+      operatingPrinciples: 'Our Operating Principles',
+      time: 'Timeliness',
+      timeDesc: 'We understand that every legal case has time requirements and strict factors. Therefore, our team of lawyers always strives to ensure work progresses quickly and efficiently, helping clients achieve desired results in the shortest time.',
+      dedication: 'Dedication',
+      dedicationDesc: 'Every lawyer at Youth & Partners is committed to putting their heart into each case, always listening and understanding client needs to provide optimal and most suitable solutions. We believe dedication is key to building trust and long-term relationships with clients.',
+      excellence: 'Excellence',
+      excellenceDesc: 'We not only provide simple legal services but always strive to overcome all challenges to protect the legitimate rights of our clients. With a team of experienced lawyers always ready to face any situation, Youth & Partners Law Firm is committed to bringing justice and success to clients, helping them move forward on their path of development.',
+      beYourPartner: 'Let us become your trusted partner',
+      contact: 'Contact',
+      contactDesc: 'Describe your issue and gather relevant documents. Contact us via Hotline, Zalo, WhatsApp, Facebook or Email',
+      sendRequest: 'Send Request',
+      sendRequestDesc: 'Describe your issue in detail via email or phone and attach relevant documents',
+      trackResponse: 'Track Response',
+      trackResponseDesc: 'Monitor your email or phone for responses from our customer support team. If you do not receive a response within the expected time, please contact us again to ensure your issue is not overlooked.',
+      weWillComplete: 'We will complete it!',
+      legalStaff: 'Legal Specialist',
+      satisfiedClients: 'Satisfied Clients',
+      casesWon: 'Cases Won',
+      latestNews: 'Latest News',
+      newsInfo: 'Our news page provides the latest updates on legal issues, with articles from leading legal experts, ensuring you always stay informed of important changes in your areas of interest.',
+      clientTestimonials: 'Client Testimonials',
+      testimonialsSubtitle: 'Clients are satisfied with legal services at Youth & Partners, highly appreciating the dedication and professionalism of our lawyers in resolving complex legal issues. They trust and are willing to continue using our services in the future.',
+      ourPartners: 'Our Partners and Clients',
+      partnersSubtitle: 'We are proud of our extensive network of partners and clients, including reputable businesses, organizations and individuals in many different fields. Our collaborative partners include leading law firms, strategic consulting organizations, and international financial companies. We work closely with them to provide optimal and professional legal solutions.',
+      contactForConsultNow: 'Contact for Consultation Now',
+      ctaSubtitle: 'We are always willing to listen and support you with dedication and professionalism. Let us help you resolve all legal issues quickly and efficiently!',
+      contactNow: 'Contact Now',
+      followUs: 'Follow Us',
+    },
+    zh: {
+      companyPrefix: '',
+      companySuffix: '律师事务所',
+      companyTitle: '律师事务所',
+      heroSubtitle: '是越南领先的律师事务所之一，专注于：企业常年法律顾问/外包法务部服务；劳动争议咨询与解决；日语、英语、中文、韩语私人律师服务；企业法律审计、评估和尽职调查服务，以及劳动、人权、商业道德、管理体系、安全、健康、环境领域的尽职调查服务。',
+      likeAFriend: '如您的同行伙伴。',
+      ourServices: '我们的服务',
+      servicesSubtitle: '我们律所始终致力于为客户提供优质、快速、准确和完整的服务。',
+      regularConsultation: '企业常年法律顾问',
+      regularConsultationDesc: '凭借在企业运营多个领域的丰富经验，特别是外资制造企业，多年来我们自豪地为越南众多大型国内外企业提供高质量的常年法律咨询服务，如三星、英特尔越南、Viettel、FPT、TopCV、Cosmos、Rikkeisoft等，以及许多韩国、日本、澳大利亚企业。\n\n值得注意的是，Y&P是少数能够深入咨询企业社会责任（CSR）问题或具体的RBA准则（负责任商业联盟）的律所之一，该准则目前适用于许多企业，特别是电子企业。这使我们成为必须遵守此准则的制造企业的可靠且合适的合作伙伴。',
+      laborLaw: '劳动法咨询',
+      laborLawDesc: '作为为20多家企业提供常年法律咨询的律所，并持续参与咨询和解决众多劳动案件/纠纷，Y&P律所有信心在越南成为该领域的领先专家。我们的网站设有专门的劳动法版块，深入分析规章制度、集体协议、劳动/培训合同、工资福利、工作时间、合同终止、纪律处分、性骚扰、保密协议/竞业禁止协议等。\n\n此外，我们定期组织/联合组织培训课程和研讨会，作为演讲者向数千名参与者普及劳动知识。我们每年还组织关于廉洁组织、反性骚扰、RBA行为准则的培训课程，强调企业中存在较高纠纷风险的领域，如离职处理、投诉、举报和纪律处分。对于Y&P律所的常年顾问客户，培训项目是免费的。',
+      foreignInvestment: '外商投资咨询',
+      foreignInvestmentDesc: 'Y&P律所在投资项目咨询方面的经验包括为国内外企业提供全程咨询服务，帮助客户在越南法律和外国法律的复杂交叉中导航。我们致力于支持客户以各种形式实施投资，从投资计划开始直到项目投入运营。\n\n并购（M&A）是Y&P律所投资咨询业务的主要基础之一，专注于合并和收购。凭借对外商直接投资活动中投资优惠政策、税收和金融的深入了解，我们已帮助客户完成数千笔结构复杂的交易，并克服了从现行法律法规到不断变化的地缘政治形势带来的诸多挑战。',
+      evaluationService: '企业评估服务',
+      evaluationServiceDesc: '如今，遵守当地法律法规、满足社会责任标准是企业生存的关键问题。许多企业因忽视法律合规和社会责任标准而付出了法人存亡的代价。\n\nY&P律所的执行董事是三星集团供应商审计活动/项目中的首席审计员。因此，我们有足够的经验和信心提供全面的企业评估服务，帮助客户深入了解其整体业务运营并识别潜在风险因素。我们的服务全面识别劳动法律、商业道德、管理体系、安全、健康、环境、许可证、知识产权和公司内部治理文件等法律合规方面的错误。',
+      operatingPrinciples: '我们的经营宗旨',
+      time: '时间',
+      timeDesc: '我们深知每个法律案件都有时间要求和严格的因素。因此，我们的律师团队始终努力确保工作快速高效地进行，帮助客户在最短时间内获得期望的结果。',
+      dedication: '专心',
+      dedicationDesc: 'Youth & Partners的每位律师都承诺将全心投入每个案件，始终倾听和理解客户需求，以提供最佳和最合适的解决方案。我们相信专心是与客户建立信任和长期关系的关键。',
+      excellence: '全力',
+      excellenceDesc: '我们不仅提供简单的法律服务，还始终努力克服一切挑战，保护客户的合法权益。凭借经验丰富且随时准备应对任何情况的律师团队，Youth & Partners律所承诺为客户带来公正和成功，帮助他们在发展道路上稳步前进。',
+      beYourPartner: '让我们成为您信赖的合作伙伴',
+      contact: '联系',
+      contactDesc: '描述您的问题并收集相关文件。通过热线、Zalo、WhatsApp、Facebook或电子邮件联系我们',
+      sendRequest: '发送请求',
+      sendRequestDesc: '通过电子邮件或电话详细描述您的问题并附上相关文件',
+      trackResponse: '跟踪反馈',
+      trackResponseDesc: '监控您的电子邮件或电话以获取我们客户支持团队的回复。如果在预期时间内没有收到回复，请再次联系我们以确保您的问题不会被忽略。',
+      weWillComplete: '我们将完成！',
+      legalStaff: '法律专员',
+      satisfiedClients: '满意客户',
+      casesWon: '胜诉案件',
+      latestNews: '最新消息',
+      newsInfo: '我们的新闻页面提供最新的法律问题更新，包括来自顶级法律专家的文章，确保您始终了解您关注领域的重要变化。',
+      clientTestimonials: '客户评价',
+      testimonialsSubtitle: '客户对Youth & Partners的法律服务感到满意，高度评价我们律师在解决复杂法律问题方面的专注和专业精神。他们信任并愿意在未来继续使用我们的服务。',
+      ourPartners: '我们的合作伙伴和客户',
+      partnersSubtitle: '我们为我们广泛的合作伙伴和客户网络感到自豪，包括各行业的知名企业、组织和个人。我们的合作伙伴包括领先的律师事务所、战略咨询机构和国际金融公司。我们与他们紧密合作，提供最优和最专业的法律解决方案。',
+      contactForConsultNow: '立即联系咨询',
+      ctaSubtitle: '我们始终愿意以专注和专业的态度倾听和支持您。让我们帮助您快速高效地解决所有法律问题！',
+      contactNow: '立即联系',
+      followUs: '关注我们',
+    },
+    ja: {
+      companyPrefix: '',
+      companySuffix: '法律事務所',
+      companyTitle: '法律事務所',
+      heroSubtitle: 'ベトナムの主要な法律事務所の一つで、企業向け定期法律相談/アウトソーシング法務部サービス、労働紛争の相談と解決、日本語・英語・中国語・韓国語でのプライベート弁護士サービス、企業法務監査・評価・デューデリジェンスサービス、労働・人権・ビジネス倫理・管理システム・安全・健康・環境分野のデューデリジェンスを専門としています。',
+      likeAFriend: 'あなたのパートナーとして。',
+      ourServices: '私たちのサービス',
+      servicesSubtitle: '当事務所は常に、お客様に質の高い、迅速で、正確かつ完全なサービスを提供することを目指しています。',
+      regularConsultation: '企業向け定期法律相談',
+      regularConsultationDesc: '外資系製造企業を中心に、企業運営の多くの分野で豊富な経験を持ち、長年にわたりベトナムの多くの大規模な国内外企業（Samsung、Intel Vietnam、Viettel、FPT、TopCV、Cosmos、Rikkeisoft等）および韓国、日本、オーストラリアの多くの企業に高品質な定期法律相談サービスを提供してきたことを誇りに思っています。\n\n特に、Y&Pは企業の社会的責任（CSR）問題、特に多くの企業（特に電子企業）に適用されているRBA規範（責任ある企業同盟）について深い相談ができる数少ない法律事務所の一つです。これにより、この規範を遵守しなければならない製造企業にとって、信頼できる適切なパートナーとなっています。',
+      laborLaw: '労働法相談',
+      laborLawDesc: '20社以上の企業に定期的な法律相談を提供し、多くの労働案件・紛争の相談と解決に継続的に参加している法律事務所として、Y&P法律事務所はベトナムでこの分野の第一人者であると自信を持っています。当事務所のウェブサイトには、規則、労使協約、労働/研修契約、賃金・福利厚生、労働時間、契約終了、懲戒手続き、セクシャルハラスメント、NDA/NCAなどを深く分析する専門の労働法セクションがあります。\n\nまた、コミュニティに労働知識を普及するため、講演者として数千人の参加者を集めた研修やワークショップを定期的に開催/共催しています。さらに、クリーンな組織、セクシャルハラスメント防止、RBA行動規範に関する独自の研修コースを毎年開催し、退職処理、苦情、内部告発、懲戒処分など、企業内で紛争リスクの高い分野を強調しています。Y&P法律事務所の定期相談クライアントには、研修プログラムは無料です。',
+      foreignInvestment: '外国投資相談',
+      foreignInvestmentDesc: 'Y&P法律事務所の投資プロジェクトに関する相談経験には、ベトナム法と外国法の複雑な交差点をクライアントがナビゲートできるよう、国内外の企業に対する相談プロセス全体でのコンサルティングが含まれます。投資計画の開始からプロジェクトが稼働するまで、あらゆる形態での投資実施をサポートすることをお約束します。\n\nM&AはY&P法律事務所の投資コンサルティング業務の主要な基盤の一つであり、合併・買収に焦点を当てています。FDI投資活動における投資優遇政策、税金、財務に関する強力な専門知識を活かし、数千件の複雑な取引の実行を支援し、現行の法規制から絶えず変化する地政学的状況まで、多くの課題を克服してきました。',
+      evaluationService: '企業評価サービス',
+      evaluationServiceDesc: '今日、現地の法規制の遵守と社会的責任基準の充足は、企業にとって存亡に関わる問題です。多くの企業が法令遵守と社会的責任基準を軽視したために、法人としての存続を代償に支払いました。\n\nY&P法律事務所のマネージング・ディレクターは、Samsung Corporationのベンダー監査キャンペーン/プログラムにおけるリード監査人です。そのため、包括的な企業評価サービスを提供する十分な経験と自信があり、クライアントが事業運営全体を深く理解し、潜在的なリスク要因を特定できるよう支援します。当事務所のサービスは、労働、ビジネス倫理、管理システム、安全、健康、環境、ライセンス、知的財産、企業内部ガバナンス文書などの法的側面におけるコンプライアンスの誤りを包括的に特定します。',
+      operatingPrinciples: '私たちの経営理念',
+      time: '時間',
+      timeDesc: 'すべての法的案件には時間的要件と厳格な要素があることを理解しています。そのため、当事務所の弁護士チームは常に業務が迅速かつ効率的に進むよう努力し、お客様が最短時間で望む結果を達成できるよう支援します。',
+      dedication: '誠心',
+      dedicationDesc: 'Youth & Partnersの各弁護士は、すべての案件に心を込めて取り組むことを約束し、常にお客様のニーズを聞き、理解して、最適で最も適切なソリューションを提供します。私たちは、誠心がお客様との信頼と長期的な関係を構築する鍵であると信じています。',
+      excellence: '全力',
+      excellenceDesc: '私たちは単純な法的サービスを提供するだけでなく、常にあらゆる課題を克服してお客様の正当な権利を保護するよう努めています。経験豊富でどんな状況にも対応できる弁護士チームにより、Youth & Partners法律事務所はお客様に正義と成功をもたらし、発展の道を歩む手助けをすることを約束します。',
+      beYourPartner: '私たちを信頼できるパートナーにしてください',
+      contact: '連絡',
+      contactDesc: '問題を説明し、関連する書類を収集してください。ホットライン、Zalo、WhatsApp、Facebook、またはメールでお問い合わせください',
+      sendRequest: 'リクエスト送信',
+      sendRequestDesc: 'メールまたは電話で問題を詳しく説明し、関連書類を添付してください',
+      trackResponse: '応答追跡',
+      trackResponseDesc: 'カスタマーサポートチームからの応答を受け取るため、メールまたは電話を確認してください。予定時間内に応答がない場合は、問題が見落とされないよう再度ご連絡ください。',
+      weWillComplete: '完了します！',
+      legalStaff: '法務スタッフ',
+      satisfiedClients: '満足したお客様',
+      casesWon: '勝訴案件',
+      latestNews: '最新ニュース',
+      newsInfo: '当事務所のニュースページでは、法的問題に関する最新情報を提供し、トップの法律専門家からの記事により、関心のある分野の重要な変更を常に把握できます。',
+      clientTestimonials: 'お客様の声',
+      testimonialsSubtitle: 'お客様はYouth & Partnersの法的サービスに満足しており、複雑な法的問題の解決における弁護士の献身とプロフェッショナリズムを高く評価しています。彼らは信頼し、今後も当事務所のサービスを利用する意向です。',
+      ourPartners: 'パートナーとクライアント',
+      partnersSubtitle: '私たちは、さまざまな分野の評判の良い企業、組織、個人を含む、広範なパートナーとクライアントのネットワークを誇りに思っています。私たちの協力パートナーには、大手法律事務所、戦略コンサルティング機関、国際金融会社が含まれます。私たちは彼らと緊密に協力して、最適でプロフェッショナルな法的ソリューションを提供しています。',
+      contactForConsultNow: '今すぐ相談のご連絡を',
+      ctaSubtitle: '私たちは常に献身とプロフェッショナリズムを持ってお客様のお話を聞き、サポートする用意があります。すべての法的問題を迅速かつ効率的に解決するお手伝いをさせてください！',
+      contactNow: '今すぐ連絡',
+      followUs: 'フォロー',
+    },
+    ko: {
+      companyPrefix: '',
+      companySuffix: '법률사무소',
+      companyTitle: '법률사무소',
+      heroSubtitle: '베트남의 선도적인 법률사무소 중 하나로, 기업을 위한 정기 법률 상담/아웃소싱 법무부 서비스, 노동 분쟁 상담 및 해결, 일본어·영어·중국어·한국어 개인 변호사 서비스, 기업 법률 감사·평가·실사 서비스, 노동·인권·비즈니스 윤리·관리 시스템·안전·건강·환경 분야의 실사 서비스를 전문으로 합니다.',
+      likeAFriend: '당신의 파트너로서.',
+      ourServices: '우리의 서비스',
+      servicesSubtitle: '저희 법률사무소는 항상 고객에게 질 높고, 신속하며, 정확하고 완전한 서비스를 제공하기 위해 노력합니다.',
+      regularConsultation: '기업 정기 법률 상담',
+      regularConsultationDesc: '외국인 투자 제조 기업을 중심으로 기업 운영의 다양한 분야에서 풍부한 경험을 바탕으로, 수년간 베트남의 많은 대규모 국내외 기업(삼성, 인텔 베트남, Viettel, FPT, TopCV, Cosmos, Rikkeisoft 등)과 한국, 일본, 호주의 많은 기업에 고품질 정기 법률 상담 서비스를 제공해온 것을 자랑스럽게 생각합니다.\n\n특히 Y&P는 기업의 사회적 책임(CSR) 문제, 특히 많은 기업(특히 전자 기업)에 적용되는 RBA 규범(책임 있는 비즈니스 연합)에 대해 심층적인 상담을 제공할 수 있는 몇 안 되는 법률사무소 중 하나입니다. 이를 통해 이 규범을 준수해야 하는 제조 기업들에게 신뢰할 수 있고 적합한 파트너가 되었습니다.',
+      laborLaw: '노동법 상담',
+      laborLawDesc: '20개 이상의 기업에 정기적인 법률 상담을 제공하고, 많은 노동 사건/분쟁의 상담과 해결에 지속적으로 참여하는 법률사무소로서 Y&P 법률사무소는 베트남에서 이 분야의 선도적인 전문가임을 자신합니다. 당사 웹사이트에는 규정, 단체협약, 노동/훈련 계약, 급여 및 복리후생, 근무 시간, 계약 해지, 징계 절차, 성희롱, NDA/NCA 등을 심층 분석하는 전문 노동법 섹션이 있습니다.\n\n또한, 커뮤니티에 노동 지식을 보급하기 위해 연사로서 수천 명의 참가자를 모아 교육 과정과 워크숍을 정기적으로 개최/공동 개최합니다. 매년 청렴한 조직, 성희롱 방지, RBA 행동 강령에 관한 자체 교육 과정도 진행하며, 퇴직 처리, 민원, 내부 고발, 징계 처분 등 기업 내 분쟁 위험이 높은 분야를 강조합니다. Y&P 법률사무소의 정기 상담 고객에게는 교육 프로그램이 무료입니다.',
+      foreignInvestment: '외국인 투자 상담',
+      foreignInvestmentDesc: 'Y&P 법률사무소의 투자 프로젝트 상담 경험에는 고객이 베트남 법률과 외국 법률의 복잡한 교차점을 탐색할 수 있도록 국내외 기업에 대한 전체 상담 과정에서의 컨설팅이 포함됩니다. 투자 계획 시작부터 프로젝트가 운영될 때까지 모든 형태의 투자 실행을 지원할 것을 약속드립니다.\n\nM&A는 Y&P 법률사무소의 투자 컨설팅 업무의 주요 기반 중 하나이며, 합병 및 인수에 중점을 둡니다. FDI 투자 활동에서의 투자 우대 정책, 세금 및 재무에 대한 탄탄한 전문 지식을 바탕으로, 수천 건의 복잡한 구조의 거래 실행을 지원하고 현행 법률 규정부터 끊임없이 변화하는 지정학적 상황까지 많은 도전을 극복해 왔습니다.',
+      evaluationService: '기업 평가 서비스',
+      evaluationServiceDesc: '오늘날 현지 법률 규정 준수와 사회적 책임 기준 충족은 기업의 생존에 관한 문제입니다. 많은 기업이 법률 준수와 사회적 책임 기준을 소홀히 하여 법인 존속을 대가로 치렀습니다.\n\nY&P 법률사무소의 상무이사는 삼성 그룹의 벤더 감사 캠페인/프로그램에서 리드 감사인입니다. 따라서 포괄적인 기업 평가 서비스를 제공할 충분한 경험과 자신감이 있으며, 고객이 전체 사업 운영을 깊이 이해하고 잠재적 위험 요소를 식별할 수 있도록 지원합니다. 당사 서비스는 노동, 비즈니스 윤리, 관리 시스템, 안전, 건강, 환경, 라이선스, 지적 재산권, 기업 내부 거버넌스 문서 등 법적 측면의 컴플라이언스 오류를 포괄적으로 식별합니다.',
+      operatingPrinciples: '우리의 경영 원칙',
+      time: '시간',
+      timeDesc: '모든 법적 사건에는 시간 요구 사항과 엄격한 요소가 있다는 것을 이해합니다. 따라서 저희 변호사 팀은 항상 업무가 신속하고 효율적으로 진행되도록 노력하여 고객이 가장 짧은 시간 내에 원하는 결과를 달성할 수 있도록 돕습니다.',
+      dedication: '정성',
+      dedicationDesc: 'Youth & Partners의 모든 변호사는 각 사건에 마음을 담아 임하며, 항상 고객의 요구를 경청하고 이해하여 최적의 가장 적합한 솔루션을 제공합니다. 저희는 정성이 고객과의 신뢰와 장기적인 관계를 구축하는 핵심이라고 믿습니다.',
+      excellence: '최선',
+      excellenceDesc: '저희는 단순한 법률 서비스만 제공하는 것이 아니라 항상 모든 도전을 극복하여 고객의 정당한 권리를 보호하기 위해 노력합니다. 경험이 풍부하고 어떤 상황에도 대응할 준비가 된 변호사 팀과 함께 Youth & Partners 법률사무소는 고객에게 정의와 성공을 가져다주고 발전의 길을 함께 걸어가겠습니다.',
+      beYourPartner: '신뢰할 수 있는 파트너가 되겠습니다',
+      contact: '연락',
+      contactDesc: '문제를 설명하고 관련 서류를 수집하세요. 핫라인, Zalo, WhatsApp, Facebook 또는 이메일로 연락해 주세요',
+      sendRequest: '요청 보내기',
+      sendRequestDesc: '이메일이나 전화로 문제를 자세히 설명하고 관련 서류를 첨부해 주세요',
+      trackResponse: '응답 추적',
+      trackResponseDesc: '고객 지원 팀의 응답을 받기 위해 이메일이나 전화를 확인해 주세요. 예상 시간 내에 응답을 받지 못한 경우, 문제가 누락되지 않도록 다시 연락해 주세요.',
+      weWillComplete: '완료하겠습니다!',
+      legalStaff: '법무 직원',
+      satisfiedClients: '만족한 고객',
+      casesWon: '승소 사건',
+      latestNews: '최신 뉴스',
+      newsInfo: '저희 뉴스 페이지는 법적 문제에 대한 최신 업데이트를 제공하며, 최고의 법률 전문가의 기사를 통해 관심 분야의 중요한 변경 사항을 항상 파악할 수 있습니다.',
+      clientTestimonials: '고객 후기',
+      testimonialsSubtitle: '고객들은 Youth & Partners의 법률 서비스에 만족하며, 복잡한 법적 문제 해결에 있어 변호사들의 정성과 전문성을 높이 평가합니다. 그들은 신뢰하고 앞으로도 저희 서비스를 계속 이용할 의향이 있습니다.',
+      ourPartners: '파트너 및 고객',
+      partnersSubtitle: '저희는 다양한 분야의 평판 있는 기업, 조직 및 개인을 포함한 광범위한 파트너 및 고객 네트워크를 자랑스럽게 생각합니다. 저희 협력 파트너에는 선도적인 법률 사무소, 전략 컨설팅 기관 및 국제 금융 회사가 포함됩니다. 저희는 그들과 긴밀히 협력하여 최적의 전문적인 법률 솔루션을 제공합니다.',
+      contactForConsultNow: '지금 상담 문의',
+      ctaSubtitle: '저희는 항상 정성과 전문성으로 고객의 이야기를 듣고 지원할 준비가 되어 있습니다. 모든 법적 문제를 빠르고 효율적으로 해결할 수 있도록 도와드리겠습니다!',
+      contactNow: '지금 연락',
+      followUs: '팔로우',
+    },
+  },
+
+  // NOTE: legal, labor, consultation, investment, evaluation sections are in JSON files
+  // Only add extended keys here that don't exist in JSON
+
+  // Services page (extended content beyond JSON)
+  services: {
+    vi: {
+      professionalLegal: 'Dịch vụ pháp lý chuyên môn',
+      title: 'Dịch vụ',
+      legalServices: 'Dịch vụ pháp lý',
+      serviceIntro: 'Giới thiệu dịch vụ',
+      investmentProject: 'Dự án đầu tư',
+      ma: 'M & A',
+      regularConsulting: 'Tư vấn thường xuyên cho các doanh nghiệp',
+      litigation: 'Tranh tụng và giải quyết tranh chấp',
+      laborEmployment: 'Lao động và việc làm',
+      landServices: 'Dịch vụ pháp lý về đất đai',
+      comprehensiveProtection: 'Bảo vệ toàn diện',
+      deepExpertise: 'Kinh nghiệm và chuyên môn sâu rộng',
+      disputeResolution: 'Giải quyết tranh chấp hiệu quả',
+      internationalVision: 'Tầm nhìn quốc tế',
+      superiorExperience: 'Kinh nghiệm vượt trội',
+      comprehensiveSupport: 'Hỗ trợ toàn diện và chiến lược',
+      // Hero subtitle
+      heroSubtitle: 'Với đội ngũ Luật sư giàu kinh nghiệm thực chiến, kết hợp với sự am hiểu sâu sắc pháp luật và kiến thức xã hội Việt Nam, đến với chúng tôi khách hàng sẽ được tư vấn cách tiến hành kinh doanh và hoạt động tốt nhất, bao gồm đàm phán với các đối tác, thực hiện các chương trình tuân thủ và giải quyết những vấn đề pháp lý phức tạp của doanh nghiệp.',
+      heroSubtitle2: 'Tận dụng sự hiểu biết của mình về môi trường pháp lý và xã hội ngày càng phức tạp tại Việt Nam, chúng tôi đã tư vấn cho hàng trăm khách hàng doanh nghiệp vượt qua tình trạng khó khăn, giảm thiểu rủi ro pháp lý và làm việc hiệu quả với các cơ quan nhà nước.',
+      heroSubtitle3: 'Y&P làm việc cùng với khách hàng để hiểu rõ hoạt động kinh doanh và các giải pháp thủ công nhằm giúp quý khách hàng đáp ứng các nhu cầu và thách thức kinh doanh tại Việt Nam và hơn thế nữa.',
+      // Service Intro Content
+      serviceIntroMotto: 'Với phương châm hoạt động: "Thời Gian – Tận Tâm – Tận Lực", Y&P Lawfirm luôn mong muốn mang đến cho quý khách hàng những dịch vụ chất lượng, nhanh chóng, chính xác và trọn vẹn.',
+      serviceIntroValue: 'Chúng tôi luôn xác định, giá trị của một doanh nghiệp, một đơn vị tư vấn pháp lý phải bắt đầu từ những giá trị cốt lõi, các dịch vụ cần được thực hiện bởi cái tâm và cái tầm của các Luật sư.',
+      serviceIntroMeasure: 'Các giá trị ấy chỉ có thể được đo bằng sự hài lòng, tin tưởng của tất cả các khách hàng/thân chủ.',
+      // Legal services items
+      legalServicesSubtitle: 'Chúng tôi có các luật sư và chuyên gia tư vấn pháp lý phụ trách các lĩnh vực sau:',
+      enterprise: 'Doanh nghiệp',
+      enterpriseDesc: 'Cung cấp các giải pháp pháp lý toàn diện để hỗ trợ doanh nghiệp trong quá trình thành lập, hoạt động và phát triển.',
+      regularConsultingDesc: 'Cung cấp dịch vụ tư vấn pháp lý liên tục để đảm bảo doanh nghiệp hoạt động hiệu quả và tuân thủ các quy định pháp luật hiện hành.',
+      intellectualProperty: 'Sở hữu trí tuệ',
+      intellectualPropertyDesc: 'Tư vấn và hỗ trợ bảo vệ quyền sở hữu trí tuệ, từ đăng ký bản quyền, bằng sáng chế đến giải quyết tranh chấp về sở hữu trí tuệ.',
+      governance: 'Quản trị doanh nghiệp và tuân thủ',
+      governanceDesc: 'Giúp doanh nghiệp xây dựng hệ thống quản trị hiệu quả và tuân thủ các quy định pháp luật, giảm thiểu rủi ro pháp lý.',
+      investmentProjectDesc: 'Hỗ trợ các nhà đầu tư trong việc thực hiện các dự án đầu tư tại Việt Nam, từ việc xin giấy phép đến việc giải quyết các vấn đề pháp lý liên quan.',
+      businessSupport: 'Dịch vụ hỗ trợ doanh nghiệp',
+      businessSupportDesc: 'Cung cấp các dịch vụ hỗ trợ doanh nghiệp, bao gồm tư vấn pháp lý, hỗ trợ quản lý, và giải quyết các vấn đề phát sinh trong quá trình kinh doanh.',
+      maFull: 'Mua bán và Sáp nhập (M&A)',
+      maDesc: 'Tư vấn và hỗ trợ các giao dịch mua bán và sáp nhập doanh nghiệp, đảm bảo các giao dịch được thực hiện một cách hiệu quả và tuân thủ pháp luật.',
+      litigationFull: 'Tranh tụng và giải quyết tranh chấp (Dân sự, Hình sự và Hành chính)',
+      litigationDesc: 'Chúng tôi đại diện và hỗ trợ khách hàng trong các vụ kiện tụng và giải quyết tranh chấp, bảo vệ quyền lợi hợp pháp của khách hàng.',
+      laborEmploymentDesc: 'Tư vấn và hỗ trợ doanh nghiệp và người lao động về các vấn đề liên quan đến hợp đồng lao động, quyền lợi nhân viên, và giải quyết tranh chấp lao động.',
+      landServicesDesc: 'Cung cấp các dịch vụ pháp lý liên quan đến đất đai, từ việc xin giấy chứng nhận quyền sử dụng đất đến giải quyết các tranh chấp liên quan đến đất đai.',
+      // Steps2 - Enterprise Section
+      enterpriseTitle: 'Doanh nghiệp',
+      enterpriseSubtitle: 'Phòng Doanh nghiệp của chúng tôi là nơi tụ tập kiến thức chuyên sâu từ đa dạng các lĩnh vực hành nghề, nhằm mang đến cho khách hàng những dịch vụ toàn diện về thủ tục đăng ký kinh doanh và thành lập doanh nghiệp. Chúng tôi cam kết hỗ trợ khách hàng tại mọi giai đoạn của vòng đời kinh doanh, bao gồm từ quá trình ban đầu của việc thành lập doanh nghiệp, qua các giai đoạn phát triển, cho đến khi mở rộng hoạt động và kinh doanh.\n\nĐội ngũ chuyên gia của chúng tôi sẵn sàng áp dụng kiến thức sâu rộng để đáp ứng mọi nhu cầu và yêu cầu của khách hàng. Tận dụng sự hiểu biết đa chiều về nhiều lĩnh vực, chúng tôi tạo ra một hệ sinh thái dịch vụ linh hoạt và chuyên nghiệp, giúp doanh nghiệp không chỉ tồn tại mà còn phát triển bền vững trong môi trường kinh doanh ngày càng đa dạng và thách thức.',
+      enterpriseItem1Title: 'Chuyên môn sâu rộng',
+      enterpriseItem1Desc: 'Đội ngũ luật sư của chúng tôi có kiến thức chuyên môn sâu rộng và kinh nghiệm phong phú trong lĩnh vực pháp lý doanh nghiệp. Chúng tôi hiểu rõ các quy định pháp luật và thực tiễn kinh doanh, giúp doanh nghiệp bạn tối ưu hóa quy trình hoạt động và tuân thủ pháp luật.',
+      enterpriseItem2Title: 'Giải pháp toàn diện và hiệu quả',
+      enterpriseItem2Desc: 'Chúng tôi cung cấp các giải pháp pháp lý toàn diện, từ tư vấn thành lập doanh nghiệp, quản lý rủi ro pháp lý đến hỗ trợ các giao dịch mua bán và sáp nhập. Mục tiêu của chúng tôi là mang lại những giải pháp hiệu quả, tiết kiệm thời gian và chi phí cho khách hàng.',
+      enterpriseItem3Title: 'Tận tâm và uy tín',
+      enterpriseItem3Desc: 'Chúng tôi luôn đặt lợi ích của khách hàng lên hàng đầu, làm việc với sự tận tâm và uy tín cao nhất. Sự thành công của khách hàng chính là thước đo sự thành công của chúng tôi. Chúng tôi cam kết đồng hành và hỗ trợ doanh nghiệp bạn trong mọi giai đoạn phát triển.',
+      // Steps2 - IP Section
+      ipTitle: 'Sở hữu trí tuệ',
+      ipSubtitle: 'Chúng tôi hiểu rõ và đánh giá cao tầm quan trọng về sở hữu trí tuệ (IP) đối với sự thành công của doanh nghiệp. Với sự chuyên sâu trong lĩnh vực này, chúng tôi cung cấp dịch vụ tư vấn toàn diện về mọi khía cạnh liên quan đến sở hữu trí tuệ, từ những giai đoạn đầu tới những thời kỳ quan trọng trong vòng đời của nó. Đội ngũ chuyên gia của chúng tôi có nhiều kinh nghiệm trong việc tư vấn cho các bên liên quan về sở hữu trí tuệ, đặc biệt là trong việc xây dựng chiến lược sáng tạo, bảo vệ, thương mại hóa và thực thi quyền sở hữu trí tuệ.\n\nChúng tôi đã thành công trong việc hợp tác với nhiều chủ sở hữu thương hiệu và quyền sở hữu trí tuệ nổi tiếng cả trong và ngoài nước, phục vụ đa dạng ngành công nghiệp. Sự chuyên nghiệp và tận tâm của chúng tôi là đảm bảo rằng quyền sở hữu trí tuệ của khách hàng được bảo vệ và phát triển hiệu quả trong môi trường kinh doanh ngày càng cạnh tranh.',
+      ipItem1Title: 'Bảo vệ toàn diện',
+      ipItem1Desc: 'Chúng tôi cung cấp các dịch vụ bảo vệ quyền sở hữu trí tuệ toàn diện, từ đăng ký bản quyền, nhãn hiệu, bằng sáng chế đến bảo hộ quyền tác giả. Đội ngũ luật sư của chúng tôi đảm bảo rằng tài sản trí tuệ của bạn được bảo vệ tối đa trước mọi nguy cơ xâm phạm.',
+      ipItem2Title: 'Kinh nghiệm và chuyên môn sâu rộng',
+      ipItem2Desc: 'Với nhiều năm kinh nghiệm trong lĩnh vực sở hữu trí tuệ, chúng tôi tự hào có đội ngũ luật sư chuyên nghiệp và am hiểu sâu sắc về luật sở hữu trí tuệ. Chúng tôi luôn cập nhật các quy định pháp luật mới nhất và sử dụng kiến thức chuyên môn để đưa ra những giải pháp tối ưu cho khách hàng.',
+      ipItem3Title: 'Giải quyết tranh chấp hiệu quả',
+      ipItem3Desc: 'Chúng tôi không chỉ hỗ trợ bạn trong việc bảo vệ quyền sở hữu trí tuệ mà còn giúp bạn giải quyết các tranh chấp liên quan một cách hiệu quả. Với kỹ năng đàm phán và kinh nghiệm xử lý các vụ kiện tụng, chúng tôi đảm bảo quyền lợi của bạn luôn được bảo vệ và tối ưu hóa trong mọi tình huống.',
+      // Steps2 - Investment Project Section
+      investmentTitle: 'Dự án đầu tư',
+      investmentSubtitle: 'Kinh nghiệm tư vấn cho các dự án đầu tư của Y&P Lawfirm bao gồm tư vấn cho các doanh nghiệp trong nước và nước ngoài và tư nhân, trong suốt quá trình thực hiện tư vấn nhằm hỗ trợ khách hàng điều hướng sự giao thoa phức tạp của pháp luật Việt Nam.\n\nChúng tôi cam kết hỗ trợ khách hàng từ lúc bắt đầu kế hoạch đầu tư và ngay cả khi dự án đã đi vào hoạt động.\n\nTừ khâu lên kế hoạch đầu tư đến việc thiết lập và duy trì hoạt động dự án, chúng tôi cam kết đồng hành với khách hàng mỗi bước đường để đảm bảo sự thành công và bền vững của dự án đầu tư.',
+      investmentItem1Title: 'Tìm hiểu, Phân tích và Đánh giá Thị trường',
+      investmentItem1Desc: '- Xác định và đánh giá các cơ hội và thách thức trên thị trường.\n- Phân tích thông tin thị trường để đưa ra quyết định chiến lược.',
+      investmentItem2Title: 'Tìm Kiếm Đối tác Thích Hợp',
+      investmentItem2Desc: 'Hỗ trợ khách hàng trong quá trình tìm kiếm và lựa chọn đối tác phù hợp.',
+      investmentItem3Title: 'Thông Tin Dự Án Gọi Vốn Đầu Tư Nước Ngoài',
+      investmentItem3Desc: 'Cung cấp thông tin cập nhật về các dự án đầu tư nước ngoài từ các cơ quan chức năng của Nhà nước Việt Nam.',
+      investmentItem4Title: 'Hỗ Trợ Thiết Lập Các Loại Hình Hoạt Động Đầu Tư',
+      investmentItem4Desc: 'Tư vấn giúp khách hàng xây dựng các loại hình hoạt động đầu tư tại Việt Nam.',
+      investmentItem5Title: 'Cấu Trúc Đầu Tư',
+      investmentItem5Desc: 'Tư vấn về cấu trúc đầu tư phù hợp nhất cho từng loại dự án, bao gồm cả các hình thức gián tiếp và trực tiếp.',
+      investmentItem6Title: 'Đại Diện Thay Mặt Nhà Đầu Tư',
+      investmentItem6Desc: 'Liên lạc và đàm phán với các cơ quan chức năng để triển khai dự án.',
+      investmentItem7Title: 'Thực Hiện Dịch Vụ Lập Văn Phòng Đại Diện, Chi Nhánh',
+      investmentItem7Desc: 'Hỗ trợ trong quá trình lập văn phòng đại diện và chi nhánh của doanh nghiệp nước ngoài tại Việt Nam.',
+      // Steps2 - M&A Section
+      maTitle: 'M & A',
+      maSubtitle: 'M&A và Tư vấn Doanh nghiệp là một trong những nền móng chính trong của lĩnh vực hoạt động pháp lý của YP Law, chúng tôi tập trung vào mảng sáp nhập và mua bán, đầu tư trực tiếp từ nước ngoài và Tư vấn Doanh nghiệp. Chúng tôi đã giúp đỡ khách hàng triển khai các giao dịch có cấu trúc sáng tạo và vượt qua các thách thức từ quy định pháp luật hiện hành phức tạp và không ngừng biến đổi.\n\nNgoài sự chuyên môn về pháp luật, chúng tôi có hiểu biết sâu trong nhiều lĩnh vực, bao gồm sản xuất, hóa chất, tiêu dùng, logistics, bán lẻ, giáo dục, khoáng sản. Chúng tôi hiểu rõ sự phức tạp khi mua và vận hành một doanh nghiệp lớn, bao gồm mọi thứ liên quan đến vấn đề liên quan đến đất đai, tài sản, môi trường, ngoại hối… nhờ đó đưa ra được các tư vấn pháp lý giá trị cho khách hàng phù hợp với nhu cầu kinh doanh của họ.',
+      maItem1Title: 'Tầm nhìn quốc tế',
+      maItem1Desc: 'Là một công ty luật tại Việt Nam có tầm nhìn quốc tế, chúng tôi kết hợp kiến thức địa phương với góc nhìn quốc tế. Chúng tôi liên tục được các khách hàng cũ là doanh nghiệp nước ngoài giới thiệu cho đối tác của họ khi cần được tư vấn về luật pháp Việt Nam. Khách hàng của chúng tôi bao gồm cả khách hàng trong nước và quốc tế. Chúng tôi tự hào lớn khi hỗ trợ khách hàng của chúng tôi trong việc thành lập, vận hành và mở rộng hoạt động kinh doanh tại Việt Nam.',
+      maItem2Title: 'Kinh nghiệm vượt trội',
+      maItem2Desc: 'Chúng tôi thường xuyên được yêu cầu phối hợp cùng các Công ty kế toán và Ngân hàng để đưa ra tư vấn tổng thể cho Khách hàng liên quan đến hoạt động M&A. Để hỗ trợ hoạt động M&A, chúng tôi đưa cho khách hàng của mình các tư vấn liên quan:',
+      maItem3Title: 'Hỗ trợ toàn diện và chiến lược',
+      maItem3Desc: 'Chúng tôi cung cấp sự hỗ trợ toàn diện từ khâu chuẩn bị, thẩm định, đàm phán đến hậu kỳ sau giao dịch. Đồng thời, chúng tôi tư vấn chiến lược giúp khách hàng hiểu rõ về thị trường, định hướng và tối ưu hóa cơ hội kinh doanh từ các giao dịch M&A.',
+      // Steps2 - Regular Consulting Section
+      consultingTitle: 'Tư vấn thường xuyên cho các doanh nghiệp',
+      consultingSubtitle: 'Trong những năm qua, chúng tôi tự hào là đơn vị cung cấp dịch vụ pháp lý chất lượng cao cho nhiều doanh nghiệp trong nước và nước ngoài có quy mô lớn tại Việt Nam như Samsung, TOPCV, Arcadyan, Cosmos, Viettel, FPT,... cũng như nhiều Doanh nghiệp Hàn Quốc, Nhật Bản, Úc…\n\nChúng tôi có kinh nghiệm đa dạng và cụ thể từng lĩnh vực hoạt động của từng doanh nghiệp, nổi trội là các doanh nghiệp sản xuất có vốn đầu tư nước ngoài.\n\nĐặc biệt, đến thời điểm hiện tại, Y&P là một trong những hãng luật hiếm hoi có thể tư vấn sâu những vấn đề về trách nhiệm xã hội của Doanh nghiệp (CSR) hay cụ thể là bộ quy tắc RBA hiện đang áp dụng cho rất nhiều Doanh nghiệp. Điều này làm cho chúng tôi trở thành đối tác lựa chọn đáng tin cậy cho các doanh nghiệp sản xuất đang phải tuân thủ theo các quy tắc này. Y&P Lawfirm rất hân hạnh được hỗ trợ và đồng hành cùng các khách hàng, đặc biệt là trong việc thực hiện các yêu cầu của bộ Quy tắc RBA này.',
+      consultingItem1Title: 'Kinh nghiệm phong phú và đa dạng',
+      consultingItem1Desc: 'Chúng tôi tự hào đã tư vấn thành công cho nhiều doanh nghiệp hàng đầu, cả trong nước và quốc tế. Sự phong phú và đa dạng trong kinh nghiệm của chúng tôi giúp chúng tôi hiểu rõ và đáp ứng nhu cầu pháp lý của từng khách hàng một cách chính xác và hiệu quả nhất.',
+      consultingItem2Title: 'Đội ngũ chuyên gia tận tâm và chuyên nghiệp',
+      consultingItem2Desc: 'Đội ngũ luật sư của chúng tôi không chỉ có kiến thức chuyên sâu về pháp luật mà còn có khả năng tư duy chiến lược và sáng tạo trong việc giải quyết các vấn đề pháp lý phức tạp. Chúng tôi luôn đặt lợi ích của khách hàng lên hàng đầu, làm việc hết mình để đảm bảo sự thành công và phát triển bền vững của doanh nghiệp.',
+      consultingItem3Title: 'Giải pháp tùy chỉnh và linh hoạt',
+      consultingItem3Desc: 'Chúng tôi cung cấp các giải pháp pháp lý được tùy chỉnh theo nhu cầu cụ thể của từng doanh nghiệp. Sự linh hoạt trong dịch vụ của chúng tôi giúp các doanh nghiệp không chỉ tuân thủ quy định pháp luật mà còn tối ưu hóa quy trình hoạt động và quản lý rủi ro một cách hiệu quả.',
+      // Steps2 - Governance Section
+      governanceTitle: 'Quản trị doanh nghiệp và tuân thủ',
+      governanceSubtitle: 'Y&P Lawfirm có thể cung cấp cho khách hàng những tư vấn toàn diện về quản trị doanh nghiệp cũng như việc tuân thủ pháp luật mà qua đó giảm bớt hoặc phòng tránh được những rủi ro về trách nhiệm dân sự, hình sự, phạt hành chính hoặc các rủi ro khác có khả năng ảnh hưởng bất lợi tới doanh nghiệp, bảo đảm danh tiếng và hình ảnh của tổ chức và cá nhân được bảo vệ.\n\nY&P Lawfirm thiết kế và điều chỉnh các chương trình tuân thủ pháp luật để đáp ứng những yêu cầu kinh doanh của từng khách hàng, có tính đến cấu trúc tổ chức và quản lý, văn hóa và nhu cầu hiện có của doanh nghiệp. Chúng tôi theo một cách tiếp cận theo nhóm với chi phí hiệu quả trong việc phát triển và cập nhật cho chương trình tuân thủ pháp luật của khách hàng. Những luật sư tuân thủ của chúng tôi có kinh nghiệm trong những lĩnh vực như lao động, môi trường, thuế, sở hữu trí tuệ đồng thời tư vấn cho khách hàng về việc quản lý những tranh chấp nội bộ và với bên ngoài, kiện tụng và những rủi ro về mặt pháp lý khác.',
+      governanceItem1Title: 'Kiến thức chuyên môn và kinh nghiệm',
+      governanceItem1Desc: 'Đội ngũ luật sư và chuyên gia của chúng tôi có kiến thức sâu rộng và kinh nghiệm phong phú trong lĩnh vực quản trị doanh nghiệp và tuân thủ. Chúng tôi luôn cập nhật các quy định pháp luật mới nhất và sử dụng kiến thức chuyên môn để đưa ra những giải pháp tối ưu cho khách hàng.',
+      governanceItem2Title: 'Giải pháp toàn diện và hiệu quả',
+      governanceItem2Desc: 'Chúng tôi cung cấp các giải pháp quản trị doanh nghiệp toàn diện, giúp doanh nghiệp xây dựng hệ thống quản lý hiệu quả và tuân thủ các quy định pháp luật. Mục tiêu của chúng tôi là mang lại những giải pháp hiệu quả, tiết kiệm thời gian và chi phí cho khách hàng.',
+      governanceItem3Title: 'Đồng hành và hỗ trợ liên tục',
+      governanceItem3Desc: 'Chúng tôi cam kết đồng hành cùng doanh nghiệp trong suốt quá trình hoạt động, từ khâu thành lập đến phát triển và mở rộng. Chúng tôi luôn sẵn sàng hỗ trợ và tư vấn, đảm bảo doanh nghiệp luôn tuân thủ pháp luật và giảm thiểu rủi ro pháp lý. Chúng tôi hợp tác chặt chẽ với ban giám đốc, cố vấn chung và giám đốc tuân thủ để hiểu rõ hơn nhu cầu kinh doanh và phát triển chương trình tuân thủ phù hợp với hồ sơ, thời gian biểu và ngân sách của công ty.',
+      // Steps2 - Business Support Section
+      supportTitle: 'Dịch vụ bổ trợ doanh nghiệp',
+      supportSubtitle: 'Nhằm "xây dựng vòng tròn" hỗ trợ khách hàng một cách toàn diện nhất, Chúng tôi đã nỗ lực hoàn thiện và đáp ứng cung cấp dịch vụ đa dạng đến từng khách hàng với các hoạt động dịch vụ như:\n\n- Cung cấp phiên dịch (Tiếng Anh, Trung, Hàn), dịch thuật và công chứng dịch tài liệu;\n- Cung cấp chuyên gia, cố vấn pháp lý; Thư ký pháp lý (cho các phiên họp của doanh nghiệp);\n- Xin cấp giấy phép đào tạo Ngoại ngữ, Tin học, dạy nghề;\n- Tư vấn & xin đăng ký Sàn giao dịch Bất động sản;\n- Xin cấp chứng chỉ hành nghề Thiết kế xây dựng; Chứng chỉ hành nghề y dược tư nhân;\n- Tư vấn xin visa, giấy phép lao động, thẻ tạm trú cho nhà đầu tư và lao động nước ngoài.',
+      supportItem1Title: 'Hỗ trợ toàn diện',
+      supportItem1Desc: 'Chúng tôi cung cấp các dịch vụ hỗ trợ doanh nghiệp toàn diện, bao gồm tư vấn pháp lý, quản lý rủi ro và hỗ trợ quản lý tài chính. Chúng tôi đảm bảo mọi khía cạnh của doanh nghiệp bạn được bảo vệ và phát triển bền vững.',
+      supportItem2Title: 'Đội ngũ chuyên gia giàu kinh nghiệm',
+      supportItem2Desc: 'Đội ngũ chuyên gia của chúng tôi có kiến thức chuyên môn sâu rộng và kinh nghiệm phong phú trong nhiều lĩnh vực. Chúng tôi luôn sẵn sàng đưa ra những giải pháp tối ưu, giúp doanh nghiệp bạn hoạt động hiệu quả và đạt được các mục tiêu kinh doanh.',
+      supportItem3Title: 'Giải pháp linh hoạt và tùy chỉnh',
+      supportItem3Desc: 'Chúng tôi hiểu rằng mỗi doanh nghiệp có những nhu cầu và thách thức riêng biệt. Do đó, chúng tôi cung cấp các giải pháp linh hoạt và tùy chỉnh phù hợp với từng doanh nghiệp, đảm bảo bạn nhận được sự hỗ trợ tốt nhất, phù hợp nhất với tình hình cụ thể của bạn.',
+      // Steps2 - Land Services Section
+      landTitle: 'Dịch vụ pháp lý về đất đai',
+      landSubtitle: 'Đất đai hầu như có liên quan tới tất cả các lĩnh vực của đời sống xã hôi, từ di chúc thừa kế, mua bán chuyển nhượng, đầu tư xây dựng cho đến cả hôn nhân gia đình.\n\nTất cả các lĩnh vực, đâu đó đều có hình bóng của pháp luật đất đai qua các thời kỳ. Công ty Luật TNHH Youth & Partners tự tin là đơn vị tư vấn chuyên sâu trong lĩnh vực này.',
+      landItem1Title: 'Giải quyết tranh chấp',
+      landItem1Desc: 'Cử luật sư tham gia giải quyết tranh chấp đất đai trong và ngoài Tòa án;',
+      landItem2Title: 'Soạn thảo đơn từ',
+      landItem2Desc: 'Soạn thảo Đơn đề nghị, khiếu nại liên quan đến đất đai, tranh chấp đất đai;',
+      landItem3Title: 'Dịch vụ pháp lý đất đai',
+      landItem3Desc: 'Thực hiện các dịch vụ pháp lý liên quan đến đất đai như: Chuyển nhượng, sang tên, kê khai cấp lần đầu, di chúc, thừa kế, khai nhận di sản thừa kế, thỏa thuận phân chia di sản thừa kế',
+      // Steps2 - Litigation Section
+      litigationTitle: 'Tranh tụng và giải quyết tranh chấp',
+      litigationSubtitle: 'Bên cạnh công tác tư vấn cho khách hàng liên quan đến các lĩnh vực trên, với vị trí là một đơn vị có đội ngũ luật sư có chuyên môn và kinh nghiệm, chúng tôi sẽ trực tiếp bảo vệ quyền và lợi ích hợp pháp cho khách hàng tại các cơ quan tiến hành tố tụng. Điều này bao gồm những hoạt động như:\n\n- Cử luật sư tham gia tranh tụng tại Tòa án;\n- Cử luật sư tham gia các vụ án giải quyết tại cơ quan Trọng tài;\n- Luật sư đại diện theo ủy quyền tham gia tố tụng hoặc ủy quyền ngoài tố tụng;\n- Soạn thảo hồ sơ, đơn và các tài liệu khác liên quan đến tố cáo, đề nghị, khiếu nại, trả lời khiếu nại và giải quyết tranh chấp trong mọi lĩnh vực.',
+      litigationItem1Title: 'Chuyên môn vượt trội',
+      litigationItem1Desc: 'Đội ngũ luật sư của chúng tôi có kiến thức chuyên sâu và kinh nghiệm phong phú trong lĩnh vực tranh tụng và giải quyết tranh chấp. Chúng tôi đã thành công trong việc đại diện cho khách hàng ở nhiều vụ án phức tạp và quy mô lớn.',
+      litigationItem2Title: 'Chiến lược đàm phán hiệu quả',
+      litigationItem2Desc: 'Chúng tôi không chỉ có kỹ năng tranh tụng xuất sắc mà còn giỏi trong việc đàm phán và giải quyết tranh chấp một cách hòa bình. Chúng tôi luôn tìm kiếm các giải pháp tối ưu nhất, giúp khách hàng tiết kiệm thời gian và chi phí.',
+      litigationItem3Title: 'Tận tâm và bảo vệ quyền lợi khách hàng',
+      litigationItem3Desc: 'Chúng tôi cam kết bảo vệ quyền lợi hợp pháp của khách hàng đến cùng. Sự tận tâm và kiên định của chúng tôi trong mỗi vụ án đảm bảo rằng khách hàng luôn nhận được sự hỗ trợ pháp lý tốt nhất.',
+      // Steps2 - Labor Section
+      laborTitle: 'Lao động và việc làm',
+      laborSubtitle: 'Nhận thấy pháp luật lao động là lĩnh vực vô cùng rộng và có tác động to lớn tới mọi mặt của đời sống xã hội, các Luật sư của Y&P Law Firm thường xuyên cập nhật kiến thức chuyên môn, theo đó chúng tôi am hiểu sâu sắc về pháp luật lao động. Ngoài ra, việc thường xuyên tham gia thực tế vào quá trình tư vấn, tranh tụng nhiều vụ việc/án lao động cũng đã giúp chúng tôi ngày càng có nhiều kinh nghiệm quý báu liên quan tới lĩnh vực này.\n\nChúng tôi tư vấn về tất cả các khía cạnh của luật lao động, bao gồm nhưng không giới hạn các lĩnh vực về tiêu chuẩn lao động, điều kiện lao động, hợp đồng lao động, chế độ phúc lợi, thời giờ làm việc, nghỉ ngơi, sắp xếp, cơ cấu lại nhân sự, chấm dứt hợp đồng, xử lý kỷ luật lao động, điều chuyển lao động, hòa giải, giải quyết tranh chấp lao động, giấy phép lao động cho nhân viên nước ngoài làm việc tại Việt Nam, đặc biệt là trong quá trình tái cơ cấu doanh nghiệp quy mô lớn như trong quá trình sáp nhập và mua lại.',
+      laborItem1Title: 'Kiến thức chuyên môn sâu rộng',
+      laborItem1Desc: 'Đội ngũ luật sư của chúng tôi có kiến thức chuyên sâu và cập nhật liên tục về các quy định pháp luật lao động. Chúng tôi giúp doanh nghiệp xây dựng và duy trì một môi trường làm việc tuân thủ và công bằng, đảm bảo quyền lợi của người lao động.',
+      laborItem2Title: 'Kinh nghiệm giải quyết tranh chấp lao động',
+      laborItem2Desc: 'Chúng tôi đã hỗ trợ nhiều doanh nghiệp và người lao động giải quyết thành công các tranh chấp lao động, từ các vụ tranh chấp hợp đồng, quyền lợi nhân viên cho đến các vụ sa thải không hợp lý. Chúng tôi luôn tìm ra giải pháp nhanh chóng và hiệu quả.',
+      laborItem3Title: 'Tư vấn chiến lược và giải pháp tối ưu',
+      laborItem3Desc: 'Chúng tôi cung cấp các giải pháp tư vấn chiến lược giúp doanh nghiệp không chỉ tuân thủ pháp luật lao động mà còn tối ưu hóa quy trình quản lý nhân sự. Các dịch vụ của chúng tôi bao gồm tư vấn về hợp đồng lao động, quyền lợi nhân viên, các chính sách và thủ tục lao động, giúp doanh nghiệp duy trì sự ổn định và phát triển bền vững.',
+      // Button texts
+      viewMore: 'Xem thêm',
+      contactUs: 'Liên hệ với chúng tôi',
+      // CTA Section
+      ctaTitle: 'Cùng làm việc với Youth & Partners để thành công',
+      ctaSubtitle: 'Với đội ngũ luật sư giàu kinh nghiệm và tận tâm, chúng tôi cam kết mang lại những giải pháp pháp lý hiệu quả và tối ưu nhất. Cho dù bạn đang bắt đầu một dự án mới, đối mặt với những thách thức pháp lý phức tạp hay cần tư vấn chiến lược dài hạn, chúng tôi sẽ luôn ở đây để hỗ trợ bạn từng bước. Hãy chọn Youth & Partners để đảm bảo sự thành công và bền vững cho các dự án của bạn.',
+    },
+    en: {
+      professionalLegal: 'Professional Legal Services',
+      title: 'Services',
+      legalServices: 'Legal Services',
+      serviceIntro: 'Service Introduction',
+      investmentProject: 'Investment Projects',
+      ma: 'M & A',
+      regularConsulting: 'Regular Consulting for Businesses',
+      litigation: 'Litigation and Dispute Resolution',
+      laborEmployment: 'Labor and Employment',
+      landServices: 'Land Legal Services',
+      comprehensiveProtection: 'Comprehensive Protection',
+      deepExpertise: 'Deep Experience and Expertise',
+      disputeResolution: 'Effective Dispute Resolution',
+      internationalVision: 'International Vision',
+      superiorExperience: 'Superior Experience',
+      comprehensiveSupport: 'Comprehensive and Strategic Support',
+      heroSubtitle: 'With a team of experienced lawyers, combined with deep understanding of Vietnamese law and social knowledge, our clients receive advice on the best ways to conduct business and operations, including negotiations with partners, compliance programs and resolving complex legal issues.',
+      heroSubtitle2: 'Leveraging our understanding of Vietnam\'s increasingly complex legal and social environment, we have advised hundreds of corporate clients through difficulties, minimizing legal risks and working effectively with government agencies.',
+      heroSubtitle3: 'Y&P works with clients to understand their business operations and craft solutions to help them meet business needs and challenges in Vietnam and beyond.',
+      serviceIntroMotto: 'With our operating motto: "Timeliness – Dedication – Excellence", Y&P Lawfirm always strives to provide clients with quality, fast, accurate and complete services.',
+      serviceIntroValue: 'We always believe that the value of a business and a legal consulting firm must start from core values, services must be delivered with the heart and vision of lawyers.',
+      serviceIntroMeasure: 'These values can only be measured by the satisfaction and trust of all clients.',
+      legalServicesSubtitle: 'We have lawyers and legal consultants in charge of the following areas:',
+      enterprise: 'Enterprise',
+      enterpriseDesc: 'Providing comprehensive legal solutions to support businesses in establishment, operation and development.',
+      regularConsultingDesc: 'Providing continuous legal consultation to ensure businesses operate effectively and comply with current regulations.',
+      intellectualProperty: 'Intellectual Property',
+      intellectualPropertyDesc: 'Consulting and supporting intellectual property rights protection, from copyright and patent registration to resolving IP disputes.',
+      governance: 'Corporate Governance and Compliance',
+      governanceDesc: 'Helping businesses build effective governance systems and comply with regulations, minimizing legal risks.',
+      investmentProjectDesc: 'Supporting investors in implementing investment projects in Vietnam, from licensing to resolving related legal issues.',
+      businessSupport: 'Business Support Services',
+      businessSupportDesc: 'Providing business support services, including legal consulting, management support, and resolving issues arising during business operations.',
+      maFull: 'Mergers and Acquisitions (M&A)',
+      maDesc: 'Consulting and supporting M&A transactions, ensuring transactions are carried out effectively and in compliance with the law.',
+      litigationFull: 'Litigation and Dispute Resolution (Civil, Criminal and Administrative)',
+      litigationDesc: 'We represent and support clients in litigation and dispute resolution, protecting clients\' legitimate interests.',
+      laborEmploymentDesc: 'Consulting and supporting businesses and employees on labor contracts, employee benefits, and labor dispute resolution.',
+      landServicesDesc: 'Providing land-related legal services, from land use certificate applications to resolving land disputes.',
+      // Steps2 - Enterprise Section
+      enterpriseTitle: 'Enterprise',
+      enterpriseSubtitle: 'Our Enterprise Department is a convergence of in-depth knowledge from various practice areas, bringing comprehensive services on business registration and company establishment procedures. We are committed to supporting clients at every stage of the business lifecycle, from the initial establishment process, through development stages, to expansion and growth.\n\nOur team of experts is ready to apply extensive knowledge to meet all client needs and requirements. Leveraging our multidimensional understanding of many fields, we create a flexible and professional service ecosystem, helping businesses not only survive but also develop sustainably in an increasingly diverse and challenging business environment.',
+      enterpriseItem1Title: 'Deep Expertise',
+      enterpriseItem1Desc: 'Our legal team has extensive expertise and rich experience in corporate law. We understand legal regulations and business practices, helping your business optimize operations and comply with the law.',
+      enterpriseItem2Title: 'Comprehensive and Effective Solutions',
+      enterpriseItem2Desc: 'We provide comprehensive legal solutions, from business establishment consulting, legal risk management to supporting M&A transactions. Our goal is to deliver effective solutions that save time and costs for clients.',
+      enterpriseItem3Title: 'Dedication and Credibility',
+      enterpriseItem3Desc: 'We always put client interests first, working with the highest dedication and credibility. Client success is the measure of our success. We are committed to accompanying and supporting your business at every stage of development.',
+      // Steps2 - IP Section
+      ipTitle: 'Intellectual Property',
+      ipSubtitle: 'We deeply understand and appreciate the importance of intellectual property (IP) to business success. With expertise in this field, we provide comprehensive consulting services on all aspects of IP, from early stages to critical periods in its lifecycle. Our team has extensive experience advising stakeholders on IP matters, especially in building creative strategies, protection, commercialization and enforcement of IP rights.\n\nWe have successfully collaborated with many famous brand owners and IP rights holders both domestically and internationally, serving diverse industries. Our professionalism and dedication ensure that clients\' IP rights are protected and developed effectively in an increasingly competitive business environment.',
+      ipItem1Title: 'Comprehensive Protection',
+      ipItem1Desc: 'We provide comprehensive IP protection services, from copyright registration, trademarks, patents to author rights protection. Our legal team ensures your intellectual assets are maximally protected against all infringement risks.',
+      ipItem2Title: 'Experience and Deep Expertise',
+      ipItem2Desc: 'With years of experience in IP, we are proud to have a professional legal team with deep understanding of IP law. We constantly update the latest regulations and use expertise to provide optimal solutions for clients.',
+      ipItem3Title: 'Effective Dispute Resolution',
+      ipItem3Desc: 'We not only help you protect IP rights but also help you resolve related disputes effectively. With negotiation skills and litigation experience, we ensure your rights are always protected and optimized in every situation.',
+      // Steps2 - Investment Project Section
+      investmentTitle: 'Investment Projects',
+      investmentSubtitle: 'Y&P Lawfirm\'s investment project consulting experience includes advising domestic and foreign businesses and private investors, throughout the consulting process to help clients navigate the complex intersections of Vietnamese law.\n\nWe are committed to supporting clients from when investment plans begin and even after projects are operational.\n\nFrom investment planning to project establishment and operation maintenance, we are committed to accompanying clients every step of the way to ensure success and sustainability of investment projects.',
+      investmentItem1Title: 'Research, Analysis and Market Assessment',
+      investmentItem1Desc: '- Identify and assess market opportunities and challenges.\n- Analyze market information for strategic decision-making.',
+      investmentItem2Title: 'Finding Suitable Partners',
+      investmentItem2Desc: 'Supporting clients in finding and selecting suitable partners.',
+      investmentItem3Title: 'Foreign Investment Project Information',
+      investmentItem3Desc: 'Providing updated information on foreign investment projects from Vietnamese government agencies.',
+      investmentItem4Title: 'Supporting Investment Activity Setup',
+      investmentItem4Desc: 'Consulting to help clients establish investment activities in Vietnam.',
+      investmentItem5Title: 'Investment Structure',
+      investmentItem5Desc: 'Consulting on the most suitable investment structure for each project type, including both indirect and direct forms.',
+      investmentItem6Title: 'Investor Representation',
+      investmentItem6Desc: 'Liaising and negotiating with authorities to implement projects.',
+      investmentItem7Title: 'Representative Office and Branch Setup Services',
+      investmentItem7Desc: 'Supporting the establishment of representative offices and branches for foreign enterprises in Vietnam.',
+      // Steps2 - M&A Section
+      maTitle: 'M & A',
+      maSubtitle: 'M&A and Corporate Advisory is one of the main foundations of YP Law\'s legal practice, focusing on mergers and acquisitions, foreign direct investment and Corporate Advisory. We have helped clients implement creatively structured transactions and overcome challenges from complex and constantly changing regulations.\n\nBeyond legal expertise, we have deep understanding in many industries including manufacturing, chemicals, consumer goods, logistics, retail, education, and minerals. We understand the complexity of buying and operating large businesses, including everything related to land, assets, environment, foreign exchange... thereby providing valuable legal advice to clients suited to their business needs.',
+      maItem1Title: 'International Vision',
+      maItem1Desc: 'As a law firm in Vietnam with international vision, we combine local knowledge with global perspective. We are continuously referred by former foreign business clients to their partners when Vietnamese legal advice is needed. Our clients include both domestic and international clients. We take great pride in supporting our clients in establishing, operating and expanding business operations in Vietnam.',
+      maItem2Title: 'Superior Experience',
+      maItem2Desc: 'We are frequently requested to coordinate with Accounting firms and Banks to provide comprehensive advice to clients regarding M&A activities. To support M&A activities, we provide clients with related advice:',
+      maItem3Title: 'Comprehensive and Strategic Support',
+      maItem3Desc: 'We provide comprehensive support from preparation, due diligence, negotiation to post-transaction stages. We also provide strategic advice to help clients understand the market, direction and optimize business opportunities from M&A transactions.',
+      // Steps2 - Regular Consulting Section
+      consultingTitle: 'Regular Consulting for Businesses',
+      consultingSubtitle: 'Over the years, we are proud to provide high-quality legal services to many large domestic and foreign businesses in Vietnam such as Samsung, TOPCV, Arcadyan, Cosmos, Viettel, FPT,... as well as many Korean, Japanese, Australian businesses...\n\nWe have diverse and specific experience in each business\'s field of operation, especially foreign-invested manufacturing enterprises.\n\nEspecially, to date, Y&P is one of the few law firms that can provide in-depth consulting on Corporate Social Responsibility (CSR) or specifically the RBA code currently applied to many businesses. This makes us a reliable partner choice for manufacturing enterprises that must comply with these rules. Y&P Lawfirm is honored to support and accompany clients, especially in implementing the requirements of this RBA Code.',
+      consultingItem1Title: 'Rich and Diverse Experience',
+      consultingItem1Desc: 'We are proud to have successfully consulted for many leading businesses, both domestic and international. The richness and diversity of our experience helps us understand and meet each client\'s legal needs accurately and most effectively.',
+      consultingItem2Title: 'Dedicated and Professional Expert Team',
+      consultingItem2Desc: 'Our legal team not only has deep legal knowledge but also strategic thinking and creativity in solving complex legal issues. We always put client interests first, working wholeheartedly to ensure business success and sustainable development.',
+      consultingItem3Title: 'Customized and Flexible Solutions',
+      consultingItem3Desc: 'We provide legal solutions customized to each business\'s specific needs. The flexibility of our services helps businesses not only comply with regulations but also optimize operations and manage risks effectively.',
+      // Steps2 - Governance Section
+      governanceTitle: 'Corporate Governance and Compliance',
+      governanceSubtitle: 'Y&P Lawfirm can provide clients with comprehensive advice on corporate governance and legal compliance, thereby reducing or preventing risks of civil liability, criminal liability, administrative penalties or other risks that may adversely affect the business, ensuring the reputation and image of the organization and individuals are protected.\n\nY&P Lawfirm designs and adjusts legal compliance programs to meet each client\'s business requirements, taking into account organizational and management structure, culture and existing needs. We follow a cost-effective team approach in developing and updating clients\' compliance programs. Our compliance lawyers have experience in areas such as labor, environment, tax, intellectual property while advising clients on managing internal and external disputes, litigation and other legal risks.',
+      governanceItem1Title: 'Expertise and Experience',
+      governanceItem1Desc: 'Our team of lawyers and experts has extensive knowledge and rich experience in corporate governance and compliance. We constantly update the latest regulations and use expertise to provide optimal solutions for clients.',
+      governanceItem2Title: 'Comprehensive and Effective Solutions',
+      governanceItem2Desc: 'We provide comprehensive corporate governance solutions, helping businesses build effective management systems and comply with regulations. Our goal is to deliver effective solutions that save time and costs for clients.',
+      governanceItem3Title: 'Continuous Support and Accompaniment',
+      governanceItem3Desc: 'We are committed to accompanying businesses throughout their operations, from establishment to development and expansion. We are always ready to support and advise, ensuring businesses always comply with the law and minimize legal risks. We work closely with boards of directors, general counsel and compliance officers to better understand business needs and develop compliance programs suited to the company\'s profile, timeline and budget.',
+      // Steps2 - Business Support Section
+      supportTitle: 'Business Support Services',
+      supportSubtitle: 'To "build a circle" of comprehensive client support, we have strived to complete and provide diverse services to each client with service activities such as:\n\n- Providing interpretation (English, Chinese, Korean), translation and notarized document translation;\n- Providing experts, legal advisors; Legal secretaries (for corporate meetings);\n- Applying for Foreign Language, IT, vocational training licenses;\n- Consulting & applying for Real Estate Exchange registration;\n- Applying for Construction Design practice certificates; Private medical practice certificates;\n- Consulting on visas, work permits, temporary residence cards for investors and foreign workers.',
+      supportItem1Title: 'Comprehensive Support',
+      supportItem1Desc: 'We provide comprehensive business support services, including legal consulting, risk management and financial management support. We ensure every aspect of your business is protected and develops sustainably.',
+      supportItem2Title: 'Experienced Expert Team',
+      supportItem2Desc: 'Our expert team has extensive expertise and rich experience in many fields. We are always ready to provide optimal solutions, helping your business operate effectively and achieve business goals.',
+      supportItem3Title: 'Flexible and Customized Solutions',
+      supportItem3Desc: 'We understand that each business has unique needs and challenges. Therefore, we provide flexible and customized solutions suited to each business, ensuring you receive the best support, most suited to your specific situation.',
+      // Steps2 - Land Services Section
+      landTitle: 'Land Legal Services',
+      landSubtitle: 'Land is related to almost all areas of social life, from wills and inheritance, buying and selling, investment construction to even marriage and family.\n\nAll areas, somewhere, have the shadow of land law through the ages. Youth & Partners Law Firm is confident in being an in-depth consulting unit in this field.',
+      landItem1Title: 'Dispute Resolution',
+      landItem1Desc: 'Assigning lawyers to resolve land disputes in and out of court;',
+      landItem2Title: 'Document Drafting',
+      landItem2Desc: 'Drafting petitions, complaints related to land, land disputes;',
+      landItem3Title: 'Land Legal Services',
+      landItem3Desc: 'Performing land-related legal services such as: Transfer, name change, first-time registration, wills, inheritance, inheritance declaration, inheritance distribution agreement',
+      // Steps2 - Litigation Section
+      litigationTitle: 'Litigation and Dispute Resolution',
+      litigationSubtitle: 'In addition to consulting for clients in the above areas, as a unit with a team of professional and experienced lawyers, we will directly protect clients\' legitimate rights and interests at procedural agencies. This includes activities such as:\n\n- Assigning lawyers to participate in court litigation;\n- Assigning lawyers to participate in arbitration cases;\n- Lawyers as authorized representatives in proceedings or out-of-court authorization;\n- Drafting files, petitions and other documents related to accusations, petitions, complaints, complaint responses and dispute resolution in all fields.',
+      litigationItem1Title: 'Superior Expertise',
+      litigationItem1Desc: 'Our legal team has deep knowledge and rich experience in litigation and dispute resolution. We have succeeded in representing clients in many complex and large-scale cases.',
+      litigationItem2Title: 'Effective Negotiation Strategy',
+      litigationItem2Desc: 'We not only have excellent litigation skills but are also skilled in peaceful negotiation and dispute resolution. We always seek the most optimal solutions, helping clients save time and costs.',
+      litigationItem3Title: 'Dedication and Client Rights Protection',
+      litigationItem3Desc: 'We are committed to protecting clients\' legitimate rights to the end. Our dedication and persistence in each case ensures that clients always receive the best legal support.',
+      // Steps2 - Labor Section
+      laborTitle: 'Labor and Employment',
+      laborSubtitle: 'Recognizing that labor law is an extremely broad field with great impact on all aspects of social life, Y&P Law Firm\'s lawyers constantly update their expertise, giving us deep understanding of labor law. Additionally, regular practical participation in consulting and litigating many labor cases has helped us gain valuable experience in this field.\n\nWe advise on all aspects of labor law, including but not limited to labor standards, working conditions, labor contracts, benefits, working hours, rest, restructuring, personnel reorganization, contract termination, labor discipline, labor transfer, mediation, labor dispute resolution, work permits for foreign employees working in Vietnam, especially during large-scale corporate restructuring such as mergers and acquisitions.',
+      laborItem1Title: 'Deep Professional Knowledge',
+      laborItem1Desc: 'Our legal team has deep knowledge and continuously updates on labor law regulations. We help businesses build and maintain a compliant and fair working environment, ensuring workers\' rights.',
+      laborItem2Title: 'Labor Dispute Resolution Experience',
+      laborItem2Desc: 'We have successfully supported many businesses and workers in resolving labor disputes, from contract disputes, employee benefits to unfair dismissals. We always find quick and effective solutions.',
+      laborItem3Title: 'Strategic Consulting and Optimal Solutions',
+      laborItem3Desc: 'We provide strategic consulting solutions to help businesses not only comply with labor law but also optimize HR management processes. Our services include consulting on labor contracts, employee benefits, labor policies and procedures, helping businesses maintain stability and sustainable development.',
+      // Button texts
+      viewMore: 'View More',
+      contactUs: 'Contact Us',
+      // CTA Section
+      ctaTitle: 'Partner with Youth & Partners for Success',
+      ctaSubtitle: 'With our experienced and dedicated legal team, we are committed to providing effective and optimal legal solutions. Whether you are starting a new project, facing complex legal challenges, or need long-term strategic advice, we are here to support you every step of the way. Choose Youth & Partners to ensure success and sustainability for your projects.',
+    },
+    zh: {
+      professionalLegal: '专业法律服务',
+      title: '服务',
+      legalServices: '法律服务',
+      serviceIntro: '服务介绍',
+      investmentProject: '投资项目',
+      ma: '并购',
+      regularConsulting: '企业常规咨询',
+      litigation: '诉讼与争议解决',
+      laborEmployment: '劳动与就业',
+      landServices: '土地法律服务',
+      comprehensiveProtection: '全面保护',
+      deepExpertise: '深厚的经验和专业知识',
+      disputeResolution: '有效的争议解决',
+      internationalVision: '国际视野',
+      superiorExperience: '卓越经验',
+      comprehensiveSupport: '全面战略支持',
+      heroSubtitle: '凭借经验丰富的律师团队，结合对越南法律和社会知识的深刻理解，我们的客户可以获得关于最佳商业运营方式的建议，包括与合作伙伴的谈判、合规计划和解决复杂的法律问题。',
+      heroSubtitle2: '利用我们对越南日益复杂的法律和社会环境的理解，我们已为数百家企业客户提供咨询，帮助他们克服困难、最大限度地降低法律风险并与政府机构有效合作。',
+      heroSubtitle3: 'Y&P与客户合作，了解他们的业务运营并制定解决方案，帮助他们满足越南及其他地区的业务需求和挑战。',
+      serviceIntroMotto: '以"时间-专心-全力"为经营理念，Y&P律所始终致力于为客户提供优质、快速、准确和完整的服务。',
+      serviceIntroValue: '我们始终认为，企业和法律咨询公司的价值必须从核心价值观出发，服务必须由律师的心和眼光来提供。',
+      serviceIntroMeasure: '这些价值只能通过所有客户的满意和信任来衡量。',
+      legalServicesSubtitle: '我们有负责以下领域的律师和法律顾问：',
+      enterprise: '企业',
+      enterpriseDesc: '提供全面的法律解决方案，支持企业的成立、运营和发展。',
+      regularConsultingDesc: '提供持续的法律咨询，确保企业有效运营并遵守现行法规。',
+      intellectualProperty: '知识产权',
+      intellectualPropertyDesc: '咨询和支持知识产权保护，从版权和专利注册到解决知识产权纠纷。',
+      governance: '公司治理与合规',
+      governanceDesc: '帮助企业建立有效的治理体系并遵守法规，最大限度地降低法律风险。',
+      investmentProjectDesc: '支持投资者在越南实施投资项目，从许可证申请到解决相关法律问题。',
+      businessSupport: '企业支持服务',
+      businessSupportDesc: '提供企业支持服务，包括法律咨询、管理支持和解决业务运营中出现的问题。',
+      maFull: '并购（M&A）',
+      maDesc: '咨询和支持并购交易，确保交易有效合法地进行。',
+      litigationFull: '诉讼与争议解决（民事、刑事及行政）',
+      litigationDesc: '我们代表和支持客户进行诉讼和争议解决，保护客户的合法权益。',
+      laborEmploymentDesc: '为企业和员工提供有关劳动合同、员工福利和劳动争议解决的咨询和支持。',
+      landServicesDesc: '提供与土地相关的法律服务，从土地使用证申请到解决土地争议。',
+      // Steps2 - Enterprise Section
+      enterpriseTitle: '企业',
+      enterpriseSubtitle: '我们的企业部汇集了各个执业领域的深厚知识，为客户提供有关商业登记和公司设立程序的全面服务。我们承诺在企业生命周期的每个阶段为客户提供支持，从最初的设立过程，经过发展阶段，直到扩展和增长。\n\n我们的专家团队随时准备应用广泛的知识来满足客户的所有需求和要求。利用我们对多个领域的多维理解，我们创建了一个灵活专业的服务生态系统，帮助企业不仅生存，而且在日益多元化和充满挑战的商业环境中可持续发展。',
+      enterpriseItem1Title: '深厚的专业知识',
+      enterpriseItem1Desc: '我们的法律团队在企业法律领域拥有深厚的专业知识和丰富的经验。我们了解法律法规和商业惯例，帮助您的企业优化运营并遵守法律。',
+      enterpriseItem2Title: '全面有效的解决方案',
+      enterpriseItem2Desc: '我们提供全面的法律解决方案，从企业设立咨询、法律风险管理到支持并购交易。我们的目标是为客户提供有效、节省时间和成本的解决方案。',
+      enterpriseItem3Title: '敬业与信誉',
+      enterpriseItem3Desc: '我们始终将客户利益放在首位，以最高的敬业精神和信誉工作。客户的成功是衡量我们成功的标准。我们承诺在发展的每个阶段陪伴和支持您的企业。',
+      // Steps2 - IP Section
+      ipTitle: '知识产权',
+      ipSubtitle: '我们深刻理解并高度重视知识产权（IP）对企业成功的重要性。凭借在该领域的专业知识，我们提供涵盖知识产权各个方面的全面咨询服务，从早期阶段到其生命周期中的关键时期。我们的团队在为利益相关者提供知识产权事务咨询方面拥有丰富的经验，特别是在制定创意战略、保护、商业化和执行知识产权方面。\n\n我们已成功与国内外许多著名品牌所有者和知识产权持有人合作，服务于多个行业。我们的专业精神和奉献精神确保客户的知识产权在日益竞争的商业环境中得到有效保护和发展。',
+      ipItem1Title: '全面保护',
+      ipItem1Desc: '我们提供全面的知识产权保护服务，从版权注册、商标、专利到作者权利保护。我们的法律团队确保您的知识资产得到最大程度的保护，免受一切侵权风险。',
+      ipItem2Title: '经验丰富的专业知识',
+      ipItem2Desc: '凭借多年的知识产权领域经验，我们自豪地拥有一支专业的法律团队，对知识产权法有深刻的理解。我们不断更新最新法规，运用专业知识为客户提供最佳解决方案。',
+      ipItem3Title: '有效的争议解决',
+      ipItem3Desc: '我们不仅帮助您保护知识产权，还帮助您有效解决相关争议。凭借谈判技巧和诉讼经验，我们确保您的权利在任何情况下都能得到保护和优化。',
+      // Steps2 - Investment Project Section
+      investmentTitle: '投资项目',
+      investmentSubtitle: 'Y&P律所的投资项目咨询经验包括为国内外企业和私人投资者提供咨询，在整个咨询过程中帮助客户驾驭越南法律的复杂交汇。\n\n我们承诺从投资计划开始时就支持客户，甚至在项目投入运营后也是如此。\n\n从投资规划到项目建立和运营维护，我们承诺在每一步都陪伴客户，确保投资项目的成功和可持续性。',
+      investmentItem1Title: '研究、分析和市场评估',
+      investmentItem1Desc: '- 识别和评估市场机会和挑战。\n- 分析市场信息以进行战略决策。',
+      investmentItem2Title: '寻找合适的合作伙伴',
+      investmentItem2Desc: '支持客户寻找和选择合适的合作伙伴。',
+      investmentItem3Title: '外国投资项目信息',
+      investmentItem3Desc: '提供来自越南政府机构的外国投资项目更新信息。',
+      investmentItem4Title: '支持投资活动设立',
+      investmentItem4Desc: '咨询帮助客户在越南建立投资活动。',
+      investmentItem5Title: '投资结构',
+      investmentItem5Desc: '就每种项目类型最合适的投资结构提供咨询，包括间接和直接形式。',
+      investmentItem6Title: '投资者代表',
+      investmentItem6Desc: '与相关部门联络和谈判以实施项目。',
+      investmentItem7Title: '代表处和分支机构设立服务',
+      investmentItem7Desc: '支持外国企业在越南设立代表处和分支机构。',
+      // Steps2 - M&A Section
+      maTitle: '并购',
+      maSubtitle: '并购和企业咨询是YP法律事务所法律实践的主要基础之一，专注于合并和收购、外国直接投资和企业咨询。我们帮助客户实施创新结构的交易，克服复杂且不断变化的法规带来的挑战。\n\n除了法律专业知识外，我们对制造业、化工、消费品、物流、零售、教育和矿产等多个行业有深入了解。我们理解购买和运营大型企业的复杂性，包括与土地、资产、环境、外汇相关的所有问题...从而为客户提供符合其商业需求的有价值的法律建议。',
+      maItem1Title: '国际视野',
+      maItem1Desc: '作为一家具有国际视野的越南律师事务所，我们将本地知识与全球视角相结合。我们不断被以前的外国企业客户推荐给需要越南法律咨询的合作伙伴。我们的客户包括国内和国际客户。我们非常自豪能够支持客户在越南建立、运营和扩展业务。',
+      maItem2Title: '卓越经验',
+      maItem2Desc: '我们经常被要求与会计师事务所和银行协调，为客户提供有关并购活动的全面建议。为支持并购活动，我们为客户提供相关咨询：',
+      maItem3Title: '全面战略支持',
+      maItem3Desc: '我们提供从准备、尽职调查、谈判到交易后阶段的全面支持。我们还提供战略建议，帮助客户了解市场、方向并优化并购交易的商业机会。',
+      // Steps2 - Regular Consulting Section
+      consultingTitle: '企业常规咨询',
+      consultingSubtitle: '多年来，我们自豪地为越南许多大型国内外企业提供高质量的法律服务，如三星、TOPCV、Arcadyan、Cosmos、Viettel、FPT...以及许多韩国、日本、澳大利亚企业...\n\n我们在每个企业的运营领域拥有多样化和具体的经验，尤其是外资制造企业。\n\n特别是，到目前为止，Y&P是少数能够深入咨询企业社会责任（CSR）或具体而言目前适用于许多企业的RBA准则的律师事务所之一。这使我们成为必须遵守这些规则的制造企业值得信赖的合作伙伴选择。Y&P律所很荣幸能够支持和陪伴客户，特别是在执行RBA准则的要求方面。',
+      consultingItem1Title: '丰富多样的经验',
+      consultingItem1Desc: '我们自豪地成功为许多国内外领先企业提供咨询。我们经验的丰富性和多样性帮助我们准确有效地理解和满足每个客户的法律需求。',
+      consultingItem2Title: '敬业专业的专家团队',
+      consultingItem2Desc: '我们的法律团队不仅拥有深厚的法律知识，还具有解决复杂法律问题的战略思维和创造力。我们始终将客户利益放在首位，全心全意工作，确保企业的成功和可持续发展。',
+      consultingItem3Title: '定制灵活的解决方案',
+      consultingItem3Desc: '我们提供根据每个企业具体需求定制的法律解决方案。我们服务的灵活性帮助企业不仅遵守法规，还能有效优化运营和管理风险。',
+      // Steps2 - Governance Section
+      governanceTitle: '公司治理与合规',
+      governanceSubtitle: 'Y&P律所可以为客户提供有关公司治理和法律合规的全面建议，从而减少或防止民事责任、刑事责任、行政处罚或其他可能对企业产生不利影响的风险，确保组织和个人的声誉和形象得到保护。\n\nY&P律所设计和调整法律合规计划，以满足每个客户的业务要求，考虑组织和管理结构、文化和现有需求。我们在开发和更新客户合规计划时采用具有成本效益的团队方法。我们的合规律师在劳动、环境、税务、知识产权等领域拥有经验，同时就管理内部和外部争议、诉讼和其他法律风险向客户提供建议。',
+      governanceItem1Title: '专业知识和经验',
+      governanceItem1Desc: '我们的律师和专家团队在公司治理和合规领域拥有广泛的知识和丰富的经验。我们不断更新最新法规，运用专业知识为客户提供最佳解决方案。',
+      governanceItem2Title: '全面有效的解决方案',
+      governanceItem2Desc: '我们提供全面的公司治理解决方案，帮助企业建立有效的管理系统并遵守法规。我们的目标是为客户提供有效、节省时间和成本的解决方案。',
+      governanceItem3Title: '持续支持和陪伴',
+      governanceItem3Desc: '我们承诺在整个运营过程中陪伴企业，从成立到发展和扩张。我们随时准备提供支持和建议，确保企业始终遵守法律并将法律风险降到最低。我们与董事会、总法律顾问和合规官密切合作，更好地了解业务需求，并制定适合公司概况、时间表和预算的合规计划。',
+      // Steps2 - Business Support Section
+      supportTitle: '企业支持服务',
+      supportSubtitle: '为了"构建圆圈"全面支持客户，我们努力完善并向每位客户提供多样化的服务，服务活动包括：\n\n- 提供口译（英语、中文、韩语）、翻译和公证文件翻译；\n- 提供专家、法律顾问；法律秘书（用于企业会议）；\n- 申请外语、IT、职业培训许可证；\n- 咨询和申请房地产交易所注册；\n- 申请建筑设计执业证书；私人医疗执业证书；\n- 为投资者和外国劳工咨询签证、工作许可证、临时居留卡。',
+      supportItem1Title: '全面支持',
+      supportItem1Desc: '我们提供全面的企业支持服务，包括法律咨询、风险管理和财务管理支持。我们确保您企业的各个方面都得到保护并可持续发展。',
+      supportItem2Title: '经验丰富的专家团队',
+      supportItem2Desc: '我们的专家团队在多个领域拥有广泛的专业知识和丰富的经验。我们随时准备提供最佳解决方案，帮助您的企业有效运营并实现业务目标。',
+      supportItem3Title: '灵活定制的解决方案',
+      supportItem3Desc: '我们理解每个企业都有独特的需求和挑战。因此，我们提供灵活且定制的解决方案，适合每个企业，确保您获得最好的支持，最适合您的具体情况。',
+      // Steps2 - Land Services Section
+      landTitle: '土地法律服务',
+      landSubtitle: '土地与社会生活的几乎所有领域相关，从遗嘱和继承、买卖、投资建设到婚姻和家庭。\n\n所有领域，在某些地方，都有历代土地法的影子。Youth & Partners律所自信是该领域的深入咨询机构。',
+      landItem1Title: '争议解决',
+      landItem1Desc: '派遣律师参与法庭内外的土地争议解决；',
+      landItem2Title: '文件起草',
+      landItem2Desc: '起草与土地、土地争议相关的申请书、投诉书；',
+      landItem3Title: '土地法律服务',
+      landItem3Desc: '执行与土地相关的法律服务，如：转让、更名、首次登记、遗嘱、继承、继承申报、继承分配协议',
+      // Steps2 - Litigation Section
+      litigationTitle: '诉讼与争议解决',
+      litigationSubtitle: '除了为客户提供上述领域的咨询外，作为一个拥有专业经验丰富的律师团队的机构，我们将直接在诉讼机关保护客户的合法权益。这包括以下活动：\n\n- 派遣律师参与法庭诉讼；\n- 派遣律师参与仲裁案件；\n- 律师作为授权代表参与诉讼或诉讼外授权；\n- 起草与各领域控告、申请、投诉、投诉回复和争议解决相关的文件、申请书和其他文件。',
+      litigationItem1Title: '卓越专业知识',
+      litigationItem1Desc: '我们的法律团队在诉讼和争议解决领域拥有深厚的知识和丰富的经验。我们成功地在许多复杂和大规模案件中代表客户。',
+      litigationItem2Title: '有效的谈判策略',
+      litigationItem2Desc: '我们不仅拥有出色的诉讼技能，还擅长和平谈判和争议解决。我们始终寻求最佳解决方案，帮助客户节省时间和成本。',
+      litigationItem3Title: '敬业和保护客户权益',
+      litigationItem3Desc: '我们承诺保护客户的合法权益到底。我们在每个案件中的敬业和坚持确保客户始终获得最好的法律支持。',
+      // Steps2 - Labor Section
+      laborTitle: '劳动与就业',
+      laborSubtitle: '认识到劳动法是一个极其广泛的领域，对社会生活的各个方面都有重大影响，Y&P律所的律师不断更新专业知识，使我们对劳动法有深入的了解。此外，经常实际参与咨询和诉讼许多劳动案件也帮助我们在该领域积累了宝贵的经验。\n\n我们就劳动法的所有方面提供咨询，包括但不限于劳动标准、工作条件、劳动合同、福利、工作时间、休息、重组、人员重组、合同终止、劳动纪律、劳动调动、调解、劳动争议解决、在越南工作的外国员工的工作许可证，特别是在大规模企业重组（如合并和收购）期间。',
+      laborItem1Title: '深厚的专业知识',
+      laborItem1Desc: '我们的法律团队对劳动法规拥有深厚的知识并不断更新。我们帮助企业建立和维护合规公平的工作环境，确保劳动者的权益。',
+      laborItem2Title: '劳动争议解决经验',
+      laborItem2Desc: '我们已成功帮助许多企业和劳动者解决劳动争议，从合同争议、员工福利到不公平解雇。我们始终找到快速有效的解决方案。',
+      laborItem3Title: '战略咨询和最佳解决方案',
+      laborItem3Desc: '我们提供战略咨询解决方案，帮助企业不仅遵守劳动法，还能优化人力资源管理流程。我们的服务包括劳动合同、员工福利、劳动政策和程序咨询，帮助企业保持稳定和可持续发展。',
+      // Button texts
+      viewMore: '查看更多',
+      contactUs: '联系我们',
+      // CTA Section
+      ctaTitle: '与Youth & Partners合作取得成功',
+      ctaSubtitle: '凭借我们经验丰富且敬业的法律团队，我们致力于提供有效且最佳的法律解决方案。无论您是开始新项目、面临复杂的法律挑战，还是需要长期战略建议，我们都会在每一步为您提供支持。选择Youth & Partners，确保您项目的成功和可持续发展。',
+    },
+    ja: {
+      professionalLegal: '専門法律サービス',
+      title: 'サービス',
+      legalServices: '法律サービス',
+      serviceIntro: 'サービス紹介',
+      investmentProject: '投資プロジェクト',
+      ma: 'M&A',
+      regularConsulting: '企業向け定期コンサルティング',
+      litigation: '訴訟と紛争解決',
+      laborEmployment: '労働と雇用',
+      landServices: '土地法律サービス',
+      comprehensiveProtection: '包括的保護',
+      deepExpertise: '深い経験と専門知識',
+      disputeResolution: '効果的な紛争解決',
+      internationalVision: '国際的視野',
+      superiorExperience: '優れた経験',
+      comprehensiveSupport: '包括的戦略支援',
+      heroSubtitle: '経験豊富な弁護士チームと、ベトナムの法律と社会知識への深い理解を組み合わせ、クライアントにビジネスと運営の最善の方法、パートナーとの交渉、コンプライアンスプログラム、複雑な法的問題の解決についてアドバイスを提供します。',
+      heroSubtitle2: 'ベトナムのますます複雑化する法的・社会的環境への理解を活用し、何百もの企業クライアントに困難を乗り越え、法的リスクを最小化し、政府機関と効果的に協力するためのアドバイスを提供してきました。',
+      heroSubtitle3: 'Y&Pはクライアントと協力してビジネス運営を理解し、ベトナムおよびそれ以外の地域でのビジネスニーズと課題に対応するソリューションを提供します。',
+      serviceIntroMotto: '「時間・誠心・全力」という経営理念のもと、Y&P法律事務所は常にクライアントに質の高い、迅速で、正確かつ完全なサービスを提供することを目指しています。',
+      serviceIntroValue: '私たちは、企業と法律コンサルティング会社の価値は核心的な価値観から始まり、サービスは弁護士の心とビジョンによって提供されなければならないと常に考えています。',
+      serviceIntroMeasure: 'これらの価値は、すべてのクライアントの満足と信頼によってのみ測ることができます。',
+      legalServicesSubtitle: '以下の分野を担当する弁護士と法律コンサルタントがいます：',
+      enterprise: '企業',
+      enterpriseDesc: '企業の設立、運営、発展をサポートする包括的な法的ソリューションを提供します。',
+      regularConsultingDesc: '企業が効果的に運営し、現行の規制を遵守できるよう、継続的な法律相談を提供します。',
+      intellectualProperty: '知的財産',
+      intellectualPropertyDesc: '著作権や特許登録から知的財産紛争の解決まで、知的財産権の保護をコンサルティングおよびサポートします。',
+      governance: 'コーポレートガバナンスとコンプライアンス',
+      governanceDesc: '企業が効果的なガバナンスシステムを構築し、規制を遵守し、法的リスクを最小化するのを支援します。',
+      investmentProjectDesc: '許認可から関連する法的問題の解決まで、ベトナムでの投資プロジェクトの実施を投資家にサポートします。',
+      businessSupport: 'ビジネスサポートサービス',
+      businessSupportDesc: '法律コンサルティング、管理サポート、ビジネス運営中に発生する問題の解決を含むビジネスサポートサービスを提供します。',
+      maFull: '合併・買収（M&A）',
+      maDesc: 'M&A取引のコンサルティングとサポートを行い、取引が効果的かつ法令遵守で実行されることを保証します。',
+      litigationFull: '訴訟と紛争解決（民事、刑事、行政）',
+      litigationDesc: '訴訟と紛争解決でクライアントを代理およびサポートし、クライアントの正当な利益を保護します。',
+      laborEmploymentDesc: '労働契約、従業員福利厚生、労働紛争解決について企業と従業員にコンサルティングとサポートを提供します。',
+      landServicesDesc: '土地使用証明書の申請から土地紛争の解決まで、土地関連の法律サービスを提供します。',
+      // Steps2 - Enterprise Section
+      enterpriseTitle: '企業',
+      enterpriseSubtitle: '当社の企業部門は、様々な業務分野からの深い知識が集まる場所であり、事業登録と会社設立手続きに関する包括的なサービスをお客様に提供します。当社は、企業のライフサイクルのあらゆる段階でお客様をサポートすることをお約束します。最初の設立プロセスから、発展段階を経て、拡大と成長に至るまで。\n\n当社の専門家チームは、お客様のすべてのニーズと要件を満たすために、幅広い知識を適用する準備ができています。多くの分野に関する多次元的な理解を活用して、柔軟で専門的なサービスエコシステムを構築し、企業が存続するだけでなく、ますます多様で挑戦的なビジネス環境で持続可能な発展を遂げるお手伝いをします。',
+      enterpriseItem1Title: '深い専門知識',
+      enterpriseItem1Desc: '当社の法務チームは、企業法の分野で深い専門知識と豊富な経験を持っています。法的規制とビジネス慣行を理解し、お客様のビジネスが運営を最適化し、法律を遵守するお手伝いをします。',
+      enterpriseItem2Title: '包括的で効果的なソリューション',
+      enterpriseItem2Desc: '当社は、企業設立コンサルティング、法的リスク管理からM&A取引のサポートまで、包括的な法的ソリューションを提供します。当社の目標は、お客様のために時間とコストを節約する効果的なソリューションを提供することです。',
+      enterpriseItem3Title: '献身と信頼性',
+      enterpriseItem3Desc: '当社は常にお客様の利益を最優先に考え、最高の献身と信頼性をもって仕事をしています。お客様の成功が当社の成功の尺度です。発展のあらゆる段階でお客様のビジネスに寄り添い、サポートすることをお約束します。',
+      // Steps2 - IP Section
+      ipTitle: '知的財産',
+      ipSubtitle: '当社は、企業の成功にとって知的財産（IP）の重要性を深く理解し、高く評価しています。この分野での専門知識を活かし、IPのあらゆる側面に関する包括的なコンサルティングサービスを提供します。初期段階からライフサイクルの重要な時期まで。当社のチームは、特に創造的戦略の構築、保護、商業化、IP権の執行において、利害関係者にIPに関するアドバイスを提供する豊富な経験を持っています。\n\n当社は、国内外の多くの有名なブランドオーナーおよびIP権保有者と成功裏に協力し、多様な産業にサービスを提供してきました。当社のプロフェッショナリズムと献身は、ますます競争が激しくなるビジネス環境において、お客様のIP権が効果的に保護され、発展することを保証します。',
+      ipItem1Title: '包括的保護',
+      ipItem1Desc: '当社は、著作権登録、商標、特許から著作者の権利保護まで、包括的なIP保護サービスを提供します。当社の法務チームは、お客様の知的資産があらゆる侵害リスクから最大限に保護されることを保証します。',
+      ipItem2Title: '経験と深い専門知識',
+      ipItem2Desc: 'IP分野での長年の経験により、当社はIP法に深い理解を持つ専門的な法務チームを誇りに思っています。最新の規制を常に更新し、お客様に最適なソリューションを提供するために専門知識を活用しています。',
+      ipItem3Title: '効果的な紛争解決',
+      ipItem3Desc: '当社は、IP権を保護するだけでなく、関連する紛争を効果的に解決するお手伝いもします。交渉スキルと訴訟経験により、あらゆる状況においてお客様の権利が常に保護され、最適化されることを保証します。',
+      // Steps2 - Investment Project Section
+      investmentTitle: '投資プロジェクト',
+      investmentSubtitle: 'Y&P法律事務所の投資プロジェクトコンサルティング経験には、国内外の企業および個人投資家へのアドバイスが含まれ、コンサルティングプロセス全体を通じてお客様がベトナム法の複雑な交差点をナビゲートするのを支援します。\n\n当社は、投資計画の開始時からプロジェクトが運用開始後も、お客様をサポートすることをお約束します。\n\n投資計画からプロジェクトの設立と運営維持まで、投資プロジェクトの成功と持続可能性を確保するために、すべてのステップでお客様に寄り添うことをお約束します。',
+      investmentItem1Title: '調査、分析、市場評価',
+      investmentItem1Desc: '- 市場の機会と課題を特定し評価する。\n- 戦略的意思決定のために市場情報を分析する。',
+      investmentItem2Title: '適切なパートナーの発見',
+      investmentItem2Desc: '適切なパートナーの発見と選択においてお客様をサポートします。',
+      investmentItem3Title: '外国投資プロジェクト情報',
+      investmentItem3Desc: 'ベトナム政府機関からの外国投資プロジェクトに関する最新情報を提供します。',
+      investmentItem4Title: '投資活動設立のサポート',
+      investmentItem4Desc: 'ベトナムでの投資活動の設立についてお客様をコンサルティングし支援します。',
+      investmentItem5Title: '投資構造',
+      investmentItem5Desc: '間接形式と直接形式の両方を含む、各プロジェクトタイプに最も適した投資構造についてコンサルティングします。',
+      investmentItem6Title: '投資家の代理',
+      investmentItem6Desc: 'プロジェクトを実施するために当局と連絡を取り、交渉します。',
+      investmentItem7Title: '駐在員事務所・支店設立サービス',
+      investmentItem7Desc: 'ベトナムにおける外国企業の駐在員事務所および支店の設立をサポートします。',
+      // Steps2 - M&A Section
+      maTitle: 'M&A',
+      maSubtitle: 'M&Aと企業アドバイザリーは、YP Lawの法律業務の主要な基盤の一つであり、合併・買収、外国直接投資、企業アドバイザリーに焦点を当てています。当社は、お客様が創造的に構造化された取引を実施し、複雑で絶えず変化する規制からの課題を克服するお手伝いをしてきました。\n\n法律の専門知識に加えて、当社は製造業、化学、消費財、物流、小売、教育、鉱物など多くの産業に深い理解を持っています。土地、資産、環境、外国為替に関するすべての問題を含む、大企業の買収と運営の複雑さを理解しています...それにより、お客様のビジネスニーズに合った価値ある法律アドバイスを提供しています。',
+      maItem1Title: '国際的ビジョン',
+      maItem1Desc: '国際的なビジョンを持つベトナムの法律事務所として、当社はローカルな知識とグローバルな視点を組み合わせています。ベトナムの法律アドバイスが必要な場合、以前の外国ビジネスクライアントからパートナーに継続的に紹介されています。当社のクライアントには、国内および国際的なクライアントの両方が含まれます。当社は、ベトナムでの事業の設立、運営、拡大においてお客様をサポートすることを大変誇りに思っています。',
+      maItem2Title: '優れた経験',
+      maItem2Desc: '当社は、M&A活動に関してお客様に包括的なアドバイスを提供するために、会計事務所や銀行と連携することを頻繁に求められています。M&A活動をサポートするために、お客様に関連するアドバイスを提供します：',
+      maItem3Title: '包括的で戦略的なサポート',
+      maItem3Desc: '当社は、準備、デューデリジェンス、交渉から取引後の段階まで包括的なサポートを提供します。また、市場、方向性を理解し、M&A取引からのビジネス機会を最適化するための戦略的アドバイスも提供します。',
+      // Steps2 - Regular Consulting Section
+      consultingTitle: '企業向け定期コンサルティング',
+      consultingSubtitle: '長年にわたり、当社はベトナムのサムスン、TOPCV、Arcadyan、Cosmos、Viettel、FPTなどの多くの大手国内外企業、および多くの韓国、日本、オーストラリア企業に高品質の法律サービスを提供することを誇りに思っています...\n\n当社は、各企業の事業分野において多様で具体的な経験を持っており、特に外資系製造企業において顕著です。\n\n特に、現在まで、Y&Pは、多くの企業に現在適用されているCSR（企業の社会的責任）や具体的にはRBA行動規範について深いコンサルティングを提供できる数少ない法律事務所の一つです。これにより、当社はこれらのルールを遵守しなければならない製造企業にとって信頼できるパートナーの選択肢となっています。Y&P法律事務所は、特にこのRBA行動規範の要件の実施において、お客様をサポートし、寄り添うことを光栄に思っています。',
+      consultingItem1Title: '豊富で多様な経験',
+      consultingItem1Desc: '当社は、国内外の多くの一流企業に成功裏にコンサルティングを提供してきたことを誇りに思っています。当社の経験の豊富さと多様性は、各お客様の法的ニーズを正確かつ最も効果的に理解し、満たすのに役立ちます。',
+      consultingItem2Title: '献身的でプロフェッショナルな専門家チーム',
+      consultingItem2Desc: '当社の法務チームは、深い法的知識だけでなく、複雑な法的問題を解決するための戦略的思考と創造性も持っています。当社は常にお客様の利益を最優先に考え、企業の成功と持続可能な発展を確保するために全力で取り組んでいます。',
+      consultingItem3Title: 'カスタマイズされた柔軟なソリューション',
+      consultingItem3Desc: '当社は、各企業の具体的なニーズに合わせてカスタマイズされた法的ソリューションを提供します。当社のサービスの柔軟性は、企業が規制を遵守するだけでなく、運営を最適化し、効果的にリスクを管理するのに役立ちます。',
+      // Steps2 - Governance Section
+      governanceTitle: 'コーポレートガバナンスとコンプライアンス',
+      governanceSubtitle: 'Y&P法律事務所は、お客様に企業ガバナンスと法的コンプライアンスに関する包括的なアドバイスを提供し、民事責任、刑事責任、行政罰、または事業に悪影響を及ぼす可能性のあるその他のリスクを軽減または防止し、組織と個人の評判とイメージを保護することを保証します。\n\nY&P法律事務所は、組織と管理構造、文化、既存のニーズを考慮して、各お客様のビジネス要件を満たす法的コンプライアンスプログラムを設計および調整します。当社は、お客様のコンプライアンスプログラムを開発および更新する際に、費用対効果の高いチームアプローチに従います。当社のコンプライアンス弁護士は、労働、環境、税務、知的財産などの分野で経験を持ち、内部および外部の紛争、訴訟、その他の法的リスクの管理についてお客様にアドバイスします。',
+      governanceItem1Title: '専門知識と経験',
+      governanceItem1Desc: '当社の弁護士と専門家のチームは、企業ガバナンスとコンプライアンスの分野で広範な知識と豊富な経験を持っています。最新の規制を常に更新し、お客様に最適なソリューションを提供するために専門知識を活用しています。',
+      governanceItem2Title: '包括的で効果的なソリューション',
+      governanceItem2Desc: '当社は、企業が効果的な管理システムを構築し、規制を遵守するのを支援する包括的な企業ガバナンスソリューションを提供します。当社の目標は、お客様のために時間とコストを節約する効果的なソリューションを提供することです。',
+      governanceItem3Title: '継続的なサポートと同行',
+      governanceItem3Desc: '当社は、設立から発展と拡大まで、事業の運営全体を通じて企業に寄り添うことをお約束します。当社は常にサポートとアドバイスを提供する準備ができており、企業が常に法律を遵守し、法的リスクを最小化することを保証します。当社は、取締役会、総法律顧問、コンプライアンス担当者と緊密に協力して、ビジネスニーズをよりよく理解し、会社のプロファイル、スケジュール、予算に適したコンプライアンスプログラムを開発します。',
+      // Steps2 - Business Support Section
+      supportTitle: 'ビジネスサポートサービス',
+      supportSubtitle: 'お客様を包括的にサポートする「サークルを構築する」ために、当社は各お客様に多様なサービスを完成させ、提供するよう努力してきました。サービス活動には以下が含まれます：\n\n- 通訳（英語、中国語、韓国語）、翻訳、公証文書翻訳の提供；\n- 専門家、法律顧問の提供；法務秘書（企業会議用）；\n- 外国語、IT、職業訓練ライセンスの申請；\n- 不動産取引所登録のコンサルティングと申請；\n- 建築設計業務資格証明書、民間医療業務資格証明書の申請；\n- 投資家および外国人労働者のためのビザ、就労許可証、一時滞在カードのコンサルティング。',
+      supportItem1Title: '包括的サポート',
+      supportItem1Desc: '当社は、法律コンサルティング、リスク管理、財務管理サポートを含む包括的なビジネスサポートサービスを提供します。お客様のビジネスのあらゆる側面が保護され、持続可能に発展することを保証します。',
+      supportItem2Title: '経験豊富な専門家チーム',
+      supportItem2Desc: '当社の専門家チームは、多くの分野で広範な専門知識と豊富な経験を持っています。当社は常に最適なソリューションを提供する準備ができており、お客様のビジネスが効果的に運営し、ビジネス目標を達成するのを支援します。',
+      supportItem3Title: '柔軟でカスタマイズされたソリューション',
+      supportItem3Desc: '当社は、各企業に固有のニーズと課題があることを理解しています。したがって、各企業に適した柔軟でカスタマイズされたソリューションを提供し、お客様の具体的な状況に最も適した最高のサポートを受けられることを保証します。',
+      // Steps2 - Land Services Section
+      landTitle: '土地法律サービス',
+      landSubtitle: '土地は、遺言と相続、売買、投資建設から結婚と家族に至るまで、社会生活のほぼすべての分野に関連しています。\n\nすべての分野に、どこかで、時代を通じて土地法の影があります。Youth & Partners法律事務所は、この分野の深いコンサルティング機関であることを自負しています。',
+      landItem1Title: '紛争解決',
+      landItem1Desc: '法廷内外での土地紛争の解決に弁護士を派遣；',
+      landItem2Title: '文書作成',
+      landItem2Desc: '土地、土地紛争に関連する申請書、苦情書の作成；',
+      landItem3Title: '土地法律サービス',
+      landItem3Desc: '譲渡、名義変更、初回登録、遺言、相続、相続申告、相続分配協定など、土地関連の法律サービスを実施',
+      // Steps2 - Litigation Section
+      litigationTitle: '訴訟と紛争解決',
+      litigationSubtitle: '上記の分野でお客様にコンサルティングを提供することに加えて、専門的で経験豊富な弁護士チームを持つ機関として、当社は訴訟機関においてお客様の正当な権利と利益を直接保護します。これには以下の活動が含まれます：\n\n- 法廷訴訟に参加する弁護士の派遣；\n- 仲裁案件に参加する弁護士の派遣；\n- 訴訟手続きまたは訴訟外の授権における授権代理人としての弁護士；\n- すべての分野における告発、申請、苦情、苦情回答、紛争解決に関連するファイル、申請書、その他の文書の作成。',
+      litigationItem1Title: '卓越した専門知識',
+      litigationItem1Desc: '当社の法務チームは、訴訟と紛争解決の分野で深い知識と豊富な経験を持っています。当社は、多くの複雑で大規模な案件でお客様を代理することに成功してきました。',
+      litigationItem2Title: '効果的な交渉戦略',
+      litigationItem2Desc: '当社は、優れた訴訟スキルだけでなく、平和的な交渉と紛争解決にも長けています。当社は常に最適なソリューションを追求し、お客様の時間とコストを節約するお手伝いをします。',
+      litigationItem3Title: '献身とお客様の権利保護',
+      litigationItem3Desc: '当社は、お客様の正当な権利を最後まで保護することをお約束します。各案件における当社の献身と粘り強さは、お客様が常に最高の法的サポートを受けることを保証します。',
+      // Steps2 - Labor Section
+      laborTitle: '労働と雇用',
+      laborSubtitle: '労働法が社会生活のあらゆる側面に大きな影響を与える非常に広い分野であることを認識し、Y&P法律事務所の弁護士は専門知識を常に更新し、労働法に深い理解を持っています。さらに、多くの労働案件のコンサルティングと訴訟に定期的に実際に参加することで、この分野で貴重な経験を積むことができました。\n\n当社は、労働基準、労働条件、労働契約、福利厚生、労働時間、休憩、再編、人員再編成、契約終了、労働規律、労働異動、調停、労働紛争解決、ベトナムで働く外国人従業員の就労許可証を含むがこれに限定されない、労働法のあらゆる側面についてアドバイスします。特に、合併・買収などの大規模な企業再編時には重要です。',
+      laborItem1Title: '深い専門知識',
+      laborItem1Desc: '当社の法務チームは、労働法規制について深い知識を持ち、継続的に更新しています。当社は、企業がコンプライアンスを遵守し公平な労働環境を構築・維持し、労働者の権利を確保するお手伝いをします。',
+      laborItem2Title: '労働紛争解決の経験',
+      laborItem2Desc: '当社は、契約紛争、従業員福利厚生から不当解雇まで、多くの企業と労働者の労働紛争を成功裏に解決するお手伝いをしてきました。当社は常に迅速で効果的なソリューションを見つけます。',
+      laborItem3Title: '戦略的コンサルティングと最適なソリューション',
+      laborItem3Desc: '当社は、企業が労働法を遵守するだけでなく、人事管理プロセスを最適化するための戦略的コンサルティングソリューションを提供します。当社のサービスには、労働契約、従業員福利厚生、労働政策と手続きに関するコンサルティングが含まれ、企業が安定性と持続可能な発展を維持するのを支援します。',
+      // Button texts
+      viewMore: '詳細を見る',
+      contactUs: 'お問い合わせ',
+      // CTA Section
+      ctaTitle: 'Youth & Partnersと一緒に成功へ',
+      ctaSubtitle: '経験豊富で献身的な法務チームにより、効果的で最適な法的ソリューションの提供をお約束します。新しいプロジェクトを始める場合でも、複雑な法的課題に直面している場合でも、長期的な戦略アドバイスが必要な場合でも、私たちは一歩一歩あなたをサポートします。プロジェクトの成功と持続可能性を確保するために、Youth & Partnersをお選びください。',
+    },
+    ko: {
+      professionalLegal: '전문 법률 서비스',
+      title: '서비스',
+      legalServices: '법률 서비스',
+      serviceIntro: '서비스 소개',
+      investmentProject: '투자 프로젝트',
+      ma: 'M&A',
+      regularConsulting: '기업 정기 컨설팅',
+      litigation: '소송 및 분쟁 해결',
+      laborEmployment: '노동 및 고용',
+      landServices: '토지 법률 서비스',
+      comprehensiveProtection: '포괄적 보호',
+      deepExpertise: '깊은 경험과 전문 지식',
+      disputeResolution: '효과적인 분쟁 해결',
+      internationalVision: '국제적 비전',
+      superiorExperience: '뛰어난 경험',
+      comprehensiveSupport: '포괄적 전략 지원',
+      heroSubtitle: '경험이 풍부한 변호사 팀과 베트남 법률 및 사회 지식에 대한 깊은 이해를 결합하여 고객에게 최고의 비즈니스 및 운영 방법, 파트너와의 협상, 규정 준수 프로그램 및 복잡한 법적 문제 해결에 대한 조언을 제공합니다.',
+      heroSubtitle2: '베트남의 점점 복잡해지는 법적, 사회적 환경에 대한 이해를 활용하여 수백 개의 기업 고객에게 어려움 극복, 법적 위험 최소화 및 정부 기관과의 효과적인 협력에 대해 조언해 왔습니다.',
+      heroSubtitle3: 'Y&P는 고객과 협력하여 비즈니스 운영을 이해하고 베트남 및 그 외 지역에서 비즈니스 요구 사항과 과제를 충족하는 솔루션을 제공합니다.',
+      serviceIntroMotto: '"시간-정성-최선"이라는 경영 이념으로 Y&P 법률사무소는 항상 고객에게 질 높고, 신속하며, 정확하고 완전한 서비스를 제공하기 위해 노력합니다.',
+      serviceIntroValue: '저희는 기업과 법률 컨설팅 회사의 가치는 핵심 가치에서 시작되어야 하며, 서비스는 변호사의 마음과 비전으로 제공되어야 한다고 항상 생각합니다.',
+      serviceIntroMeasure: '이러한 가치는 모든 고객의 만족과 신뢰로만 측정할 수 있습니다.',
+      legalServicesSubtitle: '다음 분야를 담당하는 변호사와 법률 컨설턴트가 있습니다:',
+      enterprise: '기업',
+      enterpriseDesc: '기업의 설립, 운영 및 발전을 지원하는 포괄적인 법률 솔루션을 제공합니다.',
+      regularConsultingDesc: '기업이 효과적으로 운영하고 현행 규정을 준수할 수 있도록 지속적인 법률 상담을 제공합니다.',
+      intellectualProperty: '지적재산권',
+      intellectualPropertyDesc: '저작권 및 특허 등록부터 지적재산권 분쟁 해결까지 지적재산권 보호를 컨설팅하고 지원합니다.',
+      governance: '기업 지배구조 및 규정 준수',
+      governanceDesc: '기업이 효과적인 지배구조 시스템을 구축하고 규정을 준수하여 법적 위험을 최소화하도록 돕습니다.',
+      investmentProjectDesc: '허가부터 관련 법적 문제 해결까지 베트남에서 투자 프로젝트를 수행하는 투자자를 지원합니다.',
+      businessSupport: '비즈니스 지원 서비스',
+      businessSupportDesc: '법률 컨설팅, 관리 지원 및 비즈니스 운영 중 발생하는 문제 해결을 포함한 비즈니스 지원 서비스를 제공합니다.',
+      maFull: '인수합병 (M&A)',
+      maDesc: 'M&A 거래를 컨설팅하고 지원하여 거래가 효과적이고 합법적으로 수행되도록 합니다.',
+      litigationFull: '소송 및 분쟁 해결 (민사, 형사 및 행정)',
+      litigationDesc: '소송 및 분쟁 해결에서 고객을 대리하고 지원하여 고객의 정당한 이익을 보호합니다.',
+      laborEmploymentDesc: '노동 계약, 직원 복리후생 및 노동 분쟁 해결에 대해 기업과 직원에게 컨설팅하고 지원합니다.',
+      landServicesDesc: '토지 사용 증명서 신청부터 토지 분쟁 해결까지 토지 관련 법률 서비스를 제공합니다.',
+      // Steps2 - Enterprise Section
+      enterpriseTitle: '기업',
+      enterpriseSubtitle: '저희 기업부는 다양한 업무 분야의 심층적인 지식이 모이는 곳으로, 사업자 등록 및 회사 설립 절차에 대한 포괄적인 서비스를 고객에게 제공합니다. 저희는 기업 생애주기의 모든 단계에서 고객을 지원하기로 약속합니다. 초기 설립 과정부터 발전 단계를 거쳐 확장 및 성장에 이르기까지.\n\n저희 전문가 팀은 고객의 모든 요구와 요건을 충족하기 위해 광범위한 지식을 적용할 준비가 되어 있습니다. 많은 분야에 대한 다차원적 이해를 활용하여 유연하고 전문적인 서비스 생태계를 구축하여 기업이 존속할 뿐만 아니라 점점 다양해지고 도전적인 비즈니스 환경에서 지속 가능하게 발전하도록 돕습니다.',
+      enterpriseItem1Title: '깊은 전문 지식',
+      enterpriseItem1Desc: '저희 법률 팀은 기업법 분야에서 깊은 전문 지식과 풍부한 경험을 보유하고 있습니다. 법적 규정과 비즈니스 관행을 이해하여 고객 비즈니스가 운영을 최적화하고 법률을 준수하도록 돕습니다.',
+      enterpriseItem2Title: '포괄적이고 효과적인 솔루션',
+      enterpriseItem2Desc: '저희는 기업 설립 컨설팅, 법적 위험 관리부터 M&A 거래 지원까지 포괄적인 법률 솔루션을 제공합니다. 저희 목표는 고객의 시간과 비용을 절약하는 효과적인 솔루션을 제공하는 것입니다.',
+      enterpriseItem3Title: '헌신과 신뢰성',
+      enterpriseItem3Desc: '저희는 항상 고객의 이익을 최우선으로 생각하며 최고의 헌신과 신뢰성으로 일합니다. 고객의 성공이 저희 성공의 척도입니다. 발전의 모든 단계에서 고객 비즈니스와 함께하고 지원하기로 약속합니다.',
+      // Steps2 - IP Section
+      ipTitle: '지적재산권',
+      ipSubtitle: '저희는 기업 성공에 있어 지적재산권(IP)의 중요성을 깊이 이해하고 높이 평가합니다. 이 분야의 전문 지식을 바탕으로 IP의 모든 측면에 대한 포괄적인 컨설팅 서비스를 제공합니다. 초기 단계부터 생애주기의 중요한 시기까지. 저희 팀은 특히 창의적 전략 수립, 보호, 상업화 및 IP 권리 집행에 있어 이해관계자에게 IP에 대한 조언을 제공한 풍부한 경험을 보유하고 있습니다.\n\n저희는 국내외 유명 브랜드 소유자 및 IP 권리 보유자들과 성공적으로 협력하여 다양한 산업에 서비스를 제공해 왔습니다. 저희의 전문성과 헌신은 점점 경쟁이 치열해지는 비즈니스 환경에서 고객의 IP 권리가 효과적으로 보호되고 발전하도록 보장합니다.',
+      ipItem1Title: '포괄적 보호',
+      ipItem1Desc: '저희는 저작권 등록, 상표, 특허부터 저작자 권리 보호까지 포괄적인 IP 보호 서비스를 제공합니다. 저희 법률 팀은 고객의 지적 자산이 모든 침해 위험으로부터 최대한 보호되도록 보장합니다.',
+      ipItem2Title: '경험과 깊은 전문 지식',
+      ipItem2Desc: 'IP 분야에서 수년간의 경험을 바탕으로 저희는 IP법에 대한 깊은 이해를 가진 전문 법률 팀을 자랑스럽게 생각합니다. 최신 규정을 지속적으로 업데이트하고 전문 지식을 활용하여 고객에게 최적의 솔루션을 제공합니다.',
+      ipItem3Title: '효과적인 분쟁 해결',
+      ipItem3Desc: '저희는 IP 권리를 보호할 뿐만 아니라 관련 분쟁을 효과적으로 해결하도록 돕습니다. 협상 기술과 소송 경험을 바탕으로 모든 상황에서 고객의 권리가 항상 보호되고 최적화되도록 보장합니다.',
+      // Steps2 - Investment Project Section
+      investmentTitle: '투자 프로젝트',
+      investmentSubtitle: 'Y&P 법률사무소의 투자 프로젝트 컨설팅 경험에는 국내외 기업 및 개인 투자자에 대한 자문이 포함되며, 컨설팅 과정 전반에 걸쳐 고객이 베트남 법률의 복잡한 교차점을 탐색하도록 돕습니다.\n\n저희는 투자 계획이 시작될 때부터 프로젝트가 운영된 후에도 고객을 지원하기로 약속합니다.\n\n투자 계획부터 프로젝트 설립 및 운영 유지까지 투자 프로젝트의 성공과 지속 가능성을 보장하기 위해 모든 단계에서 고객과 함께하기로 약속합니다.',
+      investmentItem1Title: '조사, 분석 및 시장 평가',
+      investmentItem1Desc: '- 시장 기회와 과제를 식별하고 평가합니다.\n- 전략적 의사결정을 위해 시장 정보를 분석합니다.',
+      investmentItem2Title: '적합한 파트너 찾기',
+      investmentItem2Desc: '적합한 파트너를 찾고 선택하는 데 고객을 지원합니다.',
+      investmentItem3Title: '외국 투자 프로젝트 정보',
+      investmentItem3Desc: '베트남 정부 기관으로부터 외국 투자 프로젝트에 대한 업데이트 정보를 제공합니다.',
+      investmentItem4Title: '투자 활동 설립 지원',
+      investmentItem4Desc: '베트남에서 투자 활동을 설립하는 데 고객을 컨설팅하고 지원합니다.',
+      investmentItem5Title: '투자 구조',
+      investmentItem5Desc: '간접 및 직접 형태를 포함하여 각 프로젝트 유형에 가장 적합한 투자 구조에 대해 컨설팅합니다.',
+      investmentItem6Title: '투자자 대리',
+      investmentItem6Desc: '프로젝트를 실행하기 위해 당국과 연락하고 협상합니다.',
+      investmentItem7Title: '대표 사무소 및 지점 설립 서비스',
+      investmentItem7Desc: '베트남에서 외국 기업의 대표 사무소 및 지점 설립을 지원합니다.',
+      // Steps2 - M&A Section
+      maTitle: 'M&A',
+      maSubtitle: 'M&A 및 기업 자문은 YP Law의 법률 업무의 주요 기반 중 하나로, 인수합병, 외국 직접 투자 및 기업 자문에 중점을 둡니다. 저희는 고객이 창의적으로 구조화된 거래를 실행하고 복잡하고 끊임없이 변화하는 규정의 도전을 극복하도록 도왔습니다.\n\n법률 전문 지식 외에도 제조, 화학, 소비재, 물류, 소매, 교육, 광물 등 많은 산업에 대한 깊은 이해를 가지고 있습니다. 토지, 자산, 환경, 외환과 관련된 모든 문제를 포함하여 대기업의 인수 및 운영의 복잡성을 이해합니다... 이를 통해 고객의 비즈니스 요구에 맞는 가치 있는 법률 자문을 제공합니다.',
+      maItem1Title: '국제적 비전',
+      maItem1Desc: '국제적 비전을 가진 베트남 법률사무소로서 저희는 지역 지식과 글로벌 관점을 결합합니다. 베트남 법률 자문이 필요할 때 이전 외국 비즈니스 고객으로부터 파트너에게 지속적으로 추천받고 있습니다. 저희 고객에는 국내 및 국제 고객이 모두 포함됩니다. 베트남에서 비즈니스의 설립, 운영 및 확장을 지원하는 것을 매우 자랑스럽게 생각합니다.',
+      maItem2Title: '뛰어난 경험',
+      maItem2Desc: '저희는 M&A 활동에 관한 포괄적인 자문을 고객에게 제공하기 위해 회계법인 및 은행과 협력하도록 자주 요청받습니다. M&A 활동을 지원하기 위해 고객에게 관련 자문을 제공합니다:',
+      maItem3Title: '포괄적이고 전략적인 지원',
+      maItem3Desc: '저희는 준비, 실사, 협상부터 거래 후 단계까지 포괄적인 지원을 제공합니다. 또한 시장, 방향을 이해하고 M&A 거래에서 비즈니스 기회를 최적화하도록 전략적 자문을 제공합니다.',
+      // Steps2 - Regular Consulting Section
+      consultingTitle: '기업 정기 컨설팅',
+      consultingSubtitle: '수년간 저희는 삼성, TOPCV, Arcadyan, Cosmos, Viettel, FPT 등 베트남의 많은 대형 국내외 기업과 많은 한국, 일본, 호주 기업에 고품질 법률 서비스를 제공하는 것을 자랑스럽게 생각합니다...\n\n저희는 각 기업의 운영 분야에서 다양하고 구체적인 경험을 보유하고 있으며, 특히 외국인 투자 제조 기업에서 두드러집니다.\n\n특히 현재까지 Y&P는 많은 기업에 현재 적용되는 기업의 사회적 책임(CSR) 또는 구체적으로 RBA 행동 강령에 대해 심층 컨설팅을 제공할 수 있는 몇 안 되는 법률사무소 중 하나입니다. 이로 인해 저희는 이러한 규칙을 준수해야 하는 제조 기업에게 신뢰할 수 있는 파트너 선택이 되었습니다. Y&P 법률사무소는 특히 이 RBA 행동 강령의 요구 사항 이행에 있어 고객을 지원하고 함께하게 되어 영광입니다.',
+      consultingItem1Title: '풍부하고 다양한 경험',
+      consultingItem1Desc: '저희는 국내외 많은 선도 기업에 성공적으로 컨설팅을 제공한 것을 자랑스럽게 생각합니다. 저희 경험의 풍부함과 다양성은 각 고객의 법적 요구를 정확하고 가장 효과적으로 이해하고 충족하는 데 도움이 됩니다.',
+      consultingItem2Title: '헌신적이고 전문적인 전문가 팀',
+      consultingItem2Desc: '저희 법률 팀은 깊은 법적 지식뿐만 아니라 복잡한 법적 문제를 해결하기 위한 전략적 사고와 창의성도 갖추고 있습니다. 저희는 항상 고객의 이익을 최우선으로 생각하며 기업의 성공과 지속 가능한 발전을 보장하기 위해 전심전력으로 일합니다.',
+      consultingItem3Title: '맞춤형 및 유연한 솔루션',
+      consultingItem3Desc: '저희는 각 기업의 구체적인 요구에 맞게 맞춤화된 법률 솔루션을 제공합니다. 저희 서비스의 유연성은 기업이 규정을 준수할 뿐만 아니라 운영을 최적화하고 위험을 효과적으로 관리하도록 돕습니다.',
+      // Steps2 - Governance Section
+      governanceTitle: '기업 지배구조 및 규정 준수',
+      governanceSubtitle: 'Y&P 법률사무소는 고객에게 기업 지배구조 및 법적 규정 준수에 대한 포괄적인 자문을 제공하여 민사 책임, 형사 책임, 행정 처벌 또는 사업에 부정적인 영향을 미칠 수 있는 기타 위험을 줄이거나 방지하고 조직과 개인의 명성과 이미지가 보호되도록 보장합니다.\n\nY&P 법률사무소는 조직 및 관리 구조, 문화 및 기존 요구를 고려하여 각 고객의 비즈니스 요구 사항을 충족하는 법적 규정 준수 프로그램을 설계하고 조정합니다. 저희는 고객의 규정 준수 프로그램을 개발하고 업데이트할 때 비용 효율적인 팀 접근 방식을 따릅니다. 저희 규정 준수 변호사는 노동, 환경, 세무, 지적재산권 등의 분야에서 경험을 보유하고 있으며 내부 및 외부 분쟁, 소송 및 기타 법적 위험 관리에 대해 고객에게 조언합니다.',
+      governanceItem1Title: '전문 지식과 경험',
+      governanceItem1Desc: '저희 변호사 및 전문가 팀은 기업 지배구조 및 규정 준수 분야에서 광범위한 지식과 풍부한 경험을 보유하고 있습니다. 최신 규정을 지속적으로 업데이트하고 전문 지식을 활용하여 고객에게 최적의 솔루션을 제공합니다.',
+      governanceItem2Title: '포괄적이고 효과적인 솔루션',
+      governanceItem2Desc: '저희는 기업이 효과적인 관리 시스템을 구축하고 규정을 준수하도록 돕는 포괄적인 기업 지배구조 솔루션을 제공합니다. 저희 목표는 고객의 시간과 비용을 절약하는 효과적인 솔루션을 제공하는 것입니다.',
+      governanceItem3Title: '지속적인 지원과 동행',
+      governanceItem3Desc: '저희는 설립부터 발전 및 확장까지 비즈니스 운영 전반에 걸쳐 기업과 함께하기로 약속합니다. 저희는 항상 지원하고 조언할 준비가 되어 있어 기업이 항상 법률을 준수하고 법적 위험을 최소화하도록 보장합니다. 저희는 이사회, 총법률고문 및 준법감시인과 긴밀히 협력하여 비즈니스 요구를 더 잘 이해하고 회사의 프로필, 일정 및 예산에 맞는 규정 준수 프로그램을 개발합니다.',
+      // Steps2 - Business Support Section
+      supportTitle: '비즈니스 지원 서비스',
+      supportSubtitle: '고객을 포괄적으로 지원하는 "원을 구축"하기 위해 저희는 각 고객에게 다양한 서비스를 완성하고 제공하기 위해 노력해 왔습니다. 서비스 활동에는 다음이 포함됩니다:\n\n- 통역(영어, 중국어, 한국어), 번역 및 공증 문서 번역 제공;\n- 전문가, 법률 고문 제공; 법률 비서(기업 회의용);\n- 외국어, IT, 직업 훈련 라이센스 신청;\n- 부동산 거래소 등록 컨설팅 및 신청;\n- 건축 설계 업무 자격 증명서, 민간 의료 업무 자격 증명서 신청;\n- 투자자 및 외국인 근로자를 위한 비자, 취업 허가증, 임시 거주 카드 컨설팅.',
+      supportItem1Title: '포괄적 지원',
+      supportItem1Desc: '저희는 법률 컨설팅, 위험 관리 및 재무 관리 지원을 포함한 포괄적인 비즈니스 지원 서비스를 제공합니다. 고객 비즈니스의 모든 측면이 보호되고 지속 가능하게 발전하도록 보장합니다.',
+      supportItem2Title: '경험 많은 전문가 팀',
+      supportItem2Desc: '저희 전문가 팀은 많은 분야에서 광범위한 전문 지식과 풍부한 경험을 보유하고 있습니다. 저희는 항상 최적의 솔루션을 제공할 준비가 되어 있어 고객 비즈니스가 효과적으로 운영하고 비즈니스 목표를 달성하도록 돕습니다.',
+      supportItem3Title: '유연하고 맞춤화된 솔루션',
+      supportItem3Desc: '저희는 각 기업이 고유한 요구와 과제를 가지고 있다는 것을 이해합니다. 따라서 각 기업에 적합한 유연하고 맞춤화된 솔루션을 제공하여 고객의 구체적인 상황에 가장 적합한 최고의 지원을 받을 수 있도록 보장합니다.',
+      // Steps2 - Land Services Section
+      landTitle: '토지 법률 서비스',
+      landSubtitle: '토지는 유언과 상속, 매매, 투자 건설부터 결혼과 가족에 이르기까지 사회 생활의 거의 모든 분야와 관련이 있습니다.\n\n모든 분야 어딘가에 시대를 통한 토지법의 그림자가 있습니다. Youth & Partners 법률사무소는 이 분야의 심층 컨설팅 기관임을 자부합니다.',
+      landItem1Title: '분쟁 해결',
+      landItem1Desc: '법정 내외에서 토지 분쟁 해결에 변호사 파견;',
+      landItem2Title: '문서 작성',
+      landItem2Desc: '토지, 토지 분쟁과 관련된 신청서, 불만 사항 작성;',
+      landItem3Title: '토지 법률 서비스',
+      landItem3Desc: '양도, 명의 변경, 최초 등록, 유언, 상속, 상속 신고, 상속 분배 합의 등 토지 관련 법률 서비스 수행',
+      // Steps2 - Litigation Section
+      litigationTitle: '소송 및 분쟁 해결',
+      litigationSubtitle: '위 분야에서 고객에게 컨설팅을 제공하는 것 외에도 전문적이고 경험 많은 변호사 팀을 보유한 기관으로서 저희는 소송 기관에서 고객의 정당한 권리와 이익을 직접 보호합니다. 여기에는 다음 활동이 포함됩니다:\n\n- 법정 소송에 참여할 변호사 파견;\n- 중재 사건에 참여할 변호사 파견;\n- 소송 절차 또는 소송 외 위임에서 위임 대리인으로서의 변호사;\n- 모든 분야의 고발, 신청, 불만, 불만 응답 및 분쟁 해결과 관련된 파일, 신청서 및 기타 문서 작성.',
+      litigationItem1Title: '탁월한 전문 지식',
+      litigationItem1Desc: '저희 법률 팀은 소송 및 분쟁 해결 분야에서 깊은 지식과 풍부한 경험을 보유하고 있습니다. 저희는 많은 복잡하고 대규모 사건에서 고객을 대리하는 데 성공했습니다.',
+      litigationItem2Title: '효과적인 협상 전략',
+      litigationItem2Desc: '저희는 뛰어난 소송 기술뿐만 아니라 평화적인 협상과 분쟁 해결에도 능숙합니다. 저희는 항상 최적의 솔루션을 추구하여 고객의 시간과 비용을 절약하도록 돕습니다.',
+      litigationItem3Title: '헌신과 고객 권리 보호',
+      litigationItem3Desc: '저희는 고객의 정당한 권리를 끝까지 보호하기로 약속합니다. 각 사건에서 저희의 헌신과 끈기는 고객이 항상 최고의 법률 지원을 받도록 보장합니다.',
+      // Steps2 - Labor Section
+      laborTitle: '노동 및 고용',
+      laborSubtitle: '노동법이 사회 생활의 모든 측면에 큰 영향을 미치는 매우 광범위한 분야임을 인식하고 Y&P 법률사무소의 변호사들은 전문 지식을 지속적으로 업데이트하여 노동법에 대한 깊은 이해를 갖추고 있습니다. 또한 많은 노동 사건의 컨설팅과 소송에 정기적으로 실제 참여함으로써 이 분야에서 귀중한 경험을 쌓을 수 있었습니다.\n\n저희는 노동 기준, 근로 조건, 노동 계약, 복리후생, 근로 시간, 휴식, 구조조정, 인력 재편, 계약 종료, 노동 규율, 노동 이동, 조정, 노동 분쟁 해결, 베트남에서 일하는 외국인 직원의 취업 허가를 포함하되 이에 국한되지 않는 노동법의 모든 측면에 대해 자문합니다. 특히 인수합병과 같은 대규모 기업 구조조정 시.',
+      laborItem1Title: '깊은 전문 지식',
+      laborItem1Desc: '저희 법률 팀은 노동법 규정에 대한 깊은 지식을 보유하고 지속적으로 업데이트합니다. 저희는 기업이 규정을 준수하고 공정한 근무 환경을 구축하고 유지하여 근로자의 권리를 보장하도록 돕습니다.',
+      laborItem2Title: '노동 분쟁 해결 경험',
+      laborItem2Desc: '저희는 계약 분쟁, 직원 복리후생부터 부당 해고까지 많은 기업과 근로자의 노동 분쟁을 성공적으로 해결하도록 지원해 왔습니다. 저희는 항상 빠르고 효과적인 솔루션을 찾습니다.',
+      laborItem3Title: '전략적 컨설팅과 최적의 솔루션',
+      laborItem3Desc: '저희는 기업이 노동법을 준수할 뿐만 아니라 HR 관리 프로세스를 최적화하도록 돕는 전략적 컨설팅 솔루션을 제공합니다. 저희 서비스에는 노동 계약, 직원 복리후생, 노동 정책 및 절차에 대한 컨설팅이 포함되어 기업이 안정성과 지속 가능한 발전을 유지하도록 돕습니다.',
+      // Button texts
+      viewMore: '더 보기',
+      contactUs: '문의하기',
+      // CTA Section
+      ctaTitle: 'Youth & Partners와 함께 성공으로',
+      ctaSubtitle: '경험이 풍부하고 헌신적인 법률 팀과 함께 효과적이고 최적의 법률 솔루션을 제공하기 위해 최선을 다하겠습니다. 새로운 프로젝트를 시작하든, 복잡한 법적 과제에 직면하든, 장기적인 전략 자문이 필요하든 저희가 모든 단계에서 지원해 드리겠습니다. Youth & Partners를 선택하여 프로젝트의 성공과 지속 가능성을 보장하세요.',
+    },
+  },
+
+  // Team - Lawyers and Associates
+  team: {
+    vi: {
+      lawyersAndAssociates: 'Luật sư và cộng sự',
+      lawyersSubtitle: 'Khách hàng hài lòng với dịch vụ pháp lý tại Youth & Partners, đánh giá cao sự tận tâm và chuyên nghiệp của đội ngũ luật sư trong việc giải quyết các vấn đề pháp lý phức tạp. Họ tin tưởng và sẵn lòng tiếp tục sử dụng dịch vụ của chúng tôi trong tương lai.',
+      lawyersIntro: 'Công ty Luật TNHH Youth & Partners là một trong những công ty luật hàng đầu tại Việt Nam, với đội ngũ luật sư và cộng sự giàu kinh nghiệm và chuyên môn sâu rộng. Công ty này cung cấp các dịch vụ pháp lý chất lượng cao, nhanh chóng, chính xác và toàn diện.',
+      lawyersIntro2: 'Đội ngũ luật sư của Youth & Partners bao gồm các chuyên gia có nhiều năm kinh nghiệm trong nhiều lĩnh vực khác nhau như tư vấn pháp lý thường xuyên cho doanh nghiệp, giải quyết tranh chấp lao động, luật sư riêng tiếng Nhật, Anh, Trung, Hàn, và dịch vụ audit, đánh giá và thẩm định pháp lý cho doanh nghiệp. Công ty luôn cam kết mang lại công bằng và sự thành công cho khách hàng, giúp họ vững bước trên con đường phát triển.',
+      managingLawyer: 'Luật sư điều hành',
+      partnerLawyer: 'Luật sư thành viên',
+      lawyer: 'Luật sư',
+      seniorAssociate: 'Cộng sự cao cấp',
+      associate: 'Cộng sự',
+      legalConsultant: 'Chuyên viên tư vấn pháp lý',
+      legalStaff: 'Chuyên viên pháp lý',
+      paralegal: 'Trợ lý pháp lý',
+    },
+    en: {
+      lawyersAndAssociates: 'Lawyers and Associates',
+      lawyersSubtitle: 'Clients are satisfied with the legal services at Youth & Partners, appreciating the dedication and professionalism of our legal team in resolving complex legal matters. They trust and are willing to continue using our services in the future.',
+      lawyersIntro: 'Youth & Partners Law Firm is one of the leading law firms in Vietnam, with a team of experienced lawyers and associates with deep expertise. The company provides high-quality, fast, accurate, and comprehensive legal services.',
+      lawyersIntro2: 'The legal team at Youth & Partners includes experts with many years of experience in various fields such as regular legal consulting for businesses, labor dispute resolution, personal lawyers in Japanese, English, Chinese, Korean, and audit, assessment and legal due diligence services for businesses. The company is always committed to bringing fairness and success to clients, helping them move forward on their development path.',
+      managingLawyer: 'Managing Lawyer',
+      partnerLawyer: 'Partner Lawyer',
+      lawyer: 'Lawyer',
+      seniorAssociate: 'Senior Associate',
+      associate: 'Associate',
+      legalConsultant: 'Legal Consultant',
+      legalStaff: 'Legal Staff',
+      paralegal: 'Paralegal',
+    },
+    zh: {
+      lawyersAndAssociates: '律师与合伙人',
+      lawyersSubtitle: '客户对Youth & Partners的法律服务感到满意，高度评价我们法律团队在解决复杂法律问题方面的专业和敬业精神。他们信任并愿意继续使用我们的服务。',
+      lawyersIntro: 'Youth & Partners律师事务所是越南领先的律师事务所之一，拥有经验丰富、专业精深的律师和合伙人团队。公司提供优质、快速、准确和全面的法律服务。',
+      lawyersIntro2: 'Youth & Partners的法律团队包括在多个领域拥有多年经验的专家，如企业常规法律咨询、劳动争议解决、日语、英语、中文、韩语私人律师，以及企业审计、评估和法律尽职调查服务。公司始终致力于为客户带来公平和成功，帮助他们在发展道路上稳步前进。',
+      managingLawyer: '执行律师',
+      partnerLawyer: '合伙律师',
+      lawyer: '律师',
+      seniorAssociate: '高级助理',
+      associate: '助理',
+      legalConsultant: '法律顾问',
+      legalStaff: '法务人员',
+      paralegal: '法律助理',
+    },
+    ja: {
+      lawyersAndAssociates: '弁護士およびアソシエイト',
+      lawyersSubtitle: 'お客様はYouth & Partnersの法務サービスに満足しており、複雑な法的問題の解決における当チームの献身と専門性を高く評価しています。お客様は信頼し、今後も当社のサービスを利用し続けることを望んでいます。',
+      lawyersIntro: 'Youth & Partners法律事務所はベトナムを代表する法律事務所の一つで、経験豊富で専門性の高い弁護士とアソシエイトのチームを擁しています。当社は高品質、迅速、正確かつ包括的な法務サービスを提供しています。',
+      lawyersIntro2: 'Youth & Partnersの法務チームは、企業向け定期法務コンサルティング、労働紛争解決、日本語・英語・中国語・韓国語対応のプライベート弁護士、企業向け監査・評価・法的デューデリジェンスサービスなど、様々な分野で長年の経験を持つ専門家で構成されています。当社は常にお客様に公正と成功をもたらし、発展の道を着実に歩めるようお手伝いすることをお約束します。',
+      managingLawyer: 'マネージングロイヤー',
+      partnerLawyer: 'パートナー弁護士',
+      lawyer: '弁護士',
+      seniorAssociate: 'シニアアソシエイト',
+      associate: 'アソシエイト',
+      legalConsultant: '法務コンサルタント',
+      legalStaff: '法務スタッフ',
+      paralegal: 'パラリーガル',
+    },
+    ko: {
+      lawyersAndAssociates: '변호사 및 동료',
+      lawyersSubtitle: '고객들은 Youth & Partners의 법률 서비스에 만족하며, 복잡한 법적 문제 해결에 있어 저희 팀의 헌신과 전문성을 높이 평가합니다. 고객들은 신뢰하며 앞으로도 저희 서비스를 계속 이용하기를 원합니다.',
+      lawyersIntro: 'Youth & Partners 법률사무소는 베트남 최고의 법률사무소 중 하나로, 경험이 풍부하고 전문성이 뛰어난 변호사와 어소시에이트 팀을 보유하고 있습니다. 저희 회사는 고품질, 신속, 정확하고 포괄적인 법률 서비스를 제공합니다.',
+      lawyersIntro2: 'Youth & Partners의 법률 팀은 기업 정기 법률 컨설팅, 노동 분쟁 해결, 일본어·영어·중국어·한국어 개인 변호사, 기업 감사·평가·법적 실사 서비스 등 다양한 분야에서 다년간의 경험을 가진 전문가들로 구성되어 있습니다. 저희 회사는 항상 고객에게 공정함과 성공을 가져다주고 발전의 길을 굳건히 걸어갈 수 있도록 도와드리겠다고 약속합니다.',
+      managingLawyer: '관리 변호사',
+      partnerLawyer: '파트너 변호사',
+      lawyer: '변호사',
+      seniorAssociate: '시니어 어소시에이트',
+      associate: '어소시에이트',
+      legalConsultant: '법률 컨설턴트',
+      legalStaff: '법무 직원',
+      paralegal: '패럴리걸',
+    },
+  },
+
+  // News categories
+  news: {
+    vi: {
+      legal: 'Tin tức pháp lý',
+      commentary: 'Bình luận pháp lý',
+      highlights: 'Các vụ việc nổi bật',
+      seminars: 'Hội thảo pháp lý',
+      documents: 'Văn bản pháp lý',
+      contact: 'Liên hệ tư vấn',
+      recruitment: 'Thông tin tuyển dụng',
+      newsAndContact: 'Tin tức - Liên hệ',
+      latest: 'Tin mới nhất',
+    },
+    en: {
+      legal: 'Legal News',
+      commentary: 'Legal Commentary',
+      highlights: 'Notable Cases',
+      seminars: 'Legal Seminars',
+      documents: 'Legal Documents',
+      contact: 'Contact Consultation',
+      recruitment: 'Recruitment Information',
+      newsAndContact: 'News - Contact',
+      latest: 'Latest News',
+    },
+    zh: {
+      legal: '法律新闻',
+      commentary: '法律评论',
+      highlights: '突出案例',
+      seminars: '法律研讨会',
+      documents: '法律文件',
+      contact: '咨询联系',
+      recruitment: '招聘信息',
+      newsAndContact: '新闻 - 联系',
+      latest: '最新消息',
+    },
+    ja: {
+      legal: '法律ニュース',
+      commentary: '法律解説',
+      highlights: '注目案件',
+      seminars: '法律セミナー',
+      documents: '法律文書',
+      contact: '相談連絡',
+      recruitment: '採用情報',
+      newsAndContact: 'ニュース - 連絡先',
+      latest: '最新ニュース',
+    },
+    ko: {
+      legal: '법률 뉴스',
+      commentary: '법률 해설',
+      highlights: '주목 사례',
+      seminars: '법률 세미나',
+      documents: '법률 문서',
+      contact: '상담 연락',
+      recruitment: '채용 정보',
+      newsAndContact: '뉴스 - 연락처',
+      latest: '최신 뉴스',
+    },
+  },
+
+  // Footer
+  footer: {
+    vi: {
+      about: 'Giới thiệu',
+      services: 'Dịch vụ',
+      servicesYP: 'Dịch vụ của Y&P',
+      news: 'Tin tức',
+      contact: 'Liên hệ',
+      terms: 'Điều khoản chung',
+      privacy: 'Chính sách Bảo vệ dữ liệu',
+      copyright: 'Bản quyền © {{year}} Công ty Luật TNHH Youth & Partners · Tất cả quyền được bảo lưu.',
+      investmentForeign: 'Đầu tư và Người nước ngoài',
+    },
+    en: {
+      about: 'About',
+      services: 'Services',
+      servicesYP: 'Y&P Services',
+      news: 'News',
+      contact: 'Contact',
+      terms: 'Terms of Service',
+      privacy: 'Privacy Policy',
+      copyright: 'Copyright © {{year}} Youth & Partners Law Firm · All rights reserved.',
+      investmentForeign: 'Investment and Foreigners',
+    },
+    zh: {
+      about: '关于我们',
+      services: '服务',
+      servicesYP: 'Y&P服务',
+      news: '新闻',
+      contact: '联系我们',
+      terms: '服务条款',
+      privacy: '隐私政策',
+      copyright: '版权 © {{year}} Youth & Partners律师事务所 · 保留所有权利。',
+      investmentForeign: '投资和外国人',
+    },
+    ja: {
+      about: '会社概要',
+      services: 'サービス',
+      servicesYP: 'Y&Pサービス',
+      news: 'ニュース',
+      contact: 'お問い合わせ',
+      terms: '利用規約',
+      privacy: 'プライバシーポリシー',
+      copyright: '著作権 © {{year}} Youth & Partners法律事務所 · 全著作権所有。',
+      investmentForeign: '投資と外国人',
+    },
+    ko: {
+      about: '회사 소개',
+      services: '서비스',
+      servicesYP: 'Y&P 서비스',
+      news: '뉴스',
+      contact: '연락처',
+      terms: '서비스 약관',
+      privacy: '개인정보 보호정책',
+      copyright: '저작권 © {{year}} Youth & Partners 법률사무소 · 모든 권리 보유。',
+      investmentForeign: '투자 및 외국인',
+    },
+  },
+
+  // Common UI elements
+  common: {
+    vi: {
+      readMore: 'Đọc thêm',
+      learnMore: 'Tìm hiểu thêm',
+      viewMore: 'Xem thêm',
+      contactUs: 'Liên hệ chúng tôi',
+      contactNow: 'Liên hệ ngay',
+      getQuote: 'Nhận báo giá',
+      submit: 'Gửi',
+      cancel: 'Hủy',
+      close: 'Đóng',
+      loading: 'Đang tải...',
+      error: 'Lỗi',
+      success: 'Thành công',
+      warning: 'Cảnh báo',
+      info: 'Thông tin',
+      search: 'Tìm kiếm...',
+      noResults: 'Không tìm thấy kết quả',
+      backToTop: 'Về đầu trang',
+      share: 'Chia sẻ',
+      print: 'In',
+      download: 'Tải xuống',
+      viewAll: 'Xem tất cả',
+      viewAllPosts: 'Xem tất cả',
+      backToPage: 'Trở về chuyên trang',
+      relatedPosts: 'Bài viết liên quan',
+      newerPosts: 'Bài mới hơn',
+      olderPosts: 'Bài cũ hơn',
+      tableOfContents: 'Mục lục',
+      sendInfo: 'Gửi thông tin',
+      contactForConsult: 'Liên hệ để được tư vấn',
+      totalPosts: 'Tổng cộng',
+      posts: 'bài viết',
+      translationNotice: 'Google Translate: Nội dung được dịch tự động. Để tư vấn pháp lý chính xác, vui lòng liên hệ trực tiếp.',
+      followUs: 'Theo dõi chúng tôi',
+      legalStaff: 'Chuyên viên pháp lý',
+      satisfiedClients: 'Khách hàng hài lòng',
+      casesWon: 'Vụ thắng kiện',
+    },
+    en: {
+      readMore: 'Read More',
+      learnMore: 'Learn More',
+      viewMore: 'View More',
+      contactUs: 'Contact Us',
+      contactNow: 'Contact Now',
+      getQuote: 'Get Quote',
+      submit: 'Submit',
+      cancel: 'Cancel',
+      close: 'Close',
+      loading: 'Loading...',
+      error: 'Error',
+      success: 'Success',
+      warning: 'Warning',
+      info: 'Information',
+      search: 'Search...',
+      noResults: 'No results found',
+      backToTop: 'Back to Top',
+      share: 'Share',
+      print: 'Print',
+      download: 'Download',
+      viewAll: 'View All',
+      viewAllPosts: 'View all',
+      backToPage: 'Back to page',
+      relatedPosts: 'Related Posts',
+      newerPosts: 'Newer Posts',
+      olderPosts: 'Older Posts',
+      tableOfContents: 'Table of Contents',
+      sendInfo: 'Send Information',
+      contactForConsult: 'Contact for Consultation',
+      totalPosts: 'Total',
+      posts: 'posts',
+      translationNotice: 'Google Translate: Content is automatically translated. For accurate legal advice, please contact us directly.',
+      followUs: 'Follow Us',
+      legalStaff: 'Legal Staff',
+      satisfiedClients: 'Satisfied Clients',
+      casesWon: 'Cases Won',
+    },
+    zh: {
+      readMore: '阅读更多',
+      learnMore: '了解更多',
+      viewMore: '查看更多',
+      contactUs: '联系我们',
+      contactNow: '立即联系',
+      getQuote: '获取报价',
+      submit: '提交',
+      cancel: '取消',
+      close: '关闭',
+      loading: '加载中...',
+      error: '错误',
+      success: '成功',
+      warning: '警告',
+      info: '信息',
+      search: '搜索...',
+      noResults: '未找到结果',
+      backToTop: '回到顶部',
+      share: '分享',
+      print: '打印',
+      download: '下载',
+      viewAll: '查看全部',
+      viewAllPosts: '查看全部',
+      backToPage: '返回页面',
+      relatedPosts: '相关文章',
+      newerPosts: '较新文章',
+      olderPosts: '较旧文章',
+      tableOfContents: '目录',
+      sendInfo: '发送信息',
+      contactForConsult: '联系咨询',
+      totalPosts: '共',
+      posts: '篇文章',
+      translationNotice: 'Google翻译：内容自动翻译。如需准确的法律咨询，请直接联系我们。',
+      followUs: '关注我们',
+      legalStaff: '法律专员',
+      satisfiedClients: '满意客户',
+      casesWon: '胜诉案件',
+    },
+    ja: {
+      readMore: 'もっと読む',
+      learnMore: '詳細を見る',
+      viewMore: 'もっと見る',
+      contactUs: 'お問い合わせ',
+      contactNow: '今すぐ連絡',
+      getQuote: '見積もりを取得',
+      submit: '送信',
+      cancel: 'キャンセル',
+      close: '閉じる',
+      loading: '読み込み中...',
+      error: 'エラー',
+      success: '成功',
+      warning: '警告',
+      info: '情報',
+      search: '検索...',
+      noResults: '結果が見つかりません',
+      backToTop: 'トップに戻る',
+      share: '共有',
+      print: '印刷',
+      download: 'ダウンロード',
+      viewAll: 'すべて表示',
+      viewAllPosts: 'すべて表示',
+      backToPage: 'ページに戻る',
+      relatedPosts: '関連記事',
+      newerPosts: '新しい記事',
+      olderPosts: '古い記事',
+      tableOfContents: '目次',
+      totalPosts: '合計',
+      posts: '件の記事',
+      sendInfo: '情報を送信',
+      contactForConsult: '相談のご連絡',
+      translationNotice: 'Google翻訳：コンテンツは自動翻訳されています。正確な法的アドバイスについては、直接お問い合わせください。',
+      followUs: 'フォローする',
+      legalStaff: '法務スタッフ',
+      satisfiedClients: '満足したお客様',
+      casesWon: '勝訴案件',
+    },
+    ko: {
+      readMore: '더 읽기',
+      learnMore: '더 알아보기',
+      viewMore: '더 보기',
+      contactUs: '문의하기',
+      contactNow: '지금 문의',
+      getQuote: '견적 받기',
+      submit: '제출',
+      cancel: '취소',
+      close: '닫기',
+      loading: '로딩 중...',
+      error: '오류',
+      success: '성공',
+      warning: '경고',
+      info: '정보',
+      search: '검색...',
+      noResults: '결과를 찾을 수 없습니다',
+      backToTop: '맨 위로',
+      share: '공유',
+      print: '인쇄',
+      download: '다운로드',
+      viewAll: '전체 보기',
+      viewAllPosts: '전체 보기',
+      backToPage: '페이지로 돌아가기',
+      relatedPosts: '관련 게시물',
+      newerPosts: '최신 게시물',
+      olderPosts: '이전 게시물',
+      tableOfContents: '목차',
+      sendInfo: '정보 보내기',
+      contactForConsult: '상담 문의',
+      totalPosts: '총',
+      posts: '개의 게시물',
+      translationNotice: 'Google 번역: 콘텐츠가 자동 번역되었습니다. 정확한 법률 상담을 원하시면 직접 연락해 주세요.',
+      followUs: '팔로우',
+      legalStaff: '법무 직원',
+      satisfiedClients: '만족한 고객',
+      casesWon: '승소 사건',
+    },
+  },
+
+  // Post/Blog labels
+  post: {
+    vi: {
+      author: 'Tác giả:',
+      reviewedBy: 'Tham vấn bởi:',
+      readingTime: 'phút đọc',
+      publishDate: 'Ngày đăng',
+      updateDate: 'Cập nhật',
+      category: 'Danh mục',
+      tags: 'Thẻ',
+      education: 'Học vấn',
+      authorPosts: 'Bài viết của tác giả',
+      lawyerTitle: 'Luật sư',
+    },
+    en: {
+      author: 'Author:',
+      reviewedBy: 'Reviewed by:',
+      readingTime: 'min read',
+      publishDate: 'Published',
+      updateDate: 'Updated',
+      category: 'Category',
+      tags: 'Tags',
+      education: 'Education',
+      authorPosts: 'Author\'s Posts',
+      lawyerTitle: 'Lawyer',
+    },
+    zh: {
+      author: '作者：',
+      reviewedBy: '审核：',
+      readingTime: '分钟阅读',
+      publishDate: '发布日期',
+      updateDate: '更新日期',
+      category: '分类',
+      tags: '标签',
+      education: '学历',
+      authorPosts: '作者文章',
+      lawyerTitle: '律师',
+    },
+    ja: {
+      author: '著者：',
+      reviewedBy: '監修：',
+      readingTime: '分で読める',
+      publishDate: '公開日',
+      updateDate: '更新日',
+      category: 'カテゴリー',
+      tags: 'タグ',
+      education: '学歴',
+      authorPosts: '著者の記事',
+      lawyerTitle: '弁護士',
+    },
+    ko: {
+      author: '작성자:',
+      reviewedBy: '검토자:',
+      readingTime: '분 읽기',
+      publishDate: '게시일',
+      updateDate: '업데이트',
+      category: '카테고리',
+      tags: '태그',
+      education: '학력',
+      authorPosts: '저자 게시물',
+      lawyerTitle: '변호사',
+    },
+  },
+
+  // Company info
+  company: {
+    vi: {
+      name: 'Youth & Partners',
+      legalName: 'Công ty Luật TNHH Youth & Partners',
+      legalPrefix: 'Công ty Luật TNHH',
+      director: 'Giám đốc, người đại diện theo pháp luật:',
+      directorName: 'Luật sư Nguyễn Văn Thành',
+      hotline: 'Hotline',
+      email: 'Email',
+      addressHanoi: 'Hà Nội: P219, Tháp Đông, Chung cư Học viện Quốc Phòng, phường Nghĩa Đô, thành phố Hà Nội.',
+      addressBacNinh: 'Bắc Ninh: Số 26 Đoàn Trần Nghiệp, phường Kinh Bắc, tỉnh Bắc Ninh.',
+      addressPhuTho: 'Phú Thọ: Số 170, đường Nguyễn Văn Linh, phường Vĩnh Phúc, tỉnh Phú Thọ.',
+      headquarters: 'Trụ sở',
+      partners: 'Đối tác và khách hàng của chúng tôi',
+    },
+    en: {
+      name: 'Youth & Partners',
+      legalName: 'Youth & Partners Law Firm',
+      legalPrefix: 'Law Firm',
+      director: 'Director, legal representative:',
+      directorName: 'Lawyer Nguyen Van Thanh',
+      hotline: 'Hotline',
+      email: 'Email',
+      addressHanoi: 'Hanoi: P219, East Tower, National Defense Academy Apartment, Nghia Do Ward, Hanoi City.',
+      addressBacNinh: 'Bac Ninh: 26 Doan Tran Nghiep Street, Kinh Bac Ward, Bac Ninh Province.',
+      addressPhuTho: 'Phu Tho: 170 Nguyen Van Linh Street, Vinh Phuc Ward, Phu Tho Province.',
+      headquarters: 'Headquarters',
+      partners: 'Our Partners and Clients',
+    },
+    zh: {
+      name: 'Youth & Partners',
+      legalName: 'Youth & Partners律师事务所有限公司',
+      legalPrefix: '律师事务所有限公司',
+      director: '董事、法定代表人：',
+      directorName: '律师阮文成',
+      hotline: '热线电话',
+      email: '电子邮件',
+      addressHanoi: '河内：东塔P219，国防学院公寓，义都坊，河内市。',
+      addressBacNinh: '北宁：北宁省京北坊段陈业街26号。',
+      addressPhuTho: '富寿：富寿省永福坊阮文灵路170号。',
+      headquarters: '总部',
+      partners: '我们的合作伙伴和客户',
+    },
+    ja: {
+      name: 'Youth & Partners',
+      legalName: 'Youth & Partners法律事務所',
+      legalPrefix: '法律事務所',
+      director: '取締役、法定代表者：',
+      directorName: '弁護士グエン・ヴァン・タイン',
+      hotline: 'ホットライン',
+      email: 'メール',
+      addressHanoi: 'ハノイ：イーストタワーP219、国防学院アパート、ギアド区、ハノイ市。',
+      addressBacNinh: 'バクニン：バクニン省キンバック区ドアン・トラン・ギエップ通り26番。',
+      addressPhuTho: 'フート：フート省ヴィンフック区グエン・ヴァン・リン通り170番。',
+      headquarters: '本社',
+      partners: 'パートナーとクライアント',
+    },
+    ko: {
+      name: 'Youth & Partners',
+      legalName: 'Youth & Partners 법률사무소',
+      legalPrefix: '법률사무소',
+      director: '대표이사, 법정대리인:',
+      directorName: '변호사 응우옌 반 타인',
+      hotline: '핫라인',
+      email: '이메일',
+      addressHanoi: '하노이: P219, 이스트타워, 국방학원 아파트, 응히아도구, 하노이시.',
+      addressBacNinh: '박닌: 박닌성 킨박구 도안쩐응히엡거리 26번.',
+      addressPhuTho: '푸토: 푸토성 빈푹구 응우옌반린거리 170번.',
+      headquarters: '본사',
+      partners: '파트너 및 고객',
+    },
+  },
+
+  // Contact page
+  contact: {
+    vi: {
+      title: 'Liên hệ với chúng tôi!',
+      subtitle: 'Hãy để lại thông tin bên dưới',
+      description: 'Đội ngũ hỗ trợ của chúng tôi luôn sẵn lòng giúp đỡ bạn.',
+      responseTime: 'Đội ngũ hỗ trợ của chúng tôi thường phản hồi trong vòng 24 giờ làm việc.',
+      generalSupport: 'Hỗ trợ chung',
+      generalDesc: 'Liên hệ với chúng tôi để được hỗ trợ về các vấn đề pháp lý chung.',
+      consultDept: 'Liên hệ bộ phận tư vấn',
+      consultDesc: 'Trò chuyện với chúng tôi để giải đáp các câu hỏi về dịch vụ tư vấn pháp lý.',
+      techSupport: 'Hỗ trợ kỹ thuật',
+      techDesc: 'Liên hệ với chúng tôi khi bạn gặp vấn đề kỹ thuật.',
+      readyToHelp: 'Chúng tôi luôn sẵn sàng hỗ trợ bạn!',
+      disclaimer: 'Bằng việc gửi biểu mẫu liên hệ này, bạn xác nhận và đồng ý với việc thu thập thông tin cá nhân của bạn.',
+      contactAuthor: 'Liên hệ với tác giả',
+      consultNow: 'Liên hệ để được tư vấn ngay',
+      contactUs: 'Liên hệ với chúng tôi',
+    },
+    en: {
+      title: 'Contact Us!',
+      subtitle: 'Leave your information below',
+      description: 'Our support team is always ready to help you.',
+      responseTime: 'Our support team usually responds within 24 business hours.',
+      generalSupport: 'General Support',
+      generalDesc: 'Contact us for support on general legal issues.',
+      consultDept: 'Contact Consulting Department',
+      consultDesc: 'Chat with us to answer questions about legal consulting services.',
+      techSupport: 'Technical Support',
+      techDesc: 'Contact us when you have technical issues.',
+      readyToHelp: 'We are always ready to help you!',
+      disclaimer: 'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+      contactAuthor: 'Contact Author',
+      consultNow: 'Contact for Consultation Now',
+      contactUs: 'Contact Us',
+    },
+    zh: {
+      title: '联系我们！',
+      subtitle: '请在下面留下您的信息',
+      description: '我们的支持团队随时准备为您提供帮助。',
+      responseTime: '我们的支持团队通常在24个工作小时内回复。',
+      generalSupport: '一般支持',
+      generalDesc: '联系我们以获得一般法律问题的支持。',
+      consultDept: '联系咨询部门',
+      consultDesc: '与我们聊天以解答有关法律咨询服务的问题。',
+      techSupport: '技术支持',
+      techDesc: '遇到技术问题时请联系我们。',
+      readyToHelp: '我们随时准备为您提供帮助！',
+      disclaimer: '提交此联系表格即表示您确认并同意收集您的个人信息。',
+      contactAuthor: '联系作者',
+      consultNow: '立即联系咨询',
+      contactUs: '联系我们',
+    },
+    ja: {
+      title: 'お問い合わせ！',
+      subtitle: '以下に情報を残してください',
+      description: '当社のサポートチームはいつでもお手伝いする準備ができています。',
+      responseTime: '当社のサポートチームは通常24営業時間以内に返答します。',
+      generalSupport: '一般サポート',
+      generalDesc: '一般的な法的問題のサポートについてはお問い合わせください。',
+      consultDept: 'コンサルティング部門への連絡',
+      consultDesc: '法律相談サービスについての質問にお答えします。',
+      techSupport: '技術サポート',
+      techDesc: '技術的な問題が発生した場合はお問い合わせください。',
+      readyToHelp: '私たちはいつでもお手伝いする準備ができています！',
+      disclaimer: 'この連絡フォームを送信することで、個人情報の収集に同意したことになります。',
+      contactAuthor: '著者に連絡する',
+      consultNow: '今すぐ相談のご連絡を',
+      contactUs: 'お問い合わせ',
+    },
+    ko: {
+      title: '문의하기!',
+      subtitle: '아래에 정보를 남겨주세요',
+      description: '저희 지원팀은 항상 도움을 드릴 준비가 되어 있습니다.',
+      responseTime: '저희 지원팀은 보통 24영업시간 이내에 응답합니다.',
+      generalSupport: '일반 지원',
+      generalDesc: '일반 법률 문제에 대한 지원을 위해 문의해 주세요.',
+      consultDept: '상담부서 연락',
+      consultDesc: '법률 상담 서비스에 대한 질문에 답변해 드립니다.',
+      techSupport: '기술 지원',
+      techDesc: '기술적 문제가 있을 때 문의해 주세요.',
+      readyToHelp: '저희는 항상 도움을 드릴 준비가 되어 있습니다!',
+      disclaimer: '이 문의 양식을 제출함으로써 귀하는 개인정보 수집에 동의하는 것입니다.',
+      contactAuthor: '저자에게 연락',
+      consultNow: '지금 상담 문의',
+      contactUs: '문의하기',
+    },
+  },
+
+  // Forms
+  forms: {
+    vi: {
+      name: 'Họ và tên',
+      email: 'Email',
+      phone: 'Số điện thoại',
+      message: 'Nội dung tin nhắn',
+      subject: 'Tiêu đề',
+      company: 'Công ty',
+      position: 'Chức vụ',
+      required: 'Bắt buộc',
+      optional: 'Tùy chọn',
+      sendMessage: 'Gửi tin nhắn',
+      sending: 'Đang gửi...',
+      sent: 'Đã gửi thành công!',
+      error: 'Có lỗi xảy ra. Vui lòng thử lại.',
+      success: 'Thành công',
+      emailSent: 'Thông tin của bạn đã được gửi tới Youth & Partners.',
+      responseTime: 'Chúng tôi sẽ phản hồi bạn trong thời gian sớm nhất.',
+    },
+    en: {
+      name: 'Full Name',
+      email: 'Email',
+      phone: 'Phone Number',
+      message: 'Message',
+      subject: 'Subject',
+      company: 'Company',
+      position: 'Position',
+      required: 'Required',
+      optional: 'Optional',
+      sendMessage: 'Send Message',
+      sending: 'Sending...',
+      sent: 'Message sent successfully!',
+      error: 'An error occurred. Please try again.',
+      success: 'Success',
+      emailSent: 'Your information has been sent to Youth & Partners.',
+      responseTime: 'We will respond to you as soon as possible.',
+    },
+    zh: {
+      name: '姓名',
+      email: '电子邮件',
+      phone: '电话号码',
+      message: '消息内容',
+      subject: '主题',
+      company: '公司',
+      position: '职位',
+      required: '必填',
+      optional: '可选',
+      sendMessage: '发送消息',
+      sending: '发送中...',
+      sent: '消息发送成功！',
+      error: '发生错误。请重试。',
+      success: '成功',
+      emailSent: '您的信息已发送至 Youth & Partners。',
+      responseTime: '我们将尽快回复您。',
+    },
+    ja: {
+      name: '氏名',
+      email: 'メールアドレス',
+      phone: '電話番号',
+      message: 'メッセージ内容',
+      subject: '件名',
+      company: '会社',
+      position: '役職',
+      required: '必須',
+      optional: '任意',
+      sendMessage: 'メッセージを送信',
+      sending: '送信中...',
+      sent: 'メッセージが正常に送信されました！',
+      error: 'エラーが発生しました。もう一度お試しください。',
+      success: '成功',
+      emailSent: 'お客様の情報はYouth & Partnersに送信されました。',
+      responseTime: 'できるだけ早くご返信いたします。',
+    },
+    ko: {
+      name: '이름',
+      email: '이메일',
+      phone: '전화번호',
+      message: '메시지 내용',
+      subject: '제목',
+      company: '회사',
+      position: '직위',
+      required: '필수',
+      optional: '선택',
+      sendMessage: '메시지 보내기',
+      sending: '보내는 중...',
+      sent: '메시지가 성공적으로 전송되었습니다!',
+      error: '오류가 발생했습니다. 다시 시도해 주세요.',
+      success: '성공',
+      emailSent: '귀하의 정보가 Youth & Partners에 전송되었습니다.',
+      responseTime: '최대한 빨리 답변 드리겠습니다.',
+    },
+  },
+
+  // Language selector
+  language: {
+    vi: {
+      selectLanguage: 'Chọn ngôn ngữ',
+      currentLanguage: 'Ngôn ngữ hiện tại',
+      switchTo: 'Chuyển sang {{language}}',
+    },
+    en: {
+      selectLanguage: 'Select Language',
+      currentLanguage: 'Current Language',
+      switchTo: 'Switch to {{language}}',
+    },
+    zh: {
+      selectLanguage: '选择语言',
+      currentLanguage: '当前语言',
+      switchTo: '切换到{{language}}',
+    },
+    ja: {
+      selectLanguage: '言語を選択',
+      currentLanguage: '現在の言語',
+      switchTo: '{{language}}に切り替え',
+    },
+    ko: {
+      selectLanguage: '언어 선택',
+      currentLanguage: '현재 언어',
+      switchTo: '{{language}}로 전환',
+    },
+  },
+
+  // Error pages
+  error: {
+    vi: {
+      notFound: 'Không tìm thấy trang bạn yêu cầu',
+      pageNotFound: 'Xin lỗi, chúng tôi không thể tìm thấy trang này.',
+      redirectMessage: 'Nhưng đừng lo, bạn có thể tìm thấy nhiều thông tin khác trên trang chủ của chúng tôi.',
+      backToHome: 'Trở về trang chủ',
+    },
+    en: {
+      notFound: 'Page not found',
+      pageNotFound: 'Sorry, we couldn\'t find this page.',
+      redirectMessage: 'But don\'t worry, you can find plenty of other things on our homepage.',
+      backToHome: 'Back to homepage',
+    },
+    zh: {
+      notFound: '找不到页面',
+      pageNotFound: '抱歉，我们找不到这个页面。',
+      redirectMessage: '但不用担心，您可以在我们的主页上找到许多其他信息。',
+      backToHome: '返回首页',
+    },
+    ja: {
+      notFound: 'ページが見つかりません',
+      pageNotFound: '申し訳ありませんが、このページが見つかりませんでした。',
+      redirectMessage: 'でもご心配なく、ホームページには他にも多くの情報があります。',
+      backToHome: 'ホームページに戻る',
+    },
+    ko: {
+      notFound: '페이지를 찾을 수 없습니다',
+      pageNotFound: '죄송합니다, 이 페이지를 찾을 수 없습니다.',
+      redirectMessage: '하지만 걱정마세요, 홈페이지에서 다른 많은 정보를 찾으실 수 있습니다.',
+      backToHome: '홈페이지로 돌아가기',
+    },
+  },
+
+  // Testimonials job titles
+  testimonials: {
+    vi: {
+      customer: 'Khách hàng',
+      manager: 'Quản lý',
+      headOfHR: 'Trưởng phòng Nhân sự',
+      founderCEO: 'Nhà sáng lập & CEO',
+    },
+    en: {
+      customer: 'Customer',
+      manager: 'Manager',
+      headOfHR: 'Head of HR',
+      founderCEO: 'Founder & CEO',
+    },
+    zh: {
+      customer: '客户',
+      manager: '经理',
+      headOfHR: '人力资源总监',
+      founderCEO: '创始人兼CEO',
+    },
+    ja: {
+      customer: 'お客様',
+      manager: 'マネージャー',
+      headOfHR: '人事部長',
+      founderCEO: '創業者兼CEO',
+    },
+    ko: {
+      customer: '고객',
+      manager: '매니저',
+      headOfHR: '인사팀장',
+      founderCEO: '창업자 겸 CEO',
+    },
+  },
+
+  // Individual Lawyer Profiles
+  lawyers: {
+    vi: {
+      // Nguyen Van Thanh
+      nguyenVanThanhBio: 'Ông Nguyễn Văn Thành là Luật sư Điều hành <span class="text-accent dark:text-white highlight"> Youth </span><span class="text-primary dark:text-white highlight">& Partners</span> Law Firm với hơn 14 năm kinh nghiệm nghiên cứu, đưa ra các giải pháp thiết thực cho những vấn đề pháp lý phức tạp mà Doanh nghiệp phải đối mặt. Đồng thời, ông Thành còn giữ vai trò Tổng Cố vấn Pháp lý tại Samsung SDI Việt Nam.',
+      nguyenVanThanhExp: `Luật sư Thành, nguyên là Trưởng phòng pháp chế Samsung SDI Việt Nam (từ 2015) và hiện đang là Luật sư điều hành Youth & Partners Law Firm (từ 2019). <br />
+        - Ban chủ nhiệm Câu lạc bộ pháp chế tỉnh Vĩnh Phúc: 3/2024 <br />
+        - Thẻ hành nghề luật sư số: 10652/LS do Liên đoàn luật sư Việt Nam cấp <br />
+        - Thành viên Liên đoàn luật sư Việt Nam: 2015<br />
+        - Luật sư thuộc Đoàn luật sư, Hội luật gia Việt Nam`,
+      nguyenVanThanhExp2: 'Luật sư Thành có kinh nghiệm tư vấn chuyên sâu các vấn đề nội bộ của Doanh nghiệp, lao động và kinh doanh - thương mại, ông am hiểu sâu sắc các bộ quy tắc quốc tế liên quan tới Doanh nghiệp và Người lao động, có kinh nghiệm tuyệt vời trong việc giải quyết các tranh chấp nội bộ trong doanh nghiệp, các tranh chấp, vấn đề pháp lý liên quan đến các đối tác, nhà cung cấp của Doanh nghiệp.',
+      nguyenVanThanhExp3: 'Luật sư Thành là một trong số rất ít các Luật sư tại Việt Nam có chứng chỉ Kiểm toán cao cấp về hệ thống quản lý, lao động, nhân quyền, đạo đức kinh doanh của tổ chức Liên minh các Doanh nghiệp có Trách nhiệm xã hội (RBA). Với vai trò Lead Auditor (Trưởng đoàn thanh tra các nhà cung ứng của Samsung Việt Nam), Luật sư Thành đã có kinh nghiệm đi audit (đánh giá) hàng trăm nhà cung cấp của Samsung Việt Nam về khía cạnh tuân thủ bộ tiêu chuẩn quốc tế RBA (RBA code of conduct) và quy định của pháp luật Việt Nam.',
+      nguyenVanThanhEdu1: 'Cấp chứng chỉ Lead Auditor (đánh giá viên trưởng) cho chương Lao động & Đạo đức kinh doanh trong chuỗi cung ứng toàn cầu',
+      nguyenVanThanhEdu1Org: 'Verité, Inc.',
+      nguyenVanThanhEdu1Year: 'Năm 2016',
+      nguyenVanThanhEdu2: 'Cấp chứng chỉ hành nghề Luật sư',
+      nguyenVanThanhEdu2Org: 'Bộ Tư Pháp',
+      nguyenVanThanhEdu2Year: 'Năm 2015',
+      nguyenVanThanhEdu3: 'Tốt nghiệp',
+      nguyenVanThanhEdu3Org: 'Học viện Tư Pháp',
+      nguyenVanThanhEdu3Year: 'Năm 2012',
+      nguyenVanThanhEdu4: 'Cử nhân ngoại ngữ',
+      nguyenVanThanhEdu4Org: 'ĐH Ngoại ngữ, ĐH Quốc Gia Hà Nội',
+      nguyenVanThanhEdu4Year: 'Năm 2012',
+      nguyenVanThanhEdu5: 'Cử nhân Luật',
+      nguyenVanThanhEdu5Org: 'Trường ĐH Luật Hà Nội',
+      nguyenVanThanhEdu5Year: 'Năm 2011',
+      nguyenVanThanhPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Văn Thành về mọi khía cạnh pháp lý về lao động, doanh nghiệp và đầu tư nước ngoài.',
+
+      // Nguyen Hoang Anh
+      nguyenHoangAnhBio: 'Luật sư Nguyễn Hoàng Anh là một chuyên gia pháp lý giàu kinh nghiệm, chuyên cung cấp dịch vụ tư vấn và hỗ trợ pháp lý trong nhiều lĩnh vực, đặc biệt là các thủ tục liên quan đến giấy phép con.',
+      nguyenHoangAnhExp: `Luật sư Nguyễn Hoàng Anh sở hữu hơn 10 năm kinh nghiệm trong lĩnh vực pháp lý, với trọng tâm là tư vấn và xử lý các hồ sơ liên quan đến giấy phép con, bao gồm:<br />
+        - Giấy phép đăng ký kinh doanh, giấy phép hoạt động cho các ngành nghề có điều kiện.<br />
+        - Giấy phép môi trường, xây dựng, an toàn thực phẩm, lao động, và các loại giấy phép chuyên ngành khác.<br />
+        - Hỗ trợ doanh nghiệp trong việc xin cấp mới, gia hạn, hoặc điều chỉnh các giấy phép theo quy định pháp luật.`,
+      nguyenHoangAnhExp2: `Nổi bật trong sự nghiệp của Luật sư Nguyễn Hoàng Anh:<br />
+        + Tư vấn thành công cho nhiều doanh nghiệp trong và ngoài nước, từ khởi nghiệp đến quy mô lớn, trong việc hoàn thiện hồ sơ pháp lý và xin cấp giấy phép.<br />
+        + Đại diện khách hàng làm việc với các cơ quan nhà nước, đảm bảo quy trình nhanh chóng, minh bạch và hiệu quả.<br />
+        + Cung cấp các giải pháp pháp lý toàn diện, phù hợp với nhu cầu cụ thể của từng khách hàng, giúp tối ưu hóa chi phí và thời gian.`,
+      nguyenHoangAnhEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      nguyenHoangAnhEdu1Org: 'Bộ Tư Pháp',
+      nguyenHoangAnhEdu1Year: 'Năm 2022',
+      nguyenHoangAnhEdu2: 'Tốt nghiệp',
+      nguyenHoangAnhEdu2Org: 'Học viện Tư Pháp',
+      nguyenHoangAnhEdu2Year: 'Năm 2021',
+      nguyenHoangAnhEdu3: 'Thạc sỹ Luật',
+      nguyenHoangAnhEdu3Org: 'Trường ĐH Luật Hà Nội',
+      nguyenHoangAnhEdu3Year: 'Năm 2018',
+      nguyenHoangAnhEdu4: 'Cử nhân Luật',
+      nguyenHoangAnhEdu4Org: 'Trường ĐH Luật Hà Nội',
+      nguyenHoangAnhEdu4Year: 'Năm 2014',
+      nguyenHoangAnhPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Hoàng Anh về mọi khía cạnh pháp lý về giấy phép, doanh nghiệp và đầu tư nước ngoài.',
+
+      // TS Doan Xuan Truong
+      doanXuanTruongBio: `<i>Lĩnh vực phụ trách:</i><br /><br />
+      • Dân sự: Tư vấn về hợp đồng, giao dịch, thừa kế, hôn nhân gia đình, bồi thường thiệt hại...
+      <br /><br />
+      • Đất đai: Tư vấn về tất cả các thủ tục Đất đai bao gồm nhưng không giới hạn như mua bán, tặng cho, sang tên đổi chủ bất động sản, cấp đổi, cấp lại, cấp mới, đính chính quyền sử dụng đất, chuyển đổi mục đích sử dụng đất, giải quyết tranh chấp Đất đai...
+      <br /><br />
+      • Hành chính: Tư vấn về thủ tục Hành chính, khiếu nại tố cáo.`,
+      doanXuanTruongExp: 'TS Đoàn Xuân Trường hiện là giảng viên của Trường Đại học học Luật Hà Nội.',
+      doanXuanTruongExp2: 'TS Đoàn Xuân Trường có hơn 15 năm kinh nghiệm hoạt động giảng dạy, hướng dẫn tuân thủ pháp luật; thực hiện nhiều vụ việc tư vấn pháp lý cho người lao động và doanh nghiệp, xây dựng nhiều báo cáo độc lập đối với các chủ đề thuộc lĩnh vực luật lao động đương đại.',
+      doanXuanTruongEdu1: 'Tiến sĩ Luật lao động',
+      doanXuanTruongEdu1Org: 'Trường ĐH Luật Hà Nội',
+      doanXuanTruongEdu1Year: 'Năm 2022',
+      doanXuanTruongEdu2: 'Thạc sĩ luật',
+      doanXuanTruongEdu2Org: 'Học viện Khoa học Xã hội',
+      doanXuanTruongEdu2Year: 'Năm 2014',
+      doanXuanTruongEdu3: 'Cử nhân Luật',
+      doanXuanTruongEdu3Org: 'Trường ĐH Luật Hà Nội',
+      doanXuanTruongEdu3Year: 'Năm 2011',
+      doanXuanTruongPostsInfo: 'Các bài viết chuyên sâu của TS Đoàn Xuân Trường về mọi khía cạnh pháp lý về Dân sự, Đất đai, Hành chính.',
+
+      // Tran Chung Kien
+      tranChungKienBio: `<i>Lĩnh vực phụ trách:</i><br /><br />
+      • Dân sự: Tư vấn và đại diện khách hàng trong các vụ án về hợp đồng, giao dịch Dân sự, thừa kế, hôn nhân gia đình, bồi thường thiệt hại và các vấn đề pháp lý khác
+      <br /><br />
+      • Đại diện trong và ngoài tố tụng: Đại diện cho khách hàng trong các vụ án Dân sự, Hình sự và Hành chính tại các cấp tòa án, tham gia vào các thủ tục tố tụng, bảo vệ quyền lợi hợp pháp của khách hàng trong và ngoài tố tụng
+      <br /><br />
+      • Hình sự: Tư vấn và bảo vệ quyền lợi hợp pháp của bị hại, đồng thời tham gia bào chữa cho bị can, bị cáo trong các giai đoạn tố tụng Hình sự. Thực hiện các công việc liên quan đến hành vi phạm tội và xác định mức độ trách nhiệm pháp lý của các đối tượng trong vụ án Hình sự
+      <br /><br />
+      • Hành chính: Tư vấn về các thủ tục Hành chính, giải quyết khiếu nại, tố cáo và các vấn đề pháp lý liên quan đến Hành chính.`,
+      tranChungKienExp: `• Năm 2015: Tốt nghiệp Khoa Luật học, Đại học Luật Hà Nội <br />
+        • Từ 2015 - 2022: Công chức, Kiểm sát viên ngành Kiểm sát nhân dân. Trong suốt thời gian này, ông đã tích lũy kinh nghiệm thực tiễn trong việc tham gia các vụ án Dân sự, Hình sự và Hành chính, thực hiện công tác kiểm sát các hoạt động tố tụng và bảo vệ công lý, góp phần vào việc duy trì trật tự pháp lý và bảo vệ quyền lợi hợp pháp của các bên liên quan <br />
+        • Từ 2022 - 2024: Làm việc tại Công ty Luật TNHH Youth & Partners, chuyên tư vấn và đại diện cho khách hàng trong các vụ việc liên quan đến luật Dân sự, Hình sự, Hành chính và tố tụng. Ông đã thành công trong việc bảo vệ quyền lợi khách hàng trong các vụ án phức tạp, đồng thời giúp khách hàng giải quyết các vấn đề pháp lý một cách hiệu quả và bảo vệ tối đa quyền và lợi ích hợp pháp của họ.`,
+      tranChungKienEdu1: 'Được bổ nhiệm làm Kiểm sát viên',
+      tranChungKienEdu1Org: 'Viện Kiểm Sát Nhân Dân Tối Cao',
+      tranChungKienEdu1Year: 'Năm 2021',
+      tranChungKienEdu2: 'Được cấp chứng chỉ đào tạo nghiệp vụ kiểm sát',
+      tranChungKienEdu2Org: 'Viện Kiểm Sát Nhân Dân Tối Cao',
+      tranChungKienEdu2Year: 'Năm 2019',
+      tranChungKienEdu3: 'Cử nhân Luật',
+      tranChungKienEdu3Org: 'Khoa Luật học, Đại học Luật Hà Nội',
+      tranChungKienEdu3Year: 'Năm 2015',
+      tranChungKienPostsInfo: 'Các bài viết chuyên sâu của Luật sư Trần Chung Kiên về mọi khía cạnh pháp lý về Dân sự, Hình sự, Hành chính và tố tụng.',
+
+      // Bui Duc Manh
+      buiDucManhBio: `<i>Lĩnh vực phụ trách:</i><br /><br />
+      • Dân sự: Tư vấn về hợp đồng, giao dịch, thừa kế, hôn nhân gia đình, bồi thường thiệt hại...
+      <br /><br />
+      • Đất đai: Tư vấn về tất cả các thủ tục Đất đai bao gồm nhưng không giới hạn như mua bán, tặng cho, sang tên đổi chủ bất động sản, cấp đổi, cấp lại, cấp mới, đính chính quyền sử dụng đất, chuyển đổi mục đích sử dụng đất, giải quyết tranh chấp Đất đai...
+      <br /><br />
+      • Hành chính: Tư vấn về thủ tục Hành chính, khiếu nại tố cáo.`,
+      buiDucManhExp: `- Từ 2022 - 2024: Chuyên viên Pháp lý tại Công ty Luật TNHH Youth & Partners. Trong suốt thời gian làm việc tại công ty, chuyên viên Mạnh đã tích lũy được nhiều kinh nghiệm quý báu trong các lĩnh vực Dân sự, Hành chính, Đất đai và xin cấp Giấy phép. Cụ thể: <br />
+        • Tham gia giải quyết thành công nhiều vụ tranh chấp Đất đai, bảo vệ quyền lợi hợp pháp của khách hàng liên quan đến tài sản bất động sản.<br />
+        • Hỗ trợ và tư vấn cho khách hàng trong các thủ tục Hành chính, đặc biệt là trong việc thực hiện các thủ tục Hành chính phức tạp liên quan đến Đất đai và các Giấy phép cần thiết cho cá nhân và tổ chức.<br />
+        • Tham gia trực tiếp vào việc soạn thảo và thực hiện các thủ tục liên quan đến cấp Giấy phép con, đáp ứng nhu cầu của Doanh nghiệp và cá nhân trong quá trình hoạt động kinh doanh và Đầu tư.`,
+      buiDucManhEdu1: 'Tốt nghiệp',
+      buiDucManhEdu1Org: 'Học viện Tư Pháp',
+      buiDucManhEdu1Year: 'Năm 2024',
+      buiDucManhEdu2: 'Cử nhân Luật',
+      buiDucManhEdu2Org: 'Khoa Luật Kinh tế, Trường Đại học Kinh tế & Quản trị Kinh doanh Thái Nguyên',
+      buiDucManhEdu2Year: 'Năm 2022',
+      buiDucManhPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Bùi Đức Mạnh về mọi khía cạnh pháp lý về lao động, doanh nghiệp và đầu tư nước ngoài.',
+
+      // Do Thi Luong
+      doThiLuongBio: `<i>Lĩnh vực phụ trách:</i><br /><br />
+      • Tư vấn pháp luật thường xuyên cho các Doanh nghiệp: soạn thảo và rà soát các loại Hợp đồng trong Doanh nghiệp như Hợp đồng nguyên tắc, Hợp đồng mua bán hàng hoá, Hợp đồng lao động, …; soạn thảo báo cáo pháp lý tư vấn các lĩnh vực như lao động, kinh doanh thương mại, …; tư vấn, rà soát và soạn thảo các tài liệu khác theo yêu cầu của khách hàng
+      <br /><br />
+      • Phụ trách phòng Doanh nghiệp và sở hữu trí tuệ: tư vấn và thực hiện các trọn gói các thủ tục Doanh nghiệp (như đăng ký Doanh nghiệp, thay đổi nội dung đăng ký Doanh nghiệp, giải thể…), sở hữu trí tuệ (đăng ký nhãn hiệu, kiểu dáng công nghiệp, …); thủ tục xin các Giấy phép liên quan trong quá trình hoạt động của Doanh nghiệp như Giấy phép thành lập trung tâm ngoại ngữ, Giấy phép lao động,…
+      <br /><br />
+      • Hỗ trợ và tham gia các dự án thành lập, điều chỉnh dự án Đầu tư có vốn Đầu tư nước ngoài.`,
+      doThiLuongExp: `• 2017-2020: làm việc tại Công ty TNHH Tư vấn Đầu tư và Sở hữu trí tuệ Hoàng Phi: tư vấn, soạn thảo hồ sơ, thực hiện các thủ tục đăng ký Doanh nghiệp, sở hữu trí tuệ, thủ tục khác <br />
+        • 2020-2022: làm việc tại Công ty TNHH Luật Aliat: chuyên sâu tư vấn, soạn hồ sơ, làm việc với cơ quan nhà nước trong lĩnh vực sở hữu trí tuệ; tư vấn và thực hiện các thủ tục Doanh nghiệp <br />
+        • 2023 - nay: làm việc tại Công ty Luật TNHH Youth & Partners: chuyên viên tư vấn pháp luật thường xuyên cho các Doanh nghiệp; phụ trách phòng Doanh nghiệp và sở hữu trí tuệ.`,
+      doThiLuongEdu1: 'Tham gia khóa đào tạo nghề Luật sư',
+      doThiLuongEdu1Org: 'Học viện Tư Pháp',
+      doThiLuongEdu1Year: 'Năm 2024',
+      doThiLuongEdu2: 'Cử nhân Luật',
+      doThiLuongEdu2Org: 'Khoa Luật kinh tế - Trường Đại học Luật Hà Nội',
+      doThiLuongEdu2Year: 'Năm 2017',
+      doThiLuongPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Đỗ Thị Lương về mọi khía cạnh pháp lý về Lao động, Doanh nghiệp, Đầu tư, Giấy phép, Sở hữu Trí tuệ.',
+
+      // Mang Dieu Hien
+      mangDieuHienBio: 'Luật sư Mang Diệu Hiền là một chuyên gia pháp lý có uy tín, chuyên sâu trong lĩnh vực tư vấn và hỗ trợ cấp phép các loại giấy phép con. Với nền tảng học vấn vững chắc và kinh nghiệm thực tiễn phong phú, Luật sư Mang Diệu Hiền đã hỗ trợ nhiều cá nhân, doanh nghiệp hoàn thiện các thủ tục pháp lý phức tạp liên quan đến giấy phép hoạt động, đảm bảo tuân thủ đúng quy định pháp luật Việt Nam.',
+      mangDieuHienExp: `Luật sư Mang Diệu Hiền có hơn 10 năm kinh nghiệm trong lĩnh vực pháp lý, đặc biệt là trong việc tư vấn và xử lý các hồ sơ liên quan đến giấy phép con như: <br />
+        + Giấy phép kinh doanh (đăng ký doanh nghiệp, giấy phép hoạt động các ngành nghề có điều kiện).<br />
+        + Giấy phép xây dựng, môi trường, an toàn thực phẩm, quảng cáo, và các loại giấy phép chuyên ngành khác.<br />
+        + Hỗ trợ doanh nghiệp trong việc xin cấp, gia hạn, hoặc điều chỉnh các giấy phép con theo quy định pháp luật.`,
+      mangDieuHienExp2: `Với sự am hiểu sâu sắc về hệ thống pháp luật Việt Nam và quy trình hành chính, Luật sư Mang Diệu Hiền đã:<br />
+        + Tư vấn thành công cho hàng trăm doanh nghiệp vừa và nhỏ trong việc hoàn thiện các thủ tục pháp lý, đảm bảo đúng tiến độ và yêu cầu pháp luật.<br />
+        + Đại diện khách hàng làm việc với các cơ quan nhà nước, giúp tiết kiệm thời gian và chi phí.<br />
+        + Cung cấp các giải pháp pháp lý tối ưu, phù hợp với từng trường hợp cụ thể, từ các doanh nghiệp khởi nghiệp đến các công ty lớn.`,
+      mangDieuHienEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      mangDieuHienEdu1Org: 'Bộ Tư Pháp',
+      mangDieuHienEdu1Year: 'Năm 2019',
+      mangDieuHienEdu2: 'Tốt nghiệp',
+      mangDieuHienEdu2Org: 'Học viện Tư Pháp',
+      mangDieuHienEdu2Year: 'Năm 2015',
+      mangDieuHienEdu3: 'Cử nhân Luật',
+      mangDieuHienEdu3Org: 'Đại học Luật TP. Hồ Chí Minh',
+      mangDieuHienEdu3Year: 'Năm 2010',
+      mangDieuHienPostsInfo: 'Các bài viết chuyên sâu của Luật sư Mang Diệu Hiền về mọi khía cạnh pháp lý về giấy phép, doanh nghiệp và đầu tư nước ngoài.',
+
+      // Nguyen Hoang Ngoc Lan
+      nguyenHoangNgocLanBio: 'Luật sư Lan là một chuyên gia pháp lý có chuyên môn sâu trong lĩnh vực y tế, nổi bật với kinh nghiệm tư vấn và giải quyết các vấn đề pháp lý liên quan đến giấy phép hoạt động trong ngành y. Với sự am hiểu sâu sắc về các quy định pháp luật và quy trình hành chính, Luật sư Lan đã hỗ trợ nhiều bệnh viện, phòng khám, trung tâm y tế và các cơ sở chăm sóc sức khỏe khác trong việc xin cấp và điều chỉnh các loại giấy phép, đảm bảo tuân thủ đúng quy định pháp luật Việt Nam.',
+      nguyenHoangNgocLanExp: `Luật sư Lan có nhiều năm kinh nghiệm chuyên sâu trong lĩnh vực pháp lý y tế, đặc biệt là tư vấn và xử lý các hồ sơ liên quan đến giấy phép con trong ngành y, bao gồm:<br />
+        • Giấy phép hoạt động khám bệnh, chữa bệnh.<br />
+        • Điều chỉnh giấy phép hoạt động khám bệnh, chữa bệnh.<br />
+        • Giấy phép hành nghề y và các giấy phép chuyên ngành khác trong lĩnh vực y tế.<br />
+        Những thành tựu nổi bật của Luật sư Lan:<br />
+        • Tư vấn thành công cho nhiều bệnh viện, phòng khám, trung tâm y tế và các cơ sở chăm sóc sức khỏe trong việc chuẩn bị và hoàn thiện hồ sơ xin cấp phép từ các cơ quan nhà nước có thẩm quyền.<br />
+        • Hỗ trợ khách hàng hiểu rõ các yêu cầu pháp lý, đảm bảo hồ sơ và giấy tờ đáp ứng đầy đủ các tiêu chuẩn quy định, giúp tiết kiệm thời gian và chi phí.<br />
+        • Đại diện khách hàng làm việc với các cơ quan quản lý, đảm bảo quy trình xin cấp phép diễn ra nhanh chóng, minh bạch và hiệu quả.<br />
+        • Cung cấp giải pháp pháp lý toàn diện, phù hợp với từng trường hợp cụ thể, từ các cơ sở y tế mới thành lập đến các tổ chức y tế quy mô lớn.`,
+      nguyenHoangNgocLanEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      nguyenHoangNgocLanEdu1Org: 'Bộ Tư Pháp',
+      nguyenHoangNgocLanEdu1Year: 'Năm 2024',
+      nguyenHoangNgocLanEdu2: 'Thạc sỹ Luật',
+      nguyenHoangNgocLanEdu2Org: 'Trường ĐH Luật Hà Nội',
+      nguyenHoangNgocLanEdu2Year: 'Năm 2022',
+      nguyenHoangNgocLanEdu3: 'Tốt nghiệp',
+      nguyenHoangNgocLanEdu3Org: 'Học viện Tư Pháp',
+      nguyenHoangNgocLanEdu3Year: 'Năm 2021',
+      nguyenHoangNgocLanEdu4: 'Cử nhân Luật',
+      nguyenHoangNgocLanEdu4Org: 'Trường ĐH Luật Hà Nội',
+      nguyenHoangNgocLanEdu4Year: 'Năm 2020',
+      nguyenHoangNgocLanPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Hoàng Ngọc Lan về mọi khía cạnh pháp lý về giấy phép, doanh nghiệp và đầu tư nước ngoài.',
+
+      // Nguyen Minh Anh
+      nguyenMinhAnhBio: 'Luật sư Nguyễn Minh Anh là một chuyên gia pháp lý với hơn 7 năm kinh nghiệm trong lĩnh vực luật kinh tế, luật đất đai và dân sự. Sở hữu nền tảng học vấn xuất sắc cùng kinh nghiệm thực tiễn tại các tổ chức uy tín, Luật sư Minh Anh đã khẳng định năng lực trong việc tư vấn pháp lý, giải quyết tranh chấp và hỗ trợ doanh nghiệp, cá nhân trong các vụ việc/vụ án phức tạp. Với sự am hiểu sâu rộng về pháp luật và tư duy nhạy bén, Luật sư Minh Anh luôn mang đến các giải pháp pháp lý hiệu quả, tối ưu lợi ích cho khách hàng trong các lĩnh vực kinh doanh thương mại, đất đai và dân sự.',
+      nguyenMinhAnhExp: `• 11/2022 - 09/2024: Phó phòng Thanh tra Pháp chế, Công ty TNHH Đầu tư Thương mại và Du lịch Quốc tế Hòa Bình <br />
+        Tư vấn pháp lý, đàm phán hợp đồng, làm việc với cơ quan nhà nước, rà soát hợp đồng, giải quyết tranh chấp kinh doanh, dân sự và kiểm soát tuân thủ nội bộ.<br />
+        • 06/2019 - 11/2022: Quản lý Trưởng phòng Tư vấn, Công ty Luật TNHH Việt Kim<br />
+        Quản lý phòng tư vấn, nghiên cứu hồ sơ, tố tụng tại Tòa (dân sự, kinh doanh thương mại), tư vấn tái cấu trúc doanh nghiệp, M&A, và giải quyết tranh chấp.<br />
+        • 06/2017 - 06/2019: Thực tập sinh, Văn phòng Luật sư Trọng Hải và Cộng sự<br />
+        Soạn thảo văn bản, rà soát hợp đồng, hỗ trợ luật sư trong các vụ án dân sự và kinh doanh thương mại.`,
+      nguyenMinhAnhEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      nguyenMinhAnhEdu1Org: 'Bộ Tư Pháp',
+      nguyenMinhAnhEdu1Year: 'Năm 2024',
+      nguyenMinhAnhEdu2: 'Thạc sỹ Luật Kinh tế',
+      nguyenMinhAnhEdu2Org: 'Trường ĐH Luật Hà Nội',
+      nguyenMinhAnhEdu2Year: 'Năm 2023',
+      nguyenMinhAnhEdu3: 'Tốt nghiệp',
+      nguyenMinhAnhEdu3Org: 'Học viện Tư Pháp',
+      nguyenMinhAnhEdu3Year: 'Năm 2021',
+      nguyenMinhAnhEdu4: 'Cử nhân Luật (Xuất sắc)',
+      nguyenMinhAnhEdu4Org: 'Đại học Vinh',
+      nguyenMinhAnhEdu4Year: 'Năm 2019',
+      nguyenMinhAnhPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Minh Anh về mọi khía cạnh pháp lý về giấy phép, đất đai, doanh nghiệp và đầu tư nước ngoài.',
+
+      // Nguyen Thi Huong
+      nguyenThiHuongBio: `<i>Lĩnh vực phụ trách:</i><br /><br />
+      • Dân sự: Tư vấn về hợp đồng, giao dịch Dân sự, thừa kế, bồi thường thiệt hại và các vấn đề pháp lý liên quan khác.
+      <br /><br />
+      • Hôn nhân và gia đình: Tư vấn về ly hôn, chia tài sản, quyền nuôi con, và các vấn đề pháp lý liên quan đến hôn nhân và gia đình.
+      <br /><br />
+      • Đất đai: Tư vấn về các vấn đề liên quan đến Đất đai, bao gồm nhưng không giới hạn như giải quyết tranh chấp Đất đai, chuyển nhượng, cấp đổi giấy chứng nhận quyền sử dụng đất.
+      <br /><br />
+      • Hình sự: Tư vấn và bảo vệ quyền lợi hợp pháp của bị hại, đồng thời tham gia bào chữa cho bị can, bị cáo trong các giai đoạn tố tụng Hình sự. Thực hiện các công việc liên quan đến hành vi phạm tội và xác định mức độ trách nhiệm pháp lý của các đối tượng trong vụ án Hình sự
+      <br /><br />
+      • Doanh nghiệp: Tư vấn pháp lý về thành lập, hoạt động và quản lý Doanh nghiệp, các vấn đề liên quan đến hợp đồng, pháp lý kinh doanh.
+      <br /><br />
+      • Lao động: Tư vấn về các vấn đề liên quan đến lao động, hợp đồng lao động, tranh chấp lao động và quyền lợi của người lao động
+      <br /><br />
+      • Đầu tư: Tư vấn về các vấn đề Đầu tư, bao gồm Đầu tư trong và ngoài nước, chiến lược phát triển Doanh nghiệp và các vấn đề pháp lý liên quan đến Đầu tư bất động sản.`,
+      nguyenThiHuongExp: 'Luật sư Hướng có hơn 07 năm kinh nghiệm trong lĩnh vực pháp lý, chuyên sâu các lĩnh vực Dân sự, Hình sự, Hành chính, Kinh doanh thương mại và tố tụng cho khách hàng.',
+      nguyenThiHuongExp2: 'Với nhiều năm kinh nghiệm tham gia tranh tụng, bào chữa, bảo vệ, đại diện, tư vấn, soạn thảo, cung cấp biểu mẫu, hợp đồng, văn kiện liên quan đến pháp luật cho tổ chức, cá nhân trong và ngoài nước… Luật sư Hướng đã thành công trong việc bảo vệ quyền và lợi ích của khách hàng trong các vụ án phức tạp, đồng thời giúp khách hàng giải quyết các vấn đề pháp lý một cách hiệu quả.',
+      nguyenThiHuongEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      nguyenThiHuongEdu1Org: 'Bộ Tư Pháp',
+      nguyenThiHuongEdu1Year: 'Năm 2020',
+      nguyenThiHuongEdu2: 'Cử nhân Luật Quốc Tế',
+      nguyenThiHuongEdu2Org: 'Học viện Ngoại Giao',
+      nguyenThiHuongEdu2Year: 'Năm 2017',
+      nguyenThiHuongPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Thị Hướng về mọi khía cạnh pháp lý về Dân sự, Hình sự, Hành chính, Kinh doanh thương mại.',
+
+      // Nguyễn Thị Thơm
+      nguyenThiThomBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Doanh nghiệp: Tư vấn pháp lý về thành lập, hoạt động và quản lý Doanh nghiệp, các vấn đề liên quan đến hợp đồng, pháp lý kinh doanh<br /><br />• Lao động: Tư vấn về các vấn đề liên quan đến lao động, hợp đồng lao động, tranh chấp lao động và quyền lợi của người lao động<br /><br />• Đầu tư: Tư vấn về các vấn đề Đầu tư, bao gồm Đầu tư trong và ngoài nước, chiến lược phát triển Doanh nghiệp và các vấn đề pháp lý liên quan đến Đầu tư bất động sản.',
+      nguyenThiThomExp: 'Với 09 năm kinh nghiệm trong lĩnh vực pháp chế Doanh nghiệp, trong đó có 05 năm làm việc tại các công ty có vốn Đầu tư nước ngoài và 04 năm tại các công ty Đầu tư và phát triển dự án bất động sản, Luật sư Nguyễn Thị Thơm đã tích lũy được kiến thức sâu rộng và kỹ năng xử lý công việc chuyên nghiệp.',
+      nguyenThiThomExp2: 'Luật sư Thơm chuyên tư vấn và hỗ trợ pháp lý cho các Doanh nghiệp, giúp họ đưa ra các chiến lược phù hợp để tránh tranh chấp pháp lý và giảm thiểu rủi ro trong quá trình hoạt động và kinh doanh.',
+      nguyenThiThomEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      nguyenThiThomEdu1Org: 'Bộ Tư Pháp',
+      nguyenThiThomEdu1Year: 'Năm 2016',
+      nguyenThiThomEdu2: 'Cử nhân Luật',
+      nguyenThiThomEdu2Org: 'Trường ĐH Luật Hà Nội',
+      nguyenThiThomEdu2Year: 'Năm 2012',
+      nguyenThiThomPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Thị Thơm về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Đầu tư.',
+
+      // Nguyễn Thu Nga
+      nguyenThuNgaBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Doanh nghiệp: Tư vấn toàn diện về các vấn đề pháp lý liên quan đến thành lập, hoạt động và quản trị Doanh nghiệp, bảo vệ quyền lợi của cổ đông, và giải quyết các tranh chấp giữa các bên trong Doanh nghiệp. Luật sư Nga giúp các Doanh nghiệp trong việc xây dựng chiến lược pháp lý phù hợp để bảo vệ và phát triển hoạt động kinh doanh, từ việc hợp tác với các đối tác, đến việc soạn thảo hợp đồng kinh tế, thương mại<br /><br />• Lao động: Tư vấn về các vấn đề liên quan đến hợp đồng lao động, quyền lợi của người lao động, tranh chấp lao động, cũng như các quy định về bảo hiểm xã hội, phúc lợi và các quyền lợi khác của người lao động trong Doanh nghiệp. Luật sư Nga hỗ trợ Doanh nghiệp xây dựng chính sách nhân sự, quản lý các mối quan hệ lao động, và giải quyết tranh chấp giữa người sử dụng lao động và người lao động<br /><br />• Đầu tư: Tư vấn pháp lý về các vấn đề Đầu tư trong và ngoài nước, bao gồm các thủ tục Đầu tư, chọn lựa phương thức Đầu tư và cấu trúc giao dịch hợp lý, nhằm tối đa hóa lợi ích và giảm thiểu rủi ro. Luật sư Nga cũng hỗ trợ Doanh nghiệp trong việc tuân thủ các quy định pháp lý liên quan đến Đầu tư và chuyển nhượng vốn, giúp các Doanh nghiệp định hướng chiến lược Đầu tư hiệu quả.',
+      nguyenThuNgaExp: 'Luật sư Nga có hơn 10 năm kinh nghiệm trong lĩnh vực pháp lý, chuyên tư vấn cho các doanh nghiệp, đặc biệt là các doanh nghiệp FDI hoạt động tại Việt Nam.',
+      nguyenThuNgaExp2: 'Với kinh nghiệm làm việc tại các cơ quan nhà nước về lao động, đầu tư và là Phụ trách Pháp chế tại một doanh nghiệp của Nhật Bản, Luật sư Nga có kinh nghiệm phong phú về các vấn đề pháp lý của doanh nghiệp như tuân thủ pháp luật lao động và pháp luật doanh nghiệp, thực hiện các thủ tục hành chính, rà soát hợp đồng, đánh giá rủi ro pháp lý, và tư vấn các vấn đề pháp lý liên quan đến thủ tục đầu tư và phát triển tại Việt Nam.',
+      nguyenThuNgaExp3: 'Ngoài ra, khả năng giao tiếp tốt bằng tiếng Nhật giúp Luật sư Nga là cầu nối quan trọng giữa các doanh nghiệp Nhật Bản với chính quyền và doanh nghiệp tại Việt Nam.',
+      nguyenThuNgaEdu1: 'Tốt nghiệp Khóa đào tạo pháp luật Nhật Bản',
+      nguyenThuNgaEdu1Org: 'Trung tâm Nghiên cứu và Đào tạo pháp luật Nhật Bản - Đại học tổng hợp Nagoya tại Hà Nội',
+      nguyenThuNgaEdu1Year: 'Năm 2016',
+      nguyenThuNgaEdu2: 'Cử nhân Luật',
+      nguyenThuNgaEdu2Org: 'Trường ĐH Luật Hà Nội',
+      nguyenThuNgaEdu2Year: 'Năm 2012',
+      nguyenThuNgaPostsInfo: 'Các bài viết chuyên sâu của Luật sư Nguyễn Thu Nga về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Đầu tư.',
+
+      // Phạm Thị Huyền Quyên
+      phamThiHuyenQuyenBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Doanh nghiệp: Tư vấn toàn diện về các vấn đề pháp lý liên quan đến thành lập, hoạt động và quản trị Doanh nghiệp, bao gồm các vấn đề về quản lý tài chính, bảo vệ quyền lợi cổ đông, soạn thảo hợp đồng và giải quyết tranh chấp nội bộ. Bà giúp Doanh nghiệp xây dựng và triển khai các chiến lược phát triển bền vững, đảm bảo tuân thủ các quy định pháp lý trong suốt quá trình hoạt động<br /><br />• Lao động: Tư vấn về các vấn đề lao động trong Doanh nghiệp, bao gồm hợp đồng lao động, quyền lợi người lao động, bảo hiểm xã hội, các chế độ phúc lợi, và giải quyết tranh chấp lao động. Bà hỗ trợ Doanh nghiệp trong việc xây dựng các chính sách nhân sự và duy trì môi trường làm việc tuân thủ quy định pháp lý<br /><br />• Đầu tư: Tư vấn các vấn đề liên quan đến Đầu tư, bao gồm lập kế hoạch Đầu tư, các thủ tục liên quan đến việc huy động vốn, chuyển nhượng cổ phần và quản lý rủi ro Đầu tư. Luật sư Quyên giúp Doanh nghiệp tối ưu hóa chiến lược Đầu tư, đồng thời đảm bảo tuân thủ các yêu cầu pháp lý trong và ngoài nước.',
+      phamThiHuyenQuyenExp: 'Với 8 năm kinh nghiệm trong lĩnh vực tư vấn Doanh nghiệp và pháp chế nội bộ, Luật sư Phạm Thị Huyền Quyên đã trở thành một đối tác tin cậy của nhiều Doanh nghiệp.',
+      phamThiHuyenQuyenExp2: 'Bà sở hữu kiến thức chuyên sâu về luật Doanh nghiệp, luật lao động và các quy định pháp luật liên quan, giúp Doanh nghiệp giải quyết hiệu quả các vấn đề pháp lý phát sinh trong quá trình hoạt động.',
+      phamThiHuyenQuyenExp3: 'Đặc biệt, bà chú trọng vào việc đảm bảo tuân thủ pháp luật trong các hoạt động của Doanh nghiệp, từ việc thiết lập cơ cấu tổ chức, quản lý tài chính đến việc xử lý các vấn đề tranh chấp và mâu thuẫn nội bộ.',
+      phamThiHuyenQuyenEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      phamThiHuyenQuyenEdu1Org: 'Bộ Tư Pháp',
+      phamThiHuyenQuyenEdu1Year: 'Năm 2016',
+      phamThiHuyenQuyenEdu2: 'Cử nhân Luật',
+      phamThiHuyenQuyenEdu2Org: 'Trường ĐH Luật Hà Nội',
+      phamThiHuyenQuyenEdu2Year: 'Năm 2012',
+      phamThiHuyenQuyenPostsInfo: 'Các bài viết chuyên sâu của Luật sư Phạm Thị Huyền Quyên về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Đầu tư.',
+
+      // Văn Thị Thanh Hoa
+      vanThiThanhHoaBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Dân sự: Tư vấn về hợp đồng, giao dịch Dân sự, thừa kế, bồi thường thiệt hại và các vấn đề pháp lý liên quan khác<br /><br />• Hình sự: Tư vấn và bảo vệ quyền lợi hợp pháp của bị hại, đồng thời tham gia bào chữa cho bị can, bị cáo trong các giai đoạn tố tụng Hình sự. Thực hiện các công việc liên quan đến hành vi phạm tội và xác định mức độ trách nhiệm pháp lý của các đối tượng trong vụ án Hình sự<br /><br />• Đất đai: Tư vấn về các vấn đề liên quan đến Đất đai, bao gồm nhưng không giới hạn như chuyển nhượng, cấp đổi giấy chứng nhận quyền sử dụng đất, giải quyết tranh chấp Đất đai<br /><br />• Hôn nhân và gia đình: Tư vấn về ly hôn, chia tài sản, quyền nuôi con, và các vấn đề pháp lý liên quan đến hôn nhân và gia đình.',
+      vanThiThanhHoaExp: 'Với hơn 12 năm kinh nghiệm, Luật sư Văn Thị Thanh Hoa đã giải quyết thành công nhiều vụ việc pháp lý phức tạp trong các lĩnh vực Dân sự, Hình sự, Đất đai, hôn nhân và gia đình.',
+      vanThiThanhHoaExp2: 'Bà được biết đến với khả năng tư vấn pháp lý xuất sắc và chiến lược giải quyết vụ việc tối ưu, giúp khách hàng đạt được kết quả mong muốn.',
+      vanThiThanhHoaEdu1: 'Cấp chứng chỉ hành nghề Luật sư',
+      vanThiThanhHoaEdu1Org: 'Bộ Tư Pháp',
+      vanThiThanhHoaEdu1Year: 'Năm 2016',
+      vanThiThanhHoaEdu2: 'Cử nhân Luật',
+      vanThiThanhHoaEdu2Org: 'Trường ĐH Luật Hà Nội',
+      vanThiThanhHoaEdu2Year: 'Năm 2012',
+      vanThiThanhHoaPostsInfo: 'Các bài viết chuyên sâu của Luật sư Văn Thị Thanh Hoa về mọi khía cạnh pháp lý về Đại diện trong và ngoài Tố tụng, Dân sự, Hình sự, Hành chính, Đất đai.',
+
+      // Nghiêm Minh Huyền
+      nghiemMinhHuyenBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />Huyền Nghiêm là chuyên viên, trợ lý Luật sư, biên tập viên hỗ trợ quản lý các bài viết trên website của Y&P Law Firm, hỗ trợ các chuyên viên viết bài phân tích, dịch vụ, tổng hợp quy định, chính sách mới, nổi bật liên quan đến các lĩnh vực: doanh nghiêp, hôn nhân và gia đình, Đất đai, Hình sự,...<br /><br />• Lĩnh vực Đất đai: Cập nhật nhanh, hỗ trợ khách hàng về thực hiện các thủ tục Hành chính liên quan đến Đất đai: đăng ký cấp GCN lần đầu, đăng ký biến động, phân chia di sản thừa kế, tặng cho,...<br /><br />• Lĩnh vực Dân sự, Hình sự: Đọc và nghiên cứu hồ sơ các vụ việc trên thực tế; Hỗ trợ Luật sư sao chụp hồ sơ, tài liệu, soạn thảo các loại đơn và giấy tờ.',
+      nghiemMinhHuyenExp: '• Năm 2019: Thực tập tại UBND quận Bắc Từ Liêm: Thực hiện các công việc tiếp nhận hồ sơ và trả kết quả, giải quyết các hồ sơ đăng ký hộ kinh doanh, mã số thuế<br />• Năm 2020: Thực tập tại Công ty Luật TNHH Á Châu: Soạn thảo các hồ sơ liên quan đến Doanh nghiệp như thành lập, thay đổi, giải thể, đăng ký con dấu; Tìm hiểu về sở hữu trí tuệ, Giấy phép con, đăng ký website,...<br />• Từ năm 2020 - năm 2021: Làm việc tại Công ty Luật TNHH Nam Dương: thực hiện các công tác liên hệ với khách hàng có vi phạm hợp đồng vay theo yêu cầu của đối tác (Ngân hàng: MB bank, VP bank,...; Công ty tài chính: Mcredit, FEcredit,...)<br />• Năm 2021: Làm việc tại Trung tâm khoa học Hành chính và văn thư lưu trữ (SCARMA): Thực hiện các công việc sắp xếp, chỉnh lý, lên file danh sách lưu trữ dữ liệu và lưu kho của MB bank<br />• Từ năm 2022 đến năm 2024: Làm việc tại Công ty TNHH SGS Việt Nam: Kiểm duyệt các nội dung đăng tải lên mạng xã hội<br />• Từ năm 2024 - nay: Làm việc tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm).',
+      nghiemMinhHuyenEdu1: 'Tốt nghiệp',
+      nghiemMinhHuyenEdu1Org: 'Học viện Tư pháp',
+      nghiemMinhHuyenEdu1Desc: '• Tham gia và tốt nghiệp Khóa đào tạo nghề ba chức danh: Thẩm phán, Kiểm sát viên, Luật sư<br />• Được đào tạo chuyên sâu về kỹ năng hành nghề và kinh nghiệm thực tiễn trong các chức danh tư pháp<br />• Thực tập tại các cơ quan Tòa án, Viện Kiểm sát và Văn phòng Luật, theo sự phân công và hướng dẫn của Học viện, nhằm rèn luyện kỹ năng và nâng cao khả năng giải quyết các tình huống pháp lý thực tế',
+      nghiemMinhHuyenEdu1Year: 'Tháng 12/2020 - Tháng 8/2022',
+      nghiemMinhHuyenEdu2: 'Cử nhân Luật',
+      nghiemMinhHuyenEdu2Org: 'Trường Đại học Luật Hà Nội',
+      nghiemMinhHuyenEdu2Desc: '• Tốt nghiệp chuyên ngành Luật, GPA: 7.31/10<br />• Được đào tạo chuyên sâu về các kiến thức pháp lý cơ bản và bộ luật trong các lĩnh vực pháp luật Dân sự, Hình sự, Hành chính, kinh tế và quốc tế',
+      nghiemMinhHuyenEdu2Year: 'Tháng 9/2016 - Tháng 7/2020',
+      nghiemMinhHuyenPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nghiêm Minh Huyền về mọi khía cạnh pháp lý về Dân sự, Hình sự, Hành chính, Đất đai.',
+
+      // Nguyễn Hoàng Dũng
+      nguyenHoangDungBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Dân sự: Tư vấn về hợp đồng, giao dịch Dân sự, đại diện tham gia giải quyết tranh chấp di sản thừa kế, yêu cầu bồi thường thiệt hại trong giao dịch dân sự và các vấn đề pháp lý liên quan khác.<br /><br />• Hôn nhân và gia đình: Tư vấn về hồ sơ, trình tự thủ tục ly hôn, chia tài sản chung, quyền nuôi con, và các vấn đề pháp lý liên quan đến hôn nhân và gia đình.<br /><br />• Đất đai: Tư vấn về hồ sơ, trình tự, thủ tục hành chính liên quan đến đất đai, tham gia giải quyết tranh chấp quyền sử dụng đất.<br /><br />• Hình sự: Tư vấn pháp luật, soạn thảo văn bản nhằm bào chữa cho bị can, bị cáo, hoặc bảo vệ quyền và lợi ích hợp pháp cho bị hại, người liên quan trong vụ án hình sự.<br /><br />• Hành chính: Tư vấn về hồ sơ, trình tự thủ tục, đại diện khách hàng thu thập tài liệu chứng cứ, tham gia bảo vệ quyền lợi ích hợp pháp của khách hàng trong khiếu nại, tố cáo và vụ án hành chính.<br /><br />• Doanh nghiệp: Tư vấn pháp lý về thành lập, hoạt động và quản lý Doanh nghiệp, soạn thảo hợp đồng kinh tế, hợp đồng hợp tác kinh doanh v.v.<br /><br />• Lao động: Tư vấn về các vấn đề liên quan đến lao động, hợp đồng lao động, tranh chấp lao động và quyền lợi của người lao động và người sử dụng lao động.<br /><br />• Đầu tư: Tư vấn, soạn thảo hồ sơ, đại diện làm việc với cơ quan nhà nước trong quá trình thực hiện dự án đầu tư.',
+      nguyenHoangDungExp: '• Năm 2023: Làm việc tại Công ty Luật TNHH Hồng Bách và cộng sự.<br />• Năm 2024: Làm việc tại Trung tâm tư vấn pháp luật Đoàn luật sư tỉnh Hà Nam.<br />• Năm 2025: Làm việc tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm).',
+      nguyenHoangDungEdu1: 'Tốt nghiệp',
+      nguyenHoangDungEdu1Org: 'Học viện Tư pháp',
+      nguyenHoangDungEdu1Desc: '• Tham gia và tốt nghiệp Khóa đào tạo nghề Luật sư<br />• Được đào tạo chuyên sâu về kỹ năng hành nghề và kinh nghiệm thực tiễn trong nghề luật sư',
+      nguyenHoangDungEdu1Year: 'Năm 2025',
+      nguyenHoangDungEdu2: 'Cử nhân Luật',
+      nguyenHoangDungEdu2Org: 'Luật thương mại quốc tế tại Đại học Luật Hà Nội',
+      nguyenHoangDungEdu2Year: 'Năm 2023',
+      nguyenHoangDungPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Hoàng Dũng về mọi khía cạnh pháp lý về Dân sự, Hôn nhân và gia đình, Đất đai, Hình sự, Hành chính, Doanh nghiệp, Lao động, Đầu tư.',
+
+      // Nguyễn Phan Thục Chi
+      nguyenPhanThucChiBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Doanh nghiệp: Hỗ trợ tư vấn pháp luật thường xuyên cho các Doanh nghiệp: Hỗ trợ rà soát các loại Hợp đồng trong Doanh nghiệp như Hợp đồng nguyên tắc, Hợp đồng mua bán hàng hoá, Hợp đồng lao động,…; hỗ trợ soạn thảo báo cáo pháp lý tư vấn các lĩnh vực như lao động, kinh doanh thương mại,…<br /><br />• Hỗ trợ mảng giấy phép liên quan đến dự án Đầu tư có vốn Đầu tư nước ngoài, bao gồm các vấn đề liên quan đến thành lập doanh nghiệp, điều chỉnh Giấy chứng nhận đăng ký đầu tư,…',
+      nguyenPhanThucChiExp: '• T8/2024 – T11/2024: Thực tập sinh tại phòng HCNS tại Chi nhánh công ty TNHH TOTO Việt Nam tại Vĩnh Phúc – hỗ trợ rà soát điều lệ công ty và tra cứu cho các vấn đề liên quan đến an sinh xã hội và lao động.<br />• T12/2024 – T5/2025: Nhân viên phòng HCNS Công ty TNHH KITZ Corporation Việt Nam – rà soát, kiểm tra hợp đồng và tra cứu các vấn đề liên quan đến an sinh xã hội, lao động và thuế; hỗ trợ thủ tục xuất cảnh cho người lao động Việt Nam ra đào tạo tại nước ngoài (Đài Loan, Nhật Bản).<br />• Hiện là Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners.',
+      nguyenPhanThucChiEdu1: 'Cử nhân Luật',
+      nguyenPhanThucChiEdu1Org: 'Luật Kinh tế tại Đại học Luật Hà Nội',
+      nguyenPhanThucChiEdu1Year: 'Năm 2024',
+      nguyenPhanThucChiPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Phan Thục Chi về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Giấy phép.',
+
+      // Nguyễn Phùng Mai Ánh
+      nguyenPhungMaiAnhBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />Với kiến thức sâu rộng và kinh nghiệm thực tiễn, Mai Ánh đảm nhiệm vai trò biên tập viên chuyên về lĩnh vực Dân sự và Hành chính. Các bài viết của Mai Ánh tập trung phân tích, tổng hợp và làm rõ các quy định pháp luật, chính sách nổi bật liên quan đến quyền sử dụng đất, hợp đồng, hôn nhân gia đình và các vấn đề pháp lý Dân sự.',
+      nguyenPhungMaiAnhExp: '• 2021: Thực tập tại Công ty Luật 24h, hỗ trợ luật sư nghiên cứu và soạn thảo hồ sơ, kiểm tra giấy tờ, tài liệu pháp lý<br />• 2023: Thực tập tại Ủy ban nhân dân xã Việt Xuân, phối hợp với Công chức Tư pháp – Hộ tịch thực hiện chứng thực giấy tờ, hòa giải tranh chấp Đất đai, nhập liệu và xử lý tài liệu Hành chính<br />• 2024: Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners, chuyên xử lý thủ tục Đất đai và tư vấn pháp lý về quyền sử dụng đất, quy hoạch, chuyển nhượng và các vấn đề liên quan.',
+      nguyenPhungMaiAnhEdu1: 'Cử nhân Luật',
+      nguyenPhungMaiAnhEdu1Org: 'Khoa Luật, Học viện Hành chính Quốc Gia',
+      nguyenPhungMaiAnhEdu1Year: 'Năm 2024',
+      nguyenPhungMaiAnhPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Phùng Mai Ánh về mọi khía cạnh pháp lý về Dân sự, Hành chính, Đất đai.',
+
+      // Nguyễn Thị Quỳnh Giang
+      nguyenThiQuynhGiangBio: '<br /><i>Giới thiệu:</i><br /><br />• Nguyễn Thị Quỳnh Giang là Chuyên viên pháp lý tại YPLaw Firm từ 2025.<br /><br />• Với nền tảng kiến thức pháp lý từ Cử nhân ngành Luật học, Trường Đại học Luật, Đại học Quốc gia Hà Nội, Quỳnh Giang luôn nỗ lực trau dồi và áp dụng kiến thức, kỹ năng vào thực tiễn công việc.',
+      nguyenThiQuynhGiangExp: '• Tháng 6/2024 – tháng 01/2025: Thực tập tại Tòa án nhân dân quận Nam Từ Liêm, tiếp xúc với các quy trình tố tụng và thực tiễn xét xử, từ đó nâng cao hiểu biết về pháp luật và kỹ năng làm việc trong môi trường chuyên nghiệp<br />• Hiện tại, Quỳnh Giang đang là Chuyên viên pháp lý tại tại Công ty Luật TNHH Youth & Partners (YPLaw Firm), học hỏi và đóng góp vào các hoạt động tư vấn và hỗ trợ pháp lý của công ty.',
+      nguyenThiQuynhGiangEdu1: 'Cử nhân Luật',
+      nguyenThiQuynhGiangEdu1Org: 'Ngành Luật học tại Trường Đại học Luật, Đại học Quốc gia Hà Nội',
+      nguyenThiQuynhGiangEdu1Year: 'Năm 2025',
+      nguyenThiQuynhGiangPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thị Quỳnh Giang về mọi khía cạnh pháp lý về Lao động, Doanh nghiệp, Đầu tư, Giấy phép.',
+
+      // Nguyễn Thị Thu Trang
+      nguyenThiThuTrangBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Soạn thảo hợp đồng, tư vấn pháp lý về lao động, thuế, bất động sản và Đầu tư nước ngoài<br /><br />• Đảm bảo tuân thủ pháp luật trong các hoạt động Doanh nghiệp<br /><br />• Xây dựng và điều chỉnh các biểu mẫu và quy chế nội bộ Doanh nghiệp.',
+      nguyenThiThuTrangExp: '• Soạn thảo và đánh giá các hợp đồng song ngữ (Anh - Việt) bao gồm hợp đồng nguyên tắc, hợp đồng dịch vụ, hợp đồng lao động, NDA, v.v<br />• Tư vấn pháp lý cho khách hàng Doanh nghiệp về các lĩnh vực lao động, thuế, bất động sản, hoạt động kinh doanh<br />• Tham gia xây dựng và đánh giá các biểu mẫu nội bộ như quy chế dân chủ, nội quy lao động, quy chế lương thưởng<br />• Soạn thảo hồ sơ điều chỉnh và cấp đổi giấy chứng nhận Đầu tư cho Doanh nghiệp có vốn Đầu tư nước ngoài.',
+      nguyenThiThuTrangEdu1: 'Cử nhân Luật',
+      nguyenThiThuTrangEdu1Org: 'Ngành Luật tại Đại học Luật Hà Nội',
+      nguyenThiThuTrangEdu1Year: 'Năm 2022',
+      nguyenThiThuTrangPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thị Thu Trang về mọi khía cạnh pháp lý về Lao động, Doanh nghiệp, Đầu tư, Giấy phép.',
+
+      // Nguyễn Thị Thùy Linh
+      nguyenThiThuyLinhBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Soạn thảo Hợp đồng, tư vấn pháp lý về lao động, bất động sản và Đầu tư nước ngoài cho các Doanh nghiệp trong và ngoài nước<br /><br />• Xây dựng và điều chỉnh các biểu mẫu và quy chế nội bộ Doanh nghiệp<br /><br />• Soạn thảo hồ sơ thành lập, thay đổi nội dung đăng ký Doanh nghiệp<br /><br />• Soạn thảo hồ sơ điều chỉnh và cấp đổi giấy chứng nhận đăng ký Đầu tư cho Doanh nghiệp có vốn Đầu tư nước ngoài<br /><br />• Giải quyết các vụ việc hôn nhân gia đình bao gồm cả các vụ việc ly hôn có yếu tố nước ngoài.',
+      nguyenThiThuyLinhExp: '• Giải quyết các vụ việc hôn nhân gia đình bao gồm cả các vụ việc ly hôn có yếu tố nước ngoài;<br />• Tư vấn thường xuyên cho hơn 15 Doanh nghiệp trong và ngoài nước trong các lĩnh vực Doanh nghiệp, lao động, Đầu tư, kinh doanh bất động sản,…<br />• Soạn thảo và đánh giá các hợp đồng song ngữ (Anh - Việt) bao gồm hợp đồng nguyên tắc, hợp đồng dịch vụ, hợp đồng lao động, NDA, v.v.<br />• Xây dựng và đánh giá các biểu mẫu nội bộ như quy chế dân chủ, nội quy lao động, quy chế lương thưởng của Doanh nghiệp<br />• Soạn thảo hồ sơ điều chỉnh và cấp đổi giấy chứng nhận đăng ký Đầu tư cho Doanh nghiệp có vốn Đầu tư nước ngoài<br />• Soạn thảo hồ sơ thành lập, thay đổi nội dung đăng ký Doanh nghiệp.',
+      nguyenThiThuyLinhEdu1: 'Cử nhân Luật',
+      nguyenThiThuyLinhEdu1Org: 'Khoa Luật kinh tế, trường Đại học Luật Hà Nội',
+      nguyenThiThuyLinhEdu1Year: 'Năm 2023',
+      nguyenThiThuyLinhPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thị Thùy Linh về mọi khía cạnh pháp lý về Lao động, Doanh nghiệp, Đầu tư, Hôn nhân & Gia đình.',
+
+      // Nguyễn Thúy Hằng
+      nguyenThuyHangBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Soạn thảo và đánh giá các hợp đồng bao gồm hợp đồng nguyên tắc, hợp đồng dịch vụ, hợp đồng lao động, v.v.<br /><br />• Tư vấn pháp lý cho khách hàng Doanh nghiệp về các lĩnh vực lao động, thuế, bất động sản, hoạt động kinh doanh<br /><br />• Tham gia xây dựng và đánh giá các biểu mẫu nội bộ như quy chế dân chủ, nội quy lao động, quy chế lương thưởng.',
+      nguyenThuyHangExp: '• Từng làm việc và thực tập chuyên môn tại Công ty tư vấn Đầu tư Hà Thị, Tòa án nhân dân thành phố Vĩnh Yên với vai trò nhân viên pháp lý, thực tập sinh pháp lý<br />• Thực hiện các công việc như rà soát hợp đồng, soạn thảo một số văn bản thông dụng, xây dựng quy định nội bộ và dịch thuật pháp lý.',
+      nguyenThuyHangEdu1: 'Cử nhân Luật',
+      nguyenThuyHangEdu1Org: 'Luật Kinh tế tại Đại học Luật Hà Nội',
+      nguyenThuyHangEdu1Year: 'Năm 2024',
+      nguyenThuyHangPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thúy Hằng về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Giấy phép.',
+
+      // Trần Thị Bích Liên
+      tranThiBichLienBio: '<br /><i>Lĩnh vực phụ trách:</i><br /><br />• Dân sự: Tư vấn về hợp đồng, giao dịch Dân sự, thừa kế, hôn nhân & gia đình, bồi thường thiệt hại, và các vấn đề pháp lý liên quan khác<br /><br />• Đất đai: Tư vấn toàn diện về các thủ tục Đất đai, bao gồm nhưng không giới hạn các vấn đề mua bán, tặng cho, sang tên đổi chủ bất động sản, cấp đổi, cấp lại, cấp mới giấy chứng nhận quyền sử dụng đất, đính chính quyền sử dụng đất, chuyển đổi mục đích sử dụng đất, và giải quyết tranh chấp Đất đai<br /><br />• Hành chính: Tư vấn về các thủ tục Hành chính, giải quyết khiếu nại, tố cáo và các vấn đề pháp lý liên quan đến Hành chính.',
+      tranThiBichLienExp: '• Từ 2020 - 2024: Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners. Trong suốt thời gian công tác tại công ty, bà Trần Thị Bích Liên đã tích lũy được kinh nghiệm sâu rộng trong các lĩnh vực Dân sự, Hành chính, và Đất đai<br />• Bà đã tham gia trực tiếp và thành công trong việc giải quyết nhiều vụ tranh chấp Đất đai, hôn nhân và gia đình, bảo vệ quyền lợi hợp pháp của khách hàng<br />• Đồng thời, bà còn thực hiện nhiều thủ tục Hành chính và Đất đai phức tạp, phục vụ nhu cầu của cả cá nhân và tổ chức, góp phần nâng cao hiệu quả và bảo đảm quyền lợi cho khách hàng.',
+      tranThiBichLienEdu1: 'Tham gia khóa đào tạo nghề Luật sư',
+      tranThiBichLienEdu1Org: 'Học viện Tư Pháp',
+      tranThiBichLienEdu1Year: 'Năm 2024',
+      tranThiBichLienEdu2: 'Cử nhân Luật',
+      tranThiBichLienEdu2Org: 'Khoa Luật học, Trường Đại học Luật Hà Nội',
+      tranThiBichLienEdu2Year: 'Năm 2016',
+      tranThiBichLienPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Trần Thị Bích Liên về mọi khía cạnh pháp lý về Dân sự, Hình sự, Hành chính, Đất đai.',
+
+      // Nguyễn Thị Châu Anh
+      nguyenThiChauAnhBio: 'Nguyễn Thị Châu Anh là Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm) từ năm 2025.<br /><br />Với nền tảng đào tạo chuyên ngành Luật tại Trường Đại học Hà Nội, Châu Anh chủ động trau dồi kiến thức pháp lý và kỹ năng hành nghề, đồng thời tích cực vận dụng lý thuyết vào thực tiễn công việc.',
+      nguyenThiChauAnhExp: '• Tháng 6/2025 – tháng 9/2025: Thực tập tại Tòa án nhân dân khu vực 7 – Bắc Ninh. Tham gia hỗ trợ các công việc nghiệp vụ tại Tòa án, tiếp cận quy trình tố tụng và thực tiễn xét xử, qua đó nâng cao hiểu biết pháp luật, tư duy pháp lý và kỹ năng làm việc trong môi trường chuyên nghiệp.<br /><br />• Từ tháng 12/2025 đến nay: Chuyên viên pháp lý – Công ty Luật TNHH Youth & Partners (YP Law Firm). Tham gia hỗ trợ các hoạt động tư vấn pháp lý, soạn thảo hồ sơ, nghiên cứu quy định pháp luật và hỗ trợ luật sư trong quá trình làm việc với khách hàng.',
+      nguyenThiChauAnhEdu1: 'Cử nhân Luật',
+      nguyenThiChauAnhEdu1Org: 'Trường Đại học Hà Nội - Ngành Luật học',
+      nguyenThiChauAnhEdu1Year: 'Năm 2024',
+      nguyenThiChauAnhPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý pháp lý Nguyễn Thị Châu Anh về mọi khía cạnh pháp lý.',
+
+      // Nguyễn Thị Thùy Dương
+      nguyenThiThuyDuongBio: 'Nguyễn Thị Thùy Dương là Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm) từ năm 2025.<br /><br />Với nền tảng kiến thức pháp lý từ ngành Luật Kinh tế, Trường Đại học Luật Hà Nội, Thùy Dương luôn nghiên cứu và ứng dụng kiến thức pháp luật vào thực tiễn giải quyết các vụ việc dân sự, tư vấn thường xuyên cho doanh nghiệp.',
+      nguyenThiThuyDuongExp: '• Trong quá trình học tập, đã tham gia nghiên cứu khoa học sinh viên, các phiên tòa giả định và cuộc thi hòa giải thương mại, qua đó từng bước rèn luyện kỹ năng nghiên cứu pháp lý, phân tích lập luận, soạn thảo văn bản và làm việc nhóm trong môi trường pháp lý chuyên nghiệp.<br /><br />• Hiện tại đang là Chuyên viên pháp lý tại YP Law Firm, tích cực học hỏi và hỗ trợ các hoạt động tư vấn, và công việc pháp lý của Công ty.',
+      nguyenThiThuyDuongEdu1: 'Cử nhân Luật',
+      nguyenThiThuyDuongEdu1Org: 'Trường Đại học Luật Hà Nội - Ngành Luật Kinh tế',
+      nguyenThiThuyDuongEdu1Year: 'Năm 2024',
+      nguyenThiThuyDuongPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thị Thùy Dương về mọi khía cạnh pháp lý về Dân sự, Doanh nghiệp.',
+
+      // Nguyễn Thùy Dương
+      nguyenThuyDuongBio: 'Nguyễn Thùy Dương là Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm) từ năm 2025.<br /><br />Với nền tảng kiến thức pháp lý từ ngành Luật Kinh tế, Trường Đại học Thương Mại, Thùy Dương luôn nghiên cứu và ứng dụng kiến thức pháp luật vào thực tiễn giải quyết các vụ việc dân sự, tư vấn thường xuyên cho doanh nghiệp.',
+      nguyenThuyDuongExp: '<i>Lĩnh vực phụ trách:</i><br /><br />• Doanh nghiệp: Tư vấn pháp luật thường xuyên và hỗ trợ pháp lý cho doanh nghiệp trong các vấn đề pháp lý hàng ngày, tuân thủ pháp luật và hoạt động nội bộ.<br /><br />• Rà soát, phân tích văn bản quy phạm pháp luật, hợp đồng và tài liệu pháp lý liên quan đến hoạt động doanh nghiệp.<br /><br />• Hỗ trợ soạn thảo, kiểm tra các hợp đồng thương mại, văn bản nội bộ, giấy tờ pháp lý theo yêu cầu công ty và khách hàng.<br /><br />• Tham gia nghiên cứu và cập nhật pháp luật mới, tư vấn giải pháp pháp lý thực tiễn cho doanh nghiệp.<br /><br /><i>Kinh nghiệm làm việc:</i><br /><br />• T5/2023 - T8/2023: Nhân viên kinh doanh & Tư vấn khóa học Công ty cổ phần Đào tạo SEDU – Tư vấn khóa học và hỗ trợ quyền lợi của khách hàng.<br /><br />• Hiện tại đang là Chuyên viên pháp lý tại YP Law Firm, tích cực học hỏi và hỗ trợ các hoạt động tư vấn, và công việc pháp lý của Công ty.',
+      nguyenThuyDuongEdu1: 'Cử nhân Luật',
+      nguyenThuyDuongEdu1Org: 'Trường Đại học Thương Mại - Ngành Luật Kinh tế',
+      nguyenThuyDuongEdu1Year: 'Năm 2024',
+      nguyenThuyDuongPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thùy Dương về mọi khía cạnh pháp lý về Dân sự, Doanh nghiệp.',
+
+      // Nguyễn Thị Mai Linh
+      nguyenThiMaiLinhBio: '<br /><i>Giới thiệu:</i><br /><br />• Nguyễn Thị Mai Linh là Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm) từ năm 2025.<br /><br />• Với nền tảng kiến thức chuyên ngành Luật Kinh tế – Trường Đại học Thương mại, Mai Linh luôn chủ động trau dồi kiến thức và kỹ năng thông qua các hoạt động học thuật, nghiên cứu khoa học và các chương trình mô phỏng thực tiễn nghề luật.',
+      nguyenThiMaiLinhExp: '• Trong quá trình học tập, Mai Linh đã tham gia nghiên cứu khoa học sinh viên, các phiên tòa giả định và cuộc thi hòa giải thương mại, qua đó từng bước rèn luyện kỹ năng nghiên cứu pháp lý, phân tích lập luận, soạn thảo văn bản và làm việc nhóm trong môi trường pháp lý chuyên nghiệp.<br /><br />• Hiện tại, Mai Linh đang là Chuyên viên pháp lý tại YP Law Firm, tích cực học hỏi và hỗ trợ các hoạt động tư vấn, và công việc pháp lý của Công ty.',
+      nguyenThiMaiLinhEdu1: 'Cử nhân Luật',
+      nguyenThiMaiLinhEdu1Org: 'Trường Đại học Thương Mại - Ngành Luật Kinh tế',
+      nguyenThiMaiLinhEdu1Year: 'Năm 2024',
+      nguyenThiMaiLinhPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thị Mai Linh về mọi khía cạnh pháp lý.',
+
+      // Nguyễn Thị Xuân
+      nguyenThiXuanBio: '<br /><i>Giới thiệu:</i><br /><br />• Nguyễn Thị Xuân là Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners (Y&P Law Firm) từ năm 2025.<br /><br />• Với nền tảng đào tạo chuyên ngành Luật tại Trường Đại học Luật Hà Nội, Xuân chủ động trau dồi kiến thức pháp lý và kỹ năng hành nghề, đồng thời tích cực vận dụng lý thuyết vào thực tiễn công việc.',
+      nguyenThiXuanExp: '• Tháng 10/2023 – tháng 02/2024: Thực tập tại Công ty Luật Nguyên Phát, tư vấn pháp luật trong lĩnh vực hôn nhân và gia đình, từ đó nâng cao hiểu biết về pháp luật và kỹ năng làm việc trong môi trường chuyên nghiệp.<br /><br />• Tháng 04/2024 – tháng 05/2025: Nhân viên soạn thảo tại Văn phòng công chứng Nguyễn Huệ. Thực hiện rà soát giấy tờ pháp lý và soạn hợp đồng về mua bán xe, chuyển nhượng, thừa kế...; Hỗ trợ công chứng viên thực hiện ký ngoài.<br /><br />• Từ tháng 05/2025 - tháng 11/2025: Làm việc tại Công ty Cổ phần Domin: Kiểm duyệt các nội dung đăng tải lên mạng xã hội.<br /><br />• Hiện tại là Chuyên viên pháp lý tại Công ty Luật TNHH Youth & Partners (YP Law Firm), học hỏi và đóng góp vào các hoạt động tư vấn và hỗ trợ pháp lý của công ty.',
+      nguyenThiXuanEdu1: 'Cử nhân Luật',
+      nguyenThiXuanEdu1Org: 'Trường Đại học Luật Hà Nội - Ngành Luật Kinh tế',
+      nguyenThiXuanEdu1Year: 'Năm 2024',
+      nguyenThiXuanPostsInfo: 'Các bài viết chuyên sâu của Chuyên viên pháp lý Nguyễn Thị Xuân về mọi khía cạnh pháp lý về Doanh nghiệp, Lao động, Giấy phép.',
+
+      // Common fields for area of responsibility
+      areaOfResponsibility: 'Lĩnh vực phụ trách:',
+      civilLaw: 'Dân sự: Tư vấn về hợp đồng, giao dịch, thừa kế, hôn nhân gia đình, bồi thường thiệt hại...',
+      landLaw: 'Đất đai: Tư vấn về tất cả các thủ tục Đất đai bao gồm nhưng không giới hạn như mua bán, tặng cho, sang tên đổi chủ bất động sản, cấp đổi, cấp lại, cấp mới, đính chính quyền sử dụng đất, chuyển đổi mục đích sử dụng đất, giải quyết tranh chấp Đất đai...',
+      adminLaw: 'Hành chính: Tư vấn về thủ tục Hành chính, khiếu nại tố cáo.',
+      
+      // Common education terms
+      lawyerCertificate: 'Cấp chứng chỉ hành nghề Luật sư',
+      graduated: 'Tốt nghiệp',
+      masterOfLaw: 'Thạc sỹ Luật',
+      bachelorOfLaw: 'Cử nhân Luật',
+      doctorOfLaw: 'Tiến sĩ Luật lao động',
+      bachelorOfForeignLanguages: 'Cử nhân ngoại ngữ',
+      leadAuditorCert: 'Cấp chứng chỉ Lead Auditor (đánh giá viên trưởng) cho chương Lao động & Đạo đức kinh doanh trong chuỗi cung ứng toàn cầu',
+      lawyerTrainingCourse: 'Tham gia khóa đào tạo nghề Luật sư',
+      
+      // Common organization names
+      ministryOfJustice: 'Bộ Tư Pháp',
+      judicialAcademy: 'Học viện Tư Pháp',
+      hanoiLawUniversity: 'Trường ĐH Luật Hà Nội',
+      hcmLawUniversity: 'Đại học Luật TP. Hồ Chí Minh',
+      socialScienceAcademy: 'Học viện Khoa học Xã hội',
+      foreignLanguagesUniversity: 'ĐH Ngoại ngữ, ĐH Quốc Gia Hà Nội',
+      thaiNguyenUniversity: 'Khoa Luật Kinh tế, Trường Đại học Kinh tế & Quản trị Kinh doanh Thái Nguyên',
+      hanoiLawEconomics: 'Khoa Luật kinh tế - Trường Đại học Luật Hà Nội',
+      verite: 'Verité, Inc.',
+      
+      // Year prefix
+      year: 'Năm',
+    },
+    en: {
+      // Nguyen Van Thanh
+      nguyenVanThanhBio: 'Mr. Nguyen Van Thanh is the Managing Lawyer of <span class="text-accent dark:text-white highlight"> Youth </span><span class="text-primary dark:text-white highlight">& Partners</span> Law Firm with over 14 years of experience in research and providing practical solutions for complex legal issues that businesses face. Additionally, Mr. Thanh holds the position of General Legal Counsel at Samsung SDI Vietnam.',
+      nguyenVanThanhExp: `Lawyer Thanh, formerly Head of Legal Department at Samsung SDI Vietnam (since 2015) and currently Managing Lawyer at Youth & Partners Law Firm (since 2019). <br />
+        - Executive Committee of Vinh Phuc Province Legal Club: 3/2024 <br />
+        - Lawyer License No: 10652/LS issued by Vietnam Bar Federation <br />
+        - Member of Vietnam Bar Federation: 2015<br />
+        - Lawyer of Bar Association, Vietnam Lawyers Association`,
+      nguyenVanThanhExp2: 'Lawyer Thanh has extensive consulting experience in internal corporate issues, labor and business - commerce matters. He has deep understanding of international codes of conduct related to Businesses and Employees, with excellent experience in resolving internal disputes within companies, disputes and legal issues related to partners and suppliers of Businesses.',
+      nguyenVanThanhExp3: 'Lawyer Thanh is one of the very few Lawyers in Vietnam who holds an Advanced Auditor certificate in management systems, labor, human rights, and business ethics from the Responsible Business Alliance (RBA). As Lead Auditor (Head of Samsung Vietnam supplier inspection team), Lawyer Thanh has experience auditing hundreds of Samsung Vietnam suppliers on compliance with international RBA standards (RBA code of conduct) and Vietnamese law.',
+      nguyenVanThanhEdu1: 'Lead Auditor Certificate for Labor & Business Ethics in Global Supply Chain',
+      nguyenVanThanhEdu1Org: 'Verité, Inc.',
+      nguyenVanThanhEdu1Year: '2016',
+      nguyenVanThanhEdu2: 'Lawyer Practice Certificate',
+      nguyenVanThanhEdu2Org: 'Ministry of Justice',
+      nguyenVanThanhEdu2Year: '2015',
+      nguyenVanThanhEdu3: 'Graduated',
+      nguyenVanThanhEdu3Org: 'Judicial Academy',
+      nguyenVanThanhEdu3Year: '2012',
+      nguyenVanThanhEdu4: 'Bachelor of Foreign Languages',
+      nguyenVanThanhEdu4Org: 'University of Languages and International Studies, Vietnam National University',
+      nguyenVanThanhEdu4Year: '2012',
+      nguyenVanThanhEdu5: 'Bachelor of Law',
+      nguyenVanThanhEdu5Org: 'Hanoi Law University',
+      nguyenVanThanhEdu5Year: '2011',
+      nguyenVanThanhPostsInfo: 'In-depth articles by Lawyer Nguyen Van Thanh on all legal aspects of labor, business and foreign investment.',
+
+      // Nguyen Hoang Anh
+      nguyenHoangAnhBio: 'Lawyer Nguyen Hoang Anh is an experienced legal expert, specializing in providing legal consulting and support services in various fields, especially procedures related to sub-licenses.',
+      nguyenHoangAnhExp: `Lawyer Nguyen Hoang Anh has over 10 years of experience in the legal field, focusing on consulting and processing documents related to sub-licenses, including:<br />
+        - Business registration licenses, operating licenses for conditional industries.<br />
+        - Environmental, construction, food safety, labor, and other specialized licenses.<br />
+        - Supporting businesses in applying for new, renewing, or adjusting licenses according to legal regulations.`,
+      nguyenHoangAnhExp2: `Highlights in Lawyer Nguyen Hoang Anh's career:<br />
+        + Successfully consulted many domestic and foreign businesses, from startups to large scale, in completing legal documents and obtaining licenses.<br />
+        + Representing clients in working with government agencies, ensuring fast, transparent and efficient procedures.<br />
+        + Providing comprehensive legal solutions tailored to each client's specific needs, optimizing costs and time.`,
+      nguyenHoangAnhEdu1: 'Lawyer Practice Certificate',
+      nguyenHoangAnhEdu1Org: 'Ministry of Justice',
+      nguyenHoangAnhEdu1Year: '2022',
+      nguyenHoangAnhEdu2: 'Graduated',
+      nguyenHoangAnhEdu2Org: 'Judicial Academy',
+      nguyenHoangAnhEdu2Year: '2021',
+      nguyenHoangAnhEdu3: 'Master of Law',
+      nguyenHoangAnhEdu3Org: 'Hanoi Law University',
+      nguyenHoangAnhEdu3Year: '2018',
+      nguyenHoangAnhEdu4: 'Bachelor of Law',
+      nguyenHoangAnhEdu4Org: 'Hanoi Law University',
+      nguyenHoangAnhEdu4Year: '2014',
+      nguyenHoangAnhPostsInfo: 'In-depth articles by Lawyer Nguyen Hoang Anh on all legal aspects of licenses, business and foreign investment.',
+
+      // TS Doan Xuan Truong
+      doanXuanTruongBio: `<i>Areas of Responsibility:</i><br /><br />
+      • Civil: Consulting on contracts, transactions, inheritance, family marriage, compensation for damages...
+      <br /><br />
+      • Land: Consulting on all land procedures including but not limited to buying, selling, donating, transferring ownership of real estate, exchanging, re-issuing, issuing new, correcting land use rights, changing land use purposes, resolving land disputes...
+      <br /><br />
+      • Administrative: Consulting on administrative procedures, complaints and denunciations.`,
+      doanXuanTruongExp: 'Dr. Doan Xuan Truong is currently a lecturer at Hanoi Law University.',
+      doanXuanTruongExp2: 'Dr. Doan Xuan Truong has over 15 years of experience in teaching, guiding legal compliance; handling many legal consulting cases for workers and businesses, building many independent reports on topics in the field of contemporary labor law.',
+      doanXuanTruongEdu1: 'Doctor of Labor Law',
+      doanXuanTruongEdu1Org: 'Hanoi Law University',
+      doanXuanTruongEdu1Year: '2022',
+      doanXuanTruongEdu2: 'Master of Law',
+      doanXuanTruongEdu2Org: 'Academy of Social Sciences',
+      doanXuanTruongEdu2Year: '2014',
+      doanXuanTruongEdu3: 'Bachelor of Law',
+      doanXuanTruongEdu3Org: 'Hanoi Law University',
+      doanXuanTruongEdu3Year: '2011',
+      doanXuanTruongPostsInfo: 'In-depth articles by Dr. Doan Xuan Truong on all legal aspects of Civil, Land, and Administrative law.',
+
+      // Tran Chung Kien
+      tranChungKienBio: `<i>Areas of Responsibility:</i><br /><br />
+      • Civil: Consulting and representing clients in cases involving contracts, civil transactions, inheritance, family marriage, compensation for damages and other legal issues
+      <br /><br />
+      • Litigation representation: Representing clients in Civil, Criminal and Administrative cases at all court levels, participating in litigation procedures, protecting clients' legal rights in and out of court
+      <br /><br />
+      • Criminal: Consulting and protecting the legal rights of victims, while defending suspects and defendants in criminal proceedings. Handling matters related to criminal acts and determining the level of legal responsibility of subjects in criminal cases
+      <br /><br />
+      • Administrative: Consulting on administrative procedures, resolving complaints, denunciations and legal issues related to administration.`,
+      tranChungKienExp: `• 2015: Graduated from Faculty of Law, Hanoi Law University <br />
+        • 2015 - 2022: Civil servant, Prosecutor in the People's Procuracy. During this time, he accumulated practical experience in participating in Civil, Criminal and Administrative cases, supervising litigation activities and protecting justice, contributing to maintaining legal order and protecting the legitimate rights of parties involved <br />
+        • 2022 - 2024: Working at Youth & Partners Law Firm LLC, specializing in consulting and representing clients in matters related to Civil, Criminal, Administrative and litigation law. He has successfully protected clients' rights in complex cases, while helping clients resolve legal issues effectively and maximally protecting their legitimate rights and interests.`,
+      tranChungKienEdu1: 'Appointed as Prosecutor',
+      tranChungKienEdu1Org: 'Supreme People\'s Procuracy',
+      tranChungKienEdu1Year: '2021',
+      tranChungKienEdu2: 'Prosecutor Training Certificate',
+      tranChungKienEdu2Org: 'Supreme People\'s Procuracy',
+      tranChungKienEdu2Year: '2019',
+      tranChungKienEdu3: 'Bachelor of Law',
+      tranChungKienEdu3Org: 'Faculty of Law, Hanoi Law University',
+      tranChungKienEdu3Year: '2015',
+      tranChungKienPostsInfo: 'In-depth articles by Lawyer Tran Chung Kien on all legal aspects of Civil, Criminal, Administrative and litigation law.',
+
+      // Bui Duc Manh
+      buiDucManhBio: `<i>Areas of Responsibility:</i><br /><br />
+      • Civil: Consulting on contracts, transactions, inheritance, family marriage, compensation for damages...
+      <br /><br />
+      • Land: Consulting on all land procedures including but not limited to buying, selling, donating, transferring ownership of real estate, exchanging, re-issuing, issuing new, correcting land use rights, changing land use purposes, resolving land disputes...
+      <br /><br />
+      • Administrative: Consulting on administrative procedures, complaints and denunciations.`,
+      buiDucManhExp: `- From 2022 - 2024: Legal Specialist at Youth & Partners Law Firm LLC. Throughout his time at the company, specialist Manh has accumulated valuable experience in Civil, Administrative, Land and Licensing fields. Specifically: <br />
+        • Successfully participated in resolving many land disputes, protecting clients' legitimate rights related to real estate assets.<br />
+        • Supporting and advising clients on administrative procedures, especially in implementing complex administrative procedures related to land and necessary licenses for individuals and organizations.<br />
+        • Directly participated in drafting and implementing procedures related to sub-license issuance, meeting the needs of businesses and individuals in business and investment operations.`,
+      buiDucManhEdu1: 'Graduated',
+      buiDucManhEdu1Org: 'Judicial Academy',
+      buiDucManhEdu1Year: '2024',
+      buiDucManhEdu2: 'Bachelor of Law',
+      buiDucManhEdu2Org: 'Faculty of Economic Law, Thai Nguyen University of Economics and Business Administration',
+      buiDucManhEdu2Year: '2022',
+      buiDucManhPostsInfo: 'In-depth articles by Legal Specialist Bui Duc Manh on all legal aspects of labor, business and foreign investment.',
+
+      // Do Thi Luong
+      doThiLuongBio: `<i>Areas of Responsibility:</i><br /><br />
+      • Regular legal consulting for businesses: drafting and reviewing various types of contracts in business such as framework contracts, goods sale contracts, labor contracts, etc.; drafting legal advisory reports on fields such as labor, business commerce, etc.; consulting, reviewing and drafting other documents as requested by clients
+      <br /><br />
+      • In charge of Business and Intellectual Property department: consulting and providing full package services for business procedures (such as business registration, changing business registration content, dissolution...), intellectual property (trademark registration, industrial designs, etc.); procedures for obtaining related licenses during business operations such as foreign language center establishment license, work permit, etc.
+      <br /><br />
+      • Supporting and participating in projects to establish and adjust foreign-invested investment projects.`,
+      doThiLuongExp: `• 2017-2020: Working at Hoang Phi Investment and Intellectual Property Consulting Co., Ltd: consulting, drafting documents, implementing business registration procedures, intellectual property, other procedures <br />
+        • 2020-2022: Working at Aliat Law Co., Ltd: in-depth consulting, drafting documents, working with government agencies in the field of intellectual property; consulting and implementing business procedures <br />
+        • 2023 - present: Working at Youth & Partners Law Firm LLC: regular legal consulting specialist for businesses; in charge of Business and Intellectual Property department.`,
+      doThiLuongEdu1: 'Participated in Lawyer Training Course',
+      doThiLuongEdu1Org: 'Judicial Academy',
+      doThiLuongEdu1Year: '2024',
+      doThiLuongEdu2: 'Bachelor of Law',
+      doThiLuongEdu2Org: 'Faculty of Economic Law - Hanoi Law University',
+      doThiLuongEdu2Year: '2017',
+      doThiLuongPostsInfo: 'In-depth articles by Legal Specialist Do Thi Luong on all legal aspects of Labor, Business, Investment, Licensing, Intellectual Property.',
+
+      // Mang Dieu Hien
+      mangDieuHienBio: 'Lawyer Mang Dieu Hien is a reputable legal expert, specializing in consulting and supporting the licensing of various sub-licenses. With a solid educational background and rich practical experience, Lawyer Mang Dieu Hien has assisted many individuals and businesses in completing complex legal procedures related to operating licenses, ensuring compliance with Vietnamese law.',
+      mangDieuHienExp: `Lawyer Mang Dieu Hien has over 10 years of experience in the legal field, especially in consulting and processing documents related to sub-licenses such as: <br />
+        + Business licenses (business registration, operating licenses for conditional industries).<br />
+        + Construction permits, environmental permits, food safety, advertising, and other specialized licenses.<br />
+        + Supporting businesses in applying for, renewing, or adjusting sub-licenses according to legal regulations.`,
+      mangDieuHienExp2: `With a deep understanding of the Vietnamese legal system and administrative processes, Lawyer Mang Dieu Hien has:<br />
+        + Successfully consulted for hundreds of small and medium enterprises in completing legal procedures, ensuring compliance with schedules and legal requirements.<br />
+        + Representing clients in working with government agencies, saving time and costs.<br />
+        + Providing optimal legal solutions tailored to each specific case, from startups to large companies.`,
+      mangDieuHienEdu1: 'Lawyer Practice Certificate',
+      mangDieuHienEdu1Org: 'Ministry of Justice',
+      mangDieuHienEdu1Year: '2019',
+      mangDieuHienEdu2: 'Graduated',
+      mangDieuHienEdu2Org: 'Judicial Academy',
+      mangDieuHienEdu2Year: '2015',
+      mangDieuHienEdu3: 'Bachelor of Law',
+      mangDieuHienEdu3Org: 'Ho Chi Minh City University of Law',
+      mangDieuHienEdu3Year: '2010',
+      mangDieuHienPostsInfo: 'In-depth articles by Lawyer Mang Dieu Hien on all legal aspects of licenses, business and foreign investment.',
+
+      // Nguyen Hoang Ngoc Lan
+      nguyenHoangNgocLanBio: 'Lawyer Lan is a legal expert with deep expertise in the healthcare field, notable for her experience in consulting and resolving legal issues related to operating licenses in the medical industry. With a deep understanding of legal regulations and administrative procedures, Lawyer Lan has assisted many hospitals, clinics, medical centers and other healthcare facilities in applying for and adjusting various licenses, ensuring compliance with Vietnamese law.',
+      nguyenHoangNgocLanExp: `Lawyer Lan has many years of in-depth experience in healthcare legal field, especially consulting and processing documents related to sub-licenses in the medical industry, including:<br />
+        • Medical examination and treatment operating license.<br />
+        • Adjustment of medical examination and treatment operating license.<br />
+        • Medical practice license and other specialized licenses in the healthcare field.<br />
+        Notable achievements of Lawyer Lan:<br />
+        • Successfully consulted for many hospitals, clinics, medical centers and healthcare facilities in preparing and completing license application documents from competent state agencies.<br />
+        • Helping clients understand legal requirements, ensuring documents and papers meet all regulatory standards, saving time and costs.<br />
+        • Representing clients in working with regulatory agencies, ensuring the licensing process is fast, transparent and efficient.<br />
+        • Providing comprehensive legal solutions tailored to each specific case, from newly established medical facilities to large-scale healthcare organizations.`,
+      nguyenHoangNgocLanEdu1: 'Lawyer Practice Certificate',
+      nguyenHoangNgocLanEdu1Org: 'Ministry of Justice',
+      nguyenHoangNgocLanEdu1Year: '2024',
+      nguyenHoangNgocLanEdu2: 'Master of Law',
+      nguyenHoangNgocLanEdu2Org: 'Hanoi Law University',
+      nguyenHoangNgocLanEdu2Year: '2022',
+      nguyenHoangNgocLanEdu3: 'Graduated',
+      nguyenHoangNgocLanEdu3Org: 'Judicial Academy',
+      nguyenHoangNgocLanEdu3Year: '2021',
+      nguyenHoangNgocLanEdu4: 'Bachelor of Law',
+      nguyenHoangNgocLanEdu4Org: 'Hanoi Law University',
+      nguyenHoangNgocLanEdu4Year: '2020',
+      nguyenHoangNgocLanPostsInfo: 'In-depth articles by Lawyer Nguyen Hoang Ngoc Lan on all legal aspects of licenses, business and foreign investment.',
+
+      // Nguyen Minh Anh
+      nguyenMinhAnhBio: 'Lawyer Nguyen Minh Anh is a legal expert with over 7 years of experience in economic law, land law and civil law. With an excellent educational background and practical experience at reputable organizations, Lawyer Minh Anh has proven her competence in legal consulting, dispute resolution and supporting businesses and individuals in complex cases. With extensive legal knowledge and sharp thinking, Lawyer Minh Anh always provides effective legal solutions that optimize client benefits in business commerce, land and civil fields.',
+      nguyenMinhAnhExp: `• 11/2022 - 09/2024: Deputy Head of Legal Inspection Department, Hoa Binh International Trade Investment and Tourism Co., Ltd <br />
+        Legal consulting, contract negotiation, working with government agencies, contract review, business and civil dispute resolution and internal compliance control.<br />
+        • 06/2019 - 11/2022: Consulting Department Manager, Viet Kim Law Co., Ltd<br />
+        Managing consulting department, case research, court litigation (civil, business commerce), corporate restructuring consulting, M&A, and dispute resolution.<br />
+        • 06/2017 - 06/2019: Intern, Trong Hai and Associates Law Office<br />
+        Drafting documents, reviewing contracts, assisting lawyers in civil and business commerce cases.`,
+      nguyenMinhAnhEdu1: 'Lawyer Practice Certificate',
+      nguyenMinhAnhEdu1Org: 'Ministry of Justice',
+      nguyenMinhAnhEdu1Year: '2024',
+      nguyenMinhAnhEdu2: 'Master of Economic Law',
+      nguyenMinhAnhEdu2Org: 'Hanoi Law University',
+      nguyenMinhAnhEdu2Year: '2023',
+      nguyenMinhAnhEdu3: 'Graduated',
+      nguyenMinhAnhEdu3Org: 'Judicial Academy',
+      nguyenMinhAnhEdu3Year: '2021',
+      nguyenMinhAnhEdu4: 'Bachelor of Law (Excellent)',
+      nguyenMinhAnhEdu4Org: 'Vinh University',
+      nguyenMinhAnhEdu4Year: '2019',
+      nguyenMinhAnhPostsInfo: 'In-depth articles by Lawyer Nguyen Minh Anh on all legal aspects of licenses, land, business and foreign investment.',
+
+      // Nguyen Thi Huong
+      nguyenThiHuongBio: `<i>Areas of Responsibility:</i><br /><br />
+      • Civil: Consulting on contracts, civil transactions, inheritance, compensation for damages and other related legal issues.
+      <br /><br />
+      • Marriage and Family: Consulting on divorce, property division, child custody, and legal issues related to marriage and family.
+      <br /><br />
+      • Land: Consulting on land-related issues, including but not limited to land dispute resolution, transfer, and exchange of land use right certificates.
+      <br /><br />
+      • Criminal: Consulting and protecting the legal rights of victims, while defending suspects and defendants in criminal proceedings. Handling matters related to criminal acts and determining the level of legal responsibility of subjects in criminal cases.
+      <br /><br />
+      • Business: Legal consulting on establishment, operation and management of businesses, contract-related issues, and business law.
+      <br /><br />
+      • Labor: Consulting on labor-related issues, labor contracts, labor disputes and workers' rights.
+      <br /><br />
+      • Investment: Consulting on investment issues, including domestic and foreign investment, business development strategies and legal issues related to real estate investment.`,
+      nguyenThiHuongExp: 'Lawyer Huong has over 7 years of experience in the legal field, specializing in Civil, Criminal, Administrative, Business Commerce and litigation for clients.',
+      nguyenThiHuongExp2: 'With many years of experience in litigation, defense, protection, representation, consulting, drafting, providing forms, contracts, and legal documents for domestic and foreign organizations and individuals... Lawyer Huong has successfully protected clients\' rights and interests in complex cases, while helping clients resolve legal issues effectively.',
+      nguyenThiHuongEdu1: 'Lawyer Practice Certificate',
+      nguyenThiHuongEdu1Org: 'Ministry of Justice',
+      nguyenThiHuongEdu1Year: '2020',
+      nguyenThiHuongEdu2: 'Bachelor of International Law',
+      nguyenThiHuongEdu2Org: 'Diplomatic Academy of Vietnam',
+      nguyenThiHuongEdu2Year: '2017',
+      nguyenThiHuongPostsInfo: 'In-depth articles by Lawyer Nguyen Thi Huong on all legal aspects of Civil, Criminal, Administrative, Business Commerce.',
+
+      // Nguyen Thi Thom
+      nguyenThiThomBio: '<br /><i>Areas of responsibility:</i><br /><br />• Enterprise: Legal consulting on establishment, operation and management of Enterprises, issues related to contracts, business law<br /><br />• Labor: Consulting on labor-related issues, labor contracts, labor disputes and employee rights<br /><br />• Investment: Consulting on investment issues, including domestic and foreign investment, enterprise development strategies and legal issues related to real estate investment.',
+      nguyenThiThomExp: 'With 09 years of experience in corporate legal affairs, including 05 years working at foreign-invested companies and 04 years at real estate investment and development companies, Lawyer Nguyen Thi Thom has accumulated extensive knowledge and professional work handling skills.',
+      nguyenThiThomExp2: 'Lawyer Thom specializes in legal consulting and support for Enterprises, helping them develop appropriate strategies to avoid legal disputes and minimize risks in their operations and business.',
+      nguyenThiThomEdu1: 'Lawyer Practice Certificate',
+      nguyenThiThomEdu1Org: 'Ministry of Justice',
+      nguyenThiThomEdu1Year: '2016',
+      nguyenThiThomEdu2: 'Bachelor of Law',
+      nguyenThiThomEdu2Org: 'Hanoi Law University',
+      nguyenThiThomEdu2Year: '2012',
+      nguyenThiThomPostsInfo: 'In-depth articles by Lawyer Nguyen Thi Thom on all legal aspects of Enterprise, Labor, Investment.',
+
+      // Nguyen Thu Nga
+      nguyenThuNgaBio: '<br /><i>Areas of responsibility:</i><br /><br />• Enterprise: Comprehensive consulting on legal issues related to establishment, operation and governance of Enterprises, protecting shareholder rights, and resolving disputes between parties in Enterprise. Lawyer Nga helps Enterprises build appropriate legal strategies to protect and develop business operations, from cooperating with partners to drafting economic and commercial contracts<br /><br />• Labor: Consulting on issues related to labor contracts, employee rights, labor disputes, as well as regulations on social insurance, benefits and other rights of employees in Enterprise. Lawyer Nga supports Enterprises in building HR policies, managing labor relations, and resolving disputes between employers and employees<br /><br />• Investment: Legal consulting on domestic and foreign investment issues, including investment procedures, selecting appropriate investment methods and transaction structures to maximize benefits and minimize risks. Lawyer Nga also supports Enterprises in complying with legal regulations related to investment and capital transfer, helping Enterprises orient effective investment strategies.',
+      nguyenThuNgaExp: 'Lawyer Nga has over 10 years of experience in the legal field, specializing in consulting for enterprises, especially FDI enterprises operating in Vietnam.',
+      nguyenThuNgaExp2: 'With experience working at government agencies on labor, investment and as Head of Legal at a Japanese enterprise, Lawyer Nga has rich experience in enterprise legal issues such as labor law and corporate law compliance, administrative procedures, contract review, legal risk assessment, and consulting on legal issues related to investment and development procedures in Vietnam.',
+      nguyenThuNgaExp3: 'Additionally, good Japanese communication skills make Lawyer Nga an important bridge between Japanese enterprises and authorities and enterprises in Vietnam.',
+      nguyenThuNgaEdu1: 'Graduated from Japanese Law Training Course',
+      nguyenThuNgaEdu1Org: 'Center for Japanese Law Research and Training - Nagoya University at Hanoi',
+      nguyenThuNgaEdu1Year: '2016',
+      nguyenThuNgaEdu2: 'Bachelor of Law',
+      nguyenThuNgaEdu2Org: 'Hanoi Law University',
+      nguyenThuNgaEdu2Year: '2012',
+      nguyenThuNgaPostsInfo: 'In-depth articles by Lawyer Nguyen Thu Nga on all legal aspects of Enterprise, Labor, Investment.',
+
+      // Pham Thi Huyen Quyen
+      phamThiHuyenQuyenBio: '<br /><i>Areas of responsibility:</i><br /><br />• Enterprise: Comprehensive consulting on legal issues related to establishment, operation and governance of Enterprises, including financial management, shareholder rights protection, contract drafting and internal dispute resolution. She helps Enterprises build and implement sustainable development strategies, ensuring compliance with legal regulations throughout operations<br /><br />• Labor: Consulting on labor issues in Enterprises, including labor contracts, employee rights, social insurance, welfare policies, and labor dispute resolution. She supports Enterprises in building HR policies and maintaining a legally compliant work environment<br /><br />• Investment: Consulting on investment-related issues, including investment planning, procedures related to capital raising, share transfer and investment risk management. Lawyer Quyen helps Enterprises optimize investment strategies while ensuring compliance with domestic and international legal requirements.',
+      phamThiHuyenQuyenExp: 'With 8 years of experience in enterprise consulting and internal legal affairs, Lawyer Pham Thi Huyen Quyen has become a trusted partner of many Enterprises.',
+      phamThiHuyenQuyenExp2: 'She possesses in-depth knowledge of corporate law, labor law and related legal regulations, helping Enterprises effectively resolve legal issues arising during operations.',
+      phamThiHuyenQuyenExp3: 'In particular, she focuses on ensuring legal compliance in Enterprise activities, from establishing organizational structure, financial management to handling disputes and internal conflicts.',
+      phamThiHuyenQuyenEdu1: 'Lawyer Practice Certificate',
+      phamThiHuyenQuyenEdu1Org: 'Ministry of Justice',
+      phamThiHuyenQuyenEdu1Year: '2016',
+      phamThiHuyenQuyenEdu2: 'Bachelor of Law',
+      phamThiHuyenQuyenEdu2Org: 'Hanoi Law University',
+      phamThiHuyenQuyenEdu2Year: '2012',
+      phamThiHuyenQuyenPostsInfo: 'In-depth articles by Lawyer Pham Thi Huyen Quyen on all legal aspects of Enterprise, Labor, Investment.',
+
+      // Van Thi Thanh Hoa
+      vanThiThanhHoaBio: '<br /><i>Areas of responsibility:</i><br /><br />• Civil: Consulting on contracts, civil transactions, inheritance, compensation for damages and other related legal issues<br /><br />• Criminal: Consulting and protecting legitimate rights of victims, participating in defense for suspects and defendants in criminal proceedings. Handling matters related to criminal acts and determining the level of legal responsibility of subjects in criminal cases<br /><br />• Land: Consulting on land-related issues, including but not limited to transfer, re-issuance of land use right certificates, resolving land disputes<br /><br />• Marriage and Family: Consulting on divorce, property division, child custody, and legal issues related to marriage and family.',
+      vanThiThanhHoaExp: 'With over 12 years of experience, Lawyer Van Thi Thanh Hoa has successfully resolved many complex legal cases in Civil, Criminal, Land, Marriage and Family fields.',
+      vanThiThanhHoaExp2: 'She is known for her excellent legal consulting ability and optimal case resolution strategies, helping clients achieve desired results.',
+      vanThiThanhHoaEdu1: 'Lawyer Practice Certificate',
+      vanThiThanhHoaEdu1Org: 'Ministry of Justice',
+      vanThiThanhHoaEdu1Year: '2016',
+      vanThiThanhHoaEdu2: 'Bachelor of Law',
+      vanThiThanhHoaEdu2Org: 'Hanoi Law University',
+      vanThiThanhHoaEdu2Year: '2012',
+      vanThiThanhHoaPostsInfo: 'In-depth articles by Lawyer Van Thi Thanh Hoa on all legal aspects of Representation in and out of Court, Civil, Criminal, Administrative, Land.',
+
+      // Nghiem Minh Huyen
+      nghiemMinhHuyenBio: '<br /><i>Areas of responsibility:</i><br /><br />Huyen Nghiem is a legal specialist, lawyer assistant, editor supporting the management of articles on Y&P Law Firm website, supporting specialists in writing analysis articles, services, summarizing regulations, new and notable policies related to: enterprise, marriage and family, Land, Criminal,...<br /><br />• Land field: Quick updates, supporting customers in administrative procedures related to Land: first-time certificate registration, change registration, inheritance division, donation,...<br /><br />• Civil, Criminal field: Reading and researching case files in practice; Assisting lawyers in photocopying files, documents, drafting applications and papers.',
+      nghiemMinhHuyenExp: '• 2019: Internship at Bac Tu Liem District People\'s Committee: Receiving files and returning results, resolving business household registration, tax code<br />• 2020: Internship at A Chau Law Co., Ltd: Drafting enterprise-related documents such as establishment, change, dissolution, seal registration; Learning about intellectual property, Sub-licenses, website registration,...<br />• 2020-2021: Working at Nam Duong Law Co., Ltd: Contacting customers with loan contract violations as requested by partners (Banks: MB bank, VP bank,...; Finance companies: Mcredit, FEcredit,...)<br />• 2021: Working at Center for Administrative Science and Archives (SCARMA): Organizing, editing, creating data storage lists and warehousing for MB bank<br />• 2022-2024: Working at SGS Vietnam Co., Ltd: Moderating content posted on social media<br />• 2024-present: Working at Youth & Partners Law Co., Ltd (Y&P Law Firm).',
+      nghiemMinhHuyenEdu1: 'Graduated',
+      nghiemMinhHuyenEdu1Org: 'Judicial Academy',
+      nghiemMinhHuyenEdu1Desc: '• Participated and graduated from Training Course for three positions: Judge, Prosecutor, Lawyer<br />• Trained in-depth on professional skills and practical experience in judicial positions<br />• Interned at Courts, Procuracy and Law Offices, under the assignment and guidance of the Academy, to practice skills and improve ability to resolve practical legal situations',
+      nghiemMinhHuyenEdu1Year: 'Dec 2020 - Aug 2022',
+      nghiemMinhHuyenEdu2: 'Bachelor of Law',
+      nghiemMinhHuyenEdu2Org: 'Hanoi Law University',
+      nghiemMinhHuyenEdu2Desc: '• Graduated in Law major, GPA: 7.31/10<br />• Trained in-depth on basic legal knowledge and codes in Civil, Criminal, Administrative, Economic and International law',
+      nghiemMinhHuyenEdu2Year: 'Sep 2016 - Jul 2020',
+      nghiemMinhHuyenPostsInfo: 'In-depth articles by Legal Specialist Nghiem Minh Huyen on all legal aspects of Civil, Criminal, Administrative, Land.',
+
+      // Nguyen Hoang Dung
+      nguyenHoangDungBio: '<br /><i>Areas of responsibility:</i><br /><br />• Civil: Consulting on contracts, civil transactions, representing in inheritance dispute resolution, compensation claims in civil transactions and other related legal issues.<br /><br />• Marriage and Family: Consulting on documents, divorce procedures, common property division, child custody, and legal issues related to marriage and family.<br /><br />• Land: Consulting on documents, procedures, administrative procedures related to land, participating in land use right disputes resolution.<br /><br />• Criminal: Legal consulting, document drafting for defending suspects and defendants, or protecting legitimate rights and interests of victims and related persons in criminal cases.<br /><br />• Administrative: Consulting on documents, procedures, representing clients in collecting evidence, participating in protecting legitimate rights and interests in complaints, denunciations and administrative cases.<br /><br />• Enterprise: Legal consulting on establishment, operation and management of Enterprise, drafting economic contracts, business cooperation contracts, etc.<br /><br />• Labor: Consulting on labor-related issues, labor contracts, labor disputes and rights of employees and employers.<br /><br />• Investment: Consulting, document drafting, representing to work with government agencies in investment project implementation.',
+      nguyenHoangDungExp: '• 2023: Working at Hong Bach and Associates Law Co., Ltd.<br />• 2024: Working at Legal Consulting Center of Ha Nam Province Bar Association.<br />• 2025: Working at Youth & Partners Law Co., Ltd (Y&P Law Firm).',
+      nguyenHoangDungEdu1: 'Graduated',
+      nguyenHoangDungEdu1Org: 'Judicial Academy',
+      nguyenHoangDungEdu1Desc: '• Participated and graduated from Lawyer Training Course<br />• Trained in-depth on professional skills and practical experience in lawyer profession',
+      nguyenHoangDungEdu1Year: '2025',
+      nguyenHoangDungEdu2: 'Bachelor of Law',
+      nguyenHoangDungEdu2Org: 'International Trade Law at Hanoi Law University',
+      nguyenHoangDungEdu2Year: '2023',
+      nguyenHoangDungPostsInfo: 'In-depth articles by Legal Specialist Nguyen Hoang Dung on all legal aspects of Civil, Marriage and Family, Land, Criminal, Administrative, Enterprise, Labor, Investment.',
+
+      // Nguyen Phan Thuc Chi
+      nguyenPhanThucChiBio: '<br /><i>Areas of responsibility:</i><br /><br />• Enterprise: Supporting regular legal consulting for Enterprises: Supporting review of contracts in Enterprise such as Framework contracts, Goods sales contracts, Labor contracts,...; supporting legal report drafting consulting in areas such as labor, business commerce,...<br /><br />• Supporting license matters related to foreign investment projects, including issues related to enterprise establishment, adjusting Investment Registration Certificate,...',
+      nguyenPhanThucChiExp: '• Aug 2024 – Nov 2024: HR-Admin intern at TOTO Vietnam Co., Ltd Branch in Vinh Phuc – supporting company charter review and researching social security and labor issues.<br />• Dec 2024 – May 2025: HR-Admin staff at KITZ Corporation Vietnam Co., Ltd – reviewing, checking contracts and researching social security, labor and tax issues; supporting exit procedures for Vietnamese workers to train abroad (Taiwan, Japan).<br />• Currently Legal Specialist at Youth & Partners Law Co., Ltd.',
+      nguyenPhanThucChiEdu1: 'Bachelor of Law',
+      nguyenPhanThucChiEdu1Org: 'Economic Law at Hanoi Law University',
+      nguyenPhanThucChiEdu1Year: '2024',
+      nguyenPhanThucChiPostsInfo: 'In-depth articles by Legal Specialist Nguyen Phan Thuc Chi on all legal aspects of Enterprise, Labor, Licenses.',
+
+      // Nguyen Phung Mai Anh
+      nguyenPhungMaiAnhBio: '<br /><i>Areas of responsibility:</i><br /><br />With extensive knowledge and practical experience, Mai Anh serves as editor specializing in Civil and Administrative fields. Mai Anh\'s articles focus on analyzing, synthesizing and clarifying legal regulations, notable policies related to land use rights, contracts, marriage and family and Civil legal issues.',
+      nguyenPhungMaiAnhExp: '• 2021: Internship at 24h Law Company, supporting lawyers in research and document drafting, checking legal documents<br />• 2023: Internship at Viet Xuan Commune People\'s Committee, coordinating with Justice-Civil Status Officer to perform document certification, mediating Land disputes, data entry and processing Administrative documents<br />• 2024: Legal Specialist at Youth & Partners Law Co., Ltd, specializing in Land procedures and legal consulting on land use rights, planning, transfer and related issues.',
+      nguyenPhungMaiAnhEdu1: 'Bachelor of Law',
+      nguyenPhungMaiAnhEdu1Org: 'Faculty of Law, National Academy of Public Administration',
+      nguyenPhungMaiAnhEdu1Year: '2024',
+      nguyenPhungMaiAnhPostsInfo: 'In-depth articles by Legal Specialist Nguyen Phung Mai Anh on all legal aspects of Civil, Administrative, Land.',
+
+      // Nguyen Thi Quynh Giang
+      nguyenThiQuynhGiangBio: '<br /><i>Introduction:</i><br /><br />• Nguyen Thi Quynh Giang has been an intern at YPLaw Firm since 2025.<br /><br />• With legal knowledge foundation from Bachelor of Law, School of Law, Vietnam National University Hanoi, Quynh Giang always strives to develop and apply knowledge and skills in practical work.',
+      nguyenThiQuynhGiangExp: '• Jun 2024 – Jan 2025: Internship at Nam Tu Liem District People\'s Court, engaging with litigation processes and trial practices, thereby enhancing legal understanding and professional working skills<br />• Currently, Quynh Giang is an intern at Youth & Partners Law Co., Ltd (YPLaw Firm), learning and contributing to the company\'s legal consulting and support activities.',
+      nguyenThiQuynhGiangEdu1: 'Bachelor of Law',
+      nguyenThiQuynhGiangEdu1Org: 'Law major at School of Law, Vietnam National University Hanoi',
+      nguyenThiQuynhGiangEdu1Year: '2025',
+      nguyenThiQuynhGiangPostsInfo: 'In-depth articles by Legal Specialist Nguyen Thi Quynh Giang on all legal aspects of Labor, Enterprise, Investment, Licenses.',
+
+      // Nguyen Thi Thu Trang
+      nguyenThiThuTrangBio: '<br /><i>Areas of responsibility:</i><br /><br />• Contract drafting, legal consulting on labor, tax, real estate and foreign investment<br /><br />• Ensuring legal compliance in Enterprise activities<br /><br />• Building and adjusting internal forms and regulations of Enterprise.',
+      nguyenThiThuTrangExp: '• Drafting and evaluating bilingual contracts (English - Vietnamese) including framework contracts, service contracts, labor contracts, NDA, etc.<br />• Legal consulting for Enterprise clients on labor, tax, real estate, business operations<br />• Participating in building and evaluating internal forms such as democracy regulations, labor rules, salary and bonus regulations<br />• Drafting documents for adjusting and re-issuing Investment Certificates for foreign-invested Enterprises.',
+      nguyenThiThuTrangEdu1: 'Bachelor of Law',
+      nguyenThiThuTrangEdu1Org: 'Law major at Hanoi Law University',
+      nguyenThiThuTrangEdu1Year: '2022',
+      nguyenThiThuTrangPostsInfo: 'In-depth articles by Legal Specialist Nguyen Thi Thu Trang on all legal aspects of Labor, Enterprise, Investment, Licenses.',
+
+      // Nguyen Thi Thuy Linh
+      nguyenThiThuyLinhBio: '<br /><i>Areas of responsibility:</i><br /><br />• Contract drafting, legal consulting on labor, real estate and foreign investment for domestic and foreign Enterprises<br /><br />• Building and adjusting internal forms and regulations of Enterprise<br /><br />• Drafting documents for establishment, changing Enterprise registration content<br /><br />• Drafting documents for adjusting and re-issuing Investment Registration Certificates for foreign-invested Enterprises<br /><br />• Resolving marriage and family cases including divorce cases with foreign elements.',
+      nguyenThiThuyLinhExp: '• Resolving marriage and family cases including divorce cases with foreign elements;<br />• Regular consulting for over 15 domestic and foreign Enterprises in Enterprise, labor, Investment, real estate business fields,...<br />• Drafting and evaluating bilingual contracts (English - Vietnamese) including framework contracts, service contracts, labor contracts, NDA, etc.<br />• Building and evaluating internal forms such as democracy regulations, labor rules, salary and bonus regulations of Enterprise<br />• Drafting documents for adjusting and re-issuing Investment Registration Certificates for foreign-invested Enterprises<br />• Drafting documents for establishment, changing Enterprise registration content.',
+      nguyenThiThuyLinhEdu1: 'Bachelor of Law',
+      nguyenThiThuyLinhEdu1Org: 'Faculty of Economic Law, Hanoi Law University',
+      nguyenThiThuyLinhEdu1Year: '2023',
+      nguyenThiThuyLinhPostsInfo: 'In-depth articles by Legal Specialist Nguyen Thi Thuy Linh on all legal aspects of Labor, Enterprise, Investment, Marriage & Family.',
+
+      // Nguyen Thuy Hang
+      nguyenThuyHangBio: '<br /><i>Areas of responsibility:</i><br /><br />• Drafting and evaluating contracts including framework contracts, service contracts, labor contracts, etc.<br /><br />• Legal consulting for Enterprise clients on labor, tax, real estate, business operations<br /><br />• Participating in building and evaluating internal forms such as democracy regulations, labor rules, salary and bonus regulations.',
+      nguyenThuyHangExp: '• Worked and interned at Ha Thi Investment Consulting Company, Vinh Yen City People\'s Court as legal staff, legal intern<br />• Performed tasks such as contract review, drafting common documents, building internal regulations and legal translation.',
+      nguyenThuyHangEdu1: 'Bachelor of Law',
+      nguyenThuyHangEdu1Org: 'Economic Law at Hanoi Law University',
+      nguyenThuyHangEdu1Year: '2024',
+      nguyenThuyHangPostsInfo: 'In-depth articles by Legal Specialist Nguyen Thuy Hang on all legal aspects of Enterprise, Labor, Licenses.',
+
+      // Tran Thi Bich Lien
+      tranThiBichLienBio: '<br /><i>Areas of responsibility:</i><br /><br />• Civil: Consulting on contracts, civil transactions, inheritance, marriage & family, compensation for damages, and other related legal issues<br /><br />• Land: Comprehensive consulting on Land procedures, including but not limited to buying, selling, donating, transferring ownership of real estate, re-issuing, issuing new land use right certificates, correcting land use rights, changing land use purposes, and resolving Land disputes<br /><br />• Administrative: Consulting on Administrative procedures, resolving complaints, denunciations and legal issues related to Administrative matters.',
+      tranThiBichLienExp: '• From 2020 - 2024: Legal Specialist at Youth & Partners Law Co., Ltd. Throughout her time at the company, Mrs. Tran Thi Bich Lien accumulated extensive experience in Civil, Administrative, and Land fields<br />• She directly participated and succeeded in resolving many Land, marriage and family disputes, protecting clients\' legitimate rights<br />• Additionally, she performed many complex Administrative and Land procedures, serving the needs of both individuals and organizations, contributing to efficiency and protecting clients\' rights.',
+      tranThiBichLienEdu1: 'Participated in Lawyer Training Course',
+      tranThiBichLienEdu1Org: 'Judicial Academy',
+      tranThiBichLienEdu1Year: '2024',
+      tranThiBichLienEdu2: 'Bachelor of Law',
+      tranThiBichLienEdu2Org: 'Faculty of Law, Hanoi Law University',
+      tranThiBichLienEdu2Year: '2016',
+      tranThiBichLienPostsInfo: 'In-depth articles by Legal Specialist Tran Thi Bich Lien on all legal aspects of Civil, Criminal, Administrative, Land.',
+
+      // Nguyen Thi Chau Anh
+      nguyenThiChauAnhBio: 'Nguyen Thi Chau Anh is a legal intern at Youth & Partners Law Co., Ltd. (Y&P Law Firm) since 2025.<br /><br />With a foundation in Law from Hanoi University, Chau Anh proactively develops legal knowledge and professional skills while actively applying theory to practice.',
+      nguyenThiChauAnhExp: '• June 2025 – September 2025: Internship at People\'s Court of Region 7 – Bac Ninh. Participated in supporting court professional work, approaching litigation procedures and trial practices, thereby enhancing legal knowledge, legal thinking, and professional working skills.<br /><br />• From December 2025 to present: Legal Intern – Youth & Partners Law Co., Ltd. (YP Law Firm). Participating in supporting legal consulting activities, document drafting, legal research and assisting lawyers in working with clients.',
+      nguyenThiChauAnhEdu1: 'Bachelor of Law',
+      nguyenThiChauAnhEdu1Org: 'Hanoi University - Law Major',
+      nguyenThiChauAnhEdu1Year: '2024',
+      nguyenThiChauAnhPostsInfo: 'In-depth articles by Legal Intern Nguyen Thi Chau Anh on all legal aspects.',
+
+      // Nguyen Thi Thuy Duong
+      nguyenThiThuyDuongBio: 'Nguyen Thi Thuy Duong is a legal intern at Youth & Partners Law Co., Ltd. (Y&P Law Firm) since 2025.<br /><br />With legal knowledge foundation from Economic Law major at Hanoi Law University, Thuy Duong constantly researches and applies legal knowledge to practical resolution of civil cases and regular consulting for businesses.',
+      nguyenThiThuyDuongExp: '• During studies, participated in student scientific research, mock trials and commercial mediation competitions, thereby gradually developing legal research skills, argument analysis, document drafting and teamwork in professional legal environment.<br /><br />• Currently a legal intern at YP Law Firm, actively learning and supporting consulting activities and legal work of the Company.',
+      nguyenThiThuyDuongEdu1: 'Bachelor of Law',
+      nguyenThiThuyDuongEdu1Org: 'Hanoi Law University - Economic Law Major',
+      nguyenThiThuyDuongEdu1Year: '2024',
+      nguyenThiThuyDuongPostsInfo: 'In-depth articles by Legal Intern Nguyen Thi Thuy Duong on all legal aspects of Civil, Enterprise.',
+
+      // Nguyen Thuy Duong
+      nguyenThuyDuongBio: 'Nguyen Thuy Duong is a legal intern at Youth & Partners Law Co., Ltd. (Y&P Law Firm) since 2025.<br /><br />With legal knowledge foundation from Economic Law major at University of Commerce, Thuy Duong constantly researches and applies legal knowledge to practical resolution of civil cases and regular consulting for businesses.',
+      nguyenThuyDuongExp: '<i>Areas of responsibility:</i><br /><br />• Enterprise: Regular legal consulting and legal support for businesses in daily legal issues, legal compliance and internal operations.<br /><br />• Review, analyze legal documents, contracts and legal materials related to business operations.<br /><br />• Support drafting, reviewing commercial contracts, internal documents, legal papers as required by company and clients.<br /><br />• Participate in research and update new laws, consulting practical legal solutions for businesses.<br /><br /><i>Work experience:</i><br /><br />• May 2023 - August 2023: Sales & Course Consulting Staff at SEDU Training JSC – Course consulting and supporting customer benefits.<br /><br />• Currently a legal intern at YP Law Firm, actively learning and supporting consulting activities and legal work of the Company.',
+      nguyenThuyDuongEdu1: 'Bachelor of Law',
+      nguyenThuyDuongEdu1Org: 'University of Commerce - Economic Law Major',
+      nguyenThuyDuongEdu1Year: '2024',
+      nguyenThuyDuongPostsInfo: 'In-depth articles by Legal Intern Nguyen Thuy Duong on all legal aspects of Civil, Enterprise.',
+
+      // Nguyen Thi Mai Linh
+      nguyenThiMaiLinhBio: '<br /><i>Introduction:</i><br /><br />• Nguyen Thi Mai Linh is a legal intern at Youth & Partners Law Co., Ltd. (Y&P Law Firm) since 2025.<br /><br />• With a knowledge foundation in Economic Law from University of Commerce, Mai Linh proactively develops knowledge and skills through academic activities, scientific research and practical legal profession simulation programs.',
+      nguyenThiMaiLinhExp: '• During studies, Mai Linh participated in student scientific research, mock trials and commercial mediation competitions, thereby gradually developing legal research skills, argument analysis, document drafting and teamwork in professional legal environment.<br /><br />• Currently, Mai Linh is a legal intern at YP Law Firm, actively learning and supporting consulting activities and legal work of the Company.',
+      nguyenThiMaiLinhEdu1: 'Bachelor of Law',
+      nguyenThiMaiLinhEdu1Org: 'University of Commerce - Economic Law Major',
+      nguyenThiMaiLinhEdu1Year: '2024',
+      nguyenThiMaiLinhPostsInfo: 'In-depth articles by Legal Intern Nguyen Thi Mai Linh on all legal aspects.',
+
+      // Nguyen Thi Xuan
+      nguyenThiXuanBio: '<br /><i>Introduction:</i><br /><br />• Nguyen Thi Xuan is a legal intern at Youth & Partners Law Co., Ltd. (Y&P Law Firm) since 2025.<br /><br />• With training foundation in Law at Hanoi Law University, Xuan proactively develops legal knowledge and professional skills while actively applying theory to practical work.',
+      nguyenThiXuanExp: '• October 2023 – February 2024: Internship at Nguyen Phat Law Company, legal consulting in marriage and family field, thereby enhancing legal knowledge and professional working skills.<br /><br />• April 2024 – May 2025: Drafting staff at Nguyen Hue Notary Office. Reviewing legal documents and drafting contracts for vehicle sales, transfers, inheritance...; Supporting notary in external signing.<br /><br />• May 2025 - November 2025: Working at Domin Joint Stock Company: Moderating content posted on social media.<br /><br />• Currently a legal intern at Youth & Partners Law Co., Ltd. (YP Law Firm), learning and contributing to consulting activities and legal support of the company.',
+      nguyenThiXuanEdu1: 'Bachelor of Law',
+      nguyenThiXuanEdu1Org: 'Hanoi Law University - Economic Law Major',
+      nguyenThiXuanEdu1Year: '2024',
+      nguyenThiXuanPostsInfo: 'In-depth articles by Legal Intern Nguyen Thi Xuan on all legal aspects of Enterprise, Labor, Licenses.',
+
+      // Common fields for area of responsibility
+      areaOfResponsibility: 'Areas of responsibility:',
+      civilLaw: 'Civil: Consulting on contracts, transactions, inheritance, family, compensation for damages...',
+      landLaw: 'Land: Consulting on all land procedures including but not limited to buying, selling, donating, transferring ownership of real estate, exchanging, re-issuing, issuing new, correcting land use rights, changing land use purposes, resolving land disputes...',
+      adminLaw: 'Administrative: Consulting on administrative procedures, complaints and denunciations.',
+
+      // Common education terms
+      lawyerCertificate: 'Lawyer Practice Certificate',
+      graduated: 'Graduated',
+      masterOfLaw: 'Master of Law',
+      bachelorOfLaw: 'Bachelor of Law',
+      doctorOfLaw: 'Doctor of Labor Law',
+      bachelorOfForeignLanguages: 'Bachelor of Foreign Languages',
+      leadAuditorCert: 'Lead Auditor Certificate for Labor & Business Ethics in Global Supply Chain',
+      lawyerTrainingCourse: 'Participated in Lawyer Training Course',
+      
+      // Common organization names
+      ministryOfJustice: 'Ministry of Justice',
+      judicialAcademy: 'Judicial Academy',
+      hanoiLawUniversity: 'Hanoi Law University',
+      hcmLawUniversity: 'Ho Chi Minh City University of Law',
+      socialScienceAcademy: 'Academy of Social Sciences',
+      foreignLanguagesUniversity: 'University of Languages and International Studies, Vietnam National University',
+      thaiNguyenUniversity: 'Faculty of Economic Law, Thai Nguyen University of Economics and Business Administration',
+      hanoiLawEconomics: 'Faculty of Economic Law - Hanoi Law University',
+      verite: 'Verité, Inc.',
+      
+      // Year prefix
+      year: '',
+    },
+    zh: {
+      // Nguyen Van Thanh
+      nguyenVanThanhBio: '阮文成先生是 <span class="text-accent dark:text-white highlight"> Youth </span><span class="text-primary dark:text-white highlight">& Partners</span> 律师事务所的执行律师，拥有超过14年的研究经验，为企业面临的复杂法律问题提供切实可行的解决方案。同时，他还担任三星SDI越南的总法律顾问。',
+      nguyenVanThanhExp: `成律师，曾任三星SDI越南法务部门主管（自2015年）及现任Youth & Partners律师事务所执行律师（自2019年）。<br />
+        - 永福省法务俱乐部执行委员会：2024年3月 <br />
+        - 律师执照号：10652/LS，由越南律师联合会颁发 <br />
+        - 越南律师联合会会员：2015年<br />
+        - 律师协会、越南律师协会律师`,
+      nguyenVanThanhExp2: '成律师在企业内部事务、劳动和商业-贸易方面拥有深厚的咨询经验，深刻理解与企业和员工相关的国际行为准则，在解决企业内部纠纷、与合作伙伴和供应商相关的争议和法律问题方面拥有丰富的经验。',
+      nguyenVanThanhExp3: '成律师是越南极少数拥有负责任商业联盟（RBA）管理体系、劳动、人权和商业道德高级审计员证书的律师之一。作为首席审计员（三星越南供应商检查团负责人），成律师有审计数百家三星越南供应商关于遵守国际RBA标准（RBA行为准则）和越南法律的经验。',
+      nguyenVanThanhEdu1: '全球供应链劳动与商业道德首席审计员证书',
+      nguyenVanThanhEdu1Org: 'Verité, Inc.',
+      nguyenVanThanhEdu1Year: '2016年',
+      nguyenVanThanhEdu2: '律师执业证书',
+      nguyenVanThanhEdu2Org: '司法部',
+      nguyenVanThanhEdu2Year: '2015年',
+      nguyenVanThanhEdu3: '毕业',
+      nguyenVanThanhEdu3Org: '司法学院',
+      nguyenVanThanhEdu3Year: '2012年',
+      nguyenVanThanhEdu4: '外语学士',
+      nguyenVanThanhEdu4Org: '越南国立大学外国语大学',
+      nguyenVanThanhEdu4Year: '2012年',
+      nguyenVanThanhEdu5: '法学学士',
+      nguyenVanThanhEdu5Org: '河内法律大学',
+      nguyenVanThanhEdu5Year: '2011年',
+      nguyenVanThanhPostsInfo: '阮文成律师关于劳动、企业和外国投资等各个法律方面的深度文章。',
+
+      // Nguyen Hoang Anh
+      nguyenHoangAnhBio: '阮黄英律师是一位经验丰富的法律专家，专门提供各个领域的法律咨询和支持服务，特别是与子许可证相关的程序。',
+      nguyenHoangAnhExp: `阮黄英律师在法律领域拥有10多年的经验，专注于咨询和处理与子许可证相关的文件，包括：<br />
+        - 营业执照、有条件行业的经营许可证<br />
+        - 环境、建设、食品安全、劳动和其他专业许可证<br />
+        - 协助企业申请新许可证、续期或根据法律规定调整许可证`,
+      nguyenHoangAnhExp2: `阮黄英律师职业生涯的亮点：<br />
+        + 成功为许多国内外企业提供咨询，从初创企业到大型企业，帮助完善法律文件和获得许可证<br />
+        + 代表客户与政府机构合作，确保快速、透明和高效的程序<br />
+        + 提供针对每个客户具体需求的全面法律解决方案，优化成本和时间`,
+      nguyenHoangAnhEdu1: '律师执业证书',
+      nguyenHoangAnhEdu1Org: '司法部',
+      nguyenHoangAnhEdu1Year: '2022年',
+      nguyenHoangAnhEdu2: '毕业',
+      nguyenHoangAnhEdu2Org: '司法学院',
+      nguyenHoangAnhEdu2Year: '2021年',
+      nguyenHoangAnhEdu3: '法学硕士',
+      nguyenHoangAnhEdu3Org: '河内法律大学',
+      nguyenHoangAnhEdu3Year: '2018年',
+      nguyenHoangAnhEdu4: '法学学士',
+      nguyenHoangAnhEdu4Org: '河内法律大学',
+      nguyenHoangAnhEdu4Year: '2014年',
+      nguyenHoangAnhPostsInfo: '阮黄英律师关于许可证、企业和外国投资等各个法律方面的深度文章。',
+
+      // TS Doan Xuan Truong
+      doanXuanTruongBio: `<i>负责领域：</i><br /><br />
+      • 民事：合同、交易、继承、婚姻家庭、损害赔偿咨询...
+      <br /><br />
+      • 土地：所有土地程序咨询，包括但不限于房地产买卖、赠与、过户、换发、补发、新发、更正土地使用权、变更土地用途、解决土地纠纷...
+      <br /><br />
+      • 行政：行政程序、投诉和举报咨询。`,
+      doanXuanTruongExp: '段春长博士现为河内法律大学讲师。',
+      doanXuanTruongExp2: '段春长博士拥有15年以上的教学和法律合规指导经验；为劳动者和企业处理了许多法律咨询案件，在当代劳动法领域编写了多份独立报告。',
+      doanXuanTruongEdu1: '劳动法博士',
+      doanXuanTruongEdu1Org: '河内法律大学',
+      doanXuanTruongEdu1Year: '2022年',
+      doanXuanTruongEdu2: '法学硕士',
+      doanXuanTruongEdu2Org: '社会科学学院',
+      doanXuanTruongEdu2Year: '2014年',
+      doanXuanTruongEdu3: '法学学士',
+      doanXuanTruongEdu3Org: '河内法律大学',
+      doanXuanTruongEdu3Year: '2011年',
+      doanXuanTruongPostsInfo: '段春长博士关于民事、土地和行政法各方面的深度文章。',
+
+      // Tran Chung Kien
+      tranChungKienBio: `<i>负责领域：</i><br /><br />
+      • 民事：在涉及合同、民事交易、继承、婚姻家庭、损害赔偿等案件中为客户提供咨询和代理
+      <br /><br />
+      • 诉讼代理：在各级法院代理客户处理民事、刑事和行政案件，参与诉讼程序，保护客户在诉讼内外的合法权益
+      <br /><br />
+      • 刑事：为被害人提供咨询和保护其合法权益，同时在刑事诉讼各阶段为犯罪嫌疑人和被告人辩护。处理与犯罪行为相关的事务，确定刑事案件中各主体的法律责任程度
+      <br /><br />
+      • 行政：行政程序咨询，解决投诉、举报和行政相关法律问题。`,
+      tranChungKienExp: `• 2015年：毕业于河内法律大学法学院 <br />
+        • 2015-2022年：人民检察院公务员、检察员。在此期间，他积累了参与民事、刑事和行政案件的实践经验，监督诉讼活动，维护司法公正，为维护法律秩序和保护相关方合法权益做出贡献 <br />
+        • 2022-2024年：在Youth & Partners律师事务所工作，专门为客户提供民事、刑事、行政和诉讼法相关的咨询和代理服务。他成功地在复杂案件中保护客户权益，帮助客户有效解决法律问题，最大限度地保护其合法权益。`,
+      tranChungKienEdu1: '被任命为检察官',
+      tranChungKienEdu1Org: '最高人民检察院',
+      tranChungKienEdu1Year: '2021年',
+      tranChungKienEdu2: '获得检察业务培训证书',
+      tranChungKienEdu2Org: '最高人民检察院',
+      tranChungKienEdu2Year: '2019年',
+      tranChungKienEdu3: '法学学士',
+      tranChungKienEdu3Org: '河内法律大学法学院',
+      tranChungKienEdu3Year: '2015年',
+      tranChungKienPostsInfo: '陈忠坚律师关于民事、刑事、行政和诉讼法各方面的深度文章。',
+
+      // Bui Duc Manh
+      buiDucManhBio: `<i>负责领域：</i><br /><br />
+      • 民事：合同、交易、继承、婚姻家庭、损害赔偿咨询...
+      <br /><br />
+      • 土地：所有土地程序咨询，包括但不限于房地产买卖、赠与、过户、换发、补发、新发、更正土地使用权、变更土地用途、解决土地纠纷...
+      <br /><br />
+      • 行政：行政程序、投诉和举报咨询。`,
+      buiDucManhExp: `- 2022-2024年：在Youth & Partners律师事务所担任法律专员。在公司工作期间，裴德孟专员在民事、行政、土地和许可证领域积累了宝贵经验。具体包括：<br />
+        • 成功参与解决多起土地纠纷，保护客户与不动产相关的合法权益。<br />
+        • 在行政程序方面为客户提供支持和咨询，特别是在实施与土地和个人组织必要许可证相关的复杂行政程序方面。<br />
+        • 直接参与起草和实施与子许可证发放相关的程序，满足企业和个人在经营和投资活动中的需求。`,
+      buiDucManhEdu1: '毕业',
+      buiDucManhEdu1Org: '司法学院',
+      buiDucManhEdu1Year: '2024年',
+      buiDucManhEdu2: '法学学士',
+      buiDucManhEdu2Org: '泰原经济与工商管理大学经济法学院',
+      buiDucManhEdu2Year: '2022年',
+      buiDucManhPostsInfo: '法律专员裴德孟关于劳动、企业和外国投资各方面的深度文章。',
+
+      // Do Thi Luong
+      doThiLuongBio: `<i>负责领域：</i><br /><br />
+      • 为企业提供常规法律咨询：起草和审查企业各类合同，如框架合同、商品买卖合同、劳动合同等；起草劳动、商业贸易等领域的法律咨询报告；根据客户要求咨询、审查和起草其他文件
+      <br /><br />
+      • 负责企业和知识产权部门：咨询并提供企业程序的全套服务（如企业注册、变更企业注册内容、解散等），知识产权（商标注册、工业设计等）；办理企业运营过程中的相关许可证手续，如外语中心设立许可证、工作许可证等
+      <br /><br />
+      • 支持并参与外国投资项目的设立和调整。`,
+      doThiLuongExp: `• 2017-2020年：在黄飞投资与知识产权咨询有限公司工作：咨询、起草文件、办理企业注册、知识产权等程序 <br />
+        • 2020-2022年：在Aliat律师事务所工作：专业咨询、起草文件、与政府机构在知识产权领域合作；咨询并办理企业程序 <br />
+        • 2023年至今：在Youth & Partners律师事务所工作：为企业提供常规法律咨询专员；负责企业和知识产权部门。`,
+      doThiLuongEdu1: '参加律师培训课程',
+      doThiLuongEdu1Org: '司法学院',
+      doThiLuongEdu1Year: '2024年',
+      doThiLuongEdu2: '法学学士',
+      doThiLuongEdu2Org: '河内法律大学经济法学院',
+      doThiLuongEdu2Year: '2017年',
+      doThiLuongPostsInfo: '法律专员杜氏良关于劳动、企业、投资、许可证、知识产权各方面的深度文章。',
+
+      // Mang Dieu Hien
+      mangDieuHienBio: '芒妙贤律师是一位有声誉的法律专家，专门提供各类子许可证的咨询和支持服务。凭借扎实的教育背景和丰富的实践经验，芒妙贤律师已帮助众多个人和企业完成与经营许可证相关的复杂法律程序，确保符合越南法律规定。',
+      mangDieuHienExp: `芒妙贤律师在法律领域拥有10年以上的经验，特别是在咨询和处理与子许可证相关的文件方面：<br />
+        + 营业执照（企业注册、有条件行业的经营许可证）。<br />
+        + 建设许可证、环境许可证、食品安全、广告和其他专业许可证。<br />
+        + 协助企业按照法律规定申请、续期或调整子许可证。`,
+      mangDieuHienExp2: `凭借对越南法律体系和行政程序的深刻理解，芒妙贤律师已：<br />
+        + 成功为数百家中小企业提供咨询，帮助完善法律程序，确保符合进度和法律要求。<br />
+        + 代表客户与政府机构合作，节省时间和成本。<br />
+        + 提供针对每个具体情况的最优法律解决方案，从初创企业到大型公司。`,
+      mangDieuHienEdu1: '律师执业证书',
+      mangDieuHienEdu1Org: '司法部',
+      mangDieuHienEdu1Year: '2019年',
+      mangDieuHienEdu2: '毕业',
+      mangDieuHienEdu2Org: '司法学院',
+      mangDieuHienEdu2Year: '2015年',
+      mangDieuHienEdu3: '法学学士',
+      mangDieuHienEdu3Org: '胡志明市法律大学',
+      mangDieuHienEdu3Year: '2010年',
+      mangDieuHienPostsInfo: '芒妙贤律师关于许可证、企业和外国投资各方面的深度文章。',
+
+      // Nguyen Hoang Ngoc Lan
+      nguyenHoangNgocLanBio: '阮黄玉兰律师是一位在医疗领域具有深厚专业知识的法律专家，以其在咨询和解决医疗行业经营许可证相关法律问题方面的经验而著称。凭借对法律法规和行政程序的深刻理解，阮黄玉兰律师已帮助众多医院、诊所、医疗中心和其他医疗保健机构申请和调整各类许可证，确保符合越南法律规定。',
+      nguyenHoangNgocLanExp: `阮黄玉兰律师在医疗法律领域拥有多年深入经验，特别是在医疗行业子许可证相关文件的咨询和处理方面，包括：<br />
+        • 医疗检查和治疗经营许可证。<br />
+        • 医疗检查和治疗经营许可证的调整。<br />
+        • 医疗执业许可证和医疗领域的其他专业许可证。<br />
+        阮黄玉兰律师的突出成就：<br />
+        • 成功为众多医院、诊所、医疗中心和医疗保健机构提供咨询，帮助准备和完善向国家主管机关申请许可的文件。<br />
+        • 帮助客户了解法律要求，确保文件和材料符合所有监管标准，节省时间和成本。<br />
+        • 代表客户与监管机构合作，确保许可流程快速、透明和高效。<br />
+        • 提供针对每个具体情况的全面法律解决方案，从新成立的医疗机构到大型医疗保健组织。`,
+      nguyenHoangNgocLanEdu1: '律师执业证书',
+      nguyenHoangNgocLanEdu1Org: '司法部',
+      nguyenHoangNgocLanEdu1Year: '2024年',
+      nguyenHoangNgocLanEdu2: '法学硕士',
+      nguyenHoangNgocLanEdu2Org: '河内法律大学',
+      nguyenHoangNgocLanEdu2Year: '2022年',
+      nguyenHoangNgocLanEdu3: '毕业',
+      nguyenHoangNgocLanEdu3Org: '司法学院',
+      nguyenHoangNgocLanEdu3Year: '2021年',
+      nguyenHoangNgocLanEdu4: '法学学士',
+      nguyenHoangNgocLanEdu4Org: '河内法律大学',
+      nguyenHoangNgocLanEdu4Year: '2020年',
+      nguyenHoangNgocLanPostsInfo: '阮黄玉兰律师关于许可证、企业和外国投资各方面的深度文章。',
+
+      // Nguyen Minh Anh
+      nguyenMinhAnhBio: '阮明英律师是一位在经济法、土地法和民事法领域拥有7年以上经验的法律专家。凭借优秀的教育背景和在知名机构的实践经验，阮明英律师已证明了她在法律咨询、争议解决以及支持企业和个人处理复杂案件方面的能力。凭借广泛的法律知识和敏锐的思维，阮明英律师始终提供有效的法律解决方案，为客户在商业贸易、土地和民事领域优化利益。',
+      nguyenMinhAnhExp: `• 2022年11月 - 2024年9月：和平国际贸易投资旅游有限公司法律监察部副主任 <br />
+        法律咨询、合同谈判、与政府机构合作、合同审查、商业和民事争议解决及内部合规控制。<br />
+        • 2019年6月 - 2022年11月：越金律师事务所咨询部经理<br />
+        管理咨询部、案件研究、法院诉讼（民事、商业贸易）、企业重组咨询、并购及争议解决。<br />
+        • 2017年6月 - 2019年6月：仲海律师事务所实习生<br />
+        起草文件、审查合同、协助律师处理民事和商业贸易案件。`,
+      nguyenMinhAnhEdu1: '律师执业证书',
+      nguyenMinhAnhEdu1Org: '司法部',
+      nguyenMinhAnhEdu1Year: '2024年',
+      nguyenMinhAnhEdu2: '经济法硕士',
+      nguyenMinhAnhEdu2Org: '河内法律大学',
+      nguyenMinhAnhEdu2Year: '2023年',
+      nguyenMinhAnhEdu3: '毕业',
+      nguyenMinhAnhEdu3Org: '司法学院',
+      nguyenMinhAnhEdu3Year: '2021年',
+      nguyenMinhAnhEdu4: '法学学士（优秀）',
+      nguyenMinhAnhEdu4Org: '荣市大学',
+      nguyenMinhAnhEdu4Year: '2019年',
+      nguyenMinhAnhPostsInfo: '阮明英律师关于许可证、土地、企业和外国投资各方面的深度文章。',
+
+      // Nguyen Thi Huong
+      nguyenThiHuongBio: `<i>负责领域：</i><br /><br />
+      • 民事：合同、民事交易、继承、损害赔偿及其他相关法律问题咨询。
+      <br /><br />
+      • 婚姻家庭：离婚、财产分割、子女抚养权及婚姻家庭相关法律问题咨询。
+      <br /><br />
+      • 土地：土地相关问题咨询，包括但不限于土地争议解决、转让、土地使用权证换发。
+      <br /><br />
+      • 刑事：为被害人提供咨询和保护其合法权益，同时在刑事诉讼各阶段为犯罪嫌疑人和被告人辩护。处理与犯罪行为相关的事务，确定刑事案件中各主体的法律责任程度。
+      <br /><br />
+      • 企业：企业设立、运营和管理的法律咨询，合同相关问题及商业法律。
+      <br /><br />
+      • 劳动：劳动相关问题、劳动合同、劳动争议和劳动者权益咨询。
+      <br /><br />
+      • 投资：投资问题咨询，包括国内外投资、企业发展战略及房地产投资相关法律问题。`,
+      nguyenThiHuongExp: '阮氏香律师在法律领域拥有7年以上经验，专注于民事、刑事、行政、商业贸易和诉讼业务。',
+      nguyenThiHuongExp2: '凭借多年的诉讼、辩护、保护、代理、咨询、起草、提供表格、合同和法律文件的经验，为国内外组织和个人服务……阮氏香律师已成功保护客户在复杂案件中的权益，同时帮助客户有效解决法律问题。',
+      nguyenThiHuongEdu1: '律师执业证书',
+      nguyenThiHuongEdu1Org: '司法部',
+      nguyenThiHuongEdu1Year: '2020年',
+      nguyenThiHuongEdu2: '国际法学士',
+      nguyenThiHuongEdu2Org: '外交学院',
+      nguyenThiHuongEdu2Year: '2017年',
+      nguyenThiHuongPostsInfo: '阮氏香律师关于民事、刑事、行政、商业贸易各方面的深度文章。',
+
+      // 阮氏深
+      nguyenThiThomBio: '<br /><i>负责领域：</i><br /><br />• 企业：企业设立、运营和管理的法律咨询，合同相关问题及商业法律<br /><br />• 劳动：劳动相关问题、劳动合同、劳动争议和劳动者权益咨询<br /><br />• 投资：投资问题咨询，包括国内外投资、企业发展战略及房地产投资相关法律问题。',
+      nguyenThiThomExp: '凭借09年企业法务经验，其中05年在外资企业工作，04年在房地产投资开发公司工作，阮氏深律师积累了丰富的知识和专业的工作处理技能。',
+      nguyenThiThomExp2: '深律师专注于为企业提供法律咨询和支持，帮助企业制定适当的策略以避免法律纠纷，降低运营和经营中的风险。',
+      nguyenThiThomEdu1: '律师执业证书',
+      nguyenThiThomEdu1Org: '司法部',
+      nguyenThiThomEdu1Year: '2016年',
+      nguyenThiThomEdu2: '法学学士',
+      nguyenThiThomEdu2Org: '河内法律大学',
+      nguyenThiThomEdu2Year: '2012年',
+      nguyenThiThomPostsInfo: '阮氏深律师关于企业、劳动、投资各方面的深度文章。',
+
+      // 阮秋娥
+      nguyenThuNgaBio: '<br /><i>负责领域：</i><br /><br />• 企业：企业设立、运营和治理相关法律问题的全面咨询，保护股东权益，解决企业各方争议。阮娥律师帮助企业制定适当的法律策略，保护和发展业务活动，从与合作伙伴合作到起草经济和商业合同<br /><br />• 劳动：劳动合同、员工权益、劳动争议以及社会保险、福利和企业员工其他权益相关咨询。阮娥律师支持企业建立人力资源政策，管理劳动关系，解决雇主与员工之间的争议<br /><br />• 投资：国内外投资问题的法律咨询，包括投资程序、选择适当的投资方式和交易结构以最大化利益、最小化风险。阮娥律师还支持企业遵守投资和资本转让相关法规，帮助企业制定有效的投资策略。',
+      nguyenThuNgaExp: '阮娥律师在法律领域拥有10年以上经验，专注于为企业提供咨询，特别是在越南运营的外资企业。',
+      nguyenThuNgaExp2: '凭借在劳动、投资政府机构和日本企业法务负责人的工作经验，阮娥律师在企业法律问题方面拥有丰富经验，如劳动法和企业法合规、行政程序、合同审查、法律风险评估以及越南投资和发展程序相关法律咨询。',
+      nguyenThuNgaExp3: '此外，良好的日语沟通能力使阮娥律师成为日本企业与越南政府和企业之间的重要桥梁。',
+      nguyenThuNgaEdu1: '日本法律培训课程毕业',
+      nguyenThuNgaEdu1Org: '日本法律研究与培训中心 - 名古屋大学河内分校',
+      nguyenThuNgaEdu1Year: '2016年',
+      nguyenThuNgaEdu2: '法学学士',
+      nguyenThuNgaEdu2Org: '河内法律大学',
+      nguyenThuNgaEdu2Year: '2012年',
+      nguyenThuNgaPostsInfo: '阮秋娥律师关于企业、劳动、投资各方面的深度文章。',
+
+      // 范氏玄君
+      phamThiHuyenQuyenBio: '<br /><i>负责领域：</i><br /><br />• 企业：企业设立、运营和治理相关法律问题的全面咨询，包括财务管理、股东权益保护、合同起草和内部争议解决。她帮助企业建立和实施可持续发展战略，确保运营全程合规<br /><br />• 劳动：企业劳动问题咨询，包括劳动合同、员工权益、社会保险、福利政策和劳动争议解决。她支持企业建立人力资源政策并维护合规的工作环境<br /><br />• 投资：投资相关问题咨询，包括投资规划、融资程序、股权转让和投资风险管理。君律师帮助企业优化投资策略，同时确保符合国内外法律要求。',
+      phamThiHuyenQuyenExp: '凭借8年企业咨询和内部法务经验，范氏玄君律师已成为众多企业的可信赖合作伙伴。',
+      phamThiHuyenQuyenExp2: '她拥有企业法、劳动法及相关法规的深入知识，帮助企业有效解决运营中产生的法律问题。',
+      phamThiHuyenQuyenExp3: '特别是，她注重确保企业活动的法律合规，从建立组织架构、财务管理到处理争议和内部冲突。',
+      phamThiHuyenQuyenEdu1: '律师执业证书',
+      phamThiHuyenQuyenEdu1Org: '司法部',
+      phamThiHuyenQuyenEdu1Year: '2016年',
+      phamThiHuyenQuyenEdu2: '法学学士',
+      phamThiHuyenQuyenEdu2Org: '河内法律大学',
+      phamThiHuyenQuyenEdu2Year: '2012年',
+      phamThiHuyenQuyenPostsInfo: '范氏玄君律师关于企业、劳动、投资各方面的深度文章。',
+
+      // 文氏清花
+      vanThiThanhHoaBio: '<br /><i>负责领域：</i><br /><br />• 民事：合同、民事交易、继承、损害赔偿及其他相关法律问题咨询<br /><br />• 刑事：为受害者提供咨询和保护合法权益，同时在刑事诉讼各阶段为嫌疑人和被告辩护。处理与犯罪行为相关的事务并确定刑事案件中各主体的法律责任程度<br /><br />• 土地：土地相关问题咨询，包括但不限于转让、换发土地使用权证、解决土地纠纷<br /><br />• 婚姻家庭：离婚、财产分割、子女抚养权及婚姻家庭相关法律问题咨询。',
+      vanThiThanhHoaExp: '凭借12年以上经验，文氏清花律师已成功解决民事、刑事、土地、婚姻家庭领域的众多复杂法律案件。',
+      vanThiThanhHoaExp2: '她以出色的法律咨询能力和最优案件解决策略著称，帮助客户实现预期结果。',
+      vanThiThanhHoaEdu1: '律师执业证书',
+      vanThiThanhHoaEdu1Org: '司法部',
+      vanThiThanhHoaEdu1Year: '2016年',
+      vanThiThanhHoaEdu2: '法学学士',
+      vanThiThanhHoaEdu2Org: '河内法律大学',
+      vanThiThanhHoaEdu2Year: '2012年',
+      vanThiThanhHoaPostsInfo: '文氏清花律师关于诉讼内外代理、民事、刑事、行政、土地各方面的深度文章。',
+
+      // 严明玄
+      nghiemMinhHuyenBio: '<br /><i>负责领域：</i><br /><br />严玄是法律专员、律师助理、编辑，支持管理Y&P律师事务所网站文章，支持专员撰写分析文章、服务、总结法规、新政策，涉及领域：企业、婚姻家庭、土地、刑事等...<br /><br />• 土地领域：快速更新，支持客户办理土地相关行政手续：首次登记、变更登记、遗产分割、赠与等...<br /><br />• 民事、刑事领域：阅读和研究实际案卷；协助律师复印文件、资料，起草各类申请和文件。',
+      nghiemMinhHuyenExp: '• 2019年：在北从廉区人民委员会实习：接收文件和返还结果，处理个体工商户登记、税号<br />• 2020年：在亚洲律师事务所实习：起草企业相关文件如成立、变更、解散、印章登记；了解知识产权、子许可证、网站登记等...<br />• 2020-2021年：在南洋律师事务所工作：根据合作伙伴要求联系违反贷款合同的客户（银行：MB银行、VP银行等；金融公司：Mcredit、FEcredit等）<br />• 2021年：在行政科学和档案中心（SCARMA）工作：整理、编辑、创建MB银行的数据存储列表和仓储<br />• 2022-2024年：在越南SGS有限公司工作：审核发布到社交媒体的内容<br />• 2024年至今：在Youth & Partners律师事务所工作。',
+      nghiemMinhHuyenEdu1: '毕业',
+      nghiemMinhHuyenEdu1Org: '司法学院',
+      nghiemMinhHuyenEdu1Desc: '• 参加并毕业于三职称培训课程：法官、检察官、律师<br />• 接受司法职称专业技能和实践经验的深度培训<br />• 在学院的分配和指导下，在法院、检察院和律师事务所实习，以锻炼技能并提高解决实际法律情况的能力',
+      nghiemMinhHuyenEdu1Year: '2020年12月 - 2022年8月',
+      nghiemMinhHuyenEdu2: '法学学士',
+      nghiemMinhHuyenEdu2Org: '河内法律大学',
+      nghiemMinhHuyenEdu2Desc: '• 法学专业毕业，GPA：7.31/10<br />• 接受民事、刑事、行政、经济和国际法领域基础法律知识和法典的深度培训',
+      nghiemMinhHuyenEdu2Year: '2016年9月 - 2020年7月',
+      nghiemMinhHuyenPostsInfo: '法律专员严明玄关于民事、刑事、行政、土地各方面的深度文章。',
+
+      // 阮黄勇
+      nguyenHoangDungBio: '<br /><i>负责领域：</i><br /><br />• 民事：合同、民事交易咨询，代理参与遗产继承纠纷解决、民事交易中的损害赔偿请求及其他相关法律问题。<br /><br />• 婚姻家庭：离婚文件、程序、共同财产分割、子女抚养权及婚姻家庭相关法律问题咨询。<br /><br />• 土地：土地相关文件、程序、行政手续咨询，参与土地使用权纠纷解决。<br /><br />• 刑事：法律咨询、文书起草，为嫌疑人、被告辩护，或保护刑事案件中受害者、相关人员的合法权益。<br /><br />• 行政：文件、程序咨询，代理客户收集证据，参与保护客户在投诉、举报和行政案件中的合法权益。<br /><br />• 企业：企业设立、运营和管理的法律咨询，起草经济合同、商业合作合同等。<br /><br />• 劳动：劳动相关问题、劳动合同、劳动纠纷及员工和雇主权益咨询。<br /><br />• 投资：投资项目实施过程中的咨询、文件起草、代理与政府机关对接。',
+      nguyenHoangDungExp: '• 2023年：在宏百及合伙人律师事务所工作。<br />• 2024年：在河南省律师协会法律咨询中心工作。<br />• 2025年：在Youth & Partners律师事务所工作。',
+      nguyenHoangDungEdu1: '毕业',
+      nguyenHoangDungEdu1Org: '司法学院',
+      nguyenHoangDungEdu1Desc: '• 参加并毕业于律师培训课程<br />• 接受律师职业专业技能和实践经验的深度培训',
+      nguyenHoangDungEdu1Year: '2025年',
+      nguyenHoangDungEdu2: '法学学士',
+      nguyenHoangDungEdu2Org: '河内法律大学国际贸易法',
+      nguyenHoangDungEdu2Year: '2023年',
+      nguyenHoangDungPostsInfo: '法律专员阮黄勇关于民事、婚姻家庭、土地、刑事、行政、企业、劳动、投资各方面的深度文章。',
+
+      // 阮潘淑芝
+      nguyenPhanThucChiBio: '<br /><i>负责领域：</i><br /><br />• 企业：支持企业常规法律咨询：支持审查企业各类合同如框架合同、货物买卖合同、劳动合同等；支持起草劳动、商业贸易等领域的法律咨询报告...<br /><br />• 支持外国投资项目相关许可证事宜，包括企业设立、投资登记证调整等相关问题...',
+      nguyenPhanThucChiExp: '• 2024年8月 – 2024年11月：越南TOTO有限公司永福分公司人事行政部实习生 – 支持公司章程审查和社会保障、劳动问题查询。<br />• 2024年12月 – 2025年5月：越南KITZ Corporation有限公司人事行政部员工 – 审查、检查合同和查询社会保障、劳动和税务问题；支持越南劳动者出国培训（台湾、日本）的出境手续。<br />• 现任Youth & Partners律师事务所法律专员。',
+      nguyenPhanThucChiEdu1: '法学学士',
+      nguyenPhanThucChiEdu1Org: '河内法律大学经济法',
+      nguyenPhanThucChiEdu1Year: '2024年',
+      nguyenPhanThucChiPostsInfo: '法律专员阮潘淑芝关于企业、劳动、许可证各方面的深度文章。',
+
+      // 阮冯梅映
+      nguyenPhungMaiAnhBio: '<br /><i>负责领域：</i><br /><br />凭借广泛的知识和实践经验，梅映担任民事和行政领域专业编辑。梅映的文章专注于分析、综合和阐明与土地使用权、合同、婚姻家庭和民事法律问题相关的法律法规、重要政策。',
+      nguyenPhungMaiAnhExp: '• 2021年：在24小时律师事务所实习，支持律师研究和起草文件，检查法律文件<br />• 2023年：在越春乡人民委员会实习，配合司法-户籍公务员进行文件公证，调解土地纠纷，录入和处理行政文件<br />• 2024年：Youth & Partners律师事务所法律专员，专门处理土地手续和土地使用权、规划、转让及相关问题的法律咨询。',
+      nguyenPhungMaiAnhEdu1: '法学学士',
+      nguyenPhungMaiAnhEdu1Org: '国家行政学院法律系',
+      nguyenPhungMaiAnhEdu1Year: '2024年',
+      nguyenPhungMaiAnhPostsInfo: '法律专员阮冯梅映关于民事、行政、土地各方面的深度文章。',
+
+      // 阮氏琼江
+      nguyenThiQuynhGiangBio: '<br /><i>介绍：</i><br /><br />• 阮氏琼江自2025年起在YPLaw事务所实习。<br /><br />• 凭借河内国家大学法学院法学学士的法律知识基础，琼江始终努力在实际工作中发展和应用知识、技能。',
+      nguyenThiQuynhGiangExp: '• 2024年6月 – 2025年1月：在南慈廉区人民法院实习，接触诉讼程序和审判实践，从而增强法律理解和专业工作技能<br />• 目前，琼江是Youth & Partners律师事务所（YPLaw Firm）的实习生，学习并参与公司的法律咨询和支持活动。',
+      nguyenThiQuynhGiangEdu1: '法学学士',
+      nguyenThiQuynhGiangEdu1Org: '河内国家大学法学院法学专业',
+      nguyenThiQuynhGiangEdu1Year: '2025年',
+      nguyenThiQuynhGiangPostsInfo: '法律专员阮氏琼江关于劳动、企业、投资、许可证各方面的深度文章。',
+
+      // 阮氏秋庄
+      nguyenThiThuTrangBio: '<br /><i>负责领域：</i><br /><br />• 合同起草、劳动、税务、房地产和外国投资法律咨询<br /><br />• 确保企业活动的法律合规<br /><br />• 建立和调整企业内部表格和规章制度。',
+      nguyenThiThuTrangExp: '• 起草和评估双语合同（英-越）包括框架合同、服务合同、劳动合同、保密协议等<br />• 为企业客户提供劳动、税务、房地产、商业运营法律咨询<br />• 参与建立和评估民主规章、劳动规则、工资奖金规章等内部表格<br />• 为外资企业起草投资证书调整和换发文件。',
+      nguyenThiThuTrangEdu1: '法学学士',
+      nguyenThiThuTrangEdu1Org: '河内法律大学法学专业',
+      nguyenThiThuTrangEdu1Year: '2022年',
+      nguyenThiThuTrangPostsInfo: '法律专员阮氏秋庄关于劳动、企业、投资、许可证各方面的深度文章。',
+
+      // 阮氏翠玲
+      nguyenThiThuyLinhBio: '<br /><i>负责领域：</i><br /><br />• 为国内外企业提供合同起草、劳动、房地产和外国投资法律咨询<br /><br />• 建立和调整企业内部表格和规章制度<br /><br />• 起草企业设立、变更登记内容文件<br /><br />• 为外资企业起草投资登记证调整和换发文件<br /><br />• 解决婚姻家庭案件，包括涉外离婚案件。',
+      nguyenThiThuyLinhExp: '• 解决婚姻家庭案件，包括涉外离婚案件；<br />• 为15家以上国内外企业提供企业、劳动、投资、房地产业务等领域的常规咨询...<br />• 起草和评估双语合同（英-越）包括框架合同、服务合同、劳动合同、保密协议等<br />• 建立和评估企业的民主规章、劳动规则、工资奖金规章等内部表格<br />• 为外资企业起草投资登记证调整和换发文件<br />• 起草企业设立、变更登记内容文件。',
+      nguyenThiThuyLinhEdu1: '法学学士',
+      nguyenThiThuyLinhEdu1Org: '河内法律大学经济法系',
+      nguyenThiThuyLinhEdu1Year: '2023年',
+      nguyenThiThuyLinhPostsInfo: '法律专员阮氏翠玲关于劳动、企业、投资、婚姻家庭各方面的深度文章。',
+
+      // 阮翠恒
+      nguyenThuyHangBio: '<br /><i>负责领域：</i><br /><br />• 起草和评估合同包括框架合同、服务合同、劳动合同等<br /><br />• 为企业客户提供劳动、税务、房地产、商业运营法律咨询<br /><br />• 参与建立和评估民主规章、劳动规则、工资奖金规章等内部表格。',
+      nguyenThuyHangExp: '• 曾在河氏投资咨询公司、永安市人民法院担任法律员工、法律实习生工作和实习<br />• 执行合同审查、起草常用文件、建立内部规定和法律翻译等工作。',
+      nguyenThuyHangEdu1: '法学学士',
+      nguyenThuyHangEdu1Org: '河内法律大学经济法',
+      nguyenThuyHangEdu1Year: '2024年',
+      nguyenThuyHangPostsInfo: '法律专员阮翠恒关于企业、劳动、许可证各方面的深度文章。',
+
+      // 陈氏碧莲
+      tranThiBichLienBio: '<br /><i>负责领域：</i><br /><br />• 民事：合同、民事交易、继承、婚姻家庭、损害赔偿及其他相关法律问题咨询<br /><br />• 土地：土地手续全面咨询，包括但不限于买卖、赠与、房地产过户、换发、补发、新发土地使用权证、更正土地使用权、变更土地用途和解决土地纠纷<br /><br />• 行政：行政手续、投诉、举报和行政相关法律问题咨询。',
+      tranThiBichLienExp: '• 2020-2024年：Youth & Partners律师事务所法律专员。在公司工作期间，陈氏碧莲女士在民事、行政和土地领域积累了丰富经验<br />• 她直接参与并成功解决了许多土地、婚姻家庭纠纷，保护了客户的合法权益<br />• 同时，她还办理了许多复杂的行政和土地手续，服务于个人和组织的需求，提高效率并保障客户权益。',
+      tranThiBichLienEdu1: '参加律师培训课程',
+      tranThiBichLienEdu1Org: '司法学院',
+      tranThiBichLienEdu1Year: '2024年',
+      tranThiBichLienEdu2: '法学学士',
+      tranThiBichLienEdu2Org: '河内法律大学法学系',
+      tranThiBichLienEdu2Year: '2016年',
+      tranThiBichLienPostsInfo: '法律专员陈氏碧莲关于民事、刑事、行政、土地各方面的深度文章。',
+
+      // 阮氏珠英
+      nguyenThiChauAnhBio: '阮氏珠英自2025年起在Youth & Partners律师事务所担任法律实习生。<br /><br />凭借河内大学法学专业的培训基础，珠英主动提升法律知识和执业技能，同时积极将理论应用于实践工作。',
+      nguyenThiChauAnhExp: '• 2025年6月-2025年9月：在北宁第7区人民法院实习。参与支持法院业务工作，接触诉讼程序和审判实践，从而增强法律知识、法律思维和专业工作技能。<br /><br />• 2025年12月至今：Youth & Partners律师事务所法律实习生。参与支持法律咨询活动、文件起草、法律研究并协助律师与客户合作。',
+      nguyenThiChauAnhEdu1: '法学学士',
+      nguyenThiChauAnhEdu1Org: '河内大学 - 法学专业',
+      nguyenThiChauAnhEdu1Year: '2024年',
+      nguyenThiChauAnhPostsInfo: '法律实习生阮氏珠英关于各方面法律问题的深度文章。',
+
+      // 阮氏翠阳
+      nguyenThiThuyDuongBio: '阮氏翠阳自2025年起在Youth & Partners律师事务所担任法律实习生。<br /><br />凭借河内法律大学经济法专业的法律知识基础，翠阳始终研究并将法律知识应用于民事案件的实际解决和企业常规咨询。',
+      nguyenThiThuyDuongExp: '• 学习期间，参与学生科研、模拟法庭和商业调解比赛，逐步培养法律研究技能、论证分析、文件起草和专业法律环境中的团队合作能力。<br /><br />• 目前是YP Law Firm的法律实习生，积极学习并支持公司的咨询活动和法律工作。',
+      nguyenThiThuyDuongEdu1: '法学学士',
+      nguyenThiThuyDuongEdu1Org: '河内法律大学 - 经济法专业',
+      nguyenThiThuyDuongEdu1Year: '2024年',
+      nguyenThiThuyDuongPostsInfo: '法律实习生阮氏翠阳关于民事、企业各方面法律问题的深度文章。',
+
+      // 阮翠阳
+      nguyenThuyDuongBio: '阮翠阳自2025年起在Youth & Partners律师事务所担任法律实习生。<br /><br />凭借商业大学经济法专业的法律知识基础，翠阳始终研究并将法律知识应用于民事案件的实际解决和企业常规咨询。',
+      nguyenThuyDuongExp: '<i>负责领域：</i><br /><br />• 企业：为企业提供日常法律问题、法律合规和内部运营的常规法律咨询和法律支持。<br /><br />• 审查、分析与企业运营相关的法律文件、合同和法律资料。<br /><br />• 支持起草、审查商业合同、内部文件、按公司和客户要求的法律文件。<br /><br />• 参与研究和更新新法律，为企业提供实用法律解决方案咨询。<br /><br /><i>工作经验：</i><br /><br />• 2023年5月-2023年8月：SEDU培训股份公司销售与课程咨询员工 – 课程咨询和客户权益支持。<br /><br />• 目前是YP Law Firm的法律实习生，积极学习并支持公司的咨询活动和法律工作。',
+      nguyenThuyDuongEdu1: '法学学士',
+      nguyenThuyDuongEdu1Org: '商业大学 - 经济法专业',
+      nguyenThuyDuongEdu1Year: '2024年',
+      nguyenThuyDuongPostsInfo: '法律实习生阮翠阳关于民事、企业各方面法律问题的深度文章。',
+
+      // Nguyen Thi Mai Linh
+      nguyenThiMaiLinhBio: '<br /><i>介绍：</i><br /><br />• 阮氏梅灵自2025年起在Youth & Partners律师事务所（Y&P Law Firm）担任法律实习生。<br /><br />• 凭借商业大学经济法专业的知识基础，梅灵通过学术活动、科学研究和法律实践模拟项目积极发展知识和技能。',
+      nguyenThiMaiLinhExp: '• 在学习期间，梅灵参加了学生科学研究、模拟法庭和商业调解比赛，从而逐步发展法律研究技能、论证分析、文件起草和专业法律环境中的团队合作。<br /><br />• 目前，梅灵是YP Law Firm的法律实习生，积极学习并支持公司的咨询活动和法律工作。',
+      nguyenThiMaiLinhEdu1: '法学学士',
+      nguyenThiMaiLinhEdu1Org: '商业大学 - 经济法专业',
+      nguyenThiMaiLinhEdu1Year: '2024年',
+      nguyenThiMaiLinhPostsInfo: '法律实习生阮氏梅灵关于各方面法律问题的深度文章。',
+
+      // Nguyen Thi Xuan
+      nguyenThiXuanBio: '<br /><i>介绍：</i><br /><br />• 阮氏春自2025年起在Youth & Partners律师事务所（Y&P Law Firm）担任法律实习生。<br /><br />• 凭借河内法律大学法律专业的培训基础，春积极发展法律知识和专业技能，同时积极将理论应用于实际工作。',
+      nguyenThiXuanExp: '• 2023年10月 – 2024年2月：在原发律师事务所实习，在婚姻家庭领域提供法律咨询，从而提高法律知识和专业工作技能。<br /><br />• 2024年4月 – 2025年5月：在阮惠公证处担任起草人员。审查法律文件并起草车辆买卖、转让、继承等合同；支持公证员进行外部签名。<br /><br />• 2025年5月 - 2025年11月：在Domin股份公司工作：审核社交媒体上发布的内容。<br /><br />• 目前是Youth & Partners律师事务所（YP Law Firm）的法律实习生，学习并为公司的咨询活动和法律支持做出贡献。',
+      nguyenThiXuanEdu1: '法学学士',
+      nguyenThiXuanEdu1Org: '河内法律大学 - 经济法专业',
+      nguyenThiXuanEdu1Year: '2024年',
+      nguyenThiXuanPostsInfo: '法律实习生阮氏春关于企业、劳动、许可证各方面法律问题的深度文章。',
+
+      // Common fields for area of responsibility
+      areaOfResponsibility: '负责领域：',
+      civilLaw: '民事：合同、交易、继承、家庭、损害赔偿咨询...',
+      landLaw: '土地：所有土地程序咨询，包括但不限于房地产买卖、赠与、过户、换发、补发、新发、更正土地使用权、变更土地用途、解决土地纠纷...',
+      adminLaw: '行政：行政程序、投诉和举报咨询。',
+
+      // Common education terms
+      lawyerCertificate: '律师执业证书',
+      graduated: '毕业',
+      masterOfLaw: '法学硕士',
+      bachelorOfLaw: '法学学士',
+      doctorOfLaw: '劳动法博士',
+      bachelorOfForeignLanguages: '外语学士',
+      leadAuditorCert: '全球供应链劳动与商业道德首席审计员证书',
+      lawyerTrainingCourse: '参加律师培训课程',
+      
+      // Common organization names
+      ministryOfJustice: '司法部',
+      judicialAcademy: '司法学院',
+      hanoiLawUniversity: '河内法律大学',
+      hcmLawUniversity: '胡志明市法律大学',
+      socialScienceAcademy: '社会科学学院',
+      foreignLanguagesUniversity: '越南国立大学外国语大学',
+      thaiNguyenUniversity: '泰原经济与工商管理大学经济法学院',
+      hanoiLawEconomics: '河内法律大学经济法学院',
+      verite: 'Verité, Inc.',
+      
+      // Year prefix
+      year: '年',
+    },
+    ja: {
+      // Nguyen Van Thanh
+      nguyenVanThanhBio: 'グエン・ヴァン・タン氏は、<span class="text-accent dark:text-white highlight"> Youth </span><span class="text-primary dark:text-white highlight">& Partners</span> 法律事務所の執行弁護士であり、14年以上の研究経験を持ち、企業が直面する複雑な法的問題に対して実践的なソリューションを提供しています。また、サムスンSDIベトナムの総合法務顧問も務めています。',
+      nguyenVanThanhExp: `タン弁護士は、元サムスンSDIベトナム法務部門長（2015年から）であり、現在Youth & Partners法律事務所の執行弁護士（2019年から）です。<br />
+        - ヴィンフック省法務クラブ執行委員会：2024年3月 <br />
+        - 弁護士免許番号：10652/LS、ベトナム弁護士連盟発行 <br />
+        - ベトナム弁護士連盟会員：2015年<br />
+        - 弁護士会、ベトナム弁護士協会弁護士`,
+      nguyenVanThanhExp2: 'タン弁護士は、企業内部問題、労働、ビジネス・商業に関する豊富なコンサルティング経験を持ち、企業と従業員に関連する国際行動規範を深く理解し、企業内部の紛争、パートナーやサプライヤーに関連する紛争や法的問題の解決に優れた経験を持っています。',
+      nguyenVanThanhExp3: 'タン弁護士は、ベトナムで責任あるビジネス同盟（RBA）の経営システム、労働、人権、ビジネス倫理に関する上級監査人資格を持つ数少ない弁護士の一人です。リードオーディター（サムスンベトナムサプライヤー検査チーム長）として、国際RBA基準（RBA行動規範）とベトナム法への準拠について、サムスンベトナムの数百のサプライヤーを監査した経験があります。',
+      nguyenVanThanhEdu1: 'グローバルサプライチェーンにおける労働・ビジネス倫理のリードオーディター資格',
+      nguyenVanThanhEdu1Org: 'Verité, Inc.',
+      nguyenVanThanhEdu1Year: '2016年',
+      nguyenVanThanhEdu2: '弁護士実務資格',
+      nguyenVanThanhEdu2Org: '司法省',
+      nguyenVanThanhEdu2Year: '2015年',
+      nguyenVanThanhEdu3: '卒業',
+      nguyenVanThanhEdu3Org: '司法学院',
+      nguyenVanThanhEdu3Year: '2012年',
+      nguyenVanThanhEdu4: '外国語学士',
+      nguyenVanThanhEdu4Org: 'ベトナム国立大学外国語大学',
+      nguyenVanThanhEdu4Year: '2012年',
+      nguyenVanThanhEdu5: '法学学士',
+      nguyenVanThanhEdu5Org: 'ハノイ法科大学',
+      nguyenVanThanhEdu5Year: '2011年',
+      nguyenVanThanhPostsInfo: 'グエン・ヴァン・タン弁護士による労働、企業、外国投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // Nguyen Hoang Anh
+      nguyenHoangAnhBio: 'グエン・ホアン・アン弁護士は、様々な分野、特にサブライセンス関連の手続きに特化した法律相談およびサポートサービスを提供する経験豊富な法律専門家です。',
+      nguyenHoangAnhExp: `グエン・ホアン・アン弁護士は、法律分野で10年以上の経験を持ち、サブライセンス関連の書類の相談と処理に重点を置いています：<br />
+        - 事業登録証、条件付き業種の営業許可<br />
+        - 環境、建設、食品安全、労働、その他の専門許可<br />
+        - 法的規制に従った新規発行、更新、または許可の調整における企業のサポート`,
+      nguyenHoangAnhExp2: `グエン・ホアン・アン弁護士のキャリアのハイライト：<br />
+        + スタートアップから大規模まで、多くの国内外の企業に法的文書の完成と許可取得を成功裏にコンサルティング<br />
+        + 政府機関との顧客代理、迅速で透明で効率的な手続きを保証<br />
+        + 各顧客の特定のニーズに合わせた包括的な法的ソリューションを提供し、コストと時間を最適化`,
+      nguyenHoangAnhEdu1: '弁護士実務資格',
+      nguyenHoangAnhEdu1Org: '司法省',
+      nguyenHoangAnhEdu1Year: '2022年',
+      nguyenHoangAnhEdu2: '卒業',
+      nguyenHoangAnhEdu2Org: '司法学院',
+      nguyenHoangAnhEdu2Year: '2021年',
+      nguyenHoangAnhEdu3: '法学修士',
+      nguyenHoangAnhEdu3Org: 'ハノイ法科大学',
+      nguyenHoangAnhEdu3Year: '2018年',
+      nguyenHoangAnhEdu4: '法学学士',
+      nguyenHoangAnhEdu4Org: 'ハノイ法科大学',
+      nguyenHoangAnhEdu4Year: '2014年',
+      nguyenHoangAnhPostsInfo: 'グエン・ホアン・アン弁護士による許可、企業、外国投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // TS Doan Xuan Truong
+      doanXuanTruongBio: `<i>担当分野：</i><br /><br />
+      • 民事：契約、取引、相続、婚姻家族、損害賠償の相談...
+      <br /><br />
+      • 土地：不動産の売買、贈与、名義変更、交換、再発行、新規発行、土地使用権の訂正、土地利用目的の変更、土地紛争の解決など、すべての土地手続きに関する相談...
+      <br /><br />
+      • 行政：行政手続き、苦情および告発の相談。`,
+      doanXuanTruongExp: 'ドアン・スアン・チュオン博士は現在、ハノイ法科大学の講師です。',
+      doanXuanTruongExp2: 'ドアン・スアン・チュオン博士は15年以上の教育および法令遵守指導の経験があり、労働者と企業のための多くの法律相談案件を処理し、現代労働法の分野で多数の独自報告書を執筆しています。',
+      doanXuanTruongEdu1: '労働法博士',
+      doanXuanTruongEdu1Org: 'ハノイ法科大学',
+      doanXuanTruongEdu1Year: '2022年',
+      doanXuanTruongEdu2: '法学修士',
+      doanXuanTruongEdu2Org: '社会科学アカデミー',
+      doanXuanTruongEdu2Year: '2014年',
+      doanXuanTruongEdu3: '法学学士',
+      doanXuanTruongEdu3Org: 'ハノイ法科大学',
+      doanXuanTruongEdu3Year: '2011年',
+      doanXuanTruongPostsInfo: 'ドアン・スアン・チュオン博士による民事、土地、行政法のあらゆる側面についての詳細な記事。',
+
+      // Tran Chung Kien
+      tranChungKienBio: `<i>担当分野：</i><br /><br />
+      • 民事：契約、民事取引、相続、婚姻家族、損害賠償などの案件でクライアントの相談および代理を行う
+      <br /><br />
+      • 訴訟代理：各級裁判所でクライアントの民事、刑事、行政案件を代理し、訴訟手続きに参加し、法廷内外でクライアントの正当な利益を保護する
+      <br /><br />
+      • 刑事：被害者の相談と正当な利益の保護、また刑事訴訟の各段階で容疑者と被告人の弁護を行う。犯罪行為に関連する事項を扱い、刑事案件における各主体の法的責任の程度を判断する
+      <br /><br />
+      • 行政：行政手続きの相談、苦情、告発および行政関連法律問題の解決。`,
+      tranChungKienExp: `• 2015年：ハノイ法科大学法学部卒業 <br />
+        • 2015-2022年：人民検察院の公務員、検察官。この期間中、民事、刑事、行政案件への参加、訴訟活動の監督、司法公正の維持、法秩序の維持と関係者の正当な利益の保護に貢献する実践経験を積む <br />
+        • 2022-2024年：Youth & Partners法律事務所で勤務し、民事、刑事、行政および訴訟法に関連するクライアントへの相談と代理サービスを専門とする。複雑な案件でクライアントの権利を保護し、法的問題を効果的に解決し、正当な利益を最大限に保護することに成功。`,
+      tranChungKienEdu1: '検察官に任命',
+      tranChungKienEdu1Org: '最高人民検察院',
+      tranChungKienEdu1Year: '2021年',
+      tranChungKienEdu2: '検察業務研修証明書取得',
+      tranChungKienEdu2Org: '最高人民検察院',
+      tranChungKienEdu2Year: '2019年',
+      tranChungKienEdu3: '法学学士',
+      tranChungKienEdu3Org: 'ハノイ法科大学法学部',
+      tranChungKienEdu3Year: '2015年',
+      tranChungKienPostsInfo: 'チャン・チュン・キエン弁護士による民事、刑事、行政および訴訟法のあらゆる側面についての詳細な記事。',
+
+      // Bui Duc Manh
+      buiDucManhBio: `<i>担当分野：</i><br /><br />
+      • 民事：契約、取引、相続、婚姻家族、損害賠償の相談...
+      <br /><br />
+      • 土地：不動産の売買、贈与、名義変更、交換、再発行、新規発行、土地使用権の訂正、土地利用目的の変更、土地紛争の解決など、すべての土地手続きに関する相談...
+      <br /><br />
+      • 行政：行政手続き、苦情および告発の相談。`,
+      buiDucManhExp: `- 2022-2024年：Youth & Partners法律事務所の法律専門家。会社での勤務中、マン専門家は民事、行政、土地、許可の分野で貴重な経験を積みました。具体的には：<br />
+        • 多くの土地紛争の解決に成功し、不動産に関するクライアントの正当な権利を保護。<br />
+        • 行政手続きにおけるクライアントのサポートとアドバイス、特に土地や個人・組織に必要な許可に関連する複雑な行政手続きの実施。<br />
+        • サブライセンス発行に関連する手続きの起草と実施に直接参加し、事業および投資活動における企業や個人のニーズに対応。`,
+      buiDucManhEdu1: '卒業',
+      buiDucManhEdu1Org: '司法学院',
+      buiDucManhEdu1Year: '2024年',
+      buiDucManhEdu2: '法学学士',
+      buiDucManhEdu2Org: 'タイグエン経済経営大学経済法学部',
+      buiDucManhEdu2Year: '2022年',
+      buiDucManhPostsInfo: '法律専門家ブイ・ドゥック・マンによる労働、企業、外国投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // Do Thi Luong
+      doThiLuongBio: `<i>担当分野：</i><br /><br />
+      • 企業への定期的な法律相談：枠組み契約、商品売買契約、労働契約などの企業内各種契約の起草とレビュー；労働、商業ビジネスなどの分野の法律相談報告書の作成；クライアントの要望に応じたその他の文書の相談、レビュー、起草
+      <br /><br />
+      • 企業・知的財産部門の責任者：企業手続き（企業登録、企業登録内容の変更、解散など）、知的財産（商標登録、工業デザインなど）の包括的なサービスの相談と実施；外国語センター設立許可、労働許可証などの企業運営中の関連許可手続き
+      <br /><br />
+      • 外国投資プロジェクトの設立・調整のサポートと参加。`,
+      doThiLuongExp: `• 2017-2020年：ホアンフィ投資・知的財産コンサルティング会社勤務：相談、文書作成、企業登録、知的財産、その他の手続き実施 <br />
+        • 2020-2022年：アリアット法律会社勤務：知的財産分野での専門相談、文書作成、政府機関との連携；企業手続きの相談と実施 <br />
+        • 2023年～現在：Youth & Partners法律事務所勤務：企業への定期的な法律相談専門家；企業・知的財産部門責任者。`,
+      doThiLuongEdu1: '弁護士研修コースに参加',
+      doThiLuongEdu1Org: '司法学院',
+      doThiLuongEdu1Year: '2024年',
+      doThiLuongEdu2: '法学学士',
+      doThiLuongEdu2Org: 'ハノイ法科大学経済法学部',
+      doThiLuongEdu2Year: '2017年',
+      doThiLuongPostsInfo: '法律専門家ド・ティ・ルオンによる労働、企業、投資、許可、知的財産に関するあらゆる法的側面についての詳細な記事。',
+
+      // Mang Dieu Hien
+      mangDieuHienBio: 'マン・ジエウ・ヒエン弁護士は、各種サブライセンスの相談とサポートを専門とする評判の高い法律専門家です。確固たる教育背景と豊富な実務経験により、マン・ジエウ・ヒエン弁護士は多くの個人や企業の営業許可に関連する複雑な法的手続きの完成を支援し、ベトナム法への準拠を確保しています。',
+      mangDieuHienExp: `マン・ジエウ・ヒエン弁護士は法律分野で10年以上の経験を持ち、特にサブライセンスに関連する文書の相談と処理を専門としています：<br />
+        + 事業登録証（企業登録、条件付き業種の営業許可）。<br />
+        + 建設許可、環境許可、食品安全、広告、その他の専門許可。<br />
+        + 法的規制に従ったサブライセンスの申請、更新、調整における企業のサポート。`,
+      mangDieuHienExp2: `ベトナムの法律体系と行政手続きへの深い理解により、マン・ジエウ・ヒエン弁護士は：<br />
+        + 数百の中小企業の法的手続きの完成を成功裏にコンサルティングし、スケジュールと法的要件への準拠を確保。<br />
+        + 政府機関との顧客代理、時間とコストの節約。<br />
+        + スタートアップから大企業まで、各具体的なケースに合わせた最適な法的ソリューションの提供。`,
+      mangDieuHienEdu1: '弁護士実務資格',
+      mangDieuHienEdu1Org: '司法省',
+      mangDieuHienEdu1Year: '2019年',
+      mangDieuHienEdu2: '卒業',
+      mangDieuHienEdu2Org: '司法学院',
+      mangDieuHienEdu2Year: '2015年',
+      mangDieuHienEdu3: '法学学士',
+      mangDieuHienEdu3Org: 'ホーチミン市法科大学',
+      mangDieuHienEdu3Year: '2010年',
+      mangDieuHienPostsInfo: 'マン・ジエウ・ヒエン弁護士による許可、企業、外国投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // Nguyen Hoang Ngoc Lan
+      nguyenHoangNgocLanBio: 'ラン弁護士は医療分野に深い専門知識を持つ法律専門家で、医療業界の営業許可に関連する法的問題の相談と解決の経験で知られています。法規制と行政手続きへの深い理解により、ラン弁護士は多くの病院、クリニック、医療センター、その他の医療施設が各種許可の申請と調整を行い、ベトナム法への準拠を確保するのを支援してきました。',
+      nguyenHoangNgocLanExp: `ラン弁護士は医療法分野で長年の深い経験を持ち、特に医療業界のサブライセンスに関連する文書の相談と処理を専門としています：<br />
+        • 医療検査・治療営業許可。<br />
+        • 医療検査・治療営業許可の調整。<br />
+        • 医療実務許可証および医療分野のその他の専門許可。<br />
+        ラン弁護士の主な実績：<br />
+        • 多くの病院、クリニック、医療センター、医療施設に対し、管轄国家機関への許可申請書類の準備と完成を成功裏にコンサルティング。<br />
+        • クライアントが法的要件を理解し、文書と書類がすべての規制基準を満たすことを確保し、時間とコストを節約。<br />
+        • 規制機関とのクライアント代理、許可プロセスが迅速、透明、効率的であることを保証。<br />
+        • 新設の医療施設から大規模な医療機関まで、各具体的なケースに合わせた包括的な法的ソリューションの提供。`,
+      nguyenHoangNgocLanEdu1: '弁護士実務資格',
+      nguyenHoangNgocLanEdu1Org: '司法省',
+      nguyenHoangNgocLanEdu1Year: '2024年',
+      nguyenHoangNgocLanEdu2: '法学修士',
+      nguyenHoangNgocLanEdu2Org: 'ハノイ法科大学',
+      nguyenHoangNgocLanEdu2Year: '2022年',
+      nguyenHoangNgocLanEdu3: '卒業',
+      nguyenHoangNgocLanEdu3Org: '司法学院',
+      nguyenHoangNgocLanEdu3Year: '2021年',
+      nguyenHoangNgocLanEdu4: '法学学士',
+      nguyenHoangNgocLanEdu4Org: 'ハノイ法科大学',
+      nguyenHoangNgocLanEdu4Year: '2020年',
+      nguyenHoangNgocLanPostsInfo: 'グエン・ホアン・ゴック・ラン弁護士による許可、企業、外国投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // Nguyen Minh Anh
+      nguyenMinhAnhBio: 'グエン・ミン・アン弁護士は、経済法、土地法、民事法の分野で7年以上の経験を持つ法律専門家です。優れた教育背景と評判の高い組織での実務経験により、ミン・アン弁護士は法律相談、紛争解決、複雑な案件での企業と個人のサポートにおける能力を証明しています。広範な法律知識と鋭い思考力により、ミン・アン弁護士は常に商業ビジネス、土地、民事分野でクライアントの利益を最適化する効果的な法的ソリューションを提供しています。',
+      nguyenMinhAnhExp: `• 2022年11月 - 2024年9月：ホアビン国際貿易投資観光会社 法務監査部副部長 <br />
+        法律相談、契約交渉、政府機関との連携、契約審査、商業・民事紛争解決、内部コンプライアンス管理。<br />
+        • 2019年6月 - 2022年11月：ベトキム法律会社 相談部マネージャー<br />
+        相談部管理、案件調査、裁判所訴訟（民事、商業ビジネス）、企業再編相談、M&A、紛争解決。<br />
+        • 2017年6月 - 2019年6月：チョンハイ法律事務所 インターン<br />
+        文書作成、契約審査、民事・商業ビジネス案件での弁護士サポート。`,
+      nguyenMinhAnhEdu1: '弁護士実務資格',
+      nguyenMinhAnhEdu1Org: '司法省',
+      nguyenMinhAnhEdu1Year: '2024年',
+      nguyenMinhAnhEdu2: '経済法修士',
+      nguyenMinhAnhEdu2Org: 'ハノイ法科大学',
+      nguyenMinhAnhEdu2Year: '2023年',
+      nguyenMinhAnhEdu3: '卒業',
+      nguyenMinhAnhEdu3Org: '司法学院',
+      nguyenMinhAnhEdu3Year: '2021年',
+      nguyenMinhAnhEdu4: '法学学士（優秀）',
+      nguyenMinhAnhEdu4Org: 'ヴィン大学',
+      nguyenMinhAnhEdu4Year: '2019年',
+      nguyenMinhAnhPostsInfo: 'グエン・ミン・アン弁護士による許可、土地、企業、外国投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // Nguyen Thi Huong
+      nguyenThiHuongBio: `<i>担当分野：</i><br /><br />
+      • 民事：契約、民事取引、相続、損害賠償およびその他の関連法的問題の相談。
+      <br /><br />
+      • 婚姻家族：離婚、財産分割、子供の親権、婚姻家族に関連する法的問題の相談。
+      <br /><br />
+      • 土地：土地紛争解決、譲渡、土地使用権証明書の交換など、土地関連問題の相談。
+      <br /><br />
+      • 刑事：被害者の相談と正当な利益の保護、また刑事訴訟の各段階で容疑者と被告人の弁護。犯罪行為関連の事項を処理し、刑事事件における各主体の法的責任の程度を判断。
+      <br /><br />
+      • 企業：企業の設立、運営、管理に関する法律相談、契約関連問題、ビジネス法。
+      <br /><br />
+      • 労働：労働関連問題、労働契約、労働紛争、労働者の権利に関する相談。
+      <br /><br />
+      • 投資：国内外の投資、企業発展戦略、不動産投資関連の法的問題を含む投資問題の相談。`,
+      nguyenThiHuongExp: 'フオン弁護士は法律分野で7年以上の経験を持ち、クライアント向けの民事、刑事、行政、商業ビジネス、訴訟を専門としています。',
+      nguyenThiHuongExp2: '訴訟、弁護、保護、代理、相談、起草、フォーム提供、契約、国内外の組織と個人への法的文書提供の長年の経験により...フオン弁護士は複雑な案件でクライアントの権利と利益を保護し、法的問題を効果的に解決するのを支援してきました。',
+      nguyenThiHuongEdu1: '弁護士実務資格',
+      nguyenThiHuongEdu1Org: '司法省',
+      nguyenThiHuongEdu1Year: '2020年',
+      nguyenThiHuongEdu2: '国際法学士',
+      nguyenThiHuongEdu2Org: '外交学院',
+      nguyenThiHuongEdu2Year: '2017年',
+      nguyenThiHuongPostsInfo: 'グエン・ティ・フオン弁護士による民事、刑事、行政、商業ビジネスに関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・ティ・トム
+      nguyenThiThomBio: '<br /><i>担当分野：</i><br /><br />• 企業：企業の設立、運営、管理に関する法的コンサルティング、契約関連事項、ビジネス法律<br /><br />• 労働：労働関連問題、労働契約、労働紛争、労働者の権利に関するコンサルティング<br /><br />• 投資：国内外投資、企業発展戦略、不動産投資関連法的問題を含む投資問題のコンサルティング。',
+      nguyenThiThomExp: '企業法務分野で09年の経験を持ち、そのうち05年は外資系企業、04年は不動産投資開発会社で勤務。グエン・ティ・トム弁護士は幅広い知識と専門的な業務処理スキルを蓄積してきました。',
+      nguyenThiThomExp2: 'トム弁護士は企業への法的コンサルティングとサポートを専門とし、法的紛争を回避し、事業運営におけるリスクを最小限に抑える適切な戦略の策定を支援しています。',
+      nguyenThiThomEdu1: '弁護士実務資格',
+      nguyenThiThomEdu1Org: '司法省',
+      nguyenThiThomEdu1Year: '2016年',
+      nguyenThiThomEdu2: '法学学士',
+      nguyenThiThomEdu2Org: 'ハノイ法科大学',
+      nguyenThiThomEdu2Year: '2012年',
+      nguyenThiThomPostsInfo: 'グエン・ティ・トム弁護士による企業、労働、投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・トゥー・ガー
+      nguyenThuNgaBio: '<br /><i>担当分野：</i><br /><br />• 企業：企業の設立、運営、ガバナンスに関する法的問題の包括的コンサルティング、株主権益の保護、企業内の当事者間紛争の解決。ガー弁護士は、パートナーとの協力から経済・商業契約の作成まで、事業活動を保護・発展させる適切な法的戦略の構築を支援<br /><br />• 労働：労働契約、従業員の権利、労働紛争、社会保険、福利厚生、企業内従業員のその他の権利に関するコンサルティング。ガー弁護士は、人事政策の構築、労使関係の管理、雇用者と従業員間の紛争解決を支援<br /><br />• 投資：投資手続き、適切な投資方法と取引構造の選択による利益の最大化とリスクの最小化を含む、国内外投資問題の法的コンサルティング。ガー弁護士は投資と資本移転に関する法規遵守を支援し、効果的な投資戦略の策定を支援。',
+      nguyenThuNgaExp: 'ガー弁護士は法律分野で10年以上の経験を持ち、ベトナムで事業を展開する外資系企業を中心に企業へのコンサルティングを専門としています。',
+      nguyenThuNgaExp2: '労働・投資に関する政府機関および日本企業の法務責任者としての経験を持ち、労働法・企業法のコンプライアンス、行政手続き、契約審査、法的リスク評価、ベトナムでの投資・開発手続きに関する法的コンサルティングなど、企業の法的問題に豊富な経験を有しています。',
+      nguyenThuNgaExp3: 'さらに、優れた日本語コミュニケーション能力により、日本企業とベトナムの政府・企業間の重要な架け橋となっています。',
+      nguyenThuNgaEdu1: '日本法研修コース修了',
+      nguyenThuNgaEdu1Org: '日本法研究研修センター - 名古屋大学ハノイ分校',
+      nguyenThuNgaEdu1Year: '2016年',
+      nguyenThuNgaEdu2: '法学学士',
+      nguyenThuNgaEdu2Org: 'ハノイ法科大学',
+      nguyenThuNgaEdu2Year: '2012年',
+      nguyenThuNgaPostsInfo: 'グエン・トゥー・ガー弁護士による企業、労働、投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // ファム・ティ・フエン・クエン
+      phamThiHuyenQuyenBio: '<br /><i>担当分野：</i><br /><br />• 企業：企業の設立、運営、ガバナンスに関する法的問題の包括的コンサルティング、財務管理、株主権益保護、契約作成、社内紛争解決を含む。持続可能な発展戦略の構築・実施を支援し、運営全体を通じて法規遵守を確保<br /><br />• 労働：労働契約、従業員の権利、社会保険、福利厚生政策、労働紛争解決を含む企業の労働問題コンサルティング。人事政策の構築と法的に準拠した職場環境の維持を支援<br /><br />• 投資：投資計画、資金調達手続き、株式譲渡、投資リスク管理を含む投資関連問題のコンサルティング。クエン弁護士は投資戦略の最適化を支援しながら、国内外の法的要件への準拠を確保。',
+      phamThiHuyenQuyenExp: '企業コンサルティングと社内法務で8年の経験を持ち、ファム・ティ・フエン・クエン弁護士は多くの企業の信頼できるパートナーとなっています。',
+      phamThiHuyenQuyenExp2: '企業法、労働法、関連法規に関する深い知識を持ち、企業の運営中に発生する法的問題を効果的に解決することを支援しています。',
+      phamThiHuyenQuyenExp3: '特に、組織構造の確立、財務管理から紛争や社内対立の処理まで、企業活動における法的コンプライアンスの確保に注力しています。',
+      phamThiHuyenQuyenEdu1: '弁護士実務資格',
+      phamThiHuyenQuyenEdu1Org: '司法省',
+      phamThiHuyenQuyenEdu1Year: '2016年',
+      phamThiHuyenQuyenEdu2: '法学学士',
+      phamThiHuyenQuyenEdu2Org: 'ハノイ法科大学',
+      phamThiHuyenQuyenEdu2Year: '2012年',
+      phamThiHuyenQuyenPostsInfo: 'ファム・ティ・フエン・クエン弁護士による企業、労働、投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // ヴァン・ティ・タイン・ホア
+      vanThiThanhHoaBio: '<br /><i>担当分野：</i><br /><br />• 民事：契約、民事取引、相続、損害賠償およびその他の関連法的問題のコンサルティング<br /><br />• 刑事：被害者の合法的権利の保護とコンサルティング、刑事訴訟の各段階での被疑者・被告人の弁護。犯罪行為に関連する業務の処理および刑事事件における各主体の法的責任の程度の判断<br /><br />• 土地：土地関連問題のコンサルティング、譲渡、土地使用権証明書の再発行、土地紛争の解決を含むがこれに限定されない<br /><br />• 婚姻・家族：離婚、財産分割、子供の親権、婚姻・家族に関連する法的問題のコンサルティング。',
+      vanThiThanhHoaExp: '12年以上の経験を持つヴァン・ティ・タイン・ホア弁護士は、民事、刑事、土地、婚姻・家族分野の多くの複雑な法的案件を成功裏に解決してきました。',
+      vanThiThanhHoaExp2: '彼女は優れた法的コンサルティング能力と最適な案件解決戦略で知られ、クライアントが望む結果を達成することを支援しています。',
+      vanThiThanhHoaEdu1: '弁護士実務資格',
+      vanThiThanhHoaEdu1Org: '司法省',
+      vanThiThanhHoaEdu1Year: '2016年',
+      vanThiThanhHoaEdu2: '法学学士',
+      vanThiThanhHoaEdu2Org: 'ハノイ法科大学',
+      vanThiThanhHoaEdu2Year: '2012年',
+      vanThiThanhHoaPostsInfo: 'ヴァン・ティ・タイン・ホア弁護士による訴訟内外の代理、民事、刑事、行政、土地に関するあらゆる法的側面についての詳細な記事。',
+
+      // ギエム・ミン・フエン
+      nghiemMinhHuyenBio: '<br /><i>担当分野：</i><br /><br />フエン・ギエムは法務スペシャリスト、弁護士アシスタント、Y&P法律事務所ウェブサイトの記事管理を支援するエディターで、企業、婚姻・家族、土地、刑事などの分野に関する分析記事、サービス、規制、新しく注目すべき政策のまとめの執筆を支援しています...<br /><br />• 土地分野：迅速な更新、土地関連の行政手続きの顧客支援：初回証明書登録、変更登録、相続分割、贈与...<br /><br />• 民事・刑事分野：実際の案件ファイルの読解と調査；弁護士のファイル、書類のコピー、申請書と書類の作成支援。',
+      nghiemMinhHuyenExp: '• 2019年：バクトゥリエム区人民委員会でインターン：ファイル受付と結果返却、個人事業主登録、税コード処理<br />• 2020年：アチャウ法律事務所でインターン：設立、変更、解散、印鑑登録などの企業関連書類作成；知的財産、サブライセンス、ウェブサイト登録について学習...<br />• 2020-2021年：ナムズオン法律事務所勤務：パートナー（銀行：MBバンク、VPバンク...；金融会社：Mcredit、FEcredit...）の要請により融資契約違反の顧客に連絡<br />• 2021年：行政科学・アーカイブセンター（SCARMA）勤務：MBバンクのデータ保管リスト整理、編集、倉庫管理<br />• 2022-2024年：SGSベトナム有限会社勤務：ソーシャルメディア投稿コンテンツの審査<br />• 2024年-現在：Youth & Partners法律事務所勤務。',
+      nghiemMinhHuyenEdu1: '卒業',
+      nghiemMinhHuyenEdu1Org: '司法学院',
+      nghiemMinhHuyenEdu1Desc: '• 裁判官、検察官、弁護士の3つの職位のための研修コースに参加し卒業<br />• 司法職位における専門スキルと実務経験の集中研修を受講<br />• 学院の配属と指導の下、裁判所、検察庁、法律事務所でインターンし、スキルを磨き、実際の法的状況を解決する能力を向上',
+      nghiemMinhHuyenEdu1Year: '2020年12月 - 2022年8月',
+      nghiemMinhHuyenEdu2: '法学学士',
+      nghiemMinhHuyenEdu2Org: 'ハノイ法科大学',
+      nghiemMinhHuyenEdu2Desc: '• 法学専攻卒業、GPA：7.31/10<br />• 民事、刑事、行政、経済、国際法分野の基礎法律知識と法典の集中研修を受講',
+      nghiemMinhHuyenEdu2Year: '2016年9月 - 2020年7月',
+      nghiemMinhHuyenPostsInfo: '法務スペシャリスト ギエム・ミン・フエンによる民事、刑事、行政、土地に関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・ホアン・ズン
+      nguyenHoangDungBio: '<br /><i>担当分野：</i><br /><br />• 民事：契約、民事取引のコンサルティング、相続紛争解決への代理参加、民事取引における損害賠償請求およびその他の関連法的問題。<br /><br />• 婚姻・家族：離婚書類、手続き、共有財産分割、子供の親権、婚姻・家族に関連する法的問題のコンサルティング。<br /><br />• 土地：土地関連の書類、手続き、行政手続きのコンサルティング、土地使用権紛争解決への参加。<br /><br />• 刑事：法的コンサルティング、被疑者・被告人の弁護、または刑事事件における被害者・関係者の合法的権利と利益の保護のための文書作成。<br /><br />• 行政：書類、手続きのコンサルティング、証拠収集のためのクライアント代理、苦情、告発、行政事件における合法的権利と利益の保護への参加。<br /><br />• 企業：企業の設立、運営、管理に関する法的コンサルティング、経済契約、ビジネス協力契約などの作成。<br /><br />• 労働：労働関連問題、労働契約、労働紛争、従業員と雇用者の権利のコンサルティング。<br /><br />• 投資：投資プロジェクト実施における政府機関との協働のためのコンサルティング、書類作成、代理。',
+      nguyenHoangDungExp: '• 2023年：ホンバック・アンド・アソシエイツ法律事務所勤務。<br />• 2024年：ハナム省弁護士会法律相談センター勤務。<br />• 2025年：Youth & Partners法律事務所勤務。',
+      nguyenHoangDungEdu1: '卒業',
+      nguyenHoangDungEdu1Org: '司法学院',
+      nguyenHoangDungEdu1Desc: '• 弁護士研修コースに参加し卒業<br />• 弁護士職における専門スキルと実務経験の集中研修を受講',
+      nguyenHoangDungEdu1Year: '2025年',
+      nguyenHoangDungEdu2: '法学学士',
+      nguyenHoangDungEdu2Org: 'ハノイ法科大学国際貿易法',
+      nguyenHoangDungEdu2Year: '2023年',
+      nguyenHoangDungPostsInfo: '法務スペシャリスト グエン・ホアン・ズンによる民事、婚姻・家族、土地、刑事、行政、企業、労働、投資に関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・ファン・トゥック・チー
+      nguyenPhanThucChiBio: '<br /><i>担当分野：</i><br /><br />• 企業：企業への定期的な法的コンサルティング支援：基本契約、商品売買契約、労働契約などの企業契約の審査支援；労働、商業ビジネスなどの分野の法的報告書作成コンサルティング支援...<br /><br />• 外国投資プロジェクトに関連するライセンス関連事項の支援、企業設立、投資登録証の調整などの関連問題を含む...',
+      nguyenPhanThucChiExp: '• 2024年8月 – 2024年11月：TOTOベトナム有限会社ヴィンフック支店人事総務部インターン – 会社定款の審査と社会保障・労働問題の調査支援。<br />• 2024年12月 – 2025年5月：KITZコーポレーションベトナム有限会社人事総務部スタッフ – 契約の審査・確認と社会保障・労働・税務問題の調査；ベトナム人労働者の海外（台湾、日本）研修のための出国手続き支援。<br />• 現在Youth & Partners法律事務所法務スペシャリスト。',
+      nguyenPhanThucChiEdu1: '法学学士',
+      nguyenPhanThucChiEdu1Org: 'ハノイ法科大学経済法',
+      nguyenPhanThucChiEdu1Year: '2024年',
+      nguyenPhanThucChiPostsInfo: '法務スペシャリスト グエン・ファン・トゥック・チーによる企業、労働、ライセンスに関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・フン・マイ・アイン
+      nguyenPhungMaiAnhBio: '<br /><i>担当分野：</i><br /><br />幅広い知識と実務経験を持ち、マイ・アインは民事・行政分野専門の編集者として活動しています。マイ・アインの記事は土地使用権、契約、婚姻・家族、民事法的問題に関する法規・注目政策の分析、総合、明確化に焦点を当てています。',
+      nguyenPhungMaiAnhExp: '• 2021年：24時間法律事務所でインターン、弁護士の調査・書類作成支援、法的書類の確認<br />• 2023年：ヴィエトスアン社人民委員会でインターン、司法・戸籍担当者と連携して書類認証、土地紛争調停、行政書類のデータ入力・処理<br />• 2024年：Youth & Partners法律事務所法務スペシャリスト、土地手続きと土地使用権・計画・譲渡および関連問題の法的コンサルティングを専門としている。',
+      nguyenPhungMaiAnhEdu1: '法学学士',
+      nguyenPhungMaiAnhEdu1Org: '国家行政学院法学部',
+      nguyenPhungMaiAnhEdu1Year: '2024年',
+      nguyenPhungMaiAnhPostsInfo: '法務スペシャリスト グエン・フン・マイ・アインによる民事、行政、土地に関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・ティ・クイン・ザン
+      nguyenThiQuynhGiangBio: '<br /><i>紹介：</i><br /><br />• グエン・ティ・クイン・ザンは2025年からYPLaw事務所のインターンです。<br /><br />• ベトナム国立大学ハノイ法学部法学学士の法的知識基盤を持ち、クイン・ザンは常に実務で知識とスキルを発展・応用することに努力しています。',
+      nguyenThiQuynhGiangExp: '• 2024年6月 – 2025年1月：ナムトゥリエム区人民法院でインターン、訴訟手続きと裁判実務に接し、法的理解と専門的な仕事のスキルを向上<br />• 現在、クイン・ザンはYouth & Partners法律事務所（YPLaw Firm）のインターンとして、会社の法的コンサルティングと支援活動の学習と貢献をしています。',
+      nguyenThiQuynhGiangEdu1: '法学学士',
+      nguyenThiQuynhGiangEdu1Org: 'ベトナム国立大学ハノイ法学部法学専攻',
+      nguyenThiQuynhGiangEdu1Year: '2025年',
+      nguyenThiQuynhGiangPostsInfo: '法務スペシャリスト グエン・ティ・クイン・ザンによる労働、企業、投資、ライセンスに関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・ティ・トゥー・チャン
+      nguyenThiThuTrangBio: '<br /><i>担当分野：</i><br /><br />• 契約作成、労働、税務、不動産、外国投資に関する法的コンサルティング<br /><br />• 企業活動における法的コンプライアンスの確保<br /><br />• 企業内部フォームと規則の構築・調整。',
+      nguyenThiThuTrangExp: '• バイリンガル契約（英越）の作成・評価（基本契約、サービス契約、労働契約、NDA等を含む）<br />• 企業クライアントへの労働、税務、不動産、事業運営に関する法的コンサルティング<br />• 民主規則、労働規則、給与賞与規則等の内部フォームの構築・評価に参加<br />• 外資系企業の投資証明書の調整・再発行書類作成。',
+      nguyenThiThuTrangEdu1: '法学学士',
+      nguyenThiThuTrangEdu1Org: 'ハノイ法科大学法学専攻',
+      nguyenThiThuTrangEdu1Year: '2022年',
+      nguyenThiThuTrangPostsInfo: '法務スペシャリスト グエン・ティ・トゥー・チャンによる労働、企業、投資、ライセンスに関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・ティ・トゥイ・リン
+      nguyenThiThuyLinhBio: '<br /><i>担当分野：</i><br /><br />• 国内外企業への契約作成、労働、不動産、外国投資に関する法的コンサルティング<br /><br />• 企業内部フォームと規則の構築・調整<br /><br />• 企業設立、登記内容変更書類の作成<br /><br />• 外資系企業の投資登記証明書の調整・再発行書類作成<br /><br />• 渉外離婚案件を含む婚姻・家族案件の解決。',
+      nguyenThiThuyLinhExp: '• 渉外離婚案件を含む婚姻・家族案件の解決；<br />• 15社以上の国内外企業への企業、労働、投資、不動産ビジネス等の分野での定期コンサルティング...<br />• バイリンガル契約（英越）の作成・評価（基本契約、サービス契約、労働契約、NDA等を含む）<br />• 企業の民主規則、労働規則、給与賞与規則等の内部フォームの構築・評価<br />• 外資系企業の投資登記証明書の調整・再発行書類作成<br />• 企業設立、登記内容変更書類の作成。',
+      nguyenThiThuyLinhEdu1: '法学学士',
+      nguyenThiThuyLinhEdu1Org: 'ハノイ法科大学経済法学部',
+      nguyenThiThuyLinhEdu1Year: '2023年',
+      nguyenThiThuyLinhPostsInfo: '法務スペシャリスト グエン・ティ・トゥイ・リンによる労働、企業、投資、婚姻・家族に関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・トゥイ・ハン
+      nguyenThuyHangBio: '<br /><i>担当分野：</i><br /><br />• 基本契約、サービス契約、労働契約等を含む契約の作成・評価<br /><br />• 企業クライアントへの労働、税務、不動産、事業運営に関する法的コンサルティング<br /><br />• 民主規則、労働規則、給与賞与規則等の内部フォームの構築・評価に参加。',
+      nguyenThuyHangExp: '• ハティ投資コンサルティング会社、ヴィンイェン市人民裁判所で法務スタッフ、法務インターンとして勤務・インターン<br />• 契約レビュー、一般文書の作成、内部規則の構築、法律翻訳等の業務を遂行。',
+      nguyenThuyHangEdu1: '法学学士',
+      nguyenThuyHangEdu1Org: 'ハノイ法科大学経済法',
+      nguyenThuyHangEdu1Year: '2024年',
+      nguyenThuyHangPostsInfo: '法務スペシャリスト グエン・トゥイ・ハンによる企業、労働、ライセンスに関するあらゆる法的側面についての詳細な記事。',
+
+      // チャン・ティ・ビック・リエン
+      tranThiBichLienBio: '<br /><i>担当分野：</i><br /><br />• 民事：契約、民事取引、相続、婚姻・家族、損害賠償およびその他の関連法的問題のコンサルティング<br /><br />• 土地：土地手続きの包括的コンサルティング、売買、贈与、不動産の名義変更、土地使用権証明書の再発行・新規発行、土地使用権の訂正、土地利用目的の変更、土地紛争の解決を含むがこれに限定されない<br /><br />• 行政：行政手続き、苦情、告発および行政関連法的問題のコンサルティング。',
+      tranThiBichLienExp: '• 2020-2024年：Youth & Partners法律事務所法務スペシャリスト。会社での勤務期間中、チャン・ティ・ビック・リエン氏は民事、行政、土地分野で豊富な経験を蓄積<br />• 多くの土地、婚姻・家族紛争の解決に直接参加し成功、クライアントの正当な権利を保護<br />• 同時に、多くの複雑な行政・土地手続きを行い、個人と組織の両方のニーズに対応し、効率向上とクライアントの権利保護に貢献。',
+      tranThiBichLienEdu1: '弁護士研修コースに参加',
+      tranThiBichLienEdu1Org: '司法学院',
+      tranThiBichLienEdu1Year: '2024年',
+      tranThiBichLienEdu2: '法学学士',
+      tranThiBichLienEdu2Org: 'ハノイ法科大学法学部',
+      tranThiBichLienEdu2Year: '2016年',
+      tranThiBichLienPostsInfo: '法務スペシャリスト チャン・ティ・ビック・リエンによる民事、刑事、行政、土地に関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・ティ・チャウ・アン
+      nguyenThiChauAnhBio: 'グエン・ティ・チャウ・アンは2025年からYouth & Partners法律事務所の法務インターンです。<br /><br />ハノイ大学法学専攻の基盤を持ち、チャウ・アンは積極的に法律知識と実務スキルを磨き、理論を実践に活かしています。',
+      nguyenThiChauAnhExp: '• 2025年6月-2025年9月：バクニン第7地区人民裁判所でインターン。裁判所の業務支援に参加し、訴訟手続きと審理実務に触れ、法律知識、法的思考、専門的な業務スキルを向上。<br /><br />• 2025年12月から現在：Youth & Partners法律事務所法務インターン。法律相談活動、書類作成、法律調査の支援、弁護士のクライアント対応のサポートに参加。',
+      nguyenThiChauAnhEdu1: '法学学士',
+      nguyenThiChauAnhEdu1Org: 'ハノイ大学 - 法学専攻',
+      nguyenThiChauAnhEdu1Year: '2024年',
+      nguyenThiChauAnhPostsInfo: '法務インターン グエン・ティ・チャウ・アンによるあらゆる法的側面についての詳細な記事。',
+
+      // グエン・ティ・トゥイ・ズオン
+      nguyenThiThuyDuongBio: 'グエン・ティ・トゥイ・ズオンは2025年からYouth & Partners法律事務所の法務インターンです。<br /><br />ハノイ法科大学経済法専攻の法律知識基盤を持ち、トゥイ・ズオンは常に法律知識を研究し、民事案件の実際の解決と企業への定期コンサルティングに適用しています。',
+      nguyenThiThuyDuongExp: '• 学習期間中、学生科学研究、模擬裁判、商業調停コンペティションに参加し、法律調査スキル、議論分析、文書作成、専門的な法律環境でのチームワークを段階的に開発。<br /><br />• 現在YP Law Firmの法務インターンとして、会社のコンサルティング活動と法務業務を積極的に学習・サポート。',
+      nguyenThiThuyDuongEdu1: '法学学士',
+      nguyenThiThuyDuongEdu1Org: 'ハノイ法科大学 - 経済法専攻',
+      nguyenThiThuyDuongEdu1Year: '2024年',
+      nguyenThiThuyDuongPostsInfo: '法務インターン グエン・ティ・トゥイ・ズオンによる民事、企業に関するあらゆる法的側面についての詳細な記事。',
+
+      // グエン・トゥイ・ズオン
+      nguyenThuyDuongBio: 'グエン・トゥイ・ズオンは2025年からYouth & Partners法律事務所の法務インターンです。<br /><br />商業大学経済法専攻の法律知識基盤を持ち、トゥイ・ズオンは常に法律知識を研究し、民事案件の実際の解決と企業への定期コンサルティングに適用しています。',
+      nguyenThuyDuongExp: '<i>担当分野：</i><br /><br />• 企業：日常の法的問題、法令遵守、内部運営における企業への定期的な法律相談と法的サポート。<br /><br />• 企業活動に関連する法的文書、契約、法的資料のレビュー・分析。<br /><br />• 会社とクライアントの要件に応じた商業契約、内部文書、法的書類の作成・チェックのサポート。<br /><br />• 新法の研究・更新に参加し、企業への実践的な法的ソリューションのコンサルティング。<br /><br /><i>職務経験：</i><br /><br />• 2023年5月-2023年8月：SEDU Training JSCの営業・コース相談スタッフ – コース相談と顧客利益のサポート。<br /><br />• 現在YP Law Firmの法務インターンとして、会社のコンサルティング活動と法務業務を積極的に学習・サポート。',
+      nguyenThuyDuongEdu1: '法学学士',
+      nguyenThuyDuongEdu1Org: '商業大学 - 経済法専攻',
+      nguyenThuyDuongEdu1Year: '2024年',
+      nguyenThuyDuongPostsInfo: '法務インターン グエン・トゥイ・ズオンによる民事、企業に関するあらゆる法的側面についての詳細な記事。',
+
+      // Nguyen Thi Mai Linh
+      nguyenThiMaiLinhBio: '<br /><i>紹介：</i><br /><br />• グエン・ティ・マイ・リンは2025年からYouth & Partners法律事務所（Y&P Law Firm）の法務インターンです。<br /><br />• 商業大学経済法専攻の知識基盤を持ち、マイ・リンは学術活動、科学研究、法律実務シミュレーションプログラムを通じて積極的に知識とスキルを発展させています。',
+      nguyenThiMaiLinhExp: '• 学習期間中、マイ・リンは学生科学研究、模擬裁判、商業調停コンテストに参加し、法的研究スキル、議論分析、文書作成、専門的な法的環境でのチームワークを段階的に発展させました。<br /><br />• 現在、マイ・リンはYP Law Firmの法務インターンとして、会社のコンサルティング活動と法務業務を積極的に学習・サポートしています。',
+      nguyenThiMaiLinhEdu1: '法学学士',
+      nguyenThiMaiLinhEdu1Org: '商業大学 - 経済法専攻',
+      nguyenThiMaiLinhEdu1Year: '2024年',
+      nguyenThiMaiLinhPostsInfo: '法務インターン グエン・ティ・マイ・リンによるあらゆる法的側面についての詳細な記事。',
+
+      // Nguyen Thi Xuan
+      nguyenThiXuanBio: '<br /><i>紹介：</i><br /><br />• グエン・ティ・スアンは2025年からYouth & Partners法律事務所（Y&P Law Firm）の法務インターンです。<br /><br />• ハノイ法律大学法学専攻の研修基盤を持ち、スアンは積極的に法的知識と専門スキルを発展させ、理論を実務に適用しています。',
+      nguyenThiXuanExp: '• 2023年10月 – 2024年2月：グエン・ファット法律事務所でインターン、婚姻・家族分野で法律相談、法的知識と専門的な仕事のスキルを向上。<br /><br />• 2024年4月 – 2025年5月：グエン・フエ公証役場で作成スタッフ。法的書類の確認と車両売買、譲渡、相続などの契約書作成；公証人の外部署名をサポート。<br /><br />• 2025年5月 - 2025年11月：ドミン株式会社で勤務：ソーシャルメディアに投稿されたコンテンツの審査。<br /><br />• 現在、Youth & Partners法律事務所（YP Law Firm）の法務インターンとして、会社のコンサルティング活動と法的サポートの学習と貢献をしています。',
+      nguyenThiXuanEdu1: '法学学士',
+      nguyenThiXuanEdu1Org: 'ハノイ法律大学 - 経済法専攻',
+      nguyenThiXuanEdu1Year: '2024年',
+      nguyenThiXuanPostsInfo: '法務インターン グエン・ティ・スアンによる企業、労働、許可証に関するあらゆる法的側面についての詳細な記事。',
+
+      // Common fields for area of responsibility
+      areaOfResponsibility: '担当分野：',
+      civilLaw: '民事：契約、取引、相続、家族、損害賠償の相談...',
+      landLaw: '土地：不動産の売買、贈与、名義変更、交換、再発行、新規発行、土地使用権の訂正、土地利用目的の変更、土地紛争の解決など、すべての土地手続きに関する相談...',
+      adminLaw: '行政：行政手続き、苦情および告発の相談。',
+
+      // Common education terms
+      lawyerCertificate: '弁護士実務資格',
+      graduated: '卒業',
+      masterOfLaw: '法学修士',
+      bachelorOfLaw: '法学学士',
+      doctorOfLaw: '労働法博士',
+      bachelorOfForeignLanguages: '外国語学士',
+      leadAuditorCert: 'グローバルサプライチェーンにおける労働・ビジネス倫理のリードオーディター資格',
+      lawyerTrainingCourse: '弁護士研修コースに参加',
+      
+      // Common organization names
+      ministryOfJustice: '司法省',
+      judicialAcademy: '司法学院',
+      hanoiLawUniversity: 'ハノイ法科大学',
+      hcmLawUniversity: 'ホーチミン市法科大学',
+      socialScienceAcademy: '社会科学アカデミー',
+      foreignLanguagesUniversity: 'ベトナム国立大学外国語大学',
+      thaiNguyenUniversity: 'タイグエン経済経営大学経済法学部',
+      hanoiLawEconomics: 'ハノイ法科大学経済法学部',
+      verite: 'Verité, Inc.',
+      
+      // Year prefix
+      year: '年',
+    },
+    ko: {
+      // Nguyen Van Thanh
+      nguyenVanThanhBio: '응우옌 반 타인 씨는 <span class="text-accent dark:text-white highlight"> Youth </span><span class="text-primary dark:text-white highlight">& Partners</span> 법률사무소의 대표 변호사로, 14년 이상의 연구 경험을 바탕으로 기업이 직면하는 복잡한 법적 문제에 대한 실질적인 솔루션을 제공합니다. 또한 삼성SDI 베트남의 총괄 법무 고문직도 겸하고 있습니다.',
+      nguyenVanThanhExp: `타인 변호사는 전 삼성SDI 베트남 법무부장(2015년부터)이며, 현재 Youth & Partners 법률사무소 대표 변호사(2019년부터)입니다.<br />
+        - 빈푹성 법무 클럽 집행위원회: 2024년 3월 <br />
+        - 변호사 면허 번호: 10652/LS, 베트남 변호사 연맹 발급 <br />
+        - 베트남 변호사 연맹 회원: 2015년<br />
+        - 변호사 협회, 베트남 변호사 협회 변호사`,
+      nguyenVanThanhExp2: '타인 변호사는 기업 내부 문제, 노동 및 비즈니스-상업 문제에 대한 깊은 컨설팅 경험을 보유하고 있으며, 기업과 직원 관련 국제 행동 강령을 깊이 이해하고 있으며, 기업 내부 분쟁, 파트너 및 공급업체 관련 분쟁 및 법적 문제 해결에 뛰어난 경험을 가지고 있습니다.',
+      nguyenVanThanhExp3: '타인 변호사는 베트남에서 책임 있는 비즈니스 연합(RBA)의 경영 시스템, 노동, 인권 및 비즈니스 윤리에 관한 고급 감사원 자격을 보유한 몇 안 되는 변호사 중 한 명입니다. 리드 오디터(삼성 베트남 공급업체 검사팀장)로서 국제 RBA 표준(RBA 행동 강령) 및 베트남 법률 준수에 대해 삼성 베트남의 수백 개 공급업체를 감사한 경험이 있습니다.',
+      nguyenVanThanhEdu1: '글로벌 공급망 노동 및 비즈니스 윤리 리드 오디터 자격증',
+      nguyenVanThanhEdu1Org: 'Verité, Inc.',
+      nguyenVanThanhEdu1Year: '2016년',
+      nguyenVanThanhEdu2: '변호사 실무 자격증',
+      nguyenVanThanhEdu2Org: '법무부',
+      nguyenVanThanhEdu2Year: '2015년',
+      nguyenVanThanhEdu3: '졸업',
+      nguyenVanThanhEdu3Org: '사법학원',
+      nguyenVanThanhEdu3Year: '2012년',
+      nguyenVanThanhEdu4: '외국어 학사',
+      nguyenVanThanhEdu4Org: '베트남 국립대학교 외국어대학',
+      nguyenVanThanhEdu4Year: '2012년',
+      nguyenVanThanhEdu5: '법학 학사',
+      nguyenVanThanhEdu5Org: '하노이 법대',
+      nguyenVanThanhEdu5Year: '2011년',
+      nguyenVanThanhPostsInfo: '응우옌 반 타인 변호사의 노동, 기업 및 외국인 투자에 관한 모든 법적 측면에 대한 심층 기사.',
+
+      // Nguyen Hoang Anh
+      nguyenHoangAnhBio: '응우옌 황 아인 변호사는 다양한 분야, 특히 부속 허가 관련 절차에서 법률 자문 및 지원 서비스를 전문으로 하는 경험이 풍부한 법률 전문가입니다.',
+      nguyenHoangAnhExp: `응우옌 황 아인 변호사는 10년 이상의 법률 분야 경험을 보유하고 있으며, 부속 허가 관련 서류 자문 및 처리에 중점을 두고 있습니다:<br />
+        - 사업자 등록증, 조건부 업종 운영 허가<br />
+        - 환경, 건설, 식품안전, 노동 및 기타 전문 허가<br />
+        - 기업의 신규 발급, 연장 또는 허가 조정 지원`,
+      nguyenHoangAnhExp2: `응우옌 황 아인 변호사의 주요 경력:<br />
+        + 국내외 스타트업부터 대기업까지 다양한 기업의 법적 서류 완성 및 허가 취득을 성공적으로 자문<br />
+        + 정부 기관과의 고객 대리, 신속하고 투명하며 효율적인 절차 보장<br />
+        + 각 고객의 구체적인 요구에 맞는 종합적인 법률 솔루션 제공, 비용 및 시간 최적화`,
+      nguyenHoangAnhEdu1: '변호사 실무 자격증',
+      nguyenHoangAnhEdu1Org: '법무부',
+      nguyenHoangAnhEdu1Year: '2022년',
+      nguyenHoangAnhEdu2: '졸업',
+      nguyenHoangAnhEdu2Org: '사법학원',
+      nguyenHoangAnhEdu2Year: '2021년',
+      nguyenHoangAnhEdu3: '법학 석사',
+      nguyenHoangAnhEdu3Org: '하노이 법대',
+      nguyenHoangAnhEdu3Year: '2018년',
+      nguyenHoangAnhEdu4: '법학 학사',
+      nguyenHoangAnhEdu4Org: '하노이 법대',
+      nguyenHoangAnhEdu4Year: '2014년',
+      nguyenHoangAnhPostsInfo: '응우옌 황 아인 변호사의 허가, 기업 및 외국인 투자에 관한 심층 기사.',
+
+      // TS Doan Xuan Truong
+      doanXuanTruongBio: `<i>담당 분야:</i><br /><br />
+      • 민사: 계약, 거래, 상속, 혼인가정, 손해배상 자문...
+      <br /><br />
+      • 토지: 부동산 매매, 증여, 명의 변경, 갱신, 재발급, 신규 발급, 토지 사용권 정정, 토지 용도 변경, 토지 분쟁 해결 등 모든 토지 절차 자문...
+      <br /><br />
+      • 행정: 행정 절차, 민원 및 고발 자문.`,
+      doanXuanTruongExp: '도안 쑤언 쯔엉 박사는 현재 하노이 법대 강사입니다.',
+      doanXuanTruongExp2: '도안 쑤언 쯔엉 박사는 15년 이상의 교육 및 법률 준수 지도 경험을 보유하고 있으며, 근로자와 기업을 위한 많은 법률 자문 사건을 처리했고, 현대 노동법 분야에서 다수의 독립 보고서를 작성했습니다.',
+      doanXuanTruongEdu1: '노동법 박사',
+      doanXuanTruongEdu1Org: '하노이 법대',
+      doanXuanTruongEdu1Year: '2022년',
+      doanXuanTruongEdu2: '법학 석사',
+      doanXuanTruongEdu2Org: '사회과학 아카데미',
+      doanXuanTruongEdu2Year: '2014년',
+      doanXuanTruongEdu3: '법학 학사',
+      doanXuanTruongEdu3Org: '하노이 법대',
+      doanXuanTruongEdu3Year: '2011년',
+      doanXuanTruongPostsInfo: '도안 쑤언 쯔엉 박사의 민사, 토지 및 행정법 관련 심층 기사.',
+
+      // Tran Chung Kien
+      tranChungKienBio: `<i>담당 분야:</i><br /><br />
+      • 민사: 계약, 민사 거래, 상속, 혼인가정, 손해배상 관련 사건에서 고객 자문 및 대리
+      <br /><br />
+      • 소송 대리: 각급 법원에서 민사, 형사, 행정 사건의 고객 대리, 소송 절차 참여, 법정 안팎에서 고객의 정당한 이익 보호
+      <br /><br />
+      • 형사: 피해자 자문 및 정당한 이익 보호, 형사 소송의 각 단계에서 혐의자와 피고인 변호. 범죄 행위 관련 문제를 처리하고 형사 사건에서 각 주체의 법적 책임 정도를 판단
+      <br /><br />
+      • 행정: 행정 절차 자문, 민원, 고발 및 행정 관련 법률 문제 해결.`,
+      tranChungKienExp: `• 2015년: 하노이 법대 법학과 졸업 <br />
+        • 2015-2022년: 인민검찰원 공무원, 검찰관. 이 기간 동안 민사, 형사, 행정 사건 참여, 소송 활동 감독, 사법 정의 유지, 법질서 유지 및 관계자의 정당한 이익 보호에 기여하는 실무 경험을 쌓음 <br />
+        • 2022-2024년: Youth & Partners 법률사무소에서 근무하며 민사, 형사, 행정 및 소송법과 관련된 고객 자문 및 대리 서비스 전문. 복잡한 사건에서 고객의 권리를 보호하고 법적 문제를 효과적으로 해결하며 정당한 이익을 최대한 보호하는 데 성공.`,
+      tranChungKienEdu1: '검찰관으로 임명',
+      tranChungKienEdu1Org: '대검찰청',
+      tranChungKienEdu1Year: '2021년',
+      tranChungKienEdu2: '검찰 업무 연수 자격증 취득',
+      tranChungKienEdu2Org: '대검찰청',
+      tranChungKienEdu2Year: '2019년',
+      tranChungKienEdu3: '법학 학사',
+      tranChungKienEdu3Org: '하노이 법대 법학과',
+      tranChungKienEdu3Year: '2015년',
+      tranChungKienPostsInfo: '짠 쭝 끼엔 변호사의 민사, 형사, 행정 및 소송법 관련 심층 기사.',
+
+      // Bui Duc Manh
+      buiDucManhBio: `<i>담당 분야:</i><br /><br />
+      • 민사: 계약, 거래, 상속, 혼인가정, 손해배상 자문...
+      <br /><br />
+      • 토지: 부동산 매매, 증여, 명의 변경, 갱신, 재발급, 신규 발급, 토지 사용권 정정, 토지 용도 변경, 토지 분쟁 해결 등 모든 토지 절차 자문...
+      <br /><br />
+      • 행정: 행정 절차, 민원 및 고발 자문.`,
+      buiDucManhExp: `- 2022-2024년: Youth & Partners 법률사무소 법률 전문가. 회사 근무 기간 동안 마인 전문가는 민사, 행정, 토지 및 허가 분야에서 귀중한 경험을 쌓았습니다. 구체적으로: <br />
+        • 많은 토지 분쟁 해결에 성공적으로 참여하여 부동산 관련 고객의 정당한 권리 보호.<br />
+        • 행정 절차에서 고객 지원 및 자문, 특히 토지 및 개인과 조직에 필요한 허가와 관련된 복잡한 행정 절차 이행.<br />
+        • 부속 허가 발급 관련 절차의 기안 및 이행에 직접 참여하여 사업 및 투자 활동에서 기업과 개인의 요구 충족.`,
+      buiDucManhEdu1: '졸업',
+      buiDucManhEdu1Org: '사법학원',
+      buiDucManhEdu1Year: '2024년',
+      buiDucManhEdu2: '법학 학사',
+      buiDucManhEdu2Org: '타이응우옌 경제경영대학 경제법학과',
+      buiDucManhEdu2Year: '2022년',
+      buiDucManhPostsInfo: '법률 전문가 부이 득 마인의 노동, 기업 및 외국인 투자 관련 심층 기사.',
+
+      // Do Thi Luong
+      doThiLuongBio: `<i>담당 분야:</i><br /><br />
+      • 기업을 위한 정기 법률 자문: 기본 계약, 상품 매매 계약, 노동 계약 등 기업 내 각종 계약의 작성 및 검토; 노동, 상업 사업 등 분야의 법률 자문 보고서 작성; 고객 요청에 따른 기타 문서의 자문, 검토 및 작성
+      <br /><br />
+      • 기업 및 지식재산 부서 담당: 기업 절차(기업 등록, 기업 등록 내용 변경, 해산 등), 지식재산(상표 등록, 산업 디자인 등)의 패키지 서비스 자문 및 이행; 외국어 센터 설립 허가, 노동 허가증 등 기업 운영 중 관련 허가 절차
+      <br /><br />
+      • 외국인 투자 프로젝트의 설립 및 조정 지원 및 참여.`,
+      doThiLuongExp: `• 2017-2020년: 호앙피 투자 및 지식재산 컨설팅 회사 근무: 자문, 문서 작성, 기업 등록, 지식재산 등 절차 이행 <br />
+        • 2020-2022년: 알리아트 법률 회사 근무: 지식재산 분야에서 전문 자문, 문서 작성, 정부 기관과의 협력; 기업 절차 자문 및 이행 <br />
+        • 2023년~현재: Youth & Partners 법률사무소 근무: 기업을 위한 정기 법률 자문 전문가; 기업 및 지식재산 부서 담당.`,
+      doThiLuongEdu1: '변호사 연수 과정 참여',
+      doThiLuongEdu1Org: '사법학원',
+      doThiLuongEdu1Year: '2024년',
+      doThiLuongEdu2: '법학 학사',
+      doThiLuongEdu2Org: '하노이 법대 경제법학과',
+      doThiLuongEdu2Year: '2017년',
+      doThiLuongPostsInfo: '법률 전문가 도 티 르엉의 노동, 기업, 투자, 허가, 지식재산 관련 심층 기사.',
+
+      // Mang Dieu Hien
+      mangDieuHienBio: '망 지에우 히엔 변호사는 각종 부속 허가의 자문과 지원을 전문으로 하는 명성 있는 법률 전문가입니다. 탄탄한 교육 배경과 풍부한 실무 경험을 바탕으로, 망 지에우 히엔 변호사는 많은 개인과 기업이 운영 허가와 관련된 복잡한 법적 절차를 완료하도록 지원하여 베트남 법률 준수를 보장하고 있습니다.',
+      mangDieuHienExp: `망 지에우 히엔 변호사는 10년 이상의 법률 분야 경험을 보유하고 있으며, 특히 부속 허가 관련 서류의 자문 및 처리를 전문으로 합니다: <br />
+        + 사업 허가증(기업 등록, 조건부 업종 운영 허가).<br />
+        + 건설 허가, 환경 허가, 식품 안전, 광고 및 기타 전문 허가.<br />
+        + 법적 규정에 따른 부속 허가의 신청, 연장 또는 조정에서 기업 지원.`,
+      mangDieuHienExp2: `베트남 법률 시스템과 행정 절차에 대한 깊은 이해를 바탕으로, 망 지에우 히엔 변호사는:<br />
+        + 수백 개의 중소기업의 법적 절차 완료를 성공적으로 자문하여 일정 및 법적 요구 사항 준수 보장.<br />
+        + 정부 기관과의 고객 대리, 시간 및 비용 절약.<br />
+        + 스타트업부터 대기업까지 각 구체적인 사례에 맞는 최적의 법률 솔루션 제공.`,
+      mangDieuHienEdu1: '변호사 실무 자격증',
+      mangDieuHienEdu1Org: '법무부',
+      mangDieuHienEdu1Year: '2019년',
+      mangDieuHienEdu2: '졸업',
+      mangDieuHienEdu2Org: '사법학원',
+      mangDieuHienEdu2Year: '2015년',
+      mangDieuHienEdu3: '법학 학사',
+      mangDieuHienEdu3Org: '호치민시 법대',
+      mangDieuHienEdu3Year: '2010년',
+      mangDieuHienPostsInfo: '망 지에우 히엔 변호사의 허가, 기업 및 외국인 투자 관련 심층 기사.',
+
+      // Nguyen Hoang Ngoc Lan
+      nguyenHoangNgocLanBio: '란 변호사는 의료 분야에 깊은 전문 지식을 가진 법률 전문가로, 의료 산업의 영업 허가와 관련된 법적 문제에 대한 자문 및 해결 경험으로 유명합니다. 법규 및 행정 절차에 대한 깊은 이해를 바탕으로, 란 변호사는 많은 병원, 클리닉, 의료 센터 및 기타 의료 시설이 각종 허가를 신청하고 조정하여 베트남 법률 준수를 보장하도록 지원해 왔습니다.',
+      nguyenHoangNgocLanExp: `란 변호사는 의료법 분야에서 수년간의 심층 경험을 보유하고 있으며, 특히 의료 산업의 부속 허가 관련 서류의 자문 및 처리를 전문으로 합니다:<br />
+        • 진료 및 치료 영업 허가.<br />
+        • 진료 및 치료 영업 허가 조정.<br />
+        • 의료 실무 허가증 및 의료 분야의 기타 전문 허가.<br />
+        란 변호사의 주요 성과:<br />
+        • 많은 병원, 클리닉, 의료 센터 및 의료 시설이 관할 국가 기관에 허가 신청 서류를 준비하고 완성하는 데 성공적으로 자문.<br />
+        • 고객이 법적 요구 사항을 이해하고 문서와 서류가 모든 규제 기준을 충족하도록 하여 시간과 비용 절약.<br />
+        • 규제 기관과의 고객 대리, 허가 과정이 신속하고 투명하며 효율적으로 이루어지도록 보장.<br />
+        • 신규 설립 의료 시설부터 대규모 의료 기관까지 각 구체적인 사례에 맞는 포괄적인 법률 솔루션 제공.`,
+      nguyenHoangNgocLanEdu1: '변호사 실무 자격증',
+      nguyenHoangNgocLanEdu1Org: '법무부',
+      nguyenHoangNgocLanEdu1Year: '2024년',
+      nguyenHoangNgocLanEdu2: '법학 석사',
+      nguyenHoangNgocLanEdu2Org: '하노이 법대',
+      nguyenHoangNgocLanEdu2Year: '2022년',
+      nguyenHoangNgocLanEdu3: '졸업',
+      nguyenHoangNgocLanEdu3Org: '사법학원',
+      nguyenHoangNgocLanEdu3Year: '2021년',
+      nguyenHoangNgocLanEdu4: '법학 학사',
+      nguyenHoangNgocLanEdu4Org: '하노이 법대',
+      nguyenHoangNgocLanEdu4Year: '2020년',
+      nguyenHoangNgocLanPostsInfo: '응우옌 호앙 응옥 란 변호사의 허가, 기업 및 외국인 투자 관련 심층 기사.',
+
+      // Nguyen Minh Anh
+      nguyenMinhAnhBio: '응우옌 민 아인 변호사는 경제법, 토지법 및 민사법 분야에서 7년 이상의 경험을 가진 법률 전문가입니다. 우수한 교육 배경과 평판 높은 기관에서의 실무 경험을 바탕으로, 민 아인 변호사는 법률 자문, 분쟁 해결 및 복잡한 사건에서 기업과 개인 지원에 대한 능력을 입증했습니다. 광범위한 법률 지식과 예리한 사고력으로, 민 아인 변호사는 항상 상업 비즈니스, 토지 및 민사 분야에서 고객의 이익을 최적화하는 효과적인 법률 솔루션을 제공합니다.',
+      nguyenMinhAnhExp: `• 2022년 11월 - 2024년 9월: 호아빈 국제 무역 투자 관광 회사 법무 감사부 부장 <br />
+        법률 자문, 계약 협상, 정부 기관과의 협력, 계약 검토, 상업 및 민사 분쟁 해결, 내부 준수 통제.<br />
+        • 2019년 6월 - 2022년 11월: 비엣킴 법률 회사 자문부 매니저<br />
+        자문부 관리, 사건 조사, 법원 소송(민사, 상업 비즈니스), 기업 구조조정 자문, M&A, 분쟁 해결.<br />
+        • 2017년 6월 - 2019년 6월: 쫑하이 법률 사무소 인턴<br />
+        문서 작성, 계약 검토, 민사 및 상업 비즈니스 사건에서 변호사 지원.`,
+      nguyenMinhAnhEdu1: '변호사 실무 자격증',
+      nguyenMinhAnhEdu1Org: '법무부',
+      nguyenMinhAnhEdu1Year: '2024년',
+      nguyenMinhAnhEdu2: '경제법 석사',
+      nguyenMinhAnhEdu2Org: '하노이 법대',
+      nguyenMinhAnhEdu2Year: '2023년',
+      nguyenMinhAnhEdu3: '졸업',
+      nguyenMinhAnhEdu3Org: '사법학원',
+      nguyenMinhAnhEdu3Year: '2021년',
+      nguyenMinhAnhEdu4: '법학 학사 (우수)',
+      nguyenMinhAnhEdu4Org: '빈 대학교',
+      nguyenMinhAnhEdu4Year: '2019년',
+      nguyenMinhAnhPostsInfo: '응우옌 민 아인 변호사의 허가, 토지, 기업 및 외국인 투자 관련 심층 기사.',
+
+      // Nguyen Thi Huong
+      nguyenThiHuongBio: `<i>담당 분야:</i><br /><br />
+      • 민사: 계약, 민사 거래, 상속, 손해배상 및 기타 관련 법적 문제 자문.
+      <br /><br />
+      • 혼인가정: 이혼, 재산 분할, 자녀 양육권 및 혼인가정 관련 법적 문제 자문.
+      <br /><br />
+      • 토지: 토지 분쟁 해결, 양도, 토지 사용권 증서 교환 등 토지 관련 문제 자문.
+      <br /><br />
+      • 형사: 피해자 자문 및 정당한 이익 보호, 형사 소송의 각 단계에서 혐의자와 피고인 변호. 범죄 행위 관련 사항 처리 및 형사 사건에서 각 주체의 법적 책임 정도 판단.
+      <br /><br />
+      • 기업: 기업 설립, 운영 및 관리에 관한 법률 자문, 계약 관련 문제 및 비즈니스 법률.
+      <br /><br />
+      • 노동: 노동 관련 문제, 노동 계약, 노동 분쟁 및 노동자 권리 자문.
+      <br /><br />
+      • 투자: 국내외 투자, 기업 발전 전략 및 부동산 투자 관련 법적 문제를 포함한 투자 문제 자문.`,
+      nguyenThiHuongExp: '흐엉 변호사는 법률 분야에서 7년 이상의 경험을 보유하고 있으며, 고객을 위한 민사, 형사, 행정, 상업 비즈니스 및 소송을 전문으로 합니다.',
+      nguyenThiHuongExp2: '소송, 변호, 보호, 대리, 자문, 기안, 양식 제공, 계약, 국내외 조직 및 개인을 위한 법적 문서 제공의 수년간 경험을 바탕으로... 흐엉 변호사는 복잡한 사건에서 고객의 권리와 이익을 성공적으로 보호하고 법적 문제를 효과적으로 해결하도록 도왔습니다.',
+      nguyenThiHuongEdu1: '변호사 실무 자격증',
+      nguyenThiHuongEdu1Org: '법무부',
+      nguyenThiHuongEdu1Year: '2020년',
+      nguyenThiHuongEdu2: '국제법 학사',
+      nguyenThiHuongEdu2Org: '외교학원',
+      nguyenThiHuongEdu2Year: '2017년',
+      nguyenThiHuongPostsInfo: '응우옌 티 흐엉 변호사의 민사, 형사, 행정, 상업 비즈니스 관련 심층 기사.',
+
+      // 응우옌 티 텀
+      nguyenThiThomBio: '<br /><i>담당 분야:</i><br /><br />• 기업: 기업 설립, 운영 및 관리에 관한 법률 자문, 계약 관련 문제, 비즈니스 법률<br /><br />• 노동: 노동 관련 문제, 노동 계약, 노동 분쟁 및 노동자 권리에 관한 자문<br /><br />• 투자: 국내외 투자, 기업 발전 전략 및 부동산 투자 관련 법적 문제를 포함한 투자 문제 자문.',
+      nguyenThiThomExp: '기업 법무 분야에서 09년의 경험을 보유하고 있으며, 그 중 05년은 외국인 투자 기업에서, 04년은 부동산 투자 개발 회사에서 근무. 응우옌 티 텀 변호사는 광범위한 지식과 전문적인 업무 처리 능력을 축적해 왔습니다.',
+      nguyenThiThomExp2: '텀 변호사는 기업을 위한 법률 자문 및 지원을 전문으로 하며, 법적 분쟁을 피하고 사업 운영에서 리스크를 최소화하는 적절한 전략 수립을 돕습니다.',
+      nguyenThiThomEdu1: '변호사 실무 자격증',
+      nguyenThiThomEdu1Org: '법무부',
+      nguyenThiThomEdu1Year: '2016년',
+      nguyenThiThomEdu2: '법학 학사',
+      nguyenThiThomEdu2Org: '하노이 법대',
+      nguyenThiThomEdu2Year: '2012년',
+      nguyenThiThomPostsInfo: '응우옌 티 텀 변호사의 기업, 노동, 투자 관련 심층 기사.',
+
+      // 응우옌 투 응아
+      nguyenThuNgaBio: '<br /><i>담당 분야:</i><br /><br />• 기업: 기업 설립, 운영 및 거버넌스 관련 법률 문제에 대한 포괄적 자문, 주주 권익 보호, 기업 내 당사자 간 분쟁 해결. 응아 변호사는 파트너와의 협력부터 경제 및 상업 계약 작성까지 비즈니스 활동을 보호하고 발전시키는 적절한 법적 전략 수립을 지원<br /><br />• 노동: 노동 계약, 직원 권리, 노동 분쟁, 사회보험, 복리후생 및 기업 직원의 기타 권리에 관한 자문. 응아 변호사는 HR 정책 수립, 노사관계 관리, 고용주와 직원 간 분쟁 해결을 지원<br /><br />• 투자: 이익 극대화와 리스크 최소화를 위한 투자 절차, 적절한 투자 방식 및 거래 구조 선택을 포함한 국내외 투자 문제에 대한 법률 자문. 응아 변호사는 투자 및 자본 이전 관련 법규 준수를 지원하고 효과적인 투자 전략 수립을 돕습니다.',
+      nguyenThuNgaExp: '응아 변호사는 법률 분야에서 10년 이상의 경험을 보유하고 있으며, 베트남에서 운영하는 FDI 기업을 중심으로 기업 자문을 전문으로 합니다.',
+      nguyenThuNgaExp2: '노동, 투자 관련 정부 기관 및 일본 기업의 법무 책임자로서의 경험을 바탕으로 노동법 및 기업법 컴플라이언스, 행정 절차, 계약 검토, 법적 리스크 평가, 베트남에서의 투자 및 개발 절차 관련 법률 자문 등 기업 법률 문제에 풍부한 경험을 보유하고 있습니다.',
+      nguyenThuNgaExp3: '또한, 뛰어난 일본어 의사소통 능력으로 일본 기업과 베트남 정부 및 기업 간의 중요한 가교 역할을 합니다.',
+      nguyenThuNgaEdu1: '일본 법률 연수 과정 수료',
+      nguyenThuNgaEdu1Org: '일본 법률 연구 및 연수 센터 - 나고야 대학교 하노이 분교',
+      nguyenThuNgaEdu1Year: '2016년',
+      nguyenThuNgaEdu2: '법학 학사',
+      nguyenThuNgaEdu2Org: '하노이 법대',
+      nguyenThuNgaEdu2Year: '2012년',
+      nguyenThuNgaPostsInfo: '응우옌 투 응아 변호사의 기업, 노동, 투자 관련 심층 기사.',
+
+      // 팜 티 후옌 꿴
+      phamThiHuyenQuyenBio: '<br /><i>담당 분야:</i><br /><br />• 기업: 재무 관리, 주주 권익 보호, 계약 작성 및 내부 분쟁 해결을 포함한 기업 설립, 운영 및 거버넌스 관련 법률 문제에 대한 포괄적 자문. 지속 가능한 발전 전략의 수립 및 실행을 지원하고 운영 전반에 걸쳐 법규 준수 확보<br /><br />• 노동: 노동 계약, 직원 권리, 사회보험, 복리후생 정책 및 노동 분쟁 해결을 포함한 기업 노동 문제 자문. HR 정책 수립과 법적으로 준수하는 근무 환경 유지 지원<br /><br />• 투자: 투자 계획, 자금 조달 절차, 주식 양도 및 투자 리스크 관리를 포함한 투자 관련 문제 자문. 꿴 변호사는 국내외 법적 요구 사항 준수를 보장하면서 투자 전략 최적화를 돕습니다.',
+      phamThiHuyenQuyenExp: '기업 자문 및 사내 법무에서 8년의 경험을 바탕으로 팜 티 후옌 꿴 변호사는 많은 기업의 신뢰할 수 있는 파트너가 되었습니다.',
+      phamThiHuyenQuyenExp2: '기업법, 노동법 및 관련 법규에 대한 깊은 지식을 보유하고 있어 기업이 운영 중 발생하는 법적 문제를 효과적으로 해결하도록 돕습니다.',
+      phamThiHuyenQuyenExp3: '특히, 조직 구조 확립, 재무 관리부터 분쟁 및 내부 갈등 처리까지 기업 활동의 법적 컴플라이언스 확보에 중점을 둡니다.',
+      phamThiHuyenQuyenEdu1: '변호사 실무 자격증',
+      phamThiHuyenQuyenEdu1Org: '법무부',
+      phamThiHuyenQuyenEdu1Year: '2016년',
+      phamThiHuyenQuyenEdu2: '법학 학사',
+      phamThiHuyenQuyenEdu2Org: '하노이 법대',
+      phamThiHuyenQuyenEdu2Year: '2012년',
+      phamThiHuyenQuyenPostsInfo: '팜 티 후옌 꿴 변호사의 기업, 노동, 투자 관련 심층 기사.',
+
+      // 반 티 타인 호아
+      vanThiThanhHoaBio: '<br /><i>담당 분야:</i><br /><br />• 민사: 계약, 민사 거래, 상속, 손해배상 및 기타 관련 법적 문제 자문<br /><br />• 형사: 피해자의 합법적 권리 보호 및 자문, 형사 소송 각 단계에서 혐의자와 피고인 변호. 범죄 행위 관련 업무 처리 및 형사 사건에서 각 주체의 법적 책임 정도 결정<br /><br />• 토지: 양도, 토지 사용권 증서 재발급, 토지 분쟁 해결을 포함하되 이에 국한되지 않는 토지 관련 문제 자문<br /><br />• 혼인가정: 이혼, 재산 분할, 자녀 양육권 및 혼인가정 관련 법적 문제 자문.',
+      vanThiThanhHoaExp: '12년 이상의 경험을 바탕으로 반 티 타인 호아 변호사는 민사, 형사, 토지, 혼인가정 분야의 많은 복잡한 법적 사건을 성공적으로 해결해 왔습니다.',
+      vanThiThanhHoaExp2: '그녀는 뛰어난 법률 자문 능력과 최적의 사건 해결 전략으로 알려져 있으며, 고객이 원하는 결과를 달성하도록 돕습니다.',
+      vanThiThanhHoaEdu1: '변호사 실무 자격증',
+      vanThiThanhHoaEdu1Org: '법무부',
+      vanThiThanhHoaEdu1Year: '2016년',
+      vanThiThanhHoaEdu2: '법학 학사',
+      vanThiThanhHoaEdu2Org: '하노이 법대',
+      vanThiThanhHoaEdu2Year: '2012년',
+      vanThiThanhHoaPostsInfo: '반 티 타인 호아 변호사의 소송 내외 대리, 민사, 형사, 행정, 토지 관련 심층 기사.',
+
+      // 응히엠 민 후옌
+      nghiemMinhHuyenBio: '<br /><i>담당 분야:</i><br /><br />후옌 응히엠은 법률 전문가, 변호사 보조, Y&P 로펌 웹사이트 기사 관리를 지원하는 편집자로, 기업, 혼인가정, 토지, 형사 등 분야 관련 분석 기사, 서비스, 규정, 새롭고 주목할만한 정책 요약 작성을 지원합니다...<br /><br />• 토지 분야: 빠른 업데이트, 토지 관련 행정 절차 고객 지원: 최초 증서 등록, 변경 등록, 상속 분할, 증여...<br /><br />• 민사, 형사 분야: 실제 사건 파일 읽기 및 연구; 변호사의 파일, 서류 복사, 신청서 및 서류 작성 지원.',
+      nghiemMinhHuyenExp: '• 2019년: 박뜨리엠구 인민위원회 인턴: 파일 접수 및 결과 반환, 개인 사업자 등록, 세금 코드 처리<br />• 2020년: 아차우 법률사무소 인턴: 설립, 변경, 해산, 인장 등록 등 기업 관련 서류 작성; 지적재산권, 하위 라이선스, 웹사이트 등록 학습...<br />• 2020-2021년: 남즈엉 법률사무소 근무: 파트너(은행: MB은행, VP은행...; 금융회사: Mcredit, FEcredit...) 요청에 따라 대출 계약 위반 고객 연락<br />• 2021년: 행정과학기록센터(SCARMA) 근무: MB은행 데이터 저장 목록 정리, 편집, 창고 관리<br />• 2022-2024년: SGS 베트남 유한회사 근무: 소셜 미디어 게시 콘텐츠 검토<br />• 2024년-현재: Youth & Partners 로펌 근무.',
+      nghiemMinhHuyenEdu1: '졸업',
+      nghiemMinhHuyenEdu1Org: '사법학원',
+      nghiemMinhHuyenEdu1Desc: '• 판사, 검사, 변호사 3개 직위 연수 과정 참여 및 졸업<br />• 사법 직위의 전문 기술 및 실무 경험 심화 교육 수료<br />• 학원의 배정 및 지도 하에 법원, 검찰청, 법률사무소에서 인턴하여 기술을 연마하고 실제 법적 상황을 해결하는 능력 향상',
+      nghiemMinhHuyenEdu1Year: '2020년 12월 - 2022년 8월',
+      nghiemMinhHuyenEdu2: '법학 학사',
+      nghiemMinhHuyenEdu2Org: '하노이 법대',
+      nghiemMinhHuyenEdu2Desc: '• 법학 전공 졸업, GPA: 7.31/10<br />• 민사, 형사, 행정, 경제, 국제법 분야 기초 법률 지식 및 법전 심화 교육 수료',
+      nghiemMinhHuyenEdu2Year: '2016년 9월 - 2020년 7월',
+      nghiemMinhHuyenPostsInfo: '법률 전문가 응히엠 민 후옌의 민사, 형사, 행정, 토지 관련 심층 기사.',
+
+      // 응우옌 호앙 중
+      nguyenHoangDungBio: '<br /><i>담당 분야:</i><br /><br />• 민사: 계약, 민사 거래 자문, 상속 분쟁 해결 대리 참여, 민사 거래에서의 손해배상 청구 및 기타 관련 법적 문제.<br /><br />• 혼인가정: 이혼 서류, 절차, 공동 재산 분할, 자녀 양육권 및 혼인가정 관련 법적 문제 자문.<br /><br />• 토지: 토지 관련 서류, 절차, 행정 절차 자문, 토지 사용권 분쟁 해결 참여.<br /><br />• 형사: 법률 자문, 혐의자와 피고인 변호 또는 형사 사건에서 피해자와 관련자의 합법적 권리와 이익 보호를 위한 문서 작성.<br /><br />• 행정: 서류, 절차 자문, 증거 수집을 위한 고객 대리, 민원, 고발 및 행정 사건에서 합법적 권리와 이익 보호 참여.<br /><br />• 기업: 기업 설립, 운영 및 관리에 관한 법률 자문, 경제 계약, 비즈니스 협력 계약 등 작성.<br /><br />• 노동: 노동 관련 문제, 노동 계약, 노동 분쟁 및 직원과 고용주 권리 자문.<br /><br />• 투자: 투자 프로젝트 실행 시 정부 기관과의 협력을 위한 자문, 서류 작성, 대리.',
+      nguyenHoangDungExp: '• 2023년: 홍박 앤 어소시에이츠 법률사무소 근무.<br />• 2024년: 하남성 변호사협회 법률상담센터 근무.<br />• 2025년: Youth & Partners 로펌 근무.',
+      nguyenHoangDungEdu1: '졸업',
+      nguyenHoangDungEdu1Org: '사법학원',
+      nguyenHoangDungEdu1Desc: '• 변호사 연수 과정 참여 및 졸업<br />• 변호사 직업의 전문 기술 및 실무 경험 심화 교육 수료',
+      nguyenHoangDungEdu1Year: '2025년',
+      nguyenHoangDungEdu2: '법학 학사',
+      nguyenHoangDungEdu2Org: '하노이 법대 국제무역법',
+      nguyenHoangDungEdu2Year: '2023년',
+      nguyenHoangDungPostsInfo: '법률 전문가 응우옌 호앙 중의 민사, 혼인가정, 토지, 형사, 행정, 기업, 노동, 투자 관련 심층 기사.',
+
+      // 응우옌 판 툭 찌
+      nguyenPhanThucChiBio: '<br /><i>담당 분야:</i><br /><br />• 기업: 기업을 위한 정기 법률 자문 지원: 기본 계약, 상품 매매 계약, 노동 계약 등 기업 계약 검토 지원; 노동, 상업 비즈니스 등 분야의 법률 보고서 작성 자문 지원...<br /><br />• 외국인 투자 프로젝트 관련 허가 사항 지원, 기업 설립, 투자 등록증 조정 등 관련 문제 포함...',
+      nguyenPhanThucChiExp: '• 2024년 8월 – 2024년 11월: 빈푹 소재 TOTO 베트남 유한회사 지점 인사총무부 인턴 – 회사 정관 검토 및 사회보장, 노동 문제 조사 지원.<br />• 2024년 12월 – 2025년 5월: KITZ Corporation 베트남 유한회사 인사총무부 직원 – 계약 검토, 확인 및 사회보장, 노동, 세금 문제 조사; 베트남 노동자의 해외(대만, 일본) 연수를 위한 출국 절차 지원.<br />• 현재 Youth & Partners 로펌 법률 전문가.',
+      nguyenPhanThucChiEdu1: '법학 학사',
+      nguyenPhanThucChiEdu1Org: '하노이 법대 경제법',
+      nguyenPhanThucChiEdu1Year: '2024년',
+      nguyenPhanThucChiPostsInfo: '법률 전문가 응우옌 판 툭 찌의 기업, 노동, 허가 관련 심층 기사.',
+
+      // 응우옌 풍 마이 아인
+      nguyenPhungMaiAnhBio: '<br /><i>담당 분야:</i><br /><br />폭넓은 지식과 실무 경험을 바탕으로 마이 아인은 민사 및 행정 분야 전문 편집자로 활동하고 있습니다. 마이 아인의 기사는 토지 사용권, 계약, 혼인가정 및 민사 법적 문제와 관련된 법규, 주목할 만한 정책의 분석, 종합, 명확화에 초점을 맞추고 있습니다.',
+      nguyenPhungMaiAnhExp: '• 2021년: 24시간 법률사무소 인턴, 변호사의 연구 및 서류 작성 지원, 법적 서류 확인<br />• 2023년: 비엣쑤안 사 인민위원회 인턴, 사법-호적 공무원과 협력하여 서류 공증, 토지 분쟁 조정, 행정 서류 데이터 입력 및 처리<br />• 2024년: Youth & Partners 로펌 법률 전문가, 토지 절차 및 토지 사용권, 계획, 양도 및 관련 문제에 대한 법률 자문 전문.',
+      nguyenPhungMaiAnhEdu1: '법학 학사',
+      nguyenPhungMaiAnhEdu1Org: '국가행정학원 법학과',
+      nguyenPhungMaiAnhEdu1Year: '2024년',
+      nguyenPhungMaiAnhPostsInfo: '법률 전문가 응우옌 풍 마이 아인의 민사, 행정, 토지 관련 심층 기사.',
+
+      // 응우옌 티 꿴 장
+      nguyenThiQuynhGiangBio: '<br /><i>소개:</i><br /><br />• 응우옌 티 꿴 장은 2025년부터 YPLaw 사무소의 인턴입니다.<br /><br />• 베트남 국립대학교 하노이 법대 법학 학사의 법적 지식 기반을 바탕으로 꿴 장은 항상 실무에서 지식과 기술을 발전시키고 적용하기 위해 노력하고 있습니다.',
+      nguyenThiQuynhGiangExp: '• 2024년 6월 – 2025년 1월: 남뜨리엠구 인민법원 인턴, 소송 절차와 재판 실무에 접하며 법적 이해와 전문 업무 기술 향상<br />• 현재 꿴 장은 Youth & Partners 로펌(YPLaw Firm)의 인턴으로 회사의 법률 자문 및 지원 활동을 학습하고 기여하고 있습니다.',
+      nguyenThiQuynhGiangEdu1: '법학 학사',
+      nguyenThiQuynhGiangEdu1Org: '베트남 국립대학교 하노이 법대 법학 전공',
+      nguyenThiQuynhGiangEdu1Year: '2025년',
+      nguyenThiQuynhGiangPostsInfo: '법률 전문가 응우옌 티 꿴 장의 노동, 기업, 투자, 허가 관련 심층 기사.',
+
+      // 응우옌 티 투 짱
+      nguyenThiThuTrangBio: '<br /><i>담당 분야:</i><br /><br />• 계약 작성, 노동, 세금, 부동산 및 외국인 투자에 관한 법률 자문<br /><br />• 기업 활동에서의 법적 컴플라이언스 보장<br /><br />• 기업 내부 양식 및 규정 구축 및 조정.',
+      nguyenThiThuTrangExp: '• 이중 언어 계약(영-베트남어) 작성 및 평가(기본 계약, 서비스 계약, 노동 계약, NDA 등 포함)<br />• 기업 고객을 위한 노동, 세금, 부동산, 비즈니스 운영에 관한 법률 자문<br />• 민주 규정, 노동 규칙, 급여 보너스 규정 등 내부 양식 구축 및 평가 참여<br />• 외국인 투자 기업을 위한 투자 증서 조정 및 재발급 서류 작성.',
+      nguyenThiThuTrangEdu1: '법학 학사',
+      nguyenThiThuTrangEdu1Org: '하노이 법대 법학 전공',
+      nguyenThiThuTrangEdu1Year: '2022년',
+      nguyenThiThuTrangPostsInfo: '법률 전문가 응우옌 티 투 짱의 노동, 기업, 투자, 허가 관련 심층 기사.',
+
+      // 응우옌 티 투이 린
+      nguyenThiThuyLinhBio: '<br /><i>담당 분야:</i><br /><br />• 국내외 기업을 위한 계약 작성, 노동, 부동산 및 외국인 투자에 관한 법률 자문<br /><br />• 기업 내부 양식 및 규정 구축 및 조정<br /><br />• 기업 설립, 등록 내용 변경 서류 작성<br /><br />• 외국인 투자 기업을 위한 투자 등록증 조정 및 재발급 서류 작성<br /><br />• 외국적 요소가 있는 이혼 사건을 포함한 혼인가정 사건 해결.',
+      nguyenThiThuyLinhExp: '• 외국적 요소가 있는 이혼 사건을 포함한 혼인가정 사건 해결;<br />• 15개 이상 국내외 기업을 위한 기업, 노동, 투자, 부동산 비즈니스 등 분야의 정기 자문...<br />• 이중 언어 계약(영-베트남어) 작성 및 평가(기본 계약, 서비스 계약, 노동 계약, NDA 등 포함)<br />• 기업의 민주 규정, 노동 규칙, 급여 보너스 규정 등 내부 양식 구축 및 평가<br />• 외국인 투자 기업을 위한 투자 등록증 조정 및 재발급 서류 작성<br />• 기업 설립, 등록 내용 변경 서류 작성.',
+      nguyenThiThuyLinhEdu1: '법학 학사',
+      nguyenThiThuyLinhEdu1Org: '하노이 법대 경제법학과',
+      nguyenThiThuyLinhEdu1Year: '2023년',
+      nguyenThiThuyLinhPostsInfo: '법률 전문가 응우옌 티 투이 린의 노동, 기업, 투자, 혼인가정 관련 심층 기사.',
+
+      // 응우옌 투이 항
+      nguyenThuyHangBio: '<br /><i>담당 분야:</i><br /><br />• 기본 계약, 서비스 계약, 노동 계약 등을 포함한 계약 작성 및 평가<br /><br />• 기업 고객을 위한 노동, 세금, 부동산, 비즈니스 운영에 관한 법률 자문<br /><br />• 민주 규정, 노동 규칙, 급여 보너스 규정 등 내부 양식 구축 및 평가 참여.',
+      nguyenThuyHangExp: '• 하티 투자 컨설팅 회사, 빈옌시 인민법원에서 법무 직원, 법률 인턴으로 근무 및 인턴<br />• 계약 검토, 일반 문서 작성, 내부 규정 구축 및 법률 번역 등의 업무 수행.',
+      nguyenThuyHangEdu1: '법학 학사',
+      nguyenThuyHangEdu1Org: '하노이 법대 경제법',
+      nguyenThuyHangEdu1Year: '2024년',
+      nguyenThuyHangPostsInfo: '법률 전문가 응우옌 투이 항의 기업, 노동, 허가 관련 심층 기사.',
+
+      // 짠 티 빅 리엔
+      tranThiBichLienBio: '<br /><i>담당 분야:</i><br /><br />• 민사: 계약, 민사 거래, 상속, 혼인가정, 손해배상 및 기타 관련 법적 문제 자문<br /><br />• 토지: 토지 절차에 대한 포괄적 자문, 매매, 증여, 부동산 명의 변경, 토지 사용권 증서 재발급, 신규 발급, 토지 사용권 정정, 토지 용도 변경, 토지 분쟁 해결 포함하되 이에 국한되지 않음<br /><br />• 행정: 행정 절차, 민원, 고발 및 행정 관련 법적 문제 자문.',
+      tranThiBichLienExp: '• 2020-2024년: Youth & Partners 로펌 법률 전문가. 회사 근무 기간 동안 짠 티 빅 리엔 씨는 민사, 행정, 토지 분야에서 풍부한 경험 축적<br />• 많은 토지, 혼인가정 분쟁 해결에 직접 참여하여 성공, 고객의 정당한 권리 보호<br />• 동시에 많은 복잡한 행정 및 토지 절차를 처리하여 개인과 조직 모두의 요구에 부응, 효율성 향상 및 고객 권리 보호에 기여.',
+      tranThiBichLienEdu1: '변호사 연수 과정 참여',
+      tranThiBichLienEdu1Org: '사법학원',
+      tranThiBichLienEdu1Year: '2024년',
+      tranThiBichLienEdu2: '법학 학사',
+      tranThiBichLienEdu2Org: '하노이 법대 법학과',
+      tranThiBichLienEdu2Year: '2016년',
+      tranThiBichLienPostsInfo: '법률 전문가 짠 티 빅 리엔의 민사, 형사, 행정, 토지 관련 심층 기사.',
+
+      // 응우옌 티 쩌우 안
+      nguyenThiChauAnhBio: '응우옌 티 쩌우 안은 2025년부터 Youth & Partners 로펌의 법률 인턴입니다.<br /><br />하노이 대학교 법학 전공 교육 기반을 바탕으로, 쩌우 안은 적극적으로 법률 지식과 실무 기술을 연마하며 이론을 실무에 적용하고 있습니다.',
+      nguyenThiChauAnhExp: '• 2025년 6월-2025년 9월: 박닌 제7지역 인민법원 인턴. 법원 업무 지원에 참여하고, 소송 절차와 재판 실무를 접하여 법률 지식, 법적 사고력, 전문적인 업무 기술 향상.<br /><br />• 2025년 12월부터 현재: Youth & Partners 로펌 법률 인턴. 법률 자문 활동, 서류 작성, 법률 연구 지원 및 고객 대응 시 변호사 보조에 참여.',
+      nguyenThiChauAnhEdu1: '법학 학사',
+      nguyenThiChauAnhEdu1Org: '하노이 대학교 - 법학 전공',
+      nguyenThiChauAnhEdu1Year: '2024년',
+      nguyenThiChauAnhPostsInfo: '법률 인턴 응우옌 티 쩌우 안의 모든 법적 측면에 대한 심층 기사.',
+
+      // 응우옌 티 투이 즈엉
+      nguyenThiThuyDuongBio: '응우옌 티 투이 즈엉은 2025년부터 Youth & Partners 로펌의 법률 인턴입니다.<br /><br />하노이 법대 경제법 전공의 법률 지식 기반을 바탕으로, 투이 즈엉은 항상 법률 지식을 연구하고 민사 사건의 실제 해결과 기업 정기 자문에 적용하고 있습니다.',
+      nguyenThiThuyDuongExp: '• 학습 기간 동안 학생 과학 연구, 모의 재판, 상업 조정 대회에 참여하여 법률 연구 기술, 논증 분석, 문서 작성, 전문 법률 환경에서의 팀워크를 단계적으로 개발.<br /><br />• 현재 YP Law Firm의 법률 인턴으로서 회사의 자문 활동과 법무 업무를 적극적으로 학습하고 지원.',
+      nguyenThiThuyDuongEdu1: '법학 학사',
+      nguyenThiThuyDuongEdu1Org: '하노이 법대 - 경제법 전공',
+      nguyenThiThuyDuongEdu1Year: '2024년',
+      nguyenThiThuyDuongPostsInfo: '법률 인턴 응우옌 티 투이 즈엉의 민사, 기업 관련 심층 기사.',
+
+      // 응우옌 투이 즈엉
+      nguyenThuyDuongBio: '응우옌 투이 즈엉은 2025년부터 Youth & Partners 로펌의 법률 인턴입니다.<br /><br />상업대학교 경제법 전공의 법률 지식 기반을 바탕으로, 투이 즈엉은 항상 법률 지식을 연구하고 민사 사건의 실제 해결과 기업 정기 자문에 적용하고 있습니다.',
+      nguyenThuyDuongExp: '<i>담당 분야:</i><br /><br />• 기업: 일상 법적 문제, 법률 준수 및 내부 운영에 관한 기업 정기 법률 자문 및 법적 지원.<br /><br />• 기업 활동 관련 법률 문서, 계약서, 법적 자료 검토 및 분석.<br /><br />• 회사 및 고객 요구에 따른 상업 계약, 내부 문서, 법적 서류 작성 및 검토 지원.<br /><br />• 새로운 법률 연구 및 업데이트에 참여하고, 기업에 실용적인 법적 솔루션 자문.<br /><br /><i>업무 경력:</i><br /><br />• 2023년 5월-2023년 8월: SEDU Training JSC 영업 및 과정 상담 직원 – 과정 상담 및 고객 혜택 지원.<br /><br />• 현재 YP Law Firm의 법률 인턴으로서 회사의 자문 활동과 법무 업무를 적극적으로 학습하고 지원.',
+      nguyenThuyDuongEdu1: '법학 학사',
+      nguyenThuyDuongEdu1Org: '상업대학교 - 경제법 전공',
+      nguyenThuyDuongEdu1Year: '2024년',
+      nguyenThuyDuongPostsInfo: '법률 인턴 응우옌 투이 즈엉의 민사, 기업 관련 심층 기사.',
+
+      // Nguyen Thi Mai Linh
+      nguyenThiMaiLinhBio: '<br /><i>소개:</i><br /><br />• 응우옌 티 마이 린은 2025년부터 Youth & Partners 법률사무소(Y&P Law Firm)의 법률 인턴입니다.<br /><br />• 상업대학교 경제법 전공의 지식 기반을 바탕으로 마이 린은 학술 활동, 과학 연구 및 법률 실무 시뮬레이션 프로그램을 통해 적극적으로 지식과 기술을 발전시키고 있습니다.',
+      nguyenThiMaiLinhExp: '• 학습 기간 동안 마이 린은 학생 과학 연구, 모의 재판 및 상업 중재 대회에 참가하여 법률 연구 기술, 논쟁 분석, 문서 작성 및 전문 법률 환경에서의 팀워크를 점진적으로 발전시켰습니다.<br /><br />• 현재 마이 린은 YP Law Firm의 법률 인턴으로서 회사의 컨설팅 활동과 법률 업무를 적극적으로 학습하고 지원하고 있습니다.',
+      nguyenThiMaiLinhEdu1: '법학 학사',
+      nguyenThiMaiLinhEdu1Org: '상업대학교 - 경제법 전공',
+      nguyenThiMaiLinhEdu1Year: '2024년',
+      nguyenThiMaiLinhPostsInfo: '법률 인턴 응우옌 티 마이 린의 모든 법적 측면에 관한 심층 기사.',
+
+      // Nguyen Thi Xuan
+      nguyenThiXuanBio: '<br /><i>소개:</i><br /><br />• 응우옌 티 쑤언은 2025년부터 Youth & Partners 법률사무소(Y&P Law Firm)의 법률 인턴입니다.<br /><br />• 하노이 법률대학교 법학 전공의 교육 기반을 바탕으로 쑤언은 적극적으로 법률 지식과 전문 기술을 발전시키며 이론을 실무에 적용하고 있습니다.',
+      nguyenThiXuanExp: '• 2023년 10월 – 2024년 2월: 응우옌팟 법률회사에서 인턴, 혼인 및 가족 분야에서 법률 상담, 법률 지식과 전문 업무 기술 향상.<br /><br />• 2024년 4월 – 2025년 5월: 응우옌훼 공증사무소에서 작성 직원. 법률 문서 검토 및 차량 매매, 양도, 상속 등 계약서 작성; 공증인의 외부 서명 지원.<br /><br />• 2025년 5월 - 2025년 11월: 도민 주식회사에서 근무: 소셜 미디어에 게시된 콘텐츠 검토.<br /><br />• 현재 Youth & Partners 법률사무소(YP Law Firm)의 법률 인턴으로서 회사의 컨설팅 활동과 법률 지원에 학습하고 기여하고 있습니다.',
+      nguyenThiXuanEdu1: '법학 학사',
+      nguyenThiXuanEdu1Org: '하노이 법률대학교 - 경제법 전공',
+      nguyenThiXuanEdu1Year: '2024년',
+      nguyenThiXuanPostsInfo: '법률 인턴 응우옌 티 쑤언의 기업, 노동, 허가 관련 심층 기사.',
+
+      // Common fields for area of responsibility
+      areaOfResponsibility: '담당 분야:',
+      civilLaw: '민사: 계약, 거래, 상속, 가족, 손해배상 자문...',
+      landLaw: '토지: 부동산 매매, 증여, 명의 변경, 토지 사용권 갱신, 재발급, 신규 발급, 정정, 목적 변경, 토지 분쟁 해결 등 모든 토지 절차 자문...',
+      adminLaw: '행정: 행정 절차, 민원 및 고발 자문.',
+
+      // Common education terms
+      lawyerCertificate: '변호사 실무 자격증',
+      graduated: '졸업',
+      masterOfLaw: '법학 석사',
+      bachelorOfLaw: '법학 학사',
+      doctorOfLaw: '노동법 박사',
+      bachelorOfForeignLanguages: '외국어 학사',
+      leadAuditorCert: '글로벌 공급망 노동 및 비즈니스 윤리 리드 오디터 자격증',
+      lawyerTrainingCourse: '변호사 연수 과정 참여',
+      
+      // Common organization names
+      ministryOfJustice: '법무부',
+      judicialAcademy: '사법학원',
+      hanoiLawUniversity: '하노이 법대',
+      hcmLawUniversity: '호치민시 법대',
+      socialScienceAcademy: '사회과학 아카데미',
+      foreignLanguagesUniversity: '베트남 국립대학교 외국어대학',
+      thaiNguyenUniversity: '타이응우옌 경제경영대학 경제법학과',
+      hanoiLawEconomics: '하노이 법대 경제법학과',
+      verite: 'Verité, Inc.',
+      
+      // Year prefix
+      year: '년',
+    },
+  },
+
+  // Blog types and categories
+  blog: {
+    vi: {
+      // Blog type titles
+      postTitle: 'Tin tức pháp luật',
+      postSubtitle: 'Cập nhật tin tức pháp luật mới nhất từ Công ty Luật Youth & Partners',
+      legalTitle: 'Pháp lý doanh nghiệp',
+      legalSubtitle: 'Trang pháp lý của chúng tôi cung cấp những thông tin cập nhật và mới nhất về các vấn đề pháp lý',
+      consultationTitle: 'Tư vấn pháp lý thường xuyên',
+      consultationSubtitle: 'Dịch vụ tư vấn pháp lý thường xuyên - Người bạn đồng hành đáng tin cậy của doanh nghiệp',
+      laborTitle: 'Pháp luật lao động',
+      laborSubtitle: 'Tư vấn và giải quyết các vấn đề pháp luật lao động cho doanh nghiệp',
+      foreignerTitle: 'Đầu tư nước ngoài',
+      foreignerSubtitle: 'Hỗ trợ pháp lý toàn diện cho nhà đầu tư nước ngoài tại Việt Nam',
+      evaluationTitle: 'Dịch vụ đánh giá pháp lý',
+      evaluationSubtitle: 'Dịch vụ đánh giá, thẩm định và audit pháp lý chuyên nghiệp',
+      // Category page patterns
+      categoryPrefix: 'Danh mục:',
+      tagPrefix: 'Thẻ:',
+      allPostsInCategory: 'Tất cả bài viết trong danh mục',
+      // Post categories
+      tinMoiTitle: 'Tin mới',
+      tinMoiSubtitle: 'Tin tức pháp luật mới nhất',
+      suKienTitle: 'Sự kiện',
+      suKienSubtitle: 'Sự kiện và hoạt động của Youth & Partners',
+      suKienNoiBoTitle: 'Sự kiện nội bộ',
+      suKienNoiBoSubtitle: 'Hoạt động và sự kiện nội bộ của Công ty Luật Youth & Partners',
+      // Legal categories
+      doanhNghiepTitle: 'Pháp lý doanh nghiệp',
+      doanhNghiepSubtitle: 'Tư vấn pháp lý doanh nghiệp toàn diện',
+      hopDongTitle: 'Hợp đồng',
+      hopDongSubtitle: 'Dịch vụ soạn thảo và tư vấn hợp đồng',
+      tranhChapTitle: 'Tranh chấp',
+      tranhChapSubtitle: 'Giải quyết tranh chấp thương mại và dân sự',
+      soHuuTriTueTitle: 'Sở hữu trí tuệ',
+      soHuuTriTueSubtitle: 'Bảo vệ quyền sở hữu trí tuệ cho doanh nghiệp',
+      // Consultation categories
+      phapCheThueNgoaiTitle: 'Pháp chế thuê ngoài',
+      phapCheThueNgoaiSubtitle: 'Dịch vụ phòng pháp chế thuê ngoài chuyên nghiệp',
+      tuVanThuongXuyenTitle: 'Tư vấn thường xuyên',
+      tuVanThuongXuyenSubtitle: 'Gói tư vấn pháp lý thường xuyên cho doanh nghiệp',
+      luatSuRiengTitle: 'Luật sư riêng',
+      luatSuRiengSubtitle: 'Dịch vụ luật sư riêng đa ngôn ngữ',
+      // Labor categories
+      hopDongLaoDongTitle: 'Hợp đồng lao động',
+      hopDongLaoDongSubtitle: 'Tư vấn hợp đồng và nội quy lao động',
+      tranhChapLaoDongTitle: 'Tranh chấp lao động',
+      tranhChapLaoDongSubtitle: 'Giải quyết tranh chấp lao động hiệu quả',
+      kyLuatLaoDongTitle: 'Kỷ luật lao động',
+      kyLuatLaoDongSubtitle: 'Tư vấn xử lý kỷ luật lao động đúng pháp luật',
+      baoHiemXaHoiTitle: 'Bảo hiểm xã hội',
+      baoHiemXaHoiSubtitle: 'Tư vấn về bảo hiểm xã hội và quyền lợi người lao động',
+      nguoiLaoDongNuocNgoaiTitle: 'Người lao động nước ngoài',
+      nguoiLaoDongNuocNgoaiSubtitle: 'Tư vấn pháp lý cho người lao động nước ngoài',
+      thoiGioLamViecTitle: 'Thời giờ làm việc',
+      thoiGioLamViecSubtitle: 'Tư vấn về thời giờ làm việc và nghỉ ngơi theo pháp luật lao động',
+      // Foreigner categories
+      thanhLapCongTyTitle: 'Thành lập công ty FDI',
+      thanhLapMoiDuAnTitle: 'Thành lập mới dự án',
+      thanhLapMoiDuAnSubtitle: 'Tư vấn thành lập dự án đầu tư mới tại Việt Nam',
+      thanhLapCongTySubtitle: 'Thành lập doanh nghiệp vốn đầu tư nước ngoài',
+      giayPhepDauTuTitle: 'Giấy phép đầu tư',
+      giayPhepDauTuSubtitle: 'Tư vấn cấp giấy phép đầu tư cho nhà đầu tư nước ngoài',
+      maTitle: 'M&A',
+      maSubtitle: 'Tư vấn mua bán và sáp nhập doanh nghiệp',
+      batDongSanTitle: 'Bất động sản',
+      batDongSanSubtitle: 'Tư vấn pháp lý bất động sản cho nhà đầu tư ngoại',
+      doanhNghiepVaDauTuTitle: 'Doanh nghiệp và Đầu tư nước ngoài',
+      hienDienThuongMaiTitle: 'Hiện diện thương mại',
+      dieuChinhDuAnTitle: 'Điều chỉnh dự án đầu tư',
+      chuyenNhuongDuAnTitle: 'Chuyển nhượng dự án',
+      phapLyNguoiNuocNgoaiTitle: 'Pháp lý người nước ngoài',
+      // Evaluation categories
+      dueDiligenceTitle: 'Due Diligence',
+      dueDiligenceSubtitle: 'Dịch vụ thẩm định pháp lý chuyên nghiệp',
+      auditLaoDongTitle: 'Audit lao động',
+      auditLaoDongSubtitle: 'Dịch vụ audit và đánh giá tuân thủ lao động',
+      esgTitle: 'ESG',
+      esgSubtitle: 'Dịch vụ đánh giá ESG và phát triển bền vững',
+      complianceTitle: 'Đánh giá tuân thủ',
+      complianceSubtitle: 'Dịch vụ đánh giá và tư vấn tuân thủ pháp luật',
+      khaiNiemDanhGiaTitle: 'Khái niệm đánh giá',
+      loiIchDanhGiaTitle: 'Lợi ích của việc đánh giá',
+      quyTrinhDanhGiaTitle: 'Quy trình đánh giá',
+      phiDichVuDanhGiaTitle: 'Phí dịch vụ đánh giá',
+      dichVuDanhGiaDoanhNghiepTitle: 'Dịch vụ Đánh giá cho Doanh nghiệp',
+      dichVuDanhGiaTienTramTitle: 'Dịch vụ đánh giá tiền trạm',
+      cacBoTieuChuanTNXHTitle: 'Các bộ tiêu chuẩn TNXH',
+      tieuChuanRBATitle: 'Tiêu chuẩn RBA',
+      // Additional Post categories
+      banTinPhapLyTitle: 'Bản tin pháp lý',
+      banTinPhapLySubtitle: 'Cập nhật các bản tin pháp lý mới nhất',
+      binhLuanPhapLyTitle: 'Bình luận pháp lý',
+      binhLuanPhapLySubtitle: 'Bình luận và phân tích các vấn đề pháp lý',
+      cacVuViecNoiBatTitle: 'Các vụ việc nổi bật',
+      cacVuViecNoiBatSubtitle: 'Các vụ việc pháp lý nổi bật và đáng chú ý',
+      hoiThaoPhapLyTitle: 'Hội thảo pháp lý',
+      hoiThaoPhapLySubtitle: 'Thông tin các hội thảo pháp lý',
+      tinTucPhapLyTitle: 'Tin tức pháp lý',
+      tinTucPhapLySubtitle: 'Cập nhật tin tức pháp lý mới nhất',
+      vanBanPhapLyTitle: 'Văn bản pháp lý',
+      vanBanPhapLySubtitle: 'Các văn bản pháp lý quan trọng',
+      thongTinTuyenDungTitle: 'Thông tin tuyển dụng',
+      thongTinTuyenDungSubtitle: 'Cơ hội nghề nghiệp tại Youth & Partners',
+      // Additional Legal categories
+      kinhDoanhThuongMaiTitle: 'Kinh doanh thương mại',
+      kinhDoanhThuongMaiSubtitle: 'Tư vấn pháp lý kinh doanh thương mại',
+      datDaiTitle: 'Đất đai',
+      datDaiSubtitle: 'Tư vấn pháp lý đất đai và bất động sản',
+      honNhanVaGiaDinhTitle: 'Hôn nhân và gia đình',
+      honNhanVaGiaDinhSubtitle: 'Tư vấn pháp lý hôn nhân và gia đình',
+      giayPhepConTitle: 'Giấy phép con',
+      giayPhepConSubtitle: 'Tư vấn xin cấp giấy phép con',
+      danSuTitle: 'Dân sự',
+      danSuSubtitle: 'Tư vấn và giải quyết các vấn đề dân sự',
+      hinhSuTitle: 'Hình sự',
+      hinhSuSubtitle: 'Tư vấn và bào chữa các vụ án hình sự',
+      phapLyKhacTitle: 'Pháp lý khác',
+      phapLyKhacSubtitle: 'Các vấn đề pháp lý khác',
+      cacLoiThuongGapTitle: 'Các lỗi thường gặp của doanh nghiệp',
+      cacLoiThuongGapSubtitle: 'Tư vấn phòng tránh các lỗi pháp lý thường gặp',
+      // Additional Consultation categories
+      dichVuLuatSuRiengTitle: 'Dịch vụ luật sư riêng',
+      dichVuLuatSuRiengSubtitle: 'Dịch vụ luật sư riêng đa ngôn ngữ',
+      khaiNiemTuVanThuongXuyenTitle: 'Khái niệm Tư vấn thường xuyên',
+      khaiNiemTuVanThuongXuyenSubtitle: 'Giới thiệu về dịch vụ tư vấn thường xuyên',
+      viSaoCanTuVanTitle: 'Vì sao doanh nghiệp cần tư vấn thường xuyên',
+      viSaoCanTuVanSubtitle: 'Lợi ích của việc sử dụng dịch vụ tư vấn thường xuyên',
+      tuVanPhapLuatThuongXuyenTitle: 'Tư vấn pháp luật thường xuyên cho Doanh nghiệp',
+      tuVanPhapLuatThuongXuyenSubtitle: 'Dịch vụ tư vấn pháp luật thường xuyên chuyên nghiệp',
+      phiDichVuTuVanTitle: 'Phí dịch vụ tư vấn',
+      phiDichVuTuVanSubtitle: 'Bảng giá dịch vụ tư vấn pháp lý',
+      quyTrinhTuVanTitle: 'Quy trình tư vấn',
+      quyTrinhTuVanSubtitle: 'Quy trình làm việc tư vấn pháp lý',
+      mauHopDongDichVuTitle: 'Mẫu hợp đồng dịch vụ',
+      mauHopDongDichVuSubtitle: 'Các mẫu hợp đồng dịch vụ pháp lý',
+      diemManhYPTitle: 'Điểm mạnh của Youth and Partners',
+      diemManhYPSubtitle: 'Tại sao chọn Youth & Partners',
+      phapLyTuVanKhacTitle: 'Pháp lý tư vấn thường xuyên khác',
+      phapLyTuVanKhacSubtitle: 'Các vấn đề pháp lý tư vấn khác',
+      // Lawyer by language
+      luatSuTiengAnhTitle: 'Luật sư tư vấn tiếng Anh',
+      luatSuTiengAnhSubtitle: 'Dịch vụ luật sư tư vấn bằng tiếng Anh',
+      luatSuTiengNhatTitle: 'Luật sư tư vấn tiếng Nhật',
+      luatSuTiengNhatSubtitle: 'Dịch vụ luật sư tư vấn bằng tiếng Nhật',
+      luatSuTiengTrungTitle: 'Luật sư tư vấn tiếng Trung Quốc',
+      luatSuTiengTrungSubtitle: 'Dịch vụ luật sư tư vấn bằng tiếng Trung Quốc',
+      // Additional Labor categories
+      hopDongLaoDongDaoTaoTitle: 'Hợp đồng lao động, đào tạo',
+      hopDongLaoDongDaoTaoSubtitle: 'Tư vấn hợp đồng lao động và đào tạo',
+      xuLyKyLuatTitle: 'Xử lý kỷ luật',
+      xuLyKyLuatSubtitle: 'Tư vấn xử lý kỷ luật lao động',
+      laoDongTitle: 'Lao động',
+      laoDongSubtitle: 'Tư vấn pháp luật lao động',
+      luongVaPhucLoiTitle: 'Lương và Phúc lợi',
+      luongVaPhucLoiSubtitle: 'Tư vấn về lương và phúc lợi',
+      noiQuyThoaUocTitle: 'Nội quy - Thỏa ước',
+      noiQuyThoaUocSubtitle: 'Tư vấn nội quy và thỏa ước lao động',
+      chamDutHopDongTitle: 'Chấm dứt hợp đồng',
+      chamDutHopDongSubtitle: 'Tư vấn chấm dứt hợp đồng lao động',
+      quayRoiTinhDucTitle: 'Quấy rối tình dục',
+      quayRoiTinhDucSubtitle: 'Tư vấn phòng chống quấy rối tình dục',
+      giayPhepLaoDongTitle: 'Giấy phép lao động',
+      giayPhepLaoDongSubtitle: 'Tư vấn xin cấp giấy phép lao động',
+      phapLyLaoDongKhacTitle: 'Pháp lý lao động khác',
+      phapLyLaoDongKhacSubtitle: 'Các vấn đề pháp lý lao động khác',
+      // Additional Foreigner categories  
+      doanhNghiepVaDauTuSubtitle: 'Tư vấn doanh nghiệp và đầu tư nước ngoài',
+      hienDienThuongMaiSubtitle: 'Tư vấn hiện diện thương mại tại Việt Nam',
+      dieuChinhDuAnSubtitle: 'Tư vấn điều chỉnh dự án đầu tư',
+      chuyenNhuongDuAnSubtitle: 'Tư vấn chuyển nhượng dự án đầu tư',
+      phapLyNguoiNuocNgoaiSubtitle: 'Tư vấn pháp lý cho người nước ngoài',
+      // Additional Evaluation categories
+      khaiNiemDanhGiaSubtitle: 'Giới thiệu về dịch vụ đánh giá pháp lý',
+      loiIchDanhGiaSubtitle: 'Lợi ích của việc đánh giá pháp lý',
+      quyTrinhDanhGiaSubtitle: 'Quy trình đánh giá pháp lý',
+      phiDichVuDanhGiaSubtitle: 'Bảng giá dịch vụ đánh giá pháp lý',
+      dichVuDanhGiaDoanhNghiepSubtitle: 'Dịch vụ đánh giá pháp lý doanh nghiệp',
+      dichVuDanhGiaTienTramSubtitle: 'Dịch vụ đánh giá tiền trạm',
+      cacBoTieuChuanTNXHSubtitle: 'Các bộ tiêu chuẩn trách nhiệm xã hội',
+      tieuChuanRBASubtitle: 'Tiêu chuẩn RBA và các yêu cầu tuân thủ',
+    },
+    en: {
+      // Blog type titles
+      postTitle: 'Legal News',
+      postSubtitle: 'Latest legal news updates from Youth & Partners Law Firm',
+      legalTitle: 'Business Legal',
+      legalSubtitle: 'Our legal page provides the latest updates on legal matters',
+      consultationTitle: 'Regular Legal Consultation',
+      consultationSubtitle: 'Regular legal consultation services - Your trusted business companion',
+      laborTitle: 'Labor Law',
+      laborSubtitle: 'Consulting and resolving labor law issues for businesses',
+      foreignerTitle: 'Foreign Investment',
+      foreignerSubtitle: 'Comprehensive legal support for foreign investors in Vietnam',
+      evaluationTitle: 'Legal Evaluation Services',
+      evaluationSubtitle: 'Professional legal evaluation, assessment and audit services',
+      // Category page patterns
+      categoryPrefix: 'Category:',
+      tagPrefix: 'Tag:',
+      allPostsInCategory: 'All posts in category',
+      // Post categories
+      tinMoiTitle: 'Latest News',
+      tinMoiSubtitle: 'Latest legal news',
+      suKienTitle: 'Events',
+      suKienSubtitle: 'Events and activities of Youth & Partners',
+      suKienNoiBoTitle: 'Internal Events',
+      suKienNoiBoSubtitle: 'Internal activities and events of Youth & Partners Law Firm',
+      // Legal categories
+      doanhNghiepTitle: 'Business Legal',
+      doanhNghiepSubtitle: 'Comprehensive business legal consulting',
+      hopDongTitle: 'Contracts',
+      hopDongSubtitle: 'Contract drafting and consulting services',
+      tranhChapTitle: 'Disputes',
+      tranhChapSubtitle: 'Commercial and civil dispute resolution',
+      soHuuTriTueTitle: 'Intellectual Property',
+      soHuuTriTueSubtitle: 'Protecting intellectual property rights for businesses',
+      // Consultation categories
+      phapCheThueNgoaiTitle: 'Outsourced Legal Department',
+      phapCheThueNgoaiSubtitle: 'Professional outsourced legal department services',
+      tuVanThuongXuyenTitle: 'Regular Consultation',
+      tuVanThuongXuyenSubtitle: 'Regular legal consultation packages for businesses',
+      luatSuRiengTitle: 'Personal Lawyer Service',
+      luatSuRiengSubtitle: 'Multilingual personal lawyer service',
+      // Labor categories
+      hopDongLaoDongTitle: 'Labor Contracts',
+      hopDongLaoDongSubtitle: 'Labor contract and regulations consulting',
+      tranhChapLaoDongTitle: 'Labor Disputes',
+      tranhChapLaoDongSubtitle: 'Effective labor dispute resolution',
+      kyLuatLaoDongTitle: 'Labor Discipline',
+      kyLuatLaoDongSubtitle: 'Legal labor discipline consulting',
+      baoHiemXaHoiTitle: 'Social Insurance',
+      baoHiemXaHoiSubtitle: 'Social insurance and employee benefits consulting',
+      nguoiLaoDongNuocNgoaiTitle: 'Foreign Workers',
+      nguoiLaoDongNuocNgoaiSubtitle: 'Legal consulting for foreign workers',
+      thoiGioLamViecTitle: 'Working Hours',
+      thoiGioLamViecSubtitle: 'Working hours and rest periods consulting',
+      // Foreigner categories
+      thanhLapCongTyTitle: 'FDI Company Establishment',
+      thanhLapCongTySubtitle: 'Foreign-invested enterprise establishment',
+      thanhLapMoiDuAnTitle: 'New Project Establishment',
+      thanhLapMoiDuAnSubtitle: 'New investment project establishment consulting',
+      giayPhepDauTuTitle: 'Investment License',
+      giayPhepDauTuSubtitle: 'Investment license consulting for foreign investors',
+      maTitle: 'M&A',
+      maSubtitle: 'Mergers and acquisitions consulting',
+      batDongSanTitle: 'Real Estate',
+      batDongSanSubtitle: 'Real estate legal consulting for foreign investors',
+      doanhNghiepVaDauTuTitle: 'Business and Foreign Investment',
+      hienDienThuongMaiTitle: 'Commercial Presence',
+      dieuChinhDuAnTitle: 'Investment Project Adjustment',
+      chuyenNhuongDuAnTitle: 'Project Transfer',
+      phapLyNguoiNuocNgoaiTitle: 'Foreigner Legal',
+      // Evaluation categories
+      dueDiligenceTitle: 'Due Diligence',
+      dueDiligenceSubtitle: 'Professional legal due diligence services',
+      auditLaoDongTitle: 'Labor Audit',
+      auditLaoDongSubtitle: 'Labor audit and compliance assessment services',
+      esgTitle: 'ESG',
+      esgSubtitle: 'ESG assessment and sustainable development services',
+      complianceTitle: 'Compliance Assessment',
+      complianceSubtitle: 'Legal compliance assessment and consulting services',
+      khaiNiemDanhGiaTitle: 'Evaluation Concepts',
+      loiIchDanhGiaTitle: 'Benefits of Evaluation',
+      quyTrinhDanhGiaTitle: 'Evaluation Process',
+      phiDichVuDanhGiaTitle: 'Evaluation Service Fees',
+      dichVuDanhGiaDoanhNghiepTitle: 'Business Evaluation Services',
+      dichVuDanhGiaTienTramTitle: 'Pre-site Evaluation Services',
+      cacBoTieuChuanTNXHTitle: 'CSR Standards',
+      tieuChuanRBATitle: 'RBA Standards',
+      // Additional Post categories
+      banTinPhapLyTitle: 'Legal Bulletin',
+      banTinPhapLySubtitle: 'Latest legal bulletin updates',
+      binhLuanPhapLyTitle: 'Legal Commentary',
+      binhLuanPhapLySubtitle: 'Legal analysis and commentary',
+      cacVuViecNoiBatTitle: 'Notable Cases',
+      cacVuViecNoiBatSubtitle: 'Notable and significant legal cases',
+      hoiThaoPhapLyTitle: 'Legal Seminars',
+      hoiThaoPhapLySubtitle: 'Legal seminar information',
+      tinTucPhapLyTitle: 'Legal News',
+      tinTucPhapLySubtitle: 'Latest legal news updates',
+      vanBanPhapLyTitle: 'Legal Documents',
+      vanBanPhapLySubtitle: 'Important legal documents',
+      thongTinTuyenDungTitle: 'Recruitment Information',
+      thongTinTuyenDungSubtitle: 'Career opportunities at Youth & Partners',
+      // Additional Legal categories
+      kinhDoanhThuongMaiTitle: 'Commercial Business',
+      kinhDoanhThuongMaiSubtitle: 'Commercial business legal consulting',
+      datDaiTitle: 'Land',
+      datDaiSubtitle: 'Land and real estate legal consulting',
+      honNhanVaGiaDinhTitle: 'Marriage and Family',
+      honNhanVaGiaDinhSubtitle: 'Marriage and family legal consulting',
+      giayPhepConTitle: 'Sub-licenses',
+      giayPhepConSubtitle: 'Sub-license application consulting',
+      danSuTitle: 'Civil',
+      danSuSubtitle: 'Civil law consulting and resolution',
+      hinhSuTitle: 'Criminal',
+      hinhSuSubtitle: 'Criminal law consulting and defense',
+      phapLyKhacTitle: 'Other Legal',
+      phapLyKhacSubtitle: 'Other legal matters',
+      cacLoiThuongGapTitle: 'Common Business Mistakes',
+      cacLoiThuongGapSubtitle: 'Consulting on preventing common legal mistakes',
+      // Additional Consultation categories
+      dichVuLuatSuRiengTitle: 'Personal Lawyer Service',
+      dichVuLuatSuRiengSubtitle: 'Multilingual personal lawyer service',
+      khaiNiemTuVanThuongXuyenTitle: 'Regular Consultation Concepts',
+      khaiNiemTuVanThuongXuyenSubtitle: 'Introduction to regular consultation services',
+      viSaoCanTuVanTitle: 'Why Businesses Need Regular Consultation',
+      viSaoCanTuVanSubtitle: 'Benefits of using regular consultation services',
+      tuVanPhapLuatThuongXuyenTitle: 'Regular Legal Consultation for Businesses',
+      tuVanPhapLuatThuongXuyenSubtitle: 'Professional regular legal consultation services',
+      phiDichVuTuVanTitle: 'Consultation Service Fees',
+      phiDichVuTuVanSubtitle: 'Legal consultation service pricing',
+      quyTrinhTuVanTitle: 'Consultation Process',
+      quyTrinhTuVanSubtitle: 'Legal consultation workflow process',
+      mauHopDongDichVuTitle: 'Service Contract Templates',
+      mauHopDongDichVuSubtitle: 'Legal service contract templates',
+      diemManhYPTitle: 'Youth and Partners Strengths',
+      diemManhYPSubtitle: 'Why choose Youth & Partners',
+      phapLyTuVanKhacTitle: 'Other Consultation Legal',
+      phapLyTuVanKhacSubtitle: 'Other legal consultation matters',
+      // Lawyer by language
+      luatSuTiengAnhTitle: 'English-speaking Lawyer',
+      luatSuTiengAnhSubtitle: 'English-speaking lawyer consulting services',
+      luatSuTiengNhatTitle: 'Japanese-speaking Lawyer',
+      luatSuTiengNhatSubtitle: 'Japanese-speaking lawyer consulting services',
+      luatSuTiengTrungTitle: 'Chinese-speaking Lawyer',
+      luatSuTiengTrungSubtitle: 'Chinese-speaking lawyer consulting services',
+      // Additional Labor categories
+      hopDongLaoDongDaoTaoTitle: 'Labor and Training Contracts',
+      hopDongLaoDongDaoTaoSubtitle: 'Labor and training contract consulting',
+      xuLyKyLuatTitle: 'Disciplinary Action',
+      xuLyKyLuatSubtitle: 'Labor disciplinary action consulting',
+      laoDongTitle: 'Labor',
+      laoDongSubtitle: 'Labor law consulting',
+      luongVaPhucLoiTitle: 'Salary and Benefits',
+      luongVaPhucLoiSubtitle: 'Salary and benefits consulting',
+      noiQuyThoaUocTitle: 'Regulations and Agreements',
+      noiQuyThoaUocSubtitle: 'Labor regulations and collective agreements consulting',
+      chamDutHopDongTitle: 'Contract Termination',
+      chamDutHopDongSubtitle: 'Labor contract termination consulting',
+      quayRoiTinhDucTitle: 'Sexual Harassment',
+      quayRoiTinhDucSubtitle: 'Sexual harassment prevention consulting',
+      giayPhepLaoDongTitle: 'Work Permit',
+      giayPhepLaoDongSubtitle: 'Work permit application consulting',
+      phapLyLaoDongKhacTitle: 'Other Labor Legal',
+      phapLyLaoDongKhacSubtitle: 'Other labor legal matters',
+      // Additional Foreigner categories
+      doanhNghiepVaDauTuSubtitle: 'Business and foreign investment consulting',
+      hienDienThuongMaiSubtitle: 'Commercial presence in Vietnam consulting',
+      dieuChinhDuAnSubtitle: 'Investment project adjustment consulting',
+      chuyenNhuongDuAnSubtitle: 'Investment project transfer consulting',
+      phapLyNguoiNuocNgoaiSubtitle: 'Legal consulting for foreigners',
+      // Additional Evaluation categories
+      khaiNiemDanhGiaSubtitle: 'Introduction to legal evaluation services',
+      loiIchDanhGiaSubtitle: 'Benefits of legal evaluation',
+      quyTrinhDanhGiaSubtitle: 'Legal evaluation process',
+      phiDichVuDanhGiaSubtitle: 'Legal evaluation service pricing',
+      dichVuDanhGiaDoanhNghiepSubtitle: 'Business legal evaluation services',
+      dichVuDanhGiaTienTramSubtitle: 'Pre-site evaluation services',
+      cacBoTieuChuanTNXHSubtitle: 'Corporate social responsibility standards',
+      tieuChuanRBASubtitle: 'RBA standards and compliance requirements',
+    },
+    zh: {
+      // Blog type titles
+      postTitle: '法律新闻',
+      postSubtitle: 'Youth & Partners律师事务所最新法律新闻动态',
+      legalTitle: '企业法律',
+      legalSubtitle: '我们的法律页面提供最新的法律问题更新',
+      consultationTitle: '常规法律咨询',
+      consultationSubtitle: '常规法律咨询服务 - 您值得信赖的商业伙伴',
+      laborTitle: '劳动法',
+      laborSubtitle: '为企业咨询和解决劳动法问题',
+      foreignerTitle: '外国投资',
+      foreignerSubtitle: '为在越南的外国投资者提供全面的法律支持',
+      evaluationTitle: '法律评估服务',
+      evaluationSubtitle: '专业的法律评估、鉴定和审计服务',
+      // Category page patterns
+      categoryPrefix: '分类：',
+      tagPrefix: '标签：',
+      allPostsInCategory: '该分类下的所有文章',
+      // Post categories
+      tinMoiTitle: '最新消息',
+      tinMoiSubtitle: '最新法律新闻',
+      suKienTitle: '活动',
+      suKienSubtitle: 'Youth & Partners的活动',
+      suKienNoiBoTitle: '内部活动',
+      suKienNoiBoSubtitle: 'Youth & Partners律师事务所的内部活动',
+      // Legal categories
+      doanhNghiepTitle: '企业法律',
+      doanhNghiepSubtitle: '全面的企业法律咨询',
+      hopDongTitle: '合同',
+      hopDongSubtitle: '合同起草和咨询服务',
+      tranhChapTitle: '争议',
+      tranhChapSubtitle: '商业和民事争议解决',
+      soHuuTriTueTitle: '知识产权',
+      soHuuTriTueSubtitle: '为企业保护知识产权',
+      // Consultation categories
+      phapCheThueNgoaiTitle: '外包法务部',
+      phapCheThueNgoaiSubtitle: '专业的外包法务部服务',
+      tuVanThuongXuyenTitle: '常规咨询',
+      tuVanThuongXuyenSubtitle: '企业常规法律咨询套餐',
+      luatSuRiengTitle: '私人律师',
+      luatSuRiengSubtitle: '多语言私人律师服务',
+      // Labor categories
+      hopDongLaoDongTitle: '劳动合同',
+      hopDongLaoDongSubtitle: '劳动合同和规章咨询',
+      tranhChapLaoDongTitle: '劳动争议',
+      tranhChapLaoDongSubtitle: '有效的劳动争议解决',
+      kyLuatLaoDongTitle: '劳动纪律',
+      kyLuatLaoDongSubtitle: '合法的劳动纪律咨询',
+      baoHiemXaHoiTitle: '社会保险',
+      baoHiemXaHoiSubtitle: '社会保险和员工福利咨询',
+      nguoiLaoDongNuocNgoaiTitle: '外国劳工',
+      nguoiLaoDongNuocNgoaiSubtitle: '外国劳工法律咨询',
+      thoiGioLamViecTitle: '工作时间',
+      thoiGioLamViecSubtitle: '劳动法下工作时间与休息时间咨询',
+      // Foreigner categories
+      thanhLapCongTyTitle: 'FDI公司设立',
+      thanhLapMoiDuAnTitle: '新项目设立',
+      thanhLapMoiDuAnSubtitle: '越南新投资项目设立咨询',
+      thanhLapCongTySubtitle: '外商投资企业设立',
+      giayPhepDauTuTitle: '投资许可证',
+      giayPhepDauTuSubtitle: '为外国投资者提供投资许可证咨询',
+      maTitle: '并购',
+      maSubtitle: '并购咨询',
+      batDongSanTitle: '房地产',
+      batDongSanSubtitle: '为外国投资者提供房地产法律咨询',
+      doanhNghiepVaDauTuTitle: '企业与外国投资',
+      hienDienThuongMaiTitle: '商业存在',
+      dieuChinhDuAnTitle: '投资项目调整',
+      chuyenNhuongDuAnTitle: '项目转让',
+      phapLyNguoiNuocNgoaiTitle: '外国人法律',
+      // Evaluation categories
+      dueDiligenceTitle: '尽职调查',
+      dueDiligenceSubtitle: '专业的法律尽职调查服务',
+      auditLaoDongTitle: '劳动审计',
+      auditLaoDongSubtitle: '劳动审计和合规评估服务',
+      esgTitle: 'ESG',
+      esgSubtitle: 'ESG评估和可持续发展服务',
+      complianceTitle: '合规评估',
+      complianceSubtitle: '法律合规评估和咨询服务',
+      khaiNiemDanhGiaTitle: '评估概念',
+      loiIchDanhGiaTitle: '评估的好处',
+      quyTrinhDanhGiaTitle: '评估流程',
+      phiDichVuDanhGiaTitle: '评估服务费',
+      dichVuDanhGiaDoanhNghiepTitle: '企业评估服务',
+      dichVuDanhGiaTienTramTitle: '预评估服务',
+      cacBoTieuChuanTNXHTitle: '企业社会责任标准',
+      tieuChuanRBATitle: 'RBA标准',
+      // Additional Post categories
+      banTinPhapLyTitle: '法律简报',
+      banTinPhapLySubtitle: '最新法律简报更新',
+      binhLuanPhapLyTitle: '法律评论',
+      binhLuanPhapLySubtitle: '法律分析与评论',
+      cacVuViecNoiBatTitle: '重大案件',
+      cacVuViecNoiBatSubtitle: '重大和重要的法律案件',
+      hoiThaoPhapLyTitle: '法律研讨会',
+      hoiThaoPhapLySubtitle: '法律研讨会信息',
+      tinTucPhapLyTitle: '法律新闻',
+      tinTucPhapLySubtitle: '最新法律新闻更新',
+      vanBanPhapLyTitle: '法律文件',
+      vanBanPhapLySubtitle: '重要法律文件',
+      thongTinTuyenDungTitle: '招聘信息',
+      thongTinTuyenDungSubtitle: 'Youth & Partners职业机会',
+      // Additional Legal categories
+      kinhDoanhThuongMaiTitle: '商业贸易',
+      kinhDoanhThuongMaiSubtitle: '商业贸易法律咨询',
+      datDaiTitle: '土地',
+      datDaiSubtitle: '土地和房地产法律咨询',
+      honNhanVaGiaDinhTitle: '婚姻与家庭',
+      honNhanVaGiaDinhSubtitle: '婚姻家庭法律咨询',
+      giayPhepConTitle: '子许可证',
+      giayPhepConSubtitle: '子许可证申请咨询',
+      danSuTitle: '民事',
+      danSuSubtitle: '民事法律咨询与解决',
+      hinhSuTitle: '刑事',
+      hinhSuSubtitle: '刑事法律咨询与辩护',
+      phapLyKhacTitle: '其他法律',
+      phapLyKhacSubtitle: '其他法律事务',
+      cacLoiThuongGapTitle: '企业常见错误',
+      cacLoiThuongGapSubtitle: '预防常见法律错误咨询',
+      // Additional Consultation categories
+      dichVuLuatSuRiengTitle: '私人律师服务',
+      dichVuLuatSuRiengSubtitle: '多语言私人律师服务',
+      khaiNiemTuVanThuongXuyenTitle: '常规咨询概念',
+      khaiNiemTuVanThuongXuyenSubtitle: '常规咨询服务介绍',
+      viSaoCanTuVanTitle: '企业为什么需要常规咨询',
+      viSaoCanTuVanSubtitle: '使用常规咨询服务的好处',
+      tuVanPhapLuatThuongXuyenTitle: '企业常规法律咨询',
+      tuVanPhapLuatThuongXuyenSubtitle: '专业常规法律咨询服务',
+      phiDichVuTuVanTitle: '咨询服务费',
+      phiDichVuTuVanSubtitle: '法律咨询服务价格',
+      quyTrinhTuVanTitle: '咨询流程',
+      quyTrinhTuVanSubtitle: '法律咨询工作流程',
+      mauHopDongDichVuTitle: '服务合同模板',
+      mauHopDongDichVuSubtitle: '法律服务合同模板',
+      diemManhYPTitle: 'Youth and Partners的优势',
+      diemManhYPSubtitle: '为什么选择Youth & Partners',
+      phapLyTuVanKhacTitle: '其他咨询法律',
+      phapLyTuVanKhacSubtitle: '其他法律咨询事务',
+      // Lawyer by language
+      luatSuTiengAnhTitle: '英语律师',
+      luatSuTiengAnhSubtitle: '英语律师咨询服务',
+      luatSuTiengNhatTitle: '日语律师',
+      luatSuTiengNhatSubtitle: '日语律师咨询服务',
+      luatSuTiengTrungTitle: '中文律师',
+      luatSuTiengTrungSubtitle: '中文律师咨询服务',
+      // Additional Labor categories
+      hopDongLaoDongDaoTaoTitle: '劳动和培训合同',
+      hopDongLaoDongDaoTaoSubtitle: '劳动和培训合同咨询',
+      xuLyKyLuatTitle: '纪律处分',
+      xuLyKyLuatSubtitle: '劳动纪律处分咨询',
+      laoDongTitle: '劳动',
+      laoDongSubtitle: '劳动法咨询',
+      luongVaPhucLoiTitle: '工资和福利',
+      luongVaPhucLoiSubtitle: '工资和福利咨询',
+      noiQuyThoaUocTitle: '规章和协议',
+      noiQuyThoaUocSubtitle: '劳动规章和集体协议咨询',
+      chamDutHopDongTitle: '合同终止',
+      chamDutHopDongSubtitle: '劳动合同终止咨询',
+      quayRoiTinhDucTitle: '性骚扰',
+      quayRoiTinhDucSubtitle: '性骚扰预防咨询',
+      giayPhepLaoDongTitle: '工作许可证',
+      giayPhepLaoDongSubtitle: '工作许可证申请咨询',
+      phapLyLaoDongKhacTitle: '其他劳动法律',
+      phapLyLaoDongKhacSubtitle: '其他劳动法律事务',
+      // Additional Foreigner categories
+      doanhNghiepVaDauTuSubtitle: '企业和外国投资咨询',
+      hienDienThuongMaiSubtitle: '越南商业存在咨询',
+      dieuChinhDuAnSubtitle: '投资项目调整咨询',
+      chuyenNhuongDuAnSubtitle: '投资项目转让咨询',
+      phapLyNguoiNuocNgoaiSubtitle: '外国人法律咨询',
+      // Additional Evaluation categories
+      khaiNiemDanhGiaSubtitle: '法律评估服务介绍',
+      loiIchDanhGiaSubtitle: '法律评估的好处',
+      quyTrinhDanhGiaSubtitle: '法律评估流程',
+      phiDichVuDanhGiaSubtitle: '法律评估服务价格',
+      dichVuDanhGiaDoanhNghiepSubtitle: '企业法律评估服务',
+      dichVuDanhGiaTienTramSubtitle: '预评估服务',
+      cacBoTieuChuanTNXHSubtitle: '企业社会责任标准',
+      tieuChuanRBASubtitle: 'RBA标准和合规要求',
+    },
+    ja: {
+      // Blog type titles
+      postTitle: '法律ニュース',
+      postSubtitle: 'Youth & Partners法律事務所からの最新法律ニュース',
+      legalTitle: '企業法務',
+      legalSubtitle: '当法律ページでは法的問題の最新情報を提供しています',
+      consultationTitle: '定期法律相談',
+      consultationSubtitle: '定期法律相談サービス - 信頼できるビジネスパートナー',
+      laborTitle: '労働法',
+      laborSubtitle: '企業向け労働法問題の相談と解決',
+      foreignerTitle: '外国投資',
+      foreignerSubtitle: 'ベトナムの外国投資家への包括的な法的支援',
+      evaluationTitle: '法的評価サービス',
+      evaluationSubtitle: '専門的な法的評価、査定、監査サービス',
+      // Category page patterns
+      categoryPrefix: 'カテゴリー：',
+      tagPrefix: 'タグ：',
+      allPostsInCategory: 'このカテゴリーの全記事',
+      // Post categories
+      tinMoiTitle: '最新ニュース',
+      tinMoiSubtitle: '最新の法律ニュース',
+      suKienTitle: 'イベント',
+      suKienSubtitle: 'Youth & Partnersの活動',
+      suKienNoiBoTitle: '社内イベント',
+      suKienNoiBoSubtitle: 'Youth & Partners法律事務所の社内活動',
+      // Legal categories
+      doanhNghiepTitle: '企業法務',
+      doanhNghiepSubtitle: '包括的な企業法務コンサルティング',
+      hopDongTitle: '契約',
+      hopDongSubtitle: '契約作成とコンサルティングサービス',
+      tranhChapTitle: '紛争',
+      tranhChapSubtitle: '商事・民事紛争解決',
+      soHuuTriTueTitle: '知的財産',
+      soHuuTriTueSubtitle: '企業の知的財産権保護',
+      // Consultation categories
+      phapCheThueNgoaiTitle: 'アウトソース法務部',
+      phapCheThueNgoaiSubtitle: '専門的なアウトソース法務部サービス',
+      tuVanThuongXuyenTitle: '定期相談',
+      tuVanThuongXuyenSubtitle: '企業向け定期法律相談パッケージ',
+      luatSuRiengTitle: '個人弁護士',
+      luatSuRiengSubtitle: '多言語個人弁護士サービス',
+      // Labor categories
+      hopDongLaoDongTitle: '労働契約',
+      hopDongLaoDongSubtitle: '労働契約と規則のコンサルティング',
+      tranhChapLaoDongTitle: '労働紛争',
+      tranhChapLaoDongSubtitle: '効果的な労働紛争解決',
+      kyLuatLaoDongTitle: '労働規律',
+      kyLuatLaoDongSubtitle: '法的な労働規律コンサルティング',
+      baoHiemXaHoiTitle: '社会保険',
+      baoHiemXaHoiSubtitle: '社会保険と従業員福利のコンサルティング',
+      nguoiLaoDongNuocNgoaiTitle: '外国人労働者',
+      nguoiLaoDongNuocNgoaiSubtitle: '外国人労働者向け法律相談',
+      thoiGioLamViecTitle: '労働時間',
+      thoiGioLamViecSubtitle: '労働法に基づく労働時間と休憩時間のコンサルティング',
+      // Foreigner categories
+      thanhLapCongTyTitle: 'FDI企業設立',
+      thanhLapMoiDuAnTitle: '新規プロジェクト設立',
+      thanhLapMoiDuAnSubtitle: 'ベトナムにおける新規投資プロジェクト設立コンサルティング',
+      thanhLapCongTySubtitle: '外国投資企業の設立',
+      giayPhepDauTuTitle: '投資許可証',
+      giayPhepDauTuSubtitle: '外国投資家向け投資許可証コンサルティング',
+      maTitle: 'M&A',
+      maSubtitle: 'M&Aコンサルティング',
+      batDongSanTitle: '不動産',
+      batDongSanSubtitle: '外国投資家向け不動産法務コンサルティング',
+      doanhNghiepVaDauTuTitle: '企業と外国投資',
+      hienDienThuongMaiTitle: '商業的プレゼンス',
+      dieuChinhDuAnTitle: '投資プロジェクト調整',
+      chuyenNhuongDuAnTitle: 'プロジェクト譲渡',
+      phapLyNguoiNuocNgoaiTitle: '外国人法務',
+      // Evaluation categories
+      dueDiligenceTitle: 'デューデリジェンス',
+      dueDiligenceSubtitle: '専門的な法的デューデリジェンスサービス',
+      auditLaoDongTitle: '労働監査',
+      auditLaoDongSubtitle: '労働監査とコンプライアンス評価サービス',
+      esgTitle: 'ESG',
+      esgSubtitle: 'ESG評価と持続可能な開発サービス',
+      complianceTitle: 'コンプライアンス評価',
+      complianceSubtitle: '法的コンプライアンス評価とコンサルティングサービス',
+      khaiNiemDanhGiaTitle: '評価の概念',
+      loiIchDanhGiaTitle: '評価のメリット',
+      quyTrinhDanhGiaTitle: '評価プロセス',
+      phiDichVuDanhGiaTitle: '評価サービス料金',
+      dichVuDanhGiaDoanhNghiepTitle: '企業評価サービス',
+      dichVuDanhGiaTienTramTitle: '事前評価サービス',
+      cacBoTieuChuanTNXHTitle: 'CSR基準',
+      tieuChuanRBATitle: 'RBA基準',
+      // Additional Post categories
+      banTinPhapLyTitle: '法律速報',
+      banTinPhapLySubtitle: '最新の法律速報更新',
+      binhLuanPhapLyTitle: '法律コメンタリー',
+      binhLuanPhapLySubtitle: '法律分析とコメンタリー',
+      cacVuViecNoiBatTitle: '注目の案件',
+      cacVuViecNoiBatSubtitle: '注目すべき重要な法律案件',
+      hoiThaoPhapLyTitle: '法律セミナー',
+      hoiThaoPhapLySubtitle: '法律セミナー情報',
+      tinTucPhapLyTitle: '法律ニュース',
+      tinTucPhapLySubtitle: '最新の法律ニュース更新',
+      vanBanPhapLyTitle: '法律文書',
+      vanBanPhapLySubtitle: '重要な法律文書',
+      thongTinTuyenDungTitle: '採用情報',
+      thongTinTuyenDungSubtitle: 'Youth & Partnersでのキャリア機会',
+      // Additional Legal categories
+      kinhDoanhThuongMaiTitle: '商業ビジネス',
+      kinhDoanhThuongMaiSubtitle: '商業ビジネス法務コンサルティング',
+      datDaiTitle: '土地',
+      datDaiSubtitle: '土地・不動産法務コンサルティング',
+      honNhanVaGiaDinhTitle: '婚姻と家族',
+      honNhanVaGiaDinhSubtitle: '婚姻・家族法務コンサルティング',
+      giayPhepConTitle: 'サブライセンス',
+      giayPhepConSubtitle: 'サブライセンス申請コンサルティング',
+      danSuTitle: '民事',
+      danSuSubtitle: '民事法務コンサルティングと解決',
+      hinhSuTitle: '刑事',
+      hinhSuSubtitle: '刑事法務コンサルティングと弁護',
+      phapLyKhacTitle: 'その他の法律',
+      phapLyKhacSubtitle: 'その他の法律事項',
+      cacLoiThuongGapTitle: '企業の一般的なミス',
+      cacLoiThuongGapSubtitle: '一般的な法律ミス防止コンサルティング',
+      // Additional Consultation categories
+      dichVuLuatSuRiengTitle: '個人弁護士サービス',
+      dichVuLuatSuRiengSubtitle: '多言語個人弁護士サービス',
+      khaiNiemTuVanThuongXuyenTitle: '定期相談の概念',
+      khaiNiemTuVanThuongXuyenSubtitle: '定期相談サービスの紹介',
+      viSaoCanTuVanTitle: '企業に定期相談が必要な理由',
+      viSaoCanTuVanSubtitle: '定期相談サービス利用のメリット',
+      tuVanPhapLuatThuongXuyenTitle: '企業向け定期法律相談',
+      tuVanPhapLuatThuongXuyenSubtitle: '専門的な定期法律相談サービス',
+      phiDichVuTuVanTitle: '相談サービス料金',
+      phiDichVuTuVanSubtitle: '法律相談サービス価格',
+      quyTrinhTuVanTitle: '相談プロセス',
+      quyTrinhTuVanSubtitle: '法律相談ワークフロープロセス',
+      mauHopDongDichVuTitle: 'サービス契約テンプレート',
+      mauHopDongDichVuSubtitle: '法律サービス契約テンプレート',
+      diemManhYPTitle: 'Youth and Partnersの強み',
+      diemManhYPSubtitle: 'Youth & Partnersを選ぶ理由',
+      phapLyTuVanKhacTitle: 'その他の相談法務',
+      phapLyTuVanKhacSubtitle: 'その他の法律相談事項',
+      // Lawyer by language
+      luatSuTiengAnhTitle: '英語対応弁護士',
+      luatSuTiengAnhSubtitle: '英語対応弁護士コンサルティングサービス',
+      luatSuTiengNhatTitle: '日本語対応弁護士',
+      luatSuTiengNhatSubtitle: '日本語対応弁護士コンサルティングサービス',
+      luatSuTiengTrungTitle: '中国語対応弁護士',
+      luatSuTiengTrungSubtitle: '中国語対応弁護士コンサルティングサービス',
+      // Additional Labor categories
+      hopDongLaoDongDaoTaoTitle: '労働・研修契約',
+      hopDongLaoDongDaoTaoSubtitle: '労働・研修契約コンサルティング',
+      xuLyKyLuatTitle: '懲戒処分',
+      xuLyKyLuatSubtitle: '労働懲戒処分コンサルティング',
+      laoDongTitle: '労働',
+      laoDongSubtitle: '労働法コンサルティング',
+      luongVaPhucLoiTitle: '給与と福利厚生',
+      luongVaPhucLoiSubtitle: '給与と福利厚生コンサルティング',
+      noiQuyThoaUocTitle: '規則と協定',
+      noiQuyThoaUocSubtitle: '労働規則と労働協約コンサルティング',
+      chamDutHopDongTitle: '契約解除',
+      chamDutHopDongSubtitle: '労働契約解除コンサルティング',
+      quayRoiTinhDucTitle: 'セクハラ',
+      quayRoiTinhDucSubtitle: 'セクハラ防止コンサルティング',
+      giayPhepLaoDongTitle: '労働許可証',
+      giayPhepLaoDongSubtitle: '労働許可証申請コンサルティング',
+      phapLyLaoDongKhacTitle: 'その他の労働法務',
+      phapLyLaoDongKhacSubtitle: 'その他の労働法務事項',
+      // Additional Foreigner categories
+      doanhNghiepVaDauTuSubtitle: '企業と外国投資コンサルティング',
+      hienDienThuongMaiSubtitle: 'ベトナムの商業的プレゼンスコンサルティング',
+      dieuChinhDuAnSubtitle: '投資プロジェクト調整コンサルティング',
+      chuyenNhuongDuAnSubtitle: '投資プロジェクト譲渡コンサルティング',
+      phapLyNguoiNuocNgoaiSubtitle: '外国人向け法務コンサルティング',
+      // Additional Evaluation categories
+      khaiNiemDanhGiaSubtitle: '法的評価サービスの紹介',
+      loiIchDanhGiaSubtitle: '法的評価のメリット',
+      quyTrinhDanhGiaSubtitle: '法的評価プロセス',
+      phiDichVuDanhGiaSubtitle: '法的評価サービス価格',
+      dichVuDanhGiaDoanhNghiepSubtitle: '企業法的評価サービス',
+      dichVuDanhGiaTienTramSubtitle: '事前評価サービス',
+      cacBoTieuChuanTNXHSubtitle: '企業の社会的責任基準',
+      tieuChuanRBASubtitle: 'RBA基準とコンプライアンス要件',
+    },
+    ko: {
+      // Blog type titles
+      postTitle: '법률 뉴스',
+      postSubtitle: 'Youth & Partners 로펌의 최신 법률 뉴스',
+      legalTitle: '기업 법률',
+      legalSubtitle: '저희 법률 페이지는 법적 문제에 대한 최신 업데이트를 제공합니다',
+      consultationTitle: '정기 법률 상담',
+      consultationSubtitle: '정기 법률 상담 서비스 - 신뢰할 수 있는 비즈니스 파트너',
+      laborTitle: '노동법',
+      laborSubtitle: '기업을 위한 노동법 문제 상담 및 해결',
+      foreignerTitle: '외국인 투자',
+      foreignerSubtitle: '베트남 외국인 투자자를 위한 종합 법률 지원',
+      evaluationTitle: '법률 평가 서비스',
+      evaluationSubtitle: '전문적인 법률 평가, 감정 및 감사 서비스',
+      // Category page patterns
+      categoryPrefix: '카테고리:',
+      tagPrefix: '태그:',
+      allPostsInCategory: '이 카테고리의 모든 글',
+      // Post categories
+      tinMoiTitle: '최신 뉴스',
+      tinMoiSubtitle: '최신 법률 뉴스',
+      suKienTitle: '이벤트',
+      suKienSubtitle: 'Youth & Partners의 활동',
+      suKienNoiBoTitle: '내부 이벤트',
+      suKienNoiBoSubtitle: 'Youth & Partners 로펌의 내부 활동',
+      // Legal categories
+      doanhNghiepTitle: '기업 법률',
+      doanhNghiepSubtitle: '종합 기업 법률 컨설팅',
+      hopDongTitle: '계약',
+      hopDongSubtitle: '계약 작성 및 컨설팅 서비스',
+      tranhChapTitle: '분쟁',
+      tranhChapSubtitle: '상사 및 민사 분쟁 해결',
+      soHuuTriTueTitle: '지적재산권',
+      soHuuTriTueSubtitle: '기업의 지적재산권 보호',
+      // Consultation categories
+      phapCheThueNgoaiTitle: '아웃소싱 법무팀',
+      phapCheThueNgoaiSubtitle: '전문 아웃소싱 법무팀 서비스',
+      tuVanThuongXuyenTitle: '정기 상담',
+      tuVanThuongXuyenSubtitle: '기업을 위한 정기 법률 상담 패키지',
+      luatSuRiengTitle: '개인 변호사',
+      luatSuRiengSubtitle: '다국어 개인 변호사 서비스',
+      // Labor categories
+      hopDongLaoDongTitle: '근로계약',
+      hopDongLaoDongSubtitle: '근로계약 및 규정 컨설팅',
+      tranhChapLaoDongTitle: '노동 분쟁',
+      tranhChapLaoDongSubtitle: '효과적인 노동 분쟁 해결',
+      kyLuatLaoDongTitle: '노동 규율',
+      kyLuatLaoDongSubtitle: '합법적인 노동 규율 컨설팅',
+      baoHiemXaHoiTitle: '사회보험',
+      baoHiemXaHoiSubtitle: '사회보험 및 직원 복지 컨설팅',
+      nguoiLaoDongNuocNgoaiTitle: '외국인 근로자',
+      nguoiLaoDongNuocNgoaiSubtitle: '외국인 근로자를 위한 법률 상담',
+      thoiGioLamViecTitle: '근무 시간',
+      thoiGioLamViecSubtitle: '노동법에 따른 근무 시간 및 휴식 시간 상담',
+      // Foreigner categories
+      thanhLapCongTyTitle: 'FDI 회사 설립',
+      thanhLapMoiDuAnTitle: '신규 프로젝트 설립',
+      thanhLapMoiDuAnSubtitle: '베트남 신규 투자 프로젝트 설립 상담',
+      thanhLapCongTySubtitle: '외국인 투자 기업 설립',
+      giayPhepDauTuTitle: '투자 허가증',
+      giayPhepDauTuSubtitle: '외국인 투자자를 위한 투자 허가증 컨설팅',
+      maTitle: 'M&A',
+      maSubtitle: 'M&A 컨설팅',
+      batDongSanTitle: '부동산',
+      batDongSanSubtitle: '외국인 투자자를 위한 부동산 법률 컨설팅',
+      doanhNghiepVaDauTuTitle: '기업 및 외국인 투자',
+      hienDienThuongMaiTitle: '상업적 존재',
+      dieuChinhDuAnTitle: '투자 프로젝트 조정',
+      chuyenNhuongDuAnTitle: '프로젝트 양도',
+      phapLyNguoiNuocNgoaiTitle: '외국인 법률',
+      // Evaluation categories
+      dueDiligenceTitle: '실사',
+      dueDiligenceSubtitle: '전문적인 법률 실사 서비스',
+      auditLaoDongTitle: '노동 감사',
+      auditLaoDongSubtitle: '노동 감사 및 준법 평가 서비스',
+      esgTitle: 'ESG',
+      esgSubtitle: 'ESG 평가 및 지속가능한 개발 서비스',
+      complianceTitle: '준법 평가',
+      complianceSubtitle: '법률 준법 평가 및 컨설팅 서비스',
+      khaiNiemDanhGiaTitle: '평가 개념',
+      loiIchDanhGiaTitle: '평가의 이점',
+      quyTrinhDanhGiaTitle: '평가 프로세스',
+      phiDichVuDanhGiaTitle: '평가 서비스 비용',
+      dichVuDanhGiaDoanhNghiepTitle: '기업 평가 서비스',
+      dichVuDanhGiaTienTramTitle: '사전 평가 서비스',
+      cacBoTieuChuanTNXHTitle: 'CSR 표준',
+      tieuChuanRBATitle: 'RBA 표준',
+      // Additional Post categories
+      banTinPhapLyTitle: '법률 속보',
+      banTinPhapLySubtitle: '최신 법률 속보 업데이트',
+      binhLuanPhapLyTitle: '법률 코멘터리',
+      binhLuanPhapLySubtitle: '법률 분석 및 코멘터리',
+      cacVuViecNoiBatTitle: '주요 사건',
+      cacVuViecNoiBatSubtitle: '주목할 만한 중요 법률 사건',
+      hoiThaoPhapLyTitle: '법률 세미나',
+      hoiThaoPhapLySubtitle: '법률 세미나 정보',
+      tinTucPhapLyTitle: '법률 뉴스',
+      tinTucPhapLySubtitle: '최신 법률 뉴스 업데이트',
+      vanBanPhapLyTitle: '법률 문서',
+      vanBanPhapLySubtitle: '중요 법률 문서',
+      thongTinTuyenDungTitle: '채용 정보',
+      thongTinTuyenDungSubtitle: 'Youth & Partners 채용 기회',
+      // Additional Legal categories
+      kinhDoanhThuongMaiTitle: '상업 비즈니스',
+      kinhDoanhThuongMaiSubtitle: '상업 비즈니스 법률 컨설팅',
+      datDaiTitle: '토지',
+      datDaiSubtitle: '토지 및 부동산 법률 컨설팅',
+      honNhanVaGiaDinhTitle: '결혼과 가족',
+      honNhanVaGiaDinhSubtitle: '혼인 및 가족 법률 컨설팅',
+      giayPhepConTitle: '하위 라이선스',
+      giayPhepConSubtitle: '하위 라이선스 신청 컨설팅',
+      danSuTitle: '민사',
+      danSuSubtitle: '민사 법률 컨설팅 및 해결',
+      hinhSuTitle: '형사',
+      hinhSuSubtitle: '형사 법률 컨설팅 및 변호',
+      phapLyKhacTitle: '기타 법률',
+      phapLyKhacSubtitle: '기타 법률 사항',
+      cacLoiThuongGapTitle: '기업의 일반적인 실수',
+      cacLoiThuongGapSubtitle: '일반적인 법률 실수 예방 컨설팅',
+      // Additional Consultation categories
+      dichVuLuatSuRiengTitle: '개인 변호사 서비스',
+      dichVuLuatSuRiengSubtitle: '다국어 개인 변호사 서비스',
+      khaiNiemTuVanThuongXuyenTitle: '정기 상담 개념',
+      khaiNiemTuVanThuongXuyenSubtitle: '정기 상담 서비스 소개',
+      viSaoCanTuVanTitle: '기업에 정기 상담이 필요한 이유',
+      viSaoCanTuVanSubtitle: '정기 상담 서비스 이용의 장점',
+      tuVanPhapLuatThuongXuyenTitle: '기업 정기 법률 상담',
+      tuVanPhapLuatThuongXuyenSubtitle: '전문 정기 법률 상담 서비스',
+      phiDichVuTuVanTitle: '상담 서비스 비용',
+      phiDichVuTuVanSubtitle: '법률 상담 서비스 가격',
+      quyTrinhTuVanTitle: '상담 프로세스',
+      quyTrinhTuVanSubtitle: '법률 상담 워크플로우 프로세스',
+      mauHopDongDichVuTitle: '서비스 계약 템플릿',
+      mauHopDongDichVuSubtitle: '법률 서비스 계약 템플릿',
+      diemManhYPTitle: 'Youth and Partners의 강점',
+      diemManhYPSubtitle: 'Youth & Partners를 선택하는 이유',
+      phapLyTuVanKhacTitle: '기타 상담 법률',
+      phapLyTuVanKhacSubtitle: '기타 법률 상담 사항',
+      // Lawyer by language
+      luatSuTiengAnhTitle: '영어 변호사',
+      luatSuTiengAnhSubtitle: '영어 변호사 컨설팅 서비스',
+      luatSuTiengNhatTitle: '일본어 변호사',
+      luatSuTiengNhatSubtitle: '일본어 변호사 컨설팅 서비스',
+      luatSuTiengTrungTitle: '중국어 변호사',
+      luatSuTiengTrungSubtitle: '중국어 변호사 컨설팅 서비스',
+      // Additional Labor categories
+      hopDongLaoDongDaoTaoTitle: '근로 및 교육 계약',
+      hopDongLaoDongDaoTaoSubtitle: '근로 및 교육 계약 컨설팅',
+      xuLyKyLuatTitle: '징계 처분',
+      xuLyKyLuatSubtitle: '노동 징계 처분 컨설팅',
+      laoDongTitle: '노동',
+      laoDongSubtitle: '노동법 컨설팅',
+      luongVaPhucLoiTitle: '급여 및 복리후생',
+      luongVaPhucLoiSubtitle: '급여 및 복리후생 컨설팅',
+      noiQuyThoaUocTitle: '규정 및 협약',
+      noiQuyThoaUocSubtitle: '노동 규정 및 단체 협약 컨설팅',
+      chamDutHopDongTitle: '계약 해지',
+      chamDutHopDongSubtitle: '근로 계약 해지 컨설팅',
+      quayRoiTinhDucTitle: '성희롱',
+      quayRoiTinhDucSubtitle: '성희롱 예방 컨설팅',
+      giayPhepLaoDongTitle: '취업 허가증',
+      giayPhepLaoDongSubtitle: '취업 허가증 신청 컨설팅',
+      phapLyLaoDongKhacTitle: '기타 노동 법률',
+      phapLyLaoDongKhacSubtitle: '기타 노동 법률 사항',
+      // Additional Foreigner categories
+      doanhNghiepVaDauTuSubtitle: '기업 및 외국인 투자 컨설팅',
+      hienDienThuongMaiSubtitle: '베트남 상업적 존재 컨설팅',
+      dieuChinhDuAnSubtitle: '투자 프로젝트 조정 컨설팅',
+      chuyenNhuongDuAnSubtitle: '투자 프로젝트 양도 컨설팅',
+      phapLyNguoiNuocNgoaiSubtitle: '외국인 법률 컨설팅',
+      // Additional Evaluation categories
+      khaiNiemDanhGiaSubtitle: '법률 평가 서비스 소개',
+      loiIchDanhGiaSubtitle: '법률 평가의 이점',
+      quyTrinhDanhGiaSubtitle: '법률 평가 프로세스',
+      phiDichVuDanhGiaSubtitle: '법률 평가 서비스 가격',
+      dichVuDanhGiaDoanhNghiepSubtitle: '기업 법률 평가 서비스',
+      dichVuDanhGiaTienTramSubtitle: '사전 평가 서비스',
+      cacBoTieuChuanTNXHSubtitle: '기업의 사회적 책임 표준',
+      tieuChuanRBASubtitle: 'RBA 표준 및 준법 요건',
+    },
+  },
+};
+
+/**
+ * Merge JSON translations with additional translations
+ * JSON takes precedence for overlapping keys (source of truth)
+ */
+function mergeTranslations() {
+  const merged: Record<string, Record<LocaleKey, unknown>> = { ...additionalTranslations };
+  
+  // Merge JSON translations, overwriting additional where they overlap
+  for (const [section, locales] of Object.entries(jsonTranslations)) {
+    if (!merged[section]) {
+      merged[section] = locales as Record<LocaleKey, unknown>;
+    } else {
+      // Deep merge each locale
+      for (const [locale, data] of Object.entries(locales)) {
+        if (!merged[section][locale as LocaleKey]) {
+          merged[section][locale as LocaleKey] = data;
+        } else {
+          // Merge objects, JSON takes precedence
+          merged[section][locale as LocaleKey] = {
+            ...(merged[section][locale as LocaleKey] as object),
+            ...(data as object),
+          };
+        }
+      }
+    }
+  }
+  
+  return merged;
+}
+
+export const translations = mergeTranslations();
+
+export default translations;

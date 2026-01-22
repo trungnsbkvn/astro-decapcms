@@ -1,0 +1,29 @@
+---
+export const prerender = true;
+
+import Layout from '~/layouts/Layout.astro';
+import { getHomePermalink } from '~/utils/blog-permalinks';
+
+const metadata = {
+  title: 'Gửi Email thành công',
+  description: 'Thông tin của bạn đã được gửi tới Youth & Partners.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="flex items-center h-full p-16 notranslate" translate="no">
+    <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
+      <div class="max-w-md text-center">
+        <h2 class="mb-8 font-bold text-5xl">
+          <span class="sr-only">Email</span>
+          <span class="text-primary" data-i18n="forms.success">Thành công</span>
+        </h2>
+        <p class="text-3xl font-semibold md:text-3xl" data-i18n="forms.emailSent">Thông tin của bạn đã được gửi tới Youth & Partners.</p>
+        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400" data-i18n="forms.responseTime">
+          Chúng tôi sẽ phản hồi bạn trong thời gian sớm nhất.
+        </p>
+        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4" data-i18n="error.backToHome">Trở về trang chủ</a>
+      </div>
+    </div>
+  </section>
+</Layout>

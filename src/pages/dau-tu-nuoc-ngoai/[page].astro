@@ -1,0 +1,57 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Layout from '~/layouts/PageLayout.astro';
+import BlogList from '~/components/blog/List.astro';
+import Headline from '~/components/blog/Headline.astro';
+import Pagination from '~/components/blog/Pagination.astro';
+
+import { blogListRobots, getStaticPathsForBlogPagination } from '~/utils/blog';
+import { getRootPathForType } from '~/utils/blog-permalinks';
+import { getBlogTypeSEO, getBlogListDescription, getKeywordsString } from '~/utils/blog-seo';
+
+// Pre-render all pagination pages at build time
+export const prerender = true;
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return await getStaticPathsForBlogPagination('foreigner');
+};
+
+const TYPE = 'foreigner';
+const ROOT_PATH = '/dau-tu-nuoc-ngoai';
+
+const { page } = Astro.params;
+const pageNumber = parseInt(page, 10);
+const { posts: rawPosts, totalPages, currentPage } = Astro.props;
+
+const blogSEO = getBlogTypeSEO(TYPE);
+
+const posts = rawPosts.map((post: any) => ({
+  ...post,
+  permalink: `${getRootPathForType(post.type || TYPE)}/${post.permalink}`,
+}));
+const prevUrl = pageNumber === 2 ? ROOT_PATH : `${ROOT_PATH}/${pageNumber - 1}`;
+const nextUrl = pageNumber < totalPages ? `${ROOT_PATH}/${pageNumber + 1}` : undefined;
+
+const metadata = {
+  title: `${blogSEO.title} — Trang ${pageNumber}`,
+  description: getBlogListDescription(TYPE, pageNumber),
+  keywords: getKeywordsString(blogSEO.keywords),
+  robots: {
+    index: false,
+    follow: blogListRobots?.follow,
+  },
+  openGraph: {
+    type: 'article',
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <Headline subtitle={blogSEO.subtitle} i18nTitle="blog.foreignerTitle" i18nSubtitle="blog.foreignerSubtitle">
+      {blogSEO.title}
+    </Headline>
+    <BlogList posts={posts} />
+    <Pagination prevUrl={prevUrl} nextUrl={nextUrl} />
+  </section>
+</Layout>

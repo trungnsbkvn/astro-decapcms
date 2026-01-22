@@ -1,0 +1,167 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Button from '~/components/ui/Button.astro';
+import type { Testimonials as Props } from '~/types';
+
+// Import sprite data
+import spriteData from 'public/assets/sprites/testimonials-sprite.json';
+
+const {
+  title = '',
+  subtitle = '',
+  tagline = '',
+  testimonials = [],
+  callToAction,
+  
+  i18nTitle,
+  i18nSubtitle,
+  i18nTagline,
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+
+// Type for image object
+interface ImageObject {
+  src?: string;
+  alt?: string;
+}
+
+// Helper to get sprite position from image alt or name
+function getSpritePosition(image: ImageObject | string | undefined, name: string) {
+  if (!image || typeof image === 'string') return null;
+  
+  // Extract filename from src (e.g., "~/assets/images/customers/trung.png" → "trung")
+  const srcFilename = image.src 
+    ? image.src.split('/').pop()?.replace(/\.[^.]+$/, '') || ''
+    : '';
+  
+  // Try to find by filename first, then alt text, then name
+  const searchTerms = [srcFilename, image.alt, name].filter(Boolean);
+  
+  for (const term of searchTerms) {
+    // Normalize: lowercase, remove special chars, replace spaces with dash
+    const key = term!
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
+      .replace(/[đĐ]/g, 'd')
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
+    
+    // Check exact match first
+    if (spriteData.avatars[key as keyof typeof spriteData.avatars]) {
+      return spriteData.avatars[key as keyof typeof spriteData.avatars];
+    }
+    
+    // Check partial matches
+    for (const [spriteKey, data] of Object.entries(spriteData.avatars)) {
+      if (key.includes(spriteKey) || spriteKey.includes(key)) {
+        return data;
+      }
+    }
+  }
+  
+  return null;
+}
+
+// Sprite display size (45px with 2x retina, sprite is 90px)
+const displaySize = spriteData.avatarSize / 2; // 45px
+const scale = displaySize / spriteData.avatarSize; // 0.5
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} i18nTitle={i18nTitle} i18nSubtitle={i18nSubtitle} i18nTagline={i18nTagline} />
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {
+      testimonials &&
+        testimonials.map(({ title, testimonial, name, job, image, i18nJob }) => {
+          // Cast image to our expected type (from unknown in Testimonial interface)
+          const img = image as ImageObject | string | undefined;
+          const spritePos = getSpritePosition(img, name || '');
+          const imgSrc = (typeof img === 'object' && img?.src) ? String(img.src) : '';
+          const imgAlt = (typeof img === 'object' && img?.alt) ? img.alt : (name || '');
+          return (
+          <div class="flex h-auto intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+            <div class="flex flex-col p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600">
+              {title && <h2 class="text-lg font-medium leading-6 pb-4">{title}</h2>}
+              {testimonial && (
+                <blockquote class="flex-auto user-content">
+                  <p class="text-muted">" {testimonial} "</p>
+                </blockquote>
+              )}
+
+              <hr class="border-slate-200 dark:border-slate-600 my-4" />
+
+              <div class="flex items-center">
+                {spritePos ? (
+                  <div 
+                    class="testimonial-avatar flex-shrink-0"
+                    style={`
+                      width: ${displaySize}px;
+                      height: ${displaySize}px;
+                      background-image: url('${spriteData.sprite}');
+                      background-position: -${spritePos.x * scale}px -${spritePos.y * scale}px;
+                      background-size: ${spriteData.width * scale}px ${spriteData.height * scale}px;
+                    `}
+                    role="img"
+                    aria-label={name}
+                  />
+                ) : img && (
+                  <div class="h-10 w-10 rounded-full border border-slate-200 dark:border-slate-600 overflow-hidden flex-shrink-0">
+                    {typeof img === 'string' ? (
+                      <Fragment set:html={img} />
+                    ) : (
+                      <img
+                        class="h-10 w-10 rounded-full object-cover"
+                        src={imgSrc}
+                        alt={imgAlt}
+                        width={40}
+                        height={40}
+                        loading="lazy"
+                      />
+                    )}
+                  </div>
+                )}
+
+                <div class="grow ml-3 rtl:ml-0 rtl:mr-3">
+                  {name && <p class="text-base font-semibold notranslate" translate="no">{name}</p>}
+                  {job && (
+                    <p 
+                      class={`text-xs text-muted ${i18nJob ? 'notranslate' : ''}`}
+                      {...(i18nJob ? { 'data-i18n': i18nJob, 'translate': 'no' } : {})}
+                    >{job}</p>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        )})
+    }
+  </div>
+  {
+    callToAction && (
+      <div class="flex justify-center mx-auto w-fit mt-8 md:mt-12 font-medium notranslate" translate="no">
+        <Button {...callToAction} />
+      </div>
+    )
+  }
+</WidgetWrapper>
+
+<style>
+  .testimonial-avatar {
+    border-radius: 50%;
+    border: 1px solid rgb(226 232 240); /* slate-200 */
+    flex-shrink: 0;
+  }
+  
+  :global(.dark) .testimonial-avatar {
+    border-color: rgb(71 85 105); /* slate-600 */
+  }
+</style>

@@ -1,0 +1,443 @@
+---
+/**
+ * Language Selector Component - Optimized Hybrid Translation System
+ * 
+ * PERFORMANCE OPTIMIZED:
+ * - Zero JavaScript payload for Vietnamese (default) users
+ * - Lazy-loads translation data only when user switches language
+ * - Uses localStorage for persistent language preference
+ * - i18n for UI elements (menu, footer, breadcrumbs)
+ * - Google Translate ONLY for user content (posts, news, FAQ)
+ */
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  class?: string;
+  compact?: boolean;
+}
+
+const { class: className = '', compact = false } = Astro.props;
+
+const languages = [
+  { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳', gtCode: 'vi' },
+  { code: 'en', name: 'English', flag: '🇬🇧', gtCode: 'en' },
+  { code: 'zh', name: '中文', flag: '🇨🇳', gtCode: 'zh-CN' },
+  { code: 'ja', name: '日本語', flag: '🇯🇵', gtCode: 'ja' },
+  { code: 'ko', name: '한국어', flag: '🇰🇷', gtCode: 'ko' },
+];
+---
+
+<div class:list={['language-selector relative notranslate', className]} data-language-selector translate="no">
+  <button
+    type="button"
+    class:list={[
+      'lang-toggle flex items-center gap-1.5 rounded-lg',
+      'hover:bg-gray-100 dark:hover:bg-gray-800',
+      'transition-colors duration-200',
+      'text-sm font-medium text-gray-700 dark:text-gray-300',
+      compact ? 'p-2' : 'px-3 py-2'
+    ]}
+    aria-label="Select language"
+  >
+    <Icon name="tabler:world" class="w-4 h-4" />
+    <span class="current-lang-code text-xs">VN</span>
+    <Icon name="tabler:chevron-down" class="w-3 h-3 transition-transform duration-200" />
+  </button>
+
+  <div class="lang-dropdown absolute right-0 mt-2 w-44 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible transform scale-95 transition-all duration-200 z-50" role="menu">
+    {languages.map((lang) => (
+      <button
+        type="button"
+        class="lang-option w-full flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors notranslate"
+        data-lang={lang.code}
+        data-gt-code={lang.gtCode}
+        role="menuitem"
+        translate="no"
+      >
+        <span class="text-lg leading-none">{lang.flag}</span>
+        <span class="flex-1 text-left">{lang.name}</span>
+        <Icon name="tabler:check" class="w-4 h-4 opacity-0 check-icon text-primary" />
+      </button>
+    ))}
+  </div>
+</div>
+
+<style>
+  .language-selector.open .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+  .language-selector.open .lang-toggle svg:last-child {
+    transform: rotate(180deg);
+  }
+  .lang-option.active {
+    background-color: rgb(243 244 246);
+  }
+  .lang-option.active .check-icon {
+    opacity: 1;
+  }
+  .dark .lang-option.active {
+    background-color: rgb(55 65 81);
+  }
+</style>
+
+<script>
+/**
+ * Language Selector Script - Optimized for Vietnamese (default) users
+ * 
+ * Performance Strategy:
+ * 1. Vietnamese users: Dropdown only, NO translation logic loaded
+ * 2. Non-Vietnamese users: Lazy load i18n data on demand
+ * 3. Cache translation data in sessionStorage
+ */
+
+const LANG_KEY = 'site-language';
+const CACHE_KEY = 'i18n-cache-v3';
+const langDisplayMap: Record<string, string> = { 'vi': 'VN', 'en': 'EN', 'zh-CN': 'CN', 'ja': 'JP', 'ko': 'KR' };
+
+// Lazy-loaded translation data (only for non-Vietnamese)
+let translationsCache: Record<string, Record<string, string>> | null = null;
+let textToKeyMapCache: Record<string, string> | null = null;
+let normalizedTextMap: Map<string, string> | null = null;
+
+function getSavedLang(): string {
+  try { return localStorage.getItem(LANG_KEY) || 'vi'; } catch { return 'vi'; }
+}
+
+function saveLang(lang: string): void {
+  try { localStorage.setItem(LANG_KEY, lang); } catch {}
+}
+
+function clearGTCookie(): void {
+  const paths = ['/', window.location.hostname, '.yplawfirm.vn'];
+  paths.forEach(p => {
+    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/` + (p !== '/' ? `; domain=${p}` : '');
+  });
+}
+
+function setGTCookie(lang: string): void {
+  clearGTCookie();
+  if (lang !== 'vi') {
+    const val = `/vi/${lang}`;
+    ['/'].forEach(p => { document.cookie = `googtrans=${val}; path=${p}; max-age=31536000`; });
+  }
+}
+
+async function loadI18nData(lang: string): Promise<boolean> {
+  if (lang === 'vi') return true;
+  
+  // Check sessionStorage cache first
+  try {
+    const cached = sessionStorage.getItem(`${CACHE_KEY}-${lang}`);
+    if (cached) {
+      const data = JSON.parse(cached);
+      if (data.translations && Object.keys(data.translations).length > 0) {
+        translationsCache = data.translations;
+        textToKeyMapCache = data.textToKeyMap;
+        buildNormalizedMap();
+        return true;
+      }
+    }
+  } catch {}
+  
+  // Fetch from API - updated for static site with dynamic paths
+  try {
+    const res = await fetch(`/api/i18n/${encodeURIComponent(lang)}.json`);
+    if (!res.ok) {
+      console.warn('i18n API returned non-OK status:', res.status);
+      return false;
+    }
+    
+    const data = await res.json();
+    
+    // Validate response has actual data
+    if (!data.translations || Object.keys(data.translations).length === 0) {
+      console.warn('i18n API returned empty translations');
+      return false;
+    }
+    
+    translationsCache = data.translations;
+    textToKeyMapCache = data.textToKeyMap;
+    buildNormalizedMap();
+    
+    // Cache in sessionStorage
+    try {
+      sessionStorage.setItem(`${CACHE_KEY}-${lang}`, JSON.stringify(data));
+    } catch {}
+    
+    return true;
+  } catch (e) {
+    console.warn('Failed to load i18n data:', e);
+    return false;
+  }
+}
+
+function buildNormalizedMap(): void {
+  if (!textToKeyMapCache) return;
+  normalizedTextMap = new Map();
+  for (const [text, key] of Object.entries(textToKeyMapCache)) {
+    normalizedTextMap.set(normalizeText(text), key);
+  }
+}
+
+function normalizeText(text: string): string {
+  return text.replace(/\s+/g, ' ').trim();
+}
+
+function getTranslation(_lang: string, key: string): string | null {
+  if (!translationsCache) return null;
+  // API already returns flattened translations for the requested language
+  const [section, subKey] = key.split('.');
+  if (!section || !subKey) return null;
+  const sectionData = translationsCache[section];
+  if (!sectionData) return null;
+  const value = sectionData[subKey];
+  return value !== undefined ? value : null;
+}
+
+function translateTextNode(node: Text, lang: string): boolean {
+  if (!textToKeyMapCache || !normalizedTextMap) return false;
+  const text = node.textContent?.trim();
+  if (!text) return false;
+
+  const cleanText = text.replace(/^[•·\-\*\u2022\u2023\u25E6\u2043\u2219]\s*/, '').trim();
+  let key = textToKeyMapCache[text] || textToKeyMapCache[cleanText];
+  
+  if (!key) {
+    const normalizedText = normalizeText(text);
+    const normalizedCleanText = normalizeText(cleanText);
+    key = normalizedTextMap.get(normalizedText) || normalizedTextMap.get(normalizedCleanText) || '';
+    
+    if (!key && text.length > 50) {
+      for (const [mapText, mapKey] of Object.entries(textToKeyMapCache)) {
+        const normalizedMapText = normalizeText(mapText);
+        if (normalizedText.startsWith(normalizedMapText.substring(0, 50)) ||
+            normalizedMapText.startsWith(normalizedText.substring(0, 50))) {
+          key = mapKey;
+          break;
+        }
+      }
+    }
+  }
+  
+  if (key) {
+    const translation = getTranslation(lang, key);
+    if (translation && node.textContent) {
+      const leadingBullet = text.match(/^[•·\-\*\u2022\u2023\u25E6\u2043\u2219]\s*/);
+      node.textContent = leadingBullet ? leadingBullet[0] + translation : translation;
+      return true;
+    }
+  }
+  return false;
+}
+
+function translateElement(element: Element, lang: string): void {
+  if (element.classList.contains('user-content') || element.hasAttribute('data-user-content')) return;
+  
+  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    const node = walker.currentNode as Text;
+    const parent = node.parentElement;
+    if (parent?.closest('.user-content, [data-user-content]')) continue;
+    if (parent?.hasAttribute('data-i18n')) continue;
+    if (element.matches('nav[aria-label="Breadcrumb"]') && !parent?.classList.contains('notranslate')) continue;
+    translateTextNode(node, lang);
+  }
+}
+
+function applyTranslations(lang: string): void {
+  if (lang === 'vi' || !translationsCache) return;
+
+  // Translate data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (!key) return;
+    const translation = getTranslation(lang, key);
+    if (translation == null) return;
+    
+    const hasIcons = el.querySelector('svg, img, .icon');
+    const translationHasHtml = /<[^>]+>/.test(translation);
+    const styledTextSpan = el.querySelector('span[class]');
+    
+    if (hasIcons) {
+      let replaced = false;
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      while (walker.nextNode()) {
+        const node = walker.currentNode as Text;
+        if (!replaced && node.textContent?.trim()) {
+          node.textContent = translation;
+          replaced = true;
+        } else if (replaced && node.textContent?.trim()) {
+          node.textContent = '';
+        }
+      }
+    } else if (translationHasHtml) {
+      el.innerHTML = translation;
+    } else if (styledTextSpan && !styledTextSpan.querySelector('*')) {
+      styledTextSpan.textContent = translation;
+    } else {
+      el.innerHTML = translation.includes('\n') 
+        ? translation.replace(/\n\n/g, '<br /><br />').replace(/\n/g, '<br />') 
+        : translation;
+    }
+  });
+
+  // Translate placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (key) {
+      const translation = getTranslation(lang, key);
+      if (translation) el.setAttribute('placeholder', translation);
+    }
+  });
+
+  // Translate multilingual names
+  document.querySelectorAll('.multilang-name').forEach(el => {
+    const langKey = lang === 'zh-CN' ? 'zh' : lang;
+    const localizedName = el.getAttribute(`data-name-${langKey}`);
+    if (localizedName) el.textContent = localizedName;
+  });
+
+  // Translate header, footer, nav
+  const header = document.querySelector('header');
+  if (header) translateElement(header, lang);
+  
+  const footer = document.querySelector('footer');
+  if (footer) translateElement(footer, lang);
+  
+  document.querySelectorAll('nav').forEach(el => translateElement(el, lang));
+}
+
+function loadGoogleTranslate(targetLang: string): void {
+  const win = window as any;
+
+  // Mark notranslate elements
+  document.querySelectorAll('.notranslate, header, footer, [data-i18n]').forEach(el => {
+    el.setAttribute('translate', 'no');
+    el.classList.add('notranslate');
+  });
+  
+  document.querySelectorAll('nav:not([aria-label="Breadcrumb"])').forEach(el => {
+    el.setAttribute('translate', 'no');
+    el.classList.add('notranslate');
+  });
+
+  if (document.querySelector('script[src*="translate.google.com"]')) {
+    setTimeout(() => triggerTranslation(targetLang), 100);
+    return;
+  }
+
+  win.googleTranslateElementInit = function() {
+    try {
+      new win.google.translate.TranslateElement({
+        pageLanguage: 'vi',
+        includedLanguages: 'en,zh-CN,ja,ko',
+        autoDisplay: false,
+        layout: win.google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+
+      let attempts = 0;
+      const tryTrigger = () => {
+        attempts++;
+        if (attempts < 10) {
+          try { triggerTranslation(targetLang); } catch {}
+          setTimeout(tryTrigger, 500);
+        }
+      };
+      setTimeout(tryTrigger, 500);
+    } catch (e) {
+      console.warn('Google Translate init error:', e);
+    }
+  };
+
+  const script = document.createElement('script');
+  script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  script.async = true;
+  script.defer = true;
+  document.head.appendChild(script);
+}
+
+function triggerTranslation(targetLang: string): void {
+  const selectEl = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+  if (selectEl && selectEl.value !== targetLang) {
+    selectEl.value = targetLang;
+    selectEl.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+}
+
+// Dropdown initialization - runs for ALL users (minimal)
+function initDropdown(): void {
+  const savedLang = getSavedLang();
+  document.querySelectorAll('[data-language-selector]').forEach(selector => {
+    const toggle = selector.querySelector('.lang-toggle');
+    const options = selector.querySelectorAll('.lang-option');
+    const currentCode = selector.querySelector('.current-lang-code');
+
+    if (currentCode) currentCode.textContent = langDisplayMap[savedLang] || 'VN';
+    options.forEach(opt => {
+      opt.classList.toggle('active', (opt as HTMLElement).dataset.gtCode === savedLang);
+    });
+
+    toggle?.addEventListener('click', (e) => { e.stopPropagation(); selector.classList.toggle('open'); });
+    document.addEventListener('click', (e) => { if (!selector.contains(e.target as Node)) selector.classList.remove('open'); });
+    options.forEach(opt => {
+      opt.addEventListener('click', () => {
+        const gtCode = (opt as HTMLElement).dataset.gtCode || 'vi';
+        saveLang(gtCode);
+        setGTCookie(gtCode);
+        selector.classList.remove('open');
+        location.reload();
+      });
+    });
+  });
+}
+
+async function init(): Promise<void> {
+  const savedLang = getSavedLang();
+
+  // Vietnamese users: dropdown only, clear any stale cookies, DONE
+  if (savedLang === 'vi') {
+    initDropdown();
+    clearGTCookie();
+    document.documentElement.classList.remove('i18n-loading');
+    return;
+  }
+
+  // Non-Vietnamese: full translation flow
+  const hasUserContent = document.querySelector('.user-content, [data-user-content]');
+  const dataLoaded = await loadI18nData(savedLang);
+  
+  if (dataLoaded) applyTranslations(savedLang);
+  
+  // Mark notranslate elements
+  document.querySelectorAll('.notranslate, header, footer, nav:not([aria-label="Breadcrumb"]), [data-i18n]').forEach(el => {
+    el.setAttribute('translate', 'no');
+  });
+
+  if (!hasUserContent) {
+    document.documentElement.classList.add('notranslate');
+    document.documentElement.setAttribute('translate', 'no');
+    clearGTCookie();
+  } else {
+    setGTCookie(savedLang);
+    setTimeout(() => loadGoogleTranslate(savedLang), 100);
+  }
+
+  initDropdown();
+  document.documentElement.classList.remove('i18n-loading');
+}
+
+// Run on page load - use microtask for faster execution
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init, { once: true });
+} else {
+  queueMicrotask(init);
+}
+
+// Astro View Transitions support
+document.addEventListener('astro:page-load', init);
+document.addEventListener('astro:after-swap', () => {
+  if (getSavedLang() !== 'vi') document.documentElement.classList.add('i18n-loading');
+});
+</script>

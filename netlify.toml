@@ -1,0 +1,211 @@
+[build]
+  publish = "dist"
+  command = "bun install && bun run build"
+  # Static Mode: All pages pre-rendered at build time
+  # Benefits: Fastest runtime performance, predictable builds, no server needed
+
+# Skip Netlify's asset processing - Astro already handles minification/bundling
+# This saves ~10-20 seconds per build
+[build.processing]
+  skip_processing = true
+[build.processing.css]
+  bundle = false
+  minify = false
+[build.processing.js]
+  bundle = false
+  minify = false
+[build.processing.html]
+  pretty_urls = false
+
+[build.environment]
+  NODE_VERSION = "20"
+  # Enable Sharp caching for faster image processing
+  SHARP_IGNORE_GLOBAL_LIBVIPS = "1"
+  # Disable Astro telemetry
+  ASTRO_TELEMETRY_DISABLED = "1"
+  # Increase Node.js memory limit for large builds
+  NODE_OPTIONS = "--max-old-space-size=4096"
+
+# Cache Astro's processed images and bun cache between builds for faster deploys
+[[plugins]]
+  package = "netlify-plugin-cache"
+  [plugins.inputs]
+    # Cache directories for faster subsequent builds
+    paths = [
+      "node_modules/.astro",    # Astro processed images
+      ".astro",                  # Astro build cache
+      "node_modules/.cache",    # General build cache
+      ".bun",                    # bun dependency cache
+      ".build-cache"            # Smart build cache (hashes + images)
+    ]
+
+# Note: Redirects are automatically handled by @astrojs/netlify adapter
+# The adapter generates the necessary _redirects file
+# CDN cache is automatically invalidated on each deploy by Netlify
+
+# Cache static assets indefinitely (hash-busted by Astro)
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Partytown service worker and library files
+[[headers]]
+  for = "/~partytown/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"
+
+# =============================================================================
+# SSR Blog Pages - Aggressive Edge Caching
+# =============================================================================
+# Strategy: Cache at CDN edge for 7 days, browser for 1 day
+# - Netlify-CDN-Cache-Control: Edge cache (7 days) - survives deploys with "durable"
+# - Cache-Control: Browser cache (1 day) + stale-while-revalidate
+# - Result: 99%+ requests served from edge, minimal function invocations
+# =============================================================================
+
+# All blog content sections - unified caching
+[[headers]]
+  for = "/tin-tuc/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=2592000, stale-if-error=2592000"
+    Netlify-CDN-Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000, durable"
+    Cache-Tag = "blog, tin-tuc"
+
+[[headers]]
+  for = "/phap-ly/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=2592000, stale-if-error=2592000"
+    Netlify-CDN-Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000, durable"
+    Cache-Tag = "blog, phap-ly"
+
+[[headers]]
+  for = "/lao-dong/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=2592000, stale-if-error=2592000"
+    Netlify-CDN-Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000, durable"
+    Cache-Tag = "blog, lao-dong"
+
+[[headers]]
+  for = "/tu-van-thuong-xuyen/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=2592000, stale-if-error=2592000"
+    Netlify-CDN-Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000, durable"
+    Cache-Tag = "blog, tu-van-thuong-xuyen"
+
+[[headers]]
+  for = "/dau-tu-nuoc-ngoai/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=2592000, stale-if-error=2592000"
+    Netlify-CDN-Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000, durable"
+    Cache-Tag = "blog, dau-tu-nuoc-ngoai"
+
+[[headers]]
+  for = "/dich-vu-danh-gia/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=2592000, stale-if-error=2592000"
+    Netlify-CDN-Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000, durable"
+    Cache-Tag = "blog, dich-vu-danh-gia"
+
+[[headers]]
+  for = "/tag/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=2592000, stale-if-error=2592000"
+    Netlify-CDN-Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000, durable"
+    Cache-Tag = "blog, tags"
+
+[[headers]]
+  for = "/tac-gia/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=2592000, stale-if-error=2592000"
+    Netlify-CDN-Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000, durable"
+    Cache-Tag = "blog, authors"
+
+# =============================================================================
+# Static Pages - Long-term caching (pre-rendered at build time)
+# =============================================================================
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=2592000"
+    Netlify-CDN-Cache-Control = "public, max-age=604800, durable"
+    Cache-Tag = "static, homepage"
+
+[[headers]]
+  for = "/gioi-thieu"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000"
+    Netlify-CDN-Cache-Control = "public, max-age=2592000, durable"
+    Cache-Tag = "static"
+
+[[headers]]
+  for = "/lien-he"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000"
+    Netlify-CDN-Cache-Control = "public, max-age=2592000, durable"
+    Cache-Tag = "static"
+
+[[headers]]
+  for = "/dich-vu"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000"
+    Netlify-CDN-Cache-Control = "public, max-age=2592000, durable"
+    Cache-Tag = "static"
+
+[[headers]]
+  for = "/luat-su-va-cong-su"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=2592000"
+    Netlify-CDN-Cache-Control = "public, max-age=2592000, durable"
+    Cache-Tag = "static, attorneys"
+
+# =============================================================================
+# API Endpoints - Moderate caching with edge optimization
+# =============================================================================
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+    Netlify-CDN-Cache-Control = "public, max-age=86400, stale-while-revalidate=604800, durable"
+    Cache-Tag = "api"
+    Access-Control-Allow-Origin = "*"
+
+# =============================================================================
+# Feeds and Sitemap - Short cache for daily content updates
+# =============================================================================
+[[headers]]
+  for = "/rss.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=3600"
+    Netlify-CDN-Cache-Control = "public, max-age=3600, stale-while-revalidate=3600"
+    Content-Type = "application/rss+xml; charset=utf-8"
+    Cache-Tag = "feed"
+
+# Sitemap: No long-term caching since content is added daily
+[[headers]]
+  for = "/sitemap*.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+    Netlify-CDN-Cache-Control = "public, max-age=3600, must-revalidate"
+    Cache-Tag = "sitemap"
+
+# =============================================================================
+# Security Headers (applied to all pages)
+# =============================================================================
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+
+# =============================================================================
+# Netlify Image CDN
+# =============================================================================
+[images]
+  remote_images = ["https://cdn.pixabay.com/.*"]

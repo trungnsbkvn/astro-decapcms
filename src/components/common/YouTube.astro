@@ -1,0 +1,403 @@
+# YouTube Integration - Complete Implementation Guide
+
+## Overview
+
+Your site already has YouTube support configured! Here's what exists and how to enhance it.
+
+---
+
+## ✅ What's Already Working
+
+### 1. CMS Integration
+**File:** `public/admin/config.yml`  
+**Status:** ✅ Already configured
+
+```yaml
+editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block']
+```
+
+### 2. Media Widgets
+**File:** `public/admin/media-widgets.js`  
+**Status:** ✅ Already configured
+
+The CMS editor has a YouTube button that automatically:
+- Inserts `<YouTube id="VIDEO_ID" />`
+- Auto-imports `import { YouTube } from 'astro-embed';`
+
+### 3. YouTube Components
+**Currently available:**
+- ✅ `LazyYouTube.astro` - Custom lazy-loading component
+- ✅ `astro-embed` - Third-party YouTube component
+- ✅ CMS editor integration via `media-widgets.js`
+
+---
+
+## 📊 Current Implementation Analysis
+
+Your site **already has excellent YouTube support**:
+
+### ✅ What's Working Well
+
+1. **CMS Integration** - Decap CMS configured with YouTube widget
+2. **astro-embed Package** - Lite-youtube-embed for fast loading
+3. **LazyYouTube Component** - Custom lazy loading implementation
+4. **MDX Support** - YouTube embeds work in MDX content
+
+### 🔧 Recommended Enhancements
+
+Based on the reference site (luatsumienbac.vn), here are the improvements to implement:
+
+<function_calls>
+<invoke name="create_file">
+<parameter name="content">---
+/**
+ * YouTube Component
+ * Wrapper for YouTube embeds with multiple rendering modes:
+ * 1. astro-embed (default) - Uses lite-youtube for performance
+ * 2. LazyYouTube - Custom implementation with intersection observer
+ * 3. Direct iframe - For compatibility
+ * 
+ * Usage in MDX/Astro:
+ * ---
+ * import { YouTube } from '~/components/common/YouTube.astro';
+ * ---
+ * <YouTube id="videoId" title="Video Title" />
+ * 
+ * Usage in MDX (via CMS):
+ * <YouTube id="dQw4w9WgXcQ" />
+ */
+
+export interface Props {
+  id: string;
+  title?: string;
+  params?: string;
+  playlabel?: string;
+  posterquality?: 'default' | 'mqdefault' | 'hqdefault' | 'sddefault' | 'maxresdefault';
+  nocookie?: boolean;
+  class?: string;
+}
+
+const { 
+  id, 
+  title = 'YouTube Video', 
+  class: className = '',
+} = Astro.props;
+
+// Extract video ID from various YouTube URL formats
+function extractYouTubeId(input: string): string {
+  // Already just an ID
+  if (/^[a-zA-Z0-9_-]{11}$/.test(input)) {
+    return input;
+  }
+  
+  // Extract from various YouTube URL formats
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
+    /youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/,
+    /youtube\.com\/v\/([a-zA-Z0-9_-]{11})/,
+  ];
+  
+  for (const pattern of patterns) {
+    const match = Astro.props.id.match(pattern);
+    if (match) return match[1];
+  }
+  
+  return id;
+}
+
+const videoId = extractVideoId(id);
+const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+---
+
+<div 
+  class:list={['youtube-embed-container relative aspect-video bg-gray-900 rounded-lg overflow-hidden shadow-lg', className]}
+  data-youtube-id={id}
+  data-youtube-title={title}
+>
+  <!-- Thumbnail with Play Button -->
+  <div class="relative w-full h-full">
+    <!-- Thumbnail -->
+    <img 
+      src={thumbnailUrl}
+      alt={title}
+      loading="lazy"
+      decoding="async"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    
+    <!-- Play button overlay -->
+    <div class="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors group">
+      <button 
+        type="button"
+        class="play-button w-20 h-20 md:w-24 md:h-24 bg-red-600 rounded-full flex items-center justify-center shadow-2xl hover:bg-red-700 hover:scale-110 transition-all duration-300"
+        aria-label={`Phát video: ${title}`}
+      >
+        <svg class="w-10 h-10 md:w-12 md:h-12 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Video title overlay -->
+    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
+      <p class="text-white text-sm md:text-base font-medium line-clamp-2">{title}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Ensure lite-youtube fills container properly */
+  .youtube-wrapper lite-youtube {
+    margin: 0;
+    max-width: 100%;
+  }
+  
+  /* Hide placeholder once loaded */
+  .youtube-container.loaded > .youtube-placeholder {
+    display: none;
+  }
+</style>
+
+<script>
+  /**
+   * YouTube Player Handler
+   * - Lazy loads YouTube iframe only when user interacts
+   * - Uses CDN-loaded lite-youtube-embed for performance
+   * - Prevents webp 404 errors by forcing jpg thumbnails
+   * - Handles Astro page transitions
+   */
+  
+  function initYouTubePlayers() {
+    const containers = document.querySelectorAll<HTMLElement>('.lazy-youtube-container:not(.initialized)');
+    
+    containers.forEach(container => {
+      container.classList.add('initialized');
+      
+      const loadYouTubePlayer = async () => {
+        if (container.classList.contains('loaded')) return;
+        
+        const id = container.dataset.youtubeId;
+        const title = container.dataset.youtubeTitle || 'Video';
+        
+        if (!id) return;
+        
+        container.classList.add('loaded');
+        
+        try {
+          // Load lite-youtube-embed from CDN
+          if (!customElements.get('lite-youtube')) {
+            const css = document.createElement('link');
+            css.rel = 'stylesheet';
+            css.href = 'https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.css';
+            document.head.appendChild(css);
+            
+            await new Promise<void>((resolve, reject) => {
+              const script = document.createElement('script');
+              script.src = 'https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.js';
+              script.onload = () => resolve();
+              script.onerror = () => reject(new Error('Failed to load'));
+              document.head.appendChild(script);
+            });
+            
+            await customElements.whenDefined('lite-youtube');
+          }
+          
+          const liteYT = document.createElement('lite-youtube');
+          liteYT.setAttribute('videoid', id);
+          liteYT.setAttribute('playlabel', `Play: ${title}`);
+          liteYT.setAttribute('posterquality', 'hqdefault');
+          liteYT.setAttribute('params', 'rel=0');
+          
+          container.innerHTML = '';
+          container.appendChild(liteYT);
+        } catch (e) {
+          console.error('Failed to load YouTube player:', e);
+          window.open(`https://www.youtube.com/watch?v=${id}`, '_blank');
+        }
+      };
+      
+      container.addEventListener('click', loadYouTube, { once: true });
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && window.scrollY > 200) {
+            loadYouTube();
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      observer.observe(container);
+    });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLazyYouTube);
+  } else {
+    initLazyYouTube();
+  }
+  document.addEventListener('astro:after-swap', initLazyYouTube);
+</script>
+```
+
+Now I'll create the enhanced YouTube components and update the necessary files:
+
+<function_calls>
+<invoke name="create_file">
+<parameter name="content">---
+/**
+ * YouTube Component
+ * Renders YouTube videos in MDX content with lite-youtube-embed
+ * Automatically imported by CMS media widgets
+ * 
+ * Usage in MDX:
+ * import { YouTube } from 'astro-embed';
+ * <YouTube id="VIDEO_ID" />
+ */
+
+export interface Props {
+  id: string;
+  title?: string;
+  params?: string;
+  posterQuality?: 'default' | 'mqdefault' | 'hqdefault' | 'sddefault' | 'maxresdefault';
+  playLabel?: string;
+}
+
+const { 
+  id, 
+  title, 
+  params = 'rel=0&modestbranding=1',
+  posterQuality = 'hqdefault',
+  playLabel
+} = Astro.props;
+
+// Use standard YouTube URL for thumbnail to avoid webp 404s
+const thumbnailUrl = `https://i.ytimg.com/vi/${id}/${posterQuality}.jpg`;
+---
+
+<!-- 
+  Using lite-youtube-embed for optimal performance:
+  - Only 3KB (vs 540KB full YouTube embed)
+  - Loads player on click
+  - No tracking until user interaction
+-->
+<lite-youtube 
+  videoid={id}
+  posterquality={posterQuality}
+  params={params}
+  playlabel={playLabel || `Play video: ${title || 'YouTube video'}`}
+  style="background-image: url('{thumbnailUrl}');"
+>
+  <button type="button" class="lty-playbtn">
+    <span class="lyt-visually-hidden">{playLabel || 'Play Video'}</span>
+  </button>
+</lite-youtube>
+
+<style is:global>
+  /* Ensure lite-youtube is defined */
+  lite-youtube {
+    display: block;
+    contain: content;
+    background-color: #000;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  /* Thumbnail */
+  lite-youtube::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  /* Play button */
+  lite-youtube > .lty-playbtn {
+    width: 68px;
+    height: 48px;
+    position: absolute;
+    cursor: pointer;
+    transform: translate3d(-50%, -50%, 0);
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    background-color: transparent;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg>');
+    filter: grayscale(100%);
+    transition: filter 0.1s cubic-bezier(0, 0, 0.2, 1);
+    border: none;
+  }
+
+  lite-youtube:hover > .lty-playbtn,
+  lite-youtube .lty-playbtn:focus {
+    filter: none;
+  }
+
+  /* Iframe (loaded on click) */
+  lite-youtube > iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+  }
+
+  /* Visually hidden */
+  lite-youtube > .lyt-visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  /* Activated state */
+  lite-youtube.lyt-activated {
+    cursor: unset;
+  }
+
+  lite-youtube.lyt-activated::before,
+  lite-youtube.lyt-activated > .lty-playbtn {
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  // Load lite-youtube-embed library on first YouTube component
+  async function loadLiteYouTube() {
+    if (customElements.get('lite-youtube')) return;
+
+    try {
+      // Dynamically import the library
+      const module = await import('lite-youtube-embed');
+      
+      // Wait for custom element to be defined
+      await customElements.whenDefined('lite-youtube');
+    } catch (error) {
+      console.error('Failed to load lite-youtube-embed:', error);
+    }
+  }
+
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadLiteYouTube);
+  } else {
+    loadLiteYouTube();
+  }
+
+  // Re-initialize after Astro page transitions
+  document.addEventListener('astro:after-swap', loadLiteYouTube);
+</script>

@@ -1,0 +1,222 @@
+---
+export const prerender = true;
+
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Partners from '~/components/widgets/Partners.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getAllAttorneys, transformAttorneysToTeams } from '~/utils/attorneys';
+import { findImage } from '~/utils/images';
+import { getLawyersBreadcrumbs } from '~/utils/breadcrumbs';
+
+const metadata = {
+  title: 'Luật sư và cộng sự - Hỗ trợ 5 ngôn ngữ | Youth & Partners',
+  description:
+    'Đội ngũ luật sư của Youth & Partners bao gồm các chuyên gia có nhiều năm kinh nghiệm. Hỗ trợ 5 ngôn ngữ: Tiếng Việt, English, 日本語, 中文, 한국어. Tư vấn pháp lý thường xuyên, tranh chấp lao động, đầu tư nước ngoài, audit và đánh giá pháp lý cho doanh nghiệp.',
+  keywords: 'luật sư đa ngôn ngữ, luật sư tiếng Nhật, luật sư tiếng Anh, luật sư tiếng Trung, luật sư tiếng Hàn, tư vấn pháp lý đa ngôn ngữ, multilingual lawyer Vietnam',
+};
+
+// Load all attorneys from content collection dynamically
+const attorneys = await getAllAttorneys();
+const teams = transformAttorneysToTeams(attorneys);
+
+// Get the first featured attorney for the hero image
+const featuredAttorney = attorneys.find(a => a.data.featured);
+const heroImagePath = featuredAttorney?.data.image || '~/assets/images/team/luat-su-nguyen-van-thanh.jpg';
+const heroImage = await findImage(heroImagePath);
+
+// Calculate team statistics
+const totalMembers = attorneys.length;
+const lawyerCount = attorneys.filter(a => a.data.credentials?.some(c => c.toLowerCase().includes('luật sư'))).length;
+const languageCount = 5; // Vietnamese, English, Chinese, Japanese, Korean
+
+const breadcrumbs = getLawyersBreadcrumbs();
+---
+
+<Layout metadata={metadata} breadcrumbs={breadcrumbs}>
+  <!-- Main H1 Title for SEO -->
+  <div class="px-4 py-8 mx-auto max-w-7xl">
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-center dark:text-white" data-i18n="team.pageTitle">
+      Luật sư và cộng sự - Hỗ trợ 5 ngôn ngữ
+    </h1>
+    <p class="text-xl text-center text-muted mt-4 dark:text-slate-300">
+      <span class="notranslate" translate="no">Tiếng Việt</span> • 
+      <span class="notranslate" translate="no">English</span> • 
+      <span class="notranslate" translate="no">日本語</span> • 
+      <span class="notranslate" translate="no">中文</span> • 
+      <span class="notranslate" translate="no">한국어</span>
+    </p>
+  </div>
+
+  <!-- About Team Section with Description -->
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:phone-call',
+        callToAction: {
+          target: '_blank',
+          text: 'Hotline',
+          href: 'tel:0889956888',
+        },
+      },
+      {
+        icon: 'tabler:mailbox',
+        callToAction: {
+          target: '_blank',
+          text: 'Email',
+          href: 'mailto:ceo@yplawfirm.vn',
+        },
+      },
+      {
+        icon: 'tabler:brand-meta',
+        callToAction: {
+          target: '_blank',
+          text: 'Facebook',
+          href: 'https://www.facebook.com/yplawfirm',
+        },
+      },
+    ]}
+    image={{
+      src: heroImage,
+      alt: 'Đội ngũ luật sư Y&P',
+      loading: 'lazy',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 notranslate" translate="no" data-i18n="team.aboutTeam">Giới thiệu đội ngũ</h2>
+      <p class="notranslate" translate="no" data-i18n="team.lawyersIntro">
+        Công ty Luật TNHH Youth & Partners là một trong những công ty luật hàng đầu tại Việt Nam, với đội ngũ luật sư và
+        cộng sự giàu kinh nghiệm và chuyên môn sâu rộng. Công ty này cung cấp các dịch vụ pháp lý chất lượng cao, nhanh
+        chóng, chính xác và toàn diện.
+      </p>
+      <br />
+      <p class="notranslate" translate="no" data-i18n="team.lawyersIntro2">
+        Đội ngũ luật sư của Youth & Partners bao gồm các chuyên gia có nhiều năm kinh nghiệm trong nhiều lĩnh vực khác
+        nhau như tư vấn pháp lý thường xuyên cho doanh nghiệp, giải quyết tranh chấp lao động, luật sư riêng tiếng Nhật,
+        Anh, Trung, Hàn, và dịch vụ audit, đánh giá và thẩm định pháp lý cho doanh nghiệp. Công ty luôn cam kết mang lại
+        công bằng và sự thành công cho khách hàng, giúp họ vững bước trên con đường phát triển.
+      </p>
+      <br />
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  <!-- Team Stats Section -->
+  <Stats
+    title="Đội ngũ của chúng tôi"
+    subtitle="Con số ấn tượng về đội ngũ chuyên gia pháp lý tại Youth & Partners"
+    i18nTitle="team.ourTeam"
+    i18nSubtitle="team.statsSubtitle"
+    stats={[
+      { title: 'Thành viên', amount: `${totalMembers}+`, icon: 'tabler:users', i18nTitle: 'team.members' },
+      { title: 'Luật sư', amount: `${lawyerCount}+`, icon: 'tabler:gavel', i18nTitle: 'team.lawyers' },
+      { title: 'Ngôn ngữ hỗ trợ', amount: `${languageCount}`, icon: 'tabler:language', i18nTitle: 'team.supportedLanguages' },
+      { title: 'Năm kinh nghiệm', amount: '10+', icon: 'tabler:calendar', i18nTitle: 'team.yearsExperience' },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"></div>
+    </Fragment>
+  </Stats>  
+  <!-- Team Members Grid -->
+  <Partners
+    id="luat-su-va-cong-su"
+    title="Gặp gỡ đội ngũ"
+    subtitle="Mỗi thành viên trong đội ngũ của chúng tôi đều mang đến chuyên môn và kinh nghiệm độc đáo, cam kết cung cấp dịch vụ pháp lý xuất sắc cho khách hàng."
+    i18nTitle="team.meetTeam"
+    i18nSubtitle="team.meetTeamSubtitle"
+    teams={teams}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Partners>
+  <!-- Team Expertise Areas -->
+  <Features2
+    title="Dịch vụ nổi bật"
+    subtitle="Đội ngũ của chúng tôi cung cấp các dịch vụ pháp lý chuyên nghiệp trong các lĩnh vực trọng yếu"
+    i18nTitle="team.featuredServices"
+    i18nSubtitle="team.featuredServicesSubtitle"
+    items={[
+      {
+        title: 'Pháp lý doanh nghiệp',
+        description: 'Tư vấn thành lập, M&A, quản trị doanh nghiệp, sở hữu trí tuệ, hợp đồng thương mại',
+        icon: 'tabler:building',
+        i18nTitle: 'team.legalServices',
+        i18nDescription: 'team.legalServicesDesc',
+      },
+      {
+        title: 'Tư vấn thường xuyên',
+        description: 'Dịch vụ tư vấn pháp lý thường xuyên cho doanh nghiệp, phòng pháp chế thuê ngoài',
+        icon: 'tabler:briefcase',
+        i18nTitle: 'team.regularConsultation',
+        i18nDescription: 'team.regularConsultationDesc',
+      },
+      {
+        title: 'Pháp luật lao động',
+        description: 'Hợp đồng lao động, tranh chấp lao động, nội quy, kỷ luật, BHXH',
+        icon: 'tabler:users',
+        i18nTitle: 'team.laborLaw',
+        i18nDescription: 'team.laborLawDesc',
+      },
+      {
+        title: 'Đầu tư nước ngoài',
+        description: 'Tư vấn FDI, giấy phép đầu tư, luật sư riêng tiếng Nhật, Anh, Hàn, Trung',
+        icon: 'tabler:world',
+        i18nTitle: 'team.foreignInvestment',
+        i18nDescription: 'team.foreignInvestmentDesc',
+      },
+      {
+        title: 'Dịch vụ đánh giá',
+        description: 'Audit pháp lý, đánh giá tuân thủ RBA, ESG, due diligence doanh nghiệp',
+        icon: 'tabler:checklist',
+        i18nTitle: 'team.evaluationServices',
+        i18nDescription: 'team.evaluationServicesDesc',
+      },
+      {
+        title: 'Tranh tụng',
+        description: 'Đại diện tố tụng dân sự, hình sự, hành chính, giải quyết tranh chấp',
+        icon: 'tabler:gavel',
+        i18nTitle: 'team.litigation',
+        i18nDescription: 'team.litigationDesc',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-gradient-to-t from-gray-50 to-white dark:from-slate-800 dark:to-slate-900"></div>
+    </Fragment>
+  </Features2>
+  <!-- Call to Action -->
+  <CallToAction
+    title="Cần tư vấn pháp lý?"
+    subtitle="Đội ngũ luật sư chuyên nghiệp của chúng tôi sẵn sàng hỗ trợ bạn. Liên hệ ngay để được tư vấn miễn phí!"
+    i18nTitle="team.needLegalAdvice"
+    i18nSubtitle="team.ctaSubtitle"
+    isDark={true}
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Liên hệ ngay',
+        href: '/lien-he',
+        icon: 'tabler:phone',
+        i18nText: 'team.contactNow',
+      },
+      {
+        variant: 'secondary',
+        text: 'Xem dịch vụ',
+        href: '/dich-vu',
+        icon: 'tabler:arrow-right',
+        i18nText: 'team.viewServices',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-blue-700 dark:to-indigo-800"></div>
+    </Fragment>
+  </CallToAction>
+</Layout>

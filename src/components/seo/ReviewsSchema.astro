@@ -1,0 +1,87 @@
+---
+/**
+ * ReviewsSchema Component
+ * Generates Schema.org Review and AggregateRating structured data
+ * 
+ * Usage:
+ * ---
+ * import ReviewsSchema from '~/components/seo/ReviewsSchema.astro';
+ * 
+ * const reviews = {
+ *   itemName: 'Công ty Luật Y&P',
+ *   ratingValue: 4.8,
+ *   reviewCount: 127,
+ *   reviews: [
+ *     {
+ *       author: 'Nguyễn Văn A',
+ *       rating: 5,
+ *       reviewBody: 'Dịch vụ tuyệt vời...',
+ *       datePublished: '2024-01-15'
+ *     }
+ *   ]
+ * };
+ * ---
+ * <ReviewsSchema {...reviews} />
+ */
+
+export interface Review {
+  author: string;
+  rating: number; // 1-5
+  reviewBody: string;
+  datePublished: string; // ISO date
+}
+
+export interface Props {
+  itemName: string;
+  itemType?: 'LocalBusiness' | 'Organization' | 'Service' | 'Product';
+  ratingValue: number; // Average rating (1-5)
+  reviewCount: number;
+  reviews?: Review[]; // Individual reviews (optional)
+}
+
+const { 
+  itemName, 
+  itemType = 'LocalBusiness', 
+  ratingValue, 
+  reviewCount, 
+  reviews = [] 
+} = Astro.props;
+
+const siteUrl = import.meta.env.SITE || 'https://yplawfirm.vn';
+
+// Aggregate rating schema
+const aggregateRating = {
+  '@type': 'AggregateRating',
+  ratingValue: ratingValue.toFixed(1),
+  reviewCount: reviewCount,
+  bestRating: '5',
+  worstRating: '1',
+};
+
+// Main schema with reviews
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': itemType,
+  name: itemName,
+  aggregateRating,
+  ...(reviews.length > 0 ? {
+    review: reviews.map(review => ({
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: review.author,
+      },
+      datePublished: review.datePublished,
+      reviewBody: review.reviewBody,
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: review.rating.toString(),
+        bestRating: '5',
+        worstRating: '1',
+      },
+    }))
+  } : {}),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

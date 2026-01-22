@@ -1,0 +1,72 @@
+---
+import merge from 'lodash.merge';
+import type { ImageMetadata, GetStaticPaths } from 'astro';
+import Layout from '~/layouts/PageLayout.astro';
+import SinglePost from '~/components/blog/SinglePost.astro';
+import ToBlogLink from '~/components/blog/ToBlogLink.astro';
+import RelatedPosts from '~/components/blog/RelatedPosts.astro';
+import MarkdownImage from '~/components/common/MarkdownImage.astro';
+
+import { getCanonical, getPermalink } from '~/utils/blog-permalinks';
+import { blogPostRobots, getStaticPathsForSinglePost } from '~/utils/blog';
+import { findImage } from '~/utils/images';
+import type { MetaData } from '~/types';
+import { getBlogTypeSEO, getCategoryI18nKeys } from '~/utils/blog-seo';
+import { getLegalBreadcrumbs } from '~/utils/breadcrumbs';
+
+// Static: Pre-render all posts at build time
+export const prerender = true;
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return await getStaticPathsForSinglePost('legal');
+};
+
+const TYPE = 'legal';
+const blogSEO = getBlogTypeSEO(TYPE);
+const mdxComponents = { img: MarkdownImage };
+
+const { post } = Astro.props;
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+const url = getCanonical(getPermalink(post.permalink, 'post', TYPE));
+const image = (await findImage(post.image)) as ImageMetadata | string | undefined;
+
+// Generate keywords from post tags and category
+const postKeywords = [
+  ...blogSEO.keywords.slice(0, 3),
+  ...(post.category ? [post.category.title] : []),
+  ...(post.tags?.map(t => t.title) || []),
+];
+
+const metadata: MetaData = merge(
+  {
+    title: post.title,
+    description: post.excerpt,
+    keywords: postKeywords.join(', '),
+    robots: { index: blogPostRobots?.index, follow: blogPostRobots?.follow },
+    openGraph: {
+      type: 'article',
+      ...(image ? { images: [{ url: image, width: (image as ImageMetadata)?.width, height: (image as ImageMetadata)?.height }] } : {}),
+    },
+  },
+  { ...(post?.metadata ? { ...post.metadata, canonical: post.metadata?.canonical || url } : {}) }
+) as MetaData;
+
+// Generate breadcrumbs with category (i18n) and article title (translatable by Google)
+const categoryI18nKeys = post.category ? getCategoryI18nKeys(post.category.slug) : null;
+const breadcrumbs = getLegalBreadcrumbs(
+  post.category ? { name: post.category.title, slug: post.category.slug, i18nKey: categoryI18nKeys?.title } : undefined,
+  { title: post.title, slug: post.permalink }
+);
+---
+
+<Layout metadata={metadata} breadcrumbs={breadcrumbs}>
+  <SinglePost type={TYPE} post={{ ...post, image: image }} url={url}>
+    {post.Content ? <post.Content components={mdxComponents} /> : <Fragment set:html={post.content || ''} />}
+  </SinglePost>
+  <ToBlogLink type={TYPE} />
+  <RelatedPosts type={TYPE} post={post} />
+</Layout>

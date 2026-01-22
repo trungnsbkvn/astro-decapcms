@@ -1,0 +1,158 @@
+---
+import { Icon } from 'astro-icon/components';
+import Image from '~/components/common/Image.astro';
+---
+
+<!-- Floating Contact Buttons - Toggleable like Gmail FAB, positioned above Tawk -->
+<div id="action_contact" class="fixed right-6 bottom-24 z-[9998]">
+  <!-- Action buttons container -->
+  <div id="action_buttons" class="action_buttons mb-3">
+    <a id="action_zalo" class="action_zalo" title="Chát Zalo" target="_blank" href="https://zalo.me/1886716377085627093">
+      <Image
+        class="w-full h-full"
+        width={64}
+        height={64}
+        widths={[64]}
+        format="webp"
+        src="~/assets/images/youth and partners/icon-zalo.png"
+        alt="Chát Zalo với chúng tôi"
+      />
+    </a>
+    <a id="action_call" class="action_call" title="Gọi ngay 088 995 6888" href="tel:0889956888">
+      <Icon
+        name="tabler:phone-call"
+        class="mx-auto size-7 text-white"
+      />
+    </a>
+  </div>
+  
+  <!-- Toggle button (always visible on md+) -->
+  <button 
+    id="action_toggle" 
+    class="action_toggle"
+    title="Liên hệ nhanh"
+    aria-label="Toggle contact buttons"
+    aria-expanded="false"
+  >
+    <Icon
+      name="tabler:headset"
+      class="toggle-icon-open size-7 text-white transition-transform duration-300"
+    />
+    <Icon
+      name="tabler:x"
+      class="toggle-icon-close size-7 text-white transition-transform duration-300 hidden"
+    />
+  </button>
+</div>
+
+<script>
+  function initFloatingButtons() {
+    const toggleBtn = document.getElementById('action_toggle');
+    const actionButtons = document.getElementById('action_buttons');
+    
+    if (!toggleBtn || !actionButtons) return;
+    
+    // Check if we should auto-expand on md+ screens
+    const shouldAutoExpand = window.innerWidth >= 768;
+    
+    // Remove any existing listeners by cloning
+    const newToggleBtn = toggleBtn.cloneNode(true) as HTMLElement;
+    toggleBtn.parentNode?.replaceChild(newToggleBtn, toggleBtn);
+    
+    const newOpenIcon = newToggleBtn.querySelector('.toggle-icon-open');
+    const newCloseIcon = newToggleBtn.querySelector('.toggle-icon-close');
+    
+    // Initialize state based on screen size
+    let isExpanded = shouldAutoExpand;
+    
+    // Set initial UI state
+    if (isExpanded) {
+      actionButtons.classList.add('expanded');
+      newOpenIcon?.classList.add('hidden');
+      newCloseIcon?.classList.remove('hidden');
+      newToggleBtn.classList.add('active');
+      newToggleBtn.setAttribute('aria-expanded', 'true');
+    }
+    
+    newToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      isExpanded = !isExpanded;
+      newToggleBtn.setAttribute('aria-expanded', String(isExpanded));
+      
+      if (isExpanded) {
+        actionButtons.classList.add('expanded');
+        newOpenIcon?.classList.add('hidden');
+        newCloseIcon?.classList.remove('hidden');
+        newToggleBtn.classList.add('active');
+      } else {
+        actionButtons.classList.remove('expanded');
+        newOpenIcon?.classList.remove('hidden');
+        newCloseIcon?.classList.add('hidden');
+        newToggleBtn.classList.remove('active');
+      }
+    });
+    
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const contactContainer = document.getElementById('action_contact');
+      if (isExpanded && contactContainer && !contactContainer.contains(target)) {
+        isExpanded = false;
+        newToggleBtn.setAttribute('aria-expanded', 'false');
+        actionButtons.classList.remove('expanded');
+        newOpenIcon?.classList.remove('hidden');
+        newCloseIcon?.classList.add('hidden');
+        newToggleBtn.classList.remove('active');
+      }
+    });
+  }
+  
+  // Initialize on page load and after Astro navigation
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFloatingButtons);
+  } else {
+    initFloatingButtons();
+  }
+  document.addEventListener('astro:after-swap', initFloatingButtons);
+</script>
+
+<!-- 
+  Tawk.to Chat Widget - Deferred Loading
+  Tawk requires main thread DOM access (creates iframe widget),
+  so we defer loading until after page is interactive
+-->
+<script is:inline>
+  // Load Tawk after page is fully loaded to avoid blocking render
+  function loadTawk() {
+    if (window.Tawk_API) return; // Already loaded
+    
+    var Tawk_API = window.Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+    
+    var s1 = document.createElement("script");
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/60e7f020d6e7610a49aa63d1/1fa50407q';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    document.body.appendChild(s1);
+  }
+  
+  // Defer until page is idle
+  if (document.readyState === 'complete') {
+    // Page already loaded, use requestIdleCallback or setTimeout
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadTawk, { timeout: 4000 });
+    } else {
+      setTimeout(loadTawk, 2000);
+    }
+  } else {
+    // Wait for load event, then defer
+    window.addEventListener('load', function() {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadTawk, { timeout: 4000 });
+      } else {
+        setTimeout(loadTawk, 2000);
+      }
+    }, { once: true });
+  }
+</script>

@@ -1,0 +1,31 @@
+---
+/**
+ * Critical Image Preload Component
+ * Only use this for above-the-fold LCP images on specific pages.
+ * Import dynamically on pages that need it.
+ * 
+ * Note: Most pages don't need this - lazy loading handles non-critical images.
+ */
+
+export interface Props {
+  /** The processed image URL to preload */
+  src?: string;
+  /** Image srcset for responsive preloading */  
+  srcset?: string;
+  /** Image sizes attribute */
+  sizes?: string;
+}
+
+const { src, srcset, sizes } = Astro.props;
+---
+
+{src && (
+  <link 
+    rel="preload" 
+    as="image" 
+    href={src}
+    imagesrcset={srcset}
+    imagesizes={sizes}
+    fetchpriority="high"
+  />
+)}

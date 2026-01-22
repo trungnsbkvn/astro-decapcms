@@ -1,0 +1,55 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+import BreadcrumbsWrapper from '~/components/seo/BreadcrumbsWrapper.astro';
+//import Announcement from '~/components/widgets/Announcement.astro';
+
+import { headerData, footerData } from '~/navigation';
+
+import type { MetaData } from '~/types';
+import type { BreadcrumbItem } from '~/components/seo/Breadcrumbs.astro';
+
+export interface Props {
+  metadata?: MetaData;
+  /** Custom breadcrumb items */
+  breadcrumbs?: BreadcrumbItem[];
+  /** Page title for auto-generated breadcrumbs */
+  pageTitle?: string;
+  /** Show breadcrumbs (default: true, false for homepage) */
+  showBreadcrumbs?: boolean;
+}
+
+const { metadata, breadcrumbs, pageTitle, showBreadcrumbs = true } = Astro.props;
+
+// Determine if we should show breadcrumbs (not on homepage)
+const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
+const shouldShowBreadcrumbs = showBreadcrumbs && !isHomePage;
+---
+
+<Layout metadata={metadata}>
+  <!-- <slot name="announcement">
+    <Announcement />
+  </slot> -->
+  <slot name="header">
+    <Header {...headerData} isSticky showRssFeed showToggleTheme />
+  </slot>
+  
+  {/* Breadcrumbs navigation */}
+  {shouldShowBreadcrumbs && (
+    <slot name="breadcrumbs">
+      <BreadcrumbsWrapper 
+        items={breadcrumbs} 
+        pageTitle={pageTitle || metadata?.title} 
+        showBackground={true}
+      />
+    </slot>
+  )}
+  
+  <main>
+    <slot />
+  </main>
+  <slot name="footer">
+    <Footer {...footerData} />
+  </slot>
+</Layout>

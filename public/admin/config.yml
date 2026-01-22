@@ -1,0 +1,192 @@
+backend:
+  name: git-gateway
+  repo: trungnsbkvn/astro-decapcms #replace with your githu repo
+  branch: main
+
+publish_mode: editorial_workflow
+media_folder: 'src/assets/images'
+public_folder: '~/assets/images'
+site_url: 'https://yplawfirm.vn/' # your site name
+logo_url: https://yplawfirm.vn/_astro/LOGO-YP.T4V6RIqj_29CPja.webp
+
+collections:
+  - name: 'post'
+    label: 'Tin tức'
+    folder: 'src/content/post'
+    create: true
+    extension: 'mdx'
+    format: 'frontmatter'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Tin tức pháp lý', 'Bình luận pháp lý', 'Các vụ việc nổi bật', 'Hội thảo pháp lý', 'Văn bản pháp lý', 'Thông tin tuyển dụng', 'Sự kiện nội bộ'] }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'list',
+          allow_add: true,
+          allow_delete: true,
+          collapsed: false,
+          field: { label: 'Tag', name: 'tag', widget: 'string' },
+        }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Luật sư Nguyễn Minh Anh", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi", "Nguyễn Thị Châu Anh", "Nguyễn Thị Mai Linh", "Nguyễn Thị Thùy Dương", "Nguyễn Thị Xuân", "Nguyễn Thùy Dương", "Lưu Huyền Linh", "Cao Thị Phương Anh", "Chu Thanh Tùng"] }
+      - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5 }
+      - {
+          label: 'Content',
+          name: 'body',
+          widget: 'markdown',
+          buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "quote", "numbered-list", "bulleted-list"],
+          editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
+        }
+  - name: 'legal'
+    label: 'Pháp lý'
+    folder: 'src/content/legal'
+    create: true
+    extension: 'mdx'
+    format: 'frontmatter'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Doanh nghiệp', 'Kinh doanh thương mại', 'Sở hữu trí tuệ', 'Đất đai', 'Hôn nhân và gia đình', 'Giấy phép con', 'Dân sự', 'Hình sự', 'Pháp lý khác'] }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'list',
+          allow_add: true,
+          allow_delete: true,
+          collapsed: false,
+          field: { label: 'Tag', name: 'tag', widget: 'string' },
+        }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Luật sư Nguyễn Minh Anh", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi", "Nguyễn Thị Châu Anh", "Nguyễn Thị Mai Linh", "Nguyễn Thị Thùy Dương", "Nguyễn Thị Xuân", "Nguyễn Thùy Dương", "Lưu Huyền Linh", "Cao Thị Phương Anh", "Chu Thanh Tùng"] }
+      - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
+      - {
+          label: 'Content',
+          name: 'body',
+          widget: 'markdown',
+          buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "quote", "numbered-list", "bulleted-list"],
+          editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
+        }
+  - name: 'consultation'
+    label: 'Tư vấn thường xuyên'
+    folder: 'src/content/consultation'
+    create: true
+    extension: 'mdx'
+    format: 'frontmatter'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Tư vấn pháp luật thường xuyên cho Doanh nghiệp', 'Dịch vụ luật sư riêng', 'Khái niệm Tư vấn thường xuyên', 'Vì sao doanh nghiệp cần tư vấn thường xuyên', 'Mẫu hợp đồng dịch vụ', 'Phí dịch vụ tư vấn', 'Quy trình tư vấn', 'Điểm mạnh của Youth and Partners', 'Pháp lý tư vấn thường xuyên khác'] }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'list',
+          allow_add: true,
+          allow_delete: true,
+          collapsed: false,
+          field: { label: 'Tag', name: 'tag', widget: 'string' },
+        }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Luật sư Nguyễn Minh Anh", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi", "Nguyễn Thị Châu Anh", "Nguyễn Thị Mai Linh", "Nguyễn Thị Thùy Dương", "Nguyễn Thị Xuân", "Nguyễn Thùy Dương", "Lưu Huyền Linh", "Cao Thị Phương Anh", "Chu Thanh Tùng"] }
+      - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
+      - {
+          label: 'Content',
+          name: 'body',
+          widget: 'markdown',
+          buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "quote", "numbered-list", "bulleted-list"],
+          editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
+        }        
+  - name: 'labor'
+    label: 'Lao động'
+    folder: 'src/content/labor'
+    create: true
+    extension: 'mdx'
+    format: 'frontmatter'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Nội quy - Thỏa ước', 'Thời giờ làm việc', 'Lương và Phúc lợi', 'Hợp đồng lao động, đào tạo', 'Chấm dứt hợp đồng', 'Xử lý kỷ luật', 'Quấy rối tình dục', 'Tranh chấp lao động', 'Pháp lý lao động khác'] }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'list',
+          allow_add: true,
+          allow_delete: true,
+          collapsed: false,
+          field: { label: 'Tag', name: 'tag', widget: 'string' },
+        }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Luật sư Nguyễn Minh Anh", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi", "Nguyễn Thị Châu Anh", "Nguyễn Thị Mai Linh", "Nguyễn Thị Thùy Dương", "Nguyễn Thị Xuân", "Nguyễn Thùy Dương", "Lưu Huyền Linh", "Cao Thị Phương Anh", "Chu Thanh Tùng"] }
+      - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
+      - {
+          label: 'Content',
+          name: 'body',
+          widget: 'markdown',
+          buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "quote", "numbered-list", "bulleted-list"],
+          editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
+        }
+  - name: 'foreigner'
+    label: 'Đầu tư & Người nước ngoài'
+    folder: 'src/content/foreigner'
+    create: true
+    extension: 'mdx'
+    format: 'frontmatter'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Thành lập mới dự án', 'Điều chỉnh dự án đầu tư', 'Chuyển nhượng dự án', 'Hiện diện thương mại', 'Luật sư tư vấn tiếng Anh', 'Luật sư tư vấn tiếng Nhật', 'Luật sư tư vấn tiếng Trung Quốc', 'Giấy phép lao động', 'Pháp lý người nước ngoài'] }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'list',
+          allow_add: true,
+          allow_delete: true,
+          collapsed: false,
+          field: { label: 'Tag', name: 'tag', widget: 'string' },
+        }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Luật sư Nguyễn Minh Anh", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi", "Nguyễn Thị Châu Anh", "Nguyễn Thị Mai Linh", "Nguyễn Thị Thùy Dương", "Nguyễn Thị Xuân", "Nguyễn Thùy Dương", "Lưu Huyền Linh", "Cao Thị Phương Anh", "Chu Thanh Tùng"] }
+      - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
+      - {
+          label: 'Content',
+          name: 'body',
+          widget: 'markdown',
+          buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "quote", "numbered-list", "bulleted-list"],
+          editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
+        }         
+  - name: 'evaluation'
+    label: 'Đánh giá doanh nghiệp'
+    folder: 'src/content/evaluation'
+    create: true
+    extension: 'mdx'
+    format: 'frontmatter'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'select', options: ['Khái niệm đánh giá', 'Lợi ích của việc đánh giá', 'Phí dịch vụ đánh giá', 'Quy trình đánh giá', 'Dịch vụ Đánh giá cho Doanh nghiệp', 'Dịch vụ đánh giá tiền trạm', 'Các bộ tiêu chuẩn TNXH', 'Tiêu chuẩn RBA', 'Các lỗi thường gặp của doanh nghiệp'] }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'list',
+          allow_add: true,
+          allow_delete: true,
+          collapsed: false,
+          field: { label: 'Tag', name: 'tag', widget: 'string' },
+        }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
+      - { label: 'Author', name: 'author', widget: 'select', options: ['Luật sư Nguyễn Văn Thành', "Luật sư Trần Chung Kiên", "Luật sư Văn Thị Thanh Hoa", "Luật sư Nguyễn Thị Thơm", "Luật sư Nguyễn Thu Nga", "Luật sư Phạm Thị Huyền Quyên", "Luật sư Nguyễn Thị Hướng", "Luật sư Nguyễn Minh Anh", "Bùi Đức Mạnh", "Nguyễn Thúy Hằng", "Nguyễn Thị Thu Trang", "Nguyễn Thị Thùy Linh", "Nghiêm Minh Huyền", "Nguyễn Phùng Mai Ánh", "Đỗ Thị Lương", "Trần Thị Bích Liên", "Nguyễn Thị Quỳnh Giang", "Tiến Sĩ Đoàn Xuân Trường", "Nguyễn Hoàng Dũng", "Nguyễn Phan Thục Chi", "Nguyễn Thị Châu Anh", "Nguyễn Thị Mai Linh", "Nguyễn Thị Thùy Dương", "Nguyễn Thị Xuân", "Nguyễn Thùy Dương", "Lưu Huyền Linh", "Cao Thị Phương Anh", "Chu Thanh Tùng"] }
+      - { label: 'Rating (1-5)', name: 'rating', widget: 'number', default: 5  }
+      - {
+          label: 'Content',
+          name: 'body',
+          widget: 'markdown',
+          buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "quote", "numbered-list", "bulleted-list"],
+          editor_components: ['image', 'youtube', 'vimeo', 'tweet', 'code-block'],
+        }                     

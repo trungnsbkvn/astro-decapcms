@@ -1,0 +1,234 @@
+site:
+  name: Công ty Luật TNHH Youth & Partners
+  site: 'https://yplawfirm.vn'
+  base: '/'
+  trailingSlash: false
+
+  googleSiteVerificationId: zk1e9PQEVD7o2a3XJjuESEyCuGd1ACtA4o_Lu-V0dPA
+
+# Default SEO metadata
+metadata:
+  title:
+    default: Công ty Luật TNHH Youth & Partners - Người bạn đồng hành của Doanh nghiệp
+    template: '%s — Youth & Partners'
+  description: 'Công ty Luật TNHH Youth & Partners là một trong những công ty luật hàng đầu trong các lĩnh vực: Tư vấn pháp lý thường xuyên cho doanh nghiệp / Dịch vụ Phòng pháp chế thuê ngoài; Tư vấn và giải quyết tranh chấp lao động; Dịch vụ Luật sư riêng tiếng Nhật, Anh, Trung, Hàn; Dịch vụ Audit, đánh giá và thẩm định pháp lý cho Doanh nghiệp, dịch vụ DD (Due diligence) riêng các lĩnh vực Lao động, nhân quyền, đạo đức kinh doanh, hệ thống quản lý, an toàn, sức khỏe, môi trường cho Doanh nghiệp.'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Công ty Luật TNHH Youth & Partners
+    images:
+      - url: '~/assets/images/youth and partners/Youth and Partners.jpg'
+        width: 1500
+        height: 711
+    type: website
+  twitter:
+    handle: '@yplawfirm'
+    site: '@yplawfirm'
+    cardType: summary_large_image
+
+i18n:
+  language: vi
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: true
+    postsPerPage: 12
+    rootPath: 'tin-tuc'
+
+    post:
+      isEnabled: true
+      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: '' # Blog main path, you can change this to "articles" (/articles)
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: '' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+  legal:
+    isEnabled: true
+    postsPerPage: 12
+    rootPath: 'phap-ly'
+
+    post:
+      isEnabled: true
+      permalink: '/%slug%'
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+  consultation:
+    isEnabled: true
+    postsPerPage: 12
+    rootPath: 'tu-van-thuong-xuyen'
+
+    post:
+      isEnabled: true
+      permalink: '/%slug%'
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+  labor:
+    isEnabled: true
+    postsPerPage: 12
+    rootPath: 'lao-dong'
+
+    post:
+      isEnabled: true
+      permalink: '/%slug%'
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+  foreigner:
+    isEnabled: true
+    postsPerPage: 12
+    rootPath: 'dau-tu-nuoc-ngoai'
+
+    post:
+      isEnabled: true
+      permalink: '/%slug%'
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+  evaluation:
+    isEnabled: true
+    postsPerPage: 12
+    rootPath: 'dich-vu-danh-gia'
+
+    post:
+      isEnabled: true
+      permalink: '/%slug%'
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: ''
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: 'G-HB9LNKY6F2' # or "G-XXXXXXXXXX"
+      partytown: true
+
+ui:
+  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"

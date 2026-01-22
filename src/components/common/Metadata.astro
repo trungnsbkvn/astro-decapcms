@@ -1,0 +1,101 @@
+---
+import merge from 'lodash.merge';
+import { AstroSeo } from '@astrolib/seo';
+
+import type { Props as AstroSeoProps } from '@astrolib/seo';
+
+import { SITE, METADATA, I18N } from 'astrowind:config';
+import type { MetaData } from '~/types';
+import { getCanonical } from '~/utils/blog-permalinks';
+
+import { adaptOpenGraphImages } from '~/utils/images';
+import SchemaMarkup from '~/components/common/SchemaMarkup.astro';
+import { COMPANY } from '~/data/company';
+
+export interface Props extends MetaData {
+  dontUseTitleTemplate?: boolean;
+  schemaType?: 'organization' | 'localbusiness' | 'service' | 'article' | 'breadcrumb' | 'faq' | 'attorney';
+  schemaData?: Record<string, string | number | boolean | undefined>;
+}
+
+const {
+  title,
+  ignoreTitleTemplate = false,
+  canonical = String(getCanonical(String(Astro.url.pathname))),
+  robots = {},
+  description,
+  keywords,
+  openGraph = {},
+  twitter = {},
+  schemaType = 'organization',
+  schemaData = {},
+} = Astro.props;
+
+const seoProps: AstroSeoProps = merge(
+  {
+    title: '',
+    titleTemplate: '%s',
+    canonical: canonical,
+    noindex: true,
+    nofollow: true,
+    description: undefined,
+    openGraph: {
+      url: canonical,
+      site_name: SITE?.name,
+      images: [],
+      locale: I18N?.language || 'en',
+      type: 'website',
+    },
+    twitter: {
+      cardType: openGraph?.images?.length ? 'summary_large_image' : 'summary',
+    },
+  },
+  {
+    title: METADATA?.title?.default,
+    titleTemplate: METADATA?.title?.template,
+    noindex: typeof METADATA?.robots?.index !== 'undefined' ? !METADATA.robots.index : undefined,
+    nofollow: typeof METADATA?.robots?.follow !== 'undefined' ? !METADATA.robots.follow : undefined,
+    description: METADATA?.description,
+    openGraph: METADATA?.openGraph,
+    twitter: METADATA?.twitter,
+  },
+  {
+    title: title,
+    titleTemplate: ignoreTitleTemplate ? '%s' : undefined,
+    canonical: canonical,
+    noindex: typeof robots?.index !== 'undefined' ? !robots.index : undefined,
+    nofollow: typeof robots?.follow !== 'undefined' ? !robots.follow : undefined,
+    description: description,
+    openGraph: { url: canonical, ...openGraph },
+    twitter: twitter,
+  }
+);
+---
+
+<AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site) }} />
+{keywords && <meta name="keywords" content={keywords} />}
+
+<!-- SEO: Language and locale hints -->
+<meta name="language" content="vi" />
+<meta http-equiv="content-language" content="vi" />
+
+<!-- SEO: Hreflang tags - Vietnamese is the primary/only indexed language -->
+<!-- Other languages are handled client-side via i18n/Google Translate for UX only -->
+<link rel="alternate" hreflang="vi" href={canonical} />
+<link rel="alternate" hreflang="x-default" href={canonical} />
+
+<!-- SEO: Author/Publisher -->
+<meta name="author" content={COMPANY.shortName} />
+<meta name="publisher" content={COMPANY.name} />
+<!-- SEO: Geo tags for local SEO -->
+<meta name="geo.region" content="VN-HN" />
+<meta name="geo.placename" content={`${COMPANY.address.region}, Việt Nam`} />
+<meta name="geo.position" content={`${COMPANY.geo.latitude};${COMPANY.geo.longitude}`} />
+<meta name="ICBM" content={`${COMPANY.geo.latitude}, ${COMPANY.geo.longitude}`} />
+<!-- SEO: Business verification -->
+<meta name="business:contact_data:street_address" content={COMPANY.address.street} />
+<meta name="business:contact_data:locality" content={COMPANY.address.region} />
+<meta name="business:contact_data:country_name" content="Vietnam" />
+<meta name="business:contact_data:phone_number" content={COMPANY.phone} />
+<meta name="business:contact_data:email" content={COMPANY.email} />
+<SchemaMarkup type={schemaType} data={schemaData} />

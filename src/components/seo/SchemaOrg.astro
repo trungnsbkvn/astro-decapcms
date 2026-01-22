@@ -1,0 +1,53 @@
+---
+/**
+ * SchemaOrg Component for JSON-LD structured data
+ * Used specifically for BreadcrumbList schema
+ * Note: Organization schema is handled by SchemaMarkup.astro in Metadata
+ */
+
+export interface BreadcrumbSchemaItem {
+  name: string;
+  url: string;
+}
+
+export interface Props {
+  type: 'BreadcrumbList';
+  data?: {
+    items?: BreadcrumbSchemaItem[];
+    [key: string]: unknown;
+  };
+}
+
+const { type, data = {} } = Astro.props;
+
+// Get site URL from config
+const siteUrl = import.meta.env.SITE || 'https://yplawfirm.vn';
+
+function generateBreadcrumbSchema(items: BreadcrumbSchemaItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url.startsWith('http') ? item.url : `${siteUrl}${item.url}`,
+    })),
+  };
+}
+
+function generateSchema() {
+  switch (type) {
+    case 'BreadcrumbList':
+      return data.items ? generateBreadcrumbSchema(data.items as BreadcrumbSchemaItem[]) : null;
+    default:
+      return null;
+  }
+}
+
+const schema = generateSchema();
+---
+
+{schema && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}

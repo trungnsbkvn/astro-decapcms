@@ -1,0 +1,34 @@
+---
+import { getAsset } from '~/utils/blog-permalinks';
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+<!-- 
+  Font preloading: @fontsource-variable/inter handles this automatically.
+  The font files have content-hashed names (e.g., inter-*.CBcvBZtf.woff2)
+  that change on each build, so we can't hardcode preload links.
+  
+  The font-display: swap in CustomStyles.astro ensures text is visible
+  immediately with a fallback font while the web font loads.
+-->
+
+<!-- DNS prefetch and preconnect for faster third-party resources -->
+<link rel="preconnect" href="https://embed.tawk.to" crossorigin />
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+<link rel="dns-prefetch" href="https://embed.tawk.to" />
+<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+<link rel="sitemap" href={getAsset('/sitemap-index.xml')} />
+
+<!-- Theme color for mobile browsers -->
+<meta name="theme-color" content="#095589" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#030621" media="(prefers-color-scheme: dark)" />
+<meta name="msapplication-TileColor" content="#095589" />
+
+<!-- Mobile web app capabilities -->
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="format-detection" content="telephone=no" />

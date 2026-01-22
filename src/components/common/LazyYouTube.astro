@@ -1,0 +1,151 @@
+---
+/**
+ * Lazy YouTube Embed
+ * Only loads YouTube player when user scrolls to it or clicks
+ * Reduces initial JS bundle size by ~25KB
+ */
+
+export interface Props {
+  id: string;
+  title: string;
+  class?: string;
+}
+
+const { id, title, class: className = '' } = Astro.props;
+const thumbnailUrl = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+---
+
+<div 
+  class:list={['lazy-youtube-container relative aspect-video bg-gray-900 rounded-lg overflow-hidden cursor-pointer group', className]}
+  data-youtube-id={id}
+  data-youtube-title={title}
+>
+  <!-- Thumbnail placeholder -->
+  <img 
+    src={thumbnailUrl}
+    alt={title}
+    loading="lazy"
+    decoding="async"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+  
+  <!-- Play button overlay -->
+  <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+    <button 
+      type="button"
+      class="w-16 h-16 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"
+      aria-label={`Play video: ${title}`}
+    >
+      <svg class="w-8 h-8 md:w-10 md:h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Title -->
+  <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+    <p class="text-white text-sm md:text-base font-medium truncate">{title}</p>
+  </div>
+</div>
+
+<style>
+  .lazy-youtube-container lite-youtube {
+    margin: 0;
+    max-width: 100%;
+  }
+  
+  .lazy-youtube-container.loaded > img,
+  .lazy-youtube-container.loaded > div {
+    display: none;
+  }
+</style>
+
+<script>
+  // Lazy load YouTube only when clicked or visible + scrolled
+  function initLazyYouTube() {
+    const containers = document.querySelectorAll<HTMLElement>('.lazy-youtube-container:not(.initialized)');
+    
+    containers.forEach(container => {
+      container.classList.add('initialized');
+      
+      const loadYouTube = async () => {
+        if (container.classList.contains('loaded')) return;
+        
+        const id = container.dataset.youtubeId;
+        const title = container.dataset.youtubeTitle;
+        
+        if (!id) return;
+        
+        // Mark as loaded immediately to prevent double-loading
+        container.classList.add('loaded');
+        
+        try {
+          // Load lite-youtube-embed from CDN if not already loaded
+          if (!customElements.get('lite-youtube')) {
+            // Load CSS
+            const css = document.createElement('link');
+            css.rel = 'stylesheet';
+            css.href = 'https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.css';
+            document.head.appendChild(css);
+            
+            // Load JS
+            await new Promise<void>((resolve, reject) => {
+              const script = document.createElement('script');
+              script.src = 'https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.js';
+              script.onload = () => resolve();
+              script.onerror = () => reject(new Error('Failed to load lite-youtube'));
+              document.head.appendChild(script);
+            });
+            
+            // Wait for custom element to be defined
+            await customElements.whenDefined('lite-youtube');
+          }
+          
+          // Create lite-youtube element with jpg poster to avoid webp 404s
+          const liteYT = document.createElement('lite-youtube');
+          liteYT.setAttribute('videoid', id);
+          liteYT.setAttribute('playlabel', `Play: ${title}`);
+          // Use jpg thumbnail to avoid webp 404 errors on older videos
+          liteYT.setAttribute('posterquality', 'hqdefault');
+          liteYT.setAttribute('params', 'rel=0');
+          liteYT.style.cssText = 'margin: 0 auto; max-width: 100%; width: 100%; background-image: none;';
+          
+          // Set poster manually with jpg to prevent webp fetch
+          const posterUrl = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+          liteYT.style.backgroundImage = `url('${posterUrl}')`;
+          
+          // Clear container and add the YouTube element
+          container.innerHTML = '';
+          container.appendChild(liteYT);
+        } catch (e) {
+          console.error('Failed to load YouTube player:', e);
+          // Fallback: redirect to YouTube
+          window.open(`https://www.youtube.com/watch?v=${id}`, '_blank');
+        }
+      };
+      
+      // Load on click
+      container.addEventListener('click', loadYouTube, { once: true });
+      
+      // Or load when visible and user has scrolled significantly
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && window.scrollY > 200) {
+            loadYouTube();
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      observer.observe(container);
+    });
+  }
+  
+  // Initialize on load and after Astro navigation
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLazyYouTube);
+  } else {
+    initLazyYouTube();
+  }
+  document.addEventListener('astro:after-swap', initLazyYouTube);
+</script>

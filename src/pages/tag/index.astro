@@ -1,0 +1,192 @@
+---
+export const prerender = true;
+
+import Layout from '~/layouts/PageLayout.astro';
+import Headline from '~/components/blog/Headline.astro';
+import { fetchPostsFromAllTypes } from '~/utils/blog';
+import { getPermalink, BLOG_TYPES } from '~/utils/blog-permalinks';
+
+interface TagInfo {
+  slug: string;
+  title: string;
+  count: number;
+}
+
+// Get all posts and extract unique tags with counts
+const posts = await fetchPostsFromAllTypes(BLOG_TYPES);
+
+const tagMap = new Map<string, TagInfo>();
+
+posts.forEach((post) => {
+  if (Array.isArray(post.tags)) {
+    post.tags.forEach((tag) => {
+      if (tagMap.has(tag.slug)) {
+        tagMap.get(tag.slug)!.count++;
+      } else {
+        tagMap.set(tag.slug, {
+          slug: tag.slug,
+          title: tag.title,
+          count: 1,
+        });
+      }
+    });
+  }
+});
+
+// Convert to array and sort by post count (descending), then alphabetically
+const allTags = Array.from(tagMap.values()).sort((a, b) => {
+  if (b.count !== a.count) return b.count - a.count;
+  return a.title.localeCompare(b.title, 'vi');
+});
+
+// Calculate stats
+const totalTags = allTags.length;
+const totalPosts = posts.length;
+const maxCount = Math.max(...allTags.map(t => t.count));
+
+// Group tags by size for visual variety
+const getTagSize = (count: number): string => {
+  const ratio = count / maxCount;
+  if (ratio > 0.7) return 'text-2xl font-bold';
+  if (ratio > 0.4) return 'text-xl font-semibold';
+  if (ratio > 0.2) return 'text-lg font-medium';
+  return 'text-base';
+};
+
+const getTagColor = (index: number): string => {
+  const colors = [
+    'bg-blue-100 hover:bg-blue-200 text-blue-800 dark:bg-blue-900/40 dark:hover:bg-blue-800/60 dark:text-blue-200',
+    'bg-purple-100 hover:bg-purple-200 text-purple-800 dark:bg-purple-900/40 dark:hover:bg-purple-800/60 dark:text-purple-200',
+    'bg-green-100 hover:bg-green-200 text-green-800 dark:bg-green-900/40 dark:hover:bg-green-800/60 dark:text-green-200',
+    'bg-amber-100 hover:bg-amber-200 text-amber-800 dark:bg-amber-900/40 dark:hover:bg-amber-800/60 dark:text-amber-200',
+    'bg-rose-100 hover:bg-rose-200 text-rose-800 dark:bg-rose-900/40 dark:hover:bg-rose-800/60 dark:text-rose-200',
+    'bg-cyan-100 hover:bg-cyan-200 text-cyan-800 dark:bg-cyan-900/40 dark:hover:bg-cyan-800/60 dark:text-cyan-200',
+    'bg-indigo-100 hover:bg-indigo-200 text-indigo-800 dark:bg-indigo-900/40 dark:hover:bg-indigo-800/60 dark:text-indigo-200',
+    'bg-teal-100 hover:bg-teal-200 text-teal-800 dark:bg-teal-900/40 dark:hover:bg-teal-800/60 dark:text-teal-200',
+  ];
+  return colors[index % colors.length];
+};
+
+const metadata = {
+  title: 'Tất cả thẻ bài viết | Youth & Partners',
+  description: `Khám phá ${totalTags} chủ đề pháp lý từ ${totalPosts} bài viết. Tìm kiếm thông tin về luật lao động, đầu tư nước ngoài, pháp lý doanh nghiệp và nhiều lĩnh vực khác.`,
+  keywords: 'thẻ bài viết, chủ đề pháp lý, luật lao động, đầu tư nước ngoài, tư vấn pháp luật, Youth Partners',
+};
+
+const breadcrumbs = [
+  { label: 'Trang chủ', href: '/', labelI18n: 'breadcrumb.home' },
+  { label: 'Thẻ bài viết', href: '/tag', current: true, labelI18n: 'breadcrumb.tags' },
+];
+---
+
+<Layout metadata={metadata} breadcrumbs={breadcrumbs}>
+  <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-6xl">
+    <!-- Header -->
+    <Headline 
+      title="Thẻ bài viết" 
+      subtitle={`Khám phá ${totalTags} chủ đề từ ${totalPosts} bài viết`}
+      i18nTitle="tags.pageTitle"
+      i18nSubtitle="tags.pageSubtitle"
+    />
+
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-xl p-4 text-center">
+        <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">{totalTags}</div>
+        <div class="text-sm text-blue-700 dark:text-blue-300" data-i18n="tags.totalTags">Chủ đề</div>
+      </div>
+      <div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 rounded-xl p-4 text-center">
+        <div class="text-3xl font-bold text-purple-600 dark:text-purple-400">{totalPosts}</div>
+        <div class="text-sm text-purple-700 dark:text-purple-300" data-i18n="tags.totalPosts">Bài viết</div>
+      </div>
+      <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 rounded-xl p-4 text-center">
+        <div class="text-3xl font-bold text-green-600 dark:text-green-400">{allTags[0]?.count || 0}</div>
+        <div class="text-sm text-green-700 dark:text-green-300" data-i18n="tags.mostPopular">Phổ biến nhất</div>
+      </div>
+      <div class="bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-900/30 dark:to-amber-800/30 rounded-xl p-4 text-center">
+        <div class="text-3xl font-bold text-amber-600 dark:text-amber-400">{Math.round(totalPosts / totalTags)}</div>
+        <div class="text-sm text-amber-700 dark:text-amber-300" data-i18n="tags.avgPerTag">TB bài/thẻ</div>
+      </div>
+    </div>
+
+    <!-- Popular Tags Section -->
+    {allTags.length > 0 && (
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2 dark:text-white">
+          <svg class="w-6 h-6 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <span data-i18n="tags.popularTags">Thẻ phổ biến</span>
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          {allTags.slice(0, 20).map((tag, index) => (
+            <a
+              href={getPermalink(tag.slug, 'tag')}
+              class={`inline-flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 transform hover:scale-105 ${getTagColor(index)} ${getTagSize(tag.count)}`}
+            >
+              <span class="user-content" data-user-content translate="yes">{tag.title}</span>
+              <span class="bg-white/50 dark:bg-black/30 px-2 py-0.5 rounded-full text-xs font-medium">
+                {tag.count}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- All Tags Cloud -->
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-6 flex items-center gap-2 dark:text-white">
+        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z"/>
+        </svg>
+        <span data-i18n="tags.allTags">Tất cả thẻ</span> <span class="notranslate" translate="no">({totalTags})</span>
+      </h2>
+      
+      <!-- Tag Cloud -->
+      <div class="bg-gray-50 dark:bg-slate-800/50 rounded-2xl p-6 md:p-8">
+        <div class="flex flex-wrap gap-2 justify-center items-center">
+          {allTags.map((tag, index) => (
+            <a
+              href={getPermalink(tag.slug, 'tag')}
+              class={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all duration-200 hover:shadow-md ${getTagColor(index)} ${getTagSize(tag.count)}`}
+              title={`${tag.count} bài viết`}
+            >
+              <span class="user-content" data-user-content translate="yes">{tag.title}</span>
+              <span class="text-xs opacity-75">({tag.count})</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Alphabetical List -->
+    <div>
+      <h2 class="text-2xl font-bold mb-6 flex items-center gap-2 dark:text-white">
+        <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12"/>
+        </svg>
+        <span data-i18n="tags.alphabeticalList">Danh sách theo bảng chữ cái</span>
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {allTags.sort((a, b) => a.title.localeCompare(b.title, 'vi')).map((tag) => (
+          <a
+            href={getPermalink(tag.slug, 'tag')}
+            class="group flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-lg transition-all duration-200"
+          >
+            <span class="text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors user-content" data-user-content translate="yes">
+              {tag.title}
+            </span>
+            <span class="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+              {tag.count}
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

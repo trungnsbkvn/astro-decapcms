@@ -1,0 +1,126 @@
+---
+export const prerender = true;
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+import Layout from '~/layouts/PageLayout.astro';
+import BlogList from '~/components/blog/List.astro';
+import Headline from '~/components/blog/Headline.astro';
+import Pagination from '~/components/blog/Pagination.astro';
+import type { Post } from '~/types';
+
+import { findAllPostsByAuthorAndTypes } from '~/utils/blog';
+import { getRootPathForType, BLOG_TYPES } from '~/utils/blog-permalinks';
+import { AUTHORS } from '~/utils/authors';
+
+export const getStaticPaths = (async () => {
+  const POSTS_PER_PAGE = 12;
+  const paths: Array<{
+    params: { author: string; page: string };
+    props: {
+      authorSlug: string;
+      authorName: string;
+      authorDescription: string;
+      posts: Post[];
+      totalPages: number;
+      total: number;
+      currentPage: number;
+    };
+  }> = [];
+  
+  for (const [slug, authorInfo] of Object.entries(AUTHORS)) {
+    const allPosts = await findAllPostsByAuthorAndTypes(authorInfo.name, BLOG_TYPES);
+    const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+    
+    // Create paths for page 2 and beyond (page 1 is handled by index.astro)
+    for (let page = 2; page <= totalPages; page++) {
+      const start = (page - 1) * POSTS_PER_PAGE;
+      const posts = allPosts.slice(start, start + POSTS_PER_PAGE);
+      
+      paths.push({
+        params: { author: slug, page: String(page) },
+        props: { 
+          authorSlug: slug,
+          authorName: authorInfo.name, 
+          authorDescription: authorInfo.description,
+          posts,
+          totalPages,
+          total: allPosts.length,
+          currentPage: page 
+        },
+      });
+    }
+  }
+  
+  return paths;
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { page } = Astro.params;
+const { authorSlug, authorName, authorDescription, posts: rawPosts, totalPages, total, currentPage } = Astro.props as Props;
+const pageNumber = parseInt(page as string, 10);
+
+const ROOT_PATH = `/tac-gia/${authorSlug}/bai-viet`;
+
+const posts = rawPosts.map((post: Post) => ({
+  ...post,
+  permalink: `${getRootPathForType(post.type || '')}/${post.permalink}`,
+}));
+
+const prevUrl = pageNumber === 2 ? ROOT_PATH : `${ROOT_PATH}/${pageNumber - 1}`;
+const nextUrl = pageNumber < totalPages ? `${ROOT_PATH}/${pageNumber + 1}` : undefined;
+
+const metadata = {
+  title: `Bài viết của ${authorName} — Trang ${pageNumber}`,
+  description: `Danh sách bài viết của ${authorDescription} - Trang ${pageNumber}`,
+  robots: {
+    index: false, // Don't index pagination pages
+    follow: true,
+  },
+  openGraph: {
+    type: 'profile',
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <Headline subtitle={`${authorDescription}`}>
+      Bài viết của {authorName}
+    </Headline>
+    
+    {posts.length > 0 ? (
+      <>
+        <div class="mb-8 flex flex-wrap justify-center gap-3">
+          <span class="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 dark:bg-slate-800 text-blue-700 dark:text-blue-300 text-sm font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+            </svg>
+            Tổng cộng {total} bài viết
+          </span>
+          <span class="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 text-sm font-medium">
+            Trang {currentPage} / {totalPages}
+          </span>
+        </div>
+        
+        <BlogList posts={posts} />
+        <Pagination prevUrl={prevUrl} nextUrl={nextUrl} />
+        
+        <div class="mt-12 text-center">
+          <a 
+            href={`/tac-gia/${authorSlug}`}
+            class="inline-flex items-center gap-2 text-primary hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Quay lại trang tác giả
+          </a>
+        </div>
+      </>
+    ) : (
+      <div class="text-center py-12">
+        <p class="text-gray-500 dark:text-slate-400">Chưa có bài viết nào.</p>
+      </div>
+    )}
+  </section>
+</Layout>

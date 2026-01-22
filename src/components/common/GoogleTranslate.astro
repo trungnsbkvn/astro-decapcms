@@ -1,0 +1,101 @@
+---
+// Google Translate Integration Component
+// Only loads for non-default languages
+// Note: Google Translate requires direct DOM access, so Partytown is not compatible
+// Instead, we defer loading until after main content is interactive
+---
+
+<div id="google_translate_element" class="hidden"></div>
+
+<script is:inline>
+  // Determine if Google Translate should be loaded based on stored preference
+  // Use requestIdleCallback to load during idle time (better performance)
+  function loadGoogleTranslate() {
+    const preferredLocale = localStorage.getItem('preferredLocale');
+    
+    // Only load if a non-default language is preferred
+    if (preferredLocale && preferredLocale !== 'vi') {
+      // Initialize Google Translate callback first
+      window.googleTranslateElementInit = function() {
+        try {
+          new google.translate.TranslateElement({
+            pageLanguage: 'vi',
+            includedLanguages: 'en,zh-CN,ja,ko',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+          }, 'google_translate_element');
+
+          // Hide the Google Translate widget completely
+          const widget = document.getElementById('google_translate_element');
+          if (widget) {
+            widget.style.display = 'none';
+          }
+        } catch (e) {
+          console.warn('Google Translate initialization failed:', e);
+        }
+      };
+      
+      // Load Google Translate script with low priority
+      const script = document.createElement('script');
+      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+  }
+  
+  // Use requestIdleCallback for non-critical loading, fallback to setTimeout
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadGoogleTranslate, { timeout: 3000 });
+  } else {
+    setTimeout(loadGoogleTranslate, 2000);
+  }
+</script>
+
+<style>
+  /* Hide Google Translate banner and branding */
+  :global(.goog-te-banner-frame) {
+    display: none !important;
+  }
+
+  :global(.goog-te-gadget) {
+    font-size: 0 !important;
+  }
+
+  :global(.goog-te-gadget .goog-te-combo) {
+    margin: 0 !important;
+  }
+
+  :global(.goog-te-menu-value span:first-child) {
+    display: none;
+  }
+
+  :global(.goog-te-menu-value:before) {
+    content: '' !important;
+  }
+
+  /* Hide Google Translate footer */
+  :global(.goog-te-gadget-icon) {
+    display: none !important;
+  }
+
+  /* Ensure notranslate elements are protected */
+  :global(.notranslate) {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  :global([translate="no"]) {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Prevent translation overlay */
+  :global(.goog-te-floating-shelf) {
+    display: none !important;
+  }
+</style>

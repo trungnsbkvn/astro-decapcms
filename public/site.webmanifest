@@ -1,0 +1,27 @@
+{
+  "name": "Công ty Luật TNHH Youth & Partners",
+  "short_name": "Y&P Law Firm",
+  "description": "Công ty Luật TNHH Youth & Partners - Tư vấn pháp lý thường xuyên cho doanh nghiệp, Giải quyết tranh chấp lao động, Dịch vụ Luật sư riêng tiếng Nhật, Anh, Trung, Hàn.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e40af",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo-square.jpg",
+      "sizes": "411x411",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/Logo-Square.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "legal"],
+  "lang": "vi",
+  "dir": "ltr"
+}

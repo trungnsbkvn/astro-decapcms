@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /email-success
+Disallow: /~partytown/
+
+Sitemap: https://yplawfirm.vn/sitemap.xml

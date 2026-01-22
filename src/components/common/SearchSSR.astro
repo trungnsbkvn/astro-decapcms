@@ -1,0 +1,255 @@
+---
+/**
+ * SSR-compatible Search Component using Fuse.js
+ * - Fetches posts from API endpoint
+ * - Client-side fuzzy search with Fuse.js
+ * - No build-time indexing required
+ */
+import SearchIcon from '~/components/icons/SearchIcon.astro';
+---
+
+<site-search id="search" class="ms-auto notranslate" translate="no">
+  <button data-open-modal disabled class="flex items-center justify-center rounded-md gap-1" aria-label="Open search">
+    <SearchIcon />
+  </button>
+  <dialog
+    aria-label="search"
+    class="h-full max-h-full w-full max-w-full border border-zinc-400 bg-white dark:bg-[#0a0910ec] shadow backdrop:backdrop-blur sm:mx-auto sm:mb-auto sm:mt-16 sm:h-max sm:max-h-[calc(100%-8rem)] sm:min-h-[15rem] sm:w-5/6 sm:max-w-[48rem] sm:rounded-md opacity-0"
+  >
+    <div class="dialog-frame flex flex-col gap-4 p-6 pt-12 sm:pt-6">
+      <button
+        data-close-modal
+        class="ms-auto cursor-pointer rounded-full bg-black text-white px-4 py-2 dark:bg-white dark:text-black"
+        data-i18n="common.close"
+        aria-label="Close search"
+      >
+        Đóng
+      </button>
+      <div class="search-container dark:text-white">
+        <label for="search-input" class="sr-only">Search articles</label>
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Tìm kiếm bài viết..."
+          data-i18n-placeholder="search.placeholder"
+          class="w-full px-4 py-3 text-lg border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          autocomplete="off"
+        />
+        <div id="search-results" class="mt-4 max-h-[60vh] overflow-y-auto">
+          <p class="text-gray-500 dark:text-gray-400 text-center py-8" data-i18n="search.enterKeyword">
+            Nhập từ khóa để tìm kiếm...
+          </p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+</site-search>
+
+<script>
+  // Defer imports to avoid blocking initial render
+  let Fuse: typeof import('fuse.js').default;
+  let animate: typeof import('motion').animate;
+  
+  // Lazy load dependencies only when search is opened
+  async function loadDependencies() {
+    if (!Fuse) {
+      const [fuseModule, motionModule] = await Promise.all([
+        import('fuse.js'),
+        import('motion')
+      ]);
+      Fuse = fuseModule.default;
+      animate = motionModule.animate;
+    }
+    return { Fuse, animate };
+  }
+
+  interface SearchItem {
+    title: string;
+    excerpt: string;
+    category: string;
+    url: string;
+    type: string;
+    date: string;
+  }
+
+  class SiteSearch extends HTMLElement {
+    private fuse: InstanceType<typeof import('fuse.js').default> | null = null;
+    private searchData: SearchItem[] = [];
+    private searchInput: HTMLInputElement | null = null;
+    private resultsContainer: HTMLElement | null = null;
+
+    constructor() {
+      super();
+      const openBtn = this.querySelector<HTMLButtonElement>('button[data-open-modal]')!;
+      const closeBtn = this.querySelector<HTMLButtonElement>('button[data-close-modal]')!;
+      const dialog = this.querySelector('dialog')!;
+      const dialogFrame = this.querySelector('.dialog-frame')!;
+
+      this.searchInput = this.querySelector<HTMLInputElement>('#search-input');
+      this.resultsContainer = this.querySelector<HTMLElement>('#search-results');
+
+      const onWindowClick = (event: MouseEvent) => {
+        if (document.body.contains(event.target as Node) && !dialogFrame.contains(event.target as Node)) closeModal();
+      };
+
+      const handleEscKey = (e: KeyboardEvent) => {
+        if (e.key === 'Escape' && dialog.open) {
+          closeModal();
+          window.removeEventListener('keydown', handleEscKey);
+        }
+      };
+
+      const openModal = async (event?: MouseEvent) => {
+        dialog.showModal();
+        
+        // Load dependencies and animate
+        const { animate: animateFn } = await loadDependencies();
+        animateFn(
+          'dialog',
+          {
+            clipPath: ['polygon(0 0, 100% 0, 100% -200%, -200% -200%)', 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)'],
+            opacity: [0, 1],
+          },
+          { duration: 0.2 }
+        );
+        document.body.classList.add('overflow-hidden');
+        this.searchInput?.focus();
+        event?.stopPropagation();
+        window.addEventListener('click', onWindowClick);
+        window.addEventListener('keydown', handleEscKey);
+        
+        // Load search data on first open
+        if (!this.fuse) {
+          this.loadSearchData();
+        }
+      };
+
+      const closeModal = () => {
+        dialog.close();
+        document.body.classList.remove('overflow-hidden');
+        window.removeEventListener('click', onWindowClick);
+        window.removeEventListener('keydown', handleEscKey);
+      };
+
+      openBtn.addEventListener('click', openModal);
+      openBtn.disabled = false;
+      closeBtn.addEventListener('click', closeModal);
+      document.addEventListener('astro:after-swap', closeModal);
+
+      // Listen for `/` keyboard shortcut
+      window.addEventListener('keydown', (e) => {
+        if (e.key === '/' && !dialog.open) {
+          openModal();
+          e.preventDefault();
+        }
+      });
+
+      // Search input handler
+      this.searchInput?.addEventListener('input', (e) => {
+        const query = (e.target as HTMLInputElement).value;
+        this.performSearch(query);
+      });
+    }
+
+    async loadSearchData() {
+      try {
+        if (this.resultsContainer) {
+          this.resultsContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400 text-center py-8">Đang tải...</p>';
+        }
+
+        const response = await fetch('/api/search.json');
+        
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        
+        const text = await response.text();
+        this.searchData = text ? JSON.parse(text) : [];
+
+        // Initialize Fuse.js with Vietnamese-friendly options (lazy loaded)
+        const { Fuse: FuseClass } = await loadDependencies();
+        this.fuse = new FuseClass(this.searchData, {
+          keys: [
+            { name: 'title', weight: 0.4 },
+            { name: 'excerpt', weight: 0.3 },
+            { name: 'category', weight: 0.2 },
+          ],
+          threshold: 0.4, // More lenient matching
+          ignoreLocation: true,
+          includeScore: true,
+          minMatchCharLength: 2,
+        });
+
+        if (this.resultsContainer) {
+          const msg = this.searchData.length > 0 
+            ? 'Nhập từ khóa để tìm kiếm...' 
+            : 'Không có dữ liệu tìm kiếm';
+          this.resultsContainer.innerHTML = `<p class="text-gray-500 dark:text-gray-400 text-center py-8">${msg}</p>`;
+        }
+      } catch (error) {
+        console.error('Failed to load search data:', error);
+        if (this.resultsContainer) {
+          this.resultsContainer.innerHTML = '<p class="text-red-500 text-center py-8">Không thể tải dữ liệu tìm kiếm. Vui lòng thử lại.</p>';
+        }
+      }
+    }
+
+    performSearch(query: string) {
+      if (!this.resultsContainer) return;
+
+      if (!query || query.length < 2) {
+        this.resultsContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400 text-center py-8">Nhập từ khóa để tìm kiếm...</p>';
+        return;
+      }
+
+      if (!this.fuse) {
+        this.resultsContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400 text-center py-8">Đang tải...</p>';
+        return;
+      }
+
+      const results = this.fuse.search(query, { limit: 10 });
+
+      if (results.length === 0) {
+        this.resultsContainer.innerHTML = `<p class="text-gray-500 dark:text-gray-400 text-center py-8">Không tìm thấy kết quả cho "${query}"</p>`;
+        return;
+      }
+
+      const typeLabels: Record<string, string> = {
+        post: 'Tin tức',
+        legal: 'Pháp lý',
+        labor: 'Lao động',
+        consultation: 'Tư vấn',
+        foreigner: 'Đầu tư NN',
+        evaluation: 'Đánh giá',
+        attorney: 'Luật sư',
+        page: 'Trang',
+      };
+
+      this.resultsContainer.innerHTML = results
+        .map(
+          ({ item }) => `
+          <a href="${item.url}" class="block p-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors border-b border-gray-200 dark:border-gray-700 last:border-0">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-xs px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded">${typeLabels[item.type] || item.type}</span>
+              ${item.category ? `<span class="text-xs text-gray-500">${item.category}</span>` : ''}
+            </div>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">${item.title}</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">${item.excerpt}</p>
+          </a>
+        `
+        )
+        .join('');
+    }
+  }
+
+  customElements.define('site-search', SiteSearch);
+</script>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

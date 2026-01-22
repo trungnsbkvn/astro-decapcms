@@ -1,0 +1,71 @@
+---
+/**
+ * Early Translation Script - Optimized for Vietnamese (default) users
+ * 
+ * DESIGN PRINCIPLE: 
+ * - Vietnamese users (majority): ZERO JavaScript execution, no localStorage access
+ * - Non-Vietnamese users: Minimal FOUC prevention
+ * 
+ * This script ONLY adds i18n-loading class for non-Vietnamese users.
+ * LanguageSelector.astro handles all translation logic.
+ */
+---
+
+<script is:inline>
+(function() {
+  // Early exit for Vietnamese users - no JS execution overhead
+  // The try-catch is the only unavoidable check
+  var savedLang;
+  try { savedLang = localStorage.getItem('site-language'); } catch(e) { return; }
+  
+  // Vietnamese (default) or no saved preference: do nothing
+  if (!savedLang || savedLang === 'vi') return;
+  
+  // Non-Vietnamese users only: add loading class for FOUC prevention
+  document.documentElement.classList.add('i18n-loading');
+})();
+</script>
+
+<style is:global>
+  /* FOUC prevention: Only affects non-Vietnamese users with i18n-loading class */
+  html.i18n-loading header,
+  html.i18n-loading footer,
+  html.i18n-loading nav[aria-label="Breadcrumb"],
+  html.i18n-loading .notranslate,
+  html.i18n-loading [translate="no"] {
+    opacity: 0;
+  }
+
+  /* Smooth fade-in transition */
+  header, footer, nav[aria-label="Breadcrumb"], .notranslate, [translate="no"] {
+    transition: opacity 0.15s ease-in;
+  }
+
+  /* Hide Google Translate UI elements */
+  .goog-te-banner-frame,
+  .skiptranslate,
+  #goog-gt-tt,
+  .goog-te-balloon-frame,
+  div#goog-gt-,
+  .goog-text-highlight,
+  #google_translate_element_hidden,
+  body > .skiptranslate,
+  .goog-te-spinner-pos {
+    display: none !important;
+    height: 0 !important;
+    visibility: hidden !important;
+  }
+
+  /* Prevent Google Translate from shifting page */
+  body,
+  html.translated-ltr body,
+  html.translated-rtl body {
+    top: 0 !important;
+  }
+
+  /* Keep notranslate elements with original font */
+  .notranslate,
+  [translate="no"] {
+    font-family: inherit !important;
+  }
+</style>

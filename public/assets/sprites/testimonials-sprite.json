@@ -1,0 +1,80 @@
+{
+  "sprite": "/assets/sprites/testimonials-sprite.webp",
+  "width": 900,
+  "height": 180,
+  "avatarSize": 90,
+  "avatars": {
+    "huyen-nguyen": {
+      "x": 0,
+      "y": 0,
+      "size": 90,
+      "original": "Huyền Nguyễn"
+    },
+    "ms-hong": {
+      "x": 90,
+      "y": 0,
+      "size": 90,
+      "original": "Ms. Hồng"
+    },
+    "ms-linh-topcv": {
+      "x": 180,
+      "y": 0,
+      "size": 90,
+      "original": "Ms. Linh-TopCV"
+    },
+    "xuan-thoai": {
+      "x": 270,
+      "y": 0,
+      "size": 90,
+      "original": "Xuân Thoại"
+    },
+    "hatrung": {
+      "x": 360,
+      "y": 0,
+      "size": 90,
+      "original": "hatrung"
+    },
+    "hoatruong": {
+      "x": 450,
+      "y": 0,
+      "size": 90,
+      "original": "hoatruong"
+    },
+    "huyen": {
+      "x": 540,
+      "y": 0,
+      "size": 90,
+      "original": "huyen"
+    },
+    "ngoc": {
+      "x": 630,
+      "y": 0,
+      "size": 90,
+      "original": "ngoc"
+    },
+    "thu-ha": {
+      "x": 720,
+      "y": 0,
+      "size": 90,
+      "original": "thu hà"
+    },
+    "trung": {
+      "x": 810,
+      "y": 0,
+      "size": 90,
+      "original": "trung"
+    },
+    "vanquangtran": {
+      "x": 0,
+      "y": 90,
+      "size": 90,
+      "original": "vanquangtran"
+    },
+    "xuan": {
+      "x": 90,
+      "y": 90,
+      "size": 90,
+      "original": "xuan"
+    }
+  }
+}

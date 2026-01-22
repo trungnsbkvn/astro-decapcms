@@ -1,0 +1,574 @@
+---
+export const prerender = true;
+
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/blog/BlogLatestPosts.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Brands from '~/components/widgets/Brands.astro';
+import ReviewsSchema from '~/components/seo/ReviewsSchema.astro';
+import HowToSchema from '~/components/seo/HowToSchema.astro';
+
+const metadata = {
+  title: 'Công ty Luật TNHH Youth & Partners - Người bạn đồng hành của Doanh nghiệp',
+  ignoreTitleTemplate: true,
+  description: 'Công ty Luật Youth & Partners - Tư vấn pháp lý doanh nghiệp, pháp luật lao động, đầu tư nước ngoài, phòng pháp chế thuê ngoài, đánh giá tuân thủ RBA, ESG tại Việt Nam.',
+  keywords: 'công ty luật, luật sư doanh nghiệp, tư vấn pháp lý, luật lao động, đầu tư nước ngoài, FDI, pháp chế thuê ngoài, Youth Partners, tư vấn pháp luật, due diligence, RBA audit',
+};
+
+const lastestCategories = {
+  consultation: [],
+  labor: [],
+  post: ['Tin tức pháp lý', 'Bình luận pháp lý', 'Các vụ việc nổi bật', 'Hội thảo pháp lý'],
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Liên hệ để được tư vấn',
+        href: 'tel:0889956888',
+        target: '_blank',
+        icon: 'tabler:phone-call',
+        i18nText: 'common.contactForConsult',
+      },
+      { text: 'Tìm hiểu thêm', href: '/gioi-thieu.html', i18nText: 'common.learnMore' },
+    ]}
+    image={{ src: '~/assets/images/youth and partners/Youth and Partners.jpg', alt: 'Luật sư tư vấn' }}
+  >
+    <Fragment slot="title">
+      <span data-i18n="homepage.companyPrefix">Công ty Luật TNHH</span><span class="text-accent dark:text-white highlight notranslate" translate="no"> Youth </span><span class="text-primary dark:text-white highlight notranslate" translate="no">& Partners </span><span data-i18n="homepage.companySuffix"></span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="block mb-1 sm:hidden font-bold text-blue-600 text-center" data-i18n="homepage.likeAFriend">Như một người bạn đồng hành.</span>
+      <span class="hidden sm:inline text-center">
+        <span class="font-semibold notranslate" translate="no">Youth & Partners</span> <span data-i18n="homepage.heroSubtitle">là một trong những công ty luật hàng đầu trong các lĩnh vực:
+        Tư vấn pháp lý thường xuyên cho doanh nghiệp/Dịch vụ Phòng pháp chế thuê ngoài; Tư vấn và giải quyết tranh chấp lao
+        động; Dịch vụ Luật sư riêng tiếng Nhật, Anh, Trung, Hàn; Dịch vụ Audit, đánh giá và thẩm định pháp lý cho Doanh nghiệp,
+        dịch vụ DD (Due diligence) riêng các lĩnh vực Lao động, nhân quyền, đạo đức kinh doanh, hệ thống quản lý, an toàn,
+        sức khỏe, môi trường cho Doanh nghiệp.</span>
+      </span>
+    </Fragment>
+  </Hero>
+
+  <!-- Dịch vụ nổi bật ******************* -->
+
+  <Note />
+
+  <Features
+    id="features"
+    tagline="Youth & Partners"
+    title="DỊCH VỤ CỦA CHÚNG TÔI"
+    subtitle="Công ty Luật chúng tôi luôn mong muốn mang đến cho quý khách hàng những dịch vụ chất lượng, nhanh chóng, chính xác và trọn vẹn."
+    i18nTitle="homepage.ourServices"
+    i18nSubtitle="homepage.servicesSubtitle"
+    items={[
+      {
+        title: 'Tư vấn pháp luật thường xuyên cho Doanh nghiệp',
+        description:
+          'Với kinh nghiệm đa dạng trong nhiều lĩnh vực hoạt động của Doanh nghiệp, đặc biệt là các Doanh nghiệp sản xuất có vốn Đầu tư nước ngoài, trong những năm qua, chúng tôi tự hào là đơn vị cung cấp dịch vụ tư vấn pháp luật thường xuyên chất lượng cao cho nhiều Doanh nghiệp trong nước và nước ngoài có quy mô lớn tại Việt Nam như Samsung, Intel Vietnam, Viettel, FPT, TopCV, Cosmos, Rikkeisoft... cũng như nhiều Doanh nghiệp Hàn Quốc, Nhật Bản, Úc…  <br /><br />Đặc biệt, đến thời điểm hiện tại, Y&P là một trong rất ít những hãng luật có thể tư vấn sâu những vấn đề về trách nhiệm xã hội của Doanh nghiệp (CSR) hay cụ thể là Bộ Quy tắc RBA (Liên minh các Doanh nghiệp có trách nhiệm xã hội) hiện đang áp dụng cho rất nhiều Doanh nghiệp, đặc biệt là các Doanh nghiệp điện tử. Điều này làm cho chúng tôi trở thành đối tác tin cậy và phù hợp cho các Doanh nghiệp sản xuất đang phải tuân thủ theo Bộ Quy tắc này. ',
+        icon: 'tabler:square-number-1',
+        i18nTitle: 'homepage.regularConsultation',
+        i18nDescription: 'homepage.regularConsultationDesc',
+      },
+      {
+        title: 'Tư vấn pháp luật Lao động',
+        description:
+          'Với đặc thù đang là hãng luật đang tư vấn pháp lý thường xuyên cho hơn 20 Doanh nghiệp và liên tục tham gia vào quá trình tư vấn, giải quyết nhiều vụ việc/án lao động, Y&P Law Firm có thể tự tin đang là chuyên gia đầu ngành tại Việt Nam trong lĩnh vực này. Website của chúng tôi có chuyên trang luật lao động, phân tích sâu về nội quy, thỏa ước, hợp đồng lao động/đào tạo, lương & phúc lợi, thời giờ làm việc, chấm dứt hợp đồng, xử lý kỷ luật, quấy rối tình dục, NDA/NCA… <br /><br />Bên cạnh đó, chúng tôi thường xuyên tổ chức/phối hợp tổ chức các khóa đào tạo, workshop với hàng nghìn người tham dự với vai trò diễn giả để phổ cập kiến thức lao động cho cộng đồng. Ngoài ra, hằng năm chúng tôi cũng tổ chức riêng các khóa đào tạo về tổ chức trong sạch, chống quấy rối tình dục, bộ quy tắc RBA, nhấn mạnh các lĩnh vực tồn tại nhiều rủi ro tranh chấp trong Doanh nghiệp như giải quyết nghỉ việc, khiếu nại, tố cáo, xử lý kỷ luật. Đặc biệt với các Khách hàng tư vấn thường xuyên của Y&P Law Firm, chương trình đào tạo là miễn phí.',
+        icon: 'tabler:square-number-2',
+        i18nTitle: 'homepage.laborLaw',
+        i18nDescription: 'homepage.laborLawDesc',
+      },
+      {
+        title: 'Tư vấn Đầu tư nước ngoài',
+        description:
+          'Kinh nghiệm tư vấn cho các dự án Đầu tư của Y&P Law Firm bao gồm tư vấn cho các Doanh nghiệp trong nước và nước ngoài trong suốt quá trình thực hiện tư vấn nhằm hỗ trợ khách hàng điều hướng sự giao thoa phức tạp của pháp luật Việt Nam và pháp luật nước ngoài. Chúng tôi cam kết hỗ trợ khách hàng thực hiện đầu tư theo đủ các hình thức đầu tư từ lúc bắt đầu kế hoạch đầu tư cho đến khi khi dự án đã đi vào hoạt động. <br /><br />M&A là một trong những nền móng chính trong của lĩnh vực hoạt động tư vấn đầu tư của Y&P Law Firm, chúng tôi tập trung vào mảng sáp nhập và mua bán. Với ưu thế nắm chắc các chính sách ưu đãi đầu tư, thuế và tài chính trong các hoạt động đầu tư FDI, chúng tôi đã giúp đỡ khách hàng triển khai hàng nghìn thương vụ có cấu trúc phức tạp và vượt qua nhiều thách thức từ quy định của pháp luật hiện hành tới tình hình địa chính trị không ngừng biến đổi. ',
+        icon: 'tabler:square-number-3',
+        i18nTitle: 'homepage.foreignInvestment',
+        i18nDescription: 'homepage.foreignInvestmentDesc',
+      },
+      {
+        title: 'Dịch vụ Đánh giá Doanh nghiệp',
+        description:
+          'Ngày nay, việc tuân thủ theo các quy định của pháp luật địa phương, đáp ứng các chuẩn mực của bộ tiêu chuẩn về trách nhiệm xã hội là vấn đề sống còn với Doanh nghiệp. Nhiều Doanh nghiệp đã phải trả giá bằng sự tồn vong của pháp nhân mình vì lơ là, coi nhẹ vấn đề tuân thủ pháp luật và các tiêu chuẩn trách nhiệm xã hội. <br /><br />Luật sư giám đốc điều hành của Y&P Law Firm là Lead Auditor (Kiểm toán viên/Đánh giá viên trưởng) của Tập đoàn Samsung trong các chiến dịch/chương trình Audit Vendor/Đánh giá nhà cung ứng. Theo đó, chúng tôi có đủ kinh nghiệm và tự tin cung cấp dịch vụ đánh giá Doanh nghiệp toàn diện, giúp khách hàng có cái nhìn sâu sắc về toàn bộ hoạt động kinh doanh và nhận diện được các yếu tố rủi ro tiềm ẩn của Doanh nghiệp. Dịch vụ của chúng tôi chỉ ra toàn diện các lỗi trong việc tuân thủ các khía cạnh pháp lý về lao động, đạo đức kinh doanh, hệ thống quản lý, an toàn, sức khỏe, môi trường, giấy phép, sở hữu trí tuệ, tài liệu quản trị nội bộ doanh nghiệp..',
+        icon: 'tabler:square-number-4',
+        i18nTitle: 'homepage.evaluationService',
+        i18nDescription: 'homepage.evaluationServiceDesc',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="ton-chi-hoat-dong"
+    isReversed
+    tagline="Y&P Law Firm"
+    title="Tôn chỉ hoạt động của chúng tôi"
+    i18nTitle="homepage.operatingPrinciples"
+    items={[
+      {
+        title: 'Thời gian',
+        description:
+          'Chúng tôi hiểu rằng mỗi vụ việc pháp lý đều có những yêu cầu về thời gian và các yếu tố khắt khe. Vì vậy, đội ngũ luật sư của chúng tôi luôn nỗ lực tối đa để đảm bảo tiến trình công việc diễn ra nhanh chóng, hiệu quả, và giúp khách hàng đạt được kết quả mong muốn trong thời gian sớm nhất.',
+        icon: 'tabler:clock-24',
+        i18nTitle: 'homepage.time',
+        i18nDescription: 'homepage.timeDesc',
+      },
+      {
+        title: 'Tận tâm',
+        description:
+          'Mỗi luật sư tại Youth & Partners đều cam kết đặt trọn tâm huyết vào từng hồ sơ, luôn lắng nghe và thấu hiểu nhu cầu của khách hàng để đưa ra các giải pháp tối ưu và phù hợp nhất. Chúng tôi tin rằng sự tận tâm là yếu tố then chốt để xây dựng niềm tin và mối quan hệ lâu dài với khách hàng.',
+        icon: 'tabler:heart',
+        i18nTitle: 'homepage.dedication',
+        i18nDescription: 'homepage.dedicationDesc',
+      },
+      {
+        title: 'Tận lực',
+        description:
+          'Chúng tôi không chỉ cung cấp dịch vụ pháp lý đơn thuần, mà luôn nỗ lực vượt qua mọi thử thách để bảo vệ quyền lợi hợp pháp của khách hàng. Với đội ngũ luật sư giàu kinh nghiệm và luôn sẵn sàng đối mặt với mọi tình huống, Youth & Partners Law Firm cam kết mang lại công bằng và sự thành công cho khách hàng, giúp họ vững bước trên con đường phát triển.',
+        icon: 'tabler:award',
+        i18nTitle: 'homepage.excellence',
+        i18nDescription: 'homepage.excellenceDesc',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/youth and partners/ton-chi-hoat-dong.png',
+      alt: 'Tôn chỉ hoạt động',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Steps
+    title="Hãy để chúng tôi trở thành người bạn đồng hành của bạn"
+    i18nTitle="homepage.beYourPartner"
+    items={[
+      {
+        title: '<span class="font-medium">Liên hệ</span>',
+        description:
+          'Mô tả vấn đề của bạn và thu thập tài liệu liên quan. Liên hệ với chúng tôi qua Hotline, Zalo, WhatsApp, Facebook hoặc Email',
+        icon: 'tabler:report-search',
+        i18nTitle: 'homepage.contact',
+        i18nDescription: 'homepage.contactDesc',
+      },
+      {
+        title: '<span class="font-medium">Gửi yêu cầu</span>',
+        description: 'Mô tả chi tiết vấn đề qua email hoặc điện thoại và đính kèm tài liệu liên quan',
+        icon: 'tabler:phone',
+        i18nTitle: 'homepage.sendRequest',
+        i18nDescription: 'homepage.sendRequestDesc',
+      },
+      {
+        title: '<span class="font-medium">Theo dõi phản hồi</span>',
+        description:
+          'Theo dõi email hoặc điện thoại của bạn để nhận phản hồi từ đội ngũ hỗ trợ khách hàng của chúng tôi. Nếu không nhận được phản hồi trong thời gian dự kiến, hãy liên hệ lại để đảm bảo vấn đề của bạn không bị bỏ sót.',
+        icon: 'tabler:calendar-month',
+        i18nTitle: 'homepage.trackResponse',
+        i18nDescription: 'homepage.trackResponseDesc',
+      },
+      {
+        title: 'Chúng tôi sẽ hoàn thành!',
+        icon: 'tabler:check',
+        i18nTitle: 'homepage.weWillComplete',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/youth and partners/yp-nguoi-ban-dong-hanh.png',
+      alt: 'Người bạn đồng hành - Youth & Partners',
+    }}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Chuyên viên pháp lý', amount: '30+', i18nTitle: 'homepage.legalStaff' },
+      { title: 'Khách hàng hài lòng', amount: '1176', i18nTitle: 'homepage.satisfiedClients' },
+      { title: 'Vụ thắng kiện', amount: '723', i18nTitle: 'homepage.casesWon' },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Stats>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    categories={lastestCategories}
+    count={6}
+    title="Tin mới nhất"
+    information={`Trang tin tức của chúng tôi cung cấp những thông tin cập nhật và mới nhất về các vấn đề pháp lý, 
+    với bài viết từ các chuyên gia pháp lý hàng đầu, đảm bảo bạn luôn nắm bắt được những thay đổi quan trọng trong các lĩnh vực quan tâm.
+                `}
+    i18nTitle="homepage.latestNews"
+    i18nInformation="homepage.newsInfo"
+  />
+
+  <!-- Testimonials Widget *********** -->
+
+  <ReviewsSchema
+    itemName="Youth & Partners Law Firm"
+    itemType="LocalBusiness"
+    ratingValue={5}
+    reviewCount={6}
+    reviews={[
+      {
+        author: "Ms. Linh",
+        rating: 5,
+        reviewBody: "Working with Y&P is very reassuring with detailed consultations, not only on the requested topics but also related content if any, to give the company a more comprehensive view and make more accurate decisions. The consulting lawyer's attitude is gentle, listening and very accommodating to customers.",
+        datePublished: "2024-01-15",
+      },
+      {
+        author: "Ms. Huyền Nguyễn",
+        rating: 5,
+        reviewBody: "Professionalism and dedication: Professional consulting services, lawyers provide dedicated support, effective in handling disputes, compliance and legal documents. Response speed: Fast, flexible.",
+        datePublished: "2024-02-10",
+      },
+      {
+        author: "Ms. Hồng",
+        rating: 5,
+        reviewBody: "Rong Viet Company would like to thank our colleagues at Youth & Partners for helping us shoulder some of the work at the company, especially at times when our company needs to focus highly on legal matters.",
+        datePublished: "2024-03-05",
+      },
+      {
+        author: "Trung Dao",
+        rating: 5,
+        reviewBody: "Amazing services and good spirit",
+        datePublished: "2024-04-12",
+      },
+      {
+        author: "Hoa Truong",
+        rating: 5,
+        reviewBody: "A great address for legal advice and support. I am very satisfied with the working methods and support from the staff here.",
+        datePublished: "2024-05-20",
+      },
+      {
+        author: "Nguyễn Hải Trung",
+        rating: 5,
+        reviewBody: "Professional team of lawyers with extensive expertise, professional work handling, breakthrough thinking in consulting plans for clients.",
+        datePublished: "2024-06-08",
+      },
+    ]}
+  />
+
+  <Testimonials
+    id="cam-nhan-khach-hang"
+    title="Cảm nhận của khách hàng"
+    subtitle="Khách hàng hài lòng với dịch vụ pháp lý tại Youth & Partners, đánh giá cao sự tận tâm và chuyên nghiệp của đội ngũ luật sư trong việc giải quyết các vấn đề pháp lý phức tạp. Họ tin tưởng và sẵn lòng tiếp tục sử dụng dịch vụ của chúng tôi trong tương lai."
+    i18nTitle="homepage.clientTestimonials"
+    i18nSubtitle="homepage.testimonialsSubtitle"
+    testimonials={[
+      {
+        testimonial: `Làm việc với Y&P rất yên tâm khi được tư vấn chi tiết, không chỉ đúng các nội dung được hỏi mà còn thêm cả các nội dung liên quan khác nếu có, nhằm cho doanh nghiệp có cái nhìn tổng quan hơn, từ đó đưa ra quyết định đúng và chính xác hơn. Thái độ của luật sư tư vấn hoà nhã, lắng nghe và rất "chiều ý" khách hàng. 
+Chắc chắn sẽ tiếp tục đồng hành cùng Y&P trong thời gian tới. 
+Cảm ơn đội ngũ luật sư tư vấn của Y&P, chúc Y&P ngày càng thành công!`,
+        name: 'Ms. Linh',
+        job: 'Manager | HR & Administration - TopCV',
+        i18nJob: 'testimonials.manager',
+        image: {
+          src: '~/assets/images/customers/ms-linh-topcv.jpg',
+          alt: 'Ms. Linh-TopCV',
+        },
+      },
+      {
+        testimonial: `Tính chuyên nghiệp và sự tận tâm: Dịch vụ tư vấn chuyên nghiệp, luật sư hỗ trợ tận tình, hiệu quả trong xử lý tranh chấp, tuân thủ và hồ sơ pháp lý.
+Tốc độ phản hồi: Nhanh chóng, linh hoạt. Vấn đề đơn giản được giải quyết qua tin nhắn, vấn đề phức tạp có báo cáo pháp lý chi tiết, rõ ràng.
+Kinh nghiệm chuyên môn: Phong phú, bao quát các lĩnh vực thương mại, dân sự, lao động, v.v.
+Báo cáo và cập nhật: Đầy đủ, thường xuyên, rõ ràng.`,
+        name: 'Ms. Huyền Nguyễn',
+        job: 'Head of HR | Kowa (Việt Nam)',
+        i18nJob: 'testimonials.headOfHR',
+        image: {
+          src: '~/assets/images/customers/huyen-nguyen.jpg',
+          alt: 'Ms. Huyền Nguyễn - Kowa (Việt Nam)',
+        },
+      },
+      {
+        testimonial: `Công ty Rồng Việt xin cảm ơn các cộng sự của Youth & Partners  đã giúp đỡ chúng tôi gánh vác một phần công việc tại công ty, đặc biệt trong những thời điểm mà công ty chúng tôi cần tập trung cao độ về pháp lý cũng như các điều luật được cập nhật liên tục kịp thời và chính xác.
+Cảm ơn tất cả mọi người vì đã không chỉ làm việc cùng nhau mà còn dành cho nhau sự tin tưởng, yêu thương và sẻ chia. Những điều đó chính là nguồn sức mạnh lớn nhất để Rồng Việt không ngừng tiến về phía trước.`,
+        name: 'Ms. Hồng',
+        job: 'Head of HR | Công ty TNHH TM&DV Rồng Việt',
+        i18nJob: 'testimonials.headOfHR',
+        image: {
+          src: '~/assets/images/customers/ms-hong.png',
+          alt: 'Ms. Hồng Image',
+        },
+      },
+      {
+        testimonial: `Amazing services and good spirit
+                                        We have been working with Youth & Partners for a long time. We had perfect experiences from enthusiastic and great staff. They are friendly and dedicated to work. Everything is well organized.
+                                        Keep up your great work!`,
+        name: 'Daniel Nguyen',
+        job: 'Founder & CEO WeSMART',
+        i18nJob: 'testimonials.founderCEO',
+        image: {
+          src: '~/assets/images/customers/trung.png',
+          alt: 'Daniel Nguyen',
+        },
+      },
+      {
+        testimonial: `Một địa chỉ tư vấn và hỗ trợ pháp luật tuyệt vời. Mình rất hài lòng về cách làm việc và hỗ trợ của các anh chị tại đây. Cảm ơn và chúc công ty ngày một phát triển, và hỗ trợ được nhiều khách hàng hơn nữa.`,
+        name: 'Ha Trung',
+        job: 'Khách hàng',
+        i18nJob: 'testimonials.customer',
+        image: {
+          src: '~/assets/images/customers/hatrung.png',
+          alt: 'Ha Trung',
+        },
+      },
+      {
+        testimonial: `Đội ngũ Luật sư chuyên môn dày dặn, xử lý công việc chuyên nghiệp, tư duy đột phá trong các phương án tư vấn cho khách hàng, đem đến sự hài lòng toàn diện cho khách hàng trên cơ sở thượng tôn pháp luật.`,
+        name: 'Hoa Trương',
+        job: 'Khách hàng',
+        i18nJob: 'testimonials.customer',
+        image: {
+          src: '~/assets/images/customers/hoatruong.png',
+          alt: 'Hoa Trương Image',
+        },
+      },
+      {
+        testimonial: `Mình rất hài lòng khi sử dụng dịch vụ pháp lý của Y&P Lawfirm. Các luật sự làm việc rất chuyên nghiệp,  Chúc cho các luật sư thật nhiều sức khỏe!`,
+        name: 'Van Quang Tran',
+        job: 'Khách hàng',
+        i18nJob: 'testimonials.customer',
+        image: {
+          src: '~/assets/images/customers/vanquangtran.png',
+          alt: 'Van Quang Tran Image',
+        },
+      },
+      {
+        testimonial: `Công ty luật uy tín, có đội ngũ Luật sư và chuyên viên giàu kinh nghiêm trong các lĩnh vực doanh nghiệp, lao động, kinh doanh thương mại, tranh tụng.
+Một nơi xứng đáng để gửi gắm niềm tin.`,
+        name: 'Xuân Thoại Mai',
+        job: 'Khách hàng',
+        i18nJob: 'testimonials.customer',
+        image: {
+          src: '~/assets/images/customers/xuan-thoai.png',
+          alt: 'Xuân Thoại Mai Image',
+        },
+      },
+      {
+        testimonial: `Đội ngũ luật sư chuyên môn cao, tác phong chuyên nghiệp, hỗ trợ khách hàng tận tâm, nhiệt tình. Tôi rất hài lòng với trải nghiệm sử dụng dịch vụ của Công ty Luật này.`,
+        name: 'Thu Hà Trần',
+        job: 'Khách hàng',
+        i18nJob: 'testimonials.customer',
+        image: {
+          src: '~/assets/images/customers/thu-ha.png',
+          alt: 'Thu Hà Trần Image',
+        },
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Testimonials>
+
+  <!-- Brands Widget ****************** -->
+
+  <Brands
+    title="Đối tác và khách hàng của chúng tôi"
+    subtitle="Chúng tôi tự hào về mạng lưới đối tác và khách hàng rộng khắp, bao gồm các doanh nghiệp, tổ chức và cá nhân uy tín trong nhiều lĩnh vực khác nhau. Những đối tác hợp tác của chúng tôi gồm có các công ty luật hàng đầu, các tổ chức tư vấn chiến lược, và các công ty tài chính quốc tế. Chúng tôi làm việc chặt chẽ với họ để mang lại các giải pháp pháp lý tối ưu và chuyên nghiệp nhất."
+    i18nTitle="homepage.ourPartners"
+    i18nSubtitle="homepage.partnersSubtitle"
+    icons={[]}
+    images={[
+      {
+        src: '~/assets/images/partners/Samsung-Logo.png',
+        alt: 'Samsung',
+      },
+      {
+        src: '~/assets/images/partners/Viettel-Logo.png',
+        alt: 'Viettel',
+      },
+      {
+        src: '~/assets/images/partners/FPT-Logo.png',
+        alt: 'FPT',
+      },
+      {
+        src: '~/assets/images/partners/Intel_Vietnam-Logo.png',
+        alt: 'Intel Vietnam',
+      },
+      {
+        src: '~/assets/images/partners/TopCV-Logo.png',
+        alt: 'TopCV',
+      },
+      {
+        src: '~/assets/images/partners/Rikkei-Logo.png',
+        alt: 'Rikkei',
+      },
+      {
+        src: '~/assets/images/partners/PowerLogics-Logo.jpg',
+        alt: 'Power Logics',
+      },
+      {
+        src: '~/assets/images/partners/BHflex-Logo.png',
+        alt: 'BHflex',
+      },
+      {
+        src: '~/assets/images/partners/Blueway-Logo.jpg',
+        alt: 'Blueway',
+      },
+      {
+        src: '~/assets/images/partners/Boyd_Corporation_logo.png',
+        alt: 'Boyd Corporation',
+      },
+      {
+        src: '~/assets/images/partners/Kowa-Logo.png',
+        alt: 'Kowa',
+      },
+      {
+        src: '~/assets/images/partners/Rorze-Logo.png',
+        alt: 'Rorze',
+      },
+      {
+        src: '~/assets/images/partners/Arcadyan-Logo.png',
+        alt: 'Arcadyan',
+      },
+      {
+        src: '~/assets/images/partners/Desay-Logo.png',
+        alt: 'Desay SV',
+      },
+      {
+        src: '~/assets/images/partners/HR Partner-Logo.png',
+        alt: 'HR Partner',
+      }, 
+      {
+        src: '~/assets/images/partners/Yadea-Logo.png',
+        alt: 'Yadea',
+      },
+      {
+        src: '~/assets/images/partners/Cresyn-Logo.png',
+        alt: 'Cresyn',
+      },
+      {
+        src: '~/assets/images/partners/NSM-Logo.jpg',
+        alt: 'NSM HV',
+      },      
+      {
+        src: '~/assets/images/partners/DigitalX-Logo.png',
+        alt: 'DigitalX',
+      },
+      {
+        src: '~/assets/images/partners/Cosmos-Logo.png',
+        alt: 'Cosmos',
+      },
+      {
+        src: '~/assets/images/partners/Top Engineering-Logo.png',
+        alt: 'Top Engineering',
+      },
+      {
+        src: '~/assets/images/partners/LOGO-rong-viet.png',
+        alt: 'Rong Viet',
+      },
+      {
+        src: '~/assets/images/partners/Boulder-Logo.png',
+        alt: 'Boulder',
+      },
+      {
+        src: '~/assets/images/partners/Shinsung-Logo.png',
+        alt: 'Shinsung',
+      },
+      {
+        src: '~/assets/images/partners/VinaTop-Logo.png',
+        alt: 'Vina Top',
+      },
+      {
+        src: '~/assets/images/partners/Hòa Bình-Logo.png',
+        alt: 'Hòa Bình Security',
+      },
+      {
+        src: '~/assets/images/partners/KL Technologies-Logo.png',
+        alt: 'KL Technologies',
+      },
+      {
+        src: '~/assets/images/partners/SM Tech-Logo.png',
+        alt: 'SM Tech',
+      },
+      {
+        src: '~/assets/images/partners/WeSMART-Logo.jpg',
+        alt: 'WeSMART',
+      },
+    ]}
+  />
+
+  <!-- Steps2 Widget ****************** -->
+  <HowToSchema
+    name="Làm thế nào để nhận dịch vụ pháp lý từ Youth & Partners"
+    description="Quy trình 4 bước để nhận tư vấn và hỗ trợ pháp lý từ đội ngũ luật sư của Youth & Partners Law Firm"
+    steps={[
+      {
+        name: 'Liên hệ với chúng tôi',
+        text: 'Mô tả vấn đề của bạn và thu thập tài liệu liên quan. Liên hệ với chúng tôi qua Hotline, Zalo, WhatsApp, Facebook hoặc Email.',
+        url: 'https://yplawfirm.vn/lien-he',
+      },
+      {
+        name: 'Gửi yêu cầu chi tiết',
+        text: 'Mô tả chi tiết vấn đề qua email hoặc điện thoại và đính kèm tài liệu liên quan để chúng tôi hiểu rõ tình huống của bạn.',
+        url: 'https://yplawfirm.vn/lien-he',
+      },
+      {
+        name: 'Theo dõi phản hồi',
+        text: 'Theo dõi email hoặc điện thoại của bạn để nhận phản hồi từ đội ngũ hỗ trợ khách hàng của chúng tôi trong thời gian dự kiến.',
+        url: 'https://yplawfirm.vn/lien-he',
+      },
+      {
+        name: 'Nhận giải pháp',
+        text: 'Đội ngũ luật sư của chúng tôi sẽ phân tích vấn đề và đưa ra giải pháp pháp lý phù hợp, hỗ trợ bạn đạt được kết quả tốt nhất.',
+        url: 'https://yplawfirm.vn/',
+      },
+    ]}
+  />
+  <Steps2
+    title="Liên hệ để được tư vấn ngay"
+    subtitle="Chúng tôi luôn sẵn lòng lắng nghe và hỗ trợ bạn một cách tận tâm và chuyên nghiệp. Hãy để chúng tôi giúp bạn giải quyết mọi vấn đề pháp lý một cách nhanh chóng và hiệu quả!"
+    i18nTitle="homepage.contactForConsultNow"
+    i18nSubtitle="homepage.ctaSubtitle"
+    callToAction={{
+      text: 'Liên hệ ngay',
+      href: '/lien-he',
+      i18nText: 'homepage.contactNow',
+    }}
+    items={[
+      {
+        title: 'Email',
+        description: 'contact@yplawfirm.vn',
+        icon: 'tabler:mail',
+        i18nTitle: 'company.email',
+      },
+      {
+        title: 'Hotline',
+        description: '088 995 6888',
+        icon: 'tabler:headset',
+        i18nTitle: 'company.hotline',
+      },
+      {
+        title: 'Theo dõi chúng tôi',
+        description: '@yplawfirm',
+        icon: 'tabler:brand-facebook',
+        i18nTitle: 'homepage.followUs',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps2>
+</Layout>
